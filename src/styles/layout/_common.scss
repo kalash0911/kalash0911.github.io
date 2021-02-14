@@ -25,11 +25,26 @@ body {
         border-radius: 4px;
         border: 2px solid;
     }
+
+    .btn-orange-bg {
+        display: inline-flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 13px 20px;
+        min-width: 222px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        background: $orange;
+        color: $white;
+    }
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1330px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .main-section {
@@ -41,7 +56,6 @@ body {
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 15px;
 }
 
 .main-content {
@@ -109,4 +123,59 @@ body {
             background-color: $orange;
         }
     }
+}
+
+
+.list-section {
+
+    
+    h4 {
+        text-align: center;
+        margin-bottom: 53px;
+    }
+}
+
+.cards {
+    display: flex;
+    margin-top: 53px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card {
+    padding: 87px 55px 87px 63px;
+    display: flex;
+    justify-content: space-around;
+    min-width: 650px;
+
+    .card-icon {
+        width: 45%;
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 45px 0 0 0;
+            font-style: normal;
+            font-weight: bold;
+        }
+    }
+
+    .card-text {
+        width: 55%;
+        margin-left: 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.card-1, .card-4 {
+    background-color: rgba(248, 249, 250, 1);
 }
