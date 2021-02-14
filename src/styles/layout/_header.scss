@@ -30,6 +30,10 @@
         text-decoration: none;
         margin-right: 38px;
         color: black;
+
+        &:hover {
+            color: $orange;
+        }
     }
 }
 
@@ -52,6 +56,13 @@
 
         li {
             margin-top: 8px;
+        }
+
+        a {
+            
+            &:hover {
+                color: $orange;
+            }
         }
     }
 
