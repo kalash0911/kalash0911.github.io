@@ -439,6 +439,82 @@ th {
 }
 
 @font-face {
+  font-family: 'icons';
+  src: url("../fonts/icons.eot?vp2yt2");
+  src: url("../fonts/icons.eot?vp2yt2#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?vp2yt2") format("truetype"), url("../fonts/icons.woff?vp2yt2") format("woff"), url("../fonts/icons.svg?vp2yt2#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow:before {
+  content: "\e900";
+}
+
+.icon-arrow-down:before {
+  content: "\e901";
+}
+
+.icon-Be:before {
+  content: "\e902";
+}
+
+.icon-C:before {
+  content: "\e903";
+}
+
+.icon-Facebook:before {
+  content: "\e904";
+}
+
+.icon-idea:before {
+  content: "\e905";
+}
+
+.icon-Insta:before {
+  content: "\e906";
+}
+
+.icon-LinkedIn:before {
+  content: "\e907";
+}
+
+.icon-men:before {
+  content: "\e908";
+}
+
+.icon-settings:before {
+  content: "\e909";
+}
+
+.icon-vector:before {
+  content: "\e90a";
+}
+
+.icon-telegram:before {
+  content: "\ea95";
+}
+
+.icon-youtube:before {
+  content: "\ea9d";
+}
+
+@font-face {
   font-family: Montserrat;
   src: url("../fonts/Montserrat-Regular.ttf");
   font-style: normal;
@@ -532,7 +608,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 28px;
+  font-size: 36px;
 }
 
 h3,
@@ -700,6 +776,7 @@ input[type='submit'] {
 
 .menu-li a:hover {
   color: #EB5B31;
+  transition: ease 0s;
 }
 
 .down img {
@@ -793,6 +870,8 @@ body .btn-orange-bg {
   padding: 0 15px;
 }
 
+/* _________________main-section________________ */
+
 .main-section {
   background: url(/dist/images/main-bg.png) no-repeat 50% 50%/cover;
   position: relative;
@@ -829,6 +908,8 @@ body .btn-orange-bg {
   margin-right: 22px;
 }
 
+/* ________________upgrade-section_____________ */
+
 .upgrade-section {
   padding: 64px 0 70px 0;
 }
@@ -856,6 +937,10 @@ body .btn-orange-bg {
   align-items: center;
 }
 
+.total .item .icon-men {
+  font-size: 35px;
+}
+
 .total .item p {
   margin-top: 15px;
   text-align: center;
@@ -871,7 +956,13 @@ body .btn-orange-bg {
   height: 1px;
 }
 
-.list-section h4 {
+/* _______________list-section____________ */
+
+.list-section .list-content {
+  padding-bottom: 70px;
+}
+
+.list-section .list-content h4 {
   text-align: center;
   margin-bottom: 53px;
 }
@@ -894,17 +985,26 @@ body .btn-orange-bg {
   min-width: 650px;
 }
 
-.card .card-icon {
-  width: 45%;
+.card:hover {
+  background: #EB5B31;
+  color: #fff;
 }
 
-.card .card-icon img {
-  display: block;
-  margin: 0 auto;
+.card:hover .btn-orange-bg {
+  background: #fff;
+  color: #EB5B31;
+}
+
+.card .card-icon {
+  width: 45%;
+  text-align: center;
+}
+
+.card .card-icon .icon-men {
+  font-size: 71px;
 }
 
 .card .card-icon h3 {
-  text-align: center;
   margin: 45px 0 0 0;
   font-style: normal;
   font-weight: bold;
@@ -924,8 +1024,39 @@ body .btn-orange-bg {
   line-height: 17px;
 }
 
+.card .card-text .icon-arrow {
+  font-size: 14px;
+  text-align: center;
+  padding-top: 3px;
+}
+
 .card-1,
 .card-4 {
   background: #f8f9fa;
+}
+
+/* ___________our-projects-section______________ */
+
+.our-projects-section h4 {
+  text-align: center;
+  margin: 0 0 35px 0;
+}
+
+.project-wrap {
+  display: grid;
+  grid-template-areas: "leftside block block" "leftside block block" "leftside block block";
+  grid-template-rows: 60px 1fr 1fr;
+  grid-template-columns: 20% 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.project-wrap .leftside {
+  background: red;
+  grid-area: leftside;
+}
+
+.project-wrap div {
+  background: blue;
+  margin: 5px;
 }
 /*# sourceMappingURL=main.css.map */
