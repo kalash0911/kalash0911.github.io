@@ -959,7 +959,7 @@ body .btn-orange-bg {
 /* _______________list-section____________ */
 
 .list-section .list-content {
-  padding-bottom: 70px;
+  padding-bottom: 81px;
 }
 
 .list-section .list-content h4 {
@@ -1035,28 +1035,123 @@ body .btn-orange-bg {
   background: #f8f9fa;
 }
 
+/* _______________problems-section___________________ */
+
+.problems-section .container {
+  position: relative;
+}
+
+.problems-section .container .problems-content {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 0 85px 0;
+}
+
+.problems-section .item-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.problems-section .problems-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 60px 0 21px 0;
+  text-align: center;
+}
+
+.problems-section .problems-wrapper div {
+  max-width: 30%;
+}
+
+.problems-section .problems-wrapper div i {
+  font-size: 35px;
+}
+
+.problems-section .problems-wrapper div p {
+  margin: 15px 0 0 0;
+}
+
+.problems-section .line-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.problems-section .line-wrapper .line {
+  background: black;
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.problems-section .line-wrapper .solution {
+  margin: 50px 0 30px 0;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.problems-section .solutions-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.problems-section .solutions-wrapper div {
+  max-width: 30%;
+}
+
+.problems-section .solutions-wrapper div i {
+  font-size: 35px;
+}
+
+.problems-section .solutions-wrapper div p {
+  margin: 15px 0 0 0;
+}
+
+.problems-section .btn-orange-bg {
+  display: inline-block;
+  margin: 0 auto;
+  width: 250px;
+}
+
 /* ___________our-projects-section______________ */
 
-.our-projects-section h4 {
-  text-align: center;
-  margin: 0 0 35px 0;
+/* .our-projects-section {
+    
+    h4 {
+        text-align: center;
+        margin: 0 0 35px 0;
+    }
 }
 
 .project-wrap {
-  display: grid;
-  grid-template-areas: "leftside block block" "leftside block block" "leftside block block";
-  grid-template-rows: 60px 1fr 1fr;
-  grid-template-columns: 20% 1fr 1fr;
-  grid-gap: 10px;
-}
+    display: grid;
+    grid-template-areas: 
+    "leftside block block"
+    "leftside block block"
+    "leftside block block";
+    grid-template-rows: 60px 1fr 1fr;
+    grid-template-columns: 20% 1fr 1fr;
+    grid-gap: 10px;
 
-.project-wrap .leftside {
-  background: red;
-  grid-area: leftside;
-}
+    .leftside {
+        grid-area: leftside;
+        background-color:red;
+    }
 
-.project-wrap div {
-  background: blue;
-  margin: 5px;
-}
+    div {
+        background-color: blue;
+        margin: 5px;
+    }
+} */
 /*# sourceMappingURL=main.css.map */
