@@ -1306,11 +1306,13 @@ body .btn-orange-bg {
 
 .thebook-section {
   position: relative;
+  background: url(../images/orenge-bg.png) bottom left/35% 85% no-repeat;
+  padding-bottom: 50px;
 }
 
 .thebook-section .bg-book {
   position: absolute;
-  right: -224px;
+  right: -195px;
   top: 280px;
   color: #EB5B31;
   font-weight: bold;

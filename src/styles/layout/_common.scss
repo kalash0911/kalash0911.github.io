@@ -484,10 +484,12 @@ body {
 
 .thebook-section {
     position: relative;
+    background: url(../images/orenge-bg.png) bottom left/ 35% 85% no-repeat;
+    padding-bottom: 50px;
 
     .bg-book {
         position: absolute;
-        right: -224px;
+        right: -195px;
         top: 280px;
         color: $orange;
         font-weight: bold;
@@ -548,5 +550,4 @@ body {
             padding-top: 3px;
         }
     }
-
 }
