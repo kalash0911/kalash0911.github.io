@@ -967,7 +967,7 @@ body .btn-orange-bg {
   margin-bottom: 53px;
 }
 
-.cards {
+.list-section .cards {
   display: -ms-flexbox;
   display: flex;
   margin-top: 53px;
@@ -976,7 +976,7 @@ body .btn-orange-bg {
   margin: 0 auto;
 }
 
-.card {
+.list-section .card {
   padding: 87px 55px 87px 63px;
   display: -ms-flexbox;
   display: flex;
@@ -985,32 +985,31 @@ body .btn-orange-bg {
   min-width: 650px;
 }
 
-.card:hover {
-  background: #EB5B31;
+.list-section .card:hover {
   color: #fff;
 }
 
-.card:hover .btn-orange-bg {
+.list-section .card:hover .btn-orange-bg {
   background: #fff;
   color: #EB5B31;
 }
 
-.card .card-icon {
+.list-section .card .card-icon {
   width: 45%;
   text-align: center;
 }
 
-.card .card-icon .icon-men {
+.list-section .card .card-icon .icon-men {
   font-size: 71px;
 }
 
-.card .card-icon h3 {
+.list-section .card .card-icon h3 {
   margin: 45px 0 0 0;
   font-style: normal;
   font-weight: bold;
 }
 
-.card .card-text {
+.list-section .card .card-text {
   width: 55%;
   margin-left: 45px;
   display: -ms-flexbox;
@@ -1024,15 +1023,31 @@ body .btn-orange-bg {
   line-height: 17px;
 }
 
-.card .card-text .icon-arrow {
+.list-section .card .card-text .icon-arrow {
   font-size: 14px;
   text-align: center;
   padding-top: 3px;
 }
 
-.card-1,
-.card-4 {
+.list-section .card-1,
+.list-section .card-4 {
   background: #f8f9fa;
+}
+
+.list-section .card-1:hover {
+  background: url(../images/list-bg/1.png);
+}
+
+.list-section .card-2:hover {
+  background: url(../images/list-bg/2.png);
+}
+
+.list-section .card-3:hover {
+  background: url(../images/list-bg/3.png);
+}
+
+.list-section .card-4:hover {
+  background: url(../images/list-bg/4.png);
 }
 
 /* _______________problems-section___________________ */
@@ -1126,47 +1141,127 @@ body .btn-orange-bg {
 
 /* ___________our-projects-section______________ */
 
-/* .our-projects-section {
-    
-    h4 {
-        text-align: center;
-        margin: 0 0 35px 0;
-    }
+.our-projects-section {
+  margin-bottom: 70px;
 }
 
-.project-wrap {
-    display: inline-flex;
-
-    .first-wrap {
-        min-width: 424px;
-        height: 100%;
-    }
+.our-projects-section h4 {
+  text-align: center;
+  margin: 0 0 35px 0;
 }
 
-.second-wrap {
-    display: inline-flex;
-    flex-wrap: wrap;
+.our-projects-section .project-wrap {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
 
-    .item1 {
-        min-width: 512px;
-    }
+.our-projects-section .project-wrap .first-wrap {
+  position: relative;
+  min-width: 424px;
+  height: 100%;
+}
 
-    .item2 {
-        min-width: 364px;
-    }
+.our-projects-section .project-wrap .first-wrap:hover .wrap-hover {
+  opacity: 90%;
+}
 
-    .item3 {
-        max-width: 437px;
+.our-projects-section .wrap-hover {
+  background: #EB5B31;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
 
-        img {
-            min-height: 300px;
-        }
-    }
-    
-    .item4 {
-        min-width: 439px;
-    }
-} */
+.our-projects-section .wrap-hover .hover-text {
+  padding: 81px 85px 31px 66px;
+}
+
+.our-projects-section .wrap-hover .hover-text h2 {
+  margin: 0 0 7px 0;
+}
+
+.our-projects-section .wrap-hover .hover-text p {
+  margin: 0;
+}
+
+.our-projects-section .wrap-hover .btn-projects {
+  background: #fff;
+  width: 100%;
+  display: block;
+  color: #EB5B31;
+  text-align: center;
+  font-size: 16px;
+  padding: 13px 0;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.our-projects-section .second-wrap {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.our-projects-section .second-wrap .item:hover .wrap-hover {
+  opacity: 90%;
+}
+
+.our-projects-section .second-wrap .item1 {
+  position: relative;
+  min-width: 512px;
+}
+
+.our-projects-section .second-wrap .item2 {
+  position: relative;
+  min-width: 364px;
+}
+
+.our-projects-section .second-wrap .item2 .hover-text {
+  padding-right: 40px;
+}
+
+.our-projects-section .second-wrap .item3 {
+  position: relative;
+}
+
+.our-projects-section .second-wrap .item3 img {
+  min-width: 437px;
+  max-height: 312px;
+}
+
+.our-projects-section .second-wrap .item3 .hover-text {
+  padding-top: 40px;
+}
+
+.our-projects-section .second-wrap .item4 {
+  position: relative;
+}
+
+.our-projects-section .second-wrap .item4 img {
+  max-width: 439px;
+}
+
+.our-projects-section .second-wrap .item4 .hover-text {
+  padding-top: 40px;
+}
+
+.our-projects-section .btn-orange-sm {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+  margin-top: 39px;
+}
 
 /* _______________________awards-section_____________________ */
 
@@ -1205,5 +1300,79 @@ body .btn-orange-bg {
 
 .awards-section .a-card2 {
   padding: 69px 45px 72px 45px;
+}
+
+/* ________________thebook-section_______________________ */
+
+.thebook-section {
+  position: relative;
+}
+
+.thebook-section .bg-book {
+  position: absolute;
+  right: -224px;
+  top: 280px;
+  color: #EB5B31;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 110px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  margin: 0;
+}
+
+.thebook-section .title {
+  text-align: center;
+}
+
+.thebook-section .title h4 {
+  margin: 0 0 6px 0;
+}
+
+.thebook-section .title p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.thebook-section .item-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 53px 0 0 0;
+}
+
+.thebook-section .text-wrap {
+  margin-left: 133px;
+  min-width: 360px;
+}
+
+.thebook-section .text-wrap div {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.thebook-section .text-wrap i {
+  color: #EB5B31;
+  font-size: 40px;
+}
+
+.thebook-section .text-wrap p {
+  margin: 0 0 0 51px;
+  font-size: 20px;
+  line-height: 24px;
+  max-width: 360px;
+}
+
+.thebook-section .btn-orange-bg {
+  width: 300px;
+  margin: 19px 0 0 0;
+}
+
+.thebook-section .btn-orange-bg .icon-arrow {
+  color: #fff;
+  font-size: 14px;
+  padding-top: 3px;
 }
 /*# sourceMappingURL=main.css.map */
