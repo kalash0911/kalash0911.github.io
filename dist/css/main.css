@@ -623,12 +623,12 @@ h4,
 
 h5,
 .h5 {
-  font-size: 17px;
+  font-size: 18px;
 }
 
 h6,
 .h6 {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 p {
@@ -1376,5 +1376,79 @@ body .btn-orange-bg {
   color: #fff;
   font-size: 14px;
   padding-top: 3px;
+}
+
+#footer {
+  background: #EB5B31;
+}
+
+.footer-content {
+  padding: 60px 0 40px 0;
+}
+
+.footer-content .main-footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.footer-logo-wrap {
+  color: #fff;
+}
+
+.footer-logo-wrap .footer-logo {
+  display: block;
+  margin: 5px 0 97px 0;
+}
+
+.footer-logo-wrap h6 {
+  line-height: 17px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-logo-wrap img {
+  margin: 11px 18px 0 0;
+}
+
+.footer-logo-wrap img:last-child {
+  margin-right: 0;
+}
+
+.title {
+  max-width: 127px;
+}
+
+.title h5 {
+  margin: 0 0 49px 0;
+}
+
+.title a {
+  color: #fff;
+}
+
+.title ul {
+  margin: 0;
+  padding: 0;
+}
+
+.title ul li {
+  list-style: none;
+  margin: 0 0 20px 0;
+}
+
+.contact {
+  max-width: 284px;
+  color: #fff;
+}
+
+.contact h5 {
+  margin-bottom: 18px;
+}
+
+.name-wrap input {
+  display: block;
+  max-width: 135px;
 }
 /*# sourceMappingURL=main.css.map */
