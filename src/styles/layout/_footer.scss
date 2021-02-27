@@ -34,7 +34,7 @@
     }
 }
 
-.title {
+.title-footer {
     max-width: 127px;
 
     h5 {
@@ -64,12 +64,134 @@
         margin-bottom: 18px;
     }
 
+    input, .help {
+        background: #FFFFFF;
+        box-shadow: inset 0px 1px 7px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        margin-bottom: 9px;
+        min-height: 31px;
+        outline: none;
+        padding: 8px;
+        color: $orange;
+
+        &::placeholder {
+            color: $orange;
+            font-size: 12px;
+        }
+    }
+    
+    .name-wrap {
+        display: flex;
+        justify-content: space-between;
+    
+        input {
+            max-width: 135px;
+        }
+    }
+    
+    .work-emeil {
+        width: 100%;
+    }
+
+    .help {
+        width: 100%;
+        min-height: 91px;
+    }
+
+    p {
+        font-size: 7px;
+        line-height: 9px;
+        margin: 0 0 15px 0;
+        color: #FFFFFF;
+    }
+
+    .btn-form {
+        min-width: 113px;
+        min-height: 35px;
+        background: #FFFFFF;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        color: $orange;
+        font-size: 12px;
+        line-height: 15px;
+        display: block;
+        float: right;
+    }
 }
 
-.name-wrap {
+/* ______________________second-footer-section______________ */
 
-    input {
-        display: block;
-        max-width: 135px;
+.second-footer-section {
+    background-color: black;
+    padding: 18px 0 19px 0;
+
+    .second-footer-content {
+        display: flex;
+        justify-content: space-between;
+        
+        a {
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+    }
+
+    .policy {
+        margin-top: 3px;
+        
+        a {
+            margin-right: 50px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .icon-footer {
+        display: flex;
+        
+        a {
+            font-size: 22px;
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .icon-LinkedIn {
+
+            &:hover {
+                color:#0e76a8 ;
+            }
+        }
+
+        .icon-C {
+
+            &:hover {
+                color:#F58529;
+            }
+        }
+        .icon-Be {
+
+            &:hover {
+                color: #053eff;
+            }
+        }
+
+        .icon-Facebook {
+
+            &:hover {
+                color: #3b5998;
+            }
+        }
+
+        .icon-Insta {
+
+            &:hover {
+                color:#F58529;
+            }
+        }
     }
 }
