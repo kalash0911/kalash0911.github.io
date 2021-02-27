@@ -582,3 +582,45 @@ body {
         }
     }
 }
+
+/* _________________about-us-section______________ */
+
+.about-us-section {
+    background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
+    padding: 169px 0 93px 0;
+
+    .about-us-content {
+        text-align: center;
+
+        h2 {
+            margin: 106px 0 43px 0;
+            color: $orange;
+        }
+    }
+
+    .main-img-text {
+        width: 100%;
+        background-color: $orange;
+        padding: 16px 0 19px 0;
+        color: #fff;
+        margin-bottom: 56px;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    .about-us-text {
+        display: flex;
+        justify-content: space-around;
+        font-size: 24px;
+        line-height: 150%;
+        text-align: justify;
+        flex-wrap: wrap;
+        
+        p {
+            max-width: 500px;
+            margin: 0 15px 93px 15px;
+        }
+    }
+}
