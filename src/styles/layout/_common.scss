@@ -39,6 +39,9 @@ body {
         background: $orange;
         color: $white;
     }
+    .pages {
+        background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
+    }
 }
 
 .container {
@@ -586,7 +589,6 @@ body {
 /* _________________about-us-section______________ */
 
 .about-us-section {
-    background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
     padding: 169px 0 130px 0;
 
     @include media("<1110px") {
@@ -708,5 +710,180 @@ body {
 
     .review-img {
         margin-bottom: 77px;
+    }
+}
+
+/* ________________________services-section________________________ */
+
+.services-section {
+    padding: 275px 0 90px 0;
+
+    h1 {
+        color: $orange;
+        text-align: center;
+        margin-bottom: 115px;
+    }
+
+    .services-wrap {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .img-wrap {
+        padding-top: 93px;
+    }
+
+    .text-wrap {
+        padding: 0 20px;
+
+    }
+
+    h2 {
+        margin-bottom: 159px;
+    }
+
+    .title-wrap {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .vertical-line {
+            position: absolute;
+            background: #C4C4C4;
+            width: 1px;
+            height: 100%;
+            left: 50%;
+        }
+
+        .horizon-line {
+            position: absolute;
+            background: #C4C4C4;
+            width: 100%;
+            height: 1px;
+            top: 50%;
+        }
+
+        p {
+            text-align: center;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140.4%;
+            font-size: 36px;
+            min-width: 300px;
+            min-height: 160px;
+            margin: 0;
+            padding: 50px 0 60px 0;
+        }
+    }
+}
+
+/* ______________________buy-section______________________ */
+
+.buy-section {
+    margin-bottom: 77px;
+
+    .buy-content {
+        background: url(../images/services/buy-bg.jpg);
+        padding: 12px 0 48px 0;
+        text-align: center;
+        
+        color: $white;
+    }
+
+    .buy-item-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wrap1, .wrap2, .wrap3 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 60px;
+    }
+
+    .buy-item {
+        min-width: 359px;
+
+        i {
+            font-size: 32px;
+        }
+
+        .item-title {
+            margin: 18px 0 8px 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .btn-orange-sm {
+        margin-top: 73px;
+        background-color: $white;
+        color: $orange;
+    }
+}
+
+/* ______________________vacancies-section_______________________ */
+
+.vacancies-section {
+    margin-bottom: 128px;
+
+    .vacancies-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vacancies-wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .text-wrap {
+                background: $white;
+            }
+        }
+    }
+
+    .img-wrap {
+        width: 50%;
+    }
+
+    .text-wrap {
+        width: 50%;
+        background-color: #F8F9FA;
+        padding: 57px 95px 43px 95px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: justify;
+        
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+    }
+
+    .hashtag-wrap {
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        
+        a {
+            color: $orange;
+            padding: 5px 20px;
+            background-color: rgba(234, 234, 234, 1);
+            margin: 10px 7px 0 0;
+        }
+    }
+
+    .btn-orange-sm {
+        align-self: flex-start;
     }
 }

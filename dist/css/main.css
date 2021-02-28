@@ -864,6 +864,10 @@ body .btn-orange-bg {
   color: #fff;
 }
 
+body .pages {
+  background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
+}
+
 .container {
   max-width: 1330px;
   margin: 0 auto;
@@ -1433,7 +1437,6 @@ body .btn-orange-bg {
 /* _________________about-us-section______________ */
 
 .about-us-section {
-  background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
   padding: 169px 0 130px 0;
 }
 
@@ -1574,6 +1577,200 @@ body .btn-orange-bg {
 
 .review-section .review-img {
   margin-bottom: 77px;
+}
+
+/* ________________________services-section________________________ */
+
+.services-section {
+  padding: 275px 0 90px 0;
+}
+
+.services-section h1 {
+  color: #EB5B31;
+  text-align: center;
+  margin-bottom: 115px;
+}
+
+.services-section .services-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.services-section .img-wrap {
+  padding-top: 93px;
+}
+
+.services-section .text-wrap {
+  padding: 0 20px;
+}
+
+.services-section h2 {
+  margin-bottom: 159px;
+}
+
+.services-section .title-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+}
+
+.services-section .title-wrap .vertical-line {
+  position: absolute;
+  background: #C4C4C4;
+  width: 1px;
+  height: 100%;
+  left: 50%;
+}
+
+.services-section .title-wrap .horizon-line {
+  position: absolute;
+  background: #C4C4C4;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.services-section .title-wrap p {
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140.4%;
+  font-size: 36px;
+  min-width: 300px;
+  min-height: 160px;
+  margin: 0;
+  padding: 50px 0 60px 0;
+}
+
+/* ______________________buy-section______________________ */
+
+.buy-section {
+  margin-bottom: 77px;
+}
+
+.buy-section .buy-content {
+  background: url(../images/services/buy-bg.jpg);
+  padding: 12px 0 48px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.buy-section .buy-item-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.buy-section .wrap1,
+.buy-section .wrap2,
+.buy-section .wrap3 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.buy-section .buy-item {
+  min-width: 359px;
+}
+
+.buy-section .buy-item i {
+  font-size: 32px;
+}
+
+.buy-section .buy-item .item-title {
+  margin: 18px 0 8px 0;
+}
+
+.buy-section .buy-item p {
+  margin-bottom: 0;
+}
+
+.buy-section .btn-orange-sm {
+  background: #fff;
+  margin-top: 73px;
+  color: #EB5B31;
+}
+
+/* ______________________vacancies-section_______________________ */
+
+.vacancies-section {
+  margin-bottom: 128px;
+}
+
+.vacancies-section .vacancies-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.vacancies-section .vacancies-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.vacancies-section .vacancies-wrap:nth-child(even) {
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.vacancies-section .vacancies-wrap:nth-child(even) .text-wrap {
+  background: #fff;
+}
+
+.vacancies-section .img-wrap {
+  width: 50%;
+}
+
+.vacancies-section .text-wrap {
+  background: #F8F9FA;
+  width: 50%;
+  padding: 57px 95px 43px 95px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.vacancies-section .text-wrap h2 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.vacancies-section .hashtag-wrap {
+  font-size: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.vacancies-section .hashtag-wrap a {
+  background: #eaeaea;
+  color: #EB5B31;
+  padding: 5px 20px;
+  margin: 10px 7px 0 0;
+}
+
+.vacancies-section .btn-orange-sm {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 #footer {
