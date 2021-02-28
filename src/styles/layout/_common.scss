@@ -42,6 +42,18 @@ body {
     .pages {
         background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
     }
+
+    .main-page {
+
+        .header-menu {
+            display: flex;
+            justify-content: flex-end;
+
+            .header-logo {
+                display: none;
+            }
+        }
+    }
 }
 
 .container {
@@ -885,5 +897,82 @@ body {
 
     .btn-orange-sm {
         align-self: flex-start;
+    }
+}
+/* 
+________________________portfolio-section_____________________ */
+
+.portfolio-section {
+    padding: 274px 0 101px 0;
+
+    .portfolio-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        text-align: center;
+        color: $orange;
+        margin-bottom: 174px;
+    }
+
+    .cards-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }  
+
+    .card {
+
+        p {
+            margin: 8px 0 4px 0;
+            color: #8C8C8C;
+        }
+
+        h3 {
+            margin-bottom: 47px;
+        }
+    }
+    
+    .card-content {
+        position: relative;
+    
+        &:hover {
+
+            .hover-wrap {
+                opacity: 1;
+            }
+        }
+
+        .hover-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 110px 21px 55px;
+            color: $white;
+            background:$orange;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+    
+            p {
+                font-size: 18px;
+                color: $white;
+            }
+    
+            .btn-orange-sm {
+                border-color: $white;
+                align-self: center;
+            }
+        }
+    }
+
+    .btn-orange-sm {
+        margin-top: 21px;
+        align-self: center;
     }
 }

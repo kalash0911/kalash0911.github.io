@@ -5,6 +5,16 @@
     width: 100%;
 }
 
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-logo {
+        width: 141px;
+    }
+}
+
 .menu {
     display: flex;
     justify-content: flex-end;
