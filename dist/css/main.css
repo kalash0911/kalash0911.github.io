@@ -1434,7 +1434,13 @@ body .btn-orange-bg {
 
 .about-us-section {
   background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
-  padding: 169px 0 93px 0;
+  padding: 169px 0 130px 0;
+}
+
+@media (max-width: 1109px) {
+  .about-us-section {
+    padding: 100px 0 80px 0;
+  }
 }
 
 .about-us-section .about-us-content {
@@ -1458,7 +1464,8 @@ body .btn-orange-bg {
   margin: 0;
 }
 
-.about-us-section .about-us-text {
+.about-us-section .about-us-text,
+.about-us-section .our-wrap {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
@@ -1470,9 +1477,103 @@ body .btn-orange-bg {
   flex-wrap: wrap;
 }
 
-.about-us-section .about-us-text p {
+.about-us-section .about-us-text p,
+.about-us-section .our-wrap p {
   max-width: 500px;
   margin: 0 15px 93px 15px;
+}
+
+.about-us-section .about-us-text h3,
+.about-us-section .our-wrap h3 {
+  color: #EB5B31;
+  margin-left: 15px;
+}
+
+@media (max-width: 1109px) {
+  .about-us-section .about-us-text h3,
+  .about-us-section .our-wrap h3 {
+    text-align: center;
+    margin: 50px 0 20px 0;
+  }
+}
+
+.about-us-section .our-wrap {
+  position: relative;
+  margin-top: 115px;
+}
+
+@media (max-width: 1109px) {
+  .about-us-section .our-wrap {
+    margin: 0;
+  }
+}
+
+.about-us-section .our-wrap p {
+  margin: 0 15px;
+}
+
+.about-us-section .our-wrap .vertical-line {
+  background: #C4C4C4;
+  width: 1px;
+}
+
+@media (max-width: 1109px) {
+  .about-us-section .our-wrap .vertical-line {
+    display: none;
+  }
+}
+
+/* __________________________top5-section_________________________ */
+
+.top5-section {
+  margin-bottom: 11px;
+  text-align: center;
+}
+
+.top5-section h2 {
+  color: #EB5B31;
+  margin-bottom: 128px;
+}
+
+.top5-section .top-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.top5-section .top-item {
+  max-width: 360px;
+  margin: 0 15px 66px 15px;
+}
+
+.top5-section .top-item i {
+  font-size: 32px;
+}
+
+.top5-section .top-item p {
+  margin: 0;
+}
+
+.top5-section .top-item .title-top {
+  margin: 18px 0 8px 0;
+}
+
+/* ________________________review-section____________________ */
+
+.review-section {
+  text-align: center;
+  padding-bottom: 77px;
+}
+
+.review-section h4 {
+  margin-bottom: 56px;
+}
+
+.review-section .review-img {
+  margin-bottom: 77px;
 }
 
 #footer {

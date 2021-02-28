@@ -587,7 +587,11 @@ body {
 
 .about-us-section {
     background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
-    padding: 169px 0 93px 0;
+    padding: 169px 0 130px 0;
+
+    @include media("<1110px") {
+        padding: 100px 0 80px 0;
+    }
 
     .about-us-content {
         text-align: center;
@@ -610,7 +614,7 @@ body {
         }
     }
 
-    .about-us-text {
+    .about-us-text, .our-wrap {
         display: flex;
         justify-content: space-around;
         font-size: 24px;
@@ -622,5 +626,87 @@ body {
             max-width: 500px;
             margin: 0 15px 93px 15px;
         }
+
+        h3 {
+            color: $orange;
+            margin-left: 15px;
+
+            @include media("<1110px") {
+                text-align: center;
+                margin: 50px 0 20px 0;
+            }
+        }
+    }
+
+    .our-wrap {
+        position: relative;
+        margin-top: 115px;
+
+        @include media("<1110px") {
+            margin: 0;
+        }
+
+        p {
+            margin: 0 15px;
+        }
+
+        .vertical-line {
+            background: #C4C4C4;
+            width: 1px;
+
+            @include media("<1110px") {
+                display: none;
+            }
+        }
+    }
+}
+
+/* __________________________top5-section_________________________ */
+
+.top5-section {
+    margin-bottom: 11px;
+    text-align: center;
+
+    h2 {
+        color: $orange;
+        margin-bottom: 128px;
+    }
+
+    .top-wrap {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .top-item {
+        max-width: 360px;
+        margin: 0 15px 66px 15px;
+
+        i {
+            font-size: 32px;
+        }
+        
+        p {
+            margin: 0;
+        }
+
+        .title-top {
+            margin: 18px 0 8px 0;
+        }
+    }
+}
+
+/* ________________________review-section____________________ */
+
+.review-section {
+    text-align: center;
+    padding-bottom: 77px;
+
+    h4 {
+        margin-bottom: 56px;
+    }
+
+    .review-img {
+        margin-bottom: 77px;
     }
 }
