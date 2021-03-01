@@ -25,42 +25,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow:before {
+.icon-figma:before {
+  content: "\e913";
+}
+.icon-arrow-left:before {
   content: "\e900";
 }
-.icon-arrow-down:before {
+.icon-arrow-right:before {
   content: "\e901";
 }
-.icon-Be:before {
+.icon-email:before {
   content: "\e902";
 }
-.icon-C:before {
-  content: "\e903";
-}
-.icon-Facebook:before {
+.icon-geo:before {
   content: "\e904";
 }
-.icon-idea:before {
+.icon-phone:before {
   content: "\e905";
 }
-.icon-Insta:before {
+.icon-ps:before {
   content: "\e906";
 }
-.icon-LinkedIn:before {
+.icon-w:before {
   content: "\e907";
 }
-.icon-men:before {
+.icon-arrow:before {
   content: "\e908";
 }
-.icon-settings:before {
+.icon-arrow-down:before {
   content: "\e909";
 }
-.icon-vector:before {
+.icon-Be:before {
   content: "\e90a";
 }
-.icon-telegram:before {
-  content: "\ea95";
+.icon-C:before {
+  content: "\e90b";
 }
-.icon-youtube:before {
-  content: "\ea9d";
+.icon-Facebook:before {
+  content: "\e90c";
+}
+.icon-idea:before {
+  content: "\e90d";
+}
+.icon-Insta:before {
+  content: "\e90e";
+}
+.icon-LinkedIn:before {
+  content: "\e90f";
+}
+.icon-men:before {
+  content: "\e910";
+}
+.icon-settings:before {
+  content: "\e911";
+}
+.icon-vector:before {
+  content: "\e912";
 }
