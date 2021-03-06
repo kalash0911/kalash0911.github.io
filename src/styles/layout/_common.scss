@@ -787,13 +787,17 @@ body {
     flex-direction: column;
     width: 100%;
 
+    .container {
+        width: 100%;
+    }
+
     h4 {
         margin-bottom: 56px;
     }
     
     .clutch-widget {
-        width: 1000px;
-        margin-bottom: 77px;
+        max-width: 960px;
+        margin: 0 auto 77px;
     }
 }
 

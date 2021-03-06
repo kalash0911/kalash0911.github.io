@@ -13,6 +13,7 @@ $(document).ready(function () {
     event.preventDefault();
     $('.overlay').toggleClass('overlay-visible');
     $('.get-for').toggleClass('get-for-visible');
+    /*  $('.btn-closs').toggleClass('btn-closs-visible'); */
   });
 });
 /* $(document).ready(function() {
