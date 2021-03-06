@@ -1240,7 +1240,7 @@ body .main-page .header-menu .header-logo {
 }
 
 .our-projects-section .wrap-hover {
-  background: #EB5B31;
+  background: rgba(235, 94, 51, 0.9);
   position: absolute;
   left: 0;
   top: 0;
