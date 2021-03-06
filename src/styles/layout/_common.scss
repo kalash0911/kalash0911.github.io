@@ -361,7 +361,7 @@ body {
     
             &:hover {
                 .wrap-hover{
-                    opacity: 90%;
+                    opacity: 100%;
                 }
             }
         }
@@ -418,7 +418,7 @@ body {
             &:hover {
 
                 .wrap-hover{
-                    opacity: 90%;
+                    opacity: 100%;
                 }
             }
         }
@@ -522,6 +522,73 @@ body {
     .a-card2 {
         padding: 69px 45px 72px 45px;
     }
+}
+
+/* __________________todiscuss-section_____________ */
+
+.todiscuss-section {
+    margin-bottom: 130px;
+
+    h3 {
+        margin-bottom: 45px;
+        text-align: center;
+    }
+
+    .content-wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .todiscuss-text-wrap {
+        max-width: 720px;
+        font-size: 16px;
+        line-height: 21px;
+
+        p {
+            margin: 0;
+            padding-right: 10px;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 528px;
+        height: 44px;
+
+        input {
+            padding: 11px;
+            width: 528px;
+            height: 44px;
+            border: 1px solid #EB5B31;
+            box-sizing: border-box;
+            border-radius: 3px;
+            background: $white;
+            text-align: center;
+            margin-bottom: 16px;
+            color: $orange;
+            
+            &:focus {
+                border: 1px solid #EB5B31;
+            }
+        }
+
+        .btn-form {
+            max-height: 50px;
+            padding: 15px 59px;
+            background: #EB5B31;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+        }
+
+    }
+
 }
 
 /* ________________thebook-section_______________________ */
@@ -1316,7 +1383,7 @@ ________________________portfolio-section_____________________ */
 /* ________________________contact-section____________________ */
 
 .contact-section {
-    padding: 275px 0 0 0;
+    padding: 275px 0 31px 0;
     text-align: center;
 
     h1 {
@@ -1330,21 +1397,19 @@ ________________________portfolio-section_____________________ */
 
     .contact-wrap {
         display: flex;
-        justify-content: space-between;
-        align-items:center;
     }
 
     form {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        max-width: 405px;
         
         input {
             border: 1px solid $orange;
             margin-bottom: 30px;
             padding: 14px 15px;
             text-align: center;
-            min-width: 405px;
             color: $orange;
 
             &::placeholder {
@@ -1364,5 +1429,217 @@ ________________________portfolio-section_____________________ */
             padding: 10px 20px;
             color: $orange;
         }
+
+        .btn-form-wrap {
+            display: flex;
+
+            .btn-form {
+                max-width: 160px;
+                max-height: 50px;
+                padding: 15px 59px;
+                background: $orange;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+                color: $white;
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 600;
+                display: block;
+            }
+
+            p {
+                align-self: center;
+                margin: 0 0 0 30px;
+                text-align: justify;
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+    }
+
+    .map-wrap {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 70px;
+    }
+
+    .adres-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+    }
+
+    .adres-item {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: start;
+
+        a {
+            color: black;
+        }
+
+        i {
+            margin: 0 7px 0 0;
+            font-size: 15px;
+        }
+    }
+
+    .tel {
+        margin-right:240px;
+    }
+
+    .geo-wrap {
+        display: flex;
+        max-width: 270px;
+
+        p {
+            margin: 0;
+        }
+
+        i {
+            margin-top: 5px;
+        }
+    }
+
+    .emeil1-wrap, .emeil2-wrap {
+        margin-top: 24px;
+    } 
+
+    .emeil1-wrap {
+        margin-right: 215px;
+    }
+
+    .map {
+        align-self:flex-start;
+
+        iframe {
+            min-width: 665px;
+            min-height: 391px;
+        }
+    }
+}
+
+/* ________________________work-section__________________________ */
+
+.work-section {
+    text-align: center;
+    background: url(../images/contact/work-bg.jpg) 50%/cover no-repeat;
+    padding: 47px 0 42px 0;
+
+    .work-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        max-width: 446px;
+        margin: 16px 0 38px 0;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 646px;
+
+        input {
+            width: 284px;
+            height: 44px;
+            padding: 11px 10px;
+            background: #EB5B31;
+            box-shadow: inset 0px 2px 7px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+            outline: none;
+            font-size: 14px;
+            line-height: 17px;
+            border: none;
+            color: $white;
+            margin: 0 13px 20px 13px;
+            
+            &::placeholder {
+                color: $white;
+            }
+        }
+
+        .btn-form {
+            margin: 0 13px;
+            width: 92%;
+            height: 35px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: $orange;
+            background: #FFFFFF;
+            border: 1px solid #EB5B31;
+            box-sizing: border-box;
+            border-radius: 3px;
+            outline: none;
+        }
+    }
+}
+
+/* ________________________404-section___________________________ */
+
+.error-section {
+    height: 100vh;
+    text-align: center;
+    color: $orange;
+    display: flex;
+    align-items: center;
+    
+    .error-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 200px 0 70px 0;
+        height: 100vh;
+    }
+
+    h1 {
+        margin-bottom: 100px;
+        font-weight: 800;
+    }
+
+    h2 {
+        line-height: 80px;
+        font-weight: 800;
+        margin-bottom: 30px;
+    }
+
+    .btn-orange-sm {
+        align-self: center;
+        width: 275px;
+    }
+}
+
+/* ________________________thank-section______________________________________ */
+
+.thank-section {
+    height: 100vh;
+    text-align: center;
+    color: $orange;
+    display: flex;
+    align-items: center;
+    
+    .thank-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 200px 0 70px 0;
+        height: 100vh;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .btn-orange-sm {
+        align-self: center;
+        width: 275px;
+    }
+
+    span {
+        color: black;
     }
 }

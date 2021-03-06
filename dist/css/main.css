@@ -1236,7 +1236,7 @@ body .main-page .header-menu .header-logo {
 }
 
 .our-projects-section .project-wrap .first-wrap:hover .wrap-hover {
-  opacity: 90%;
+  opacity: 100%;
 }
 
 .our-projects-section .wrap-hover {
@@ -1295,7 +1295,7 @@ body .main-page .header-menu .header-logo {
 }
 
 .our-projects-section .second-wrap .item:hover .wrap-hover {
-  opacity: 90%;
+  opacity: 100%;
 }
 
 .our-projects-section .second-wrap .item1 {
@@ -1402,6 +1402,76 @@ body .main-page .header-menu .header-logo {
 
 .awards-section .a-card2 {
   padding: 69px 45px 72px 45px;
+}
+
+/* __________________todiscuss-section_____________ */
+
+.todiscuss-section {
+  margin-bottom: 130px;
+}
+
+.todiscuss-section h3 {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.todiscuss-section .content-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.todiscuss-section .todiscuss-text-wrap {
+  max-width: 720px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.todiscuss-section .todiscuss-text-wrap p {
+  margin: 0;
+  padding-right: 10px;
+}
+
+.todiscuss-section form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 528px;
+  height: 44px;
+}
+
+.todiscuss-section form input {
+  padding: 11px;
+  width: 528px;
+  height: 44px;
+  border: 1px solid #EB5B31;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #EB5B31;
+}
+
+.todiscuss-section form input:focus {
+  border: 1px solid #EB5B31;
+}
+
+.todiscuss-section form .btn-form {
+  max-height: 50px;
+  padding: 15px 59px;
+  background: #EB5B31;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
 }
 
 /* ________________thebook-section_______________________ */
@@ -2274,7 +2344,7 @@ ________________________portfolio-section_____________________ */
 /* ________________________contact-section____________________ */
 
 .contact-section {
-  padding: 275px 0 0 0;
+  padding: 275px 0 31px 0;
   text-align: center;
 }
 
@@ -2290,10 +2360,6 @@ ________________________portfolio-section_____________________ */
 .contact-section .contact-wrap {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .contact-section form {
@@ -2303,6 +2369,7 @@ ________________________portfolio-section_____________________ */
   justify-content: space-between;
   -ms-flex-direction: column;
   flex-direction: column;
+  max-width: 405px;
 }
 
 .contact-section form input {
@@ -2310,7 +2377,6 @@ ________________________portfolio-section_____________________ */
   margin-bottom: 30px;
   padding: 14px 15px;
   text-align: center;
-  min-width: 405px;
   color: #EB5B31;
 }
 
@@ -2349,6 +2415,260 @@ ________________________portfolio-section_____________________ */
   margin-bottom: 40px;
   padding: 10px 20px;
   color: #EB5B31;
+}
+
+.contact-section form .btn-form-wrap {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-section form .btn-form-wrap .btn-form {
+  max-width: 160px;
+  max-height: 50px;
+  padding: 15px 59px;
+  background: #EB5B31;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  display: block;
+}
+
+.contact-section form .btn-form-wrap p {
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 0 0 0 30px;
+  text-align: justify;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.contact-section .map-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 0 0 70px;
+}
+
+.contact-section .adres-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.contact-section .adres-item {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.contact-section .adres-item a {
+  color: black;
+}
+
+.contact-section .adres-item i {
+  margin: 0 7px 0 0;
+  font-size: 15px;
+}
+
+.contact-section .tel {
+  margin-right: 240px;
+}
+
+.contact-section .geo-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 270px;
+}
+
+.contact-section .geo-wrap p {
+  margin: 0;
+}
+
+.contact-section .geo-wrap i {
+  margin-top: 5px;
+}
+
+.contact-section .emeil1-wrap,
+.contact-section .emeil2-wrap {
+  margin-top: 24px;
+}
+
+.contact-section .emeil1-wrap {
+  margin-right: 215px;
+}
+
+.contact-section .map {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.contact-section .map iframe {
+  min-width: 665px;
+  min-height: 391px;
+}
+
+/* ________________________work-section__________________________ */
+
+.work-section {
+  text-align: center;
+  background: url(../images/contact/work-bg.jpg) 50%/cover no-repeat;
+  padding: 47px 0 42px 0;
+}
+
+.work-section .work-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.work-section p {
+  max-width: 446px;
+  margin: 16px 0 38px 0;
+}
+
+.work-section form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 646px;
+}
+
+.work-section form input {
+  width: 284px;
+  height: 44px;
+  padding: 11px 10px;
+  background: #EB5B31;
+  box-shadow: inset 0px 2px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  color: #fff;
+  margin: 0 13px 20px 13px;
+}
+
+.work-section form input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.work-section form input::-moz-placeholder {
+  color: #fff;
+}
+
+.work-section form input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.work-section form input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.work-section form input::placeholder {
+  color: #fff;
+}
+
+.work-section form .btn-form {
+  margin: 0 13px;
+  width: 92%;
+  height: 35px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB5B31;
+  background: #FFFFFF;
+  border: 1px solid #EB5B31;
+  box-sizing: border-box;
+  border-radius: 3px;
+  outline: none;
+}
+
+/* ________________________404-section___________________________ */
+
+.error-section {
+  height: 100vh;
+  text-align: center;
+  color: #EB5B31;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.error-section .error-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 200px 0 70px 0;
+  height: 100vh;
+}
+
+.error-section h1 {
+  margin-bottom: 100px;
+  font-weight: 800;
+}
+
+.error-section h2 {
+  line-height: 80px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.error-section .btn-orange-sm {
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 275px;
+}
+
+/* ________________________thank-section______________________________________ */
+
+.thank-section {
+  height: 100vh;
+  text-align: center;
+  color: #EB5B31;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.thank-section .thank-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 200px 0 70px 0;
+  height: 100vh;
+}
+
+.thank-section h2 {
+  margin-bottom: 30px;
+}
+
+.thank-section .btn-orange-sm {
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 275px;
+}
+
+.thank-section span {
+  color: black;
 }
 
 #footer {
@@ -2566,5 +2886,152 @@ ________________________portfolio-section_____________________ */
 
 .second-footer-section .icon-footer .icon-Insta:hover {
   color: #F58529;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5000;
+}
+
+.overlay-visible {
+  display: block;
+}
+
+/* _________________________get-for________________________ */
+
+.get-for {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 6000;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  padding: 30px 65px 50px;
+  margin: 0 auto;
+}
+
+.get-for .btn-closs {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: block;
+  width: 12px;
+  height: 1px;
+  background: black;
+}
+
+.get-for .btn-closs span {
+  width: 12px;
+  height: 1px;
+  background: #d2d2d2;
+}
+
+.get-for h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.get-for p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.get-for .modal-form-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.get-for .get-for-form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.get-for .get-for-form input {
+  height: 49px;
+  background: #FFFFFF;
+  border: 1px solid #EB5B31;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 15px 47px;
+  color: #EB5B31;
+}
+
+.get-for .get-for-form input::-webkit-input-placeholder {
+  color: #EB5B31;
+}
+
+.get-for .get-for-form input::-moz-placeholder {
+  color: #EB5B31;
+}
+
+.get-for .get-for-form input:-ms-input-placeholder {
+  color: #EB5B31;
+}
+
+.get-for .get-for-form input::-ms-input-placeholder {
+  color: #EB5B31;
+}
+
+.get-for .get-for-form input::placeholder {
+  color: #EB5B31;
+}
+
+.get-for .get-for-form .btn-form {
+  max-height: 50px;
+  padding: 15px 42px 15px 47px;
+  background: #EB5B31;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.get-for .get-for-form .btn-form i {
+  margin-left: 15px;
+}
+
+.get-for .check-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 13px 0 0 0;
+}
+
+.get-for .check-wrap .check {
+  height: 16px;
+  width: 16px;
+  margin: 0 5px 0 0;
+  color: #EB5B31;
+}
+
+.get-for .check-wrap p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB5B31;
+  margin: 0;
+}
+
+.get-for-visible {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
