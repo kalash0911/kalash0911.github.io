@@ -782,12 +782,17 @@ body {
 .review-section {
     text-align: center;
     padding-bottom: 77px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
 
     h4 {
         margin-bottom: 56px;
     }
-
-    .review-img {
+    
+    .clutch-widget {
+        width: 1000px;
         margin-bottom: 77px;
     }
 }

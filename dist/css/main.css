@@ -1687,13 +1687,21 @@ body .main-page .header-menu .header-logo {
 .review-section {
   text-align: center;
   padding-bottom: 77px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
 }
 
 .review-section h4 {
   margin-bottom: 56px;
 }
 
-.review-section .review-img {
+.review-section .clutch-widget {
+  width: 1000px;
   margin-bottom: 77px;
 }
 
@@ -2926,13 +2934,17 @@ ________________________portfolio-section_____________________ */
   display: block;
   width: 12px;
   height: 1px;
-  background: black;
+  background: #d2d2d2;
 }
 
-.get-for .btn-closs span {
+.get-for .btn-closs::before {
+  content: '';
+  top: 5px;
   width: 12px;
   height: 1px;
   background: #d2d2d2;
+  right: 10px;
+  top: 10px;
 }
 
 .get-for h4 {
@@ -3033,5 +3045,21 @@ ________________________portfolio-section_____________________ */
 
 .get-for-visible {
   display: block;
+}
+
+/* _________________________order____________________________ */
+
+.order {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 6000;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  padding: 30px 65px 50px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=main.css.map */
