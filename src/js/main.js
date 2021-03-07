@@ -9,13 +9,20 @@ $(document).ready(function() {
         event.preventDefault()
         $('.overlay').toggleClass('overlay-visible');
         $('.get-for').toggleClass('get-for-visible');
-       /*  $('.btn-closs').toggleClass('btn-closs-visible'); */
     });
 });
 
-/* $(document).ready(function() {
+$(document).ready(function() {
+    $('.order-now').click(function(event){
+        event.preventDefault()
+        $('.overlay').toggleClass('overlay-visible');
+        $('.order').toggleClass('order-visible');
+    });
+});
+
+$(document).ready(function() {
     $('.burger').click(function(event){
-        $('.nav-menu').toggleClass('nav-active');
+        event.preventDefault()
         $('.burger').toggleClass('burger-active');
     });
-}); */
+});

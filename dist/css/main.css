@@ -772,6 +772,72 @@ input[type='submit'] {
   width: 100%;
 }
 
+.header-content {
+  position: relative;
+}
+
+.burger {
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  cursor: pointer;
+  right: 30px;
+  top: 0;
+  width: 30px;
+  height: 35px;
+  z-index: 50;
+}
+
+@media (max-width: 479px) {
+  .burger {
+    display: block;
+  }
+}
+
+.burger span {
+  background: #EB5B31;
+  display: block;
+  position: relative;
+  height: 3px;
+  margin: 4px auto;
+  border-radius: 5px;
+}
+
+.burger .sp1 {
+  transition: all .3s .5s;
+}
+
+.burger .sp2 {
+  transition: all .3s .3s;
+}
+
+.burger .sp3 {
+  transition: all .3s .1s;
+  width: 50%;
+}
+
+.burger-active .sp1 {
+  width: 30px;
+  height: 30px;
+  margin: 5px auto;
+  transition: all .3s .1s;
+}
+
+.burger-active .sp2 {
+  background: #fff;
+  -webkit-transform: translateY(-21px) rotateZ(45deg);
+  transform: translateY(-21px) rotateZ(45deg);
+  transition: all .3s .3s;
+}
+
+.burger-active .sp3 {
+  background: #fff;
+  -webkit-transform: translateY(-28px) rotateZ(-45deg);
+  transform: translateY(-28px) rotateZ(-45deg);
+  transition: all .3s .5s;
+  width: 100%;
+}
+
 .header-menu {
   display: -ms-flexbox;
   display: flex;
@@ -2915,35 +2981,7 @@ ________________________portfolio-section_____________________ */
   display: block;
 }
 
-/* _________________________get-for________________________ */
-
-.get-for {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 6000;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
-  padding: 30px 65px 50px;
-  margin: 0 auto;
-  /* .btn-closs-visible {
-        
-        span{   
-            transition: all 0.6s ease 0s;
-            transform: rotate(45deg);
-        }
-    
-        &::before {
-            transition: all 0.6s ease 0s;
-            transform: rotate(-45deg);
-        }
-    } */
-}
-
-.get-for .btn-closs {
+.btn-closs {
   position: absolute;
   display: block;
   width: 16px;
@@ -2954,15 +2992,15 @@ ________________________portfolio-section_____________________ */
   cursor: pointer;
 }
 
-.get-for .btn-closs:hover span {
+.btn-closs:hover span {
   background: #EB5B31;
 }
 
-.get-for .btn-closs:hover::before {
+.btn-closs:hover::before {
   background: #EB5B31;
 }
 
-.get-for .btn-closs span {
+.btn-closs span {
   background: #d2d2d2;
   position: absolute;
   width: 100%;
@@ -2976,7 +3014,7 @@ ________________________portfolio-section_____________________ */
   animation-fill-mode: forwards;
 }
 
-.get-for .btn-closs::before {
+.btn-closs::before {
   background: #d2d2d2;
   content: '';
   position: absolute;
@@ -3039,17 +3077,37 @@ ________________________portfolio-section_____________________ */
   }
 }
 
-.get-for h4 {
+/* _________________________get-for________________________ */
+
+.get-for,
+.order {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 6000;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  padding: 30px 65px 50px;
+  margin: 0 auto;
+}
+
+.get-for h4,
+.order h4 {
   text-align: center;
   margin-bottom: 10px;
 }
 
-.get-for p {
+.get-for p,
+.order p {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.get-for .modal-form-wrap {
+.get-for .modal-form-wrap,
+.order .modal-form-wrap {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -3058,7 +3116,8 @@ ________________________portfolio-section_____________________ */
   align-items: flex-end;
 }
 
-.get-for .get-for-form {
+.get-for .get-for-form,
+.order .get-for-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -3066,7 +3125,8 @@ ________________________portfolio-section_____________________ */
   margin-left: 10px;
 }
 
-.get-for .get-for-form input {
+.get-for .get-for-form input,
+.order .get-for-form input {
   height: 49px;
   background: #FFFFFF;
   border: 1px solid #EB5B31;
@@ -3076,27 +3136,33 @@ ________________________portfolio-section_____________________ */
   color: #EB5B31;
 }
 
-.get-for .get-for-form input::-webkit-input-placeholder {
+.get-for .get-for-form input::-webkit-input-placeholder,
+.order .get-for-form input::-webkit-input-placeholder {
   color: #EB5B31;
 }
 
-.get-for .get-for-form input::-moz-placeholder {
+.get-for .get-for-form input::-moz-placeholder,
+.order .get-for-form input::-moz-placeholder {
   color: #EB5B31;
 }
 
-.get-for .get-for-form input:-ms-input-placeholder {
+.get-for .get-for-form input:-ms-input-placeholder,
+.order .get-for-form input:-ms-input-placeholder {
   color: #EB5B31;
 }
 
-.get-for .get-for-form input::-ms-input-placeholder {
+.get-for .get-for-form input::-ms-input-placeholder,
+.order .get-for-form input::-ms-input-placeholder {
   color: #EB5B31;
 }
 
-.get-for .get-for-form input::placeholder {
+.get-for .get-for-form input::placeholder,
+.order .get-for-form input::placeholder {
   color: #EB5B31;
 }
 
-.get-for .get-for-form .btn-form {
+.get-for .get-for-form .btn-form,
+.order .get-for-form .btn-form {
   max-height: 50px;
   padding: 15px 42px 15px 47px;
   background: #EB5B31;
@@ -3110,24 +3176,28 @@ ________________________portfolio-section_____________________ */
   margin-top: 20px;
 }
 
-.get-for .get-for-form .btn-form i {
+.get-for .get-for-form .btn-form i,
+.order .get-for-form .btn-form i {
   margin-left: 15px;
 }
 
-.get-for .check-wrap {
+.get-for .check-wrap,
+.order .check-wrap {
   display: -ms-flexbox;
   display: flex;
   padding: 13px 0 0 0;
 }
 
-.get-for .check-wrap .check {
+.get-for .check-wrap .check,
+.order .check-wrap .check {
   height: 16px;
   width: 16px;
   margin: 0 5px 0 0;
   color: #EB5B31;
 }
 
-.get-for .check-wrap p {
+.get-for .check-wrap p,
+.order .check-wrap p {
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
@@ -3143,15 +3213,127 @@ ________________________portfolio-section_____________________ */
 
 .order {
   display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 6000;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
-  padding: 30px 65px 50px;
-  margin: 0 auto;
+}
+
+.order-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.order-wrap h2 {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 32px;
+}
+
+.order-wrap .order-form-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.order-wrap input,
+.order-wrap .Message {
+  border: 1px solid #EB5B31;
+  box-sizing: border-box;
+  border-radius: 3px;
+  height: 59px;
+  margin-bottom: 22px;
+  padding: 16px 22px;
+  outline: none;
+  color: #EB5B31;
+}
+
+.order-wrap input::-webkit-input-placeholder,
+.order-wrap .Message::-webkit-input-placeholder {
+  color: #dbdbdb;
+}
+
+.order-wrap input::-moz-placeholder,
+.order-wrap .Message::-moz-placeholder {
+  color: #dbdbdb;
+}
+
+.order-wrap input:-ms-input-placeholder,
+.order-wrap .Message:-ms-input-placeholder {
+  color: #dbdbdb;
+}
+
+.order-wrap input::-ms-input-placeholder,
+.order-wrap .Message::-ms-input-placeholder {
+  color: #dbdbdb;
+}
+
+.order-wrap input::placeholder,
+.order-wrap .Message::placeholder {
+  color: #dbdbdb;
+}
+
+.order-wrap input:focus,
+.order-wrap .Message:focus {
+  border: 1px solid #EB5B31;
+  outline: none;
+}
+
+.order-wrap .order-name-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.order-wrap .order-name-wrap input {
+  width: 280px;
+  margin-right: 25px;
+}
+
+.order-wrap .order-name-wrap input:last-child {
+  margin-right: 0;
+}
+
+.order-wrap .Message {
+  height: 110px;
+}
+
+.order-wrap .order-text-wrap {
+  max-width: 500px;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #EB5B31;
+}
+
+.order-wrap .order-text-wrap p {
+  font-size: 12px;
+  margin-bottom: 44px;
+}
+
+.order-wrap .order-text-wrap p span {
+  text-decoration: underline;
+}
+
+.order-wrap .btn-form {
+  max-height: 50px;
+  width: 160px;
+  padding: 15px 42px 15px 47px;
+  background: #EB5B31;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.order-visible {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

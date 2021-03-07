@@ -5,6 +5,72 @@
     width: 100%;
 }
 
+.header-content {
+    position: relative;
+}
+
+.burger{
+    position: absolute;
+    display: none;
+    overflow: hidden;
+    cursor: pointer;
+    right: 30px;
+    top: 0;
+    width: 30px;
+    height: 35px;
+    z-index: 50;
+
+    @include media("<phone") {
+        display: block;
+    }
+
+    span{
+        display: block;
+        position: relative;
+        height: 3px;
+        margin: 4px auto;
+        background-color: $orange;
+        border-radius: 5px;
+    }
+  
+    .sp1{
+        transition: all .3s .5s;
+    }
+    
+    .sp2{
+        transition: all .3s .3s;
+    }
+    
+    .sp3{
+        transition: all .3s .1s;
+        width: 50%;
+    }
+
+}
+ 
+.burger-active {
+
+    .sp1{
+        width: 30px;
+        height: 30px;
+        margin: 5px auto;
+        transition: all .3s .1s;
+    }
+
+    .sp2{
+        background-color: $white;
+        transform: translateY(-21px) rotateZ(45deg);
+        transition: all .3s .3s;
+    }
+
+    .sp3{
+        background-color: $white;
+        transform: translateY(-28px) rotateZ(-45deg);
+        transition: all .3s .5s;
+        width: 100%;
+    }
+}
+
 .header-menu {
     display: flex;
     justify-content: space-between;
