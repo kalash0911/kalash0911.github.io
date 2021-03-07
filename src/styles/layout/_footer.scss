@@ -1,5 +1,9 @@
 #footer {
     background: $orange;
+
+    @include media("<phone") {
+        display: none;     
+    }
 }
 
 .footer-content {
@@ -126,9 +130,18 @@
     background-color: black;
     padding: 18px 0 19px 0;
 
+    @include media("<phone") {
+        padding: 57px 0 19px 0;
+    }
+
     .second-footer-content {
         display: flex;
         justify-content: space-between;
+
+        @include media("<phone") {
+            flex-direction: column;
+            align-items: center;
+        }
         
         a {
             color: #FFFFFF;
@@ -138,9 +151,23 @@
 
     .policy {
         margin-top: 3px;
+
+        @include media("<phone") {
+            order: 2;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            margin: 0 0 40px 0;
+            width: 100%;
+        }
         
         a {
             margin-right: 50px;
+            
+            @include media("<phone") {
+                font-size: 18px;
+                margin: 0;
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -150,10 +177,21 @@
 
     .icon-footer {
         display: flex;
+
+        @include media("<phone") {
+            order: 1;
+            margin-bottom: 46px;
+            justify-content: space-around;
+            width: 100%;
+        }
         
         a {
             font-size: 22px;
             margin-right: 20px;
+
+            @include media("<phone") {
+                font-size: 34px;
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -192,6 +230,15 @@
             &:hover {
                 color:#F58529;
             }
+        }
+    }
+
+    .reserved {
+
+        @include media("<phone") {
+            order: 3;
+            font-size: 14px;
+            text-align: center;
         }
     }
 }
