@@ -26,6 +26,7 @@ $(document).ready(function () {
   $('.burger').click(function (event) {
     event.preventDefault();
     $('.burger').toggleClass('burger-active');
+    $('.header').toggleClass('header-active');
   });
 });
 //# sourceMappingURL=main.js.map
