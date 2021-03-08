@@ -12,21 +12,42 @@
     .main-footer {
         display: flex;
         justify-content: space-between;
+        
+        @include media("<1200px") {
+            flex-wrap: wrap;
+            justify-content: center;            
+        }
     }
 }
 
 .footer-logo-wrap {
     color: #fff;
 
+    @include media("<1200px") {
+        width: 100%;
+        display: flex;  
+        justify-content: space-around;
+        align-items: center;
+    }
+
     .footer-logo {
         display: block;
         margin: 5px 0 97px 0;
-    }
 
+        @include media("<1200px") {
+            margin: 0 50px 0 0;
+        }
+    }
+    
+    
     h6 {
         line-height: 17px;
         font-weight: normal;
         margin: 0;
+
+        @include media("<1200px") {
+            text-align: center;
+        }
     }
     
     img {
@@ -38,8 +59,22 @@
     }
 }
 
+.title-footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    min-width: 690px;
+    margin: 0 15px;
+
+    @include media("<1200px") {
+        margin: 50px 0;   
+        min-width: 100%;   
+        justify-content: space-around;     
+    }
+}
+
 .title-footer {
     max-width: 127px;
+    padding: 0 15px;
 
     h5 {
         margin: 0 0 49px 0;
@@ -121,6 +156,11 @@
         line-height: 15px;
         display: block;
         float: right;
+
+        @include media("<1200px") {
+            float: none;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -152,6 +192,10 @@
     .policy {
         margin-top: 3px;
 
+        @include media("<855px") {
+            max-width: 160px;
+        }
+
         @include media("<phone") {
             order: 2;
             display: flex;
@@ -177,6 +221,8 @@
 
     .icon-footer {
         display: flex;
+        align-items: center;
+        margin: 0 20px;
 
         @include media("<phone") {
             order: 1;
@@ -234,6 +280,7 @@
     }
 
     .reserved {
+        align-self: center;
 
         @include media("<phone") {
             order: 3;

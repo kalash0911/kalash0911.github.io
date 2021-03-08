@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krock_DS</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
-    <div id="wrapper" class="main-page">
+    <div id="wrapper" class="main-page main-mob-logo">
+        <div class="mob-logo">
+            <a href="index.html"><img src="./images/mob/mob-logo.svg" alt="logo"></a> 
+        </div>
         <div class="burger">
             <span class="sp1"></span>
             <span class="sp2"></span>
@@ -189,8 +194,8 @@
             <section class="problems-section">
                 <div class="container">
                     <div class="problems-content">
-                        <div class="problem"> <img src="./images/icon/PROBLEMS.svg" alt="problems"></div>
-                        <div class="item-wrapper">
+                        <div class="item-wrapper-problem">
+                            <div class="problem"> <img src="./images/icon/PROBLEMS.svg" alt="problems"></div>
                             <div class="problems-wrapper">
                                 <div>
                                     <i class="icon-men"></i>
@@ -205,10 +210,12 @@
                                     <p> <b>Hidden details or no obvious point of contact</b> <br> Lack of on-page information and calls to action leads to downgrading.</p>
                                 </div>
                             </div>
-                            <div class="line-wrapper">
-                                <span class="line"></span>
-                                <div class="solution"><img src="./images/icon/SOLUTIONS.svg" alt="solutions"></div>
-                            </div>
+                        </div>
+                        <div class="line-wrapper">
+                            <span class="line"></span>
+                        </div>
+                        <div class="item-wrapper-solution">
+                            <div class="solution"><img src="./images/icon/SOLUTIONS.svg" alt="solutions"></div>
                             <div class="solutions-wrapper">
                                 <div>
                                     <i class="icon-men"></i>
@@ -223,11 +230,11 @@
                                 <div>
                                     <i class="icon-men"></i>
                                     <p> <b>Develop customer journey and brand identity</b> <br>
-                                        Our solutions not only resolve business needs, they reflect the corporate spirit as well. Be memorable – it is hard to highlight among competitors, but uniqueness leads to success.</p>
+                                    Our solutions not only resolve business needs, they reflect the corporate spirit as well. Be memorable – it is hard to highlight among competitors, but uniqueness leads to success.</p>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn-orange-bg">Order solution</a>
+                        <a href="#" class="btn-orange-bg">Request FREE audit</a>
                     </div>
                 </div>
             </section>
@@ -289,6 +296,48 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="mob-swiper swiper-container">
+                            <div class="mob-swiper-wrap swiper-wrapper">
+                                <div class="mob-swiper-slide slide1 swiper-slide">
+                                    <div class="text-slide">
+                                        <h2>PC Profi</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+                                        <a class="btn-projects" href="#">Watch project</a>
+                                    </div>
+                                </div>
+                                <div class="mob-swiper-slide slide2 swiper-slide">
+                                    <div class="text-slide">
+                                        <h2>PC Profi</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+                                        <a class="btn-projects" href="#">Watch project</a>
+                                    </div>
+                                </div>
+                                <div class="mob-swiper-slide slide3 swiper-slide">
+                                    <div class="text-slide">
+                                        <h2>PC Profi</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+                                        <a class="btn-projects" href="#">Watch project</a>
+                                    </div>
+                                </div>
+                                <div class="mob-swiper-slide slide4 swiper-slide">
+                                    <div class="text-slide">
+                                        <h2>PC Profi</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+                                        <a class="btn-projects" href="#">Watch project</a>
+                                    </div>
+                                </div>
+                                <div class="mob-swiper-slide slide5 swiper-slide">
+                                    <div class="text-slide">
+                                        <h2>PC Profi</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+                                        <a class="btn-projects" href="#">Watch project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
                         <a class="btn-orange-sm" href="#">View more</a> 
                     </div>
                 </div>
@@ -326,11 +375,11 @@
                         <div class="content-wrap">
                             <div class="todiscuss-text-wrap">
                                 <p>
-                                    We know how to build corporate websites which solve business needs! <br>
+                                    We know how to build corporate websites which solve business needs!
                                     Contact us to get free consulting today and get estimated price of your project.
                                     <br>
                                     <br>
-                                    If you still have doubts, you can download our book for free, <br>
+                                    If you still have doubts, you can download our book for free,
                                     where we’ll prove our consistency and proficiency. 
                                 </p>
                             </div>
@@ -389,36 +438,38 @@
                                 <img src="./images/Awards/1sm.png" alt="award">
                             </div>
                         </div>
-                        <div class="about title-footer">
-                            <h5><a href="about-us.html">About us</a></h5>
-                            <ul>
-                                <li><a href="#">Awards</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">Community Support</a></li>
-                            </ul>
-                        </div>
-                        <div class="services title-footer">
-                            <h5><a href="services.html">Services</a></h5>
-                            <ul>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">UI/UX and Web Design</a></li>
-                                <li><a href="#">Brand Identity Design</a></li>
-                                <li><a href="#">Virtual Data Room</a></li>
-                            </ul>
-                        </div>
-                        <div class="contact title-footer">
-                            <h5><a href="contact.html">Contact</a></h5>
-                            <ul>                                  
-                                <li><a href="#">Office</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">Contact form</a></li>
-                                <li><a href="#">Contact options</a></li>
-                            </ul>
-                        </div>
-                        <div class="portfolio-wrap title-footer">
-                            <h5><a href="portfolio.html">Portfolio</a></h5>
-                            <h5><a href="blog.html">Blog</a></h5>
+                        <div class="title-footer-wrap">
+                            <div class="about title-footer">
+                                <h5><a href="about-us.html">About us</a></h5>
+                                <ul>
+                                    <li><a href="#">Awards</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Meet the team</a></li>
+                                    <li><a href="#">Community Support</a></li>
+                                </ul>
+                            </div>
+                            <div class="services title-footer">
+                                <h5><a href="services.html">Services</a></h5>
+                                <ul>
+                                    <li><a href="#">Web Development</a></li>
+                                    <li><a href="#">UI/UX and Web Design</a></li>
+                                    <li><a href="#">Brand Identity Design</a></li>
+                                    <li><a href="#">Virtual Data Room</a></li>
+                                </ul>
+                            </div>
+                            <div class="contact title-footer">
+                                <h5><a href="contact.html">Contact</a></h5>
+                                <ul>                                  
+                                    <li><a href="#">Office</a></li>
+                                    <li><a href="#">Location</a></li>
+                                    <li><a href="#">Contact form</a></li>
+                                    <li><a href="#">Contact options</a></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-wrap title-footer">
+                                <h5><a href="portfolio.html">Portfolio</a></h5>
+                                <h5><a href="blog.html">Blog</a></h5>
+                            </div>
                         </div>
                         <div class="contact">
                             <h5>Contact us</h5>

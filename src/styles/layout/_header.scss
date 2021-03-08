@@ -4,7 +4,7 @@
     padding-top: 32px;
     width: 100%;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         background: url(../images/mob/menu.png) no-repeat, rgba(237, 237, 237, 1);
         background-position: 50% 0;
         background-size: 100% auto;
@@ -31,7 +31,7 @@
     height: 35px;
     z-index: 50;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         display: block;
     }
 
@@ -89,7 +89,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         flex-direction: column;
         margin: 102px 0 54px 0;
     }
@@ -97,7 +97,7 @@
     .header-logo {
         width: 141px;
 
-        @include media("<phone") {
+        @include media("<tablet") {
             display: none;
         }
     }
@@ -107,22 +107,26 @@
     display: flex;
     justify-content: flex-end;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         width: 300px;
         flex-wrap: wrap;
         padding: 0;
         justify-content: center;
         margin: 0;
-
     }
 
     & :nth-child(6) {
         a {
             margin-right: 68px;
 
-            @include media("<phone") {
+            @include media("<desktop") {
+                margin-right: 35px;
+            }
+
+            @include media("<tablet") {
                 margin: 0;
             }
+
         }
     }
 
@@ -136,7 +140,7 @@
 .menu-li {
     list-style-type: none;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         width: 50%;
         text-align: center;
 
@@ -161,7 +165,7 @@
         margin-right: 38px;
         color: black;
 
-        @include media("<phone") {
+        @include media("<tablet") {
             display: block;
             margin: 0;
             font-weight: 800;
@@ -177,14 +181,21 @@
                 background-color:$orange;
                 border: 1px solid $orange;
             }
-    
+        }
+        
+        @include media("<desktop") {
+            margin-right: 20px;
+        }
+
+        @include media("<tablet") {
+            margin-right: 0;
         }
 
         &:hover {
             color: $orange;
             transition: ease 0s;
 
-            @include media("<phone") {
+            @include media("<tablet") {
                 color: $white;
             }
         }
@@ -193,7 +204,7 @@
 
 .down {
 
-    @include media("<phone") {
+    @include media("<tablet") {
         display: none;
     }
 
@@ -240,10 +251,19 @@
     }
 }
 
+.mob-logo {
+    display: none;
+
+    @include media("<tablet") {
+        display: block;
+        margin: 20px 0 0 26px;
+    }
+}
+
 .mob-header-logo {
     display: none;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         display: block;
         margin-bottom: 40px;
     }
@@ -255,7 +275,7 @@
     color: $orange;
     width: 300px;
 
-    @include media("<phone") {
+    @include media("<tablet") {
         display: block;
     }
 

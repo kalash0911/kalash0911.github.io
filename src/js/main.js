@@ -27,3 +27,18 @@ $(document).ready(function() {
         $('.header').toggleClass('header-active');
     });
 });
+
+new Swiper('.mob-swiper', {
+
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    effect: 'coverflow',
+    speed: 1000,
+});
