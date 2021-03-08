@@ -504,7 +504,6 @@ body {
 
         @include media("<phone") {
             flex-direction: column; 
-            justify-content: space-between;
             height: 100%;
             margin: 0; 
         }
@@ -514,6 +513,7 @@ body {
 
             @include media("<phone") {
                 max-width: none; 
+                min-height: 240px;
             }
 
             i {
@@ -577,7 +577,6 @@ body {
 
         @include media("<phone") {
             flex-direction: column; 
-            justify-content: space-between;
             height: 100%;
             margin: 0; 
         }
@@ -587,6 +586,7 @@ body {
 
             @include media("<phone") {
                 max-width: none; 
+                min-height: 240px;
             }
             
             i {

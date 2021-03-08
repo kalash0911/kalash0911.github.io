@@ -1661,8 +1661,6 @@ body .main-mob-logo .mob-logo {
   .problems-section .problems-wrapper {
     -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     height: 100%;
     margin: 0;
   }
@@ -1675,6 +1673,7 @@ body .main-mob-logo .mob-logo {
 @media (max-width: 479px) {
   .problems-section .problems-wrapper div {
     max-width: none;
+    min-height: 240px;
   }
 }
 
@@ -1753,8 +1752,6 @@ body .main-mob-logo .mob-logo {
   .problems-section .solutions-wrapper {
     -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     height: 100%;
     margin: 0;
   }
@@ -1767,6 +1764,7 @@ body .main-mob-logo .mob-logo {
 @media (max-width: 479px) {
   .problems-section .solutions-wrapper div {
     max-width: none;
+    min-height: 240px;
   }
 }
 
