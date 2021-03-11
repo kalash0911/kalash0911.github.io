@@ -770,6 +770,7 @@ input[type='submit'] {
   z-index: 50;
   padding-top: 32px;
   width: 100%;
+  transition: all 0.5s ease 0s;
 }
 
 @media (max-width: 767px) {
@@ -783,6 +784,22 @@ input[type='submit'] {
     top: -1000px;
     transition: all 1s ease 0s;
   }
+}
+
+.header-fixed {
+  background: #F8F9FA;
+  opacity: 1;
+  transition: all 0.5s ease 0s;
+}
+
+.header-fixed .down:hover {
+  color: #EB5B31;
+}
+
+.header-fixed .down:hover .submenu {
+  background: #F8F9FA;
+  border-radius: 5px;
+  width: 40px;
 }
 
 .header-active {

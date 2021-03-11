@@ -28,6 +28,16 @@ $(document).ready(function() {
     });
 });
 
+window.onscroll = function () {
+    var header = document.querySelector('.header');
+
+    if(window.pageYOffset > 50) {
+        header.classList.add('header-fixed');
+    } else {
+        header.classList.remove('header-fixed');
+    }
+}
+
 new Swiper('.mob-swiper', {
 
     pagination: {
