@@ -42,6 +42,11 @@ body {
 
     .pages {
         background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
+        
+        @include media("<tablet") {
+            background: url(../images/about-us/bg-logo.png) no-repeat 0 31px/100%;
+            padding: 80px 0 0 0;
+        }
     }
 
     .main-page {
@@ -68,6 +73,13 @@ body {
     max-width: 1330px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+h1 {
+
+    @include media("<phone") {
+        font-size: 24px;
+    }
 }
 
 /* _________________main-section________________ */
@@ -1182,9 +1194,14 @@ body {
     .about-us-content {
         text-align: center;
 
-        h2 {
+        h1 {
             margin: 106px 0 43px 0;
             color: $orange;
+
+            @include media("<tablet") {
+                font-size: 24px;
+                margin: 0 0 24px 0;
+            }
         }
     }
 
@@ -1194,9 +1211,14 @@ body {
         padding: 16px 0 19px 0;
         color: #fff;
         margin-bottom: 56px;
-
+        
         h3 {
             margin: 0;
+            padding: 0 10px;
+
+            @include media("<phone") {
+                font-size: 12px;
+            }
         }
     }
 
@@ -1207,10 +1229,18 @@ body {
         line-height: 150%;
         text-align: justify;
         flex-wrap: wrap;
+
+        @include media("<phone") {
+            font-size: 18px;
+        }
         
         p {
             max-width: 500px;
             margin: 0 15px 93px 15px;
+
+            @include media("<phone") {
+                margin: 0;
+            }
         }
 
         h3 {
@@ -1224,6 +1254,14 @@ body {
         }
     }
 
+    .btn-orange-sm {
+
+        @include media("<phone") {
+            margin-top: 35px;
+            width: 80%;
+        }
+    }
+
     .our-wrap {
         position: relative;
         margin-top: 115px;
@@ -1234,6 +1272,10 @@ body {
 
         p {
             margin: 0 15px;
+
+            @include media("<phone") {
+                margin: 0;
+            }
         }
 
         .vertical-line {
@@ -1256,6 +1298,11 @@ body {
     h2 {
         color: $orange;
         margin-bottom: 128px;
+
+        @include media("<phone") {
+            font-size: 24px;
+            margin-bottom: 56px;
+        }
     }
 
     .top-wrap {
@@ -1315,6 +1362,14 @@ body {
         color: $orange;
         text-align: center;
         margin-bottom: 115px;
+        
+        @include media("<tablet") {
+            margin-bottom: 0;
+        }
+
+        @include media("<phone") {
+            margin-bottom: 37px;
+        }
     }
 
     .services-wrap {
@@ -1325,6 +1380,10 @@ body {
 
     .img-wrap {
         padding-top: 93px;
+
+        @include media("<phone") {
+            padding-top: 0;
+        }
     }
 
     .text-wrap {
@@ -1334,39 +1393,56 @@ body {
 
     h2 {
         margin-bottom: 159px;
+
+        @include media("<1242px") {
+            font-weight: bold;
+            text-align: center;
+            margin: 50px 0;
+        }
     }
 
-    .title-wrap {
+    .wrap-item {
         display: flex;
-        justify-content: center;
-        position: relative;
+        flex-wrap: wrap;
+        max-height: 320px;
+        max-width: 600px;
+        margin: 0 auto;
 
-        .vertical-line {
-            position: absolute;
-            background: #C4C4C4;
-            width: 1px;
-            height: 100%;
-            left: 50%;
-        }
+        .item {
+            width: 50%;
+            border: #C4C4C4;
+            border-style:solid;
+            border-width: 0 1px 1px 0;
 
-        .horizon-line {
-            position: absolute;
-            background: #C4C4C4;
-            width: 100%;
-            height: 1px;
-            top: 50%;
-        }
+            &:nth-child(even) {
+                border-width: 0 0 1px 0;
+            }
 
-        p {
-            text-align: center;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 140.4%;
-            font-size: 36px;
-            min-width: 300px;
-            min-height: 160px;
-            margin: 0;
-            padding: 50px 0 60px 0;
+            &:nth-child(3n) {
+                border-width: 0 1px 0 0;
+            }
+
+            &:nth-child(4n) {
+                border-width: 0 0 0 0;
+            }
+
+            p {
+                text-align: center;
+                font-weight: 600;
+                font-size: 36px;
+                padding: 50px 0 60px 0;
+                margin: 0;
+
+                @include media("<tablet") {
+                    font-size: 28px;
+                    padding: 50px 0;
+                }
+
+                @include media("<phone") {
+                    font-size: 17px;
+                    padding: 35px 0;
+                }
+            }
         }
     }
 }
@@ -1394,10 +1470,21 @@ body {
         justify-content: space-around;
         flex-wrap: wrap;
         margin-top: 60px;
+
+        @include media("<tablet") {
+            flex-direction: column;
+            margin-top: 0;
+        }
     }
 
     .buy-item {
         min-width: 359px;
+
+        @include media("<tablet") {
+            margin-top: 55px;
+            min-width: 0;
+            width: 100%;
+        }
 
         i {
             font-size: 32px;
@@ -1424,6 +1511,11 @@ body {
 .vacancies-section {
     margin-bottom: 128px;
 
+    @include media("<desktop") {
+        background-color: #F8F9FA;
+        margin-bottom: 60px;
+    }
+
     .vacancies-content {
         display: flex;
         flex-direction: column;
@@ -1432,18 +1524,37 @@ body {
     .vacancies-wrap {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+
+        @include media("<desktop") {
+            flex-direction: column;
+        }
 
         &:nth-child(even) {
             flex-direction: row-reverse;
 
+            @include media("<desktop") {
+                flex-direction: column;
+            }
+
             .text-wrap {
                 background: $white;
+
+                @include media("<desktop") {
+                    background-color: #F8F9FA;
+                }
             }
         }
     }
 
     .img-wrap {
         width: 50%;
+
+        @include media("<desktop") {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .text-wrap {
@@ -1454,19 +1565,36 @@ body {
         flex-direction: column;
         justify-content: space-between;
         text-align: justify;
+
+        @include media("<desktop") {
+            width: 100%;
+            padding: 35px 0;
+            text-align: center;
+            align-items: center;
+        }
         
 
         h2 {
             font-size: 30px;
             margin-bottom: 0;
         }
-
+        
+        p {
+            
+            @include media("<desktop") {
+                margin: 20px 0 0 0;
+            }
+        }
     }
 
     .hashtag-wrap {
         font-size: 20px;
         display: flex;
         flex-wrap: wrap;
+
+        @include media("<desktop") {
+            justify-content: center;
+        }
         
         a {
             color: $orange;
@@ -1478,6 +1606,11 @@ body {
 
     .btn-orange-sm {
         align-self: flex-start;
+
+        @include media("<desktop") {
+            align-self: center;
+            margin-top: 30px;
+        }
     }
 }
 /* 
@@ -1485,6 +1618,10 @@ ________________________portfolio-section_____________________ */
 
 .portfolio-section {
     padding: 274px 0 101px 0;
+
+    @include media("<tablet") {
+        padding-bottom: 37px;
+    }
 
     .portfolio-content {
         display: flex;
@@ -1495,33 +1632,79 @@ ________________________portfolio-section_____________________ */
         text-align: center;
         color: $orange;
         margin-bottom: 174px;
+
+        @include media("<tablet") {
+            margin-bottom: 37px;
+        }
     }
 
     .cards-wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @include media("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
     }  
 
     .card {
+        display: flex;
+        flex-direction: column;
+
+        @include media("<tablet") {
+            position: relative;
+            
+            &::after {
+                content:'';
+                position: absolute;
+                display: block;
+                height: 1px;
+                width: 30%;
+                background-color: #C4C4C4;
+                top: 96%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }     
 
         p {
             margin: 8px 0 4px 0;
             color: #8C8C8C;
+
+            @include media("<tablet") {
+                order: 3;
+                text-align: center;
+                margin: 0 0 210px 0;
+            }
         }
 
         h3 {
             margin-bottom: 47px;
+
+            @include media("<tablet") {
+                order: 2;
+                margin: 30px 0 15px 0;
+                text-align: center;
+            }
         }
     }
     
     .card-content {
         position: relative;
-    
-        &:hover {
 
-            .hover-wrap {
-                opacity: 1;
+        @include media("<tablet") {
+            order: 1;
+        }
+
+        @include media(">tablet") {
+
+            &:hover {
+    
+                .hover-wrap {
+                    opacity: 1;
+                }
             }
         }
 
@@ -1539,15 +1722,43 @@ ________________________portfolio-section_____________________ */
             background:$orange;
             opacity: 0;
             transition: all 0.3s ease-in-out;
-    
+
+            @include media("<tablet") {
+                opacity: 1;
+                height: 0;
+                background: none;
+                top: 125%;
+                padding: 0;
+            }
+            
+            h3 {
+
+                @include media("<tablet") {
+                    display: none;
+                    order: 3;
+                }
+                
+            }
+
             p {
                 font-size: 18px;
                 color: $white;
+
+                @include media("<tablet") {
+                    order: 1;
+                    margin-bottom: 20px;
+                    color: black;
+                }
             }
     
             .btn-orange-sm {
                 border-color: $white;
                 align-self: center;
+
+                @include media("<tablet") {
+                    order: 2;
+                    border: none;
+                }
             }
         }
     }
@@ -1556,12 +1767,27 @@ ________________________portfolio-section_____________________ */
         margin-top: 21px;
         align-self: center;
     }
+    
+    .portfolio-btn {
+        
+        @include media("<tablet") {
+           background: $white;
+           color:rgba(140, 140, 140, 1);
+           border: 1px solid rgba(140, 140, 140, 1);
+           margin-bottom: 50px;
+
+        }
+    }
 }
 
 /* ________________________project-section____________________ */
 
 .project-section {
     padding: 149px 0 50px 0;
+
+    @include media("<tablet") {
+        padding: 50px 0 50px 0;
+    }
 
     .orenge-line {
         display: flex;
@@ -1578,6 +1804,10 @@ ________________________portfolio-section_____________________ */
         i {
             font-size: 33px;
             color: $white;
+
+            @include media("<tablet") {
+                display: none;
+            }
         }
 
         h1 {
@@ -1588,10 +1818,27 @@ ________________________portfolio-section_____________________ */
     .text-wrap {
         display: flex;
         text-align: justify;
+
+        @include media("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
         
         .text {
             margin-right: 60px;
             max-width: 814px;
+
+            @include media("<desktop") {
+                margin-right: 0;
+            }
+
+            @include media("<tablet") {
+                text-align: center;
+
+                p {
+                    text-align: justify;
+                }
+            }
         }
     }
     
@@ -1610,6 +1857,11 @@ ________________________portfolio-section_____________________ */
     .have {
         display: flex;
 
+        @include media("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+
         h3 {
             margin-bottom: 25px;
         }
@@ -1619,14 +1871,29 @@ ________________________portfolio-section_____________________ */
             font-size: 68px;
             color: $orange;
 
+            @include media("<tablet") {
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+            }
+
             i {
                 margin-right: 30px;
 
+                @include media("<tablet") {
+                    margin-right: 0;
+                    margin: 20px 10px 0;
+                }
             }
         }
     }
 
     .result {
+
+        @include media("<desktop") {
+            margin-top: 30px;
+        }
+
         p {
             margin: 0;
         }
@@ -1637,24 +1904,54 @@ ________________________portfolio-section_____________________ */
         flex-direction: column;
         justify-content: space-between;
 
+        @include media("<desktop") {
+            max-width: 814px;
+            margin: 50px 0;
+        }
+
         h3 {
             margin-bottom: 25px;
+
+            @include media("<desktop") {
+                text-align: center;
+            }
         }
     }
 
     .profil-wrap {
         display: flex;
+        
+        @include media("<tablet") {
+            justify-content: center;
+        }
     }
 
     .foto {
         width: 100%;
+
+        @include media("<tablet") {
+            width: 40%;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     .profil-text {
         margin-left: 9px;
 
+        @include media("<tablet") {
+            width: 60%;
+        }
+
         h3 {
             margin-bottom: 0;
+
+            @include media("<desktop") {
+                text-align: start;
+            }
         }
 
         .pc {
@@ -1666,6 +1963,10 @@ ________________________portfolio-section_____________________ */
 
     .btn-orange-sm {
         margin: auto 0 0 0;
+
+        @include media("<desktop") {
+            margin-top: 50px;
+        }
     }
 }
 
@@ -1675,6 +1976,10 @@ ________________________portfolio-section_____________________ */
     margin-top: 50px;
     background: url(../images/orenge-bg.png) 0 0/50% 100% no-repeat,
                 url(/dist/images/project/see-bg.jpg) 100% 0/50% 100% no-repeat;
+
+                @include media("<desktop") {
+                    display: none;
+                }
 
     .see-content {
         display: flex;
@@ -1735,6 +2040,10 @@ ________________________portfolio-section_____________________ */
 .blog-section {
     padding: 275px 0 100px 0;
 
+    @include media("<phone") {
+        padding:  275px 0 0 0;
+    }
+
     .blog-content {
         display: flex;
         flex-direction: column;
@@ -1743,6 +2052,10 @@ ________________________portfolio-section_____________________ */
         h1 {
             color: $orange;
             margin-bottom: 145px;
+
+            @include media("<tablet") {
+                margin-bottom: 37px;
+            }
         }
     }
 
@@ -1751,6 +2064,10 @@ ________________________portfolio-section_____________________ */
         justify-content: center;
         flex-wrap: wrap;
         margin-bottom: 68px;
+
+        @include media("<phone") {
+            margin-bottom: 0;
+        }
     }
 
     .blog-item {
@@ -1791,12 +2108,22 @@ ________________________portfolio-section_____________________ */
     .btn-orange-sm {
         align-self: center;
     }
+    
+    .blog-btn {
+        @include media("<phone") {
+            display: none;
+        }
+    }
 }
 
 /* _______________________blog-read-section______________________ */
 
 .blog-read-section {
     padding: 150px 0 40px 0;
+
+    @include media("<tablet") {
+        padding: 50px 0 40px 0;
+    }
 
     .blog-read-content {
         display: flex;
@@ -1811,6 +2138,10 @@ ________________________portfolio-section_____________________ */
 
         p {
             margin: 15px 0 0 0;
+
+            @include media("<tablet") {
+                display: none;
+            }
         }
     }
 
@@ -1827,6 +2158,10 @@ ________________________portfolio-section_____________________ */
             font-size: 25px;
             color: black;
             padding-top: 15px;
+
+            @include media("<tablet") {
+                display: none;
+            }
         }
     }
 
@@ -1841,16 +2176,28 @@ ________________________portfolio-section_____________________ */
         justify-content: space-between;
         align-items: center;
 
+        @include media("<1100px") {
+            flex-direction: column;
+        }
+
         .blog-text {
             max-width: 675px;
             font-size: 24px;
             text-align: justify;
             margin-right: 30px;
+
+            @include media("<1100px") {
+                max-width: 100%;
+                margin-right: 0;
+            }  
         }
 
         .blog-img {
             max-width: 595px;
 
+            @include media("<1100px") {
+                margin-top: 30px;
+            }  
         }
     }
 
@@ -1860,37 +2207,65 @@ ________________________portfolio-section_____________________ */
         .blog-text {
             margin: 0 0 0 80px;
 
+            @include media("<1100px") {
+                margin: 0;
+            }  
+        
             h2 {
                 font-size: 32px;
                 margin-bottom: 15px;
+
+                @include media("<1100px") {
+                    text-align: center;
+                }  
+            }
+        }
+
+        .blog-img2 {
+
+            @include media("<1100px") {
+                display: none;
             }
         }
     }
 
     .item3 {
         margin-bottom: 30px;
-
+        
         .blog-text {
             max-width: 895px;
             display: flex;
             flex-direction: column;
             align-items:center;
             margin: 0;
+            
+            h3 {
+                margin-top: 36px;
+                max-width: 528px;
+                text-align: center;
+            }
+        }
+        
+        .paragraph1 {
+            margin: 0 0 30px 0;
+
+            @include media("<tablet") {
+                display: none;
+            }
         }
 
-        h3 {
-            margin-top: 36px;
-            max-width: 528px;
-            text-align: center;
-        }
-    }
+        .paragraph2 {
 
-    .paragraph1 {
-        margin: 0 0 30px 0;
+            @include media("<tablet") {
+                display: none;
+            }
+        }
+        
     }
 
     .paragraph2 {
         margin: 0;
+        
     }
 }
 
@@ -1903,14 +2278,27 @@ ________________________portfolio-section_____________________ */
     h1 {
         color: $orange;
         margin-bottom: 135px;
+
+        @include media("<phone") {
+            margin-bottom: 37px;
+        }
     }
 
     h3 {
         margin-bottom: 105px;
+
+        @include media("<phone") {
+            margin-bottom: 37px;
+        }
     }
 
     .contact-wrap {
         display: flex;
+
+        @include media("<1100px") {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     form {
@@ -1976,18 +2364,38 @@ ________________________portfolio-section_____________________ */
         display: flex;
         flex-direction: column;
         margin: 0 0 0 70px;
+
+        @include media("<1100px") {
+            margin: 50px 0 0 0;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     .adres-wrap {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 18px;
+
+        @include media("<1100px") {
+            justify-content: center;
+        }
+
+        @include media("<tablet") {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .adres-item {
         font-size: 18px;
         font-weight: 600;
         text-align: start;
+
+        @include media("<tablet") {
+            text-align: center;
+            margin: 30px 0 0 0;
+        }
 
         a {
             color: black;
@@ -2001,11 +2409,19 @@ ________________________portfolio-section_____________________ */
 
     .tel {
         margin-right:240px;
+
+        @include media("<tablet") {
+            margin-right: 0;
+        }
     }
 
     .geo-wrap {
         display: flex;
         max-width: 270px;
+
+        @include media("<tablet") {
+            max-width: 100%;
+        }
 
         p {
             margin: 0;
@@ -2022,14 +2438,27 @@ ________________________portfolio-section_____________________ */
 
     .emeil1-wrap {
         margin-right: 215px;
+
+        @include media("<tablet") {
+            margin-right: 0;
+        }
     }
 
     .map {
         align-self:flex-start;
 
+        @include media("<1100px") {
+            align-self: center;
+        }
+
         iframe {
             min-width: 665px;
             min-height: 391px;
+
+            @include media("<tablet") {
+                min-width: 0;
+                width: 100%;
+            }
         }
     }
 }
@@ -2056,6 +2485,11 @@ ________________________portfolio-section_____________________ */
         display: flex;
         flex-wrap: wrap;
         max-width: 646px;
+
+        @include media("<tablet") {
+        flex-direction: column;
+        align-items: center;
+        }
 
         input {
             width: 284px;
@@ -2101,6 +2535,10 @@ ________________________portfolio-section_____________________ */
     color: $orange;
     display: flex;
     align-items: center;
+
+    @include media("<phone") {
+        height: 100%;   
+    }
     
     .error-content {
         display: flex;
@@ -2108,17 +2546,32 @@ ________________________portfolio-section_____________________ */
         justify-content: space-around;
         padding: 200px 0 70px 0;
         height: 100vh;
+
+        @include media("<phone") {
+            padding: 0 0 50px 0;
+            height: 100%;
+        }
     }
 
     h1 {
         margin-bottom: 100px;
         font-weight: 800;
+
+        @include media("<phone") {
+            margin-bottom: 37px;
+            font-size: 96px;
+        }
     }
 
     h2 {
         line-height: 80px;
         font-weight: 800;
         margin-bottom: 30px;
+
+        @include media("<phone") {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
     }
 
     .btn-orange-sm {
@@ -2135,6 +2588,10 @@ ________________________portfolio-section_____________________ */
     color: $orange;
     display: flex;
     align-items: center;
+
+    @include media("<phone") {
+        height: 100%;
+    }
     
     .thank-content {
         display: flex;
@@ -2142,10 +2599,20 @@ ________________________portfolio-section_____________________ */
         justify-content: space-around;
         padding: 200px 0 70px 0;
         height: 100vh;
+
+        @include media("<phone") {
+            padding: 0 0 0 0;
+            height: 100%;
+            justify-content: start;
+        }
     }
 
     h2 {
         margin-bottom: 30px;
+
+        @include media("<phone") {
+            font-size: 22px;
+        }
     }
 
     .btn-orange-sm {
