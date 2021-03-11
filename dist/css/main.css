@@ -768,7 +768,7 @@ input[type='submit'] {
 .header {
   position: fixed;
   z-index: 50;
-  padding-top: 32px;
+  padding: 20px 0;
   width: 100%;
   transition: all 0.5s ease 0s;
 }
@@ -786,20 +786,22 @@ input[type='submit'] {
   }
 }
 
-.header-fixed {
-  background: #F8F9FA;
-  opacity: 1;
-  transition: all 0.5s ease 0s;
-}
+@media (min-width: 769px) {
+  .header-fixed {
+    background-color: #F8F9FA;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+  }
 
-.header-fixed .down:hover {
-  color: #EB5B31;
-}
+  .header-fixed .down:hover {
+    color: #EB5B31;
+  }
 
-.header-fixed .down:hover .submenu {
-  background: #F8F9FA;
-  border-radius: 5px;
-  width: 40px;
+  .header-fixed .down:hover .submenu {
+    background-color: #F8F9FA;
+    border-radius: 5px;
+    width: 40px;
+  }
 }
 
 .header-active {
