@@ -932,9 +932,10 @@ h1 {
         }
 
         img {
+            max-width: 190px;
 
             @include media("<phone") {
-                max-width: 100px;
+                max-width: 90px;
             }
         }
 
@@ -1230,6 +1231,10 @@ h1 {
         text-align: justify;
         flex-wrap: wrap;
 
+        @include media("<tablet") {
+            font-size: 20px;
+        }
+
         @include media("<phone") {
             font-size: 18px;
         }
@@ -1237,6 +1242,10 @@ h1 {
         p {
             max-width: 500px;
             margin: 0 15px 93px 15px;
+
+            @include media("<tablet") {
+                margin: 0 15px 60px 15px;
+            }
 
             @include media("<phone") {
                 margin: 0;
@@ -1337,6 +1346,7 @@ h1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     width: 100%;
 
     .container {
@@ -1347,9 +1357,21 @@ h1 {
         margin-bottom: 56px;
     }
     
-    .clutch-widget {
+    .clutch-widget-desk {
         max-width: 960px;
         margin: 0 auto 77px;
+
+        @include media("<phone") {
+            display: none;
+        }
+    }
+
+    .clutch-widget-mob {
+        display: none;
+
+        @include media("<phone") {
+            display: flex;
+        }
     }
 }
 
@@ -1565,14 +1587,15 @@ h1 {
         flex-direction: column;
         justify-content: space-between;
         text-align: justify;
+        height: 463px;
 
         @include media("<desktop") {
             width: 100%;
             padding: 35px 0;
             text-align: center;
             align-items: center;
+            height: 100%;
         }
-        
 
         h2 {
             font-size: 30px;
@@ -1580,10 +1603,7 @@ h1 {
         }
         
         p {
-            
-            @include media("<desktop") {
-                margin: 20px 0 0 0;
-            }
+            margin: 20px 0 20px 0;
         }
     }
 

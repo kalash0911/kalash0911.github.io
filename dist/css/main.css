@@ -766,7 +766,7 @@ input[type='submit'] {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   z-index: 50;
   padding-top: 32px;
   width: 100%;
@@ -2147,9 +2147,13 @@ body .main-mob-logo .mob-logo {
   }
 }
 
+.awards-section .a-card img {
+  max-width: 190px;
+}
+
 @media (max-width: 479px) {
   .awards-section .a-card img {
-    max-width: 100px;
+    max-width: 90px;
   }
 }
 
@@ -2510,6 +2514,13 @@ body .main-mob-logo .mob-logo {
   flex-wrap: wrap;
 }
 
+@media (max-width: 767px) {
+  .about-us-section .about-us-text,
+  .about-us-section .our-wrap {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 479px) {
   .about-us-section .about-us-text,
   .about-us-section .our-wrap {
@@ -2521,6 +2532,13 @@ body .main-mob-logo .mob-logo {
 .about-us-section .our-wrap p {
   max-width: 500px;
   margin: 0 15px 93px 15px;
+}
+
+@media (max-width: 767px) {
+  .about-us-section .about-us-text p,
+  .about-us-section .our-wrap p {
+    margin: 0 15px 60px 15px;
+  }
 }
 
 @media (max-width: 479px) {
@@ -2639,6 +2657,8 @@ body .main-mob-logo .mob-logo {
   justify-content: center;
   -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -2650,9 +2670,26 @@ body .main-mob-logo .mob-logo {
   margin-bottom: 56px;
 }
 
-.review-section .clutch-widget {
+.review-section .clutch-widget-desk {
   max-width: 960px;
   margin: 0 auto 77px;
+}
+
+@media (max-width: 479px) {
+  .review-section .clutch-widget-desk {
+    display: none;
+  }
+}
+
+.review-section .clutch-widget-mob {
+  display: none;
+}
+
+@media (max-width: 479px) {
+  .review-section .clutch-widget-mob {
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 /* ________________________services-section________________________ */
@@ -2920,6 +2957,7 @@ body .main-mob-logo .mob-logo {
   -ms-flex-pack: justify;
   justify-content: space-between;
   text-align: justify;
+  height: 463px;
 }
 
 @media (max-width: 1023px) {
@@ -2929,6 +2967,7 @@ body .main-mob-logo .mob-logo {
     text-align: center;
     -ms-flex-align: center;
     align-items: center;
+    height: 100%;
   }
 }
 
@@ -2937,10 +2976,8 @@ body .main-mob-logo .mob-logo {
   margin-bottom: 0;
 }
 
-@media (max-width: 1023px) {
-  .vacancies-section .text-wrap p {
-    margin: 20px 0 0 0;
-  }
+.vacancies-section .text-wrap p {
+  margin: 20px 0 20px 0;
 }
 
 .vacancies-section .hashtag-wrap {
@@ -4306,6 +4343,7 @@ ________________________portfolio-section_____________________ */
 
 .footer-logo-wrap img {
   margin: 11px 18px 0 0;
+  max-width: 63px;
 }
 
 .footer-logo-wrap img:last-child {
@@ -4372,6 +4410,7 @@ ________________________portfolio-section_____________________ */
   outline: none;
   padding: 8px;
   color: #EB5B31;
+  font-size: 12px;
 }
 
 .contact input::-webkit-input-placeholder,
