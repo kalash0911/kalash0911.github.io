@@ -17,6 +17,209 @@
     }
 }
 
+.logo-test {
+
+    .logo-wrap {
+        position: relative;
+        width: 61px;
+        height: 53px;
+        background-color: $orange;
+        border-radius: 5px;
+        padding: 15px 5px;
+    }
+
+    span {
+        position: absolute;
+        background-color: $white;
+    }
+
+    .cercl1 {
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        bottom: 8px;
+        animation-name: c1;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+
+        @keyframes c1{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+
+    .line1 {
+        height: 0;
+        width: 0;
+        bottom: 18px;
+        left: 9px;
+        border-radius: 10px;
+        transform: rotate(-45deg);
+        animation-name: l1;
+        animation-duration: 300ms;
+        animation-delay: 300ms;
+        animation-fill-mode: forwards;
+
+        @keyframes l1{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 3px;
+                width: 14px;
+            }
+        }
+    }
+
+    .cercl2 {
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        bottom: 20px;
+        left: 16px;
+        animation-name: c2;
+        animation-duration: 300ms;
+        animation-delay: 600ms;
+        animation-fill-mode: forwards;
+
+        @keyframes c2{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+
+    .line2 {
+        height: 0px;
+        width: 0px;
+        bottom: 21px;
+        left: 22px;
+        border-radius: 10px;
+        transform: rotate(20deg);
+        animation-name: l2;
+        animation-duration: 300ms;
+        animation-delay: 900ms;
+        animation-fill-mode: forwards;
+
+        @keyframes l2{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 3px;
+                width: 14px;
+            }
+        }
+    }
+
+    .cercl3 {
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        bottom: 15px;
+        left: 33px;
+        animation-name: c3;
+        animation-duration: 300ms;
+        animation-delay: 1200ms;
+        animation-fill-mode: forwards;
+
+        @keyframes c3{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+
+    .line3 {
+        height: 0px;
+        width: 0px;
+        bottom: 29px;
+        left: 34px;
+        transform: rotate(-63deg);
+        border-radius: 10px;
+        animation-name: l3;
+        animation-duration: 300ms;
+        animation-delay: 1500ms;
+        animation-fill-mode: forwards;
+
+        @keyframes l3{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 3px;
+                width: 19px;
+            }
+        }
+    }
+
+    .cercl4 {
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        bottom: 35px;
+        left: 43px;
+        animation-name: c4;
+        animation-duration: 300ms;
+        animation-delay: 1800ms;
+        animation-fill-mode: forwards;
+
+        @keyframes c4{
+
+            0%{
+                height: 0;
+                width: 0;
+            }
+            100%{
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 .header-fixed {
 
     @include media(">tablet") {
