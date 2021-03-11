@@ -18,11 +18,39 @@
 }
 
 .logo-test {
+    display: flex;
+    align-items: center;
+
+    .logo-text-wrap {
+        font-weight: bold;
+        margin-left: 10px;
+        
+        h6{
+            width: 0;
+            font-size: 20px;
+            line-height: 18px;
+            margin-bottom: 0;
+            overflow: hidden;
+            animation-name: text-logo;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+    
+            @keyframes text-logo{
+    
+                0%{
+                    width: 0;
+                }
+                100%{
+                    width: 125px;
+                }
+            }
+        }
+    }
 
     .logo-wrap {
         position: relative;
-        width: 61px;
-        height: 53px;
+        width: 60px;
+        height: 58px;
         background-color: $orange;
         border-radius: 5px;
         padding: 15px 5px;
@@ -39,7 +67,7 @@
         border-radius: 50%;
         bottom: 8px;
         animation-name: c1;
-        animation-duration: 300ms;
+        animation-duration: 150ms;
         animation-fill-mode: forwards;
 
         @keyframes c1{
@@ -63,8 +91,8 @@
         border-radius: 10px;
         transform: rotate(-45deg);
         animation-name: l1;
-        animation-duration: 300ms;
-        animation-delay: 300ms;
+        animation-duration: 150ms;
+        animation-delay: 150ms;
         animation-fill-mode: forwards;
 
         @keyframes l1{
@@ -87,8 +115,8 @@
         bottom: 20px;
         left: 16px;
         animation-name: c2;
-        animation-duration: 300ms;
-        animation-delay: 600ms;
+        animation-duration: 150ms;
+        animation-delay: 300ms;
         animation-fill-mode: forwards;
 
         @keyframes c2{
@@ -112,8 +140,8 @@
         border-radius: 10px;
         transform: rotate(20deg);
         animation-name: l2;
-        animation-duration: 300ms;
-        animation-delay: 900ms;
+        animation-duration: 150ms;
+        animation-delay: 450ms;
         animation-fill-mode: forwards;
 
         @keyframes l2{
@@ -136,8 +164,8 @@
         bottom: 15px;
         left: 33px;
         animation-name: c3;
-        animation-duration: 300ms;
-        animation-delay: 1200ms;
+        animation-duration: 150ms;
+        animation-delay: 600ms;
         animation-fill-mode: forwards;
 
         @keyframes c3{
@@ -161,8 +189,8 @@
         transform: rotate(-63deg);
         border-radius: 10px;
         animation-name: l3;
-        animation-duration: 300ms;
-        animation-delay: 1500ms;
+        animation-duration: 150ms;
+        animation-delay: 750ms;
         animation-fill-mode: forwards;
 
         @keyframes l3{
@@ -185,8 +213,8 @@
         bottom: 35px;
         left: 43px;
         animation-name: c4;
-        animation-duration: 300ms;
-        animation-delay: 1800ms;
+        animation-duration: 150ms;
+        animation-delay: 900ms;
         animation-fill-mode: forwards;
 
         @keyframes c4{

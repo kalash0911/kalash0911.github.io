@@ -786,11 +786,57 @@ input[type='submit'] {
   }
 }
 
+.logo-test {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo-test .logo-text-wrap {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.logo-test .logo-text-wrap h6 {
+  width: 0;
+  font-size: 20px;
+  line-height: 18px;
+  margin-bottom: 0;
+  overflow: hidden;
+  -webkit-animation-name: text-logo;
+  animation-name: text-logo;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes text-logo {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 125px;
+  }
+}
+
+@keyframes text-logo {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 125px;
+  }
+}
+
 .logo-test .logo-wrap {
   background: #EB5B31;
   position: relative;
-  width: 61px;
-  height: 53px;
+  width: 60px;
+  height: 58px;
   border-radius: 5px;
   padding: 15px 5px;
 }
@@ -807,8 +853,8 @@ input[type='submit'] {
   bottom: 8px;
   -webkit-animation-name: c1;
   animation-name: c1;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -847,10 +893,10 @@ input[type='submit'] {
   transform: rotate(-45deg);
   -webkit-animation-name: l1;
   animation-name: l1;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-delay: 300ms;
-  animation-delay: 300ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-delay: 150ms;
+  animation-delay: 150ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -887,10 +933,10 @@ input[type='submit'] {
   left: 16px;
   -webkit-animation-name: c2;
   animation-name: c2;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-delay: 600ms;
-  animation-delay: 600ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -929,10 +975,10 @@ input[type='submit'] {
   transform: rotate(20deg);
   -webkit-animation-name: l2;
   animation-name: l2;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-delay: 900ms;
-  animation-delay: 900ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-delay: 450ms;
+  animation-delay: 450ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -969,10 +1015,10 @@ input[type='submit'] {
   left: 33px;
   -webkit-animation-name: c3;
   animation-name: c3;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-delay: 1200ms;
-  animation-delay: 1200ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -1011,10 +1057,10 @@ input[type='submit'] {
   border-radius: 10px;
   -webkit-animation-name: l3;
   animation-name: l3;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-delay: 1500ms;
-  animation-delay: 1500ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-delay: 750ms;
+  animation-delay: 750ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -1051,10 +1097,10 @@ input[type='submit'] {
   left: 43px;
   -webkit-animation-name: c4;
   animation-name: c4;
-  -webkit-animation-duration: 300ms;
-  animation-duration: 300ms;
-  -webkit-animation-delay: 1800ms;
-  animation-delay: 1800ms;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-delay: 900ms;
+  animation-delay: 900ms;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
