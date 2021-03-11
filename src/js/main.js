@@ -52,3 +52,4 @@ new Swiper('.mob-swiper', {
     effect: 'coverflow',
     speed: 1000,
 });
+

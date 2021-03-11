@@ -2632,6 +2632,12 @@ body .main-mob-logo .mob-logo {
   margin-bottom: 128px;
 }
 
+@media (max-width: 767px) {
+  .top5-section h2 {
+    margin-top: 25px;
+  }
+}
+
 @media (max-width: 479px) {
   .top5-section h2 {
     font-size: 24px;
@@ -4360,12 +4366,12 @@ ________________________portfolio-section_____________________ */
   }
 }
 
-.footer-logo-wrap img {
+.footer-awards img {
   margin: 11px 18px 0 0;
   max-width: 63px;
 }
 
-.footer-logo-wrap img:last-child {
+.footer-awards img:last-child {
   margin-right: 0;
 }
 
@@ -4388,7 +4394,7 @@ ________________________portfolio-section_____________________ */
 }
 
 .title-footer {
-  max-width: 127px;
+  max-width: 155px;
   padding: 0 15px;
 }
 
@@ -4413,10 +4419,6 @@ ________________________portfolio-section_____________________ */
 .contact {
   max-width: 284px;
   color: #fff;
-}
-
-.contact h5 {
-  margin-bottom: 18px;
 }
 
 .contact input,
