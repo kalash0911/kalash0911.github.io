@@ -3061,6 +3061,8 @@ body .main-page .header-menu .logo-test {
   .review-section .clutch-widget-mob {
     display: -ms-flexbox;
     display: flex;
+    max-width: 282px;
+    margin: 0 auto;
   }
 }
 
