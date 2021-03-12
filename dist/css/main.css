@@ -2701,6 +2701,8 @@ body .main-page .header-menu .logo-test {
   display: flex;
   -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 53px 0 0 0;
 }
 
@@ -2715,8 +2717,6 @@ body .main-page .header-menu .logo-test {
   .thebook-section .item-wrap {
     -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-align: center;
-    align-items: center;
     padding: 0;
   }
 }
@@ -4202,6 +4202,8 @@ ________________________portfolio-section_____________________ */
 .contact-section .contact-wrap {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 @media (max-width: 1099px) {
@@ -4303,6 +4305,8 @@ ________________________portfolio-section_____________________ */
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0 0 0 70px;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 @media (max-width: 1099px) {
@@ -4320,7 +4324,10 @@ ________________________portfolio-section_____________________ */
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 18px;
+  max-width: 100%;
 }
 
 @media (max-width: 1099px) {
@@ -4361,20 +4368,18 @@ ________________________portfolio-section_____________________ */
   font-size: 15px;
 }
 
-.contact-section .tel {
-  margin-right: 240px;
-}
-
-@media (max-width: 767px) {
-  .contact-section .tel {
-    margin-right: 0;
-  }
+.contact-section .tel-wrap {
+  max-width: 50%;
 }
 
 .contact-section .geo-wrap {
   display: -ms-flexbox;
   display: flex;
-  max-width: 270px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 50%;
 }
 
 @media (max-width: 767px) {
@@ -4393,41 +4398,33 @@ ________________________portfolio-section_____________________ */
 
 .contact-section .emeil1-wrap,
 .contact-section .emeil2-wrap {
-  margin-top: 24px;
+  margin: 24px 20px 0 0;
 }
 
-.contact-section .emeil1-wrap {
-  margin-right: 215px;
+.contact-section .map1 {
+  display: none;
 }
 
-@media (max-width: 767px) {
-  .contact-section .emeil1-wrap {
-    margin-right: 0;
-  }
+.contact-section .map1-active {
+  display: block;
 }
 
-.contact-section .map {
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+.contact-section .map1-active iframe {
+  max-width: 100%;
+  max-height: 365px;
 }
 
-@media (max-width: 1099px) {
-  .contact-section .map {
-    -ms-flex-item-align: center;
-    align-self: center;
-  }
+.contact-section .map2 {
+  display: none;
 }
 
-.contact-section .map iframe {
-  min-width: 665px;
-  min-height: 391px;
+.contact-section .map2-active {
+  display: block;
 }
 
-@media (max-width: 767px) {
-  .contact-section .map iframe {
-    min-width: 0;
-    width: 100%;
-  }
+.contact-section .map2-active iframe {
+  max-width: 100%;
+  max-height: 365px;
 }
 
 /* ________________________work-section__________________________ */

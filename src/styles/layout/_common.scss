@@ -1084,6 +1084,7 @@ h1 {
     .item-wrap {
        display: flex;
        justify-content: center;
+       align-items:center;
        padding: 53px 0 0 0;
 
        @include media("<desktop") {
@@ -1092,7 +1093,6 @@ h1 {
 
         @include media("<tablet") {
             flex-direction: column;
-            align-items: center;
             padding: 0;
         }
     }
@@ -2313,6 +2313,7 @@ ________________________portfolio-section_____________________ */
 
     .contact-wrap {
         display: flex;
+        justify-content: space-between;
 
         @include media("<1100px") {
             flex-direction: column;
@@ -2383,6 +2384,7 @@ ________________________portfolio-section_____________________ */
         display: flex;
         flex-direction: column;
         margin: 0 0 0 70px;
+        flex-grow: 1;
 
         @include media("<1100px") {
             margin: 50px 0 0 0;
@@ -2394,7 +2396,9 @@ ________________________portfolio-section_____________________ */
     .adres-wrap {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         margin-bottom: 18px;
+        max-width: 100%;
 
         @include media("<1100px") {
             justify-content: center;
@@ -2426,17 +2430,16 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    .tel {
-        margin-right:240px;
-
-        @include media("<tablet") {
-            margin-right: 0;
-        }
+    .tel-wrap {
+        max-width: 50%;
     }
+
 
     .geo-wrap {
         display: flex;
-        max-width: 270px;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 50%;
 
         @include media("<tablet") {
             max-width: 100%;
@@ -2452,32 +2455,32 @@ ________________________portfolio-section_____________________ */
     }
 
     .emeil1-wrap, .emeil2-wrap {
-        margin-top: 24px;
+        margin: 24px 20px 0 0;
     } 
 
-    .emeil1-wrap {
-        margin-right: 215px;
+    .map1 {
+        display: none;
+    }
 
-        @include media("<tablet") {
-            margin-right: 0;
+    .map1-active {
+        display: block;
+        
+        iframe {
+            max-width: 100%;
+            max-height: 365px;
         }
     }
 
-    .map {
-        align-self:flex-start;
+    .map2 {
+        display: none;
+    }
 
-        @include media("<1100px") {
-            align-self: center;
-        }
-
+    .map2-active {
+        display: block;
+        
         iframe {
-            min-width: 665px;
-            min-height: 391px;
-
-            @include media("<tablet") {
-                min-width: 0;
-                width: 100%;
-            }
+            max-width: 100%;
+            max-height: 365px;
         }
     }
 }

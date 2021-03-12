@@ -28,6 +28,20 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $('.first-adres').click(function(event){
+        event.preventDefault()
+        $('.map1').toggleClass('map1-active');
+    });
+});
+
+$(document).ready(function() {
+    $('.second-adres').click(function(event){
+        event.preventDefault()
+        $('.map2').toggleClass('map2-active');
+    });
+});
+
 window.onscroll = function () {
     var header = document.querySelector('.header');
 
