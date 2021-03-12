@@ -33,6 +33,7 @@
     .footer-logo {
         display: block;
         margin: 5px 0 97px 0;
+        max-width: 160px;
 
         @include media("<1200px") {
             margin: 0 50px 0 0;
@@ -67,8 +68,8 @@
 .title-footer-wrap {
     display: flex;
     justify-content: space-between;
-    min-width: 690px;
-    margin: 0 15px;
+    min-width: 630px;
+    margin: 0 50px 0 20px;
 
     @include media("<1200px") {
         margin: 50px 0;   

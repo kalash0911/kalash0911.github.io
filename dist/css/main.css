@@ -4690,6 +4690,7 @@ ________________________portfolio-section_____________________ */
 .footer-logo-wrap .footer-logo {
   display: block;
   margin: 5px 0 97px 0;
+  max-width: 160px;
 }
 
 @media (max-width: 1199px) {
@@ -4724,8 +4725,8 @@ ________________________portfolio-section_____________________ */
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  min-width: 690px;
-  margin: 0 15px;
+  min-width: 630px;
+  margin: 0 50px 0 20px;
 }
 
 @media (max-width: 1199px) {
