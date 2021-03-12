@@ -2385,11 +2385,16 @@ ________________________portfolio-section_____________________ */
         flex-direction: column;
         margin: 0 0 0 70px;
         flex-grow: 1;
+        position: relative;
 
         @include media("<1100px") {
             margin: 50px 0 0 0;
             align-items: center;
-            justify-content: center;
+            height: 625px;
+        }
+
+        @include media("<tablet") {
+            height: 745px;
         }
     }
 
@@ -2417,7 +2422,7 @@ ________________________portfolio-section_____________________ */
 
         @include media("<tablet") {
             text-align: center;
-            margin: 30px 0 0 0;
+            margin: 24px 0 0 0;
         }
 
         a {
@@ -2432,6 +2437,11 @@ ________________________portfolio-section_____________________ */
 
     .tel-wrap {
         max-width: 50%;
+
+        @include media("<tablet") {
+            max-width: 100%;
+
+        }
     }
 
 
@@ -2445,8 +2455,8 @@ ________________________portfolio-section_____________________ */
             max-width: 100%;
         }
 
-        p {
-            margin: 0;
+        .first-adres, .second-adres {
+            margin:0 0 24px 0;
         }
 
         i {
@@ -2459,6 +2469,8 @@ ________________________portfolio-section_____________________ */
     } 
 
     .map1 {
+        position: absolute;
+        bottom: 85px;
         display: none;
     }
 
@@ -2473,6 +2485,8 @@ ________________________portfolio-section_____________________ */
 
     .map2 {
         display: none;
+        position: absolute;
+        bottom: 85px;
     }
 
     .map2-active {

@@ -4307,6 +4307,7 @@ ________________________portfolio-section_____________________ */
   margin: 0 0 0 70px;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  position: relative;
 }
 
 @media (max-width: 1099px) {
@@ -4314,8 +4315,13 @@ ________________________portfolio-section_____________________ */
     margin: 50px 0 0 0;
     -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    height: 625px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-section .map-wrap {
+    height: 745px;
   }
 }
 
@@ -4355,7 +4361,7 @@ ________________________portfolio-section_____________________ */
 @media (max-width: 767px) {
   .contact-section .adres-item {
     text-align: center;
-    margin: 30px 0 0 0;
+    margin: 24px 0 0 0;
   }
 }
 
@@ -4370,6 +4376,12 @@ ________________________portfolio-section_____________________ */
 
 .contact-section .tel-wrap {
   max-width: 50%;
+}
+
+@media (max-width: 767px) {
+  .contact-section .tel-wrap {
+    max-width: 100%;
+  }
 }
 
 .contact-section .geo-wrap {
@@ -4388,8 +4400,9 @@ ________________________portfolio-section_____________________ */
   }
 }
 
-.contact-section .geo-wrap p {
-  margin: 0;
+.contact-section .geo-wrap .first-adres,
+.contact-section .geo-wrap .second-adres {
+  margin: 0 0 24px 0;
 }
 
 .contact-section .geo-wrap i {
@@ -4402,6 +4415,8 @@ ________________________portfolio-section_____________________ */
 }
 
 .contact-section .map1 {
+  position: absolute;
+  bottom: 85px;
   display: none;
 }
 
@@ -4416,6 +4431,8 @@ ________________________portfolio-section_____________________ */
 
 .contact-section .map2 {
   display: none;
+  position: absolute;
+  bottom: 85px;
 }
 
 .contact-section .map2-active {
@@ -4860,7 +4877,7 @@ ________________________portfolio-section_____________________ */
 /* ______________________second-footer-section______________ */
 
 .second-footer-section {
-  background: black;
+  background: #202124;
   padding: 18px 0 19px 0;
 }
 

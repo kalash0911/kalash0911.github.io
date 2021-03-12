@@ -170,7 +170,7 @@
 /* ______________________second-footer-section______________ */
 
 .second-footer-section {
-    background-color: black;
+    background-color: $darkgray;
     padding: 18px 0 19px 0;
 
     @include media("<phone") {
