@@ -55,7 +55,7 @@ body {
             display: flex;
             justify-content: flex-end;
 
-            .header-logo {
+            .logo-test {
                 display: none;
             }
         }
@@ -64,7 +64,9 @@ body {
     .main-mob-logo {
 
         .mob-logo {
+            @include media("<tablet") {
             display: none;
+            }
         }
     }
 }
@@ -105,30 +107,23 @@ h1 {
 
     .main-content {
         padding: 267px 0 207px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
 
         @include media("<phone") {
             padding: 280px 0 32px 0;
         }
     
-        .logo {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 62px;
-
-            @include media("<phone") {
-                display: none;
-            }
-        }
-    
         h1 {
             line-height: 59px;
-            margin-bottom: 25px;
+            margin: 53px 0 25px 0;
 
             @include media("<phone") {
                 font-size: 26px;
                 line-height: 32px;
-                margin-bottom: 28px;
+                margin:25px 0 28px 0;
             }
         }
     
