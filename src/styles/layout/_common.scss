@@ -24,6 +24,13 @@ body {
         color: black;
         border-radius: 4px;
         border: 2px solid;
+        transition: all 0.5s ease 0s;
+
+        &:hover {
+            color: $orange;
+            border-color: $orange;
+            transition: none;
+        }
     }
 
     .btn-orange-bg {
@@ -38,6 +45,7 @@ body {
         line-height: 20px;
         background: $orange;
         color: $white;
+        margin-top: 40px;
     }
 
     .pages {
@@ -45,19 +53,7 @@ body {
         
         @include media("<tablet") {
             background: url(../images/about-us/bg-logo.png) no-repeat 0 31px/100%;
-            padding: 80px 0 0 0;
-        }
-    }
-
-    .main-page {
-
-        .header-menu {
-            display: flex;
-            justify-content: flex-end;
-
-            .logo-test {
-                display: none;
-            }
+            padding: 80px 0 90px 0;
         }
     }
 
@@ -82,6 +78,10 @@ h1 {
     @include media("<phone") {
         font-size: 24px;
     }
+}
+
+h4 {
+    margin-bottom: 50px;
 }
 
 /* _________________main-section________________ */
@@ -190,9 +190,8 @@ h1 {
     
     h4 {
         text-align: center;
-        font-weight: 600;
         line-height: 27px;
-        margin: 0;
+        margin-bottom: 20px;
 
         @include media("<phone") {
             margin-bottom: 22px;
@@ -215,7 +214,7 @@ h1 {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 28px;
+            margin-top: 30px;
             padding: 0 15px;
 
             @include media("<phone") {
@@ -473,6 +472,7 @@ h1 {
 
 .problems-section {
     margin-bottom: 85px;
+    font-size: 20px;
 
     .problems-content {
         
@@ -503,7 +503,7 @@ h1 {
     .problems-wrapper {
         display: flex;
         justify-content: space-between;
-        margin: 60px 0 21px 0;
+        margin: 40px 0 21px 0;
         text-align: center;
 
         @include media("<phone") {
@@ -564,7 +564,7 @@ h1 {
     }
     
     .solution {
-        margin: 50px 0 30px 0;
+        margin: 40px 0 40px 0;
         align-self: flex-end;
 
         @include media("<phone") {
@@ -614,8 +614,8 @@ h1 {
     .btn-orange-bg {
         display: block;
         margin: 0 auto;
+        margin-top: 40px;
         width: 250px;
-        margin-top: 13px;
 
         @include media("<phone") {
             display: none;     
@@ -630,127 +630,79 @@ h1 {
 
     h4 {
         text-align: center;
-        margin: 0 0 35px 0;
-    }
-
-    .project-wrap {
-        display: flex;
-
-        @include media("<desktop") {
-            display: none;     
-        }
-
-        @include media("<1330px") {
-            flex-direction: column;
-            justify-content: center;
-            align-items:center;
-        }
-    
-        .first-wrap {
-            position: relative;
-            min-width: 424px;
-            height: 100%;
-    
-            &:hover {
-                .wrap-hover{
-                    opacity: 100%;
-                }
-            }
-        }
     }
     
-    .wrap-hover {
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-color:hsla(14, 82%, 56%, 0.9);
-        opacity: 0;
-        height: 100%;
-        width: 100%;
-        color: #fff;
+    .mob-swiper {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: all 0.3s ease-in-out;
     
-        .hover-text{
-            padding: 81px 85px 31px 66px;
+        .slide1 {
+            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/1.png) 50%/cover no-repeat;
+        }
     
-            h2 {
-                margin: 0 0 7px 0;
+        .slide2 {
+            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/2.png) 50%/cover no-repeat;
+        }
+    
+        .slide3 {
+            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/3.png) 50%/cover no-repeat;
+        }
+    
+        .slide4 {
+            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/4.png) 50%/cover no-repeat;
+        }
+    
+        .slide5 {
+            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/5.png) 50%/cover no-repeat;
+        }
+    
+        .text-slide {
+            color: $white;
+            margin: 0 auto;
+            width: 60%;
+            padding: 380px 24px 46px 24px;
+    
+            @include media("<tablet") {
+                width: 85%;     
             }
     
             p {
-                margin: 0;
-            }
-        }
-    }
-    
-    .btn-projects{
-        width: 100%;
-        display: block;
-        background-color:#fff;
-        color: $orange;
-        text-align: center;
-        font-size: 16px;
-        padding: 13px 0;
-        border-radius: 3px 3px 0px 0px;
-    }
-    
-    .second-wrap {
-        display: flex;
-        flex-wrap: wrap;
-
-        @include media("<1330px") {
-            justify-content: center;
-        }
-    
-        .item {
-
-            &:hover {
-
-                .wrap-hover{
-                    opacity: 100%;
-                }
-            }
-        }
-    
-        .item1 {
-            position: relative;
-            min-width: 512px;
-        }
-    
-        .item2 {
-            position: relative;
-            min-width: 364px;
-    
-            .hover-text {
-                padding-right: 40px;
-            }
-        }
-    
-        .item3 {
-            position: relative;
-            
-            img {
-                min-width: 437px;
-                max-height: 312px;
+                text-align: justify;
             }
     
-            .hover-text {
-                padding-top: 40px;
+            .btn-projects {
+                display: block;
+                margin: 0 auto;
+                max-width: 272px;
+                margin-top: 39px;
+                background-color: $white;
+                color: $orange;
+                text-align: center;
+                font-size: 16px;
+                padding: 13px 0;
+                border-radius: 3px 3px 0px 0px;
             }
         }
         
-        .item4 {
-            position: relative;
-    
-            img {
-                max-width: 439px;
+        .swiper-pagination {
+            
+            .swiper-pagination-bullet {
+                background-color: $white;
+                opacity: 1;
+                width: 10px;
+                height: 10px;
             }
+            
+            .swiper-pagination-bullet-active {
+                border: 2px solid #FFFFFF;
+                background-color: hsla(210, 17%, 98%, 0);
+            }
+        }
     
-            .hover-text {
-                padding-top: 40px;
+        .swiper-button-prev, .swiper-button-next {
+            color: $white;
+    
+            @include media("<tablet") {
+                display: none;    
             }
         }
     }
@@ -758,89 +710,11 @@ h1 {
     .btn-orange-sm {
         display: block;
         margin: 0 auto;
-        max-width: 150px;
-        margin-top: 39px;
-
-        @include media("<phone") {
-            display: none;     
-        }
+        max-width: 149px;
+        margin-top: 40px;
     }
 }
 
-.mob-swiper {
-    display: none;
-
-    @include media("<desktop") {
-        display: flex;     
-    }
-
-    .slide1 {
-        background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/1.png) 50%/cover no-repeat;
-    }
-
-    .slide2 {
-        background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/2.png) 50%/cover no-repeat;
-    }
-
-    .slide3 {
-        background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/3.png) 50%/cover no-repeat;
-    }
-
-    .slide4 {
-        background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/4.png) 50%/cover no-repeat;
-    }
-
-    .slide5 {
-        background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/5.png) 50%/cover no-repeat;
-    }
-
-    .text-slide {
-        color: $white;
-        margin: 0 auto;
-        width: 60%;
-        padding: 380px 24px 46px 24px;
-
-        @include media("<tablet") {
-            width: 85%;     
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        .btn-projects {
-            display: block;
-            margin: 0 auto;
-            max-width: 272px;
-            margin-top: 39px;
-            background-color: $white;
-        }
-    }
-    
-    .swiper-pagination {
-        
-        .swiper-pagination-bullet {
-            background-color: $white;
-            opacity: 1;
-            width: 10px;
-            height: 10px;
-        }
-        
-        .swiper-pagination-bullet-active {
-            border: 2px solid #FFFFFF;
-            background-color: hsla(210, 17%, 98%, 0);
-        }
-    }
-
-    .swiper-button-prev, .swiper-button-next {
-        color: $white;
-
-        @include media("<tablet") {
-            display: none;    
-        }
-    }
-
-}
 
 /* _______________________awards-section_____________________ */
 
@@ -854,7 +728,6 @@ h1 {
     }
 
     h4 {
-        margin: 0 0 15px 0;
         text-align: center;
     }
 
@@ -1073,7 +946,7 @@ h1 {
 
         p {
             font-size: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
 
             @include media("<tablet") {
                 margin-bottom: 47px;
@@ -1085,7 +958,7 @@ h1 {
        display: flex;
        justify-content: center;
        align-items:center;
-       padding: 53px 0 0 0;
+       padding: 50px 0 0 0;
 
        @include media("<desktop") {
             justify-content: space-between;
@@ -1150,7 +1023,7 @@ h1 {
 
     .btn-orange-bg {
         width: 300px;
-        margin: 19px 0 0 0;
+        margin: 40px 0 0 0;
 
         @include media("<tablet") {
             position: absolute;
@@ -1236,7 +1109,7 @@ h1 {
         
         p {
             max-width: 500px;
-            margin: 0 15px 93px 15px;
+            margin: 0 15px 40px 15px;
 
             @include media("<tablet") {
                 margin: 0 15px 60px 15px;
@@ -1268,7 +1141,7 @@ h1 {
 
     .our-wrap {
         position: relative;
-        margin-top: 115px;
+        margin-top: 90px;
 
         @include media("<1110px") {
             margin: 0;
@@ -1328,6 +1201,7 @@ h1 {
         }
         
         p {
+            font-size: 20px;
             margin: 0;
         }
 
@@ -1351,14 +1225,23 @@ h1 {
     .container {
         width: 100%;
     }
-
-    h4 {
-        margin-bottom: 56px;
-    }
     
     .clutch-widget-desk {
-        max-width: 960px;
-        margin: 0 auto 77px;
+        max-width: 680px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+
+        iframe {
+            max-height: 430px;
+
+            @include media("<tablet") {
+                max-height: 500px;
+            }
+
+            @include media("<542px") {
+                max-height: 660px;
+            }
+        }
 
         @include media("<phone") {
             display: none;
@@ -1370,8 +1253,9 @@ h1 {
 
         @include media("<phone") {
             display: flex;
-            max-width: 282px;
+            max-width: 192px;
             margin: 0 auto;
+            margin-bottom: 40px;
         }
     }
 }
@@ -1380,6 +1264,10 @@ h1 {
 
 .services-section {
     padding: 275px 0 90px 0;
+    
+    @include media("<tablet") {
+        padding: 80px 0 90px 0;
+    }
 
     h1 {
         color: $orange;
@@ -1486,6 +1374,14 @@ h1 {
     .buy-item-wrap {
         display: flex;
         flex-direction: column;
+
+        p {
+            font-size: 20px;
+        }
+
+        i {
+            font-size: 36px;
+        }
     }
 
     .wrap1, .wrap2, .wrap3 {
@@ -1702,7 +1598,7 @@ ________________________portfolio-section_____________________ */
         }
 
         h3 {
-            margin-bottom: 47px;
+            margin-bottom: 40px;
 
             @include media("<tablet") {
                 order: 2;
@@ -1757,6 +1653,7 @@ ________________________portfolio-section_____________________ */
                 @include media("<tablet") {
                     display: none;
                     order: 3;
+
                 }
                 
             }
@@ -1785,7 +1682,6 @@ ________________________portfolio-section_____________________ */
     }
 
     .btn-orange-sm {
-        margin-top: 21px;
         align-self: center;
     }
     
@@ -2082,9 +1978,13 @@ ________________________portfolio-section_____________________ */
 
     .blog-item-wrap {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 68px;
+        margin-bottom: 40px;
+
+        @include media("<1317px") {
+            justify-content: space-around;
+        }
 
         @include media("<phone") {
             margin-bottom: 0;
@@ -2093,6 +1993,7 @@ ________________________portfolio-section_____________________ */
 
     .blog-item {
         position: relative;
+        margin-bottom: 5px;
     }
     
     .blog-item-text {
@@ -2392,11 +2293,6 @@ ________________________portfolio-section_____________________ */
         @include media("<1100px") {
             margin: 50px 0 0 0;
             align-items: center;
-            height: 625px;
-        }
-
-        @include media("<tablet") {
-            height: 745px;
         }
     }
 
@@ -2446,7 +2342,6 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-
     .geo-wrap {
         display: flex;
         flex-direction: column;
@@ -2469,35 +2364,10 @@ ________________________portfolio-section_____________________ */
     .emeil1-wrap, .emeil2-wrap {
         margin: 24px 20px 0 0;
     } 
-
-    .map1 {
-        position: absolute;
-        bottom: 85px;
-        display: none;
-    }
-
-    .map1-active {
-        display: block;
-        
-        iframe {
-            max-width: 100%;
-            max-height: 365px;
-        }
-    }
-
-    .map2 {
-        display: none;
-        position: absolute;
-        bottom: 85px;
-    }
-
-    .map2-active {
-        display: block;
-        
-        iframe {
-            max-width: 100%;
-            max-height: 365px;
-        }
+    
+    #map {
+        max-height: 350px;
+        max-width: 100%;
     }
 }
 

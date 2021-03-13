@@ -37,6 +37,7 @@
 
         @include media("<1200px") {
             margin: 0 50px 0 0;
+            width: 100%;
         }
 
     }
@@ -79,7 +80,7 @@
 }
 
 .title-footer {
-    max-width: 155px;
+    max-width: 175px;
     padding: 0 15px;
 
     h5 {

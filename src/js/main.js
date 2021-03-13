@@ -1,5 +1,5 @@
 jQuery(function() {
-    greeting();
+    initMaps();
 });
  
 let greeting = () => console.log("Hi!");  
@@ -28,19 +28,24 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $('.first-adres').click(function(event){
-        event.preventDefault()
-        $('.map1').toggleClass('map1-active');
-    });
-});
+function initMaps() {
+    let mapLinks = document.querySelectorAll('.map-link');
 
-$(document).ready(function() {
-    $('.second-adres').click(function(event){
-        event.preventDefault()
-        $('.map2').toggleClass('map2-active');
-    });
-});
+    mapLinks.forEach((el) => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            let map = document.getElementById('map');
+            let mapSrc = map.getAttribute('src');
+            if(mapSrc !== el.dataset.src) {
+                changeSrc('map', el.dataset.src);
+            }
+        })
+    })
+}
+
+function changeSrc(id, src) {
+    document.getElementById(id).src = src;
+}
 
 window.onscroll = function () {
     var header = document.querySelector('.header');

@@ -1,7 +1,7 @@
 "use strict";
 
 jQuery(function () {
-  greeting();
+  initMaps();
 });
 
 var greeting = function greeting() {
@@ -29,18 +29,25 @@ $(document).ready(function () {
     $('.header').toggleClass('header-active');
   });
 });
-$(document).ready(function () {
-  $('.first-adres').click(function (event) {
-    event.preventDefault();
-    $('.map1').toggleClass('map1-active');
+
+function initMaps() {
+  var mapLinks = document.querySelectorAll('.map-link');
+  mapLinks.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var map = document.getElementById('map');
+      var mapSrc = map.getAttribute('src');
+
+      if (mapSrc !== el.dataset.src) {
+        changeSrc('map', el.dataset.src);
+      }
+    });
   });
-});
-$(document).ready(function () {
-  $('.second-adres').click(function (event) {
-    event.preventDefault();
-    $('.map2').toggleClass('map2-active');
-  });
-});
+}
+
+function changeSrc(id, src) {
+  document.getElementById(id).src = src;
+}
 
 window.onscroll = function () {
   var header = document.querySelector('.header');
