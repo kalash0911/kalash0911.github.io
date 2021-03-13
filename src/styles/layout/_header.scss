@@ -479,13 +479,17 @@
 }
 
 .down {
+    position: relative;
 
     @include media("<tablet") {
         display: none;
     }
 
-    img {
-        margin-top: 8px;
+    i {
+        position: absolute;
+        font-size: 9px;
+        right: 25px;
+        bottom: 3px;
         transition: ease 0.5s;
     }
     
@@ -513,8 +517,8 @@
 
     &:hover {
 
-        img {
-            transform: rotate(180deg);
+        i {
+            transform: rotate(-180deg);
             transition: ease 0.5s;
         }
 

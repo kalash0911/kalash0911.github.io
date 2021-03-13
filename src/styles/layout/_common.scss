@@ -913,6 +913,7 @@ h4 {
     position: relative;
     background: url(../images/orenge-bg.png) bottom left/ 35% 85% no-repeat;
     padding-bottom: 50px;
+    margin-bottom: -5px;
 
     @include media("<tablet") {
         background: url(../images/orenge-bg.png) bottom/ 100% 25% no-repeat;

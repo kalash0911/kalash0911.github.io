@@ -1378,14 +1378,21 @@ input[type='submit'] {
   }
 }
 
+.down {
+  position: relative;
+}
+
 @media (max-width: 767px) {
   .down {
     display: none;
   }
 }
 
-.down img {
-  margin-top: 8px;
+.down i {
+  position: absolute;
+  font-size: 9px;
+  right: 25px;
+  bottom: 3px;
   transition: ease 0.5s;
 }
 
@@ -1408,9 +1415,9 @@ input[type='submit'] {
   color: #EB5B31;
 }
 
-.down:hover img {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+.down:hover i {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
   transition: ease 0.5s;
 }
 
@@ -2526,6 +2533,7 @@ h4 {
   position: relative;
   background: url(../images/orenge-bg.png) bottom left/35% 85% no-repeat;
   padding-bottom: 50px;
+  margin-bottom: -5px;
 }
 
 @media (max-width: 767px) {
