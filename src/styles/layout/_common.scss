@@ -1407,7 +1407,7 @@ h4 {
         flex-wrap: wrap;
         margin-top: 60px;
 
-        @include media("<tablet") {
+        @include media("<873px") {
             flex-direction: column;
             margin-top: 0;
         }
@@ -1420,7 +1420,7 @@ h4 {
     .buy-item {
         min-width: 359px;
 
-        @include media("<tablet") {
+        @include media("<873px") {
             margin-top: 55px;
             min-width: 0;
             width: 100%;
@@ -1438,6 +1438,15 @@ h4 {
             margin-bottom: 0;
         }
     }
+
+    .item1, .item6 {
+        margin-right: 125px;
+
+        @include media("<tablet") {
+            margin-right: 0;
+        }
+    }
+
 
     .btn-orange-sm {
         margin-top: 73px;

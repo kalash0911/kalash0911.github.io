@@ -3151,7 +3151,7 @@ h4 {
   margin-top: 60px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 872px) {
   .buy-section .wrap1,
   .buy-section .wrap2,
   .buy-section .wrap3 {
@@ -3171,7 +3171,7 @@ h4 {
   min-width: 359px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 872px) {
   .buy-section .buy-item {
     margin-top: 55px;
     min-width: 0;
@@ -3189,6 +3189,18 @@ h4 {
 
 .buy-section .buy-item p {
   margin-bottom: 0;
+}
+
+.buy-section .item1,
+.buy-section .item6 {
+  margin-right: 125px;
+}
+
+@media (max-width: 767px) {
+  .buy-section .item1,
+  .buy-section .item6 {
+    margin-right: 0;
+  }
 }
 
 .buy-section .btn-orange-sm {
