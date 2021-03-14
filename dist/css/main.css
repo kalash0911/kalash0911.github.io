@@ -2966,25 +2966,13 @@ h4 {
 }
 
 .review-section .clutch-widget-desk {
-  max-width: 680px;
+  max-width: 1020px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
 
 .review-section .clutch-widget-desk iframe {
-  max-height: 430px;
-}
-
-@media (max-width: 767px) {
-  .review-section .clutch-widget-desk iframe {
-    max-height: 500px;
-  }
-}
-
-@media (max-width: 541px) {
-  .review-section .clutch-widget-desk iframe {
-    max-height: 660px;
-  }
+  max-height: 100%;
 }
 
 @media (max-width: 479px) {
@@ -3001,7 +2989,7 @@ h4 {
   .review-section .clutch-widget-mob {
     display: -ms-flexbox;
     display: flex;
-    max-width: 192px;
+    max-width: 300px;
     margin: 0 auto;
     margin-bottom: 40px;
   }
@@ -4707,7 +4695,7 @@ ________________________portfolio-section_____________________ */
 }
 
 .title-footer {
-  max-width: 175px;
+  max-width: 185px;
   padding: 0 15px;
 }
 

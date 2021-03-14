@@ -1252,20 +1252,12 @@ h4 {
     }
     
     .clutch-widget-desk {
-        max-width: 680px;
+        max-width: 1020px;
         margin: 0 auto;
         margin-bottom: 40px;
 
         iframe {
-            max-height: 430px;
-
-            @include media("<tablet") {
-                max-height: 500px;
-            }
-
-            @include media("<542px") {
-                max-height: 660px;
-            }
+            max-height: 100%;
         }
 
         @include media("<phone") {
@@ -1278,7 +1270,7 @@ h4 {
 
         @include media("<phone") {
             display: flex;
-            max-width: 192px;
+            max-width: 300px;
             margin: 0 auto;
             margin-bottom: 40px;
         }
