@@ -18,6 +18,12 @@ body {
         background: $orange;
         color: $white;
         border-color: $orange;
+
+        &:hover {
+            background-color: #352F2D;
+            color: $white;
+            border-color: #352F2D;
+        }
     }
 
     .btn-white {
@@ -61,7 +67,7 @@ body {
 
         .mob-logo {
             @include media("<tablet") {
-            display: none;
+                display: none;
             }
         }
     }
@@ -617,6 +623,12 @@ h4 {
         margin-top: 40px;
         width: 250px;
 
+        &:hover {
+            background-color: #352F2D;
+            color: $white;
+            border-color: #352F2D;
+        }
+
         @include media("<phone") {
             display: none;     
         }
@@ -903,6 +915,12 @@ h4 {
             font-size: 16px;
             line-height: 20px;
             font-weight: 600;
+
+            &:hover {
+                background-color: #352F2D;
+                color: $white;
+                border-color: #352F2D;
+            }
         }
     }
 }
@@ -1025,6 +1043,12 @@ h4 {
     .btn-orange-bg {
         width: 300px;
         margin: 40px 0 0 0;
+
+        &:hover {
+            background-color: #352F2D;
+            color: $white;
+            border-color: #352F2D;
+        }
 
         @include media("<tablet") {
             position: absolute;
@@ -1395,6 +1419,10 @@ h4 {
             flex-direction: column;
             margin-top: 0;
         }
+    }
+
+    .wrap1, .wrap3 {
+        align-self: center;
     }
 
     .buy-item {
@@ -2272,6 +2300,12 @@ ________________________portfolio-section_____________________ */
                 line-height: 20px;
                 font-weight: 600;
                 display: block;
+
+                &:hover {
+                    background-color: #352F2D;
+                    color: $white;
+                    border-color: #352F2D;
+                }
             }
 
             p {
@@ -2432,6 +2466,12 @@ ________________________portfolio-section_____________________ */
             box-sizing: border-box;
             border-radius: 3px;
             outline: none;
+
+            &:hover {
+                background-color: #352F2D;
+                color: $white;
+                border-color: #352F2D;
+            }
         }
     }
 }

@@ -161,6 +161,12 @@
         display: block;
         float: right;
 
+        &:hover {
+            background-color: #352F2D;
+            color: $white;
+            border-color: #352F2D;
+        }
+
         @include media("<1200px") {
             float: none;
             margin: 0 auto;
