@@ -19,6 +19,7 @@
 
 .logo-test {
     text-align: start;
+    max-width: 145px;
 
     a{
         display: flex;
@@ -32,10 +33,10 @@
         padding: 1px 0;
         
         h6{
+            max-width: 82px;
             font-weight: 900;
-            max-width: 76px;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: 15px;
+            line-height: 15px;
             margin-bottom: 0;
             overflow: hidden;
             animation-name: text-logo;

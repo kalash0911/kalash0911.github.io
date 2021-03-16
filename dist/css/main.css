@@ -795,6 +795,7 @@ input[type='submit'] {
 
 .logo-test {
   text-align: start;
+  max-width: 145px;
 }
 
 .logo-test a {
@@ -813,8 +814,8 @@ input[type='submit'] {
 }
 
 .logo-test .logo-text-wrap h6 {
-  font: 900 14px/16px Gilroy;
-  max-width: 76px;
+  font: 900 15px/15px Gilroy;
+  max-width: 82px;
   margin-bottom: 0;
   overflow: hidden;
   -webkit-animation-name: text-logo;
