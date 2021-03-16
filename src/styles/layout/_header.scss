@@ -27,13 +27,15 @@
     }
 
     .logo-text-wrap {
-        font-weight: bold;
         margin-left: 10px;
+        align-self: center;
+        padding: 1px 0;
         
         h6{
-            width: 0;
-            font-size: 18px;
-            line-height: 15px;
+            font-weight: 900;
+            max-width: 76px;
+            font-size: 14px;
+            line-height: 16px;
             margin-bottom: 0;
             overflow: hidden;
             animation-name: text-logo;

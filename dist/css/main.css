@@ -561,7 +561,7 @@ th {
 
 @font-face {
   font-family: Gilroy;
-  src: url("../fonts/Gilroy-Bold.ttf");
+  src: url("../fonts/Gilroy-ExtraBold.ttf");
   font-style: bold;
   font-weight: 900;
 }
@@ -806,13 +806,15 @@ input[type='submit'] {
 }
 
 .logo-test .logo-text-wrap {
-  font-weight: bold;
   margin-left: 10px;
+  -ms-flex-item-align: center;
+  align-self: center;
+  padding: 1px 0;
 }
 
 .logo-test .logo-text-wrap h6 {
-  font: 18px/15px Gilroy;
-  width: 0;
+  font: 900 14px/16px Gilroy;
+  max-width: 76px;
   margin-bottom: 0;
   overflow: hidden;
   -webkit-animation-name: text-logo;
