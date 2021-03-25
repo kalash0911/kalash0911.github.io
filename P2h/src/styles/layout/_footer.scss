@@ -1,0 +1,124 @@
+#footer {
+    background: url(../images/footer-dg.png), linear-gradient(86deg, rgba(70,56,50,1) 17%, rgba(26,26,28,1) 73%);
+    width: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .container {
+        position: relative;
+    }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    color: $pink;
+
+    @include media("<tablet") {
+        justify-content: space-around;
+        padding-bottom: 50px;
+    }
+
+    @include media("<phone") {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    h2 {
+        color: $white;
+        margin-bottom: 35px;
+        letter-spacing: 2px;
+
+        @include media("<desktop") {
+            font-size: 30px;
+        }
+    }
+}
+
+.questions {
+
+    @include media("<phone") {
+        margin-bottom: 50px;
+    }
+}
+
+.item {
+
+    a {
+        display: flex;
+        color: $pink;
+
+        i {
+            font-size: 35px;
+        }
+
+        p {
+            font-family: 'TNR-Regular';
+            font-size: 20px;
+            margin: 0 0 0 20px;
+            padding-top: 6px;
+
+            @include media("<desktop") {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.email {
+    margin-bottom: 35px;
+
+    @include media("<desktop") {
+        margin-bottom: 20px;
+    }
+}
+
+.place {
+    display: flex;
+    margin-left: -5px;
+
+    i {
+        font-size: 35px;
+    }
+
+    p {
+        font-family: 'TNR-Regular';
+        font-size: 20px;
+        margin: 0 0 0 20px;
+
+        @include media("<desktop") {
+            font-size: 15px;
+        }
+    }
+}
+
+.second {
+    margin-top: 20px;
+
+    p {
+        padding-top: 6px;
+    }
+}
+
+.footer-dog {
+    position: relative;
+    top: 0;
+ /*    animation-name: dog;
+    animation-duration: 2s; */
+
+    @include media("<tablet") {
+        display: none;
+    }
+}
+/* 
+@keyframes dog {
+    0% {
+        top: 1000px;
+    }
+    100% {
+        top: 0;
+    }
+} */

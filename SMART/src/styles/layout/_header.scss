@@ -1,0 +1,146 @@
+#header {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 10px 0;
+    position: relative;
+
+    .logo-wrap {
+        max-width: 60px;
+        max-height: 70px;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .li-wrap {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu-item {
+        margin-right: 30px;
+        list-style: none;
+        font-size: 14px;
+        opacity: 80%;
+        transition: all 0.5s ease 0s;
+
+        &:hover {
+            opacity: 100%;
+            transition: all 0.5s ease 0s;
+        }
+    }
+
+    .burger {
+        position: relative;
+        width: 14px;
+        height: 10px;
+        cursor: pointer;
+        
+        span {
+            position: absolute;
+            top: 4px;
+            height: 2px;
+            width: 14px;
+            background-color: $white;
+            opacity: 100%;
+            transition: all 0.5s ease 0s;
+        }
+
+        &::after, &::before {
+            content:'';
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            background-color: $white;
+            top: 0;
+            left: 0;
+            transition: all 0.5s ease 0s;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            top: 8px;
+        }
+    }
+
+    .burger-active {
+            
+        span {
+            opacity: 0;
+            transition: all 0.5s ease 0s;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+            top: 4px;
+            transition: all 0.5s ease 0s;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+            top: 4px;
+            transition: all 0.5s ease 0s;
+        }
+    }
+
+    .sub-menu {
+        position: absolute;
+        top: -100%;
+        right: 45px;
+        width: 50%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.5s ease 0s;
+
+        @include media ('<900px') {
+            width: 90%;
+        }
+    }
+
+    .sub-li-wrap {
+        display: flex;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        @include media ('<phone') {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+
+    .sub-menu-item {
+        font-size: 14px;
+        opacity: 80%;
+        transition: all 0.5s ease 0s;
+
+        @include media ('<phone') {
+            margin: 8px 0;
+        }
+
+        &:hover {
+            opacity: 100%;
+            transition: all 0.5s ease 0s;
+        }
+    }
+
+    .sub-menu-active {
+        top: 70px;
+        z-index: 5;
+        opacity: 100%;
+        transition: all 0.5s ease 0s;
+    }
+}

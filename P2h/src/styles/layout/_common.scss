@@ -1,0 +1,434 @@
+#wrapper {
+    font-family: "Arial-Regular";
+}
+
+h1, h2, h3 {
+    font-family: "Georgia-Regular";
+}
+
+h2 {
+    letter-spacing: 1px;
+}
+
+#main {
+    margin-top: -122px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.main-btn {
+    display: block;
+    width: 210px;
+    height: 50px;
+    background-color: $pink;
+    border-radius: 25px;
+    color: black;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 17px;
+
+    @include media("<desktop") {
+        margin: 0 auto;
+    }
+
+    @include media("<tablet") {
+        margin: 0 auto;
+    }
+}
+
+/* -------------------main-section------------ */
+
+.main-section {
+    background: url(../images/main-bg.png), linear-gradient(153deg, rgba(69,57,45,1) 0%, rgba(24,22,26,0.9836309523809523) 53%);
+    width: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+
+    .main-content {
+        padding: 360px 0 270px 0;
+        color: $white;
+        max-width: 450px;
+
+        @include media("<desktop") {
+            padding: 300px 0 230px 0;
+            max-width: 70%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @include media("<tablet") {
+            padding: 300px 0 200px 0;
+            max-width: 90%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h1 {
+            line-height: 55px;
+            margin-bottom: 47px;
+
+            @include media("<desktop") {
+                margin-bottom: 75px;
+            }
+        }
+        
+        p {
+            line-height: 25px;
+            color: $gray;
+            margin-bottom: 45px;
+
+            @include media("<desktop") {
+                margin-bottom: 75px;
+            }
+        }
+    }
+}
+
+/* -------------------about-section----------------------- */
+
+.about-section {
+    background: white;
+
+    .container {
+        display: flex;
+        justify-content: center;
+
+        @include media("<desktop") {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bg {
+            margin: 90px 150px 0 0;
+
+            @include media("<desktop") {
+                margin: 90px 0 0 0;
+            }
+        }
+    }
+}
+
+.about-content {
+    padding: 120px 0;
+    color: #545454;
+
+    @include media("<desktop") {
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    .about-text {
+
+        h2 {
+            margin-bottom: 40px;
+
+            @include media("<phone") {
+                font-size: 30px;
+            }
+        }
+
+        p {
+            max-width: 440px;
+            margin-bottom: 35px;
+            line-height: 25px;
+
+            @include media("<tablet") {
+                margin: 35px auto;
+                width: 100%;
+                text-align: center;
+            }
+
+            &:last-child {
+                margin: 0;
+
+                @include media("<tablet") {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+/* -------------------pets-section----------------------- */
+
+.pets-section {
+    position: relative;
+    background-color: #f6f6f6;
+    font-family: 'Georgia-Regular';
+    color: #545454;
+
+    .pets-content {
+        position: relative;
+        padding: 80px 0 70px 0;
+
+        .prev {
+            left: 0;
+        }
+    
+        .next {
+            right: 0;
+            transform: rotate(180deg);
+        }
+    
+        .prev, .next {
+            position: absolute;
+            display: block;
+            top: 410px;
+            border-radius: 50%;
+            border: 3px solid black;
+            width: 50px;
+            height: 50px;
+            border: 2px solid $pink;
+            z-index: 50;
+
+            @include media("<desktop") {
+                display: none;
+            }
+    
+            i {
+                &::before {
+                    content: "\e901";
+                    position: absolute;
+                    font-size: 15px;
+                    top: 15px;
+                    left: 15px;
+                }
+
+            }
+            
+            &:hover {
+                background-color: $pink;
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .btn-wrapper {
+           display: flex;
+           justify-content: center;
+
+            .main-btn {
+                min-width: 270px;
+            }
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 65px;
+    }
+
+    .swiper-container {
+        margin: 0 auto;
+        max-width: 911px;
+        padding: 10px;
+        padding-bottom: 40px;
+        margin-bottom: 15px;
+
+        @include media("<desktop") {
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        @include media("<tablet") {
+            max-width: 265px;
+        }
+    }
+
+    .swiper-slide {
+        max-width: 270px;
+
+        &:hover {
+            box-shadow: 5px 5px 10px 3px #f1f1f1, -5px -5px 10px 3px #f1f1f1;
+        }
+    }
+
+    .slide-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fafafa;
+        border-radius: 10px;
+
+        img {
+            margin-bottom: 35px;
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+    }
+
+    .swiper-pagination {
+        display: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include media("<desktop") {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            color: $pink;
+    
+            .swiper-pagination-bullet-active {
+                background: $pink;
+            }
+        }
+    }
+
+    .slide-btn {
+        display: block;
+        width: 190px;
+        border: 3px solid $pink;
+        border-radius: 25px;
+        color: black;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 17px;
+        margin-bottom: 35px;
+
+        &:hover {
+            background-color: $pink;
+        }
+    }
+}
+
+/* -----------------help-section--------------------- */
+
+.help-section {
+    color: #545454;
+    
+    .help-content {
+        padding-top: 70px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .item-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        min-width: 170px;
+        text-align: center;
+        margin: 0 20px;
+
+        @include media("<phone") {
+            min-width: 140px;
+            margin: 0;
+        }
+
+        i {
+            font-size: 55px;
+            color: $pink;
+        }  
+
+        p {
+            margin: 30px 0 85px 0;
+        }
+    }
+}
+
+/* --------------donation-section------------------- */
+
+.donation-section {
+    background-color: #f6f6f6;
+    font-family: 'Georgia-Regular';
+    color: #545454;
+
+    .donation-content {
+        display: flex;
+        padding: 75px 0 85px 0;
+
+        @include media("<tablet") {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .dog-img {
+            margin: 0 65px 0 0;
+
+            @include media("<tablet") {
+                margin: 0 0 40px 0;
+            }
+        }
+    }
+
+    .text-wrapper {
+
+        @include media("<tablet") {
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+        }
+    }
+
+
+    h2 {
+        margin-bottom: 35px;
+        letter-spacing: 2px;
+    }
+
+    .name {
+        font-size: 15px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    .card {
+        background-color: $pink;
+        display: flex;
+        padding: 9px 15px;
+        border-radius: 10px;
+        max-width: 320px;
+        margin-bottom: 30px;
+        color: black;
+
+        i {
+            font-size: 30px;
+        }
+
+        .namber {
+            min-width: 260px;
+            font-family: 'TNR-Regular';
+            font-size: 20px;
+            margin: 0;
+            padding: 4px 0 0 15px;
+            text-align-last: justify;
+        }
+    }
+
+    .text {
+        max-width: 360px;
+        color: #b2b2b2;
+        font-family: 'Arial-italic';
+        font-size: 12px;
+        margin: 0;
+        line-height: 18px;
+
+        @include media("<tablet") {
+            text-align: justify;
+        }
+
+        @include media("<phone") {
+            max-width: 90%;
+        }
+    }
+}

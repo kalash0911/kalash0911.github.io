@@ -1,0 +1,29 @@
+#footer {
+    background-color: $white-bg;
+    padding: 40px 0;
+    border-top: 2px solid $gray-border;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    
+    @include media ('<600px') {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-mail {
+        color: $black;
+        letter-spacing: 2px;
+
+        @include media ('<600px') {
+            margin-top: 20px;
+        }
+
+        span {
+            opacity: 50%;
+        }
+    }
+}

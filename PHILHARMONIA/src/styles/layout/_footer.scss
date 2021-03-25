@@ -1,0 +1,106 @@
+#footer {
+    background: $gray;
+    color: $white;
+    padding: 60px 0 10px 0;
+
+    h4 {
+        text-transform: uppercase;
+        color: $orange;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+
+    .social {
+        font-size: 20px;
+        margin-bottom: 70px;
+    
+        a {
+            color: #DADBDC;
+        }
+    }
+}
+
+.partners-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 45px;
+    width: 100%;
+    margin-bottom: 140px;
+    flex-wrap: wrap;
+
+    @include media("<desktop") {
+        justify-content: center;
+    }
+
+    @include media("<phone") {
+        margin-bottom: 40px;
+    }    
+    
+    i {
+        margin: 20px;
+    }
+}
+
+.footer-arrow {
+    font-size: 45px;
+    margin-bottom: 40px;
+
+    a {
+        color: $white;
+    }
+}
+
+.footer-text-wrap {
+    margin-bottom: 35px;
+    width: 100%;
+
+    h6 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-weight: 400;
+        margin-bottom: 10px;
+        font-size: 25px;
+
+        @include media("<phone") {
+            font-size: 20px;
+        }  
+    }
+
+    a {
+        color: $white;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.end-text {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    width: 100%;
+
+    span {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: $white;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
