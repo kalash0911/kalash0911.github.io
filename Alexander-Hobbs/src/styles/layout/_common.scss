@@ -1,0 +1,276 @@
+body {
+    font-family: $SF-Pro-Display;
+}
+
+.container {
+    width: 100%;
+    max-width: 1390px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+/* _____________________________main-section___________________________ */
+
+#slider {
+    width: 100%;
+
+    &::after {
+        display: none;
+    }
+
+    .beer-reveal {
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .beer-handle {
+        width: 14px;
+        height: 81px;
+        background: $white;
+        border-radius: 5px;
+
+        &::after, &::before {
+            height: 100vh;
+            width: 2px;
+            background-color: $white;
+            border: none;
+            transform: none;
+            left: 50%;
+        }
+
+        &::after {
+            transform: rotateX(180deg);
+        }
+    }
+}
+
+.main-section {
+
+    .blue-section {
+        background-color: $blue;
+    }
+    
+    .blue-content {
+        background:url(../images/main-bg-blue.png) 50% 100% no-repeat;
+        height: 900px;
+        color: $white;
+        position: relative;
+
+        .main-title-blue {
+            position: absolute;
+            top: 290px;
+            right: 140px;
+            text-transform: uppercase;
+        }
+
+        i {
+            position: absolute;
+        }
+
+        .icon-graph-circle {
+            top: 175px;
+            left: 60px;
+            font-size: 70px;
+        }
+
+        .icon-graph {
+            top: 120px;
+            left: 410px;
+            font-size: 60px;
+        }
+        
+        .icon-money {
+            top: 310px;
+            left: 180px;
+            font-size: 90px;
+        }
+
+        .icon-wifi {
+            top: 560px;
+            left: 60px;
+            font-size: 80px;
+        }
+
+        .icon-bitcoin3 {
+            top: 670px;
+            left: 205px;
+            font-size: 70px;
+        }
+
+        .icon-bag-money {
+            top: 155px;
+            right: 250px;
+            font-size: 68px;
+        }
+
+        .icon-bitcoin {
+            top: 435px;
+            right: 120px;
+            font-size: 80px;
+        }
+
+        .icon-money2 {
+            top: 600px;
+            right: 265px;
+            font-size: 95px;
+        }
+
+        .icon-bitcoin2 {
+            top: 735px;
+            right: 65px;
+            font-size: 55px;
+        }
+    }
+
+    .red-section {
+        background-color: $red;
+    }
+
+    .red-content {
+        background:url(../images/main-bg-red.png) 50% 100% no-repeat;
+        height: 900px;
+        color: $white;
+        position: relative;
+    }
+
+    .main-title-red {
+        position: absolute;
+        top: 290px;
+        left: 110px;
+        text-transform: uppercase;
+    }
+
+    i {
+        position: absolute;
+    }
+
+    .astronaut1 {
+        top: 135px;
+        left: 90px;
+        font-size: 80px;
+        transform: rotateY(180deg);
+    }
+
+    .icon-stars {
+        top: 70px;
+        left: 415px;
+        font-size: 100px;
+    }
+    
+    .icon-satellite {
+        top: 470px;
+        left: 130px;
+        font-size: 120px;
+    }
+
+    .icon-planet {
+        top: 720px;
+        left: 75px;
+        font-size: 60px;
+    }
+
+    .icon-rocket {
+        top: 640px;
+        left: 280px;
+        font-size: 140px;
+    }
+
+    .icon-alien {
+        top: 200px;
+        right: 385px;
+        font-size: 55px;
+    }
+
+    .icon-meteorite {
+        top: 150px;
+        right: 70px;
+        font-size: 70px;
+    }
+
+    .icon-ship {
+        top: 360px;
+        right: 65px;
+        font-size: 80px;
+    }
+
+    .icon-circle {
+        top: 600px;
+        right: 55px;
+        font-size: 75px;
+    }
+
+    .astronaut2 {
+        top: 735px;
+        right: 260px;
+        font-size: 80px;
+    }
+}
+
+/* _____________________________alex-section_____________________ */
+
+.alex-section {
+    padding: 50px 0 55px 0;
+
+    .alex-main-title {
+        text-align: center;
+    }
+
+    .alex-text-wrap {
+        padding: 0 130px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .text-astrophysics-wrap, .text-blockchain-wrap {
+        max-width: 250px;
+
+        .text-astrophysics, .text-blockchain {
+            color: $gray;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+
+    .text-astrophysics-wrap {
+        margin-right: 35px;
+    }
+
+    .text-blockchain-wrap {
+        margin-left: 35px;
+    }
+
+    .slider-cub-wrap {
+        max-width: 540px;
+
+        .slider-cub-bullet {
+            bottom: -41px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $slid-gray;
+        }
+
+        .slider-cub-prev, .slider-cub-next {
+            top: 110%;
+            color: $slid-gray;
+            
+            &::after {
+                font-size: 10px;
+                font-weight: 900;
+            }
+        }
+
+        .slider-cub-prev {
+            left: 38%;
+        }
+
+        .slider-cub-next {
+            right: 38%;
+        }
+    }
+}
