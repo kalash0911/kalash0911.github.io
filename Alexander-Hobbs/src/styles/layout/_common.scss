@@ -9,6 +9,44 @@ body {
     margin: 0 auto;
 }
 
+.btn-first, .btn-second {
+    display: block;
+    margin: 0 auto;
+    max-width: 170px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 3px;
+    background: $btn-first-color;
+    color: $white;
+    font-size: 20px;
+    line-height: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-second {
+    background: $btn-second-color;
+}
+
+.btn-cards {
+    color: $white;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 25px;
+    transition: all 0.5s ease 0s;
+
+    img {
+        max-height: 9px;
+        max-width: 5px;
+        margin-left: 10px;
+    }
+
+    &:hover {
+        font-size: 20px;
+        transition: all 0.5s ease 0s;
+    }
+}
+
 
 /* _____________________________main-section___________________________ */
 
@@ -48,13 +86,9 @@ body {
 }
 
 .main-section {
-
-    .blue-section {
-        background-color: $blue;
-    }
+    background:url(../images/main-bg-blue.png) center/cover no-repeat;
     
     .blue-content {
-        background:url(../images/main-bg-blue.png) 50% 100% no-repeat;
         height: 900px;
         color: $white;
         position: relative;
@@ -126,11 +160,10 @@ body {
     }
 
     .red-section {
-        background-color: $red;
+        background:url(../images/main-bg-red.png) center/cover no-repeat;
     }
 
     .red-content {
-        background:url(../images/main-bg-red.png) 50% 100% no-repeat;
         height: 900px;
         color: $white;
         position: relative;
@@ -212,21 +245,20 @@ body {
 /* _____________________________alex-section_____________________ */
 
 .alex-section {
-    padding: 50px 0 55px 0;
+    padding: 50px 0 45px 0;
 
     .alex-main-title {
         text-align: center;
     }
 
     .alex-text-wrap {
-        padding: 0 130px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: 120px;
     }
     
     .text-astrophysics-wrap, .text-blockchain-wrap {
-        max-width: 250px;
 
         .text-astrophysics, .text-blockchain {
             color: $gray;
@@ -256,7 +288,7 @@ body {
         }
 
         .slider-cub-prev, .slider-cub-next {
-            top: 110%;
+            top: 104%;
             color: $slid-gray;
             
             &::after {
@@ -271,6 +303,378 @@ body {
 
         .slider-cub-next {
             right: 38%;
+        }
+    }
+
+    .slider-events {
+        margin-bottom: 45px;
+
+        .slide-events-item {
+            color: $gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            .slide-events-title {
+                margin: 0 0 10px 0;
+            }
+
+            .slide-line {
+                width: 100%;
+                height: 1px;
+                background-color: $gray;
+                margin: 0 0 30px 0;
+            }
+
+            .slide-events-sub-title {
+                margin: 0 0 20px 0;
+                max-width: 150px;
+            }
+
+            .slide-events-text {
+                max-width: 150px;
+            }
+        }
+
+        .slide-events-item-first {
+
+            .slide-line {
+                width: 50%;
+                align-self: flex-end;
+            }
+        }
+
+        .slide-events-item-last {
+
+            .slide-line {
+                width: 50%;
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+/* _____________________________awards-section______________________________ */
+
+.awards-section {
+    padding: 45px 0 90px 0;
+    background: url(../images/awards-bg.png) center/cover no-repeat;
+
+    .awards-title {
+        text-align: center;
+    }
+    
+    .awards-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slider-text {
+        width: 50%;
+        max-height: 600px;
+        margin: 0 30px 0 0;
+
+        
+        .slider-text-wrap {
+            padding: 0 30px;
+        }
+        
+        .slide-text-title {
+            margin-bottom: 40px;
+            font-weight: normal;
+            cursor: pointer;
+            
+            &:hover {
+                font-weight: bold;
+            }
+        }
+
+        .swiper-slide-thumb-active {
+
+            .slide-text-title {
+                font-weight: bold;
+            }
+        }
+
+        .swiper-scrollbar {
+            right: 99%;
+        }
+    }
+
+    .slider-img {
+        width: 50%;
+
+        .slide-img-wrap {
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .slide-img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .swiper-button-prev, .swiper-button-next {
+            top: 40%;
+         
+            &::after {
+                color: #6A6A6A;
+                font-size: 30px;
+                font-weight: 900;
+            }
+        }
+
+        .swiper-button-prev {
+            left: 60px;
+        }
+
+        .swiper-button-next {
+            right: 60px;
+        }
+    }
+}
+
+/* _____________________________news-section__________________________ */
+
+.news-section {
+    position: relative;
+
+    .news-title {
+        position: absolute;
+        color: $white;
+        z-index: 100;
+        left: 50%;
+        transform: translate(-50%);
+        top: 45px;
+        font-weight:600;
+        font-family: $SF-Pro-Display;
+        margin: 0;
+    }
+
+    .slider-news {
+        position: relative;
+    }
+
+    .slide-news-item {
+        display: flex;
+        flex-direction: column;
+        padding: 175px 0 190px 0;
+        color: $white;
+
+        .slide-news-title {
+            margin-bottom: 50px;
+        }
+       
+        .slide-news-text {
+            max-width: 415px;
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 60px;
+        }
+
+        .btn-second {
+            margin: 0;
+        }
+    }
+
+    .slide-nav {
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        bottom: 100px;
+        padding: 0 15px;
+
+        .slide-nav-container {
+            position: relative;
+            width: 100%;
+            max-width: 1390px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            align-self: flex-start;
+
+
+            .swiper-button-prev, .swiper-button-next {
+                position: static;
+                height: 100%;
+                max-width: 12px;
+
+                &::after {
+                    font-size: 12px;
+                    font-weight: 900;
+                    color: $slid-gray;
+                }
+            }
+            
+            .swiper-pagination {
+                position: static;
+                height: 100%;
+                display: flex;
+                margin: 0 20px;
+
+                .swiper-pagination-bullet {
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 10px;
+                    background: #313131;
+                    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+                .swiper-pagination-bullet-active {
+                   background-color: $slid-gray;
+                }
+            }
+        }
+
+    }
+   
+
+    .slide-news-item1 {
+        background: url(../images/news-bg.png) center/cover no-repeat;
+    }
+
+    .slide-news-item2 {
+        background: url(../images/news-bg.png) center/cover no-repeat;
+    }
+
+    .slide-news-item3 {
+        background: url(../images/news-bg.png) center/cover no-repeat;
+    }
+
+    .slide-news-item4 {
+        background: url(../images/news-bg.png) center/cover no-repeat;
+    }
+}
+
+/* _____________________________blogs-section____________________________ */
+
+.blogs-section {
+    padding: 60px 0 95px 0;
+
+    .blogs-title {
+        color: $black;
+        text-align: center;
+    }
+
+    .blogs-card-wrap {
+        margin-bottom: 50px;
+        text-align: center;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(minmax(670px,1fr));
+
+        @include media ('<desktop') {
+            grid-template-columns: auto;
+        }
+    }
+
+    .card {
+        padding: 85px 0 50px 0;
+        color: $white;
+        border-radius: 5px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s ease 0s;
+
+        &:hover {
+            background-size: 100% 100%;
+            transition: all 0.5s ease 0s;
+        }
+    }
+
+    .card-title {
+        margin: 0 0 20px 0;
+        color: $white;
+    }
+
+    .card-text {
+        max-width: 275px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .card1 {
+        background: url(../images/Blogs/blog-item1.png) center/150% 150% no-repeat;
+        max-height: 565px;
+        grid-column: span 2;
+
+        @include media ('<desktop') {
+            grid-column: span 1;
+        }
+    }
+    
+    .card2 {
+        background: url(../images/Blogs/blog-item2.png) center/150% 150% no-repeat;
+        max-height: 650px;
+    }
+
+    .card3 {
+        background: url(../images/Blogs/blog-item3.png) center/150% 150% no-repeat;
+        max-height: 650px;
+    }
+
+    .card4 {
+        background: url(../images/Blogs/blog-item4.png) center/150% 150% no-repeat;
+        max-height: 650px;
+    }
+
+    .card5 {
+        background: url(../images/Blogs/blog-item5.png) center/150% 150% no-repeat;
+        max-height: 650px;
+    }
+}
+/* _____________________________social-section________________________________ */
+
+.social-section {
+    padding: 0 0 100px 0;
+    
+    .social-title {
+        text-align: center;
+        color: $black;
+    }
+
+    .social-wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .insta-wrap, .twitt-wrap {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .insta-wrap {
+        margin-right: 15px;
+    }
+
+    .insta-main, .twitt-main {
+        margin: 50px 0 60px 0;
+    }
+
+    .btn-inst, .btn-twitt {
+        width: 100%;
+        max-width: 190px;
+    }
+
+    .btn-inst {
+        &:hover {
+            background: $insta;
+        }
+    }
+
+    .btn-twitt {
+        &:hover {
+            background: $twitter;
         }
     }
 }

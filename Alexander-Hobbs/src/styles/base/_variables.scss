@@ -8,6 +8,10 @@ $gray: #A9A9A9;
 $slid-gray:#8E8E8E;
 $blue: #4E72F6;
 $red: #ED7766;
+$btn-first-color: linear-gradient(264.95deg, rgba(13, 13, 13, 0.8) 0.8%, #727272 99.13%);
+$btn-second-color:linear-gradient(264.95deg, rgba(219, 219, 219, 0.8) 0.8%, #727272 99.13%);
+$twitter: #04A9F4;
+$insta: linear-gradient(264.95deg, #CB2CC0 0.8%, #FFB243 99.13%);
 
 
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -47,9 +51,9 @@ $placeholder-color: $gray !default;
 $h1-font-size: 40px;
 $h2-font-size: 53px;
 $h3-font-size: 36px;
-$h4-font-size: 25px;
-$h5-font-size: 24px;
-$h6-font-size: 22px;
+$h4-font-size: 24px;
+$h5-font-size: 22px;
+$h6-font-size: 18px;
 
 $headings-font-family: $base-font-sans-serif;
 $headings-color: inherit !default;
