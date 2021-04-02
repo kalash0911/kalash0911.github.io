@@ -1,6 +1,13 @@
 "use strict";
 
 jQuery(function () {});
+$(document).ready(function () {
+  $('.burger').click(function (event) {
+    event.preventDefault();
+    $('.burger').toggleClass('burger-active');
+    $('.header-nav').toggleClass('header-nav-active');
+  });
+});
 new BeerSlider(document.getElementById('slider'));
 new Swiper('.slider-cub', {
   pagination: {
@@ -33,6 +40,17 @@ new Swiper('.slider-events', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 2
+    },
+    580: {
+      slidesPerView: 3
+    },
+    767: {
+      slidesPerView: 4
+    }
   }
 });
 new Swiper('.slider-img', {
@@ -40,7 +58,7 @@ new Swiper('.slider-img', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  effect: 'flip',
+  effect: 'fade',
   slidesPerView: 1,
   speed: 800,
   thumbs: {

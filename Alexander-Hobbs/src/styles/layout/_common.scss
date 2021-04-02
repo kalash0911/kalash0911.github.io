@@ -55,7 +55,7 @@ body {
 
     .nav-item {
     
-        @include media ('>tablet') {
+        @include media ('>tablet') { 
         
             &:hover {
                 background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' width='390px' height='50px' viewBox='0 0 390 50' enable-background='new 0 0 390 50' xml:space='preserve'%3e%3cpath fill='none' stroke='%23000' stroke-width='1.5' stroke-miterlimit='10' d='M0,47.585c0,0,97.5,0,130,0 c13.75,0,28.74-38.778,46.168-19.416C192.669,46.5,243.603,47.585,260,47.585c31.821,0,130,0,130,0' style='&%2310; /* stroke: %23000; */&%2310;'/%3e%3c/svg%3e");
@@ -73,6 +73,8 @@ body {
 
 #slider {
     width: 100%;
+    height: 100vh;
+
 
     &::after {
         display: none;
@@ -108,6 +110,7 @@ body {
 
 .main-section {
     background:url(../images/main-bg-blue.png) center/cover no-repeat;
+    height: 100vh;
     
     .blue-content {
         height: 900px;
@@ -119,6 +122,12 @@ body {
             top: 290px;
             right: 140px;
             text-transform: uppercase;
+
+            @include media ('<widescreen'){
+                top: 245px;
+                right: -170px;
+                transform: rotate(90deg);
+            }
         }
 
         i {
@@ -129,18 +138,40 @@ body {
             top: 175px;
             left: 60px;
             font-size: 70px;
+
+            @include media ('<desktop'){
+                left: 50px;
+            }
         }
 
         .icon-graph {
             top: 120px;
             left: 410px;
             font-size: 60px;
+
+            @include media ('<desktop'){
+                left: 200px;
+                top: 100px;
+            }
+
+            @include media ('<phone'){
+                left: 120px;
+            }
         }
         
         .icon-money {
             top: 310px;
             left: 180px;
             font-size: 90px;
+
+            @include media ('<desktop'){
+                left: 160px;
+            }
+
+            @include media ('<phone'){
+                left: 30px;
+            }
+            
         }
 
         .icon-wifi {
@@ -153,24 +184,52 @@ body {
             top: 670px;
             left: 205px;
             font-size: 70px;
+
+            @include media ('<desktop'){
+                left: 200px;
+            }
+
+            @include media ('<phone'){
+                left: 80px;
+            }
         }
 
         .icon-bag-money {
             top: 155px;
             right: 250px;
             font-size: 68px;
+
+            @include media ('<tablet'){
+                right: 130px;
+            }
+
+            @include media ('<phone'){
+                right: 70px;
+            }
         }
 
         .icon-bitcoin {
             top: 435px;
             right: 120px;
             font-size: 80px;
+
+            @include media ('<phone'){
+                right: 60px;
+            }
         }
 
         .icon-money2 {
             top: 600px;
             right: 265px;
             font-size: 95px;
+
+            @include media ('<tablet'){
+                right: 140px;
+            }
+
+            @include media ('<phone'){
+                right: 20px;
+            }
         }
 
         .icon-bitcoin2 {
@@ -195,6 +254,13 @@ body {
         top: 290px;
         left: 110px;
         text-transform: uppercase;
+
+        @include media ('<widescreen'){
+            top: 280px;
+            right: none;
+            left: -200px;
+            transform: rotate(270deg);
+        }
     }
 
     i {
@@ -218,30 +284,56 @@ body {
         top: 470px;
         left: 130px;
         font-size: 120px;
+
+        @include media ('<tablet'){
+            left: 55px;
+        }
     }
 
     .icon-planet {
         top: 720px;
         left: 75px;
         font-size: 60px;
+
+        @include media ('<tablet'){
+            top: 680px;
+        }
     }
 
     .icon-rocket {
         top: 640px;
         left: 280px;
         font-size: 140px;
+
+        @include media ('<tablet'){
+            top: 795px;
+            left: 60px;
+        }
     }
 
     .icon-alien {
         top: 200px;
         right: 385px;
         font-size: 55px;
+
+        @include media ('<tablet'){
+            top: 285px;
+            right: 300px;
+        }
+
+        @include media ('<phone'){
+            right: 200px;
+        }
     }
 
     .icon-meteorite {
         top: 150px;
         right: 70px;
         font-size: 70px;
+
+        @include media ('<tablet'){
+            top: 190px;
+        }
     }
 
     .icon-ship {
@@ -260,6 +352,10 @@ body {
         top: 735px;
         right: 260px;
         font-size: 80px;
+
+        @include media ('<tablet'){
+            right: 5px;
+        }
     }
 }
 
@@ -277,9 +373,25 @@ body {
         align-items: center;
         justify-content: space-between;
         margin-bottom: 120px;
+
+        @include media ('<desktop'){
+            flex-direction: column;
+        }
     }
     
     .text-astrophysics-wrap, .text-blockchain-wrap {
+
+        @include media ('<desktop'){
+            max-width: 70%;
+        }
+
+        @include media ('<tablet'){
+            max-width: 85%;
+        }
+
+        @include media ('<phone'){
+            max-width: 100%;
+        }
 
         .text-astrophysics, .text-blockchain {
             color: $gray;
@@ -291,17 +403,38 @@ body {
 
     .text-astrophysics-wrap {
         margin-right: 35px;
+
+        @include media ('<desktop'){
+            order: 2;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
     }
 
     .text-blockchain-wrap {
         margin-left: 35px;
+
+        @include media ('<desktop'){
+            order: 3;
+            margin-left: 0;
+        }
     }
 
     .slider-cub-wrap {
         max-width: 540px;
+        width: 100%;
+
+        @include media ('<desktop'){
+            order: 1;
+            margin-bottom: 35px;
+        }
 
         .slider-cub-bullet {
             bottom: -41px;
+
+            @include media ('<tablet'){
+                display: none;
+            }
         }
 
         .swiper-pagination-bullet-active {
@@ -309,12 +442,16 @@ body {
         }
 
         .slider-cub-prev, .slider-cub-next {
-            top: 104%;
+            top: 110%;
             color: $slid-gray;
             
             &::after {
                 font-size: 10px;
                 font-weight: 900;
+            }
+
+            @include media ('<tablet'){
+                display: none;
             }
         }
 
@@ -701,6 +838,10 @@ body {
 
     .insta-main, .twitt-main {
         margin: 50px 0 60px 0;
+    }
+
+    .twitt {
+        max-width: 63px;
     }
 
     .btn-inst, .btn-twitt {
