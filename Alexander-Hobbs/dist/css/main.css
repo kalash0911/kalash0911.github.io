@@ -1391,8 +1391,10 @@ body {
       @media (max-width: 1079px) {
         .awards-section .slider-text .slider-text-wrap {
           padding: 0; } }
+    .awards-section .slider-text .slide-text-item {
+      padding-bottom: 20px; }
     .awards-section .slider-text .slide-text-title {
-      margin-bottom: 40px;
+      margin-bottom: 0px;
       font-weight: normal;
       cursor: pointer; }
       .awards-section .slider-text .slide-text-title:hover {
