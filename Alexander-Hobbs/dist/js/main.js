@@ -67,22 +67,11 @@ new Swiper('.slider-img', {
     swiper: {
       el: '.slider-text',
       direction: 'vertical',
-      slidesPerView: 8,
+      slidesPerView: 'auto',
       freeMode: true,
       mousewheel: true,
       scrollbar: {
         el: '.swiper-scrollbar'
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 4
-        },
-        480: {
-          slidesPerView: 6
-        },
-        768: {
-          slidesPerView: 7
-        }
       }
     }
   }

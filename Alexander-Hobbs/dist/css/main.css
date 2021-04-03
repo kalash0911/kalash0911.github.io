@@ -1392,7 +1392,8 @@ body {
         .awards-section .slider-text .slider-text-wrap {
           padding: 0; } }
     .awards-section .slider-text .slide-text-item {
-      padding-bottom: 20px; }
+      margin-bottom: 30px;
+      height: auto; }
     .awards-section .slider-text .slide-text-title {
       margin-bottom: 0px;
       font-weight: normal;
