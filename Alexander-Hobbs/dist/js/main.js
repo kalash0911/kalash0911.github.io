@@ -6,6 +6,7 @@ $(document).ready(function () {
     event.preventDefault();
     $('.burger').toggleClass('burger-active');
     $('.header-nav').toggleClass('header-nav-active');
+    $('.header-logo').toggleClass('header-logo-active');
   });
 });
 new BeerSlider(document.getElementById('slider'));
@@ -58,7 +59,7 @@ new Swiper('.slider-img', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  effect: 'fade',
+  effect: 'flip',
   slidesPerView: 1,
   speed: 800,
   thumbs: {
@@ -70,12 +71,24 @@ new Swiper('.slider-img', {
       mousewheel: true,
       scrollbar: {
         el: '.swiper-scrollbar'
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 4
+        },
+        480: {
+          slidesPerView: 6
+        },
+        768: {
+          slidesPerView: 7
+        }
       }
     }
   }
 });
 new Swiper('.slider-news', {
   speed: 1000,
+  spaceBetween: 30,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'

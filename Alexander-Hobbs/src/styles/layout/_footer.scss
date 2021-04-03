@@ -1,3 +1,7 @@
+#footer {
+    position: relative;
+}
+
 /* _____________________________first-footer-section__________________________ */
 
 .first-footer-section {
@@ -56,6 +60,13 @@
         line-height: 25px;
         border-radius: 3px;
         outline: none;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            background: $btn-first-hover-color;
+            color: $twitter;
+            transition: all 0.3s ease 0s;
+        }
     }
 }
 
@@ -65,6 +76,10 @@
     padding: 30px 0 35px 0;
     background: $footer-bg-color;
     border-bottom: 1px solid $gray;
+
+    @include media ('<phone'){
+        padding: 55px 0 10px 0;
+    }
 }
 
 .second-footer-content {
@@ -76,6 +91,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include media ('<phone'){
+        justify-content: center;
+    }
 }
 
 .second-footer-logo-wrap {
@@ -89,6 +108,10 @@
 }
 
 .second-footer-nav-wrap {
+
+    @include media ('<phone'){
+        display: none;
+    }
     
     .footer-nav-ul {
         display: flex;
@@ -98,6 +121,10 @@
 
         .footer-nav-li {
             margin-right: 80px;
+
+            @include media ('<tablet'){
+                margin-right: 20px;
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -117,6 +144,10 @@
 .second-sub-footer-section {
     padding: 10px 0 35px 0;
     background: $footer-bg-color;
+
+    @include media ('<phone'){
+        padding: 10px 0;
+    }
 }
 
 .second-sub-footer-content {
@@ -124,14 +155,35 @@
     justify-content: space-between;
     align-items: center;
 
+    @include media ('<phone'){
+        justify-content: center;
+    }
+
+    .indefini {
+        @include media ('<phone'){
+            display: none;
+        }
+    }
+
     .sub-footer-link {
         color: $white;
         font-size: 16px;
         line-height: 25px;
         text-align: center;
+
+        @include media ('<phone'){
+            font-size: 15px;
+        }
     }
 
     .sub-footer-social-wrap {
+
+        @include media ('<phone'){
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: 100px;
+        }
 
         .sub-footer-social-link {
             margin-right: 10px;
@@ -146,13 +198,14 @@
             }
 
             .icon-instagram {
-        
+                transition: all 0.3s ease 0s;
                 &:hover {
                     color:#FFB243;
                 }
             }
 
             .icon-facebook {
+                transition: all 0.3s ease 0s;
 
                 &:hover{
                     color: #3b5998;
@@ -160,7 +213,7 @@
             }
 
             .icon-linkedin {
-
+                transition: all 0.3s ease 0s;
                 &:hover {
                     color: #0e76a8;
                 }

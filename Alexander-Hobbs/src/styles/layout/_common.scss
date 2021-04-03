@@ -2,6 +2,68 @@ body {
     font-family: $SF-Pro-Display;
 }
 
+.page {
+
+    
+    .nav-item {
+        
+        @include media ('>tablet') { 
+            
+            &:hover {
+                background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' width='390px' height='50px' viewBox='0 0 390 50' enable-background='new 0 0 390 50' xml:space='preserve'%3e%3cpath fill='none' stroke='%23000' stroke-width='1.5' stroke-miterlimit='10' d='M0,47.585c0,0,97.5,0,130,0 c13.75,0,28.74-38.778,46.168-19.416C192.669,46.5,243.603,47.585,260,47.585c31.821,0,130,0,130,0' style='&%2310; /* stroke: %23000; */&%2310;'/%3e%3c/svg%3e");
+                animation: line 1s;
+            }
+        }
+    }
+    
+    .header-logo {
+        
+        .logo-link {
+            color: $black;
+
+            .header-logo-img {
+                display: none;
+            }
+        }
+    }
+
+    .header-logo-active {
+
+        .logo-link {
+            color: $white;
+        }
+    }
+
+    .header-nav{
+        
+        .nav-link {
+            color: $black;
+        }
+    }
+    
+    .header-nav-active {
+
+        .nav-link {
+            color: #9F9F9F;
+        }
+    }
+
+    .burger {
+
+        .burger-item {
+            background: $black;
+        }
+    }
+
+    .burger-active {
+
+        .burger-item {
+            background: $white;
+        }
+    }
+
+}
+
 .container {
     width: 100%;
     max-width: 1390px;
@@ -21,6 +83,13 @@ body {
     font-size: 20px;
     line-height: 25px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+        background: $btn-first-hover-color;
+        color: $btn-first-hover-text-color;
+        transition: all 0.5s ease 0s;
+    }
 }
 
 .btn-second {
@@ -47,25 +116,9 @@ body {
     }
 }
 
-.page {
-
-    .logo-link {
-        color: $black;
-    }
-
-    .nav-item {
-    
-        @include media ('>tablet') { 
-        
-            &:hover {
-                background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' width='390px' height='50px' viewBox='0 0 390 50' enable-background='new 0 0 390 50' xml:space='preserve'%3e%3cpath fill='none' stroke='%23000' stroke-width='1.5' stroke-miterlimit='10' d='M0,47.585c0,0,97.5,0,130,0 c13.75,0,28.74-38.778,46.168-19.416C192.669,46.5,243.603,47.585,260,47.585c31.821,0,130,0,130,0' style='&%2310; /* stroke: %23000; */&%2310;'/%3e%3c/svg%3e");
-                animation: line 1s;
-            }
-        }
-    }
-
-    .nav-link {
-        color: $black;
+h3 {
+    @include media ('<phone') {
+        font-size: 24px;
     }
 }
 
@@ -493,6 +546,7 @@ body {
 
             .slide-events-text {
                 max-width: 150px;
+                padding: 0 10px;
             }
         }
 
@@ -527,6 +581,12 @@ body {
     .awards-content {
         display: flex;
         justify-content: space-between;
+
+        @include media ('<1080px') {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .slider-text {
@@ -534,9 +594,24 @@ body {
         max-height: 600px;
         margin: 0 30px 0 0;
 
+        @include media ('<1080px') {
+            width: 100%;
+            text-align: center; 
+            margin: 0 30px;
+        }
+
+        @include media ('<phone'){
+            text-align: justify;
+            max-height: 350px;
+        }
+
         
         .slider-text-wrap {
             padding: 0 30px;
+
+            @include media ('<1080px') {
+                padding: 0;
+            }
         }
         
         .slide-text-title {
@@ -547,22 +622,41 @@ body {
             &:hover {
                 font-weight: bold;
             }
+
+            @include media ('<1080px') {
+                padding: 0 45px;
+            }
+
+            @include media ('<phone') {
+                padding: 0 40px 0 20px;
+                font-size: 21px;
+            }
         }
 
         .swiper-slide-thumb-active {
 
             .slide-text-title {
                 font-weight: bold;
+
             }
         }
 
         .swiper-scrollbar {
             right: 99%;
+
+            @include media ('<1080px'){
+                right: 0;
+            }
         }
     }
 
     .slider-img {
+        max-width: 400px;
         width: 50%;
+
+        @include media ('<1080px') {
+           margin-bottom: 50px;
+        }
 
         .slide-img-wrap {
             overflow: hidden;
@@ -576,6 +670,7 @@ body {
 
         .swiper-button-prev, .swiper-button-next {
             top: 40%;
+            outline: none;
          
             &::after {
                 color: #6A6A6A;
@@ -585,11 +680,11 @@ body {
         }
 
         .swiper-button-prev {
-            left: 60px;
+            left: -40px;
         }
 
         .swiper-button-next {
-            right: 60px;
+            right: -40px;
         }
     }
 }
@@ -598,6 +693,25 @@ body {
 
 .news-section {
     position: relative;
+
+    .slide-news-img-wrap {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        
+        .slide-news-img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        @include media ('<phone'){
+            position: static;
+            margin-top: 115px;
+        }
+    }
 
     .news-title {
         position: absolute;
@@ -609,6 +723,10 @@ body {
         font-weight:600;
         font-family: $SF-Pro-Display;
         margin: 0;
+
+        @include media ('<phone'){
+            color: $black;
+        }
     }
 
     .slider-news {
@@ -618,11 +736,42 @@ body {
     .slide-news-item {
         display: flex;
         flex-direction: column;
-        padding: 175px 0 190px 0;
-        color: $white;
+        padding: 0 0 190px 0;
+        color: $white; 
+
+        @include media ('<desktop'){
+            .container {
+                padding: 0;
+            }
+        }
+
+        @include media ('<phone'){
+            padding: 0 0 45px 0;
+        }
+    }
+
+    .slide-news-item-content {
+        display: flex;
+        flex-direction: column;
+
+        @include media ('<desktop'){
+            align-items: center;
+        }
+
+        @include media ('<phone'){
+            color: $black;
+        }
 
         .slide-news-title {
-            margin-bottom: 50px;
+            margin: 175px 0 50px 0;
+
+            @include media ('<phone'){
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $white;
+                margin: 70% 0 0 5%;
+            }
         }
        
         .slide-news-text {
@@ -630,10 +779,24 @@ body {
             font-size: 18px;
             line-height: 25px;
             margin-bottom: 60px;
+
+            @include media ('<desktop'){
+                max-width: 80%;
+                text-align: justify;
+            }
+
+            @include media ('<phone'){
+                max-width: 90%;
+                margin-top: 20px;
+            }
         }
 
         .btn-second {
             margin: 0;
+
+            @include media ('<desktop'){
+                width: 100%;
+            }
         }
     }
 
@@ -646,6 +809,10 @@ body {
         bottom: 100px;
         padding: 0 15px;
 
+        @include media ('<phone'){
+            bottom: 0;
+        }
+
         .slide-nav-container {
             position: relative;
             width: 100%;
@@ -655,12 +822,16 @@ body {
             align-items: center;
             align-self: flex-start;
 
+            @include media ('<desktop'){
+                justify-content: center;
+            }
 
             .swiper-button-prev, .swiper-button-next {
                 position: static;
                 height: 100%;
                 max-width: 12px;
                 margin: 0;
+                outline: none;
 
                 &::after {
                     font-size: 12px;
@@ -680,6 +851,7 @@ body {
                     height: 12px;
                     margin-right: 10px;
                     background: #313131;
+                    outline: none;
                     
                     &:last-child {
                         margin-right: 0;
@@ -692,23 +864,6 @@ body {
             }
         }
 
-    }
-   
-
-    .slide-news-item1 {
-        background: url(../images/news-bg.png) center/cover no-repeat;
-    }
-
-    .slide-news-item2 {
-        background: url(../images/news-bg.png) center/cover no-repeat;
-    }
-
-    .slide-news-item3 {
-        background: url(../images/news-bg.png) center/cover no-repeat;
-    }
-
-    .slide-news-item4 {
-        background: url(../images/news-bg.png) center/cover no-repeat;
     }
 }
 
@@ -723,50 +878,14 @@ body {
     }
 
     .card1 {
-        background: url(../images/Blogs/blog-item1.png);
         max-height: 565px;
         grid-column: span 2;
         
         @include media ('<desktop') {
             grid-column: span 1;
         }
-        
-    }
-    
-    .card2 {
-        background: url(../images/Blogs/blog-item2.png);
-        max-height: 650px;
-    }
-
-    .card3 {
-        background: url(../images/Blogs/blog-item3.png);
-        max-height: 650px;
-    }
-
-    .card4 {
-        background: url(../images/Blogs/blog-item4.png);
-        max-height: 650px;
-    }
-
-    .card5 {
-        background: url(../images/Blogs/blog-item5.png);
-        max-height: 650px;
-    }
-
-    .card {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        @include media ('>tablet') {
-            background-position: center;
-            background-size: 150% 150%;
-            background-repeat: no-repeat;
-        }
     }
 }
-
-
 
 .blogs-card-wrap, .blog-item-wrap {
     margin-bottom: 50px;
@@ -781,27 +900,49 @@ body {
 }
 
 .card, .blog-item {
-    padding: 85px 0 50px 0;
+    position: relative;
     color: $white;
     border-radius: 5px;
     height: 100vh;
+    max-height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: all 0.5s ease 0s;
+
+    .card-img-wrap, .blog-item-img-wrap {
+        position: absolute;
+        z-index: -1;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        .card-img, .blog-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            object-position: center;
+            transform: scale(1.2);
+            transition: all 0.5s ease 0s;
+        }
+    }
     
 
     &:hover {
 
         @include media ('>tablet') {
-            background-size: 100% 100%;
-            transition: all 0.5s ease 0s;
+
+            .card-img, .blog-item-img {
+                transform: scale(1);
+                transition: all 0.5s ease 0s;
+
+            }
         }
     }
 }
 
 .card-title, .blog-item-title {
-    margin: 0 0 20px 0;
+    margin: 85px 0 20px 0;
     color: $white;
 }
 
@@ -809,57 +950,6 @@ body {
     max-width: 275px;
     font-size: 16px;
     line-height: 25px;
-}
-
-/* _____________________________social-section________________________________ */
-
-.social-section {
-    padding: 0 0 100px 0;
-    
-    .social-title {
-        text-align: center;
-        color: $black;
-    }
-
-    .social-wrap {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .insta-wrap, .twitt-wrap {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .insta-wrap {
-        margin-right: 15px;
-    }
-
-    .insta-main, .twitt-main {
-        margin: 50px 0 60px 0;
-    }
-
-    .twitt {
-        max-width: 63px;
-    }
-
-    .btn-inst, .btn-twitt {
-        width: 100%;
-        max-width: 190px;
-    }
-
-    .btn-inst {
-        &:hover {
-            background: $insta;
-        }
-    }
-
-    .btn-twitt {
-        &:hover {
-            background: $twitter;
-        }
-    }
 }
 
 /* _____________________________blog-page___________________ */
@@ -884,61 +974,68 @@ body {
             grid-template-columns: 100%;
         }
     }
+}
 
-    .blog-item1 {
-        background: url(../images/Blogs/blog-item2.png);
-        max-height: 650px;
+/* _____________________________social-section________________________________ */
+
+.social-section {
+    padding: 0 0 100px 0;
+    
+    .social-title {
+        text-align: center;
+        color: $black;
     }
 
-    .blog-item2 {
-        background: url(../images/Blogs/blog-item3.png);
-        max-height: 650px;
+    .social-wrap {
+        display: flex;
+        justify-content: space-between;
+        
+
+        @include media ('<desktop') {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
-    .blog-item3 {
-        background: url(../images/Blogs/blog-item4.png);
-        max-height: 650px;
+    .insta-wrap, .twitt-wrap {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
-    .blog-item4 {
-        background: url(../images/Blogs/blog-item5.png);
-        max-height: 650px;
+    .insta-wrap {
+        margin-right: 15px;
+
+        @include media ('<desktop') {
+            margin:0 0 45px 0;
+        }
     }
 
-    .blog-item5 {
-        background: url(../images/Blogs/blog-item2.png);
-        max-height: 650px;
+    .insta-main, .twitt-main {
+        margin: 50px 0 60px 0;
     }
 
-    .blog-item6 {
-        background: url(../images/Blogs/blog-item3.png);
-        max-height: 650px;
+    .twitt {
+        max-width: 63px;
     }
 
-    .blog-item7 {
-        background: url(../images/Blogs/blog-item4.png);
-        max-height: 650px;
+    .btn-inst, .btn-twitt {
+        width: 100%;
+        max-width: 190px;
+        transition: none;
+        color: $white;
     }
 
-    .blog-item8 {
-        background: url(../images/Blogs/blog-item5.png);
-        max-height: 650px;
+    .btn-inst {
+        &:hover {
+            background: $insta;
+        }
     }
 
-    .blog-item {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        @include media ('>tablet') {
-            background-position: center;
-            background-size: 150% 150%;
-            background-repeat: no-repeat;
-
-            &:hover {
-                background-size: 100% 100%;
-                transition: all 0.5s ease 0s;
-            }
+    .btn-twitt {
+        &:hover {
+            background: $twitter;
         }
     }
 }
@@ -977,9 +1074,19 @@ body {
         justify-content: center;
         align-items:center;
 
-        h1 {
+        .blog-main-title {
             margin: 0 7% 0; 
-        }
+
+            @include media ('<tablet'){
+                font-size: 24px;
+                margin: 0 4% 0; 
+            }
+
+            @include media ('<phone'){
+                font-size: 20px;
+                margin: 0 2% 0; 
+            }
+        }                
     }
 
     .blog-text-wrap {
