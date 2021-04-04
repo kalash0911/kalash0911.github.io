@@ -440,8 +440,8 @@ th {
 
 @font-face {
   font-family: 'icons';
-  src: url("../fonts/icons.eot?vp2yt2");
-  src: url("../fonts/icons.eot?vp2yt2#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?vp2yt2") format("truetype"), url("../fonts/icons.woff?vp2yt2") format("woff"), url("../fonts/icons.svg?vp2yt2#icons") format("svg");
+  src: url("../fonts/icons.eot?8rfx77");
+  src: url("../fonts/icons.eot?8rfx77#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?8rfx77") format("truetype"), url("../fonts/icons.woff?8rfx77") format("woff"), url("../fonts/icons.svg?8rfx77#icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -462,80 +462,192 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-figma:before {
+.icon-aboutexellence:before {
   content: "\e913";
 }
 
+.icon-aboutinnovations:before {
+  content: "\e914";
+}
+
+.icon-aboutresult:before {
+  content: "\e915";
+}
+
+.icon-abouttimings:before {
+  content: "\e916";
+}
+
+.icon-abouttransparency:before {
+  content: "\e917";
+}
+
+.icon-mainassessment:before {
+  content: "\e918";
+}
+
+.icon-mainblow:before {
+  content: "\e919";
+}
+
+.icon-mainbrand:before {
+  content: "\e91a";
+}
+
+.icon-maindev:before {
+  content: "\e91b";
+}
+
+.icon-mainraise:before {
+  content: "\e91c";
+}
+
+.icon-mainreflect:before {
+  content: "\e91d";
+}
+
+.icon-mainux:before {
+  content: "\e91e";
+}
+
+.icon-problemthree:before {
+  content: "\e91f";
+}
+
+.icon-problemtwo:before {
+  content: "\e920";
+}
+
+.icon-servicesfive:before {
+  content: "\e921";
+}
+
+.icon-servicesfour:before {
+  content: "\e922";
+}
+
+.icon-servicesseven:before {
+  content: "\e923";
+}
+
+.icon-servicesthree:before {
+  content: "\e924";
+}
+
+.icon-servicestwo:before {
+  content: "\e925";
+}
+
+.icon-solutionthree:before {
+  content: "\e926";
+}
+
+.icon-solutiontwo:before {
+  content: "\e927";
+}
+
 .icon-arrow-left:before {
-  content: "\e900";
+  content: "\e912";
 }
 
 .icon-arrow-right:before {
-  content: "\e901";
+  content: "\e911";
 }
 
 .icon-email:before {
-  content: "\e902";
+  content: "\e910";
+}
+
+.icon-figma:before {
+  content: "\e90f";
 }
 
 .icon-geo:before {
-  content: "\e904";
+  content: "\e90e";
+}
+
+.icon-gorizont-vector:before {
+  content: "\e928";
+}
+
+.icon-light-bulb:before {
+  content: "\e929";
+}
+
+.icon-logo:before {
+  content: "\e92a";
+}
+
+.icon-logo-footer:before {
+  content: "\e92b";
 }
 
 .icon-phone:before {
   content: "\e905";
 }
 
+.icon-PROBLEMS:before {
+  content: "\e92c";
+}
+
 .icon-ps:before {
-  content: "\e906";
-}
-
-.icon-w:before {
-  content: "\e907";
-}
-
-.icon-arrow:before {
-  content: "\e908";
-}
-
-.icon-arrow-down:before {
-  content: "\e909";
-}
-
-.icon-Be:before {
-  content: "\e90a";
-}
-
-.icon-C:before {
-  content: "\e90b";
-}
-
-.icon-Facebook:before {
-  content: "\e90c";
-}
-
-.icon-idea:before {
   content: "\e90d";
 }
 
+.icon-SOLUTIONS:before {
+  content: "\e92d";
+}
+
+.icon-vector1:before {
+  content: "\e92e";
+}
+
+.icon-w:before {
+  content: "\e90c";
+}
+
+.icon-arrow:before {
+  content: "\e900";
+}
+
+.icon-arrow-down:before {
+  content: "\e901";
+}
+
+.icon-Be:before {
+  content: "\e902";
+}
+
+.icon-C:before {
+  content: "\e903";
+}
+
+.icon-Facebook:before {
+  content: "\e904";
+}
+
+.icon-idea:before {
+  content: "\e90b";
+}
+
 .icon-Insta:before {
-  content: "\e90e";
+  content: "\e906";
 }
 
 .icon-LinkedIn:before {
-  content: "\e90f";
+  content: "\e907";
 }
 
 .icon-men:before {
-  content: "\e910";
+  content: "\e908";
 }
 
 .icon-settings:before {
-  content: "\e911";
+  content: "\e909";
 }
 
 .icon-vector:before {
-  content: "\e912";
+  content: "\e90a";
 }
 
 @font-face {
@@ -1772,7 +1884,7 @@ h4 {
   }
 }
 
-.upgrade-section .total .item .icon-men {
+.upgrade-section .total .item .item-icon {
   font-size: 35px;
 }
 
@@ -1898,7 +2010,7 @@ h4 {
   }
 }
 
-.list-section .card .card-icon .icon-men {
+.list-section .card .card-icon .icon-card {
   font-size: 71px;
 }
 
@@ -2105,12 +2217,13 @@ h4 {
   }
 }
 
-.problems-section .problems-wrapper div i {
+.problems-section .problems-wrapper div .problems-icon {
   font-size: 35px;
+  color: #F95353;
 }
 
 @media (max-width: 479px) {
-  .problems-section .problems-wrapper div i {
+  .problems-section .problems-wrapper div .problems-icon {
     display: none;
   }
 }
@@ -2196,12 +2309,13 @@ h4 {
   }
 }
 
-.problems-section .solutions-wrapper div i {
+.problems-section .solutions-wrapper div .solutions-icon {
   font-size: 35px;
+  color: #00BE4C;
 }
 
 @media (max-width: 479px) {
-  .problems-section .solutions-wrapper div i {
+  .problems-section .solutions-wrapper div .solutions-icon {
     display: none;
   }
 }
@@ -2935,7 +3049,7 @@ h4 {
   margin: 0 15px 66px 15px;
 }
 
-.top5-section .top-item i {
+.top5-section .top-item .top-icon {
   font-size: 32px;
 }
 
@@ -3138,7 +3252,7 @@ h4 {
   font-size: 20px;
 }
 
-.buy-section .buy-item-wrap i {
+.buy-section .buy-item-wrap .buy-icon {
   font-size: 36px;
 }
 
@@ -3980,6 +4094,16 @@ ________________________portfolio-section_____________________ */
   flex-direction: column;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.blog-read-section .main-img-wrap {
+  max-width: 100%;
+  max-height: 626px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  overflow: hidden;
 }
 
 .blog-read-section .blog-title-wrap {
