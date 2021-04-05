@@ -440,8 +440,8 @@ th {
 
 @font-face {
   font-family: 'icons';
-  src: url("../fonts/icons.eot?8rfx77");
-  src: url("../fonts/icons.eot?8rfx77#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?8rfx77") format("truetype"), url("../fonts/icons.woff?8rfx77") format("woff"), url("../fonts/icons.svg?8rfx77#icons") format("svg");
+  src: url("../fonts/icons.eot?bsgbx8");
+  src: url("../fonts/icons.eot?bsgbx8#iefix") format("embedded-opentype"), url("../fonts/icons.ttf?bsgbx8") format("truetype"), url("../fonts/icons.woff?bsgbx8") format("woff"), url("../fonts/icons.svg?bsgbx8#icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -460,6 +460,26 @@ th {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-servicessix:before {
+  content: "\e934";
+}
+
+.icon-group:before {
+  content: "\e92f";
+}
+
+.icon-mainux1:before {
+  content: "\e930";
+}
+
+.icon-solution:before {
+  content: "\e932";
+}
+
+.icon-problem:before {
+  content: "\e931";
 }
 
 .icon-aboutexellence:before {
@@ -3522,62 +3542,45 @@ ________________________portfolio-section_____________________ */
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-bottom: 40px;
+  height: 100vh;
+  max-height: 515px;
 }
 
 @media (max-width: 767px) {
   .portfolio-section .card {
     position: relative;
+    height: auto;
+    max-height: none;
   }
 
   .portfolio-section .card::after {
     content: '';
     position: absolute;
-    display: block;
     height: 1px;
     width: 30%;
     background-color: #C4C4C4;
-    top: 96%;
+    bottom: -17px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
 }
 
-.portfolio-section .card p {
-  margin: 8px 0 4px 0;
-  color: #8C8C8C;
-}
-
-@media (max-width: 767px) {
-  .portfolio-section .card p {
-    -ms-flex-order: 3;
-    order: 3;
-    text-align: center;
-    margin: 0 0 210px 0;
-  }
-}
-
-.portfolio-section .card h3 {
-  margin-bottom: 40px;
-}
-
-@media (max-width: 767px) {
-  .portfolio-section .card h3 {
-    -ms-flex-order: 2;
-    order: 2;
-    margin: 30px 0 15px 0;
-    text-align: center;
-  }
-}
-
 .portfolio-section .card-content {
   position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 @media (max-width: 767px) {
   .portfolio-section .card-content {
     -ms-flex-order: 1;
     order: 1;
+    height: auto;
+    max-height: none;
   }
 }
 
@@ -3587,40 +3590,66 @@ ________________________portfolio-section_____________________ */
   }
 }
 
-.portfolio-section .card-content .hover-wrap {
+.portfolio-section .card-content .card-img-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100vh;
+  max-width: 310px;
+  height: 100vh;
+  max-height: 450px;
+}
+
+@media (max-width: 767px) {
+  .portfolio-section .card-content .card-img-wrap {
+    position: relative;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+.portfolio-section .card-content .card-img-wrap img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  height: 100%;
+}
+
+.portfolio-section .card-content .hover-wrap {
   text-align: center;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   height: 100%;
-  padding: 110px 21px 55px;
+  padding: 25px;
   color: #fff;
   background: #EB5B31;
   opacity: 0;
   transition: all 0.3s ease-in-out;
+  width: 100vh;
+  max-width: 310px;
+  height: 100vh;
+  max-height: 450px;
 }
 
 @media (max-width: 767px) {
   .portfolio-section .card-content .hover-wrap {
     opacity: 1;
-    height: 0;
     background: none;
-    top: 125%;
     padding: 0;
+    -ms-flex-order: 3;
+    order: 3;
+    height: auto;
   }
 }
 
 @media (max-width: 767px) {
   .portfolio-section .card-content .hover-wrap h3 {
     display: none;
-    -ms-flex-order: 3;
-    order: 3;
   }
 }
 
@@ -3631,9 +3660,7 @@ ________________________portfolio-section_____________________ */
 
 @media (max-width: 767px) {
   .portfolio-section .card-content .hover-wrap p {
-    -ms-flex-order: 1;
-    order: 1;
-    margin-bottom: 20px;
+    margin: 20px 0;
     color: black;
   }
 }
@@ -3646,9 +3673,41 @@ ________________________portfolio-section_____________________ */
 
 @media (max-width: 767px) {
   .portfolio-section .card-content .hover-wrap .btn-orange-sm {
+    -ms-flex-order: 4;
+    order: 4;
+    border: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-section .card-content .card-text-wrap {
     -ms-flex-order: 2;
     order: 2;
-    border: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.portfolio-section .card-content .card-text-wrap p {
+  margin: 8px 0 4px 0;
+  color: #8C8C8C;
+}
+
+@media (max-width: 767px) {
+  .portfolio-section .card-content .card-text-wrap p {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-section .card-content .card-text-wrap h3 {
+    -ms-flex-order: 1;
+    order: 1;
+    margin: 30px 0 15px 0;
   }
 }
 
@@ -4011,7 +4070,7 @@ ________________________portfolio-section_____________________ */
   margin-bottom: 40px;
 }
 
-@media (max-width: 1316px) {
+@media (max-width: 1319px) {
   .blog-section .blog-item-wrap {
     -ms-flex-pack: distribute;
     justify-content: space-around;
@@ -4026,24 +4085,40 @@ ________________________portfolio-section_____________________ */
 
 .blog-section .blog-item {
   position: relative;
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  max-height: 340px;
   margin-bottom: 5px;
 }
 
-.blog-section .blog-item-text {
+.blog-section .blog-item-img-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
+  z-index: -1;
+  overflow: hidden;
   height: 100%;
   width: 100%;
-  padding: 36px;
+}
+
+.blog-section .blog-item-img-wrap img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  height: 100%;
+}
+
+.blog-section .blog-item-text {
+  height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #fff;
   background: rgba(235, 94, 51, 0.5);
+  color: #fff;
+  padding: 20px;
 }
 
 .blog-section .blog-item-text h3 {
@@ -4099,11 +4174,14 @@ ________________________portfolio-section_____________________ */
 .blog-read-section .main-img-wrap {
   max-width: 100%;
   max-height: 626px;
+  overflow: hidden;
+}
+
+.blog-read-section .main-img-wrap img {
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
-  overflow: hidden;
 }
 
 .blog-read-section .blog-title-wrap {

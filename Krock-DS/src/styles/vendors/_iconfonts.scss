@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('../fonts/icons.eot?8rfx77');
-  src:  url('../fonts/icons.eot?8rfx77#iefix') format('embedded-opentype'),
-    url('../fonts/icons.ttf?8rfx77') format('truetype'),
-    url('../fonts/icons.woff?8rfx77') format('woff'),
-    url('../fonts/icons.svg?8rfx77#icons') format('svg');
+  src:  url('../fonts/icons.eot?bsgbx8');
+  src:  url('../fonts/icons.eot?bsgbx8#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?bsgbx8') format('truetype'),
+    url('../fonts/icons.woff?bsgbx8') format('woff'),
+    url('../fonts/icons.svg?bsgbx8#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-servicessix:before {
+  content: "\e934";
+}
+.icon-group:before {
+  content: "\e92f";
+}
+.icon-mainux1:before {
+  content: "\e930";
+}
+.icon-solution:before {
+  content: "\e932";
+}
+.icon-problem:before {
+  content: "\e931";
+}
 .icon-aboutexellence:before {
   content: "\e913";
 }
