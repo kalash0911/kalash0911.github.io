@@ -69,6 +69,7 @@ new Swiper('.mob-swiper', {
     },
 
     effect: 'coverflow',
+    autoHeight: true,
     speed: 1000,
 });
 

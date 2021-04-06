@@ -68,6 +68,7 @@ new Swiper('.mob-swiper', {
     prevEl: '.swiper-button-prev'
   },
   effect: 'coverflow',
+  autoHeight: true,
   speed: 1000
 });
 //# sourceMappingURL=main.js.map

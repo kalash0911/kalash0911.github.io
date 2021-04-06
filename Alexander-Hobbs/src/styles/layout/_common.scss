@@ -670,11 +670,20 @@ h3 {
         .slide-img-wrap {
             overflow: hidden;
             margin-bottom: 40px;
+            width: 100%;
+            max-width: 390px;
+            height: 100vh;
+            max-height: 530px;
         }
 
         .slide-img {
             display: block;
             margin: 0 auto;
+            object-fit:cover;
+            object-position: center;
+            max-width: none;
+            width: 100%;
+            height: 100%;
         }
 
         .swiper-button-prev, .swiper-button-next {
