@@ -36,6 +36,10 @@ new Swiper('.slider-cub', {
   speed: 1000
 });
 new Swiper('.slider-events', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
   slidesPerView: 4,
   freeMode: true,
   grabCursor: true,
@@ -60,9 +64,9 @@ new Swiper('.slider-img', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   },
-  effect: 'flip',
+  spaceBetween: 40,
   slidesPerView: 1,
-  speed: 800,
+  speed: 1000,
   thumbs: {
     swiper: {
       el: '.slider-text',
