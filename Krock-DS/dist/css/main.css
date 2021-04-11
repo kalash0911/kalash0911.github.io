@@ -4817,6 +4817,7 @@ ________________________portfolio-section_____________________ */
 
 .privacy-section {
   padding: 275px 0 70px 0;
+  min-height: 100vh;
 }
 
 .privacy-section .privacy-title {
