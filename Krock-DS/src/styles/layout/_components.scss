@@ -321,3 +321,119 @@
 .order-visible {
     display: block;
 }
+
+/* ________________________pricepopup___________________________ */
+
+.pricepopup {
+    width: 100%;
+    display: none;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px 63px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 6000;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+
+    @include media("<phone") {
+        padding: 35px 30px;
+    }
+}
+
+.pricepopup-visible {
+    display: block;
+}
+
+.pricepopup-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .pricepopup-btn {
+        right: 30px;
+    }
+
+    .pricepopup-title {
+        max-width: 340px;
+        margin: 0 auto;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 15px;
+
+        @include media("<phone") {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    .pricepopup-subtitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .pricepopup-form-wrap {
+        display: flex;
+        flex-direction: column;
+
+        .price-input {
+            padding: 15px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            color: $orange;
+            margin-bottom: 15px;
+            border: 1px solid $orange;
+            border-radius: 3px;
+            outline: none;
+
+            &::placeholder {
+                text-align: center;
+                color: $orange;
+            }
+
+        }
+    }
+
+    .check-wrap {
+        display: flex;
+        margin: 0 auto;
+
+        .check {
+            height: 16px;
+            width: 16px;
+            margin: 0 5px 0 0;
+            color: $orange;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #EB5B31;
+            margin: 0;
+        }
+    }
+
+    .btn-form {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background: #EB5B31;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        align-self: center;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}

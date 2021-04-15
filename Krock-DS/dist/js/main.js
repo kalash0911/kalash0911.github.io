@@ -23,6 +23,13 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
+  $('.pricepopup-btn').click(function (event) {
+    event.preventDefault();
+    $('.overlay').toggleClass('overlay-visible');
+    $('.pricepopup').toggleClass('pricepopup-visible');
+  });
+});
+$(document).ready(function () {
   $('.burger').click(function (event) {
     event.preventDefault();
     $('.burger').toggleClass('burger-active');
