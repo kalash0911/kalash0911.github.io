@@ -94,7 +94,7 @@ h4 {
 
 .main-section {
     position: relative;
-    background-image: url(../images/main-bg.png);
+    background-image: url(../images/main-bg.webp);
     background-position: 50% 50%;
     width: 100%;
     height: 900px;
@@ -103,7 +103,7 @@ h4 {
     background-size: cover;
 
     @include media("<phone") {
-        background: url(../images/mob/mob-main-bg.png);
+        background: url(../images/mob/mob-main-bg.webp);
         background-color: rgba(237, 237, 237, 1);
         background-repeat: no-repeat;
         background-size: 100% auto;

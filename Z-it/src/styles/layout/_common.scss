@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto';
+}
+
+#wrapper {
+    background: url(../images/bg-img/main-page-bg.png) center/cover no-repeat;
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1270px;
+    padding: 0 15px;
+}
