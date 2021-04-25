@@ -2,6 +2,10 @@ body {
     font-family: 'Roboto';
 }
 
+.body_lock {
+    overflow: hidden;
+}
+
 #wrapper {
     background: url(../images/bg-img/main-page-bg.png) center/cover no-repeat;
     height: 100vh;

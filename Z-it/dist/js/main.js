@@ -40,4 +40,15 @@ if (isMobile.any()) {
 } else {
   document.body.classList.add('_pc');
 }
+
+var menuBurger = document.querySelector('.menu__burger');
+
+if (menuBurger) {
+  var menuBody = document.querySelector('.menu__body');
+  menuBurger.addEventListener("click", function (e) {
+    document.body.classList.toggle('body_lock');
+    menuBurger.classList.toggle('menu__burger_active');
+    menuBody.classList.toggle('menu__body_active');
+  });
+}
 //# sourceMappingURL=main.js.map

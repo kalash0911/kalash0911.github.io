@@ -772,6 +772,8 @@ input[type='submit'] {
         right: -15px;
         top: 50%; }
   .menu__sub-list {
+    position: absolute;
+    top: 100%;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -780,68 +782,131 @@ input[type='submit'] {
     left: 3px;
     width: 75px;
     background: #919191; }
-  .menu__sub-list {
-    position: absolute;
-    top: 100%; } }
+  .menu__sub-list__li .menu__sub-link {
+    color: #414141; }
+  .mob-social-menu {
+    display: none; } }
 
 @media (max-width: 767px) {
   .menu__burger {
     z-index: 5;
     display: block;
     position: relative;
-    width: 30px;
-    height: 18px;
+    width: 35px;
+    height: 25px;
     cursor: pointer; }
     .menu__burger::before, .menu__burger::after, .menu__burger span {
-      left: 0;
       position: absolute;
-      height: 10%;
+      height: 5px;
       width: 100%;
-      transition: all 0.3s ease 0s;
+      transition: all 0.5s ease 0s;
+      border-radius: 5px;
       background-color: #55B4ED; }
     .menu__burger::before, .menu__burger::after {
       content: ''; }
     .menu__burger::before {
       top: 0; }
     .menu__burger::after {
-      bottom: 0; }
+      bottom: 0;
+      width: 50%;
+      right: 0; }
     .menu__burger span {
-      top: 50%;
+      top: 40%;
       -webkit-transform: scale(1) translate(0px -50%);
       transform: scale(1) translate(0px -50%); }
+  .menu__burger_active::before, .menu__burger_active::after, .menu__burger_active span {
+    background-color: #fff; }
+  .menu__burger_active::before {
+    top: 10px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .menu__burger_active::after {
+    right: -15px;
+    opacity: 0; }
+  .menu__burger_active span {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
   .menu__body {
     position: fixed;
-    top: 0;
+    top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../images/bg-img/mob-menu-bg.svg) center/cover no-repeat;
+    background: url(../images/bg-img/mob-menu-bg.svg) center/cover no-repeat local;
     background-color: #55B4ED;
-    transition: all 0.3s ease 0s; }
+    transition: all 0.5s ease 0s;
+    overflow: auto; }
     .menu__body .menu__link {
       font-weight: bold;
       font-size: 36px;
       color: #fff; }
+  .menu__body_active {
+    top: 0; }
   .menu__list {
-    margin: 20vh 0 0 0;
-    text-align: center; }
+    margin: 15vh 0 0 0;
+    text-align: center;
+    padding: 0; }
     .menu__list li {
-      margin-bottom: 2vh; }
+      margin-bottom: 30px; }
+    .menu__list ._active .menu__sub-list {
+      display: block; }
   .menu__sub-list {
-    position: relative; }
+    position: relative;
+    display: none; }
   .menu__sub-list__li:nth-child(n+2)::before {
     content: '';
-    width: 35%;
+    width: 180px;
     background: #fff; }
-  .menu__sub-list__li a {
+  .menu__sub-list__li .menu__sub-link {
     color: #fff;
     font-size: 16px; }
   .menu__arrow {
     width: 15px;
-    margin: 20px 0 0 17px; } }
+    margin: 20px 0 0 17px; }
+  .mob-language {
+    margin-top: 60px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .mob-language .mob-language__link {
+      font-size: 24px;
+      margin-right: 65px;
+      font-weight: normal; }
+      .mob-language .mob-language__link::after {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 180%;
+        height: 130%;
+        width: 1px;
+        background: #fff; }
+    .mob-language .mob-language__arrow {
+      display: none; }
+    .mob-language .mob-language__sub-list {
+      display: block;
+      min-width: 0; }
+    .mob-language .mob-language__sub-link {
+      font-size: 24px; }
+  .mob-social-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 60px 0; }
+    .mob-social-menu .mob-social-menu__item {
+      margin: 0 10px; }
+      .mob-social-menu .mob-social-menu__item i {
+        font-size: 38px;
+        color: #fff; } }
 
 body {
   font-family: 'Roboto'; }
+
+.body_lock {
+  overflow: hidden; }
 
 #wrapper {
   background: url(../images/bg-img/main-page-bg.png) center/cover no-repeat;
