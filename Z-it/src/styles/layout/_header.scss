@@ -208,15 +208,15 @@
         padding: 0;
         font-size: 20px;
 
-        .mob-link {
+        .mob-li {
             display: none;
         }
 
         li {
-            margin-left: 40px;
+            margin-left: 35px;
 
             &:last-child {
-                margin-left: 60px;
+                margin-left: 40px;
             }
         
             .menu__link {
@@ -452,5 +452,4 @@
             }
         }
     }
-    
 }

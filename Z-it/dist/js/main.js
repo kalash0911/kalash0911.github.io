@@ -51,4 +51,23 @@ if (menuBurger) {
     menuBody.classList.toggle('menu__body_active');
   });
 }
+
+var swiper = new Swiper('.main-swiper', {
+  // Optional parameters
+  init: false,
+  loop: false,
+  slidesPerView: 4
+});
+
+if (document.body.classList.contains('_touch')) {
+  swiper.init();
+} // const qwe = new Swiper('.main-swiper', {
+//     // Optional parameters
+//     init: false,
+//     loop: false,
+//     slidesPerView: 4
+// });
+// if (document.body.classList.contains('_pc')) {
+//     qwe.init()
+// }
 //# sourceMappingURL=main.js.map
