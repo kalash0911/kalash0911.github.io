@@ -7,6 +7,11 @@ body {
     overflow: hidden;
 }
 
+#wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
 .container {
     margin: 0 auto;
     width: 100%;
@@ -14,37 +19,168 @@ body {
     padding: 0 15px;
 }
 
-#wrapper {
-    position: relative;
-    overflow: hidden;
+.main-btn {
+    padding: 15px;
+    width: 100%;
+    max-width: 191px;
+    border-radius: 10px;
+    background: $blue;
+    color: $white;
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    box-shadow: 0 5px 5px rgba(122,122,122,0.45);
 }
+
+.card-btn {
+    color: $white;
+    font-size: 16px;
+    transition: all 0.5s ease 0s;
+    position: relative;
+    cursor: pointer;
+    line-height: 1; 
+    text-decoration: none; 
+
+    &:after {
+        content:"";
+        display: block;
+        position: absolute;
+        left: 0; 
+        width: 0;
+        height: 2px; 
+        background-color: $white; 
+        transition: width 0.3s ease-out; 
+    }
+
+    &:hover:after,
+    &:focus:after {
+        width: 100%;
+    }
+
+    i {
+        font-size: 11px;
+        padding-left: 10px;
+    }
+}
+
 
 /* _____________________________main-section____________________________ */
 
 .main-section {
     padding: 40px 0 120px 0;
+    
+    @include media("<tablet") {
+        padding: 40px 0 195px 0;
+    }
 
+    &::before {
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 50%;
+        height: 2px;
+        background: $blue;
+    }
+    
     .main-content {
         position: relative;
     }
     
     .main__item {
         position: relative;
-        min-height: 275px;
         height: 100%;
         border-radius: 15px;
         overflow: hidden;
+        box-shadow: 0 5px 5px rgba(122,122,122,0.45);
+        background: linear-gradient(180deg, rgba(51, 120, 162, 0.81) 0%, rgba(69, 149, 199, 0.21) 100%);
+        box-sizing: border-box;
+        padding: 40px 30px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(51, 120, 162, 0.81) 50%, rgba(69, 149, 199, 0.21) 100%);
+            transition: all 0.5s ease 0s;
+            opacity: 0;
+        }
+
+        &:hover {
+            @include media(">tablet") {
+                &::before {
+                    opacity: 70%;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+        }
+
+        .main__item_text {
+            position: absolute;
+            max-width: 67%;
+            z-index: 10;
+            color: $white;
+        }
+
+        &:last-child {
+            @include media(">=1250px") {
+                background: linear-gradient(0deg, rgba(51, 120, 162, 0.81) 0%, rgba(69, 149, 199, 0.21) 50%); 
+
+                &::before {
+                    background: linear-gradient(0deg, rgba(51, 120, 162, 0.81) 50%, rgba(69, 149, 199, 0.21) 100%);
+                }
+
+                .main__item_text {
+                    position: absolute;
+                    bottom: 15%;
+                    max-width: 50%;
+                    h4 {
+                        font-size: 36px;
+                        line-height: 42px;
+                    }
+                }
+            }
+        }
+
     }
 
-    .main-text {
+    .main__text {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        margin-top: 170px;
+        box-shadow: none;
+        max-width: 53%;
+
+        @include media("<=1250px") {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        @include media("<tablet") {
+            text-align: start;
+            max-width: 100%;
+            margin-bottom: 70px;
+        }
 
         h1 {
             max-width: 540px;
             margin-bottom: 25px;
+            margin-top: 170px;
+
+            @include media("<=1250px") {
+                margin: 0 auto;
+                margin-bottom: 25px;
+                max-width: 650px;
+                margin-top: 170px;
+            }
+
+            @include media("<tablet") {
+                margin: 170px 0 42px 0;
+            }
         }
 
         p {
@@ -53,7 +189,11 @@ body {
         }
 
         .main-btn {
-            margin: 75px 0 35px 0;
+            margin: 75px 0;
+
+            @include media("<=1250px") {
+                margin: 75px auto;
+            }
         }
     }
 
@@ -71,21 +211,25 @@ body {
             object-fit: cover;
         }
     }
+    
+    ._pc & {
+        @include media(">=1250px") {
+            position: static;
+            transform: none;
 
-    .main-swiper-wrapper {
-        ._pc & {
-            @include media(">=1250px") {
-                position: static;
-                transform: none;
-
-                .main-content {
-                    padding: 120px 44% 0 0;
-                }      
-
-                .swiper-slide {
-                    width: none;
+            
+            .main-content {
+                padding: 120px 44% 0 0;
+            }   
+            
+            .swiper-wrapper {
+                @include media(">=1250px") {
+                    position: static;
+                    transform: none;
+                    display: flex;
+                    justify-content: space-around;
                 }
-
+                
                 .main__item {
                     &:not(:last-child) {
                         max-width: 190px;
@@ -102,5 +246,62 @@ body {
                 }
             }
         }
+
+        .swiper-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main__item {
+            min-height: 275px;
+        }
+
+        .swiper-slide {
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @include media("<=1250px") {
+                max-width: 255px;
+            }
+    
+            @include media("<=1100px") {
+                max-width: 230px;
+            }
+    
+            @include media("<=992px") {
+                max-width: 200px;
+            }
+    
+            @include media("<=850px") {
+                max-width: 170px;
+            }
+        }   
+    }
+
+    ._touch & {
+        @include media("<tablet") {
+
+            .main-content {
+                position: static;
+            }
+        
+            .main__item {
+                min-height: 310px;
+    
+                @include media("<phone") {
+                    min-height: 538px;
+                }
+            }
+
+            .main-btn {
+                position: absolute;
+                bottom: 60px;
+                left: 50%;
+                transform: translate(-50%);
+                margin: 0;
+            }
+        }
     }
 }
+

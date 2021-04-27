@@ -200,7 +200,7 @@
 
 /* ____________________________ */
 
-@include media ('>tablet') {
+@include media ('>=tablet') {
     .menu__list {
         display: flex;
         align-items: center;
@@ -278,7 +278,7 @@
     }
 }
 
-@include media ('<tablet') {
+@include media ('<=tablet') {
 
     .menu__burger {
         z-index: 5;

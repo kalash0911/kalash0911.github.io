@@ -56,7 +56,25 @@ var swiper = new Swiper('.main-swiper', {
   // Optional parameters
   init: false,
   loop: false,
-  slidesPerView: 4
+  slidesPerView: 3,
+  spaceBetween: 30,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 15
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 15
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }
 });
 
 if (document.body.classList.contains('_touch')) {
