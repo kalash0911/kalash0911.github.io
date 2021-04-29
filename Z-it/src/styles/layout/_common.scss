@@ -279,26 +279,60 @@ body {
     }
 
     ._touch & {
-        @include media("<tablet") {
-
-            .main-content {
-                position: static;
-            }
-        
-            .main__item {
-                min-height: 310px;
+        .main-content {
+            position: static;
+        }
     
-                @include media("<phone") {
-                    min-height: 538px;
-                }
+        .main__item {
+            min-height: 310px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            @include media("<phone") {
+                min-height: 538px;
+            }
+        }
+
+        .main__item_text {
+            max-width: none;
+            
+            &:last-child {
+                position: static;
+                max-width: none;
             }
 
-            .main-btn {
-                position: absolute;
+            h4 {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+
+        .main-btn {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translate(-50%);
+            margin: 0;
+
+            @include media("<tablet") {
                 bottom: 60px;
-                left: 50%;
-                transform: translate(-50%);
-                margin: 0;
+            }
+        }
+
+        .main-swiper {
+            .swiper-pagination {
+                bottom: 85px;
+                z-index: 5;
+
+                @include media("<tablet") {
+                    bottom: 145px;
+                }
+
+                .swiper-pagination-bullet {
+                    width: 10px;
+                    height: 10px;
+                }
             }
         }
     }
@@ -536,7 +570,7 @@ body {
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 5px 5px rgba(122,122,122,0.45);
-        background: linear-gradient(0deg, rgba(51, 120, 162, 0.81) 0%, rgba(69, 149, 199, 0.21) 100%);
+        background: linear-gradient(0deg, rgba(51, 120, 162, 0.81) 0%, rgba(69, 149, 199, 0.21) 50%);
         box-sizing: border-box;
         padding: 10% 30px;
         display: flex;
@@ -550,7 +584,7 @@ body {
             right: 0;
             bottom: 0;
             left: 0;
-            background: linear-gradient(0deg, rgba(51, 120, 162, 0.81) 50%, rgba(69, 149, 199, 0.21) 100%);
+            background: linear-gradient(0deg, rgba(51, 120, 162, 0.81) 50%, rgba(69, 149, 199, 0.21) 80%);
             transition: all 0.5s ease 0s;
             opacity: 0;
         }
@@ -624,5 +658,110 @@ body {
             line-height: 16px;
             letter-spacing: -0.03em;
         }
+    }
+}
+
+/* ______________________________portfolio-section_____________________________ */
+
+.portfolio-section {
+    padding: 60px 0 30px 0;
+    position: relative;
+
+    &::before {
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 50%;
+        height: 2px;
+        background: $blue;
+    }
+
+    .portfolio {
+        h2 {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    }
+
+    .portfolio__item {
+        position: relative;
+
+        h3 {
+            margin: 45px 0 50px 0;
+            text-align: center;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+        }
+    }
+
+    .swiper-scrollbar {
+        position: absolute;
+        display: block;
+        width: 80%;
+        height: 3px;
+        bottom: -35px;
+        left: 50%;
+        transform: translate(-50%);
+        
+    }
+    
+    .swiper-container-free-mode>.swiper-wrapper {
+        margin-bottom: 80px;
+    }
+    
+    .portfolio-swiper__slide {
+        h4{
+            margin: 15px 10px;
+        }
+
+        p{
+            margin: 0 10px 10px;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+
+    .portfolio-swiper__slide_img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 275px;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+
+    .swiper-pagination {
+        width: 50%;
+        background-color: $gray;
+        display: flex;
+        height: 1px;
+
+        .swiper-pagination-bullet {
+            width: 100%;
+            border-radius: 3px;
+            height: 3px;
+        }
+    }
+
+    .swiper-container-horizontal>.swiper-pagination-bullets {
+        width: 70%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin:0;
     }
 }

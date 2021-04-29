@@ -53,28 +53,28 @@ if (menuBurger) {
 }
 
 var swiper = new Swiper('.main-swiper', {
-  // Optional parameters
   init: false,
   loop: false,
   slidesPerView: 3,
   spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
   breakpoints: {
-    // when window width is >= 320px
     320: {
       slidesPerView: 1,
       spaceBetween: 15
     },
-    // when window width is >= 480px
-    480: {
+    570: {
       slidesPerView: 2,
       spaceBetween: 15
     },
-    // when window width is >= 640px
-    640: {
+    1000: {
       slidesPerView: 3,
       spaceBetween: 30
     },
-    768: {
+    1150: {
       slidesPerView: 4,
       spaceBetween: 30
     }
@@ -92,4 +92,29 @@ if (document.body.classList.contains('_touch')) {
 // if (document.body.classList.contains('_pc')) {
 //     qwe.init()
 // }
+
+
+var swiper = new Swiper('.portfolio-swiper', {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  freeMode: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    630: {
+      slidesPerView: 2
+    },
+    1000: {
+      slidesPerView: 3
+    },
+    1225: {
+      slidesPerView: 4
+    }
+  }
+});
 //# sourceMappingURL=main.js.map
