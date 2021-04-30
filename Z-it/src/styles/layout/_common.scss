@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto';
-    background: url(../images/bg-img/main-page-bg.svg) 50% 0 no-repeat;
+    background: url(../images/bg-img/main-page-bg.svg) 50% 0 no-repeat,
 }
 
 .body_lock {
@@ -858,19 +858,15 @@ body {
 
 .steps-section {
     padding: 80px 0 105px 0;
-    position: relative;
-
-    &::before {
-        content:'';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
-        width: 50%;
-        height: 2px;
-        background: $blue;
+    
+    @include media ("<tablet") {
+        padding: 40px 0 70px 0;
     }
 
+    .container {
+        background: url(../images/bg-img/main-page-sm-bg.svg) 100% 65% no-repeat;
+    }
+    
     .steps-content {
         display: flex;
         flex-direction: column;
@@ -949,7 +945,7 @@ body {
                 height: 30px;
                 border-radius: 5px;
                 position: absolute;
-                top: 46%;
+                top: 47%;
                 left: 50%;
                 transform: translate(-50%);
                 z-index: 5;
@@ -979,7 +975,7 @@ body {
                 height: 30px;
                 border-radius: 5px;
                 position: absolute;
-                top: 46%;
+                top: 47%;
                 left: 50%;
                 transform: translate(-50%);
                 z-index: 5;
@@ -1086,7 +1082,7 @@ body {
         margin-top: 40px; 
 
         @include media ("<tablet") {
-            margin-bottom: 100px;
+            margin-top: 100px;
         }
     }
 }
