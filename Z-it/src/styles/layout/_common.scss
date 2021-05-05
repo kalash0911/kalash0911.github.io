@@ -239,8 +239,9 @@ body {
                     &:last-child {
                         position: absolute;
                         right: 0;
-                        top: 0;
+                        top: 100px;
                         width: 44%;
+                        height: 90%;
                     }
                 }
             }

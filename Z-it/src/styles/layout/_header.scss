@@ -98,6 +98,12 @@
     }
 }
 
+.header__menu {
+    @include media ('>=tablet') {
+        width: 100%;
+    }
+}
+
 /* ____________________________ */
 
 .menu__burger {
@@ -217,6 +223,10 @@
 
             &:last-child {
                 margin-left: 40px;
+                display: flex;
+                justify-content: flex-end;
+                flex-grow: 1;
+                margin-right: 20px;
             }
         
             .menu__link {
