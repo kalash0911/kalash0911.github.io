@@ -921,7 +921,8 @@ body {
 
 .main-btn {
   padding: 15px 30px;
-  min-width: 191px;
+  width: 100%;
+  max-width: 191px;
   border-radius: 10px;
   background: #55B4ED;
   color: #fff;
@@ -1555,6 +1556,8 @@ body {
     line-height: 16px;
     color: #55B4ED;
     margin: 0; }
+  .reviews-section .main-btn {
+    max-width: 245px; }
 
 /* ______________________________steps-section_______________________________ */
 .steps-section {
@@ -1723,9 +1726,195 @@ body {
       color: #55B4ED;
       margin: 0; }
   .steps-section .main-btn {
-    margin-top: 40px; }
+    margin-top: 40px;
+    max-width: 245px; }
     @media (max-width: 767px) {
       .steps-section .main-btn {
         margin-top: 100px; } }
+
+.popup-form {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s; }
+  .popup-form:target {
+    opacity: 1;
+    visibility: visible; }
+    .popup-form:target .popup-form__content {
+      -webkit-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+      opacity: 1; }
+
+.popup-form__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.popup-form__body {
+  min-height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 30px 15px; }
+
+.popup-form__content {
+  background: url(../images/bg-img/popup-page-bg.svg) 100% 100% no-repeat;
+  background-color: #55B4ED;
+  color: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  padding: 65px 15px;
+  position: relative;
+  -webkit-transform: translate(0px, -100%);
+  transform: translate(0px, -100%);
+  transition: all 0.5s ease 0s;
+  opacity: 0; }
+  .popup-form__content .popup-form__close {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    color: #fff;
+    font-size: 20px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(1.5);
+    transform: scaleX(1.5); }
+  .popup-form__content h2 {
+    font-size: 30px;
+    margin-bottom: 4%;
+    font-weight: 500; }
+
+.popup-form__form form input, .popup-form__form form textarea {
+  margin-bottom: 20px;
+  max-width: 590px;
+  background-color: #55B4ED;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 22px;
+  line-height: 26px; }
+  .popup-form__form form input::-webkit-input-placeholder, .popup-form__form form textarea::-webkit-input-placeholder {
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px; }
+  .popup-form__form form input::-moz-placeholder, .popup-form__form form textarea::-moz-placeholder {
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px; }
+  .popup-form__form form input:-ms-input-placeholder, .popup-form__form form textarea:-ms-input-placeholder {
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px; }
+  .popup-form__form form input::-ms-input-placeholder, .popup-form__form form textarea::-ms-input-placeholder {
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px; }
+  .popup-form__form form input::placeholder, .popup-form__form form textarea::placeholder {
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px; }
+    @media (max-width: 479px) {
+      .popup-form__form form input::-webkit-input-placeholder, .popup-form__form form textarea::-webkit-input-placeholder {
+        font-size: 18px;
+        line-height: 22px; }
+      .popup-form__form form input::-moz-placeholder, .popup-form__form form textarea::-moz-placeholder {
+        font-size: 18px;
+        line-height: 22px; }
+      .popup-form__form form input:-ms-input-placeholder, .popup-form__form form textarea:-ms-input-placeholder {
+        font-size: 18px;
+        line-height: 22px; }
+      .popup-form__form form input::-ms-input-placeholder, .popup-form__form form textarea::-ms-input-placeholder {
+        font-size: 18px;
+        line-height: 22px; }
+      .popup-form__form form input::placeholder, .popup-form__form form textarea::placeholder {
+        font-size: 18px;
+        line-height: 22px; } }
+  .popup-form__form form input:focus, .popup-form__form form textarea:focus {
+    border: 1px solid #fff; }
+
+.popup-form__form form textarea {
+  height: 100vh;
+  max-height: 105px; }
+
+.popup-form__form .form__name input {
+  max-width: 280px;
+  margin-right: 25px; }
+  @media (max-width: 767px) {
+    .popup-form__form .form__name input {
+      width: 100%;
+      max-width: 590px;
+      margin-right: 0; } }
+  .popup-form__form .form__name input:last-child {
+    margin-right: 0; }
+
+.popup-form__form p {
+  text-align: start;
+  font-weight: normal;
+  width: 100%;
+  max-width: 505px;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 9%; }
+  .popup-form__form p span {
+    text-decoration: underline; }
+
+.popup-form__form .form__btn {
+  max-width: 160px;
+  padding: 15px;
+  text-align: center;
+  color: #55B4ED; }
+
+.form form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center; }
+  .form form input, .form form textarea {
+    width: 100%;
+    padding: 18px 25px;
+    border-radius: 10px; }
+    @media (max-width: 479px) {
+      .form form input, .form form textarea {
+        padding: 14px 20px; } }
+  .form form .form__name {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (max-width: 767px) {
+      .form form .form__name {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .form form .form__btn {
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    border: none; }
+    .form form .form__btn:active, .form form .form__btn:focus {
+      outline: none; }
 
 /*# sourceMappingURL=main.css.map */

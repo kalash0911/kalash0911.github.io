@@ -21,7 +21,8 @@ body {
 
 .main-btn {
     padding: 15px 30px;
-    min-width: 191px;
+    width: 100%;
+    max-width: 191px;
     border-radius: 10px;
     background: $blue;
     color: $white;
@@ -852,6 +853,10 @@ body {
             margin: 0;
         }
     }
+
+    .main-btn {
+        max-width: 245px;
+    }
 }
 
 /* ______________________________steps-section_______________________________ */
@@ -1080,6 +1085,7 @@ body {
 
     .main-btn {
         margin-top: 40px; 
+        max-width: 245px;
 
         @include media ("<tablet") {
             margin-top: 100px;
