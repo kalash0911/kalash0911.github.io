@@ -63,6 +63,48 @@ body {
     }
 }
 
+.form {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        
+        input, textarea {
+            width: 100%;
+            padding: 18px 25px;
+            border-radius: 10px;
+
+            @include media ("<phone") {
+                padding: 14px 20px;
+            }
+        }
+
+        .form__name{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include media ("<tablet") {
+                flex-direction: column;
+            }
+        }
+
+        .form__btn {
+            width: 100%;
+            outline: none;
+            border-radius: 10px;
+            border:none;
+            max-width: 160px;
+            padding: 15px;
+            text-align: center;
+
+            &:active, &:focus {
+                outline: none;
+            }
+        }
+    }
+}
 
 /* _____________________________main-section____________________________ */
 
@@ -1091,5 +1133,46 @@ body {
         @include media ("<tablet") {
             margin-top: 100px;
         }
+    }
+}
+
+/* ______________________________form-section_________________________ */
+
+.form-section {
+    padding: 50px 0;
+    background: url(../images/bg-img/footer-bg.jpg) center/cover no-repeat;
+
+    .form-wrap {
+        max-width: 410px;
+        background: $white;
+        border-radius: 10px;
+        padding: 35px 40px;
+    }
+
+    form {
+        align-items:flex-start;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            border: 1px solid #414141;
+
+            @include media ("<phone") {
+                padding: 10px 15px;
+            }
+        }
+
+        textarea {
+            height: 100vh;
+            max-height: 85px;
+        }
+    }
+
+    .form__btn {
+        background-color: $blue;
+        color: $white;
     }
 }

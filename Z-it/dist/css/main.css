@@ -676,7 +676,7 @@ input[type='submit'] {
   100% {
     height: 12px; } }
   .logo__title p {
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 15px;
     color: #55B4ED; }
 
@@ -964,6 +964,43 @@ body {
   .card-btn i {
     font-size: 11px;
     padding-left: 10px; }
+
+.form form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center; }
+  .form form input, .form form textarea {
+    width: 100%;
+    padding: 18px 25px;
+    border-radius: 10px; }
+    @media (max-width: 479px) {
+      .form form input, .form form textarea {
+        padding: 14px 20px; } }
+  .form form .form__name {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (max-width: 767px) {
+      .form form .form__name {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .form form .form__btn {
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    max-width: 160px;
+    padding: 15px;
+    text-align: center; }
+    .form form .form__btn:active, .form form .form__btn:focus {
+      outline: none; }
 
 /* _____________________________main-section____________________________ */
 .main-section {
@@ -1744,6 +1781,93 @@ body {
       .steps-section .main-btn {
         margin-top: 100px; } }
 
+/* ______________________________form-section_________________________ */
+.form-section {
+  padding: 50px 0;
+  background: url(../images/bg-img/footer-bg.jpg) center/cover no-repeat; }
+  .form-section .form-wrap {
+    max-width: 410px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 35px 40px; }
+  .form-section form {
+    -ms-flex-align: start;
+    align-items: flex-start; }
+    .form-section form h2 {
+      margin-bottom: 30px; }
+    .form-section form input, .form-section form textarea {
+      margin-bottom: 15px;
+      border: 1px solid #414141; }
+      @media (max-width: 479px) {
+        .form-section form input, .form-section form textarea {
+          padding: 10px 15px; } }
+    .form-section form textarea {
+      height: 100vh;
+      max-height: 85px; }
+  .form-section .form__btn {
+    background-color: #55B4ED;
+    color: #fff; }
+
+#footer {
+  padding: 25px 0;
+  background-color: #55B4ED;
+  color: #fff; }
+
+.footer-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.footer__cookies {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+  .footer__cookies p {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 45px;
+    margin-bottom: 0; }
+    .footer__cookies p:last-child {
+      margin-right: 0; }
+
+.footer__social {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+  .footer__social a {
+    margin-right: 10px; }
+    .footer__social a:last-child {
+      margin-right: 0; }
+  .footer__social i {
+    font-size: 22px;
+    color: #fff;
+    margin: 0; }
+
+.footer__phone a {
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 17px;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff; }
+  .footer__phone a i {
+    font-size: 14px;
+    margin-right: 5px; }
+
+.footer__reserved p {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px; }
+
 .popup-form {
   position: fixed;
   width: 100%;
@@ -1890,43 +2014,6 @@ body {
     text-decoration: underline; }
 
 .popup-form__form .form__btn {
-  max-width: 160px;
-  padding: 15px;
-  text-align: center;
   color: #55B4ED; }
-
-.form form {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-align: center;
-  align-items: center; }
-  .form form input, .form form textarea {
-    width: 100%;
-    padding: 18px 25px;
-    border-radius: 10px; }
-    @media (max-width: 479px) {
-      .form form input, .form form textarea {
-        padding: 14px 20px; } }
-  .form form .form__name {
-    width: 100%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    @media (max-width: 767px) {
-      .form form .form__name {
-        -ms-flex-direction: column;
-        flex-direction: column; } }
-  .form form .form__btn {
-    width: 100%;
-    outline: none;
-    border-radius: 10px;
-    border: none; }
-    .form form .form__btn:active, .form form .form__btn:focus {
-      outline: none; }
 
 /*# sourceMappingURL=main.css.map */
