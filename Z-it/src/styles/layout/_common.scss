@@ -280,9 +280,9 @@ body {
                     
                     &:last-child {
                         position: absolute;
-                        right: 0;
+                        right: -65px;
                         top: 100px;
-                        width: 44%;
+                        width: 50%;
                         height: 90%;
                     }
                 }
@@ -331,6 +331,7 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            background: linear-gradient(180deg, rgba(51, 120, 162, 0.81) 0%, rgba(69, 149, 199, 0.21) 100%);
 
             @include media("<phone") {
                 min-height: 538px;
