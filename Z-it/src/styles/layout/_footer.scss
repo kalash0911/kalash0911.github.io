@@ -2,11 +2,22 @@
     padding: 40px 0 60px 0;
     background-color: $blue;
     color: $white;
+    position: relative;
+
+    a {
+        &:hover {
+            color: #D0D0D0;
+        }
+    }
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
+
+    @include media ("<tablet"){
+        justify-content: space-around;
+    }
 }
 
 .footer__logo {
@@ -14,17 +25,32 @@
     flex-direction: column;
     justify-content: space-between;
     margin-right: 30px;
+    
+    a {
+        width: 60px;
+        height: 89px;
+    }
 
     p {
         margin: 100px 0 0 0;
         font-weight: normal;
         font-size: 14px;
         line-height: 17px;
+
+        @include media ("<tablet"){
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+        }
     }
 }
 
 .footer__menu {
     margin-right: 30px;
+
+    @include media ("<tablet"){
+        margin-right: 0;
+    }
 
     ul {
         margin: 0;
@@ -34,13 +60,30 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+
+        @include media ("<tablet"){
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 
     li {
         margin-bottom: 30px;
 
+        @include media ("<tablet"){
+            margin-right: 20px;
+        }
+
+        @include media ("<=550px"){
+            margin-bottom: -15px;
+        }
+
         &:last-child {
             margin-bottom: 0;
+
+            @include media ("<tablet"){
+                margin-right: 0;
+            }
         }
     }
 
@@ -56,6 +99,10 @@
     flex-direction: column;
     justify-content: space-between;
     margin-right: 30px;
+
+    @include media ("<tablet"){
+        display: none;
+    }
 
     .footer__contacts_phone {
         display: flex;
@@ -110,11 +157,32 @@
 }
 
 .footer__confid {
+    display: flex;
+    flex-direction: column;
 
-    h5 {
+    @include media ("<tablet"){
+        flex-direction: row;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    @include media ("<=550px"){
+        flex-direction: row;
+        position: absolute;
+        top: 65%;
+        left: 33%;
+    }
+
+    a {
         margin-bottom: 25px;
         line-height: 16px;
         text-decoration-line: underline;
+        color: $white;
+
+        @include media ("<tablet"){
+            margin-right: 20px;
+        }
 
         &:last-child {
             margin-bottom: 0;
