@@ -1074,7 +1074,7 @@ body {
     -ms-flex-pack: end;
     justify-content: flex-end;
     box-shadow: none;
-    max-width: 53%; }
+    max-width: 95%; }
     @media (max-width: 1250px) {
       .main-section .main__text {
         text-align: center;

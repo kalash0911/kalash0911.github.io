@@ -201,7 +201,7 @@ body {
         flex-direction: column;
         justify-content: flex-end;
         box-shadow: none;
-        max-width: 53%;
+        max-width: 95%;
 
         @include media("<=1250px") {
             text-align: center;
