@@ -110,13 +110,6 @@
     display: none;
 }
 
-.menu__body {
-
-    .menu__link {
-        color: $main-black;
-    }
-}
-
 .menu__list {
 
     li {
@@ -192,6 +185,7 @@
         ._active{
             .menu__arrow {
                 transform: rotate(180deg);
+
             }
 
             .menu__sub-list {
@@ -233,7 +227,8 @@
                 position: relative;
                 cursor: pointer;
                 line-height: 1; 
-                text-decoration: none; 
+                text-decoration: none;
+                color: $main-black;
         
                 &:after {
                     content:"";
@@ -255,6 +250,9 @@
             .menu__arrow {
                 right: -15px;
                 top: 50%;
+                fill: $black;
+                width: 10px;
+                height: 6px;
             }
         }
     }
@@ -409,6 +407,7 @@
     .menu__arrow {
         width: 15px;
         margin: 20px 0 0 17px;
+        fill: $white;
     }
 
     .mob-language{
