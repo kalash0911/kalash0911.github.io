@@ -1165,14 +1165,47 @@ body {
 /* ______________________________form-section_________________________ */
 
 .form-section {
-    padding: 50px 0;
-    background: url(../images/bg-img/footer-bg.jpg) center/cover no-repeat;
+    margin: 50px 0 0 0;
+    position: relative;
+    height: 10000vh;
+    max-height: 600px;
+
+    @include media ("<phone") {
+        max-height: 950px;
+    }
+
+    .form-section__map {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        max-height: 600px;
+
+        @include media ("<phone") {
+            max-height: 950px;
+        }
+
+        .iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
 
     .form-content {
+        position: absolute;
+        display: inline;
+        top: 50px;
+        width: 100%;
+        max-width: 410px;
+        z-index: 50;
+
         @include media ("<phone") {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 90%;
         }
     }
 
