@@ -1260,3 +1260,18 @@ body {
         }
     }
 }
+
+/* ______________________________privacy-section__________________________ */
+
+.privacy-section {
+    padding: 170px 0 50px 0;
+    min-height: 100vh;
+
+    .privacy__title {
+        text-align: center;
+    }
+
+    .privacy__text {
+        text-align: justify;
+    }
+}

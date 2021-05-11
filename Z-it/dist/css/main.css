@@ -1873,6 +1873,15 @@ body {
             .form-section .form-section__social .phone-wrap a i {
               margin-right: 10px; } }
 
+/* ______________________________privacy-section__________________________ */
+.privacy-section {
+  padding: 170px 0 50px 0;
+  min-height: 100vh; }
+  .privacy-section .privacy__title {
+    text-align: center; }
+  .privacy-section .privacy__text {
+    text-align: justify; }
+
 #footer {
   padding: 40px 0 60px 0;
   background-color: #55B4ED;
