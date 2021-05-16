@@ -286,7 +286,7 @@
     }
 }
 
-@include media ('<=tablet') {
+@include media ('<tablet') {
 
     .menu__burger {
         z-index: 5;

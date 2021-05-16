@@ -128,13 +128,14 @@
         text-align: start;
         font-weight: normal;
         width: 100%;
-        max-width: 505px;
+        max-width: 515px;
         font-size: 12px;
         line-height: 15px;
         margin-bottom: 9%;
 
-        span {
+        a {
             text-decoration: underline;
+            color: $white;
         }
     }
 
@@ -150,7 +151,8 @@
 /* ______________________________popup-thank__________________________ */
 
 .popup-thank {
-   /*  position: fixed; */
+    display: none;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);

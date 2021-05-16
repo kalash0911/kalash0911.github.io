@@ -16,32 +16,38 @@
             </div>
          </header>
         <main id="main">
-            <section class="main-section">
+            <section class="main">
+                <div class="main__bg"></div>
                 <div class="container">
                     <div class="main-content">
-                        <h1 class="main__title">Свобода передвижений по доступным ценам</h1>
-                        <div class="main__form">
-                            <p>Выберите свой автомобиль</p>
-                            <form action="#">
-                                <div class="main__form_citi">
-                                    <p>Место локации</p>
-                                    <select name="citi">
-                                        <option value="Kiev">Киев</option>
-                                        <option value="Dnepr">Днепр</option>
-                                    </select>
-                                </div>
-                                <div class="main__form_time">
-                                    <p>Подача</p>
-                                    <label for="localdate">Дата и время: </label>
-                                    <input type="datetime-local" id="localdate" name="date"/>
-                                </div>
-                                <div class="main__form_time">
-                                    <p>Возврат</p>
-                                    <label for="localdate">Дата и время: </label>
-                                    <input type="datetime-local" id="localdate" name="date"/>
-                                </div>
-                                <button class="btn-big" type="submit">Выбрать свой автомобиль</button>
-                            </form>
+                        <div class="main__text">
+                            <h1 class="main__title">Свобода передвижений по доступным ценам</h1>
+                            <div class="main__form">
+                                <p class="main__form_title">Выберите свой автомобиль</p>
+                                <form action="#">
+                                    <div class="main__form_item">
+                                        <p>Место локации</p>
+                                        <select name="citi">
+                                            <option value="1">Киев</option>
+                                            <option value="2">Днепр</option>
+                                        </select>
+                                    </div>
+                                    <div class="main__form_item">
+                                        <p>Подача</p>
+                                        <label for="localdate">Дата и время: </label>
+                                        <input type="datetime-local" id="localdate" name="date"/>
+                                    </div>
+                                    <div class="main__form_item">
+                                        <p>Возврат</p>
+                                        <label for="localdate">Дата и время: </label>
+                                        <input type="datetime-local" id="localdate" name="date"/>
+                                    </div>
+                                    <button class="btn-big" type="submit">Выбрать свой автомобиль</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="main__img">
+                            <img src="./images/bg-img/main-bg.png" alt="img">
                         </div>
                     </div>
                 </div>

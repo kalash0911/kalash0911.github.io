@@ -799,7 +799,7 @@ input[type='submit'] {
   .mob-social-menu {
     display: none; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .menu__burger {
     z-index: 5;
     display: block;
@@ -2211,12 +2211,13 @@ body {
   text-align: start;
   font-weight: normal;
   width: 100%;
-  max-width: 505px;
+  max-width: 515px;
   font-size: 12px;
   line-height: 15px;
   margin-bottom: 9%; }
-  .popup-form__form p span {
-    text-decoration: underline; }
+  .popup-form__form p a {
+    text-decoration: underline;
+    color: #fff; }
 
 .popup-form__form .form__btn {
   color: #55B4ED; }
@@ -2225,7 +2226,8 @@ body {
 
 /* ______________________________popup-thank__________________________ */
 .popup-thank {
-  /*  position: fixed; */
+  display: none;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
