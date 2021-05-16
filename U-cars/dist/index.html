@@ -6,7 +6,9 @@
     <title>U-cars</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <script src="./js/jquery-3.5.1.min.js" defer></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 <body>
@@ -25,17 +27,27 @@
                             <div class="main__form">
                                 <p class="main__form_title">Выберите свой автомобиль</p>
                                 <form action="#">
-                                    <div class="main__form_item">
+                                    <div class="main__form_item ">
                                         <p>Место локации</p>
-                                        <select name="citi">
-                                            <option value="1">Киев</option>
-                                            <option value="2">Днепр</option>
-                                        </select>
+                                        <a href="#" class="citi">Киев</a>
+                                        <ul class="citi__list"> 
+                                            <li><a href="#" class="list_close">Днепр</a></li>
+                                            <li><a href="#" class="list_close">Киев</a></li>
+                                        </ul>
                                     </div>
                                     <div class="main__form_item">
                                         <p>Подача</p>
-                                        <label for="localdate">Дата и время: </label>
-                                        <input type="datetime-local" id="localdate" name="date"/>
+                                        <div class="data">
+                                            <label >
+                                                <input type="text" id="datepicker" placeholder="Дата">
+                                                <i class="icon-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <a href="">
+                                            <ul>
+                                                <li></li>
+                                            </ul>
+                                        </a>
                                     </div>
                                     <div class="main__form_item">
                                         <p>Возврат</p>
