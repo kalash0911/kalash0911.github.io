@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
-    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <div id="wrapper">
@@ -24,10 +21,10 @@
                             <div class="main__form">
                                 <p class="main__form_title">Выберите свой автомобиль</p>
                                 <form action="#">
-                                    <div class="main__form_item ">
+                                    <div class="main__form_item citi-list ">
                                         <p>Место локации</p>
-                                        <a href="#" class="citi">Киев</a>
-                                        <ul class="citi__list"> 
+                                        <a href="#" class="citi-list__title">Киев</a>
+                                        <ul class="citi-list__ul"> 
                                             <li><a href="#" class="list_close">Днепр</a></li>
                                             <li><a href="#" class="list_close">Киев</a></li>
                                         </ul>
@@ -48,8 +45,17 @@
                                     </div>
                                     <div class="main__form_item">
                                         <p>Возврат</p>
-                                        <label for="localdate">Дата и время: </label>
-                                        <input type="datetime-local" id="localdate" name="date"/>
+                                        <div class="data">
+                                            <label >
+                                                <input type="text" id="datepicker" placeholder="Дата">
+                                                <i class="icon-calendar"></i>
+                                            </label>
+                                        </div>
+                                        <a href="">
+                                            <ul>
+                                                <li></li>
+                                            </ul>
+                                        </a>
                                     </div>
                                     <button class="btn-big" type="submit">Выбрать свой автомобиль</button>
                                 </form>
@@ -61,8 +67,412 @@
                     </div>
                 </div>
             </section>
+            <section class="auto">
+                <div class="container">
+                    <div class="auto-content">
+                        <div class="auto__item">
+                            <div class="auto__item__title">
+                                <h3>Выгодные предложения</h3>
+                                <div class="citi-list">
+                                    <a href="#" class="citi-list__title">Киев<i class="icon-geo"></i></a>
+                                    <ul class="citi-list__ul"> 
+                                        <li><a href="#" class="list_close">Днепр</a></li>
+                                        <li><a href="#" class="list_close">Киев</a></li>
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn-more">Все авто</a>
+                                <div class="indefinite"></div>
+                            </div>
+                            <div class="slider-auto">
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Toyota Yaris 2011</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Profitable-offer/toyotaYaris.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Toyota Yaris 2011</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Profitable-offer/skoda.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Mazda 2 2010</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Profitable-offer/mazda2.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Toyota Yaris 2011</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Profitable-offer/toyotaYaris.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Toyota Yaris 2011</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Profitable-offer/skoda.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auto__item">
+                            <div class="auto__item__title">
+                                <h3>Комфортные авто</h3>
+                                <div class="citi-list">
+                                    <a href="#" class="citi-list__title">Киев<i class="icon-geo"></i></a>
+                                    <ul class="citi-list__ul"> 
+                                        <li><a href="#" class="list_close">Днепр</a></li>
+                                        <li><a href="#" class="list_close">Киев</a></li>
+                                    </ul>
+                                </div>
+                                <div class="indefinite"></div>
+                                <a href="#" class="btn-more">Все авто</a>
+                            </div>
+                            <div class="slider-auto">
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Mazda 3 2013</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Comfortable-cars/mazda3.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Volkswagen Jetta 2011</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Comfortable-cars/vwJetta2011.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Volkswagen Jetta 2014</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Comfortable-cars/vwJetta2014.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Mazda 3 2013</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Comfortable-cars/mazda3.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Volkswagen Jetta 2011</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Comfortable-cars/vwJetta2011.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auto__item">
+                            <div class="auto__item__title">
+                                <h3>Преимиум авто </h3>
+                                <div class="citi-list">
+                                    <a href="#" class="citi-list__title">Киев<i class="icon-geo"></i></a>
+                                    <ul class="citi-list__ul"> 
+                                        <li><a href="#" class="list_close">Днепр</a></li>
+                                        <li><a href="#" class="list_close">Киев</a></li>
+                                    </ul>
+                                </div>
+                                <div class="indefinite"></div>
+                                <a href="#" class="btn-more">Все авто</a>
+                            </div>
+                            <div class="slider-auto">
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Toyota Camry 2010</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Premium-auto/toyotaCamry.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Ford Mondeo 2010 </h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Premium-auto/fordMondeo.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auto__item">
+                            <div class="auto__item__title">
+                                <h3>Минивен</h3>
+                                <div class="citi-list">
+                                    <a href="#" class="citi-list__title">Киев<i class="icon-geo"></i></a>
+                                    <ul class="citi-list__ul"> 
+                                        <li><a href="#" class="list_close">Днепр</a></li>
+                                        <li><a href="#" class="list_close">Киев</a></li>
+                                    </ul>
+                                </div>
+                                <div class="indefinite"></div>
+                                <a href="#" class="btn-more">Все авто</a>
+                            </div>
+                            <div class="slider-auto">
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Toyota Sienna 2010</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Minivan/toyotaSienna.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auto__item">
+                            <div class="auto__item__title">
+                                <h3>Бусы</h3>
+                                <div class="citi-list">
+                                    <a href="#" class="citi-list__title">Киев<i class="icon-geo"></i></a>
+                                    <ul class="citi-list__ul"> 
+                                        <li><a href="#" class="list_close">Днепр</a></li>
+                                        <li><a href="#" class="list_close">Киев</a></li>
+                                    </ul>
+                                </div>
+                                <div class="indefinite"></div>
+                                <a href="#" class="btn-more">Все авто</a>
+                            </div>
+                            <div class="slider-auto">
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Mercedes-Benz Sprinter 211 CDI L1H2 2009</h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Buses/mercedesSprinter.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                                <div class="slider-auto__item">
+                                    <div class="slider-auto__item_title">
+                                        <div class="sale-img">
+                                            <img src="./images/icon/sale.svg" alt="sale">
+                                        </div>
+                                        <h4>Volkswagen Multivan 2009 </h4>
+                                    </div>
+                                    <div class="slider-auto__item_icon">
+                                        <p><i class="icon-gas"></i>Бензин</p>
+                                        <p><i class="icon-box-geer"></i>Автомат</p>
+                                        <p><i class="icon-piston"></i>1,6 л</p>
+                                    </div>
+                                    <div class="slider-auto__item_img">
+                                        <img data-lazy="./images/car-img/Buses/vwMultivan.png" alt="img-auto">
+                                    </div>
+                                    <a href="#" class="btn-auto">Арендовать от $30</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="instruction">
+                <div class="container">
+                    <div class="instruction-content">
+                        <div class="instruction__title">
+                            <h2>4 простых действия</h2>
+                            <p>для аренды авто</p>
+                        </div>
+                        <div class="instruction__main">
+                            <div class="instruction__main_item">
+                                <div class="instruction__main_circle">
+                                    <span class="circle-text">1</span>
+                                    <div class="circle-bg"></div>
+                                    <div class="circle-bg-swadow"></div>
+                                </div>
+                                <div class="instruction__main_title">
+                                    <h4>Выберите понравившееся авто</h4>
+                                    <p>Поспользуйтесь поиском или каталогом</p>
+                                </div>
+                            </div>
+                            <div class="instruction__main_item">
+                                <div class="instruction__main_circle">
+                                    <span class="circle-text">2</span>
+                                    <div class="circle-bg"></div>
+                                    <div class="circle-bg-swadow"></div>
+                                </div>
+                                <div class="instruction__main_title">
+                                    <h4>Выберите время и место для получения </h4>
+                                    <p>Укажите дату и время подачи и возврата</p>
+                                </div>
+                            </div>
+                            <div class="instruction__main_item">
+                                <div class="instruction__main_circle">
+                                    <span class="circle-text">3</span>
+                                    <div class="circle-bg"></div>
+                                    <div class="circle-bg-swadow"></div>
+                                </div>
+                                <div class="instruction__main_title">
+                                    <h4>Введите свои данные для аренды</h4>
+                                    <p>Заполните простую форму</p>
+                                </div>
+                            </div>
+                            <div class="instruction__main_item">
+                                <div class="instruction__main_circle">
+                                    <span class="circle-text">4</span>
+                                    <div class="circle-bg"></div>
+                                    <div class="circle-bg-swadow"></div>
+                                </div>
+                                <div class="instruction__main_title">
+                                    <h4>Наслаждайтесь своим авто</h4>
+                                    <p>Приятного использования!</p>
+                                </div>
+                            </div>
+                            <div class="instruction__main_item">
+                                <a href="#" class="btn-big">Выбрать свой автомобиль</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         //= templates/footer.html
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </body>
 </html>

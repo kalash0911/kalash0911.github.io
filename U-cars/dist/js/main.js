@@ -1,7 +1,7 @@
 "use strict";
 
-var citiList = document.querySelector('.citi__list'),
-    citiToggle = document.querySelector('.citi'),
+var citiList = document.querySelector('.citi-list__ul'),
+    citiToggle = document.querySelector('.citi-list__title'),
     citiClose = document.querySelector('.list_close');
 
 citiToggle.onclick = function () {
@@ -39,6 +39,13 @@ $(function () {
   $.datepicker.setDefaults($.datepicker.regional['ru']);
   $("#datepicker").datepicker({
     minDate: 0
+  });
+});
+$(document).ready(function () {
+  $('.slider-auto').slick({
+    slidesToShow: 3,
+    infinite: false,
+    speed: 400
   });
 });
 //# sourceMappingURL=main.js.map
