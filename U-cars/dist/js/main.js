@@ -45,7 +45,18 @@ $(document).ready(function () {
   $('.slider-auto').slick({
     slidesToShow: 3,
     infinite: false,
-    speed: 400
+    speed: 400,
+    responsive: [{
+      breakpoint: 1130,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1
+      }
+    }]
   });
 });
 //# sourceMappingURL=main.js.map

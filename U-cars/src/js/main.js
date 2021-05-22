@@ -46,5 +46,19 @@ $(document).ready(function(){
         slidesToShow: 3,
         infinite: false,
         speed: 400,
+        responsive: [
+            {
+                breakpoint: 1130,
+                settings:{
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings:{
+                    slidesToShow: 1,
+                }
+            },
+        ]
     });
 });
