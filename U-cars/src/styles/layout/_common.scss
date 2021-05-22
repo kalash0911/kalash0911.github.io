@@ -63,6 +63,25 @@ body {
     }
 }
 
+.mob-btn {
+    display: none;
+    width: 100%;
+    max-width: 340px;
+    padding: 18px;
+    border-radius: 10px;
+    background-color: hsla(210, 100%, 55%, 0.27);
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: $blue-focus;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    @include media ("<phone") {
+        display: block;
+    }
+}
+
 .citi-list__title {
     display: block;
     padding: 18px 20px;
@@ -102,6 +121,10 @@ body {
     @include media ('<phone'){
         padding: 90px 0 60px 0;
         background: none;
+    }
+
+    @include media ('<=xs-phone'){
+        padding: 90px 0 0px 0;
     }
 
     &::after {
@@ -515,7 +538,7 @@ body {
     }
 
     @include media ("<phone") {
-        padding: 60px 0 25px 0;
+        padding: 50px 0 25px 0;
     }
 
     .auto-content {
@@ -624,25 +647,6 @@ body {
 
         @include media ("<tablet-sm") {
             display: none;
-        }
-    }
-
-    .mob-btn {
-        display: none;
-        width: 100%;
-        max-width: 340px;
-        padding: 18px;
-        border-radius: 10px;
-        background-color: hsla(210, 100%, 55%, 0.27);
-        text-align: center;
-        font-weight: 600;
-        font-size: 20px;
-        color: $blue-focus;
-        margin: 0 auto;
-        margin-top: 20px;
-
-        @include media ("<phone") {
-            display: block;
         }
     }
 }
@@ -1010,9 +1014,21 @@ body {
     padding: 100px 0 105px 0;
     position: relative;
 
+    @include media ("<tablet"){
+        padding: 80px 0 200px 0;
+    }
+
+    @include media ("<phone"){
+        padding: 45px 0 80px 0;
+    }
+
     .offer-content {
         display: flex;
         justify-content: space-between;
+
+        @include media ("<tablet"){
+            flex-direction: column;
+        }
     }
 
     .offer__title {
@@ -1023,13 +1039,35 @@ body {
         max-width: 550px;
         margin-right: 20px;
 
+        @include media ("<tablet"){
+            max-width: 100%;
+        }
+
         h3 {
             margin-bottom: 30px;
+
+            @include media ("<tablet"){
+               font-size: 30px;
+            }
+
+            @include media ("<phone"){
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
         }
 
         p{
             font-size: 16px;
             line-height: 24px;
+
+            @include media ("<tablet"){
+                margin-bottom: 40px;
+            }
+
+            @include media ("<phone"){
+                font-size: 14px;
+                margin-bottom: 35px;
+            }
         }
     }
 
@@ -1039,6 +1077,16 @@ body {
         justify-content: space-between;
         width: 100%;
         max-width: 420px;
+
+        @include media ("<tablet"){
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+
+        @include media ("<=700px"){
+            justify-content: center;
+        }
     }
 
     .offer__icon__item {
@@ -1048,6 +1096,15 @@ body {
 
         &:last-child{
             margin-bottom: 0;
+        }
+
+        @include media ("<tablet"){
+            max-width: 325px;
+            margin-bottom: 30px;
+        }
+
+        @include media ("<=700px"){
+            max-width: 100%;
         }
 
         i{
@@ -1063,11 +1120,38 @@ body {
 
         h4 {
             margin-bottom: 7px;
+
+            @include media ("<phone"){
+                font-size: 16px;
+                line-height: 24px;
+            }
         }
 
         p {
             margin-bottom: 0;
             font-size: 16px;
+
+            @include media ("<phone"){
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    .btn-big {
+        @include media ("<tablet"){
+            position: absolute;
+            bottom: 85px;
+            left: 15px;
+        }
+
+        @include media ("<=700px"){
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        @include media ("<phone"){
+            display: none;
         }
     }
 }
@@ -1076,6 +1160,21 @@ body {
 
 .info{
     padding: 0 0 80px 0;
+
+    @include media ("<tablet"){
+        padding: 0 0 75 0;
+        position: relative;
+
+        &::before {
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #DCE2E5;
+        }
+    }
 
     .info__item{
         position: relative;
@@ -1107,10 +1206,30 @@ body {
 
         .slick-prev {
             right: 250px;
+
+            @include media ("<tablet"){
+                left: 0;
+                top: 55%;
+            }
+
+            @include media ("<phone"){
+                left: 0;
+                top: 45%;
+            }
         }
 
         .slick-next {
             right: 200px;
+
+            @include media ("<tablet"){
+                right: 0;
+                top: 55%;
+            }
+
+            @include media ("<phone"){
+                right: 0;
+                top: 45%;
+            }
         }
     }
 
@@ -1119,10 +1238,18 @@ body {
 
         &:first-child {
             padding: 0 10px 0 0;
+
+            @include media ("<tablet"){
+                padding: 0 10px;
+            }
         }
 
         &:last-child {
             padding: 0 0 0 10px;
+
+            @include media ("<tablet"){
+                padding: 0 10px;
+            }
         }
 
         h4{
@@ -1138,5 +1265,16 @@ body {
         max-width: 100%;
         border-radius: 10px;
         margin-bottom: 10px;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .btn-more {
+        @include media ("<tablet"){
+            display: none;
+        }
     }
 }

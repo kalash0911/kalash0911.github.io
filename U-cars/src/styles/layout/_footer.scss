@@ -3,10 +3,16 @@
     background-color: $blue-bg;
     color: $white;
 
+    
     .footer-content {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        position: relative;
+
+        @include media ("<=950px"){
+            height: 150px;
+        }
     }
 
     .footer__social {
@@ -43,12 +49,37 @@
         font-size: 16px;
         line-height: 24px;
         margin-right: 15px;
+
+        @include media ("<=950px"){
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-right: 0;
+            max-width: 215px;
+        }
     }
 
     .footer__phone{
         display: flex;
-        flex-direction: column;
         margin-right: 15px;
+
+        @include media ("<=950px"){
+            flex-direction: column;
+        }
+
+        .footer__phone_wrap{
+            display: flex;
+            flex-direction: column;
+            margin-right: 24px;
+
+            @include media ("<=950px"){
+                margin-bottom: 25px;
+
+                a{
+                    margin-bottom: 25px;
+                }
+            }
+        }
 
         a{
             color: $white;
@@ -64,22 +95,6 @@
 
             &:last-child{
                 margin-bottom: 0;
-            }
-        }
-    }
-
-    .footer__email{
-        margin-right: 15px;
-
-        a{
-            color: $white;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 19px;
-            transition: all .3s 0s;
-
-            &:hover{
-                color: $white-text;
             }
         }
     }
