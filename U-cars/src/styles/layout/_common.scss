@@ -82,6 +82,10 @@ body {
     }
 }
 
+.citi-list{
+    position: relative;
+}
+
 .citi-list__title {
     display: block;
     padding: 18px 20px;
@@ -98,13 +102,92 @@ body {
     display: none;
     position: absolute;
     list-style: none;
-    padding:0 18px;
+    padding:18px;
     margin: 0;
     background-color: $white;
     width: 100%;
-    bottom: -50px;
+    top: 70px;
     left: 0;
     z-index: 5;
+    border-radius: 10px;
+
+    .citi-list__li{
+        margin-bottom: 10px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        a {
+            &:hover{
+                color: $blue-focus;
+            }
+        }
+    }
+}
+
+.citi-list__ul_active{
+    display: block;
+}
+
+.clock-list{
+    width: 50%;
+}
+
+.clock-list__title{
+    display: flex;
+    justify-content: space-between;
+
+    i{
+        padding-top: 4px;
+    }
+}
+
+.clock-list__ul{
+    width: 1000%;
+    max-width: 330px;
+    top: 75px;
+    left: -165px;
+    flex-wrap: wrap;
+    display: none;
+    padding-top: 65px;
+
+    .clock-list__ul__title{
+        position: absolute;
+        top: 25px;
+        left: 75px;
+        font-size: 20px;
+        color: $gray-text;
+        
+        span{
+            font-weight: 900;
+            color: $black;
+        }
+    }
+}
+
+.clock-list__ul_active{
+    display: flex;
+}
+
+.clock-list__li{
+    width: 1000px;
+    max-width: 85px;
+    text-align: center;
+    padding: 9px;
+    background-color: $gray-bg-cal;
+    border-radius: 10px;
+    margin: 6px;
+    transition: all .3s 0s;
+    
+    &:hover{
+        background-color: $orange;
+        transition: all .3s 0s;
+
+        a{
+            color: $white;
+        }
+    }
 }
 
 /* ___________________________________main-section________________________________ */
@@ -133,7 +216,7 @@ body {
         top: 0;
         right: 0;
         height: 100%;
-        width: 24%;
+        width: 27%;
         background: $blue;
 
         @include media ("<tablet") {
@@ -219,7 +302,6 @@ body {
         box-sizing: border-box;
         border-radius: 10px;
         position: relative;
-        z-index: 1;
         margin-bottom: 37px;
         max-width: 330px;
         display: flex;
@@ -258,6 +340,7 @@ body {
             height: 40px;
             width: 1px;
             background-color: rgba(140, 151, 170, 1);
+            z-index: 2;
         }
 
         label {

@@ -3,6 +3,21 @@
     background-color: $blue-bg;
     color: $white;
 
+    @include media ("<=950px"){
+        background-color: $white;
+        padding: 20px 0 25px 0;
+        position: relative;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #DCE2E5;
+        }
+    }
     
     .footer-content {
         display: flex;
@@ -10,8 +25,8 @@
         flex-wrap: wrap;
         position: relative;
 
-        @include media ("<=950px"){
-            height: 150px;
+        @include media ("<=600px"){
+            flex-direction: column;
         }
     }
 
@@ -19,10 +34,25 @@
         display: flex;
         flex-direction: column;
         margin-right: 15px;
+
+        @include media ("<=600px"){
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
     }
 
     .footer__social__link {
         margin: 20px 0 0 0;
+
+        @include media ("<=950px"){
+            margin: 60px 0 0 0;
+        }
+
+        @include media ("<=600px"){
+            margin: 0 0 0 15px;
+            order: 1;
+        }
 
         a{
             font-size: 25px;
@@ -31,12 +61,20 @@
             margin-right: 15px;
             color: $white-text;
 
+            @include media ("<=950px"){
+                color: $black;
+            }
+
             &:last-child{
                 margin-right: 0;
             }
 
             &:hover{
                 color: $white;
+
+                @include media ("<=950px"){
+                    color: $gray;
+                }
             }
         }
     }
@@ -53,9 +91,18 @@
         @include media ("<=950px"){
             position: absolute;
             right: 0;
-            top: 50%;
+            top: 62px;
             margin-right: 0;
             max-width: 215px;
+            color: $black;
+        }
+
+        @include media ("<=600px"){
+            position: relative;
+            top: 0;
+            order: 3;
+            margin-top: 18px;
+            max-width: 100%;
         }
     }
 
@@ -65,6 +112,10 @@
 
         @include media ("<=950px"){
             flex-direction: column;
+        }
+
+        @include media ("<=600px"){
+            order: 2;
         }
 
         .footer__phone_wrap{
@@ -96,6 +147,10 @@
             &:last-child{
                 margin-bottom: 0;
             }
+
+            @include media ("<=950px"){
+                color: $black;
+            }
         }
     }
 
@@ -103,12 +158,20 @@
         display: flex;
         flex-direction: column;
 
+        @include media ("<=950px"){
+            margin-right: 25px;
+        }
+
         p{
             font-size: 16px;
             line-height: 19px;
             color: $white-text;
             margin-bottom: 20px;
             opacity: 55%;
+
+            @include media ("<=950px"){
+                display: none;
+            }
         }
 
         .footer__work__day{
@@ -116,8 +179,55 @@
             opacity: 100%;
             margin-bottom: 0;
 
+            @include media ("<=950px"){
+                display: block;
+                padding: 13px 21px 13px 40px;
+                width: 1000%;
+                max-width: 190px;
+                color: $blue-focus;
+                border-radius: 10px;
+                border: 1px solid $gray;
+                font-weight: 600;
+                position: relative;
+                font-size: 16px;
+
+                &::before {
+                    content:'';
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: $blue-focus;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 21px;
+
+                    @include media ("<phone"){
+                        left: 6px;
+                    }
+                }
+            }
+
+            @include media ("<=600px"){
+                position: absolute;
+                right: 15px;
+            }
+
+            @include media ("<phone"){
+                max-width: 110px;
+                padding: 5px 11px 5px 25px;
+            }
+
             span{
                 color: $orange;
+
+                @include media ("<=950px"){
+                    color: $black;
+                }
+
+                @include media ("<phone"){
+                    margin-right: 15px;
+                }
             }
         }
     }
