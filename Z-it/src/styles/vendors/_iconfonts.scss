@@ -25,6 +25,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chat:before {
+  content: "\e900";
+}
+.icon-consultant:before {
+  content: "\e901";
+}
+.icon-gears:before {
+  content: "\e902";
+}
+.icon-optimize:before {
+  content: "\e903";
+}
+.icon-puzzle:before {
+  content: "\e904";
+}
 .icon-arrow1:before {
   content: "\e949";
 }

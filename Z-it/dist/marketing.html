@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-it</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/icon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="header__logo logo">
+                        <div class="logo__wrap">
+                            <div class="logo__item">
+                                <img src="./images/logo/vector-1.svg" alt="logo-item">
+                            </div>
+                            <div class="logo__item">
+                                <img src="./images/logo/vector-mid.svg" alt="logo-item">
+                            </div>
+                            <div class="logo__item">
+                                <img src="./images/logo/vector-2.svg" alt="logo-item">
+                            </div>
+                        </div>
+                        <div class="logo__title">
+                            <p>Z-IT GmbH</p>
+                        </div>
+                    </a>
+                    <div class="header__menu menu">
+                        <div class="menu__burger">
+                            <span></span>
+                        </div>
+                        <nav class="menu__body">
+                            <ul class="menu__list">
+                                <li class="mob-li"><a class="menu__link mob-link" href="index.html">Main</a></li>
+                                <li>
+                                    <a class="menu__link" href="#">Products</a>
+                                    <svg  class="menu__arrow" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.64645 4.35355C3.84171 4.54882 4.15829 4.54882 4.35355 4.35355L7.53553 1.17157C7.7308 0.976311 7.7308 0.659728 7.53553 0.464466C7.34027 0.269204 7.02369 0.269204 6.82843 0.464466L4 3.29289L1.17157 0.464466C0.976311 0.269204 0.659728 0.269204 0.464466 0.464466C0.269204 0.659728 0.269204 0.976311 0.464466 1.17157L3.64645 4.35355ZM3.5 3V4H4.5V3H3.5Z"/>
+                                    </svg>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-list__li"><a class="menu__sub-link" href="#">Digital Marketing</a></li>
+                                        <li class="menu__sub-list__li"><a class="menu__sub-link" href="#">Web & App Development</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="menu__link" href="#">About us</a></li>
+                                <li><a class="menu__link" href="#">Portfolio</a></li>
+                                <li><a class="menu__link" href="#">Blog</a></li>
+                                <li><a class="menu__link" href="#">Contaсt</a></li>
+                                <li class="mob-language">
+                                    <a class="menu__link mob-language__link" href="#">Eng</a>
+                                    <img class="menu__arrow mob-language__arrow" src="./images/icon/arrow-menu.svg" alt="arrow">
+                                    <ul class="menu__sub-list mob-language__sub-list">
+                                        <li class="menu__sub-list__li"><a class="menu__sub-link mob-language__sub-link" href="#">De</a></li>
+                                    </ul>
+                                </li>
+                            </ul> 
+                            <div class="mob-social-menu">
+                                <a href="#" target="_blank" class="mob-social-menu__item"><i class="icon-facebook"></i></a>
+                                <a href="#" target="_blank" class="mob-social-menu__item"><i class="icon-linkedin"></i></a>
+                                <a href="#" target="_blank" class="mob-social-menu__item"><i class="icon-xing"></i></a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <section class="marketing">
+                <div class="container">
+                    <div class="marketing-content">
+                        <div class="marketing__title">
+                            <h1>Specialists in Digital Marketing</h1>
+                            <p>Digitalization of business and online promotion</p>
+                        </div>
+                        <div class="marketing__form">
+                            <form action="#">
+                                <p class="marketing__form_title">Contact form</p>
+                                <input type="text" placeholder="First name">
+                                <input type="text" placeholder="Last name">
+                                <input type="text" placeholder="Project name">
+                                <input type="email" placeholder="Email adress">
+                                <textarea placeholder="Message"></textarea>
+                                <p>You are providing your contact information to Z-IT for marketing purposes. You may unsubscribe from these communications at anytime. By clicking send button you agree to our <a href="#">Privacy Policy.</a></p>
+                                <button class="form__btn" type="submit">Send</button>
+                            </form>
+                        </div>
+                        <a href="#popup-form" class="card-btn">Contact us <i class="icon-arrow1"></i></a>
+                    </div>
+                </div>
+            </section>
+            <section class="digitalization">
+                <div class="container">
+                    <div class="digitalization-content">
+                        <h2>Full stack digital marketing support for the business</h2>
+                        <div class="digitalization__main">
+                            <div class="digitalization__main_text">
+                                <p>Digitalize your business today and start getting revenue online with the help of our services! We provide following services for small and medium sized enterprises:</p>
+                                <ul>
+                                    <li>Websites and design development</li>
+                                    <li>Mobile applications development</li>
+                                    <li>Ads campaign on Google and social networks</li>
+                                    <li>Content marketing with unique strategies</li>
+                                </ul>
+                            </div>
+                            <div class="digitalization__main_img">
+                                <img src="./images/marketing-img/iMac.png" alt="pc-img">
+                            </div>
+                        </div>
+                        <a href="#" class="main-btn">Start digitalization</a>
+                    </div>
+                </div>
+            </section>
+            <section class="markservices">
+                <div class="container">
+                    <div class="markservices-content">
+                        <h2 class="markservices__title">Services</h2>
+                        <div class="markservices__text">
+                            <p>Digital marketing services from Z-IT. As a digital marketing agency, through the years we have been helping small and medium-sized companies to attract customers and sell their products and services online. We provide  support for sales channels and traffic growth.</p>
+                            <p>Here you can read about our main digital marketing services and understand how they can be useful for your business. In order to get free consultation, leave a request and one of our customer service representative will contact you as soon as possible.
+                            </p>
+                        </div>
+                        <div class="markservices__main">
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/1.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Google Ads</h3>
+                                    <p>Setting up ads campaign with core of keywords, banners and text for Search, Gmail, YouTube, and other sources.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/2.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Social Media Marketing</h3>
+                                    <p>Content marketing with unique design of visual map, ads campign, and USP with offers.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/3.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Email Marketing</h3>
+                                    <p>Set up of communication channels with your customers via email, messengers, and mailings.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/4.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Search Engine Optimization (SEO)</h3>
+                                    <p>Internal and external SEO-optimization of website with output in the search top of Google.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/5.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Digital Marketing Campaign</h3>
+                                    <p>Development of strategy for online sales channels, scailing and increased recognition.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/6.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Consulting</h3>
+                                    <p>Consulting services for e-commerce, corporate websites, and set up of online business.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/7.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Content Marketing</h3>
+                                    <p>Development of custom content for websites, social media andother sales sources.</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/8.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Influencer Marketing</h3>
+                                    <p>Promotion of content with the help of infuencers in YouTube and social media</p>
+                                </div>
+                            </div>
+                            <div class="markservices__main__item">
+                                <img src="./images/marketing-img/Services/9.jpg" alt="img">
+                                <div class="markservices__main__item_hover">
+                                    <a href="#" class="card-btn">Order<i class="icon-arrow1"></i></a>
+                                </div>
+                                <div class="markservices__main__item_text">
+                                    <h3>Video Marketing</h3>
+                                    <p>Creation of video content for promotion or ads campaign</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="choose">
+                <div class="container">
+                    <div class="choose-content">
+                        <h2 class="choose__title">Why choose Z-IT?</h2>
+                        <div class="choose__main">
+                            <div class="choose__main__item">
+                                <i class="icon-gears"></i>
+                                <p>Streamline work processes online for business growth and profit</p>
+                            </div>
+                            <div class="choose__main__item">
+                                <i class="icon-puzzle"></i>
+                                <p>Deliver commercial solutions for brands and companies according to the demand of audience</p>
+                            </div>
+                            <div class="choose__main__item">
+                                <i class="icon-chat"></i>
+                                <p>Create effective way of communication with customers with help of digital instruments</p>
+                            </div>
+                            <div class="choose__main__item">
+                                <i class="icon-optimize"></i>
+                                <p>Optimize lead generation and sales channels for small and medium size enterprises</p>
+                            </div>
+                            <div class="choose__main__item">
+                                <i class="icon-consultant"></i>
+                                <p>Provide consulting and advising businesses on digital marketing strategies</p>
+                            </div>
+                        </div>
+                        <a href="#" class="main-btn">Get free consultation</a>
+                    </div>
+                </div>
+            </section>
+            <section class="clients">
+                <div class="container">
+                    <div class="clients-content">
+                        <h2 class="clients__title">Our clients</h2>
+                        <div class="clients__main">
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/1.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/2.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/3.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/4.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/5.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/6.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/7.svg" alt="img-logo">
+                            </div>
+                            <div class="clients__main_item">
+                                <img src="./images/icon-partners/8.svg" alt="img-logo">
+                            </div>
+                        </div>
+                        <a href="#" class="main-btn">Develop project</a>
+                    </div>
+                </div>
+            </section>
+            <section class="reviews-section markreviews">
+                <div class="container">
+                    <div class="reviews-content">
+                        <h2>Reviews</h2>
+                        <div class="reviews">
+                            <div class="reviews__item">
+                                <div class="reviews__item__title">
+                                    <div class="reviews__item__title_img">
+                                        <img src="./images/main-img/reviews-section/1.jpg" alt="user_img">
+                                    </div>
+                                    <div class="reviews__item__title_text">
+                                        <h3>Nik Nedved</h3>
+                                        <p>Co-founder “Apple”</p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__comment">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                                </div>
+                            </div>
+                            <div class="reviews__item">
+                                <div class="reviews__item__title">
+                                    <div class="reviews__item__title_img">
+                                        <img src="./images/main-img/reviews-section/2.jpg" alt="user_img">
+                                    </div>
+                                    <div class="reviews__item__title_text">
+                                        <h3>Linda Color</h3>
+                                        <p>Founder “Tesla”</p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__comment">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                                </div>
+                            </div>
+                            <div class="reviews__item">
+                                <div class="reviews__item__title">
+                                    <div class="reviews__item__title_img">
+                                        <img src="./images/main-img/reviews-section/3.jpg" alt="user_img">
+                                    </div>
+                                    <div class="reviews__item__title_text">
+                                        <h3>Peter Swich</h3>
+                                        <p>Burbazz show</p>
+                                    </div>
+                                </div>
+                                <div class="reviews__item__comment">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="main-btn">Contact us</a>
+                    </div>
+                </div>
+            </section>
+            <section class="markemail">
+                <div class="container">
+                    <div class="markemail-content">
+                        <h2 class="markemail__title">Leave a request for your business digitalization</h2>
+                        <form action="#">
+                            <input type="email" placeholder="Email adress">
+                            <button class="form__btn" type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="our-services">
+                <div class="container">
+                    <div class="our-services-content">
+                        <div class="our-services__title">
+                            <h2>View more about our services</h2>
+                            <p>Digitalization of business is impossible without good website or app, check out our services</p>
+                        </div>
+                        <div class="our-services__main">
+                            <div class="our-services__main__item">
+                                <img src="./images/marketing-img/Services/5.jpg" alt="img">
+                                <h3>Web Development</h3>
+                                <p>UX/UI design and code development. Want to know more about our
+                                    development services? Visit our development page in order to
+                                    get more info and place order.</p>
+                            </div>
+                            <div class="our-services__main__item">
+                                <img src="./images/marketing-img/Services/5.jpg" alt="img">
+                                <h3>App Development</h3>
+                                <p>Increase your sales with the help of mobile application. Most of modern 
+                                    businesses already have developed their apps. Check out more information
+                                    about apps on our development page.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="main-btn">View more services</a>
+                    </div>
+                </div>
+            </section>
+            <div id="popup-form" class="popup-form">
+                <a href="#" class="popup-form__area"></a>
+                <div class="popup-form__body">
+                    <div class="popup-form__content">
+                        <a href="#" class="popup-form__close">X</a>
+                        <h2>Contact form</h2>
+                        <div class="popup-form__form form">
+                            <form id="form" action="#">
+                                <div class="form__name">
+                                    <input type="text" placeholder="First name">
+                                    <input type="text" placeholder="Last name">
+                                </div>
+                                <input type="text" placeholder="Project name">
+                                <input type="email" placeholder="Email adress">
+                                <textarea placeholder="Message"></textarea>
+                                <p>You are providing your contact information to Z-IT for marketing purposes. You may unsubscribe from these communications at anytime. By clicking send button you agree to our <a href="#">Privacy Policy.</a></p>
+                                <button class="form__btn" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer__logo">
+                        <a href="#"><img src="./images/logo/white-logo.svg" alt="logo"></a>
+                        <p>© 2021  All rights reserved.</p>
+                    </div>
+                    <nav class="footer__menu">
+                        <ul>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contaсt</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__contacts">
+                        <div class="footer__contacts_phone">
+                            <a href="#">Contaсt</a>
+                            <div class="phone-wrap">
+                                <a href="tel:+49 511 9427 4163"><i class="icon-phone"></i> +49 511 9427 4163</a>
+                                <a href="mailto:z@z-it.co"><i class="icon-email1"></i>z@z-it.co</a>
+                            </div>
+                        </div>
+                        <div class="footer__contacts_social">
+                            <h4>Social networks</h4>
+                            <div class="social-wrap">
+                                <a href="#" target="_blank"><i class="icon-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="icon-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="icon-xing"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__confid">
+                        <a href="#"><h5>Datenschutz</h5></a>
+                        <a href="#"><h5>Impressum</h5></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</body>
+</html>

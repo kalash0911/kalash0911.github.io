@@ -68,6 +68,20 @@ body {
     }
 }
 
+.form__btn {
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    border:none;
+    max-width: 160px;
+    padding: 15px;
+    text-align: center;
+
+    &:active, &:focus {
+        outline: none;
+    }
+}
+
 .form {
     form {
         display: flex;
@@ -92,20 +106,6 @@ body {
 
             @include media ("<tablet") {
                 flex-direction: column;
-            }
-        }
-
-        .form__btn {
-            width: 100%;
-            outline: none;
-            border-radius: 10px;
-            border:none;
-            max-width: 160px;
-            padding: 15px;
-            text-align: center;
-
-            &:active, &:focus {
-                outline: none;
             }
         }
     }
@@ -1306,5 +1306,838 @@ body {
 
     .privacy__text {
         text-align: justify;
+    }
+}
+
+/* ______________________________marketing_______________________________________ */
+
+.marketing{
+    padding: 150px 0 110px 0;
+    position: relative;
+
+    @include media ("<tablet"){
+        padding: 0 0 65px 0;
+    }
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $gray;
+    }
+
+    .container{
+        @include media ("<tablet"){
+            padding: 0;
+        }
+    }
+
+    .marketing-content{
+        background: url(../images/marketing-img/mark-main-img.jpg) 0 0/cover no-repeat;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 105px 115px 105px 80px;
+
+        @include media ("<desktop"){
+            padding: 60px 30px;
+        }
+
+        @include media ("<tablet"){
+            padding: 40px 55px;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            border-radius: 0px 0px 40px 40px;
+        }
+
+        &::before{
+            content:'';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: hsla(0, 0%, 0%, 0.5);
+            z-index: 1;
+
+            @include media ("<tablet"){
+                background-color: hsla(0, 0%, 0%, 0.3);
+            }
+        }
+
+        &::after{
+            @include media ("<tablet"){
+                content:'';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 47.04%);
+                z-index: 2;
+            }
+        }
+    }
+
+    .marketing__title{
+        position: relative;
+        z-index: 5;
+        color: $white;
+        width: 1000%;
+        max-width: 535px;
+        margin-right: 15px;
+
+        @include media ("<tablet"){
+            max-width: 100%;
+            width: 100%;
+        }
+
+        h1{
+            margin-bottom: 10px;
+
+            @include media ("<tablet"){
+                margin-bottom: 30px;
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+
+        p{
+            font-size: 20px;
+            line-height: 23px;
+
+            @include media ("<tablet"){
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .marketing__form{
+        position: relative;
+        z-index: 5;
+        width: 1000%;
+        max-width: 405px;
+        background: rgba(208, 233, 255, 0.6);
+        border-radius: 18px;
+        overflow: hidden;
+        padding: 20px 45px;
+
+        @include media ("<tablet"){
+            display: none;
+        }
+        
+        form{
+            display: flex;
+            flex-direction: column;
+
+            .marketing__form_title{
+                text-align: center;
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 30px;
+                color: $white;
+                margin-bottom: 20px;
+            }
+
+            input, textarea{
+                background: none;
+                border: 1px solid $white;
+                box-sizing: border-box;
+                border-radius: 10px;
+                margin-bottom: 13px;
+                padding: 17px 25px;
+
+                &::placeholder{
+                    color: $white;
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+
+            textarea{
+                width: 100%;
+                height: 92px;
+            }
+
+            p{
+                font-size: 7px;
+                line-height: 8px;
+                color: $white;
+                font-weight: 400;
+                margin-bottom: 15px;
+
+                a{
+                    color: $white;
+                    text-decoration: underline;
+                }
+            }
+
+            .form__btn {
+                margin: 0 auto;
+                background-color: $blue;
+                color: $white;
+                transition: all .3s 0s;
+
+                &:hover{
+                    background-color: $blue-hover;
+                }
+            }
+        }
+    }
+
+    .card-btn{
+        display: none;
+        font-size: 32px;
+        color: $white;
+        z-index: 5;
+
+        @include media ("<tablet"){
+            display: block;
+        }
+
+        i{
+            font-size: 20px;
+            margin-left: 15px;
+        }
+    }
+}
+
+/* ______________________________digitalization______________________________ */
+
+.digitalization{
+    padding: 60px 0 50px 0;
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $gray;
+    }
+
+    .digitalization-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2{
+        text-align: center;
+        width: 100%;
+        max-width: 445px;
+
+        @include media ("<=1130px"){
+            margin-bottom: 70px;
+        }
+    }
+
+    .digitalization__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @include media ("<=1130px"){
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .digitalization__main_text{
+        width: 50%;
+        padding: 0 0 0 60px;
+
+        @include media ("<=1130px"){
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            order: 2;
+            width: 80%;
+            padding: 0;
+            margin-bottom: 50px;
+
+            @include media ("<tablet"){
+                width: 100%;
+            }
+        }
+        
+        p{
+            width: 1000%;
+            max-width: 510px;
+            font-size: 20px;
+            line-height: 118%;
+            color: $main-black;
+            margin-bottom: 50px;
+
+            @include media ("<=1130px"){
+                max-width: 80%;
+            }
+
+            @include media ("<tablet"){
+                max-width: 100%;
+            }
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+
+            li{
+                list-style: none;
+                font-size: 24px;
+                line-height: 58px;
+
+                &::before{
+                    content:'- ';
+                }
+            }
+        }
+    }
+
+    .digitalization__main_img{
+        width: 1000%;
+        max-width: 50%;
+        position: relative;
+        height: 100vh;
+        max-height: 630px;
+        overflow: hidden;
+
+        @include media ("<=1130px"){
+            max-width: 100%;
+            max-height: 870px;
+            order: 1;
+            margin-bottom: 50px;
+        }
+
+        @include media ("<tablet"){
+            max-height: 644px;
+        }
+
+        @include media ("<phone"){
+            max-height: 300px;
+        }
+
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .main-btn{
+        max-width: 276px;
+    }
+}
+
+/* ______________________________markservices______________________________ */
+
+.markservices{
+    padding: 60px 0 90px 0;
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $gray;
+    }
+
+    .container {
+        @include media ("<phone"){
+            padding: 0;
+        }
+    }
+
+    .markservices-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .markservices__title{
+        text-align: center;
+        margin-bottom: 45px;
+
+        @include media ("<phone"){
+            margin-bottom: 30px;
+        }
+    }
+
+    .markservices__text{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        @include media ("<tablet"){
+            flex-direction: column;
+        }
+
+        @include media ("<phone"){
+            padding: 0 40px;
+        }
+
+        p{
+            font-size: 20px;
+            line-height: 23px;
+            text-align: justify;
+            color: $main-black;
+            margin-right: 75px;
+            margin-bottom: 0;
+            
+            &:nth-child(even){
+                margin-right: 0;
+            }
+
+            @include media ("<tablet"){
+                margin-right: 0;
+            }
+        }
+    }
+
+    .markservices__main{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+        gap: 20px;
+
+        @include media ("<phone"){
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 10px;
+        }
+    }
+
+    .markservices__main__item{
+        height: 100vh;
+        max-height: 260px;
+        padding: 35px 30px 65px 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+
+        &::before{
+            content:'';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: hsla(0, 0%, 0%, 0.5);
+            z-index: 1;
+        }
+
+        img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .markservices__main__item_hover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+        padding: 35px 30px 50px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: $blue;
+        transition: all .3s 0s;
+
+        .card-btn{
+            z-index: 10;
+            max-width: 60px;
+        }
+    }
+
+    .markservices__main__item_text{
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        h3{
+            color: $white;
+            margin-bottom: 15px;
+        }
+
+        p{
+            font-size: 14px;
+            line-height: 16px;
+            color: $white;
+        }
+    }
+
+    .markservices__main__item{
+        &:hover{
+            .markservices__main__item_hover{
+                z-index: 5;
+                opacity: 1;
+            }
+
+            .markservices__main__item_text{
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+/* ______________________________choose___________________________________ */
+
+.choose{
+    padding: 60px 0 90px 0;
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $gray;
+    }
+
+    @include media ("<phone"){
+        padding: 40px 0 90px 0;
+    }
+
+    .choose-content{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .choose__title{
+        margin-bottom: 100px;
+
+        @include media ("<phone"){
+            margin-bottom: 45px;
+        }
+    }
+
+    .choose__main{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .choose__main__item{
+        width: 1000%;
+        max-width: 390px;
+        display: flex;
+        align-items:center;
+        margin-bottom: 135px;
+
+        
+        i{
+            font-size: 97px;
+            margin-right: 35px;
+            color: $blue;
+
+            @include media ("<phone"){
+                margin-right: 10px;
+            }
+        }
+        
+        p{
+            width: 1000%;
+            max-width: 237px;
+            font-size: 19px;
+            line-height: 22px;
+        }
+
+        @include media ("<phone"){
+            margin-bottom: 60px;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                i{
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .main-btn{
+        max-width: 290px;
+    }
+}
+
+/* ______________________________clients______________________________ */
+
+.clients{
+    padding: 60px 0 90px 0;
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $gray;
+    }
+
+    .clients-content{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .clients__title{
+        margin-bottom: 50px;
+    }
+
+    .clients__main{
+        margin-bottom: 90px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .clients__main_item{
+        width: 1000%;
+        max-width: 305px;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+    }
+
+    .main-btn{
+        max-width: 290px;
+    }
+}
+
+/* ______________________________markreviews___________________________ */
+
+.markreviews{
+    padding: 60px 0 90px 0;
+    position: relative;
+
+    &::before{
+        display: none;
+    }
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $gray;
+    }
+
+    h2{
+        margin-bottom: 90px;
+
+        @include media ("<phone"){
+            margin-bottom: 60px;
+        }
+    }
+
+    .main-btn{
+        max-width: 290px;
+    }
+}
+
+/* ______________________________markemail______________________________________ */
+
+.markemail{
+    padding: 50px 0;
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 70%;
+        height: 1px;
+        background-color: $blue;
+    }
+
+    .markemail-content{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .markemail__title{
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    form{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @include media ("<tablet"){
+            flex-direction: column;
+            align-items:center;
+        }
+
+        input{
+            width: 1000%;
+            max-width: 525px;
+            padding: 17px;
+            text-align: center;
+            border: 1px solid #414141;
+            box-sizing: border-box;
+            border-radius: 10px;
+            margin-right: 30px;
+
+            &::placeholder{
+                color: $black;
+            }
+
+            @include media ("<tablet"){
+                margin-bottom:30px;
+                margin-right: 0;
+                max-width: 290px;
+            }
+        }
+
+        .form__btn{
+            background: $blue;
+            color: $white;
+            transition: all .3s 0s;
+
+            &:hover{
+                background: $blue-hover;
+            }
+        }
+    }
+}
+
+/* ______________________________our-services____________________________ */
+
+.our-services{
+    padding: 60px 0;
+
+    .our-services-content{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .our-services__title{
+        margin-bottom: 55px;
+        text-align: center;
+
+        h2{
+            margin-bottom: 0;
+        }
+
+        p{
+            width: 1000%;
+            max-width: 445px;
+            margin-bottom: 0;
+            color: #929090;
+        }
+    }
+
+    .our-services__main{
+        display: flex;
+        margin-bottom: 50px;
+
+        @include media ("<tablet"){
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .our-services__main__item{
+        width: 1000%;
+        max-width: 555px;
+        overflow: hidden;
+        border-radius: 10px; 
+        height: 100vh;
+        max-height: 260px;
+        position: relative;
+        padding: 40px 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-right: 30px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &::before{
+            content:'';
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.54) 100%), linear-gradient(180deg, rgba(85, 180, 237, 0) 20%, rgba(85, 180, 237, 0.69) 63.5%, #55B4ED 85.11%), url(ru.freepik.jpg);
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+        }
+
+        @include media ("<tablet"){
+            margin-right: 0;
+            max-height: 350px;
+            margin-bottom: 10px;
+        }
+
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+
+        h3, p{
+            position: relative;
+            z-index: 10;
+            color: $white;
+        }
+    }
+
+    .main-btn{
+        max-width: 290px;
     }
 }
