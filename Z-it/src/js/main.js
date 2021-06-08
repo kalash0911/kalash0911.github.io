@@ -132,3 +132,25 @@ var swiper = new Swiper('.portfolio-swiper', {
         }
     }
 });
+
+
+var modal = document.querySelector(".popup-form");
+var btn = document.querySelector(".btn_modal_window");
+var span = document.querySelector(".popup-form__close");
+var popupBody = document.querySelector(".popup-form__body");
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+
+    span.onclick = function (event) {
+        event.preventDefault()
+    modal.style.display = "none";
+    };
+
+    document.onclick = function (event) {
+        console.log(event.target)
+    if (event.target == popupBody) {
+        modal.style.display = "none";
+    };
+}

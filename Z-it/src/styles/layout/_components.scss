@@ -1,18 +1,19 @@
 .popup-form {
     position: fixed;
+    display: none;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
     z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0; */
+    /* visibility: hidden; */
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.5s ease 0s;
 
-    &:target {
+    /* &:target {
         opacity: 1;
         visibility: visible;
 
@@ -20,15 +21,16 @@
             transform: translate(0px, 0px);
             opacity: 1;
         }
-    }
+    } */
 }
 
 .popup-form__area {
-    position: absolute;
+    /* position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 0; */
+    display: none;
 }
 
 .popup-form__body {
@@ -51,9 +53,9 @@
     height: 100%;
     padding: 65px 15px;
     position: relative;
-    transform: translate(0px, -100%);
+    /* transform: translate(0px, -100%);
     transition: all 0.5s ease 0s;
-    opacity: 0;
+    opacity: 0; */
 
     .popup-form__close {
         position: absolute;
