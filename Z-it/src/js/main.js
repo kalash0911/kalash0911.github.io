@@ -139,18 +139,20 @@ var btn = document.querySelector(".btn_modal_window");
 var span = document.querySelector(".popup-form__close");
 var popupBody = document.querySelector(".popup-form__body");
 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    };
-
     span.onclick = function (event) {
         event.preventDefault()
-    modal.style.display = "none";
+        modal.style.display = "none";
+        document.body.classList.remove('lock');
     };
 
     document.onclick = function (event) {
-        console.log(event.target)
     if (event.target == popupBody) {
         modal.style.display = "none";
+        document.body.classList.remove('lock');
+    };
+
+    if (event.target.classList.contains('btn_modal_window')) {
+        modal.style.display = "block";
+        document.body.classList.add('lock');
     };
 }
