@@ -1,0 +1,114 @@
+body {
+    font-family: $mont;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1320px;
+    padding: 0 15px 0 125px;
+}
+
+.main-btn{
+    min-width: 235px;
+    max-width: 350px;
+    padding: 16px 60px;
+    text-align: center;
+    background-color: $purple;
+    font-weight: 800;
+    font-size: 20px;
+    color: $white;
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    transition: all 800ms ease;
+
+    &::after{
+        top: -100%;
+        left: 0px;
+        width: 100%;
+        position: absolute;
+        background: #000000;
+        content: 'Contact us';
+        transform-origin: left bottom;
+        transform: rotateX(90deg);
+        line-height: 2.9;
+        height: 56px;
+    }
+
+    &:hover{
+        transform: rotateX(-90deg) translateY(100%);
+    }
+}
+
+.btn-info{
+    color: $white;
+    font-size: 14px;
+    font-weight: 800;
+    transition: all 300ms ease;
+
+    &:hover{
+        transform: scale(1.01);
+    }
+}
+
+.btn-wrap{
+    display: flex;
+    justify-content: center;
+}
+
+/* ________________________________________main___________________________________ */
+
+.main {
+    padding: 160px 0 70px 0;
+
+    h1{
+        color: $purple;
+        max-width: 890px;
+        margin-bottom: 20px;
+    }
+
+    p{
+        font-size: 24px;
+        margin-bottom: 65px;
+    }
+
+    .main__img{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        max-height: 520px;
+        margin-bottom: 75px;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 190px;
+
+        p{
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        h2{
+            max-width: 460px;
+            margin-bottom: 70px;
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    }
+
+    .main__text-bottom{
+        text-align: center;
+        font-size: 17px;
+        max-width: 770px;
+        font-weight: 600;
+        margin: 0 auto;
+    }
+}
