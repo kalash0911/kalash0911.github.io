@@ -66,4 +66,41 @@ function sectionInViewport() {
             document.body.classList.remove('change-bg')
         }
     })
+};
+
+function initSliders (selector, width, obj){
+    const init = {
+        infinite: false,
+        cssEase: "linear",
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        ...obj,
+      };
+      
+      $(() => {
+        const win = $(window);
+        const slider = $(selector);
+      
+        win.on("load resize", () => {
+          if (win.width() < width) {
+            slider.not(".slick-initialized").slick(init);
+          } else if (slider.hasClass("slick-initialized")) {
+            slider.slick("unslick");
+          }
+        });
+    });
 }
+
+initSliders(".services__gallery", 480)
+initSliders(".post-slider", 768, {
+    slidesToShow: 2,
+    responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+    ]
+})

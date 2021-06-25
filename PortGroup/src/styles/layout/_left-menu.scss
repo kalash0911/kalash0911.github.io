@@ -1,8 +1,12 @@
 #left-menu{
     position: fixed;
-    top: 500px;
+    top: 45%;
     transform: rotate(-90deg);
     left: -165px;
+
+    @include media ("<tablet"){
+        display: none;
+    }
 }
 
 .left-menu__content{

@@ -7,6 +7,10 @@
 
     .container{
         padding: 0 15px;
+
+        @include media ("<tablet"){
+            padding: 0 30px;
+        }
     }
 }
 
@@ -24,16 +28,17 @@
 .logo {
     width: 192px;
     height: 47px;
+
+    @include media ("<tablet"){
+        width: 95px;
+        height: 23px;
+    }
 }
 
 .header__logo {
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.header__menu{
-    padding-right: 20px;
 }
 
 /* ____________________________ */
@@ -143,7 +148,7 @@
 
 /* ____________________________ */
 
-@include media ('>tablet') {
+@include media ('>desktop') {
     .menu__list {
         display: flex;
         align-items: center;
@@ -233,7 +238,7 @@
     }
 }
 
-@include media ('<=tablet') {
+@include media ('<=desktop') {
 
     .menu__burger {
         z-index: 5;
