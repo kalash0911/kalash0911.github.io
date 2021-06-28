@@ -1,11 +1,35 @@
 #footer{
-    background: $purple;
     padding: 70px 0 0 0;
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        height: 100%;
+        width: 90vw;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        background-color: $purple;
+
+        @include media ("<tablet"){
+            display: none;
+        }
+    }
+    
+    @include media ("<tablet"){
+        background: $purple;
+    }
 }
 
 .footer-content{
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+
+    @include media ("<tablet"){
+        margin-left: 0;
+    }
 }
 
 .footer__item-wrap{

@@ -58,8 +58,8 @@ function sectionInViewport() {
 
     window.addEventListener('scroll', () => {
         let sectionRect = section.getBoundingClientRect();
-        let isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 500;
-        let isBlockInViewPort = window.innerHeight - sectionRect.top - 450;
+        let isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 400;
+        let isBlockInViewPort = window.innerHeight - sectionRect.top - 250;
         if(isBlockIsOutFromViewPort > 0 && isBlockInViewPort > 0) {
             document.body.classList.add('change-bg')
         } else {
@@ -104,3 +104,4 @@ initSliders(".post-slider", 768, {
         }
     ]
 })
+initSliders(".reviews-slider", 768)
