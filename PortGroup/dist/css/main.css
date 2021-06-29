@@ -1322,8 +1322,7 @@ body {
         font-size: 27px;
         line-height: 120%;
         margin-bottom: 10px;
-        display: block;
-        text-align: justify; }
+        display: block; }
         @media (max-width: 479px) {
           .project .project__item figcaption span {
             font-size: 36px; } }
@@ -1778,10 +1777,12 @@ body {
     .reviews::after {
       content: '';
       position: absolute;
-      width: 100%;
+      width: 85%;
       height: 1px;
       background-color: #000;
-      left: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%);
       bottom: 15px; } }
   .reviews h3 {
     margin-bottom: 45px; }
@@ -1896,6 +1897,25 @@ body {
   @media (max-width: 479px) {
     .user .user-text time {
       font-size: 18px; } }
+
+/* ________________________________________career________________________________________ */
+.career {
+  padding: 0 0 60px 0; }
+  .career h3 {
+    margin-bottom: 35px; }
+  .career p {
+    font-weight: 800;
+    font-size: 43px;
+    line-height: 130%;
+    color: #3c467a; }
+    @media (max-width: 479px) {
+      .career p {
+        font-size: 24px; } }
+  .career .second-btn {
+    text-transform: uppercase;
+    font-size: 14px; }
+    .career .second-btn i {
+      margin-left: 18px; }
 
 #footer {
   padding: 70px 0 0 0;
