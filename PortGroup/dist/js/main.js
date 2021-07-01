@@ -110,4 +110,5 @@ initSliders(".post-slider", 768, {
   }]
 });
 initSliders(".reviews-slider", 768);
+new WOW().init();
 //# sourceMappingURL=main.js.map
