@@ -50,8 +50,12 @@
 .menu__body {
 
     .menu__link {
-        color: $purple;
+        color: $black;
         font-size: 18px;
+
+        &:hover{
+            color: $purple;
+        }
     }
 }
 
@@ -75,8 +79,8 @@
 
 .menu__sub-list {
     padding: 0;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 16px;
     padding-top: 15px;
 
     .menu__sub-list__li {
@@ -102,7 +106,11 @@
         }
 
         .menu__sub-link{
-            color: $purple;
+            color: $black;
+
+            &:hover{
+                color:$purple;
+            }
         }
     }
 
