@@ -81,6 +81,7 @@
     padding: 0;
     font-size: 14px;
     line-height: 16px;
+    padding: 0 10px 10px;
     padding-top: 15px;
 
     .menu__sub-list__li {
@@ -123,6 +124,7 @@
     .menu__list {
         li{
             &:hover {
+                position: relative;
                 .menu__arrow {
                     transform: rotate(180deg);
                 }
@@ -208,13 +210,35 @@
     .menu__sub-list {
         position: absolute;
         top: 100%;
+        left: -10px;
+        width: 140%;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
         transition: all 0.3s ease 0s;
+
+        &::after{
+            content:'';
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 2px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            filter: blur(-3px);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f9f9f9;
+            box-sizing: border-box;
+        } 
     }
 
     .menu__sub-list__li{
+        a{
+            display: block;
+            width: 100%;
+        }
+
         &:nth-child(n+2) {
 
             &::before {
