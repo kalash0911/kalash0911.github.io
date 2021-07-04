@@ -14,6 +14,7 @@ initSliders(".post-slider", 768, {
 });
 initSliders(".reviews-slider", 768);
 changeNavLinks();
+initScrollToTop();
 
 var isMobile = {
   Android: function () {
@@ -133,8 +134,8 @@ function renderSpansForMenu() {
 function sectionInViewport() {
   let section = document.querySelector(".scroll-section");
 
-  if(!section) return;
-  
+  if (!section) return;
+
   window.addEventListener("scroll", () => {
     let sectionRect = section.getBoundingClientRect();
     let isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 400;
@@ -145,4 +146,20 @@ function sectionInViewport() {
       document.body.classList.remove("change-bg");
     }
   });
+}
+
+function initScrollToTop() {
+  const btn = document.querySelector(".left-menu__arrow");
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollToTop();
+  });
+}
+
+function scrollToTop() {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
 }
