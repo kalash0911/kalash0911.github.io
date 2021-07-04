@@ -76,7 +76,8 @@ body {
 }
 
 .second-btn{
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     font-weight: 800;
     font-size: 14px;
@@ -283,6 +284,14 @@ body {
             height: 100%;
             object-fit: cover;
             z-index: -1;
+        }
+    }
+
+    .second-btn{
+        color: $white;
+
+        &::after{
+            background-color: $white;
         }
     }
 }
