@@ -1765,14 +1765,14 @@ body {
     color: #000; }
   .partners__aboutUs-page .partners__item p {
     color: #000; }
-  .partners__aboutUs-page .partners__item__link a {
+  .partners__aboutUs-page .partners__item__link .icon-wrap {
     border: 1px solid #000;
     border-right: none;
     border-bottom: none; }
     @media (max-width: 767px) {
-      .partners__aboutUs-page .partners__item__link a {
+      .partners__aboutUs-page .partners__item__link .icon-wrap {
         border-left: none; } }
-    .partners__aboutUs-page .partners__item__link a i {
+    .partners__aboutUs-page .partners__item__link .icon-wrap i {
       color: #000; }
 
 /* ________________________________________reviews_____________________________________ */

@@ -55,7 +55,7 @@ sectionInViewport();
 
 function sectionInViewport() {
     let section = document.querySelector('.scroll-section');
-
+    if (!section) return
     window.addEventListener('scroll', () => {
         let sectionRect = section.getBoundingClientRect();
         let isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 400;
