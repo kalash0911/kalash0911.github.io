@@ -13,7 +13,8 @@ initSliders(".post-slider", 768, {
   ],
 });
 initSliders(".reviews-slider", 768);
-changeNavLinks(".main-img-bg");
+changeNavLinks();
+initScrollToTop();
 
 var isMobile = {
   Android: function () {
@@ -95,8 +96,25 @@ function initSliders(selector, width, obj) {
   });
 }
 
-function changeNavLinks(selector) {
-  let darkSection = document.querySelector(selector);
+function changeNavLinks() {
+  renderSpansForMenu();
+  let darkSection = document.querySelector(".main-img-bg");
+  let words = document.querySelectorAll(".left-menu__content-item");
+  window.addEventListener("scroll", () => {
+    let sectionRect = darkSection.getBoundingClientRect();
+    let heightSectionFromTop = sectionRect.top + sectionRect.height;
+    words.forEach((el) => {
+      let elRectTop = el.getBoundingClientRect().top;
+      if (elRectTop >= sectionRect.top && elRectTop < heightSectionFromTop) {
+        el.classList.add("overSection");
+      } else {
+        el.classList.remove("overSection");
+      }
+    });
+  });
+}
+
+function renderSpansForMenu() {
   let navLinks = [...document.querySelectorAll(".left-menu__link")];
   let arrowUpEl = document.querySelector(".left-menu__arrow");
   arrowUpEl.classList.add("left-menu__content-item");
@@ -111,27 +129,13 @@ function changeNavLinks(selector) {
       word.appendChild(spanEl);
     }
   }
-
-  window.addEventListener("scroll", () => {
-    let sectionRect = darkSection.getBoundingClientRect();
-    let heightSectionFromTop = sectionRect.top + sectionRect.height;
-    let words = document.querySelectorAll(".left-menu__content-item");
-    words.forEach((el) => {
-      let elRectTop = el.getBoundingClientRect().top;
-      if (elRectTop >= sectionRect.top && elRectTop < heightSectionFromTop) {
-        el.classList.add("overSection");
-      } else {
-        el.classList.remove("overSection");
-      }
-    });
-  });
 }
 
 function sectionInViewport() {
   let section = document.querySelector(".scroll-section");
 
-  if(!section) return;
-  
+  if (!section) return;
+
   window.addEventListener("scroll", () => {
     let sectionRect = section.getBoundingClientRect();
     let isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 400;
@@ -142,4 +146,20 @@ function sectionInViewport() {
       document.body.classList.remove("change-bg");
     }
   });
+}
+
+function initScrollToTop() {
+  const btn = document.querySelector(".left-menu__arrow");
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollToTop();
+  });
+}
+
+function scrollToTop() {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
 }
