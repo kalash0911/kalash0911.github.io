@@ -37,3 +37,9 @@ $media-expressions: (
 @import 'layout/footer';
 @import 'layout/left-menu';
 
+.left-menu__content {
+	.overSection {
+		color: $white;
+		fill: $white;
+	}
+}
