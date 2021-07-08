@@ -177,6 +177,10 @@
                 margin-left: 60px;
                 margin-right: 15px;
             }
+
+            .menu__sub-list__li{
+                margin-right: 0;
+            }
         
             .menu__link {
                 position: relative;
@@ -223,6 +227,7 @@
     }
 
     .menu__sub-list__li{
+
         a{
             display: block;
             width: 100%;
@@ -255,6 +260,12 @@
             top: 0;
             left: -80%;
             background-color: $purple;
+        }
+
+        .menu__sub-list__li{
+            &::before{
+                width: 100%;
+            }
         }
     }
 }

@@ -162,8 +162,8 @@ function sectionInViewport() {
   if (!section) return;
   window.addEventListener("scroll", function () {
     var sectionRect = section.getBoundingClientRect();
-    var isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 400;
-    var isBlockInViewPort = window.innerHeight - sectionRect.top - 250;
+    var isBlockIsOutFromViewPort = sectionRect.height + sectionRect.top - 150;
+    var isBlockInViewPort = window.innerHeight - sectionRect.top - 100;
 
     if (isBlockIsOutFromViewPort > 0 && isBlockInViewPort > 0) {
       document.body.classList.add("change-bg");

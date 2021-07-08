@@ -5,6 +5,14 @@ body {
     &.change-bg {
         background-color: $purple;
 
+        span, figcaption, p, h3, time{
+            color: $white;
+        }
+
+        .main-btn{
+            border: 1px solid $white;
+        }
+
         .left-menu__arrow{
             i{
                 color: $white;
@@ -225,7 +233,7 @@ body {
 .main-img-bg{
     background: url(../images/main-page/main-img.jpg) 0 50%/cover no-repeat;
 
-    .main__img{
+    .main-img-bg__img{
         position: relative;
         width: 100%;
         height: 100vh;
@@ -881,7 +889,7 @@ body {
 /* ________________________________________agency___________________________________ */
 
 .agency{
-    padding: 140px 0 90px 0;
+    padding: 140px 0 135px 0;
 
     @include media ("<desktop"){
         padding: 130px 0 60px 0;
@@ -889,6 +897,10 @@ body {
 
     @include media ("<phone"){
         padding: 90px 0 40px 0;
+    }
+
+    .main__img{
+        background: url(../images/aboutUs-page/main-img.jpg) 0 50%/cover no-repeat;
     }
 
     .container{
@@ -899,7 +911,7 @@ body {
 
     h1{
         max-width: 500px;
-        margin-bottom: 135px;
+        margin: 0;
 
         @include media ("<desktop"){
             font-size: 85px;
@@ -941,10 +953,16 @@ body {
     }
 }
 
+/* ________________________________________agency-img-bg___________________________________ */
+
+.agency-img-bg{
+    background: url(../images/aboutUs-page/main-img.jpg) 0 50%/cover no-repeat;
+}
+
 /* ________________________________________about___________________________________________ */
 
 .about{
-    padding: 0 0 20px 0;
+    padding:90px 0 20px 0;
 
     .container{
         @include media ("<phone"){
