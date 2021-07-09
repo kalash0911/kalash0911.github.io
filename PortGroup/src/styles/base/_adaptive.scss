@@ -23,7 +23,10 @@ $maxWidthContainer: 1320;
 }
 
 /* Init */
-/* @include adaptiv-vaule("padding", 50, 20, 0); */
+
+/*  @include adaptiv-vaule("padding", 50, 20, 1);
+    @include adaptiv-vaule("font-size", 115, 96, 1);
+*/
 
 /* "paddibg" - свойство которое нужно адаптировать */
 /* 50 - максимальное значение свойства в px */
