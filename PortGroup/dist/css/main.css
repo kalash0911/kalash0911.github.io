@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -353,6 +354,13 @@ td,
 th {
   padding: 0; }
 
+/* Адаптивное свойство */
+/* Init */
+/* @include adaptiv-vaule("padding", 50, 20, 0); */
+/* "paddibg" - свойство которое нужно адаптировать */
+/* 50 - максимальное значение свойства в px */
+/* 20 - минимальное значение свойства в px */
+/* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
 @font-face {
   font-family: "Mont";
   src: url("../fonts/Mont-SemiBold.ttf");
@@ -965,6 +973,22 @@ body {
     height: 10px;
     margin-left: 8px; }
 
+.big-text {
+  position: absolute;
+  right: 0px;
+  text-transform: uppercase;
+  font-weight: 800;
+  /* Только если меньше контейнера */
+  font-size: 93px;
+  -webkit-text-stroke: 0.5px #fff;
+  color: transparent; }
+  @media (max-width: 1320px) {
+    .big-text {
+      font-size: calc(5px + 88 * ((100vw - 320px) / 1000)); } }
+  @media (max-width: 1024px) {
+    .big-text {
+      display: none; } }
+
 /* ________________________________________slider */
 .slick-list {
   overflow: hidden; }
@@ -1372,6 +1396,8 @@ body {
 /* ________________________________________partners_____________________________________________ */
 .partners {
   padding: 95px 0 120px 0; }
+  .partners .partners-content {
+    position: relative; }
   .partners .partners__item {
     margin-bottom: 160px; }
     .partners .partners__item:last-child {
@@ -1559,10 +1585,10 @@ body {
   padding: 140px 0 135px 0; }
   @media (max-width: 1024px) {
     .agency {
-      padding: 130px 0 60px 0; } }
-  @media (max-width: 479px) {
+      padding: 130px 0 90px 0; } }
+  @media (max-width: 767px) {
     .agency {
-      padding: 90px 0 40px 0; } }
+      padding: 95px 0 70px 0; } }
   .agency .main__img {
     background: url(../images/aboutUs-page/main-img.jpg) 0 50%/cover no-repeat; }
   @media (max-width: 767px) {
@@ -1571,17 +1597,12 @@ body {
   .agency h1 {
     max-width: 500px;
     margin: 0; }
-    @media (max-width: 1024px) {
-      .agency h1 {
-        font-size: 85px;
-        margin-bottom: 90px; } }
     @media (max-width: 767px) {
       .agency h1 {
         padding: 0 30px; } }
     @media (max-width: 479px) {
       .agency h1 {
-        font-size: 36px;
-        margin-bottom: 70px; } }
+        font-size: 36px; } }
   .agency .agency__img-wrap {
     position: relative;
     width: 100%;
@@ -1979,22 +2000,10 @@ body {
 
 #footer {
   padding: 70px 0 0 0;
-  position: relative; }
-  #footer::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 90vw;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #3c467a; }
-    @media (max-width: 767px) {
-      #footer::after {
-        display: none; } }
-  @media (max-width: 767px) {
-    #footer {
-      background: #3c467a; } }
+  position: relative;
+  background: #3c467a; }
+  #footer a:hover {
+    text-decoration: underline; }
 
 .footer-content {
   display: -ms-flexbox;
@@ -2077,6 +2086,8 @@ body {
       line-height: 130%;
       margin-bottom: 0;
       font-style: normal; }
+      .footer__item address .address-link:not(:last-child) {
+        margin-bottom: 20px; }
 
 #left-menu {
   position: fixed;
