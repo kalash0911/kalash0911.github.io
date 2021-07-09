@@ -271,60 +271,35 @@ body {
 /* ________________________________________main-img-bg________________________________ */
 
 .main-img-bg{
-    background: url(../images/main-page/main-img.jpg) 0 50%/cover no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 520px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media ("<desktop"){
+        max-height: 390px;
+        padding-left: 100px;
+        margin-bottom: 40px;
+    }
+
+    @include media ("<tablet"){
+        padding-left: 80px;
+        padding-right: 20px;
+    }
+
+    @include media ("<phone"){
+        padding-left: 30px;
+        max-height: 560px;
+        justify-content: flex-end;
+        padding-bottom: 60px;
+        margin-bottom: 50px;
+    }
 
     .main-img-bg__img{
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        max-height: 520px;
-        color: $white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    
-        @include media ("<desktop"){
-            max-height: 390px;
-            padding-left: 100px;
-            margin-bottom: 40px;
-        }
-    
-        @include media ("<tablet"){
-            padding-left: 80px;
-            padding-right: 20px;
-        }
-    
-        @include media ("<phone"){
-            padding-left: 30px;
-            max-height: 560px;
-            justify-content: flex-end;
-            padding-bottom: 60px;
-            margin-bottom: 50px;
-        }
-    
-        p{
-            font-size: 14px;
-            margin-bottom: 7px;
-    
-            @include media ("<tablet"){
-                padding: 0;
-            }
-        }
-    
-        h2{
-            max-width: 460px;
-            margin-bottom: 70px;
-    
-            @include media ("<desktop"){
-                font-size: 52px;
-            }
-    
-            @include media ("<phone"){
-                font-size: 36px;
-                margin-bottom: 33px;
-            }
-        }
-    
         img{
             position: absolute;
             top: 0;
@@ -335,6 +310,30 @@ body {
             z-index: -1;
         }
     }
+
+    p{
+        font-size: 14px;
+        margin-bottom: 7px;
+
+        @include media ("<tablet"){
+            padding: 0;
+        }
+    }
+
+    h2{
+        max-width: 460px;
+        margin-bottom: 70px;
+
+        @include media ("<desktop"){
+            font-size: 52px;
+        }
+
+        @include media ("<phone"){
+            font-size: 36px;
+            margin-bottom: 33px;
+        }
+    }
+
 
     .second-btn{
         color: $white;
@@ -991,12 +990,6 @@ body {
     }
 }
 
-/* ________________________________________agency-img-bg___________________________________ */
-
-.agency-img-bg{
-    background: url(../images/aboutUs-page/main-img.jpg) 0 50%/cover no-repeat;
-}
-
 /* ________________________________________about___________________________________________ */
 
 .about{
@@ -1504,3 +1497,21 @@ body {
         }
     }
 }
+
+/* ________________________________________cases-page______________________________________ */
+
+.cases{
+    padding: 160px 0 255px 0;
+    @include adaptiv-vaule("padding-top", 160, 95, 1);
+    @include adaptiv-vaule("padding-bottom", 255, 115, 1);
+
+    h1 {
+        margin: 0;
+        @include adaptiv-vaule("font-size", 85, 36, 1); 
+    }
+}
+
+.cases-project{
+    @include adaptiv-vaule("padding-top", 205 , 45, 1); 
+}
+
