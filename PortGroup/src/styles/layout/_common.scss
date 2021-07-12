@@ -5,7 +5,7 @@ body {
     &.change-bg {
         background-color: $purple;
 
-        span, figcaption, p, h3, time{
+        span, figcaption, p, h1, h2, h3, h4, time, ul, li, span{
             color: $white;
         }
 
@@ -1434,78 +1434,79 @@ body {
         color: $purple;
     }
 
-    p{
+    .offerings__sub-title{
         margin: 0;
         @include adaptiv-vaule("font-size", 24, 20, 1); 
         @include adaptiv-vaule("margin-bottom", 65 , 25, 1); 
     }
 
-    .offerings__item-wrap{
-        display: flex;
-        justify-content: space-between;
+}
 
-        @include media ("<desktop"){
-            flex-direction: column;
-        }
+.offerings__item-wrap{
+    display: flex;
+    justify-content: space-between;
+
+    @include media ("<desktop"){
+        flex-direction: column;
+    }
+}
+
+.offerings__item{
+    min-width: 45%;
+    position: relative;
+    min-height: 300px;
+
+    @include media ("<desktop"){
+        margin-bottom: 40px;
     }
 
-    .offerings__item{
-        min-width: 45%;
-        position: relative;
-        min-height: 300px;
-
-        @include media ("<desktop"){
-            margin-bottom: 40px;
-        }
-
-        ul{
-            padding: 0;
-            margin: 0;
-            margin-left: 95px;
-            list-style: none;
-
-            @include media ("<desktop"){
-                margin-left: 0;
-            }
-
-            @include media ("<phone"){
-                margin-left: 70px;
-            }
-        }
-
-        li{
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 200%;
-
-            @include media ("<phone"){
-                font-size: 18px;
-            }
-        }
-    }
-
-    .offerings__item__text{
-        position: absolute;
-        top: 30%;
-        left: -100px;
-        font-weight: 800;
-        font-size: 57px;
-        color: $light-blue;
-        transform: rotate(-90deg);
+    ul{
+        padding: 0;
         margin: 0;
+        margin-left: 95px;
+        list-style: none;
 
         @include media ("<desktop"){
-            position: static;
-            transform: rotate(0);
-            margin-bottom: 10px;
+            margin-left: 0;
         }
 
         @include media ("<phone"){
-            font-size: 48px;
-            transform: rotate(-90deg);
-            position: absolute;
-            margin-bottom: 0;
+            margin-left: 70px;
         }
+    }
+
+    li{
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 25px;
+
+        @include media ("<phone"){
+            font-size: 18px;
+        }
+    }
+}
+
+.offerings__item__text{
+    position: absolute;
+    top: 30%;
+    left: -100px;
+    font-weight: 800;
+    font-size: 57px;
+    color: $light-blue;
+    transform: rotate(-90deg);
+    margin: 0;
+
+    @include media ("<desktop"){
+        position: static;
+        transform: rotate(0);
+        margin-bottom: 10px;
+    }
+
+    @include media ("<phone"){
+        font-size: 48px;
+        transform: rotate(-90deg);
+        position: absolute;
+        margin-bottom: 0;
     }
 }
 
@@ -1717,6 +1718,175 @@ body {
             }
         }
     }
+}
+
+/* ________________________________________support_________________________________________ */
+
+.support{
+    @include adaptiv-vaule("padding-top", 90, 35, 1);
+    padding-bottom: 65px;
+
+    .support__img-wrap{
+        margin-bottom: 120px;
+
+        @include media ("<tablet"){
+            display: none;
+        }
+    }
+
+    h4{
+        font-weight: 800;
+        @include adaptiv-vaule("font-size", 57, 36, 1);
+        line-height: 130%;
+        color: $white;
+        max-width: 800px;
+        @include adaptiv-vaule("margin-bottom", 80 , 50, 1);
+
+        @include media ("<phone"){
+            max-width: 100%;
+        }
+    }
+
+    .support__list-wrap{
+        display: flex;
+        justify-content: space-between;
+
+        @include media ("<=900px"){
+            flex-direction: column;
+        }
+    }
+
+    .support__list-item{
+        max-width: 340px;
+        
+        &:not(:last-child){
+            margin-right: 30px;
+        }
 
 
+        @include media ("<=1175px"){
+            max-width: 235px;
+        }
+
+        @include media ("<=900px"){
+            max-width: 80%;
+            
+            &:not(:last-child){
+                margin-right: 0px;
+                margin-bottom: 50px;
+            }
+        }
+
+        @include media ("<phone"){
+            max-width: 100%;
+        }
+
+        span{
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 180%;
+
+            @include media ("<=1175px"){
+                font-size: 16px;
+            }
+
+            @include media ("<phone"){
+                font-size: 20px;
+            }
+        }
+
+        p{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 180%;
+            margin-bottom: 30px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            @include media ("<=1175px"){
+                font-size: 16px;
+            }
+
+            @include media ("<phone"){
+                font-size: 20px;
+            }
+        }
+    }
+
+    .support__list-item__title{
+        display: block;
+        position: relative;
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 180%;
+        margin-bottom: 30px;
+        width: 100%;
+
+        @include media ("<=1175px"){
+            font-size: 20px;
+        }
+
+        @include media ("<phone"){
+            font-size: 25px;
+        }
+
+        &::after{
+            content:'';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $white;
+        }
+    }
+}
+
+/* ________________________________________outsource_____________________________________ */
+
+.outsource{
+    @include adaptiv-vaule("padding-top", 75, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 135, 90, 1);
+
+    .outsource__img-wrap{
+        margin-bottom: 120px;
+
+        @include media ("<tablet"){
+            display: none;
+        }
+    }
+
+    h4{
+        font-weight: 800;
+        @include adaptiv-vaule("font-size", 57, 36, 1);
+        line-height: 130%;
+        margin-bottom: 50px;
+    }
+
+    .outsource__item{
+        max-width: 80%;
+        margin-bottom: 0;
+
+        @include media ("<phone"){
+            max-width: 100%;
+        }
+
+        .offerings__item__text{
+            @include media ("<phone"){
+                top: 10%;
+            }
+        }
+        
+        li{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 180%;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
 }
