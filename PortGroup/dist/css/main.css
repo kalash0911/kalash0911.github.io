@@ -2679,6 +2679,41 @@ body {
     .post .main-btn {
       margin-top: 40px; } }
 
+/* ________________________________________error________________________________________ */
+.error {
+  /* Только если меньше контейнера */
+  padding-top: 160px;
+  height: 100vh; }
+  @media (max-width: 1320px) {
+    .error {
+      padding-top: calc(90px + 70 * ((100vw - 320px) / 1000)); } }
+  .error .error-content {
+    height: 70vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center; }
+  .error h1 {
+    /* Только если меньше контейнера */
+    font-size: 115px; }
+    @media (max-width: 1320px) {
+      .error h1 {
+        font-size: calc(65px + 50 * ((100vw - 320px) / 1000)); } }
+  .error p {
+    /* Только если меньше контейнера */
+    font-size: 48px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px; }
+    @media (max-width: 1320px) {
+      .error p {
+        font-size: calc(25px + 23 * ((100vw - 320px) / 1000)); } }
+  .error .main-btn::after {
+    content: 'Back'; }
+
 #footer {
   padding: 70px 0 0 0;
   position: relative;

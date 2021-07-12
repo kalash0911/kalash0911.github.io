@@ -2252,3 +2252,42 @@ body {
         }
     }
 }
+
+
+
+
+
+
+
+
+/* ________________________________________error________________________________________ */
+
+.error{
+    @include adaptiv-vaule("padding-top", 160, 90, 1);
+    height: 100vh;
+
+    .error-content{
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    h1{
+        @include adaptiv-vaule("font-size", 115, 65, 1);
+    }
+
+    p{
+        @include adaptiv-vaule("font-size", 48, 25, 1);
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    .main-btn{
+        &::after{
+            content:'Back';
+        }
+    }
+}
