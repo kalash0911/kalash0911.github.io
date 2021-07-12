@@ -111,7 +111,7 @@ function initSliders(selector, width, obj) {
 
 function changeNavLinks() {
   renderSpansForMenu();
-  var darkSection = document.querySelector(".main-img-bg");
+  var darkSection = document.querySelector(".dark-section");
   var words = document.querySelectorAll(".left-menu__content-item");
   window.addEventListener("scroll", function () {
     var sectionRect = darkSection.getBoundingClientRect();
