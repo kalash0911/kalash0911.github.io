@@ -2085,3 +2085,170 @@ body {
         }
     }
 }
+
+/* ________________________________________post_______________________________________ */
+
+.post-page{
+    @include media ("<phone"){
+        display: none
+    }
+}
+
+
+.post{
+    @include adaptiv-vaule("padding-top", 100, 0, 1);
+    @include adaptiv-vaule("padding-bottom", 110, 45, 1);
+
+    .container{
+        @include media ("<phone"){
+            padding: 0;
+        }
+    }
+
+    .post__item{
+        position: relative;
+        padding-bottom: 80px;
+        margin-bottom: 60px;
+
+        &::after{
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 70%;
+            height: 1px;
+            background-color: $black;
+
+            @include media ("<phone"){
+                left: 0;
+                transform: translate(0);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: -1;
+            }
+        }
+
+        @include media ("<tablet"){
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        @include media ("<phone"){
+            height: 100vh;
+            max-height: 585px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 0;
+            color: $white;
+            margin-bottom: 0;
+        }
+    }
+
+    .post__user-wrap{
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+
+        @include media ("<phone"){
+            padding: 0 30px;
+        }
+
+        p{
+            font-weight: 600;
+            @include adaptiv-vaule("font-size", 25, 15, 1);
+            line-height: 130%;
+            margin-bottom: 0;
+            color: $color-dots;
+            margin-left: 30px;
+        }
+    }
+
+    .post__user-img-wrap{
+        width: 81px;
+        height: 81px;
+        border-radius: 50%;
+
+        @include media ("<phone"){
+            width: 36px;
+            height: 36px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .post__text{
+         
+        h2{
+            font-weight: 800;
+            @include adaptiv-vaule("font-size", 57, 36, 1);
+            line-height: 130%;
+            margin-bottom: 40px;
+
+            @include media ("<phone"){
+                padding: 0 30px;
+            }
+        }
+
+        p{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 120%;
+            margin-bottom: 30px;
+
+            @include media ("<phone"){
+                display: none;
+            }
+        }
+
+        .second-btn{
+            margin-bottom: 50px;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 130%;
+
+            @include media ("<phone"){
+                color: $white;
+                margin: 0 30px;
+                margin-bottom: 20px;
+
+                &::after{
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    .post__text__img-wrap{
+        width: 100%;
+        height: 100%;
+
+        img{
+            width: 100%;
+            height: 100%;
+
+            @include media ("<phone"){
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                z-index: -1;
+            }
+        }
+    }
+
+    .main-btn{
+        &::after{
+            content:'SUBMIT NOW';
+        }
+
+        @include media ("<phone"){
+            margin-top: 40px;
+        }
+    }
+}

@@ -430,7 +430,7 @@ h1, .h1 {
   color: #3c467a; }
 
 h2, .h2 {
-  font-size: 52px; }
+  font-size: 57px; }
 
 h3, .h3 {
   font-size: 17px;
@@ -2536,6 +2536,148 @@ body {
       border: none; }
       .career-form form .main-btn::after {
         content: 'Sumbit now'; }
+
+/* ________________________________________post_______________________________________ */
+@media (max-width: 479px) {
+  .post-page {
+    display: none; } }
+
+.post {
+  /* Только если меньше контейнера */
+  padding-top: 100px;
+  /* Только если меньше контейнера */
+  padding-bottom: 110px; }
+  @media (max-width: 1320px) {
+    .post {
+      padding-top: calc(0px + 100 * ((100vw - 320px) / 1000)); } }
+  @media (max-width: 1320px) {
+    .post {
+      padding-bottom: calc(45px + 65 * ((100vw - 320px) / 1000)); } }
+  @media (max-width: 479px) {
+    .post .container {
+      padding: 0; } }
+  .post .post__item {
+    position: relative;
+    padding-bottom: 80px;
+    margin-bottom: 60px; }
+    .post .post__item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%);
+      width: 70%;
+      height: 1px;
+      background-color: #000; }
+      @media (max-width: 479px) {
+        .post .post__item::after {
+          left: 0;
+          -webkit-transform: translate(0);
+          transform: translate(0);
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: -1; } }
+    @media (max-width: 767px) {
+      .post .post__item {
+        padding-bottom: 40px;
+        margin-bottom: 40px; } }
+    @media (max-width: 479px) {
+      .post .post__item {
+        height: 100vh;
+        max-height: 585px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        padding-bottom: 0;
+        color: #fff;
+        margin-bottom: 0; } }
+  .post .post__user-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 35px; }
+    @media (max-width: 479px) {
+      .post .post__user-wrap {
+        padding: 0 30px; } }
+    .post .post__user-wrap p {
+      font-weight: 600;
+      /* Только если меньше контейнера */
+      font-size: 25px;
+      line-height: 130%;
+      margin-bottom: 0;
+      color: #C4C4C4;
+      margin-left: 30px; }
+      @media (max-width: 1320px) {
+        .post .post__user-wrap p {
+          font-size: calc(15px + 10 * ((100vw - 320px) / 1000)); } }
+  .post .post__user-img-wrap {
+    width: 81px;
+    height: 81px;
+    border-radius: 50%; }
+    @media (max-width: 479px) {
+      .post .post__user-img-wrap {
+        width: 36px;
+        height: 36px; } }
+    .post .post__user-img-wrap img {
+      width: 100%;
+      height: 100%; }
+  .post .post__text h2 {
+    font-weight: 800;
+    /* Только если меньше контейнера */
+    font-size: 57px;
+    line-height: 130%;
+    margin-bottom: 40px; }
+    @media (max-width: 1320px) {
+      .post .post__text h2 {
+        font-size: calc(36px + 21 * ((100vw - 320px) / 1000)); } }
+    @media (max-width: 479px) {
+      .post .post__text h2 {
+        padding: 0 30px; } }
+  .post .post__text p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    margin-bottom: 30px; }
+    @media (max-width: 479px) {
+      .post .post__text p {
+        display: none; } }
+  .post .post__text .second-btn {
+    margin-bottom: 50px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 130%; }
+    @media (max-width: 479px) {
+      .post .post__text .second-btn {
+        color: #fff;
+        margin: 0 30px;
+        margin-bottom: 20px; }
+        .post .post__text .second-btn::after {
+          background-color: #fff; } }
+  .post .post__text__img-wrap {
+    width: 100%;
+    height: 100%; }
+    .post .post__text__img-wrap img {
+      width: 100%;
+      height: 100%; }
+      @media (max-width: 479px) {
+        .post .post__text__img-wrap img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          -o-object-fit: cover;
+          object-fit: cover;
+          z-index: -1; } }
+  .post .main-btn::after {
+    content: 'SUBMIT NOW'; }
+  @media (max-width: 479px) {
+    .post .main-btn {
+      margin-top: 40px; } }
 
 #footer {
   padding: 70px 0 0 0;
