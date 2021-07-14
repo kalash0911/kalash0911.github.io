@@ -2769,13 +2769,40 @@ body {
       margin-bottom: 20px; }
   .work-project .work-project__img-conteiner {
     display: -ms-flexbox;
-    display: flex; }
-  .work-project .work-project__img-first-wrap img {
-    /* Только если меньше контейнера */
-    width: 480px; }
-    @media (max-width: 1320px) {
-      .work-project .work-project__img-first-wrap img {
-        width: calc(280px + 200 * ((100vw - 320px) / 1000)); } }
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media (max-width: 479px) {
+      .work-project .work-project__img-conteiner {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .work-project .work-project__img-first-wrap {
+    margin-right: 30px; }
+    @media (max-width: 479px) {
+      .work-project .work-project__img-first-wrap {
+        margin-right: 0;
+        margin-bottom: 100px; } }
+    .work-project .work-project__img-first-wrap img {
+      /* Только если меньше контейнера */
+      width: 480px; }
+      @media (max-width: 1320px) {
+        .work-project .work-project__img-first-wrap img {
+          width: calc(280px + 200 * ((100vw - 320px) / 1000)); } }
+  .work-project .work-project__img-wrap {
+    padding: 40px 50px; }
+    .work-project .work-project__img-wrap:last-child {
+      background-color: #000; }
+    @media (max-width: 767px) {
+      .work-project .work-project__img-wrap {
+        padding: 25px; } }
+    .work-project .work-project__img-wrap img {
+      /* Только если меньше контейнера */
+      width: 480px; }
+      @media (max-width: 1320px) {
+        .work-project .work-project__img-wrap img {
+          width: calc(335px + 145 * ((100vw - 320px) / 1000)); } }
 
 #footer {
   padding: 70px 0 0 0;

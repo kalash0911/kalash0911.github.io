@@ -2253,13 +2253,6 @@ body {
     }
 }
 
-
-
-
-
-
-
-
 /* ________________________________________error________________________________________ */
 
 .error{
@@ -2339,11 +2332,40 @@ body {
 
     .work-project__img-conteiner{
         display: flex;
+        justify-content: space-between;
+        align-items:center;
+
+        @include media ("<phone"){
+            flex-direction: column;
+        }
     }
 
     .work-project__img-first-wrap{
+        margin-right: 30px;
+
+        @include media ("<phone"){
+            margin-right: 0;
+            margin-bottom: 100px
+        }
+        
         img{
             @include adaptiv-vaule("width", 480, 280, 1);
+        }
+    }
+
+    .work-project__img-wrap{
+        padding: 40px 50px;
+
+        &:last-child{
+            background-color: $black
+        }
+
+        @include media ("<tablet"){
+            padding: 25px;
+        }
+
+        img{
+            @include adaptiv-vaule("width", 480, 335, 1);
         }
     }
 }
