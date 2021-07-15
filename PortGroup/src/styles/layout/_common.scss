@@ -2538,3 +2538,269 @@ body {
         }
     }
 }
+
+/* ________________________________________сontact____________________________________ */
+
+.сontact{
+    @include adaptiv-vaule("padding-bottom", 80, 25, 1);
+
+    .сontact-content{
+        display: flex;
+
+        @include media ("<=1200px"){
+            flex-direction: column;
+            align-items: center;
+            padding-right: 130px;
+        }
+
+        @include media ("<desktop"){
+            padding-right: 0;
+        }
+    }
+}
+
+.form{
+    width: 100%;
+    min-width: 750px;
+    border: 1px solid #3C467A;
+    padding: 50px 80px;
+
+    @include media ("<=1200px"){
+        margin-bottom: 40px;
+    }
+
+    @include media ("<desktop"){
+        min-width: 100%;
+    }
+
+    @include media ("<tablet"){
+        padding: 30px 60px;
+    }
+
+    @include media ("<phone"){
+        padding: 30px 20px;
+    }
+
+    h3{
+        margin-bottom: 50px;
+
+        @include media ("<phone"){
+            margin-bottom: 20px;
+        }
+    }
+
+    .form__wrap{
+        display: flex;
+        flex-direction: column;
+
+        p{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 200%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .form__help{
+        padding: 15px 30px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 200%;
+        margin-bottom: 20px;
+        width: 100%;
+
+        @include media ("<phone"){
+            padding: 15px;
+        }
+    }
+
+    .form__wrap-checbox{
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form__checbox-item{
+        font-weight: 600;
+        font-size: 15px;
+
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+
+        input{
+            margin-right: 18px;
+
+            @include media ("<phone"){
+                margin-right: 14px;
+            }
+        }
+    }
+
+    .form__user-data{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        input, textarea{
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 15px 30px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.3;
+
+            &::placeholder{
+                color: $black;
+            }
+
+            @include media ("<phone"){
+                padding: 15px;
+            }
+        }
+
+        textarea{
+            min-height: 250px;
+            margin-bottom: 0;
+        }
+    }
+
+    .main-btn{
+        max-width: 230px;
+        border: none;
+        min-width: 0;
+    }
+}
+
+.info{
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include media ("<=1200px"){
+        padding-left: 0;
+    }
+
+    h3{
+        color: $purple;
+        font-style:normal;
+        margin-bottom: 30px;
+    }
+
+    .info__title-wrap{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    
+    .info__title{
+        padding: 30px 5px 0;
+        background-color: #20263C;
+        color: $white;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 85.5%;
+        text-transform: uppercase;
+        margin-bottom: 2px;
+
+        @include media ("<phone"){
+            font-size: 47px;
+        }
+    }
+
+    .main-btn{
+        max-width: 100%;
+        width: 100%;
+        text-align: start;
+        text-transform: uppercase;
+        padding: 15px;
+    }
+
+    .info__contact-wrap{
+        @include media ("<=1200px"){
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @include media ("<desktop"){
+            flex-direction: column;
+        }
+    }
+
+    .info__address{
+        margin-bottom: 50px;
+
+        @include media ("<=1200px"){
+            width: 50%;
+        }
+
+        @include media ("<desktop"){
+            width: 100%;
+        }
+
+        p{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 200%;
+            margin-bottom: 0;
+        }
+    }
+
+    .info__contact{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+
+        @include media ("<=1200px"){
+            width: 50%;
+            max-width: 230px;
+        }
+
+        @include media ("<desktop"){
+            width: 100%;
+        }
+
+        a{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 200%;
+            margin-bottom: 0;
+
+            &:hover{
+                color: $purple;
+            }
+        }
+    }
+
+    .info__social{
+        
+        @include media ("<=1200px"){
+            width: 50;
+        }
+
+        @include media ("<desktop"){
+            width: 100%;
+        }
+    }
+
+
+    .info__social__icons{
+
+        a{
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+
+            &:hover{
+                color: $purple;
+            }
+        }
+
+        i{
+            font-size: 22px;
+        }
+    }
+}

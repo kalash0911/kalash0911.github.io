@@ -3102,6 +3102,214 @@ body {
         text-align: left;
         margin-left: 5px; }
 
+/* ________________________________________сontact____________________________________ */
+.сontact {
+  /* Только если меньше контейнера */
+  padding-bottom: 80px; }
+  @media (max-width: 1320px) {
+    .сontact {
+      padding-bottom: calc(25px + 55 * ((100vw - 320px) / 1000)); } }
+  .сontact .сontact-content {
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 1200px) {
+      .сontact .сontact-content {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-right: 130px; } }
+    @media (max-width: 1024px) {
+      .сontact .сontact-content {
+        padding-right: 0; } }
+
+.form {
+  width: 100%;
+  min-width: 750px;
+  border: 1px solid #3C467A;
+  padding: 50px 80px; }
+  @media (max-width: 1200px) {
+    .form {
+      margin-bottom: 40px; } }
+  @media (max-width: 1024px) {
+    .form {
+      min-width: 100%; } }
+  @media (max-width: 767px) {
+    .form {
+      padding: 30px 60px; } }
+  @media (max-width: 479px) {
+    .form {
+      padding: 30px 20px; } }
+  .form h3 {
+    margin-bottom: 50px; }
+    @media (max-width: 479px) {
+      .form h3 {
+        margin-bottom: 20px; } }
+  .form .form__wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .form .form__wrap p {
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 200%;
+      margin-bottom: 20px; }
+  .form .form__help {
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 200%;
+    margin-bottom: 20px;
+    width: 100%; }
+    @media (max-width: 479px) {
+      .form .form__help {
+        padding: 15px; } }
+  .form .form__wrap-checbox {
+    margin-bottom: 30px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .form .form__checbox-item {
+    font-weight: 600;
+    font-size: 15px; }
+    .form .form__checbox-item:not(:last-child) {
+      margin-bottom: 10px; }
+    .form .form__checbox-item input {
+      margin-right: 18px; }
+      @media (max-width: 479px) {
+        .form .form__checbox-item input {
+          margin-right: 14px; } }
+  .form .form__user-data {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 40px; }
+    .form .form__user-data input, .form .form__user-data textarea {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 15px 30px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.3; }
+      .form .form__user-data input::-webkit-input-placeholder, .form .form__user-data textarea::-webkit-input-placeholder {
+        color: #000; }
+      .form .form__user-data input::-moz-placeholder, .form .form__user-data textarea::-moz-placeholder {
+        color: #000; }
+      .form .form__user-data input:-ms-input-placeholder, .form .form__user-data textarea:-ms-input-placeholder {
+        color: #000; }
+      .form .form__user-data input::-ms-input-placeholder, .form .form__user-data textarea::-ms-input-placeholder {
+        color: #000; }
+      .form .form__user-data input::placeholder, .form .form__user-data textarea::placeholder {
+        color: #000; }
+      @media (max-width: 479px) {
+        .form .form__user-data input, .form .form__user-data textarea {
+          padding: 15px; } }
+    .form .form__user-data textarea {
+      min-height: 250px;
+      margin-bottom: 0; }
+  .form .main-btn {
+    max-width: 230px;
+    border: none;
+    min-width: 0; }
+
+.info {
+  padding-left: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%; }
+  @media (max-width: 1200px) {
+    .info {
+      padding-left: 0; } }
+  .info h3 {
+    color: #3c467a;
+    font-style: normal;
+    margin-bottom: 30px; }
+  .info .info__title-wrap {
+    width: 100%;
+    margin-bottom: 100px; }
+  .info .info__title {
+    padding: 30px 5px 0;
+    background-color: #20263C;
+    color: #fff;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 85.5%;
+    text-transform: uppercase;
+    margin-bottom: 2px; }
+    @media (max-width: 479px) {
+      .info .info__title {
+        font-size: 47px; } }
+  .info .main-btn {
+    max-width: 100%;
+    width: 100%;
+    text-align: start;
+    text-transform: uppercase;
+    padding: 15px; }
+  @media (max-width: 1200px) {
+    .info .info__contact-wrap {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+  @media (max-width: 1024px) {
+    .info .info__contact-wrap {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+  .info .info__address {
+    margin-bottom: 50px; }
+    @media (max-width: 1200px) {
+      .info .info__address {
+        width: 50%; } }
+    @media (max-width: 1024px) {
+      .info .info__address {
+        width: 100%; } }
+    .info .info__address p {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 200%;
+      margin-bottom: 0; }
+  .info .info__contact {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 50px; }
+    @media (max-width: 1200px) {
+      .info .info__contact {
+        width: 50%;
+        max-width: 230px; } }
+    @media (max-width: 1024px) {
+      .info .info__contact {
+        width: 100%; } }
+    .info .info__contact a {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 200%;
+      margin-bottom: 0; }
+      .info .info__contact a:hover {
+        color: #3c467a; }
+  @media (max-width: 1200px) {
+    .info .info__social {
+      width: 50; } }
+  @media (max-width: 1024px) {
+    .info .info__social {
+      width: 100%; } }
+  .info .info__social__icons a:not(:last-child) {
+    margin-right: 20px; }
+  .info .info__social__icons a:hover {
+    color: #3c467a; }
+  .info .info__social__icons i {
+    font-size: 22px; }
+
 #footer {
   padding: 70px 0 0 0;
   position: relative;
