@@ -1,0 +1,28 @@
+body {
+    font-family: $mont;
+}
+
+.container{
+    width: 100%;
+    max-width: 1440px;
+    @include adaptiv-vaule("padding-right", 70, 25, 1);
+    @include adaptiv-vaule("padding-left", 70, 25, 1);
+    margin: 0 auto;
+}
+
+.main-bnt{
+    min-width: 200px;
+    padding: 15px;
+    font-weight: 800;
+    font-size: 18px;
+    color: $white;
+    text-align: center;
+    background-color: $main-color;
+    border-radius: 40px;
+}
+
+.main {
+    background: url(../images/main-bg-img.jpg) 50% 0/cover no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+}
