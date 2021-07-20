@@ -46,3 +46,55 @@ if (burger) {
     menuBody.classList.toggle("menu_active");
   });
 }
+
+function initSliders(selector, width, obj) {
+    const init = {
+      infinite: false,
+      cssEase: "linear",
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      ...obj,
+    };
+  
+    $(() => {
+      const win = $(window);
+      const slider = $(selector);
+  
+      win.on("load resize", () => {
+        if (win.width() <= width) {
+          slider.not(".slick-initialized").slick(init);
+        } else if (slider.hasClass("slick-initialized")) {
+          slider.slick("unslick");
+        }
+      });
+    });
+}
+
+initSliders(".cities-wrap", 1024, {
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+  ],
+});
+
+/* initSliders(".post-slider", 768, {
+  slidesToShow: 2,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+initSliders(".reviews-slider", 768); */

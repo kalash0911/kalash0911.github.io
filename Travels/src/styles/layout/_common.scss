@@ -36,7 +36,7 @@ body {
 
 .main-content{
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     min-height: 100vh;
 }
 
@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 140px 0 30px 0;
+    padding: 140px 0 130px 0;
 }
 
 .main__text-wrap{
@@ -76,3 +76,198 @@ body {
     }
 }
 
+/* ///////////////////////cities////////////////////// */
+
+.cities{
+    padding: 50px 0 40px 0;
+    border-bottom: 1px solid $gray;
+    box-shadow: 0px 5px 5px $gray;
+    position: absolute;
+    z-index: 10;
+    background: $white;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -70px);
+
+    @include media ("<phone"){
+        width: 95%;
+        border-radius: 10px;
+        padding: 30px 0 40px 0;
+
+        .container{
+            padding: 0;
+        }
+    }
+}
+
+.cities-content{
+    position: relative;
+}
+
+.cities-wrap{
+    @include media (">desktop"){
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include media ("<=desktop"){
+        overflow: hidden;
+    }
+}
+
+.cities__item{
+    display: flex;
+
+    &:not(:first-child){
+        &::before{
+            content:'';
+            position: absolute;
+            left: -35px;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background-color: $black;
+
+            @include media ("<tablet"){
+                display: none;
+            }
+        }
+    }
+
+    @include media (">desktop"){
+        max-width: 20%;
+        width: 100%;
+        position: relative;
+    }
+
+    @include media ("<=desktop"){
+        justify-content: center;
+        position: relative;
+
+        &:not(:first-child){
+            &::before{
+                left: 3px;
+            }
+        }
+    }
+}
+
+.cities__item__icon-wrap{
+    margin-right: 15px;
+
+    i{
+        font-size: 56px;
+    }
+
+    img{
+        min-width: 50px;
+    }
+}
+
+.cities__item__text{
+    max-width: 165px;
+
+    span{
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    p{
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
+
+/* --------------------------cities slider */
+
+.cities{
+
+    .slick-track{
+        display: flex;
+    }
+
+    .slick-arrow{
+        position: absolute;
+        top: 25%;
+        z-index: 2; // стрелки сверху картинок
+        font-size: 0; // убираем надпись на дефолтной стрелке
+        width: 30px; // ширина стрелки
+        height: 30px; // высота стрелки
+        border: none;
+    }
+
+    .slick-prev{
+        left: 0;
+        background: url('../images/icon/arrow.svg') 0 0 no-repeat;
+    }
+
+    .slick-next{
+        right: 0;
+        transform: rotate(180deg);
+        background: url('../images/icon/arrow.svg') 0 0 no-repeat;
+    }
+
+    .slick-dots{
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li{
+            margin:0 5px;
+            width: 18px;
+            height: 17px;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        button{
+            border: none;
+            border-radius: 50%;
+            font-size: 0;
+            width: 8px;
+            height: 11px;
+            background-color: $gray;
+        }
+
+        .slick-active{
+            border-radius: 50%;
+            border: 1px solid #EB5B31;
+
+        }
+    }
+
+    .slick-active{
+        &::before{
+            left: -2px;
+        }
+    }
+}
+
+/* ///////////////////////about////////////////////// */
+
+.about{
+    @include adaptiv-vaule("padding-top", 170, 150, 1);
+    @include adaptiv-vaule("padding-bottom", 105, 40, 1);
+}
+
+.about-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__text-blok{
+    width: 45%;
+}
+
+.about__img-blok{
+    width: 45%;
+}
