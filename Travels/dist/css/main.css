@@ -1130,24 +1130,157 @@ body {
   /* Только если меньше контейнера */
   padding-top: 170px;
   /* Только если меньше контейнера */
-  padding-bottom: 105px; }
+  padding-bottom: 180px;
+  position: relative; }
   @media (max-width: 1300px) {
     .about {
       padding-top: calc(150px + 20 * ((100vw - 320px) / 980)); } }
   @media (max-width: 1300px) {
     .about {
-      padding-bottom: calc(40px + 65 * ((100vw - 320px) / 980)); } }
+      padding-bottom: calc(100px + 80 * ((100vw - 320px) / 980)); } }
+  .about::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .5;
+    background: url(../images/asfalt-dark.png) 0 0/cover no-repeat; }
 
 .about-content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+  @media (max-width: 1023px) {
+    .about-content {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .about__text-blok {
-  width: 45%; }
+  width: 42%; }
+  @media (max-width: 1023px) {
+    .about__text-blok {
+      width: 100%;
+      margin-bottom: 40px; } }
+  .about__text-blok h2 {
+    margin-bottom: 40px; }
+  .about__text-blok p {
+    margin-bottom: 25px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3; }
 
 .about__img-blok {
-  width: 45%; }
+  width: 45%;
+  position: relative; }
+  @media (max-width: 1023px) {
+    .about__img-blok {
+      width: 100%; } }
+
+.about__img-wrap {
+  display: block;
+  border-radius: 78% 22% 53% 47% / 52% 36% 64% 48%;
+  overflow: hidden;
+  /* Только если меньше контейнера */
+  max-width: 470px;
+  width: 100%;
+  /* Только если меньше контейнера */
+  max-height: 440px;
+  height: 100vh;
+  position: relative;
+  background-color: #A01C17;
+  box-shadow: 19px 8px 0 -12px #D0312B, -15px -8px 0 -10px #D0312B; }
+  @media (max-width: 1300px) {
+    .about__img-wrap {
+      max-width: calc(320px + 150 * ((100vw - 320px) / 980)); } }
+  @media (max-width: 1300px) {
+    .about__img-wrap {
+      max-height: calc(300px + 140 * ((100vw - 320px) / 980)); } }
+  @media (max-width: 1023px) {
+    .about__img-wrap {
+      margin: 0 auto; } }
+  .about__img-wrap img, .about__img-wrap source {
+    border-radius: 80% 22% 69% 29% / 69% 49% 64% 3%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+
+.comment-about {
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+  max-width: 320px;
+  border-radius: 10px;
+  padding: 15px 17px 5px 17px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); }
+
+.comment-about__title-container {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-bottom: 10px; }
+  .comment-about__title-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    width: 95%;
+    height: 1px;
+    background-color: #000; }
+
+.comment-about__img-wrap {
+  position: relative;
+  max-width: 65px;
+  width: 100%;
+  max-height: 65px;
+  height: 100vh;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px; }
+  .comment-about__img-wrap img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover; }
+
+.comment-about__title-wrap span {
+  display: block;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 5px; }
+
+.comment-about__title-wrap p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  margin-bottom: 0; }
+
+.comment-about__stars-container {
+  padding-top: 5px;
+  margin: 0 auto;
+  text-align: center; }
+  .comment-about__stars-container i {
+    font-size: 19px;
+    color: #E3CD00; }
 
 /*# sourceMappingURL=main.css.map */

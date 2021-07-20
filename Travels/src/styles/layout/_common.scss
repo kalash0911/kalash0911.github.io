@@ -256,18 +256,167 @@ body {
 
 .about{
     @include adaptiv-vaule("padding-top", 170, 150, 1);
-    @include adaptiv-vaule("padding-bottom", 105, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 180, 100, 1);
+    position: relative;
+    
+    &::after{
+        content:'';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: .5;
+        background: url(../images/asfalt-dark.png) 0 0/cover no-repeat;
+    }
 }
 
 .about-content{
     display: flex;
     justify-content: space-between;
+
+    @include media ("<desktop"){
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .about__text-blok{
-    width: 45%;
+    width: 42%;
+
+    @include media ("<desktop"){
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    h2{
+        margin-bottom: 40px;
+    }
+
+    p{
+        margin-bottom: 25px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.3;
+    }
 }
 
 .about__img-blok{
     width: 45%;
+    position: relative;
+
+    @include media ("<desktop"){
+        width: 100%;
+    }
+}
+
+.about__img-wrap{
+    display: block;
+    border-radius: 78% 22% 53% 47% / 52% 36% 64% 48%;
+    overflow: hidden;
+    @include adaptiv-vaule("max-width", 470, 320, 1);
+    width: 100%;
+    @include adaptiv-vaule("max-height", 440, 300, 1);
+    height: 100vh;
+    position: relative;
+    background-color: #A01C17;
+    box-shadow: 19px 8px 0 -12px #D0312B,
+                -15px -8px 0 -10px #D0312B;
+
+    @include media ("<desktop"){
+        margin: 0 auto;
+    }
+
+    img, source{
+        border-radius: 80% 22% 69% 29% / 69% 49% 64% 3%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.comment-about{
+    position: absolute;
+    bottom: 0;
+    left: 90px;
+    max-width: 320px;
+    border-radius: 10px;
+    padding: 15px 17px 5px 17px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+    backdrop-filter: blur(5px);
+}
+
+.comment-about__title-container{
+    display: flex;
+    position: relative;
+    padding-bottom: 10px;
+    
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 95%;
+        height: 1px;
+        background-color: $black;
+
+    }
+
+}
+
+.comment-about__img-wrap{
+    position: relative;
+    max-width: 65px;
+    width: 100%;
+    max-height: 65px;
+    height: 100vh;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+.comment-about__title-wrap{
+
+    span{
+        display: block;
+        font-weight: 800;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    p{
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 150%;
+        margin-bottom: 0;
+    }
+
+}
+
+.comment-about__stars-container{
+    padding-top: 5px;
+    margin: 0 auto;
+    text-align: center;
+    
+    i{
+        font-size: 19px;
+        color: #E3CD00;
+    }
 }
