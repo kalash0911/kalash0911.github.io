@@ -15,7 +15,7 @@
         padding: 0;
     }
 
-    .main-bnt{
+    .main-btn{
         display: none;
         background-color: $white;
         color: $main-color;
@@ -29,7 +29,7 @@
 }
 
 .header__wrap{
-    position: fixed;
+    position: absolute;
     width: 100%;
     left: 0;
     top: 0;

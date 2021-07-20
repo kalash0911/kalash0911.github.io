@@ -10,7 +10,8 @@ body {
     margin: 0 auto;
 }
 
-.main-bnt{
+.main-btn{
+    max-width: 200px;
     min-width: 200px;
     padding: 15px;
     font-weight: 800;
@@ -19,10 +20,59 @@ body {
     text-align: center;
     background-color: $main-color;
     border-radius: 40px;
+    transition: all .3s ease 0s;
+
+    &:hover{
+        background-color: $hover-color;
+    }
 }
+
+/* ///////////////////////main////////////////////// */
 
 .main {
     background: url(../images/main-bg-img.jpg) 50% 0/cover no-repeat;
     min-height: 100vh;
-    width: 100vw;
 }
+
+.main-content{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 0 30px 0;
+}
+
+.main__text-wrap{
+    margin-bottom: 60px;
+
+    h1{
+        font-weight: 800;
+        color: $main-color;
+        margin-bottom: 0;
+        @include adaptiv-vaule("font-size", 135, 60, 1);
+    }
+
+    p{
+        color: $white;
+        font-weight: 600;
+        margin-bottom: 0;
+        line-height: .8;
+
+        &:first-child{
+            @include adaptiv-vaule("font-size", 50, 28, 1);
+            @include adaptiv-vaule("margin-left", 160, 50, 1);
+        }
+
+        &:last-child{
+            @include adaptiv-vaule("font-size", 100, 50, 1);
+            @include adaptiv-vaule("margin-left", 280, 30, 1);
+        }
+    }
+}
+

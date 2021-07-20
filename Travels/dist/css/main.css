@@ -361,7 +361,10 @@ th {
     @include adaptiv-vaule("padding-right", 15, 7, 1);
     @include adaptiv-vaule("padding-left", 15, 7, 1);
 
+    @include adaptiv-vaule("margin-top", 15, 7, 1);
     @include adaptiv-vaule("margin-bottom", 40 , 20, 1);
+    @include adaptiv-vaule("margin-right", 15, 7, 1);
+    @include adaptiv-vaule("margin-left", 15, 7, 1);
 
     @include adaptiv-vaule("font-size", 115, 96, 1);
 */
@@ -380,6 +383,90 @@ th {
   src: url("../fonts/Mont-Heavy.ttf");
   font-style: normal;
   font-weight: 800; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?sil0oc");
+  src: url("../fonts/icomoon.eot?sil0oc#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?sil0oc") format("truetype"), url("../fonts/icomoon.woff?sil0oc") format("woff"), url("../fonts/icomoon.svg?sil0oc#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-airport:before {
+  content: "\e900"; }
+
+.icon-baggage:before {
+  content: "\e901"; }
+
+.icon-bicycle:before {
+  content: "\e902"; }
+
+.icon-black-logo:before {
+  content: "\e903"; }
+
+.icon-castle:before {
+  content: "\e904"; }
+
+.icon-choice:before {
+  content: "\e905"; }
+
+.icon-documents:before {
+  content: "\e906"; }
+
+.icon-done:before {
+  content: "\e907"; }
+
+.icon-egypt:before {
+  content: "\e908"; }
+
+.icon-email:before {
+  content: "\e909"; }
+
+.icon-facebook:before {
+  content: "\e90a"; }
+
+.icon-geo:before {
+  content: "\e90b"; }
+
+.icon-hotel:before {
+  content: "\e90c"; }
+
+.icon-insta:before {
+  content: "\e90d"; }
+
+.icon-morocco:before {
+  content: "\e90e"; }
+
+.icon-pay:before {
+  content: "\e90f"; }
+
+.icon-signpost:before {
+  content: "\e910"; }
+
+.icon-star:before {
+  content: "\e911"; }
+
+.icon-travel:before {
+  content: "\e912"; }
+
+.icon-tunisia:before {
+  content: "\e913"; }
+
+.icon-turkey:before {
+  content: "\e914"; }
 
 .clearfix:after {
   content: '';
@@ -549,17 +636,17 @@ input[type='submit'] {
     border: none;
     background-color: transparent;
     padding: 0; }
-  #header .main-bnt {
+  #header .main-btn {
     display: none;
     background-color: #fff;
     color: #E96B67;
     margin-bottom: 40px; }
     @media (max-width: 1024px) {
-      #header .main-bnt {
+      #header .main-btn {
         display: inline; } }
 
 .header__wrap {
-  position: fixed;
+  position: absolute;
   width: 100%;
   left: 0;
   top: 0;
@@ -824,7 +911,8 @@ body {
     .container {
       padding-left: calc(25px + 45 * ((100vw - 320px) / 980)); } }
 
-.main-bnt {
+.main-btn {
+  max-width: 200px;
   min-width: 200px;
   padding: 15px;
   font-weight: 800;
@@ -832,11 +920,71 @@ body {
   color: #fff;
   text-align: center;
   background-color: #E96B67;
-  border-radius: 40px; }
+  border-radius: 40px;
+  transition: all .3s ease 0s; }
+  .main-btn:hover {
+    background-color: #C15B57; }
 
+/* ///////////////////////main////////////////////// */
 .main {
   background: url(../images/main-bg-img.jpg) 50% 0/cover no-repeat;
-  min-height: 100vh;
-  width: 100vw; }
+  min-height: 100vh; }
+
+.main-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh; }
+
+.main-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 140px 0 30px 0; }
+
+.main__text-wrap {
+  margin-bottom: 60px; }
+  .main__text-wrap h1 {
+    font-weight: 800;
+    color: #E96B67;
+    margin-bottom: 0;
+    /* Только если меньше контейнера */
+    font-size: 135px; }
+    @media (max-width: 1300px) {
+      .main__text-wrap h1 {
+        font-size: calc(60px + 75 * ((100vw - 320px) / 980)); } }
+  .main__text-wrap p {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: .8; }
+    .main__text-wrap p:first-child {
+      /* Только если меньше контейнера */
+      font-size: 50px;
+      /* Только если меньше контейнера */
+      margin-left: 160px; }
+      @media (max-width: 1300px) {
+        .main__text-wrap p:first-child {
+          font-size: calc(28px + 22 * ((100vw - 320px) / 980)); } }
+      @media (max-width: 1300px) {
+        .main__text-wrap p:first-child {
+          margin-left: calc(50px + 110 * ((100vw - 320px) / 980)); } }
+    .main__text-wrap p:last-child {
+      /* Только если меньше контейнера */
+      font-size: 100px;
+      /* Только если меньше контейнера */
+      margin-left: 280px; }
+      @media (max-width: 1300px) {
+        .main__text-wrap p:last-child {
+          font-size: calc(50px + 50 * ((100vw - 320px) / 980)); } }
+      @media (max-width: 1300px) {
+        .main__text-wrap p:last-child {
+          margin-left: calc(30px + 250 * ((100vw - 320px) / 980)); } }
 
 /*# sourceMappingURL=main.css.map */
