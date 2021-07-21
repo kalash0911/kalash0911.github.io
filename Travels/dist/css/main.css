@@ -925,6 +925,42 @@ body {
   .main-btn:hover {
     background-color: #C15B57; }
 
+.sec-btn {
+  display: inline-block;
+  min-width: 190px;
+  max-width: 250px;
+  border: 1px solid #B1B1B1;
+  box-sizing: border-box;
+  border-radius: 40px;
+  padding: 15px;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  transition: all .3s ease 0s; }
+  .sec-btn:hover {
+    border: 1px solid #C15B57;
+    background-color: #C15B57;
+    color: #fff; }
+
+.line-btn {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px; }
+  .line-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease-out; }
+  .line-btn:hover::after {
+    width: 100%; }
+
 /* ///////////////////////main////////////////////// */
 .main {
   background: url(../images/main-bg-img.jpg) 50% 0/cover no-repeat;
@@ -1219,15 +1255,22 @@ body {
 
 .comment-about {
   position: absolute;
-  bottom: 0;
   left: 90px;
+  -webkit-transform: translateY(-45px);
+  transform: translateY(-45px);
   max-width: 320px;
+  width: 100%;
   border-radius: 10px;
   padding: 15px 17px 5px 17px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); }
+  @media (max-width: 1023px) {
+    .comment-about {
+      left: 50%;
+      -webkit-transform: translate(-50%, -45px);
+      transform: translate(-50%, -45px); } }
 
 .comment-about__title-container {
   display: -ms-flexbox;
@@ -1282,5 +1325,95 @@ body {
   .comment-about__stars-container i {
     font-size: 19px;
     color: #E3CD00; }
+
+/* ///////////////////////tours////////////////////// */
+.tours {
+  /* Только если меньше контейнера */
+  padding-top: 100px;
+  /* Только если меньше контейнера */
+  padding-bottom: 100px;
+  background-color: #F3F5F6; }
+  @media (max-width: 1300px) {
+    .tours {
+      padding-top: calc(60px + 40 * ((100vw - 320px) / 980)); } }
+  @media (max-width: 1300px) {
+    .tours {
+      padding-bottom: calc(60px + 40 * ((100vw - 320px) / 980)); } }
+  .tours h2 {
+    /* Только если меньше контейнера */
+    margin-bottom: 100px;
+    /* Только если меньше контейнера */
+    font-size: 36px; }
+    @media (max-width: 1300px) {
+      .tours h2 {
+        margin-bottom: calc(25px + 75 * ((100vw - 320px) / 980)); } }
+    @media (max-width: 1300px) {
+      .tours h2 {
+        font-size: calc(25px + 11 * ((100vw - 320px) / 980)); } }
+
+.tours-content {
+  text-align: center; }
+
+.tours__item-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 1023px) {
+    .tours__item-wrap {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+
+.tours__item {
+  width: 24%;
+  max-width: 300px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 60px;
+  text-align: start; }
+  @media (max-width: 1023px) {
+    .tours__item {
+      width: 48%;
+      max-width: 430px; } }
+  @media (max-width: 479px) {
+    .tours__item {
+      width: 100%;
+      max-width: 100%; } }
+
+.tours__item__img-wrap {
+  width: 100%;
+  height: 100vh;
+  max-height: 255px; }
+  .tours__item__img-wrap img, .tours__item__img-wrap source {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; }
+
+.tours__item__text-wrap {
+  padding: 30px 20px 40px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .tours__item__text-wrap .line-btn {
+    position: absolute;
+    left: 20px;
+    bottom: 15px; }
+
+.tours__item__title span {
+  display: block;
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 10px; }
+
+.tours__item__title p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.3;
+  text-align: justify; }
 
 /*# sourceMappingURL=main.css.map */

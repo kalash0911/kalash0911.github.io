@@ -27,6 +27,52 @@ body {
     }
 }
 
+.sec-btn{
+    display: inline-block;
+    min-width: 190px;
+    max-width: 250px;
+    border: 1px solid #B1B1B1;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 15px;
+    background-color: $white;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    transition: all .3s ease 0s;
+
+    &:hover{
+        border: 1px solid $hover-color;
+        background-color: $hover-color;
+        color: $white;
+    }
+}
+
+.line-btn{
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+
+    &::after{
+        content:"";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: $black;
+        transition: width 0.3s ease-out;
+    }
+
+    &:hover{
+        &::after{
+            width: 100%;
+        }
+    }
+}
+
 /* ///////////////////////main////////////////////// */
 
 .main {
@@ -343,14 +389,20 @@ body {
 
 .comment-about{
     position: absolute;
-    bottom: 0;
     left: 90px;
+    transform: translateY(-45px);
     max-width: 320px;
+    width: 100%;
     border-radius: 10px;
     padding: 15px 17px 5px 17px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
     backdrop-filter: blur(5px);
+
+    @include media ("<desktop"){
+        left: 50%;
+        transform: translate(-50%, -45px);
+    }
 }
 
 .comment-about__title-container{
@@ -367,7 +419,6 @@ body {
         width: 95%;
         height: 1px;
         background-color: $black;
-
     }
 
 }
@@ -420,3 +471,92 @@ body {
         color: #E3CD00;
     }
 }
+
+/* ///////////////////////tours////////////////////// */
+
+.tours{
+    @include adaptiv-vaule("padding-top", 100, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 100, 60, 1);
+    background-color: $white-bg;
+
+    h2{
+        @include adaptiv-vaule("margin-bottom", 100 , 25, 1);
+        @include adaptiv-vaule("font-size", 36, 25, 1);
+    }
+}
+
+.tours-content{
+    text-align: center;
+}
+
+.tours__item-wrap{
+    display: flex;
+    justify-content: space-between;
+
+    @include media ("<desktop"){
+        flex-wrap: wrap;
+    }
+}
+
+.tours__item{
+    width: 24%;
+    max-width: 300px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background-color: $white;
+    position: relative;
+    margin-bottom: 60px;
+    text-align: start;
+
+    @include media ("<desktop"){
+        width: 48%;
+        max-width: 430px;
+    }
+
+    @include media ("<phone"){
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.tours__item__img-wrap{
+    width:100%;
+    height: 100vh;
+    max-height: 255px;
+
+    img, source{
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+}
+
+.tours__item__text-wrap{
+    padding: 30px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .line-btn{
+        position: absolute;
+        left: 20px;
+        bottom: 15px;
+    }
+}
+
+.tours__item__title{
+    span{
+        display: block;
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    p{
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.3;
+        text-align: justify;
+    }
+}
+
