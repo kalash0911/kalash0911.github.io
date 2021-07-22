@@ -1558,7 +1558,7 @@ body {
     border-left: 7px solid #E96B67;
     width: 13px;
     height: 13px;
-    top: 5px;
+    top: 5 px;
     left: 0; }
     @media (max-width: 1023px) {
       .steps__item-icon::before {
@@ -1591,14 +1591,14 @@ body {
 
 /* ///////////////////////main-gallery////////////////////// */
 .main-gallery {
-  background-color: #E96B67; }
+  background-color: #E96B67;
+  color: #fff; }
 
 /* ///////////////////////gallery////////////////////// */
 .gallery {
   /* Только если меньше контейнера */
   padding-top: 100px;
-  padding-bottom: 100px;
-  color: #fff; }
+  padding-bottom: 100px; }
   @media (max-width: 1300px) {
     .gallery {
       padding-top: calc(60px + 40 * ((100vw - 320px) / 980)); } }
@@ -1784,5 +1784,60 @@ body {
     .gallery .slick-dots .slick-active {
       border-radius: 50%;
       border: 1px solid #fff; }
+
+/* ///////////////////////reviews////////////////////// */
+.reviews {
+  /* Только если меньше контейнера */
+  padding-top: 105px;
+  /* Только если меньше контейнера */
+  padding-bottom: 105px;
+  position: relative; }
+  @media (max-width: 1300px) {
+    .reviews {
+      padding-top: calc(60px + 45 * ((100vw - 320px) / 980)); } }
+  @media (max-width: 1300px) {
+    .reviews {
+      padding-bottom: calc(130px + -25 * ((100vw - 320px) / 980)); } }
+  .reviews::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .5;
+    background: url(../images/asfalt-dark.png) 0 0/cover no-repeat; }
+  .reviews h2 {
+    /* Только если меньше контейнера */
+    margin-bottom: 45px;
+    text-align: center; }
+    @media (max-width: 1300px) {
+      .reviews h2 {
+        margin-bottom: calc(30px + 15 * ((100vw - 320px) / 980)); } }
+
+.reviews__item-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.reviews__item {
+  width: 32%;
+  max-width: 375px;
+  position: relative; }
+
+.reviews__item__img-wrap {
+  display: block;
+  border-radius: 70% 43% 86% 44% / 69% 29% 91% 65%;
+  overflow: hidden;
+  position: relative;
+  width: 300px; }
+  .reviews__item__img-wrap img, .reviews__item__img-wrap source {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
 
 /*# sourceMappingURL=main.css.map */

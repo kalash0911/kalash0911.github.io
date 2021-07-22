@@ -730,7 +730,7 @@ body {
         border-left: 7px solid $main-color;
         width: 13px;
         height: 13px;
-        top: 5px;
+        top: 5 px;
         left: 0;
 
         @include media ("<desktop"){
@@ -775,6 +775,7 @@ body {
 
 .main-gallery{
     background-color: $main-color;
+    color: $white;
 }
 
 /* ///////////////////////gallery////////////////////// */
@@ -782,7 +783,6 @@ body {
 .gallery{
     @include adaptiv-vaule("padding-top", 100, 60, 1);
     padding-bottom: 100px;
-    color: $white;
 
     .container{
         padding: 0 15px;
@@ -1013,3 +1013,55 @@ body {
     }
 }
 
+/* ///////////////////////reviews////////////////////// */
+
+.reviews{
+    @include adaptiv-vaule("padding-top", 105, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 105 , 130, 1);
+    position: relative;
+    
+    &::after{
+        content:'';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: .5;
+        background: url(../images/asfalt-dark.png) 0 0/cover no-repeat;
+    }
+    
+    h2{
+        @include adaptiv-vaule("margin-bottom", 45  , 30, 1); 
+        text-align: center;
+    }
+}
+
+.reviews__item-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews__item{
+    width: 32%;
+    max-width: 375px;
+    position: relative;
+}
+
+.reviews__item__img-wrap{
+    display: block;
+    border-radius: 70% 43% 86% 44% / 69% 29% 91% 65% ;
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+
+    img, source{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+}
