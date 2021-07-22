@@ -1386,7 +1386,8 @@ body {
 .tours__item__img-wrap {
   width: 100%;
   height: 100vh;
-  max-height: 255px; }
+  max-height: 255px;
+  display: block; }
   .tours__item__img-wrap img, .tours__item__img-wrap source {
     width: 100%;
     height: auto;
@@ -1557,7 +1558,7 @@ body {
     border-left: 7px solid #E96B67;
     width: 13px;
     height: 13px;
-    top: 6px;
+    top: 5px;
     left: 0; }
     @media (max-width: 1023px) {
       .steps__item-icon::before {
