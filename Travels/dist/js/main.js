@@ -86,16 +86,17 @@ initSliders(".cities-wrap", 1024, {
     }
   }]
 });
-/* initSliders(".post-slider", 768, {
+initSliders(".gallery-slider", 960, {
   slidesToShow: 2,
-  responsive: [
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
+  slidesToScroll: 2,
+  arrows: false,
+  adaptiveHeight: true,
+  responsive: [{
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }]
 });
-initSliders(".reviews-slider", 768); */
 //# sourceMappingURL=main.js.map
