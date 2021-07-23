@@ -2229,6 +2229,123 @@ body {
   .text-pages__btn-wrap a {
     margin-bottom: 35px; }
 
+/* ///////////////////////trip////////////////////// */
+.trip {
+  padding-top: 20px;
+  /* Только если меньше контейнера */
+  padding-bottom: 100px; }
+  @media (max-width: 1300px) {
+    .trip {
+      padding-bottom: calc(50px + 50 * ((100vw - 320px) / 980)); } }
+  .trip h2 {
+    /* Только если меньше контейнера */
+    font-size: 36px;
+    /* Только если меньше контейнера */
+    margin-bottom: 100px;
+    text-align: center; }
+    @media (max-width: 1300px) {
+      .trip h2 {
+        font-size: calc(25px + 11 * ((100vw - 320px) / 980)); } }
+    @media (max-width: 1300px) {
+      .trip h2 {
+        margin-bottom: calc(60px + 40 * ((100vw - 320px) / 980)); } }
+
+.trip__item-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
+  @media (max-width: 1023px) {
+    .trip__item-wrap {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
+.trip__text-wrap {
+  -webkit-overflow-scrolling: touch; }
+  @media (min-width: 1024px) {
+    .trip__text-wrap {
+      max-height: 730px;
+      overflow-y: scroll;
+      padding-right: 70px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1); } }
+  @media (max-width: 1023px) {
+    .trip__text-wrap {
+      -ms-flex-order: 2;
+      order: 2;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      max-width: 100%; } }
+  .trip__text-wrap ul {
+    font-weight: 800;
+    font-size: 25px;
+    padding: 0; }
+    @media (min-width: 1024px) {
+      .trip__text-wrap ul {
+        max-width: 400px;
+        width: 100%;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); } }
+    @media (max-width: 1023px) {
+      .trip__text-wrap ul {
+        width: 100%;
+        max-width: 43%;
+        display: inline-block;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        margin-right: 75px; }
+        .trip__text-wrap ul:last-child {
+          margin-right: 0; } }
+    @media (max-width: 767px) {
+      .trip__text-wrap ul {
+        max-width: 100%; } }
+  .trip__text-wrap li {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 25px 30px;
+    text-align: justify; }
+    .trip__text-wrap li:first-child {
+      margin-top: 35px; }
+
+.trip__img-wrap {
+  margin-left: 30px; }
+  @media (max-width: 1023px) {
+    .trip__img-wrap {
+      -ms-flex-order: 1;
+      order: 1; } }
+
+/* --------------------------scroll */
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 0px; }
+
+/* Цвет дорожки, по которой двигается бегунок прокрутки. */
+::-webkit-scrollbar-track {
+  background-color: #C4C4C4;
+  border-radius: 5px; }
+
+/* Цвет бегунка полосы, а так же его закругление. */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #E96B67; }
+
+/* Цвет бегунка при наведении на него курсора. */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #C15B57; }
+
+/* Основная ширина полосы прокрутки. */
+::-webkit-resizer {
+  width: 4px;
+  height: 0px; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
 #footer {
   padding-top: 50px;
   padding-bottom: 15px;

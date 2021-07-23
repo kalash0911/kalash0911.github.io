@@ -1419,3 +1419,128 @@ body {
         margin-bottom: 35px;
     }
 }
+
+/* ///////////////////////trip////////////////////// */
+
+.trip{
+    padding-top: 20px;
+    @include adaptiv-vaule("padding-bottom", 100, 50, 1);
+
+    h2{
+        @include adaptiv-vaule("font-size", 36 , 25, 1);
+        @include adaptiv-vaule("margin-bottom", 100 , 60, 1);
+        text-align: center;
+    }
+}
+
+.trip__item-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media ("<desktop"){
+        flex-direction: column;
+    }
+}
+
+.trip__text-wrap{
+    -webkit-overflow-scrolling: touch;
+
+    @include media (">=desktop"){
+        max-height: 730px;
+        overflow-y: scroll;
+        padding-right: 70px;
+        transform:scaleX(-1);
+    }
+
+    @include media ("<desktop"){
+        order: 2;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        max-width: 100%;
+    }
+
+    ul{
+        font-weight: 800;
+        font-size: 25px;
+        padding: 0;
+        
+        @include media (">=desktop"){
+            max-width: 400px;
+            width: 100%;
+            transform:scaleX(-1);
+        }
+
+        @include media ("<desktop"){
+            width: 100%;
+            max-width: 43%;
+            display: inline-block;
+            flex: 0 0 auto;
+            margin-right: 75px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+
+        @include media ("<tablet"){
+            max-width: 100%;
+        }
+    }
+
+    li{
+        font-weight: 600;
+        font-size: 18px;
+        margin:0 0 25px 30px;
+        text-align: justify;
+
+        &:first-child{
+            margin-top: 35px;
+        }
+    }
+
+}
+
+.trip__img-wrap{
+    margin-left: 30px;
+
+    @include media ("<desktop"){
+        order: 1;
+    }
+}
+
+/* --------------------------scroll */
+
+::-webkit-scrollbar-button {
+    width: 5px;
+    height: 0px
+}
+
+/* Цвет дорожки, по которой двигается бегунок прокрутки. */
+::-webkit-scrollbar-track {
+    background-color: #C4C4C4;
+    border-radius: 5px;
+}
+
+/* Цвет бегунка полосы, а так же его закругление. */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 5px;
+    background-color: $main-color;
+}
+
+/* Цвет бегунка при наведении на него курсора. */
+::-webkit-scrollbar-thumb:hover {
+    background-color: $hover-color;
+}
+
+/* Основная ширина полосы прокрутки. */
+::-webkit-resizer {
+    width: 4px;
+    height: 0px
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
