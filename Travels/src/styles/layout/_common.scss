@@ -547,11 +547,16 @@ body {
     height: 100vh;
     max-height: 255px;
     display: block;
+    position: relative;
+    overflow: hidden;
 
     img, source{
+        display: block;
+        position: absolute;
         width: 100%;
-        height: auto;
-        border-radius: 5px;
+        height: 100%;
+        border-radius: 5px 5px 0 0; 
+        object-fit: cover;
     }
 }
 

@@ -1406,11 +1406,17 @@ body {
   width: 100%;
   height: 100vh;
   max-height: 255px;
-  display: block; }
+  display: block;
+  position: relative;
+  overflow: hidden; }
   .tours__item__img-wrap img, .tours__item__img-wrap source {
+    display: block;
+    position: absolute;
     width: 100%;
-    height: auto;
-    border-radius: 5px; }
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+    -o-object-fit: cover;
+    object-fit: cover; }
 
 .tours__item__text-wrap {
   padding: 30px 20px 40px 20px;
