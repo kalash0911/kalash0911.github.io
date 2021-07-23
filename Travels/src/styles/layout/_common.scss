@@ -1036,6 +1036,12 @@ body {
         @include adaptiv-vaule("margin-bottom", 45  , 30, 1); 
         text-align: center;
     }
+    
+    .container{
+        @include media ("<phone"){
+            padding: 0;
+        }
+    }
 }
 
 .reviews__item-wrap{
@@ -1045,16 +1051,28 @@ body {
 
 .reviews__item{
     width: 32%;
-    max-width: 375px;
+    max-width: 360px;
     position: relative;
+
+    @include media ("<1300px"){
+        max-width: none;
+    }
 }
 
 .reviews__item__img-wrap{
     display: block;
-    border-radius: 70% 43% 86% 44% / 69% 29% 91% 65% ;
+    border-radius: 71% 68% 85% 25% / 76% 51% 84% 44% ;
     overflow: hidden;
     position: relative;
-    width: 300px;
+    width: 360px;
+    height: 320px;
+    box-shadow: 20px -15px 0 -14px #d0312b, -7px 17px 0px -11px #d0312b;
+    margin: 0 auto;
+
+    @include media ("<phone"){
+        width: 290px;
+        height: 260px;
+    }
 
     img, source{
         position:absolute;
@@ -1062,6 +1080,103 @@ body {
         height: 100%;
         object-fit: cover;
     }
+}
 
+.reviews__item__comment{
+    position: static;
+    max-width: 320px;
+    margin: 0 auto;
 
+    @include media ("<desktop"){
+        left: 0;
+        transform: translate(0, -45px);
+    }
+
+    @include media ("<phone"){
+        max-width: 260px;
+    }
+
+    .comment-about__title-container{
+        &::after{
+            display: none;
+        }
+    }
+
+    .comment-about__title-wrap{
+        position: relative;
+        padding-bottom: 5px;
+        width: 100%;
+        border-bottom: 1px solid #B1B1B1;
+        
+        P{
+            line-height: normal;
+        }
+    }
+
+    .comment-about__img-wrap{
+        max-width: 42px;
+        height: 42px;
+    }
+
+    .comment-about__stars-container{
+        p{
+            text-align: justify;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 120%;
+        }
+    }
+}
+
+/* --------------------------reviews slider */
+
+.reviews{
+    position: relative;
+
+    .slick-list{
+        min-height: 0;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .slick-track{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .slick-dots{
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li{
+            margin:0 5px;
+            width: 18px;
+            height: 17px;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        button{
+            border: none;
+            border-radius: 50%;
+            font-size: 0;
+            width: 8px;
+            height: 11px;
+            background-color: $gray;
+        }
+
+        .slick-active{
+            border-radius: 50%;
+            border: 1px solid #EB5B31;
+
+        }
+    }
 }

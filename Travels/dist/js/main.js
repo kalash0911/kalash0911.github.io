@@ -99,4 +99,17 @@ initSliders(".gallery-slider", 960, {
     }
   }]
 });
+initSliders(".reviews_slider", 1300, {
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows: false,
+  adaptiveHeight: true,
+  responsive: [{
+    breakpoint: 900,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }]
+});
 //# sourceMappingURL=main.js.map
