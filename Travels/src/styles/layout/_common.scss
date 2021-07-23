@@ -1310,3 +1310,112 @@ body {
         text-align: center; 
     }
 }
+
+/* /////////////////////////////////////////////////////// */
+/* ///////////////////////#tourPages////////////////////// */
+/* /////////////////////////////////////////////////////// */
+
+/* ///////////////////////main-pages////////////////////// */
+
+.main-pages{
+    padding-top: 160px;
+
+    @include media ("<phone"){
+        padding-top: 100px;
+    }
+}
+
+.main-pages__text-bg{
+    position: absolute;
+    @include adaptiv-vaule("top", 100, 180, 1);
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+
+    @include media ("<phone"){
+        top: 50px;
+        width: 100%;
+    }
+
+    p{
+        margin: 0;
+        color: #F4F4F4;
+        text-transform: uppercase;
+        font-weight: 800;
+        @include adaptiv-vaule("font-size", 270, 120, 1);
+        text-align: right;
+        transform: translateX(50px);
+
+        @include media ("<phone"){
+            transform: translateX(-20px);
+            text-align: center;
+        }
+    }
+}
+
+.main-pages__img-wrap{
+    display: block;
+
+    @include media ("<phone"){
+        display: none;
+    }
+
+    img, source{
+        display: block;
+        width: 100%;
+    }
+}
+
+.main-pages-content{
+    h1{
+        @include adaptiv-vaule("font-size", 72, 60, 1);
+        margin-bottom: 45px;
+    }
+}
+
+/* ///////////////////////text-pages////////////////////// */
+
+.text-pages{
+    @include adaptiv-vaule("padding-top", 80, 60, 1);
+    padding-bottom: 60px;
+}
+
+.text-pages-content{
+    display: flex;
+    justify-content: space-between;
+
+    @include media ("<tablet"){
+       flex-direction: column;
+       text-align: center;
+    }
+}
+
+.text-pages__text-wrap{
+    width: 100%;
+    max-width: 70%;
+
+    @include media ("<tablet"){
+        max-width: 100%;
+        text-align: justify;
+        margin-bottom: 30px;
+    }
+
+    p{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+    }
+}
+
+.text-pages__btn-wrap{
+    width: 100%;
+    max-width: 190px;
+
+    @include media ("<tablet"){
+        margin: 0 auto;
+    }
+    
+    a{
+        margin-bottom: 35px;
+    }
+}
