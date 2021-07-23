@@ -962,6 +962,25 @@ body {
   .line-btn:hover::after {
     width: 100%; }
 
+.form-btn {
+  display: inline-block;
+  min-width: 190px;
+  max-width: 250px;
+  border: 3px solid #C15B57;
+  box-sizing: border-box;
+  border-radius: 40px;
+  padding: 15px;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  transition: all .3s ease 0s;
+  color: #C15B57; }
+  .form-btn:hover {
+    border: 3px solid #C15B57;
+    background-color: #C15B57;
+    color: #fff; }
+
 /* ///////////////////////main////////////////////// */
 .main {
   background: url(../images/main-bg-img.jpg) 50% 0/cover no-repeat;
@@ -1927,5 +1946,121 @@ body {
     .reviews .slick-dots .slick-active {
       border-radius: 50%;
       border: 1px solid #EB5B31; }
+
+/* ///////////////////////form////////////////////// */
+.form {
+  /* Только если меньше контейнера */
+  padding-top: 105px;
+  /* Только если меньше контейнера */
+  padding-bottom: 105px;
+  background: url(../images/form-bg.jpg) 50% 0/cover no-repeat;
+  border-radius: 10px 10px 0px 0px;
+  color: #fff; }
+  @media (max-width: 1300px) {
+    .form {
+      padding-top: calc(60px + 45 * ((100vw - 320px) / 980)); } }
+  @media (max-width: 1300px) {
+    .form {
+      padding-bottom: calc(130px + -25 * ((100vw - 320px) / 980)); } }
+  .form form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    max-width: 630px;
+    margin: 0 auto; }
+    .form form .form__name {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 30px; }
+      @media (max-width: 767px) {
+        .form form .form__name {
+          -ms-flex-direction: column;
+          flex-direction: column; } }
+      @media (max-width: 479px) {
+        .form form .form__name {
+          margin-bottom: 10px; } }
+      .form form .form__name input {
+        max-width: 48%; }
+        @media (max-width: 767px) {
+          .form form .form__name input {
+            max-width: 100%; }
+            .form form .form__name input:first-child {
+              margin-bottom: 30px; } }
+        @media (max-width: 479px) {
+          .form form .form__name input:first-child {
+            margin-bottom: 10px; } }
+    .form form input, .form form textarea {
+      width: 100%;
+      padding: 20px 15px 20px 30px;
+      background: #fff;
+      border: 3px solid #D1D1D1;
+      box-sizing: border-box;
+      border-radius: 15px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.3;
+      color: #C15B57; }
+      .form form input:active, .form form input:focus, .form form textarea:active, .form form textarea:focus {
+        border: 3px solid #C15B57;
+        outline: none; }
+      .form form input::-webkit-input-placeholder, .form form textarea::-webkit-input-placeholder {
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #D6D6D6; }
+      .form form input::-moz-placeholder, .form form textarea::-moz-placeholder {
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #D6D6D6; }
+      .form form input:-ms-input-placeholder, .form form textarea:-ms-input-placeholder {
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #D6D6D6; }
+      .form form input::-ms-input-placeholder, .form form textarea::-ms-input-placeholder {
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #D6D6D6; }
+      .form form input::placeholder, .form form textarea::placeholder {
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.3;
+        color: #D6D6D6; }
+    .form form textarea {
+      margin-bottom: 20px;
+      /* Только если меньше контейнера */
+      min-height: 180px; }
+      @media (max-width: 1300px) {
+        .form form textarea {
+          min-height: calc(300px + -120 * ((100vw - 320px) / 980)); } }
+
+.form__teitle {
+  max-width: 675px;
+  margin: 0 auto;
+  margin-bottom: 65px; }
+  .form__teitle h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.3; }
+  .form__teitle p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 0 auto;
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
