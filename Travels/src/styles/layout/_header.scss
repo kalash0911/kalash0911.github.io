@@ -261,7 +261,7 @@
         display: block;
     }
 
-    span{
+    /* span{
         position: absolute;
         width: 100%;
         height: 3px;
@@ -278,7 +278,7 @@
         &:last-child{
             top: 100%;
         }
-    }
+    } */
 }
 
 .burger_active{
@@ -299,6 +299,65 @@
             top: 6px;
         }
     }
+}
+
+.ham {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    @include media('<phone'){
+        width: 60px;
+        top: -23px;
+        left: -20px;
+    }
+}
+
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+
+.line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#000;
+    stroke-width:5.5;
+    stroke-linecap:round;
+    stroke: $main-color;
+    transition: all 0.7s ease 0s;
+}
+
+.ham1 .top {
+    stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+    stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+    stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+    stroke-dashoffset: -138px;
+}
+
+.ham1.active .line{
+    stroke: $white;
+    transition: all 0.7s ease 0s;
 }
 
 /* __________________________________dark-menu_________________________ */
