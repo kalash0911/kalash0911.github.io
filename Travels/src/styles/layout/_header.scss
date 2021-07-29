@@ -69,8 +69,8 @@
     display: block;
     
     img{
-        width: 104px;
-        height: 42px;
+        width: 140px;
+        height: 56px;
 
         @include media('<phone'){
             width: 80px;

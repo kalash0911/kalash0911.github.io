@@ -639,7 +639,7 @@ input[type='submit'] {
   #header .main-btn {
     display: none;
     background-color: #fff;
-    color: #E96B67;
+    color: #D0312B;
     margin-bottom: 40px; }
     @media (max-width: 1024px) {
       #header .main-btn {
@@ -688,8 +688,8 @@ input[type='submit'] {
   z-index: 5;
   display: block; }
   .logo__wrap img {
-    width: 104px;
-    height: 42px; }
+    width: 140px;
+    height: 56px; }
     @media (max-width: 479px) {
       .logo__wrap img {
         width: 80px;
@@ -712,7 +712,7 @@ input[type='submit'] {
       overflow: auto;
       top: -100%;
       left: 0;
-      background-color: #E96B67;
+      background-color: #D0312B;
       padding: 100px 15px 30px 15px;
       transition: all .5s ease 0s;
       display: -ms-flexbox;
@@ -735,7 +735,7 @@ input[type='submit'] {
   .menu_active {
     top: 0; }
     .menu_active::before {
-      background-color: #E96B67; } }
+      background-color: #D0312B; } }
 
 @media (max-width: 1024px) {
   .menu__wrap {
@@ -821,7 +821,7 @@ input[type='submit'] {
   font-size: 20px; }
   @media (min-width: 1025px) {
     .menu__link:hover {
-      color: #E96B67; } }
+      color: #D0312B; } }
   @media (max-width: 1024px) {
     .menu__link {
       color: #fff;
@@ -923,7 +923,7 @@ input[type='submit'] {
   stroke: #000;
   stroke-width: 5.5;
   stroke-linecap: round;
-  stroke: #E96B67;
+  stroke: #D0312B;
   transition: all 0.7s ease 0s; }
 
 .ham1 .top {
@@ -949,7 +949,7 @@ input[type='submit'] {
   .dark-menu #header .menu__link {
     color: #fff; }
     .dark-menu #header .menu__link:hover {
-      color: #E96B67; } }
+      color: #D0312B; } }
 
 body {
   font-family: "Mont", "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
@@ -978,7 +978,7 @@ body {
   font-size: 18px;
   color: #fff;
   text-align: center;
-  background-color: #E96B67;
+  background-color: #D0312B;
   border-radius: 40px;
   transition: all .3s ease 0s; }
   .main-btn:hover {
@@ -1066,7 +1066,7 @@ body {
   margin-bottom: 60px; }
   .main__text-wrap h1 {
     font-weight: 800;
-    color: #E96B67;
+    color: #D0312B;
     margin-bottom: 0;
     /* Только если меньше контейнера */
     font-size: 135px; }
@@ -1565,7 +1565,7 @@ body {
   .steps__item:before {
     counter-increment: myCounter;
     content: "0" counter(myCounter);
-    color: #E96B67;
+    color: #D0312B;
     display: inline-block;
     text-align: center;
     margin-bottom: 25px;
@@ -1626,7 +1626,7 @@ body {
     left: 0;
     width: 115%;
     height: 1px;
-    background-color: #E96B67;
+    background-color: #D0312B;
     z-index: -1; }
     @media (max-width: 1023px) {
       .steps__item-icon::after {
@@ -1638,7 +1638,7 @@ body {
     content: '';
     position: absolute;
     border: 7px solid transparent;
-    border-left: 7px solid #E96B67;
+    border-left: 7px solid #D0312B;
     width: 13px;
     height: 13px;
     top: 5 px;
@@ -1648,14 +1648,14 @@ body {
         top: 60%;
         left: 16px;
         border: 6px solid transparent;
-        border-top: 12px solid #E96B67; } }
+        border-top: 12px solid #D0312B; } }
   .steps__item-icon i {
     background-color: #fff;
     font-size: 20px;
-    color: #E96B67;
+    color: #D0312B;
     padding: 9px;
     border-radius: 50%;
-    border: 3px solid #E96B67; }
+    border: 3px solid #D0312B; }
 
 @media (max-width: 1023px) {
   .steps__item-title {
@@ -1674,7 +1674,7 @@ body {
 
 /* ///////////////////////main-gallery////////////////////// */
 .main-gallery {
-  background-color: #E96B67;
+  background-color: #D0312B;
   color: #fff; }
 
 /* ///////////////////////gallery////////////////////// */
@@ -2332,7 +2332,7 @@ body {
 /* Цвет бегунка полосы, а так же его закругление. */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #E96B67; }
+  background-color: #D0312B; }
 
 /* Цвет бегунка при наведении на него курсора. */
 ::-webkit-scrollbar-thumb:hover {
@@ -2382,7 +2382,7 @@ body {
   margin: 0 30px 60px; }
 
 .trtansfer__item__img {
-  background-color: #E96B67;
+  background-color: #D0312B;
   width: 165px;
   height: 140px;
   border-radius: 100% 36% 87% 50% / 75% 48% 72% 66%;
@@ -2403,7 +2403,7 @@ body {
   display: flex; }
   .trtansfer__item__text i {
     font-size: 16px;
-    color: #E96B67;
+    color: #D0312B;
     margin-right: 15px; }
   .trtansfer__item__text p {
     font-weight: 600;
@@ -2643,7 +2643,7 @@ body {
 .main-footer__logo-social a:hover {
   text-decoration: none; }
   .main-footer__logo-social a:hover i {
-    color: #E96B67; }
+    color: #D0312B; }
 
 .main-footer__nav-menu {
   margin: 0;
