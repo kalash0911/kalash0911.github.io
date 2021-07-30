@@ -1424,28 +1424,25 @@ body {
     .project .container {
       padding: 0; } }
   .project .project-content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-    @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: start; }
+    @media (max-width: 959px) {
       .project .project-content {
+        justify-items: center; } }
+    @media (max-width: 479px) {
+      .project .project-content {
+        display: -ms-flexbox;
+        display: flex;
         -ms-flex-direction: column;
         flex-direction: column;
-        -ms-flex-align: center;
-        align-items: center; } }
-  .project .project__item-wrap {
-    width: 100%;
-    max-width: 555px;
-    margin-right: 25px; }
-    .project .project__item-wrap:last-child {
-      margin-right: 0; }
-    @media (max-width: 767px) {
-      .project .project__item-wrap {
-        margin-right: 0; } }
+        gap: 0; } }
   .project .project__item-text {
     max-width: 400px;
-    margin-bottom: 75px; }
+    margin-bottom: 20px;
+    min-height: 200px; }
     @media (max-width: 479px) {
       .project .project__item-text {
         padding: 0 30px;
@@ -1471,8 +1468,10 @@ body {
         .project .project__item-text .btn-wrap {
           display: none; } }
   .project .project__item {
-    margin: 0 0 75px 0;
-    position: relative; }
+    position: relative;
+    grid-row: span 2;
+    margin: 0;
+    margin-bottom: 50px; }
     @media (max-width: 479px) {
       .project .project__item {
         height: 100vh;
@@ -1483,8 +1482,6 @@ body {
         display: flex;
         -ms-flex-direction: column;
         flex-direction: column;
-        -ms-flex-align: end;
-        align-items: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end;
         padding-bottom: 25px; } }
@@ -1553,7 +1550,10 @@ body {
     display: none; }
     @media (max-width: 479px) {
       .project .second-btn {
-        display: block;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
         color: #fff;
         padding: 0 30px;
         font-weight: 800;
