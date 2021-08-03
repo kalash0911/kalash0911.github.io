@@ -1641,7 +1641,7 @@ body {
     border-left: 7px solid #D0312B;
     width: 13px;
     height: 13px;
-    top: 5 px;
+    top: 5px;
     left: 0; }
     @media (max-width: 1023px) {
       .steps__item-icon::before {
@@ -1750,7 +1750,10 @@ body {
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 24px;
-  position: relative; }
+  position: relative;
+  height: 100vh;
+  max-height: 425px;
+  width: 100%; }
   .gallery__item-img::after {
     content: '';
     position: absolute;
