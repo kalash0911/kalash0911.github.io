@@ -224,6 +224,10 @@ h2{
 
     h2{
         @include adaptiv-vaule("margin-bottom", 50 , 40, 1);
+
+        @include media ('<phone'){
+            padding: 0 20px;
+        }
     }
 
     .container{
@@ -353,3 +357,82 @@ h2{
         height: 550px;
     }
 }
+
+/*//////////////////////////lifestyle/////////////////////// */
+
+.lifestyle{
+    @include adaptiv-vaule("padding-bottom", 170, 60, 1);
+
+    h2{
+        @include adaptiv-vaule("margin-bottom", 60 , 20, 1);
+
+        @include media ('<phone'){
+            padding: 0 20px;
+        }
+    }
+
+    .container{
+        @include media ('<phone'){
+            padding: 0;
+        }
+    }
+}
+
+.lifestyle__item-wrap{
+    display: flex;
+    justify-content: space-between;
+
+    @include media ('<desktop'){
+        flex-direction: column;
+    }
+}
+
+.lifestyle__item-text{
+    width: 38%;
+
+    @include media ('<desktop'){
+        width: 100%;
+    }
+
+    span{
+        display: block;
+        font-weight: bold;
+        font-size: 25px;
+        color: $main-color;
+        margin-bottom: 25px;
+
+        @include media ('<phone'){
+            padding: 0 20px;
+        }
+    }
+
+    p{
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+
+        @include media ('<phone'){
+            padding: 0 20px;
+        }
+    }
+}
+
+.lifestyle__item-video{
+    width: 58%;
+    display: flex;
+    justify-content: flex-end;
+
+    @include media ('<desktop'){
+        width: 100%;
+    }
+
+    iframe{
+        width: 700px;
+        height: 490px;
+
+        @include media ('<desktop'){
+            width: 100%;
+        }
+    }
+}
+

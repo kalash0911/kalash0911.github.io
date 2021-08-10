@@ -1143,6 +1143,9 @@ h2 {
     @media (max-width: 1300px) {
       .sale h2 {
         margin-bottom: calc(40px + 10 * ((100vw - 320px) / 980)); } }
+    @media (max-width: 479px) {
+      .sale h2 {
+        padding: 0 20px; } }
   @media (max-width: 479px) {
     .sale .container {
       padding: 0; } }
@@ -1254,5 +1257,73 @@ h2 {
   @media (max-width: 966px) {
     .product-item {
       height: 550px; } }
+
+/*//////////////////////////lifestyle/////////////////////// */
+.lifestyle {
+  /* Только если меньше контейнера */
+  padding-bottom: 170px; }
+  @media (max-width: 1300px) {
+    .lifestyle {
+      padding-bottom: calc(60px + 110 * ((100vw - 320px) / 980)); } }
+  .lifestyle h2 {
+    /* Только если меньше контейнера */
+    margin-bottom: 60px; }
+    @media (max-width: 1300px) {
+      .lifestyle h2 {
+        margin-bottom: calc(20px + 40 * ((100vw - 320px) / 980)); } }
+    @media (max-width: 479px) {
+      .lifestyle h2 {
+        padding: 0 20px; } }
+  @media (max-width: 479px) {
+    .lifestyle .container {
+      padding: 0; } }
+
+.lifestyle__item-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 1023px) {
+    .lifestyle__item-wrap {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
+.lifestyle__item-text {
+  width: 38%; }
+  @media (max-width: 1023px) {
+    .lifestyle__item-text {
+      width: 100%; } }
+  .lifestyle__item-text span {
+    display: block;
+    font-weight: bold;
+    font-size: 25px;
+    color: #2D649F;
+    margin-bottom: 25px; }
+    @media (max-width: 479px) {
+      .lifestyle__item-text span {
+        padding: 0 20px; } }
+  .lifestyle__item-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 25px; }
+    @media (max-width: 479px) {
+      .lifestyle__item-text p {
+        padding: 0 20px; } }
+
+.lifestyle__item-video {
+  width: 58%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  @media (max-width: 1023px) {
+    .lifestyle__item-video {
+      width: 100%; } }
+  .lifestyle__item-video iframe {
+    width: 700px;
+    height: 490px; }
+    @media (max-width: 1023px) {
+      .lifestyle__item-video iframe {
+        width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */
