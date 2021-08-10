@@ -1019,7 +1019,8 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 .main-content {
   width: 100%;
