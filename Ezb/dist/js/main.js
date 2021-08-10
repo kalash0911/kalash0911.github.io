@@ -35,7 +35,7 @@ window.onload = function () {
   }
 };
 
-var burger = document.querySelector(".burger");
+var burger = document.querySelector(".burger-wrap");
 
 if (burger) {
   var menuBody = document.querySelector(".menu");
