@@ -4,18 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/jquery-3.5.1.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <div id="wrapper">
         <header id="header">
-            <div class="container">
+            <div class="header__wrap">
+                <div class="header-container">
+                    <div class="header__content">
+                        <button class="burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <div class="header__logo logo">
+                            <a href="#" class="logo__wrap">
+                                <img class="logo__item1" src="./images/icon-svg/logo-item1.svg" alt="logo-img">
+                                <img class="logo__item2" src="./images/icon-svg/logo-item2.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        <div class="header__basket">
+                            <a href="#"><img src="./images/icon-svg/basket.svg" alt="basket"></a>
+                        </div>
+                        <div class="header__menu menu">
+                            <nav class="menu__wrap">
+                                <ul class="menu__list">
+                                    <li class="menu__item"><a class="menu__link" href="#">Main</a></li>
+                                    <li class="menu__item"><a class="menu__link" href="#">Shop</a></li>
+                                    <li class="menu__item"><a class="menu__link" href="#">Contacts</a></li>
+                                </ul>
+                                <div class="social-wrap">
+                                    <a href="#"><img src="./images/icon-svg/facebook.svg" alt="facebook"></a>
+                                    <a href="#"><img src="./images/icon-svg/insta.svg" alt="instagram"></a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
          </header>
         <main id="main">
-            <section class="main-section">
+            <section class="main">
                 <div class="container">
                     <div class="main-content">
                         
@@ -28,5 +60,7 @@
             </div>
         </footer>
     </div>
+    <script src="./js/jquery-3.5.1.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </body>
 </html>
