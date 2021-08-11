@@ -45,4 +45,66 @@ if (burger) {
     burger.classList.toggle("burger_active");
     menuBody.classList.toggle("menu_active");
   });
+};
+
+function initSliders(selector, width, obj) {
+    const init = {
+      infinite: false,
+      cssEase: "linear",
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      ...obj,
+    };
+  
+    $(() => {
+      const win = $(window);
+      const slider = $(selector);
+  
+      win.on("load resize", () => {
+        if (win.width() <= width) {
+          slider.not(".slick-initialized").slick(init);
+        } else if (slider.hasClass("slick-initialized")) {
+          slider.slick("unslick");
+        }
+      });
+    });
 }
+
+initSliders(".merch-slider", 9999, {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+});
+
+/* initSliders(".gallery-slider", 960, {
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  arrows: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+});
+
+initSliders(".reviews_slider", 1300, {
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}); */

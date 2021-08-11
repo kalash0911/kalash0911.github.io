@@ -36,6 +36,11 @@ $maxWidthContainer: 1300;
 
     @include adaptiv-vaule("width", 15, 7, 1);
 
+    @include adaptiv-vaule("top", 195, 100, 1);
+    @include adaptiv-vaule("bottom", 195, 100, 1);
+    @include adaptiv-vaule("right", 195, 100, 1);
+    @include adaptiv-vaule("left", 195, 100, 1);
+
     @include adaptiv-vaule("font-size", 115, 96, 1);
 */
 

@@ -344,6 +344,14 @@
     }
 }
 
+.logo{
+    &:hover{
+        .logo__item2{
+            animation-play-state: paused;
+        }
+    }
+}
+
 .social-wrap{
 
     a{
