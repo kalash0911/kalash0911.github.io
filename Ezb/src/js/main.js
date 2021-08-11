@@ -77,23 +77,47 @@ initSliders(".merch-slider", 9999, {
   arrows: false,
 });
 
-/* initSliders(".gallery-slider", 960, {
-  slidesToShow: 2,
-  slidesToScroll: 2,
+initSliders(".tattoo-slider", 9999, {
+  slidesToShow: 6,
+  slidesToScroll: 1,
   arrows: false,
   adaptiveHeight: true,
+  autoplay: true,
   responsive: [
+    {
+      breakpoint: 1320,
+      settings: {
+        slidesToShow: 5,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
     {
       breakpoint: 768,
       settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
       },
     },
   ],
-});
+}); 
 
-initSliders(".reviews_slider", 1300, {
+/* initSliders(".reviews_slider", 1300, {
   slidesToShow: 2,
   slidesToScroll: 1,
   arrows: false,
@@ -107,4 +131,4 @@ initSliders(".reviews_slider", 1300, {
       },
     },
   ],
-}); */
+}); */ 

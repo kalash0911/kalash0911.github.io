@@ -471,6 +471,13 @@ h2{
         background-color: $main-color;
         z-index: -1;
     }
+
+    .container{
+        @include media ('<phone'){
+            padding: 0;
+        }
+    }
+
 }
 
 .merch-content{
@@ -478,7 +485,6 @@ h2{
 }
 
 .merch-slider{
-    min-height: 500px;
     display: flex;
     align-items: flex-end;
 }
@@ -488,6 +494,12 @@ h2{
     justify-content: space-between;
     position: relative;
     padding: 0 15px;
+
+    @include media ('<desktop'){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
 }
 
 .merch__item-text{
@@ -497,9 +509,13 @@ h2{
     justify-content: flex-end;
     padding-bottom: 10px;
 
+    @include media ('<desktop'){
+        width: 100%;
+    }
+
     p{
         font-weight: bold;
-        font-size: 48px;
+        @include adaptiv-vaule("font-size", 36, 26, 1);
         line-height: 1.5;
         color: #FFFFFF;
         margin-bottom: 10px;
@@ -508,9 +524,98 @@ h2{
 
 .merch__item-img{
     width: 50%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+
+    @include media ('<desktop'){
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+.btn-wrap{
+    @include media ('<desktop'){
+        display: inline-flex;
+        justify-content: center;
+    }
 }
 
 /*-----------------merch-slider */
+.merch{
+    .slick-dots{
+        position: absolute;
+        @include adaptiv-vaule("top", -100, -70, 1);
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        left: 0;
+    
+        @include media ('<phone'){
+            left: 25px;
+        }
+        
+        button{
+            position: absolute;
+            font-size: 0;
+            outline: none;
+            border: none;
+            background: none;
+            padding: 0;
+            top: 0px;
+    
+            &::before{
+                font-size: 20px;
+                color: $main-color;
+            }
+    
+            &:hover{
+                &::before{
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        li{
+            &:nth-child(1){
+                button{
+                    &::before{
+                        content:'Prints';
+                    }
+                }
+            }
+    
+            &:nth-child(2){
+                button{
+                    @include adaptiv-vaule("left", 195, 100, 1);
+    
+                    &::before{
+                        content:'Originals';
+                    }
+                }
+            }
+    
+            &:nth-child(3){
+                button{
+                    @include adaptiv-vaule("left", 415, 220, 1);
+    
+                    &::before{
+                        content:'Merch';
+                    }
+                }
+            }
+        }
+    }
+    
+    .slick-active{
+        button{
+            &::before{
+                font-weight: bold;
+            }
+        }
+    }
+}
 
 .slick-list{
     overflow: hidden;
@@ -520,71 +625,129 @@ h2{
     display: flex;
 }
 
-.slick-dots{
-    position: absolute;
-    @include adaptiv-vaule("top", -100, -70, 1);
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    left: 0;
+/*//////////////////////////form/////////////////////// */
+
+.form{
+    @include adaptiv-vaule("padding-top", 80, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 100, 1);
+    background: url(../images/main-page/tattoo/tattoo-bg1.png) right/200px no-repeat,
+                url(../images/main-page/tattoo/tattoo-bg2.png) left/200px no-repeat;
     
-    button{
-        position: absolute;
-        font-size: 0;
-        outline: none;
-        border: none;
-        background: none;
-        padding: 0;
-        top: 0px;
-
-        &::before{
-            font-size: 20px;
-            color: $main-color;
-        }
-
-        &:hover{
-            &::before{
-                font-weight: bold;
-            }
-        }
+    h2{
+        margin-bottom: 10px;
+        text-align: center;
     }
 
-    li{
-        &:nth-child(1){
-            button{
-                &::before{
-                    content:'Prints';
-                }
-            }
+    p{
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        color: #484848;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.form-content{
+    form{
+        text-align: center;
+        @include adaptiv-vaule("margin-bottom", 100 , 40, 1);
+
+        .sec-btn{
+            background: none;
+            outline: none;
+            border: none;
         }
 
-        &:nth-child(2){
-            button{
-                @include adaptiv-vaule("left", 195, 100, 1);
-
-                &::before{
-                    content:'Originals';
-                }
-            }
+        p, span{
+            width: 100%;
         }
+    }
+}
 
-        &:nth-child(3){
-            button{
-                @include adaptiv-vaule("left", 415, 220, 1);
+.form__name{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 
-                &::before{
-                    content:'Merch';
-                }
+    @include media ('<=900px'){
+        flex-direction: column;
+    }
+
+    input{
+        padding: 20px 30px;
+        min-width: 330px;
+        border: 1px solid $main-color;
+        color: $main-color;
+        background: transparent;
+
+        @include media ('<=900px'){
+            min-width: 100%;
+        }
+        
+        &:not(:last-child){
+            margin-right: 30px;
+
+            @include media ('<=900px'){
+                margin-right: 0;
+                margin-bottom: 30px;
             }
         }
     }
 }
 
-.slick-active{
-    button{
-        &::before{
-            font-weight: bold;
+.tattoo-item{
+    display: flex;
+    justify-content: center;
+}
+
+/* ----------------form-slider */
+
+.form{
+    .slick-dots{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        margin-top: 40px;
+
+        @include media ('>=1320px'){
+            display: none;
+        }
+
+        li{
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid $main-color;
+
+            &:not(:last-child){
+                margin-right: 10px;
+            }
+        }
+        
+        button{
+            position: absolute;
+            font-size: 0;
+            outline: none;
+            padding: 0;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 50%;
+            background: $white;
+        }
+    }
+    
+    .slick-active{
+        button{
+            background: $main-color;
         }
     }
 }
