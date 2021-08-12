@@ -1,0 +1,23 @@
+#footer{
+    padding: 50px 0;
+    background-color: $footer-color;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__text-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer__text-description{
+    display: flex;
+
+    p{
+        margin-right: 10px;
+    }
+}

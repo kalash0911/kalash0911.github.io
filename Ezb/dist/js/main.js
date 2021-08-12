@@ -6,49 +6,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var isMobile = {
-  Android: function Android() {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function BlackBerry() {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function iOS() {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera: function Opera() {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function Windows() {
-    return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-  },
-  any: function any() {
-    return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-  }
-};
-
-window.onload = function () {
-  document.addEventListener("click", documentActions);
-
-  function documentActions(e) {
-    var targetElement = e.target;
-
-    if (window.innerWidth < 5000 && isMobile.any()) {
-      if (targetElement.classList.contains('menu__arrow')) {
-        targetElement.closest('.menu__item').classList.toggle('_hover');
-      }
-    }
-  }
-};
-
 var burger = document.querySelector(".burger-wrap");
+var gamburger = document.querySelector(".plate7");
 
 if (burger) {
   var menuBody = document.querySelector(".menu");
+  var menuOverlay = document.querySelector(".menu_overlay");
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
-    burger.classList.toggle("burger_active");
+    gamburger.classList.toggle("active");
     menuBody.classList.toggle("menu_active");
+    menuOverlay.classList.toggle("menu_overlay_active");
+  });
+  menuOverlay.addEventListener("click", function (e) {
+    document.body.classList.remove("body_lock");
+    gamburger.classList.remove("active");
+    menuBody.classList.remove("menu_active");
+    menuOverlay.classList.remove("menu_overlay_active");
   });
 }
 
