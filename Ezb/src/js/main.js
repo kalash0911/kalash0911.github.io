@@ -1,5 +1,7 @@
 const burger = document.querySelector(".burger-wrap");
 const gamburger = document.querySelector(".plate7");
+/* const menuLink = document.querySelector(".link-close"); */
+
 if (burger) {
   const menuBody = document.querySelector(".menu");
   const menuOverlay = document.querySelector(".menu_overlay");
@@ -87,19 +89,3 @@ initSliders(".tattoo-slider", 9999, {
     },
   ],
 }); 
-
-/* initSliders(".reviews_slider", 1300, {
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: false,
-  adaptiveHeight: true,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-}); */ 

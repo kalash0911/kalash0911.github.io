@@ -1635,12 +1635,59 @@ h2 {
 #footer {
   padding: 50px 0;
   background-color: #F3F3F3; }
+  #footer .container {
+    /* Только если меньше контейнера */
+    padding-right: 60px;
+    /* Только если меньше контейнера */
+    padding-left: 60px; }
+    @media (max-width: 1300px) {
+      #footer .container {
+        padding-right: calc(20px + 40 * ((100vw - 320px) / 980)); } }
+    @media (max-width: 1300px) {
+      #footer .container {
+        padding-left: calc(20px + 40 * ((100vw - 320px) / 980)); } }
 
 .footer-content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+  @media (max-width: 1199px) {
+    .footer-content {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center; } }
+
+.footer__logo {
+  width: 220px;
+  padding-right: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  @media (max-width: 1199px) {
+    .footer__logo {
+      margin-bottom: 25px; } }
+
+.footer__main-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%; }
+  @media (max-width: 939px) {
+    .footer__main-wrap {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center; } }
 
 .footer__text-wrap {
   display: -ms-flexbox;
@@ -1648,12 +1695,96 @@ h2 {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 15px;
+  -ms-flex: 1;
+  flex: 1; }
+  @media (max-width: 699px) {
+    .footer__text-wrap {
+      padding-left: 45px; } }
+
+.footer__text-item {
+  font-style: normal; }
+  @media (max-width: 939px) {
+    .footer__text-item {
+      margin-bottom: 25px; } }
 
 .footer__text-description {
   display: -ms-flexbox;
-  display: flex; }
-  .footer__text-description p {
-    margin-right: 10px; }
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 699px) {
+    .footer__text-description {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+  .footer__text-description h5 {
+    margin-bottom: 20px;
+    font-weight: bold; }
+  .footer__text-description p, .footer__text-description a {
+    margin-right: 15px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-style: normal; }
+    @media (max-width: 699px) {
+      .footer__text-description p, .footer__text-description a {
+        margin: 0;
+        margin-bottom: 20px; } }
+  .footer__text-description a:hover {
+    text-decoration: underline; }
+
+@media (max-width: 699px) {
+  .footer__text-description__item {
+    margin-bottom: 20px; } }
+
+@media (max-width: 699px) {
+  .footer__text-description__item p {
+    margin-bottom: 0px; } }
+
+.footer__info-wrap {
+  padding: 15px 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 35px;
+  border-left: 1px solid #2D649F; }
+  @media (max-width: 939px) {
+    .footer__info-wrap {
+      border-left: none;
+      border-top: 1px solid #2D649F;
+      width: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-top: 25px;
+      padding-left: 0; } }
+
+.social-wrap {
+  margin-bottom: 30px; }
+
+.footer__info {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 939px) {
+    .footer__info {
+      margin-bottom: 25px; } }
+  .footer__info p, .footer__info a {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-style: normal; }
+  .footer__info a:last-child {
+    margin-bottom: 0; }
+  .footer__info a:hover {
+    text-decoration: underline; }
 
 /*# sourceMappingURL=main.css.map */

@@ -8,6 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var burger = document.querySelector(".burger-wrap");
 var gamburger = document.querySelector(".plate7");
+/* const menuLink = document.querySelector(".link-close"); */
 
 if (burger) {
   var menuBody = document.querySelector(".menu");
@@ -88,19 +89,4 @@ initSliders(".tattoo-slider", 9999, {
     }
   }]
 });
-/* initSliders(".reviews_slider", 1300, {
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  arrows: false,
-  adaptiveHeight: true,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-}); */
 //# sourceMappingURL=main.js.map
