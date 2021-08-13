@@ -751,3 +751,348 @@ h2{
         }
     }
 }
+
+/*//////////////////////////---/////////////////////// */
+/*//////////////////////shop-page///////////////////// */
+/*//////////////////////////---/////////////////////// */
+
+.pages{
+    margin-top: 90px;
+    @include adaptiv-vaule("min-height", 320, 120, 1);
+    display: flex;
+    align-items: center;
+    background: url(../images/shop-page/shop-bg.jpg) 0 0/cover no-repeat;
+    position: relative;
+
+    &::before{
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: hsla(0, 0%, 95%, 0.6);
+    }
+}
+
+.pages-content{
+    display: flex;
+    justify-content: center;
+
+    .strip{
+        @include adaptiv-vaule("min-width", 283, 150, 1);
+        @include adaptiv-vaule("font-size", 48, 25, 1);
+    }
+}
+
+
+/*////////////////////////shop/////////////////////// */
+
+.shop{
+    @include adaptiv-vaule("padding-top", 85, 25, 1);
+    padding-bottom: 70px;
+    background: url(../images/main-page/tattoo/tattoo-bg1.png) right bottom/200px no-repeat,
+                url(../images/main-page/sale/sale-bg.png) left top/500px no-repeat;
+
+    .container{
+        @include adaptiv-vaule("padding-right", 70, 20, 1);
+    }
+
+    h2{
+        color: $main-color;
+        margin-bottom: 60px;
+    }
+}
+
+.shop-content{
+    display: flex;
+    justify-content: space-between;
+
+    @include media ('<1070px'){
+        flex-direction: column;
+    }
+}
+
+.categories{
+    width: 100%;
+    max-width: 220px;
+    @include adaptiv-vaule("margin-right", 100, 1, 1);
+
+    @include media ('<1070px'){
+        margin-right: 0;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    @include media ('<tablet'){
+        flex-direction: column;
+    }
+}
+
+.categories__item{
+    margin-bottom: 45px;
+
+    @include media ('<1070px'){
+        &:not(:last-child){
+            margin-right: 35px;
+        }
+    }
+
+    span{
+        display: block;
+        font-weight: bold;
+        font-size: 24px;
+        color: $main-color;
+        margin-bottom: 20px;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.type{
+
+    li{
+        margin-bottom: 30px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        a{
+            font-size: 24px;
+        }
+    }
+}
+
+.filter-item{
+    p{
+        font-size: 18px;
+    }
+}
+
+.filter-slider{
+    margin: 30px 0;
+    height: 1px;
+    width: 100%;
+    background-color: $main-color;
+    position: relative;
+
+    &::before, &::after{
+        content:'';
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background-color: $main-color;
+        top: -8px;
+    }
+
+    &::before{
+        left: 0;
+    }
+
+    &::after{
+        right: 0;
+    }
+}
+
+.size{
+
+    ul{
+        display: flex;
+    }
+
+    li{
+        &:not(:last-child){
+            margin-right: 5px;
+        }
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border: 1px solid $main-color;
+        font-weight: bold;
+        transition: all .2s ease 0s;
+
+        &:hover, &:active{
+            background-color: $main-color;
+            border: 1px solid $main-color; 
+            color: $white;
+        }
+    }
+}
+
+.sellers{
+    @include media ('<1070px'){
+        display: none;
+    }
+}
+
+.shop__galery{
+    width: 100%;
+
+    .btn-wrap{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.galery{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.galery__item{
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+    margin: 0 10px;
+    margin-bottom: 60px;
+
+    &:hover{
+        .galery__item-link{
+            opacity: .3;
+            visibility: visible;
+        }
+
+        .galery__item-options{
+            bottom: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.galery__item-img{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+    }
+}
+
+.galery__item-link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color:$black;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: all .3s ease 0s; 
+}
+
+.galery__item-options{
+    position: absolute;
+    width: 100%;
+    bottom: -50px;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: $white;
+    transition: all .3s ease 0s;
+    z-index: 2;
+
+    img{
+        position: static;
+        width: 17px;
+        height: 17px;
+
+        &:hover{
+            animation-name: 'icon';
+            animation-duration: .3s;
+            animation-iteration-count: 1;
+        }
+    }
+}
+
+.galery__item-options__title{
+    a{
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.star {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(197, 196, 196, 1) 0%, rgba(180, 179, 178, 1) 100%);
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        right: 1px;
+        background: linear-gradient(to bottom, rgba(221, 220, 219, 1) 0%, rgba(209, 208, 206, 1) 100%);
+        z-index: 1;
+    }
+
+    &:hover, &:active {
+        background: $main-color;
+
+        &:before {
+            background: $main-color;
+        }
+    }
+}
+  
+.star, .star:before {
+    clip-path:  polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+  
+
+.galery__item-text{
+    text-align: center;
+
+    p{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    span{
+        font-size: 16px; 
+    }
+}
+

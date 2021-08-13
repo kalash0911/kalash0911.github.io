@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezbgalerie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header__wrap">
+                <div class="header-container">
+                    <div class="header__content">
+                        <button class="burger-wrap">
+                            <svg>
+                                <defs>
+                                  <filter id="gooeyness">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
+                                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
+                                    <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+                                  </filter>
+                                </defs>
+                            </svg>
+                            <div class="plates">
+                                <div class="plate plate7">
+                                    <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+                                        <path class="line line1" d="M 30,35 H 60 C 63.595663,35 65,32.357023 65,30 C 65,27.642977 62.357023,25 60,25 C 57.642977,25 55,25.933659 55,30 V 77.828008" />
+                                        <path class="line line2" d="M 70,35 H 50 C 46.404337,35 45,32.357023 45,30 C 45,27.642977 47.642977,25 50,25 C 52.357023,25 55,25.933659 55,30 V 77.828008" />
+                                        <path class="line line3" d="M 30,50 H 55 C 58.595665,50 60.000005,47.357023 60.000005,45 C 60.000005,42.642977 57.357025,40 55,40 C 52.642977,40 50,40.933659 50,45 V 92.828008" />
+                                        <path class="line line4" d="M 70,50 H 45 C 41.404337,50 40,47.357023 40,45 C 40,42.642977 42.642977,40 45,40 C 47.357023,40 50,40.933659 50,45 V 92.828008" />
+                                        <path class="line line5" d="M 30,65 H 50 C 53.595665,65 55.000005,62.357023 55.000005,60 C 55.000005,57.642977 52.357025,55 50,55 C 47.642977,55 45,55.933659 45,60 V 107.82801" />
+                                        <path class="line line6" d="M 70,65 H 40 C 36.404337,65 35,62.357023 35,60 C 35,57.642977 37.642977,55 40,55 C 42.357023,55 45,55.933659 45,60 V 107.82801" />
+                                    </svg>
+                                    <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+                                        <path class="line" d="M 34,32 L 66,68" />
+                                        <path class="line" d="M 66,32 L 34,68" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="menu_overlay"></div>
+                        <div class="header__logo logo">
+                            <a href="index.html" class="logo__wrap">
+                                <img class="logo__item1" src="./images/icon-svg/logo-item1.svg" alt="logo-img">
+                                <img class="logo__item2" src="./images/icon-svg/logo-item2.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        <div class="header__basket">
+                            <a href="#"><img src="./images/icon-svg/basket.svg" alt="basket"></a>
+                        </div>
+                        <div class="header__menu menu">
+                            <nav class="menu__wrap">
+                                <ul class="menu__list">
+                                    <li class="menu__item link-close"><a href="index.html">Main</a></li>
+                                    <li class="menu__item link-close"><a href="shop-page.html">Shop</a></li>
+                                    <li class="menu__item link-close"><a href="#">Contacts</a></li>
+                                </ul>
+                                <div class="social-wrap">
+                                    <a class="link-close" target="_blank" href="#"><img src="./images/icon-svg/facebook.svg" alt="facebook"></a>
+                                    <a class="link-close" target="_blank" href="#"><img src="./images/icon-svg/insta.svg" alt="instagram"></a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </header>
+        <main id="main">
+            <section class="pages">
+                <div class="container">
+                    <div class="pages-content">
+                        <span class="strip">Shop</span>
+                    </div>
+                </div>
+            </section>
+            <section class="shop">
+                <div class="container">
+                    <h2>Categories</h2>
+                    <div class="shop-content">
+                        <div class="shop__categories categories">
+                            <div class="categories__item type">
+                                <span>Type</span>
+                                <ul>
+                                    <li><a href="#">Prints</a></li>
+                                    <li><a href="#">Originals</a></li>
+                                    <li><a href="#">Merch</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__item filter">
+                                <span>Filter</span>
+                                <div class="filter-item">
+                                    <div class="filter-slider"></div>
+                                    <p>Price: 10 - 400 CAD</p>
+                                </div>
+                            </div>
+                            <div class="categories__item size">
+                                <span>Size</span>
+                                <ul>
+                                    <li><a href="#">L</a></li>
+                                    <li><a href="#">M</a></li>
+                                    <li><a href="#">S</a></li>
+                                    <li><a href="#">XL</a></li>
+                                    <li><a href="#">XXL</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__item sellers">
+                                <span>Top Sellers</span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="shop__galery">
+                            <div class="galery">
+                                <div class="galery__item">
+                                    <div class="galery__item-img">
+                                        <a class="galery__item-link" href="#"></a>
+                                        <img src="./images/shop-page/1.jpg" alt="img">
+                                        <div class="galery__item-options">
+                                            <div class="galery__item-options__title">
+                                                <a href="#">add to basket</a>
+                                                <div class="stars">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </div>
+                                            <a href="#"><img src="./images/icon-svg/scale.svg" alt="scale-icon"></a>
+                                        </div>
+                                    </div>
+                                    <div class="galery__item-text">
+                                        <p>Lorem ipsum</p>
+                                        <span>99 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="galery__item">
+                                    <div class="galery__item-img">
+                                        <a class="galery__item-link" href="#"></a>
+                                        <img src="./images/shop-page/2.jpg" alt="img">
+                                        <div class="galery__item-options">
+                                            <div class="galery__item-options__title">
+                                                <a href="#">add to basket</a>
+                                                <div class="stars">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </div>
+                                            <a href="#"><img src="./images/icon-svg/scale.svg" alt="scale-icon"></a>
+                                        </div>
+                                    </div>
+                                    <div class="galery__item-text">
+                                        <p>Lorem ipsum</p>
+                                        <span>99 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="galery__item">
+                                    <div class="galery__item-img">
+                                        <a class="galery__item-link" href="#"></a>
+                                        <img src="./images/shop-page/3.jpg" alt="img">
+                                        <div class="galery__item-options">
+                                            <div class="galery__item-options__title">
+                                                <a href="#">add to basket</a>
+                                                <div class="stars">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </div>
+                                            <a href="#"><img src="./images/icon-svg/scale.svg" alt="scale-icon"></a>
+                                        </div>
+                                    </div>
+                                    <div class="galery__item-text">
+                                        <p>Lorem ipsum</p>
+                                        <span>99 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="galery__item">
+                                    <div class="galery__item-img">
+                                        <a class="galery__item-link" href="#"></a>
+                                        <img src="./images/shop-page/4.jpg" alt="img">
+                                        <div class="galery__item-options">
+                                            <div class="galery__item-options__title">
+                                                <a href="#">add to basket</a>
+                                                <div class="stars">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </div>
+                                            <a href="#"><img src="./images/icon-svg/scale.svg" alt="scale-icon"></a>
+                                        </div>
+                                    </div>
+                                    <div class="galery__item-text">
+                                        <p>Lorem ipsum</p>
+                                        <span>99 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="galery__item">
+                                    <div class="galery__item-img">
+                                        <a class="galery__item-link" href="#"></a>
+                                        <img src="./images/shop-page/5.jpg" alt="img">
+                                        <div class="galery__item-options">
+                                            <div class="galery__item-options__title">
+                                                <a href="#">add to basket</a>
+                                                <div class="stars">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </div>
+                                            <a href="#"><img src="./images/icon-svg/scale.svg" alt="scale-icon"></a>
+                                        </div>
+                                    </div>
+                                    <div class="galery__item-text">
+                                        <p>Lorem ipsum</p>
+                                        <span>99 CAD</span>
+                                    </div>
+                                </div>
+                                <div class="galery__item">
+                                    <div class="galery__item-img">
+                                        <a class="galery__item-link" href="#"></a>
+                                        <img src="./images/shop-page/6.jpg" alt="img">
+                                        <div class="galery__item-options">
+                                            <div class="galery__item-options__title">
+                                                <a href="#">add to basket</a>
+                                                <div class="stars">
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                    <div class="star"></div>
+                                                </div>
+                                            </div>
+                                            <a href="#"><img src="./images/icon-svg/scale.svg" alt="scale-icon"></a>
+                                        </div>
+                                    </div>
+                                    <div class="galery__item-text">
+                                        <p>Lorem ipsum</p>
+                                        <span>99 CAD</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="#" class="sec-btn">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer__logo">
+                        <a href="#"><img src="./images/footer-logo.png " alt="logo"></a>
+                    </div>
+                    <div class="footer__main-wrap">
+                        <div class="footer__text-wrap">
+                            <address class="footer__text-item">
+                                <h5>VISITEZ-NOUS!</h5>
+                                <div class="footer__text-description">
+                                    <p>40 rue Garneau</p>
+                                    <a class="address-link" href="tel:+14186091669">+1 (418) 609-1669</a>
+                                    <a class="address-link" href="ezbgalerie@gmail.com">ezbgalerie@gmail.com</a>
+                                </div>
+                            </address>
+                            <div class="footer__text-item">
+                                <h5>HEURES D'OUVERTURE</h5>
+                                <div class="footer__text-description">
+                                    <div class="footer__text-description__item">
+                                        <p>Lundi - mercredi</p>
+                                        <p>11AM - 19PM</p>
+                                    </div>
+                                    <div class="footer__text-description__item">
+                                        <p>Jeudi</p>
+                                        <p>11AM - 20PM</p>
+                                    </div>
+                                    <div class="footer__text-description__item">
+                                        <p>Vendredi - samedi</p>
+                                        <p>11AM - 21PM</p>
+                                    </div>
+                                    <div class="footer__text-description__item">
+                                        <p>dimanche</p>
+                                        <p>11AM - 18PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer__info-wrap">
+                            <div class="social-wrap">
+                                <a target="_blank" href="#"><img src="./images/icon-svg/facebook.svg" alt="facebook"></a>
+                                <a target="_blank" href="#"><img src="./images/icon-svg/insta.svg" alt="instagram"></a>
+                            </div>
+                            <div class="footer__info">
+                                <a target="_blank" href="#">Pravicy Policy</a>
+                                <a target="_blank" href="#">Coockies Policy</a>
+                                <p>All rights reserved </p>
+                                <a target="_blank" href="https://krockds.com/">website by Krock DS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</body>
+</html>

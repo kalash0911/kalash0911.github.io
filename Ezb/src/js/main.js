@@ -1,6 +1,6 @@
 const burger = document.querySelector(".burger-wrap");
 const gamburger = document.querySelector(".plate7");
-/* const menuLink = document.querySelector(".link-close"); */
+const menuLinks = document.querySelectorAll(".link-close");
 
 if (burger) {
   const menuBody = document.querySelector(".menu");

@@ -8,7 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var burger = document.querySelector(".burger-wrap");
 var gamburger = document.querySelector(".plate7");
-/* const menuLink = document.querySelector(".link-close"); */
+var menuLinks = document.querySelectorAll(".link-close");
 
 if (burger) {
   var menuBody = document.querySelector(".menu");
