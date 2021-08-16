@@ -89,4 +89,57 @@ initSliders(".tattoo-slider", 9999, {
     }
   }]
 });
+initSliders(".product__big-slider", 9999, {
+  arrows: false,
+  dots: false,
+  fade: true,
+  asNavFor: ".product__nav-slider"
+});
+initSliders(".product__nav-slider", 9999, {
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  focusOnSelect: true,
+  asNavFor: ".product__big-slider",
+  responsive: [{
+    breakpoint: 1160,
+    settings: {
+      slidesToShow: 3
+    }
+  }, {
+    breakpoint: 960,
+    settings: {
+      slidesToShow: 5,
+      slidesToScroll: 5
+    }
+  }, {
+    breakpoint: 700,
+    settings: {
+      slidesToShow: 4
+    }
+  }, {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 3
+    }
+  }]
+});
+initSliders(".description__main-slider", 9999, {
+  arrows: false,
+  dots: true,
+  dotsClass: 'description__main-slider__dots',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  adaptiveHeight: true,
+  responsive: [{
+    breakpoint: 768,
+    settings: "unslick"
+  }]
+});
+initSliders(".rewiew-slider", 768, {
+  arrows: false,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
 //# sourceMappingURL=main.js.map
