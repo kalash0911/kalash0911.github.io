@@ -9,25 +9,69 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var burger = document.querySelector(".burger-wrap");
 var gamburger = document.querySelector(".plate7");
 var menuLinks = document.querySelectorAll(".link-close");
+var menuBody = document.querySelector(".menu");
+var menuOverlay = document.querySelector(".menu_overlay");
+var scaleLinks = document.querySelectorAll(".scale-link");
+var galeryItems = document.querySelectorAll(".galery__item");
+var imgClose = document.querySelectorAll(".img-close");
+var curShopItemIndex = 0;
 
 if (burger) {
-  var menuBody = document.querySelector(".menu");
-  var menuOverlay = document.querySelector(".menu_overlay");
-  burger.addEventListener("click", function (e) {
-    document.body.classList.toggle("body_lock");
-    gamburger.classList.toggle("active");
-    menuBody.classList.toggle("menu_active");
-    menuOverlay.classList.toggle("menu_overlay_active");
-  });
-  menuOverlay.addEventListener("click", function (e) {
-    document.body.classList.remove("body_lock");
-    gamburger.classList.remove("active");
-    menuBody.classList.remove("menu_active");
-    menuOverlay.classList.remove("menu_overlay_active");
-  });
+  var i;
+  var i;
+
+  (function () {
+    var closeLinks = function closeLinks() {
+      document.body.classList.remove("body_lock");
+      gamburger.classList.remove("active");
+      menuBody.classList.remove("menu_active");
+      menuOverlay.classList.remove("menu_overlay_active");
+      galeryItems[curShopItemIndex].classList.remove("galery__item_active");
+    };
+
+    burger.addEventListener("click", function (e) {
+      document.body.classList.toggle("body_lock");
+      gamburger.classList.toggle("active");
+      menuBody.classList.toggle("menu_active");
+      menuOverlay.classList.toggle("menu_overlay_active");
+    });
+    menuOverlay.addEventListener("click", function (e) {
+      closeLinks();
+    });
+
+    for (i = 0; i < menuLinks.length; ++i) {
+      menuLinks[i].addEventListener("click", function (e) {
+        closeLinks();
+      });
+    }
+
+    for (i = 0; i < imgClose.length; ++i) {
+      imgClose[i].addEventListener("click", function (e) {
+        closeLinks();
+        e.preventDefault();
+      });
+    }
+  })();
 }
 
 ;
+
+for (var i = 0; i < scaleLinks.length; ++i) {
+  (function () {
+    var k = i;
+    scaleLinks[k].addEventListener("click", function (e) {
+      openShopItem(k);
+      e.preventDefault();
+    });
+  })();
+}
+
+function openShopItem(index) {
+  document.body.classList.toggle("body_lock");
+  galeryItems[index].classList.toggle("galery__item_active");
+  menuOverlay.classList.toggle("menu_overlay_active");
+  curShopItemIndex = index;
+}
 
 function initSliders(selector, width, obj) {
   var init = _objectSpread({

@@ -1,10 +1,15 @@
 const burger = document.querySelector(".burger-wrap");
 const gamburger = document.querySelector(".plate7");
 const menuLinks = document.querySelectorAll(".link-close");
+const menuBody = document.querySelector(".menu");
+const menuOverlay = document.querySelector(".menu_overlay");
+const scaleLinks = document.querySelectorAll(".scale-link");
+const galeryItems = document.querySelectorAll(".galery__item");
+const imgClose = document.querySelectorAll(".img-close");
+
+var curShopItemIndex = 0;
 
 if (burger) {
-  const menuBody = document.querySelector(".menu");
-  const menuOverlay = document.querySelector(".menu_overlay");
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
     gamburger.classList.toggle("active");
@@ -13,12 +18,49 @@ if (burger) {
   });
 
   menuOverlay.addEventListener("click", function (e) {
+    closeLinks();
+  });
+
+  for(var i =0;i<menuLinks.length;++i){
+    menuLinks[i].addEventListener("click", function (e) {
+      closeLinks();
+    })
+  }
+
+  for(var i =0;i<imgClose.length;++i){
+    imgClose[i].addEventListener("click", function (e) {
+      closeLinks();
+      e.preventDefault();
+    })
+  }
+
+  function closeLinks(){
     document.body.classList.remove("body_lock");
     gamburger.classList.remove("active");
     menuBody.classList.remove("menu_active");
     menuOverlay.classList.remove("menu_overlay_active");
-  });
+    galeryItems[curShopItemIndex].classList.remove("galery__item_active");
+  }
 };
+
+for(var i =0;i<scaleLinks.length;++i){
+  (function () {
+    var k = i;
+    scaleLinks[k].addEventListener("click", function (e) {
+      openShopItem(k);
+      e.preventDefault();
+    })
+  }());
+}
+
+function openShopItem(index){
+  document.body.classList.toggle("body_lock");
+  galeryItems[index].classList.toggle("galery__item_active");
+  menuOverlay.classList.toggle("menu_overlay_active");
+  curShopItemIndex = index;
+}
+
+
 
 function initSliders(selector, width, obj) {
     const init = {
