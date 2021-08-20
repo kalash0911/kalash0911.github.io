@@ -1432,18 +1432,18 @@ input[type='submit'] {
   }
 }
 
-.menu :nth-child(6) a {
+.menu :nth-child(7) a {
   margin-right: 68px;
 }
 
 @media (max-width: 1023px) {
-  .menu :nth-child(6) a {
+  .menu :nth-child(7) a {
     margin-right: 15px;
   }
 }
 
 @media (max-width: 767px) {
-  .menu :nth-child(6) a {
+  .menu :nth-child(7) a {
     margin: 0;
   }
 }
