@@ -2661,3 +2661,140 @@ ________________________portfolio-section_____________________ */
         margin-bottom: 30px;
     }
 }
+
+/* ______________________________career_______________________________ */
+
+.career{
+    padding-bottom: 55px;
+
+    .container{
+        @include media ('<phone') {
+           padding: 0;
+        }
+    }
+
+    p{
+        font-size: 24px;
+        line-height: 150%;
+        margin-bottom: 30px;
+
+        @include media ('<phone') {
+            padding: 0 15px;
+        }
+    }
+
+    h3{
+        margin-bottom: 20px;
+
+        @include media ('<phone') {
+            padding: 0 15px;
+        }
+    }
+
+    .btn-wrap{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.career__item-wrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(413px, 413px));
+    grid-template-rows: repeat(auto-fit, minmax(265px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+
+    @include media ('<=1328px') {
+        justify-content: center;
+    }
+
+    @include media ('<phone') {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.career__item{
+    padding: 20px 50px;
+    border: 1px solid $orange;
+    border-left: 8px solid $orange;
+    border-radius: 5px;
+
+    @include media ('<phone') {
+        padding: 20px 30px;
+    }
+}
+
+.career__item-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    h3{
+        margin-bottom: 20px;
+
+        @include media ('<phone') {
+            padding: 0;
+        }
+    }
+
+    span{
+        display: flex;
+        font-size: 14px;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 31px;
+
+        &::before{
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background-color: $black;
+        }
+    }
+
+    p{
+        margin-bottom: 0;
+        font-size: 14px;
+
+        @include media ('<phone') {
+            padding: 0;
+        }
+
+        i{
+            font-size: 15px;
+            margin-right: 15px;
+        }
+    }
+}
+
+.career__item-title-text{
+    margin-right: 20px;
+    word-wrap: break-word;
+    max-width: 230px;
+}
+
+.career__item-title-img{
+    width: 100%;
+    max-width: 51px;
+    padding-top: 5px;
+
+    @include media ('<phone') {
+        display: none;
+    }
+}
+
+.career__item-description{
+    p{
+        font-size: 12px;
+        line-height: 150%;
+
+        @include media ('<phone') {
+            padding: 0;
+        }
+    }
+}
