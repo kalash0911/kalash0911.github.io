@@ -2338,3 +2338,28 @@ form{
         margin-bottom: 5px;
     }
 }
+
+/*//////////////////////////---/////////////////////// */
+/*///////////////////////thank-page/////////////////// */
+/*//////////////////////////---/////////////////////// */
+
+.thank-content{
+    padding-top: 150px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .strip{
+        margin-bottom: 30px;
+    }
+
+    p{
+        margin-bottom: 30px;
+        @include adaptiv-vaule("font-size", 48, 24, 1);
+        line-height: 1.5;
+        text-align: center;
+        color: $main-color;
+    }
+}

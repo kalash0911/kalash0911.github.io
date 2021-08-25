@@ -60,8 +60,6 @@ function openShopItem(index){
   curShopItemIndex = index;
 }
 
-
-
 function initSliders(selector, width, obj) {
     const init = {
       infinite: false,
@@ -195,3 +193,42 @@ initSliders(".rewiew-slider", 768, {
   slidesToShow: 1,
   slidesToScroll: 1,
 });
+
+/* For form Card */
+
+function inputNamber(){
+  if (event.keyCode < 48 || event.keyCode > 57)
+  event.returnValue= false;
+}
+
+jQuery(function($){
+  $("#namberCard").mask("9999 9999 9999 9999",{autoclear: false});
+  $("#dateCard").mask("99/99", {placeholder:"__/__"});
+  $("#CVVCard").mask("999", {placeholder:"___"});
+});
+
+/* Open popUp form Card */
+
+const openCheckout = document.querySelector('.openCheckout');
+const closeCheckout = document.querySelector('.checkout-overflow');
+const checkoutPopUp = document.querySelector ('.checkout');
+const btnCheckoutClose = document.querySelector('.btn-close-checkout');
+
+if (openCheckout) {
+  openCheckout.addEventListener("click", function (e) {
+    document.body.classList.add("body_lock");
+    checkoutPopUp.classList.add("checkout_active");
+    closeCheckout.classList.add("checkout-overflow_active");
+    btnCheckoutClose.classList.add("checkout_active");
+    e.preventDefault();
+  });
+
+  checkoutPopUp.addEventListener("click", function (e) {
+    if(!e.target.classList.contains('checkout_active')) return
+    document.body.classList.remove("body_lock");
+    checkoutPopUp.classList.remove("checkout_active");
+    closeCheckout.classList.remove("checkout-overflow_active");
+    btnCheckoutClose.classList.remove("checkout_active");
+    e.preventDefault();
+  });
+}

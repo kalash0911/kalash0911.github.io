@@ -1,0 +1,180 @@
+.checkout-overflow{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 6;
+}
+
+.checkout-overflow_active{
+    display: block;
+}
+
+.checkout{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    display: none;
+    padding: 5% 0;
+    overflow: auto;
+    z-index: 8;
+
+    animation-name: imgPopup;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    
+    @keyframes imgPopup {
+        0%{
+            opacity: 0;
+        }
+    
+        100%{
+            opacity: 1;
+        }
+    }
+    
+    .sec-btn{
+        padding: 10px 25px 0 25px;
+    }
+}
+
+.btn-close-checkout{
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    display: none;
+
+    span{
+        position: absolute;
+        height: 2px;
+        background-color: black;
+        top: 20px;
+        left: 15px;
+
+        &:first-child{
+            animation-name: firstSpan;
+            animation-delay:.3s;
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
+    
+            @keyframes firstSpan {
+                0%{
+                    width: 0px;
+                }
+                
+                50%{
+                    width: 20px;
+                    transform: rotate(0deg);
+                }
+
+                100%{
+                    width: 20px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        &:last-child{
+            animation-name: lastSpan;
+            animation-delay:.3s;
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
+    
+            @keyframes lastSpan {
+                0%{
+                    width: 0px;
+                }
+                
+                50%{
+                    width: 20px;
+                    transform: rotate(0deg);
+                }
+
+                100%{
+                    width: 20px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.checkout_active{
+    display: block;
+}
+
+.checkout-content{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 430px;
+    background-color: $white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    padding: 35px 40px;
+
+    h2{
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    p{
+        font-weight: 300;
+        font-size: 18px;
+        margin-bottom: 10px;
+        width: 100%;
+        color: $black4;
+    }
+
+    label{
+        cursor: pointer;
+    }
+    
+    input{
+        width: 100%;
+        border: none;
+        margin-bottom: 10px;
+        color: $main-color;
+    }
+}
+
+.checkout__name{
+    margin-bottom: 35px;
+
+    input{
+        border-bottom: 2px solid $black3;
+    }
+}
+
+.checkout__cart{
+
+    span{
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    input{
+        border-bottom: 2px solid $gray2;
+        margin-bottom: 30px;
+    }
+}
+
+.checkout__credit-date{
+    display: flex;
+    justify-content: space-between;
+
+    label{
+        width: 100%;
+        max-width: 30%;
+    }
+}

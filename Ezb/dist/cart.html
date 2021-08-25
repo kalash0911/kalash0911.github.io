@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="wrapper">
+        <div class="checkout-overflow"></div>
         <header id="header">
             <div class="header__wrap">
                 <div class="header-container">
@@ -197,12 +198,63 @@
                         </div>
                         <div class="cart__pay-wrap">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
-                            <a href="#" class="sec-btn">Pay</a>
+                            <a href="#" class="sec-btn openCheckout">Pay</a>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+        <div class="checkout">
+            <div class="checkout-content">
+                <a href="#" class="btn-close-checkout">
+                    <span class="checkout_active"></span>
+                    <span class="checkout_active"></span>
+                </a>
+                <h2>Checkout</h2>
+                <form action="#">
+                    <div class="checkout__name">
+                        <label>
+                            <p>Name</p>
+                            <input type="text">
+                        </label>
+                        <label>
+                            <p>Surname</p>
+                            <input type="text">
+                        </label>
+                        <label>
+                            <p>Email</p>
+                            <input type="email">
+                        </label>
+                        <label>
+                            <p>Phone</p>
+                            <input type="tel">
+                        </label>
+                        <label>
+                            <p>Address</p>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="checkout__cart">
+                        <span>Card</span>
+                        <input type="text" placeholder="Card holder">
+                        <div class="checkout__credit-card">
+                            <input class="checkout__namber-card" id="namberCard" onKeyPress="inputNamber()" type="text"  maxlength="16"  placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div class="checkout__credit-date">
+                            <label>
+                                <p>Date</p>
+                                <input id="dateCard" type="text" onKeyPress="inputNamber()" type="text"  maxlength="4"  placeholder="00/00">
+                            </label>
+                            <label>
+                                <p>CVV</p>
+                                <input id="CVVCard" type="text" onKeyPress="inputNamber()" type="text"  maxlength="3"  placeholder="000">
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="sec-btn">Done</button>
+                </form>
+            </div>
+        </div>
         <footer id="footer">
             <div class="container">
                 <div class="footer-content">
@@ -259,6 +311,7 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="./js/jquery.maskedinput.min.js" defer></script>
     <script src="./js/slick.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </body>
