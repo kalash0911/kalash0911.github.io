@@ -94,4 +94,27 @@ if (modalActive) {
 
 ;
 /* ///// */
+
+/* Tabs */
+
+var tabsBtn = document.querySelectorAll('.tabs__nav-btn');
+var tabsItem = document.querySelectorAll('.tabs__item');
+tabsBtn.forEach(function (item) {
+  item.addEventListener("click", function () {
+    var currentBtn = item;
+    var tabId = currentBtn.getAttribute('data-tab');
+    var currentTab = document.querySelector(tabId);
+
+    if (!currentBtn.classList.contains('tabs__nav-btn_active')) {
+      tabsBtn.forEach(function (item) {
+        item.classList.remove('tabs__nav-btn_active');
+      });
+      tabsItem.forEach(function (item) {
+        item.classList.remove('tabs__item_active');
+      });
+      currentBtn.classList.add('tabs__nav-btn_active');
+      currentTab.classList.add('tabs__item_active');
+    }
+  });
+});
 //# sourceMappingURL=main.js.map

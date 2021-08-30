@@ -92,3 +92,29 @@ if (modalActive) {
 };
 
 /* ///// */
+
+/* Tabs */
+
+const tabsBtn  = document.querySelectorAll('.tabs__nav-btn');
+const tabsItem = document.querySelectorAll('.tabs__item');
+
+tabsBtn.forEach(function(item) {
+    item.addEventListener("click", function(){
+        let currentBtn = item;
+        let tabId = currentBtn.getAttribute('data-tab');
+        let currentTab = document.querySelector(tabId);
+
+        if( ! currentBtn.classList.contains('tabs__nav-btn_active')) {
+            tabsBtn.forEach(function(item) {
+                item.classList.remove('tabs__nav-btn_active');
+            });
+
+            tabsItem.forEach(function(item) {
+                item.classList.remove('tabs__item_active');
+            });
+
+            currentBtn.classList.add('tabs__nav-btn_active');
+            currentTab.classList.add('tabs__item_active');
+        }
+    });
+});
