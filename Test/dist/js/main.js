@@ -117,4 +117,24 @@ tabsBtn.forEach(function (item) {
     }
   });
 });
+/* Открытие кнопки и её закрытие при клике вне её области */
+
+var langWrap = document.querySelector(".lang-wrap");
+var langName = document.querySelector(".languages-name");
+
+if (langName) {
+  langName.addEventListener("click", function (e) {
+    e.preventDefault();
+    langWrap.classList.toggle("lang-wrap_active");
+  });
+  document.body.addEventListener("click", function (e) {
+    if (!e.target.closest('.lang-wrap_active')) {
+      langWrap.classList.remove("lang-wrap_active");
+    }
+
+    ;
+  });
+}
+
+;
 //# sourceMappingURL=main.js.map

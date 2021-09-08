@@ -143,3 +143,122 @@
     }
 }
 
+
+
+.languages-wrap {
+    display: flex;
+    justify-content: center;
+    
+    .lang-wrap {
+        position: relative;
+        display: inline-block;
+    }
+
+    .languages-name {
+        width: 100%;
+        min-width: 131px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 3px;
+        border: 1px solid #727272;
+        color: #727272;
+        transition: all .3s ease 0s;
+
+        &:hover {
+            color: #999;
+
+            span {
+
+                &:before, &:after {
+                    background: #999;
+                }
+            }
+        }
+    }
+
+    .languages-arrow {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 7px;
+            width: 6px;
+            height: 1px;
+            background: #727272;
+            transition: all .3s ease 0s;
+        }
+
+        &:before {
+            right: 2px;
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            right: 6px;
+            transform: rotate(45deg);
+        }
+    }
+
+    .dropdown-languages {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 1px);
+        width: 100%;
+        border-radius: 3px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border: 1px solid #727272;
+        background-color: #ffffff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        transition: all .3s ease 0s;
+
+        a {
+            display: block;
+            color: #727272;
+            background-color: transparent;
+            padding: 5px;
+
+            &:hover {
+                color: #ffffff;
+                background-color: #999;
+            }
+        }
+    }
+
+    .lang-wrap_active {
+
+        .languages-name {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .dropdown-languages {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+            transition: all .3s ease 0s;
+        }
+
+        .languages-arrow {
+
+            &:before {
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
