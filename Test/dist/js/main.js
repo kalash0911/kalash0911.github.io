@@ -137,4 +137,19 @@ if (langName) {
 }
 
 ;
+/* Плавный скрол на ссылку якоря на jQuery */
+
+$('.scrollto a').on('click', function () {
+  /* добавить класс scrollto в тег nav */
+  var href = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop: $(href).offset().top
+  }, {
+    duration: 370,
+    // по умолчанию «400» 
+    easing: "linear" // по умолчанию «swing» 
+
+  });
+  return false;
+});
 //# sourceMappingURL=main.js.map
