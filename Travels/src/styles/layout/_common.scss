@@ -1446,12 +1446,11 @@ body {
 }
 
 .trip__item-wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @include media ("<desktop"){
-        flex-direction: column;
+    @include media (">=desktop"){
+        display:flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -1459,6 +1458,7 @@ body {
     -webkit-overflow-scrolling: touch;
 
     @include media (">=desktop"){
+        width: 50%;
         max-height: 730px;
         overflow-y: scroll;
         padding-right: 70px;
@@ -1466,11 +1466,19 @@ body {
     }
 
     @include media ("<desktop"){
-        order: 2;
+        display: block;
+    }
+
+    .slick-list{
+        min-height: 0;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .slick-track{
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        max-width: 100%;
+        align-items: flex-start;
+        justify-content: center;
     }
 
     ul{
@@ -1479,17 +1487,12 @@ body {
         padding: 0;
         
         @include media (">=desktop"){
-            max-width: 400px;
             width: 100%;
             transform:scaleX(-1);
         }
 
         @include media ("<desktop"){
-            width: 100%;
-            max-width: 43%;
-            display: inline-block;
-            flex: 0 0 auto;
-            margin-right: 75px;
+            margin-right: 50px;
 
             &:last-child{
                 margin-right: 0;
@@ -1497,7 +1500,7 @@ body {
         }
 
         @include media ("<tablet"){
-            max-width: 100%;
+            margin-right: 0px;
         }
     }
 
@@ -1512,13 +1515,43 @@ body {
         }
     }
 
+    .slick-dots{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        width: 100%;
+        height: 10px;
+        
+        li{
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            margin: 0 3px;
+            
+            button{
+                height: 10px;
+                border: none;
+                outline: none;
+                transition: all .5s ease 0s;
+                border-radius: 50%;
+            }
+        }
+        
+        .slick-active{
+            button{
+                background-color: #A01C17;
+                transition: all .5s ease 0s;
+            }
+        }
+    }
 }
 
 .trip__img-wrap{
+    width: 50%;
     margin-left: 30px;
 
     @include media ("<desktop"){
-        order: 1;
+        margin-left: 0;
     }
 }
 
@@ -1769,5 +1802,125 @@ body {
 
     @include media ("<phone"){
         display: block;
+    }
+}
+
+/* --------------------------modal--------------------- */
+
+.modal-img{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    @include media ("<desktop"){
+        display: none;
+    }
+}
+
+.modal-img_active{
+    display: flex;
+    
+    animation-name: imgPopup;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    
+    @keyframes imgPopup {
+        0%{
+            opacity: 0;
+        }
+    
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @include media ("<desktop"){
+        display: none;
+    }
+}
+
+.modal-img__overflow{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: hsla(0, 0%, 0%, 0.8);
+    z-index: 1;
+}
+
+.modal-img__img-wrap{
+    position: relative;
+    width: 100%;
+    max-width: 80vw;
+    height: 80vh;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-btn-close{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+
+    span{
+        position: absolute;
+        height: 2px;
+        background-color: black;
+        top: 12px;
+        left: 3px;
+
+        &:first-child{
+            animation-name: firstSpan;
+            animation-delay:.3s;
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
+    
+            @keyframes firstSpan {
+                0%{
+                    width: 0px;
+                }
+                
+                50%{
+                    width: 20px;
+                    transform: rotate(0deg);
+                }
+
+                100%{
+                    width: 20px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        &:last-child{
+            animation-name: lastSpan;
+            animation-delay:.3s;
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
+    
+            @keyframes lastSpan {
+                0%{
+                    width: 0px;
+                }
+                
+                50%{
+                    width: 20px;
+                    transform: rotate(0deg);
+                }
+
+                100%{
+                    width: 20px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
     }
 }

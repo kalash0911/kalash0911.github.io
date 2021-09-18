@@ -38,14 +38,23 @@ window.onload = function () {
 };
 
 const burger = document.querySelector(".burger");
+const menuBody = document.querySelector(".menu");
+const linkClose = document.querySelector(".link-close");
 if (burger) {
-  const menuBody = document.querySelector(".menu");
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
     burger.classList.toggle("burger_active");
     menuBody.classList.toggle("menu_active");
   });
-}
+};
+
+if (linkClose) {
+  linkClose.addEventListener("click", function (e) {
+    document.body.classList.remove("body_lock");
+    burger.classList.remove("burger_active");
+    menuBody.classList.remove("menu_active");
+  });
+};
 
 function initSliders(selector, width, obj) {
     const init = {
@@ -117,3 +126,64 @@ initSliders(".reviews_slider", 1300, {
     },
   ],
 });
+
+initSliders(".trip__text-wrap", 1023, {
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+});
+
+const itemImg = document.querySelectorAll('.trip__img-wrap > img');
+const modal =  document.querySelector('.modal-img');
+const modalImg = modal.querySelector('img');
+const overflowImg = document.querySelector('.modal-img__overflow');
+const closeBtnImg  = document.querySelector('.modal-btn-close');
+
+function showImg(e){
+  let width = $(window).width();
+  if (width >=1024) {
+    document.body.classList.add("body_lock");
+    modal.classList.add("modal-img_active");
+    e.preventDefault();
+    
+    let img = e.target.closest('img');
+    let src = img.getAttribute('src');
+  
+    modalImg.setAttribute('src', src);
+  };
+};
+
+function closeImg(){
+    document.body.classList.remove("body_lock");
+    modal.classList.remove("modal-img_active");
+};
+
+for (let i = 0;i<itemImg.length;++i){
+    itemImg[i].addEventListener("click", function (e) {
+        showImg(e);
+    });
+};
+
+let modalActive = document.querySelectorAll('.modal-img_active');
+
+if (modalActive) {
+    overflowImg.addEventListener("click", function (e) {
+        closeImg();
+        e.preventDefault();
+    });
+
+    closeBtnImg.addEventListener("click", function (e) {
+        closeImg();
+        e.preventDefault();
+    });
+};
