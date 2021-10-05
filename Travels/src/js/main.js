@@ -80,6 +80,17 @@ function initSliders(selector, width, obj) {
     });
 }
 
+initSliders(".main-slider", 99999, {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  speed: 1200,
+  cssEase: 'ease',
+  autoplay: true,
+  autoplaySpeed: 2000,
+  infinite: true,
+  dots: false,
+});
+
 initSliders(".cities-wrap", 1024, {
   slidesToShow: 2,
   slidesToScroll: 2,
