@@ -1,0 +1,42 @@
+body {
+    font-family: 'Bebas Neue', cursive;
+    font-family: $Helvetica;
+    background-color: $body-black;
+}
+
+.body_lock{
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    max-width: 1355px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.bottom-line{
+    position: relative;
+
+    &::after{
+        content:'';
+        position: absolute;
+        width: 470px;
+        height: 4px;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: $main-color;
+
+        @include media('<tablet'){
+            width: 250px;
+        }
+    }
+}
+
+/* --------------------------main-section-------------------- */
+
+.main-section{
+    min-height: 100vh;
+    padding: 100px 0 60px 0;
+}

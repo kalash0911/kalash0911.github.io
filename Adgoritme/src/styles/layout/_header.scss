@@ -1,0 +1,250 @@
+#header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    
+    button{
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 0 20px 0;
+    border-bottom: 4px solid $main-color;
+
+    @include media('<desktop'){
+        padding: 35px 30px 20px 30px;
+
+        .active &{
+            &::before{
+                content:'';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: $main-color;
+            }
+        }
+    }
+
+    @include media('<phone'){
+        padding: 35px 10px 20px 10px;
+    }
+}
+
+.header__main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 120px;
+
+    @include media('<phone'){
+        width:auto;
+        margin: 0;
+        order: 2;
+    }
+}
+
+.header__logo{
+    z-index: 1;
+
+    svg{
+        width: 53px;
+        height: 46px;
+        fill: $main-color;
+
+        .active &{
+            fill: $black;
+        }
+    }
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media('<=desktop'){
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        top: -100%;
+        left: 0;
+        transition: all .5s ease 0s;
+        background-color: $main-color;
+        padding: 120px 15px 30px 15px;
+        overflow: auto;
+        z-index: -1;
+    }
+}
+
+.menu_active{
+    @include media('<=desktop'){
+        top: 0;
+    }
+}
+
+.menu__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include media('>desktop'){
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    @include media('<desktop'){
+        margin-bottom: 30px;
+    }
+}
+
+.menu__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    height: 100%;
+    position: relative;
+}
+
+.menu__link{
+    font-size: 20px;
+    color: $white;
+    transition: color .3s ease 0s;
+
+    @include media('<desktop'){
+        color: $black;
+    }
+}
+
+.menu__social{
+    position: relative;
+    display: none;
+    justify-content: space-between;
+
+    @include media('<desktop'){
+        display: flex;
+        min-width: 350px;
+    }
+
+    @include media('<phone'){
+        min-width: 250px;
+    }
+
+    img{
+        @include media('<phone'){
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+}
+
+.header__phone{
+    position: relative;
+    max-width: 34px;
+    min-width: 34px;
+    max-height: 34px;
+    min-height: 34px;
+
+    @include media('<=desktop'){
+        margin-right: 55px;
+
+        .active &{
+            display: none;
+        }
+    }
+    
+    @include media('<phone'){
+        margin: 0;
+        order: 1;
+    }
+
+    a{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    svg{
+        width: 34px;
+        height: 34px;
+        fill: $main-color;
+    }
+}
+
+
+/* ---------------burger */
+
+.burger{
+    display: none;
+    position: relative;
+    max-width: 30px;
+    min-width: 30px;
+    max-height: 20px;
+    min-height: 20px;
+
+    @include media('<=desktop'){
+        display: block;
+    }
+
+    @include media('<phone'){
+        order: 3;
+    }
+
+    span{
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $main-color;
+        top: 50%;
+        right: 0;
+        border-radius: 10px;
+        transition: all .3s ease 0s;
+
+        &:first-child{
+            top: 0;
+        }
+
+        &:last-child{
+            top: 100%;
+            width: 50%;
+        }
+    }
+}
+
+.burger_active{
+
+    span{
+        background: $black;
+        opacity: 0;
+
+        &:first-child{
+            opacity: 1;
+            transform: rotate(-45deg);
+            top: 6px;
+        }
+
+        &:last-child{
+            opacity: 1;
+            transform: rotate(45deg);
+            top: 6px;
+            width: 100%;
+        }
+    }
+}
