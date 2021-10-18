@@ -1,6 +1,6 @@
 #header{
-    position: fixed;
-    width: 100%;
+    position: absolute;
+    width: 100%; 
     top: 0;
     left: 0;
     z-index: 5;
@@ -58,13 +58,26 @@
 .header__logo{
     z-index: 1;
 
+    a{
+        display: block;
+        height: 46px;
+    }
+
     svg{
         width: 53px;
         height: 46px;
         fill: $main-color;
+        transition: all .5s ease 0s;
 
         .active &{
             fill: $black;
+        }
+    }
+
+    &:hover{
+        svg{
+            fill: $hover-color;
+            transform: rotate3d(0, 1, 0, 180deg);
         }
     }
 }
@@ -74,7 +87,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @include media('<=desktop'){
+    @include media('<desktop'){
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -91,42 +104,87 @@
 }
 
 .menu_active{
-    @include media('<=desktop'){
+    @include media('<desktop'){
         top: 0;
     }
 }
 
+.menu__wrap{
+    @include media('<desktop'){
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+}
+
 .menu__list{
+    display: flex;
     padding: 0;
     margin: 0;
     list-style: none;
 
-    @include media('>desktop'){
-        display: flex;
+    @include media('>=desktop'){
         justify-content: space-evenly;
     }
 
     @include media('<desktop'){
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
         margin-bottom: 30px;
     }
 }
 
-.menu__item{
+.menu-item{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0 20px;
-    height: 100%;
-    position: relative;
-}
-
-.menu__link{
-    font-size: 20px;
-    color: $white;
-    transition: color .3s ease 0s;
 
     @include media('<desktop'){
-        color: $black;
+        justify-content: center;
+        margin-bottom: 80px;
+    }
+
+    @include media('<phone'){
+        margin-bottom: 40px;
+    }
+
+    a {
+        font-size: 20px;
+        color: $white;
+        transition: color .3s ease 0s;
+        
+        @include media('<desktop'){
+            font-size: 64px;
+            font-weight: bold;
+            color: $black;
+        }
+
+        @include media('<phone'){
+            font-size: 40px;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            height: 3px;
+            width: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $main-color;
+            transition: width .3s ease-in-out;
+        }
+
+        &:hover{
+            color: $main-color;
+
+            &::after{
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -155,12 +213,20 @@
 
 .header__phone{
     position: relative;
-    max-width: 34px;
-    min-width: 34px;
-    max-height: 34px;
-    min-height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40px;
+    min-width: 40px;
+    max-height: 40px;
+    min-height: 40px;
+    padding: 2px;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    transition: all .3s ease 0s;
 
-    @include media('<=desktop'){
+    @include media('<desktop'){
         margin-right: 55px;
 
         .active &{
@@ -174,17 +240,24 @@
     }
 
     a{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
+        width: 34px;
+        height: 34px;
     }
 
     svg{
         width: 34px;
         height: 34px;
         fill: $main-color;
+    }
+
+    &:hover{
+        border: 2px solid $hover-color;
+
+        svg{
+            fill: $hover-color;
+            transform: rotate3d(0, 1, 0, 360deg);
+            transition: all .7s ease 0s;
+        }
     }
 }
 
@@ -199,7 +272,7 @@
     max-height: 20px;
     min-height: 20px;
 
-    @include media('<=desktop'){
+    @include media('<desktop'){
         display: block;
     }
 
