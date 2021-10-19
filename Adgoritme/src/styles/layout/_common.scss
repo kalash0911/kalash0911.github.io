@@ -9,7 +9,7 @@ body {
 
 .container{
     width: 100%;
-    max-width: 1355px;
+    max-width: 1440px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -172,40 +172,41 @@ body {
 }
 
 .icon-mouse{
-    margin: 0 auto;
     width: 25px;
     height: 67px;
+    margin: 20px auto;
+
 }
 
 /* --------------------------services-section-------------------- */
 
-.services{
+.services {
     position: relative;
     @include adaptiv-vaule("padding-top", 140, 95, 1);
     @include adaptiv-vaule("padding-bottom", 90 , 50, 1);
     overflow: hidden;
 }
 
-.services-content{
+.services-content {
     position: relative;
     text-align: center;
     z-index: 2;
 
-    h2{
+    h2 {
         text-align: center;
         margin-bottom: 90px;
         color: #FFFFFF; 
     }
 }
 
-.services__item-wrap{
+.services__item-wrap {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 70px;
 }
 
-.services__item{
+.services__item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,52 +215,52 @@ body {
     margin-bottom: 70px;
     padding: 0 15px;
 
-    @include media ("<phone"){
+    @include media ("<phone") {
         min-width: 100%; 
         max-width: 100%;
     }
 }
 
-.services__item-img{
+.services__item-img {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.services__item-text{
+.services__item-text {
     text-align: center;
     font-size: 24px;
     color: #FFFFFF;
 
-    span{
+    span {
         display: block;
         margin-bottom: 5px;
     }
 
-    P{
+    P {
         font-size: 18px;
     }
 }
 
 /* --------------------------about-section-------------------- */
 
-.about{
+.about {
     @include adaptiv-vaule("padding-top", 140, 70, 1);
     padding-bottom: 5px;
     overflow: hidden;
 
-    h2{
+    h2 {
         text-align: center;
         color: $white;
         @include adaptiv-vaule("margin-bottom", 100, 70, 1);
     }
 }
 
-.about-content{
+.about-content {
     position: relative;
-    padding: 20px 0;
+    padding: 50px 0;
     min-height: calc(100vh - 270px);
 
-    img{
+    img {
         position: absolute;
         top: 0;
         left: 0;
@@ -269,24 +270,38 @@ body {
     }
 }
 
-.about__text-wrap{
+.about__text-wrap {
     display: flex;
     align-items: center;
+
+    @include media ("<tablet"){
+        padding: 0;
+        min-height: calc(100vh - 270px);
+    }
 }
 
-.indefinite{
+.indefinite {
     width: 100%;
     max-width: 50%;
     min-height: calc(100vh - 270px);
+
+    @include media ("<tablet") {
+        display: none;
+    }
 }
 
-.about__text{
+.about__text {
     position: relative;
     max-width: 50%;
-    padding: 40px 0 50px 70px;
+    padding: 40px 15px 50px 70px;
     z-index: 2;
+
+    @include media ("<tablet") {
+        max-width: 100%;
+        padding: 40px 15px;
+    }
     
-    &::after{
+    &::after {
         content:'';
         position: absolute;
         top: 0;
@@ -295,15 +310,146 @@ body {
         height: 100%;
         background-color: $main-color;
         z-index: -1;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
     }
 
-    h2{
+    h2 {
         color: $black;
         margin-bottom: 25px;
     }
 
-    p{
+    p {
         font-size: 18px;
         line-height: 1.4;
     }
+}
+
+/* --------------------------project-section-------------------- */
+
+.project {
+    position: relative;
+    @include adaptiv-vaule("padding-top", 140, 95, 1);
+    @include adaptiv-vaule("padding-bottom", 90 , 50, 1);
+
+    .container {
+        padding: 0;
+    }
+
+    h2 {
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 90px;
+    }
+}
+
+/* /////////////////////////projects-block///////////////////////// */
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects__item {
+    width: 100%;
+    max-width: 33.3%;
+    min-width: 33.3%;
+    margin-bottom: 90px;
+
+    @include media ("<widescreen") {
+        max-width: 50%;
+        min-width: 50%;
+    }
+
+    @include media ("<tablet") {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+.projects__img {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    max-height: 320px;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.projects__text {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.project__text-title {
+    padding-right: 15px;
+
+    h2{
+        text-align: left;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        font-weight: bold;
+        text-transform: none;
+        color: $main-color;
+        margin-bottom: 10px;
+    }
+
+    p{
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        line-height: 1.4;
+        color: $white;
+        margin: 0;
+    }
+}
+
+.project__text-icon {
+    position: relative;
+    max-width: 48px;
+    min-width: 48px;
+    max-height: 48px;
+    min-height: 48px;
+
+    svg{
+        width: 25px;
+        height: 22px;
+        fill: $main-color;
+        transition: all .4s ease 0s;
+    }
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px 5px 10px 10px;
+        border: 2px solid $main-color;
+        border-radius: 100%;
+        box-sizing: border-box;
+        transition: all .3s ease 0s;
+
+        &:hover{
+            border: 2px solid $hover-color;
+    
+            svg{
+                fill: $hover-color;
+                transform: rotate3d(1, 0, 0, 180deg);
+                transition: all .4s ease 0s;
+            }
+        }
+    }
+    
 }
