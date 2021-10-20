@@ -36,22 +36,26 @@ body {
 
 .text-bg{
     position: absolute;
-    top: 45%;
     font-weight: bold;
     font-size: 96px;
     text-transform: uppercase;
     color: #FFFFFF;
     opacity: 0.2;
-    transform: rotate(-90deg);
     margin: 0;
     white-space: nowrap;
+    writing-mode: vertical-rl;
+    z-index: -1;
 
     &:nth-child(1){
-        left: -360px;
+        left: -55px;
     }
 
     &:nth-child(2){
-        right: -360px;
+        right: -55px;
+    }
+
+    @include media('<phone'){
+        display: none;
     }
 }
 
@@ -70,6 +74,7 @@ body {
     background-size: 0% 100%;
     box-sizing: border-box;
     transition: all .5s ease 0s;
+    border: none;
 
     &:hover{
         background-size: 100% 100%;
@@ -191,12 +196,6 @@ body {
     position: relative;
     text-align: center;
     z-index: 2;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 90px;
-        color: #FFFFFF; 
-    }
 }
 
 .services__item-wrap {
@@ -249,8 +248,6 @@ body {
     overflow: hidden;
 
     h2 {
-        text-align: center;
-        color: $white;
         @include adaptiv-vaule("margin-bottom", 100, 70, 1);
     }
 }
@@ -331,18 +328,12 @@ body {
 
 .project {
     position: relative;
+    text-align: center;
     @include adaptiv-vaule("padding-top", 140, 95, 1);
     @include adaptiv-vaule("padding-bottom", 90 , 50, 1);
 
     .container {
         padding: 0;
-    }
-
-    h2 {
-        color: $white;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 90px;
     }
 }
 
@@ -397,9 +388,9 @@ body {
 
 .project__text-title {
     padding-right: 15px;
+    text-align: left;
 
     h2{
-        text-align: left;
         @include adaptiv-vaule("font-size", 24, 20, 1);
         font-weight: bold;
         text-transform: none;
@@ -451,5 +442,346 @@ body {
             }
         }
     }
+}
+
+/* --------------------------partners-section-------------------- */
+
+.partners{
+    position: relative;
+    min-height: 700px;
+    @include adaptiv-vaule("padding-top", 140, 95, 1);
+    @include adaptiv-vaule("padding-bottom", 90 , 50, 1);
+    overflow: hidden;
+
+    @include media('<phone'){
+        min-height: min-content;
+    }
     
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 500px;
+        padding: 0 40px;
+
+        @include media('<phone'){
+            min-height: min-content;
+            padding: 0 15px;
+        }
+    }
+}
+
+/* /////////////////////////partners-slider///////////////////////// */
+
+.partners-slider-wrap{
+    position: relative;
+
+    .slick-list{
+        overflow: hidden;
+    }
+
+    .slick-track{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .partners-slider__item{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+    }
+    
+    .arrow-prev, .arrow-next{
+        position: absolute;
+        top: 40%;
+        cursor: pointer;
+    
+        svg{
+            width: 25px;
+            height: 22px;
+            fill: $main-color;
+            transition: all .4s ease 0s;
+        }
+
+        &:hover{
+    
+            svg{
+                fill: $hover-color;
+                transform: rotate3d(1, 0, 0, 180deg);
+                transition: all .4s ease 0s;
+            }
+        }
+    }
+
+    .arrow-prev{
+        left: 0;
+        transform: rotate(180deg);
+    }
+
+    .arrow-next{
+        right: 0;
+    }
+}
+
+/* --------------------------contact-section-------------------- */
+
+.contact{
+    position: relative;
+    @include adaptiv-vaule("padding-top", 140, 95, 1);
+    @include adaptiv-vaule("padding-bottom", 90 , 50, 1);
+    overflow: hidden;
+    
+    .container{
+        padding: 0 45px;
+
+        @include media('<phone'){
+            padding: 0 15px;
+        }
+    }
+}
+
+.contact-content{
+    text-align: center;
+}
+
+.form-wrap{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    @include media('<tablet'){
+        flex-direction: column;
+    }
+}
+
+.input-wrap{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 50px;
+
+    @include media('<desktop'){
+        width: 40%;
+    }
+
+    @include media('<tablet'){
+        width: 100%;
+    }
+
+    input{
+        width: 100%;
+        padding: 14px 22px;
+        margin-bottom: 20px;
+        background: #2C2C2C;
+        border: 1px solid #BEA363;
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-size: 18px;
+        color: $main-color;
+
+        &:focus, &:focus-visible{
+            border: 2px solid $hover-color;
+        }
+
+        &::placeholder{
+            color: #494949;
+        }
+    }
+}
+
+
+textarea{
+    width: 40%;
+    padding: 14px 22px;
+    margin-bottom: 20px;
+    background: #2C2C2C;
+    border: 1px solid #BEA363;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 18px;
+    color: $main-color;
+
+    &:focus{
+        border: 2px solid $hover-color;
+    }
+
+    &::placeholder{
+        color: #494949;
+    }
+
+    @include media('<desktop'){
+        width: 55%;
+    }
+
+    @include media('<tablet'){
+        width: 100%;
+        height: 300px;
+    }
+
+    @include media('<phone'){
+        height: 200px;
+    }
+}
+
+
+/* --------------------------portfolio-section-------------------- */
+
+.portfolio, .project-page{
+    padding-top: 160px;
+    @include adaptiv-vaule("padding-bottom", 160, 40, 1);
+    min-height: calc(100vh - 189px);
+
+    @include media('<phoneXL'){
+        min-height: calc(100vh - 248px);
+    }
+
+    .container{
+        padding: 0;
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 81px;
+        text-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+        text-transform: uppercase;
+        line-height: 0.85;
+        background: #565656;
+        background: -webkit-linear-gradient(to bottom, #565656 35%, #393939 60%);
+        background: -moz-linear-gradient(to bottom, #565656 35%, #393939 60%);
+        background: linear-gradient(to bottom, #565656 35%, #393939 60%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 40px; 
+    }
+}
+
+/* --------------------------project-page-section-------------------- */
+
+.wrap__img{
+    position: relative;
+    width: 100%;
+    min-height: 727px;
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* --------------------------client-section-------------------- */
+
+.client, .result, .result-img{
+    padding: 50px 0;
+}
+
+.client-content, .result-content{
+    text-align: center;
+
+    h2{
+        font-size: 24px;
+        text-transform: none;
+        color: #BEA363;
+        margin-bottom: 10px;
+    }
+
+    span{
+        display: block;
+        font-size: 24px;
+        color: $white;
+        margin-bottom: 50px;
+    }
+
+    p{
+        font-size: 20px;
+        text-align: left;
+        line-height: 1.4;
+        color: $white;
+    }
+}
+
+.client__item-wrpa{
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(290px, 1fr));
+    grid-template-rows: repeat(auto-fit,minmax(370px, 1fr));
+    gap: 25px;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    @include media('<tabletXL'){
+        grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+        grid-template-rows: repeat(auto-fit,minmax(300px, 1fr));
+    }
+
+    @include media('<phoneXL'){
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+        grid-template-rows: repeat(auto-fit,minmax(530px, 1fr));
+        gap: 10px;
+    }
+}
+
+.client__item{
+    position: relative;
+
+    &:nth-child(1){
+        grid-column: span 1;
+        grid-row: span 2;
+
+        @include media('<phoneXL'){
+            grid-row: span 1;
+        }
+    }
+
+    &:nth-child(2){
+        grid-column: span 2;
+        grid-row: span 2;
+
+        @include media('<tablet'){
+            grid-column: span 1;
+        }
+
+        @include media('<phoneXL'){
+            grid-row: span 1;
+        }
+        
+    }
+
+    &:nth-child(3){
+        grid-column: span 2;
+        grid-row: span 1;
+        
+        @include media('<tablet'){
+            grid-column: span 2;
+        }
+
+        @include media('<phoneXL'){
+            grid-column: span 1;
+        }
+    }
+
+    &:nth-child(4){
+        
+        @include media('<tablet'){
+            grid-column: span 2;
+        }
+
+        @include media('<phoneXL'){
+            grid-column: span 1;
+        }
+    }
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

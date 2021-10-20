@@ -1,0 +1,186 @@
+#footer{
+    padding: 30px 0;
+    background: #333333;
+}
+
+.footer-content{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    @include media('<phoneXL'){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.footer__logo-block{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+
+    @include media('<phoneXL'){
+        margin-right: 0;
+    }
+
+    p{
+        font-size: 16px;
+        color: $white;
+    }
+}
+
+.footer__logo{
+    margin-bottom: 20px;
+
+    @include media('<phoneXL'){
+        margin-bottom: 60px;
+    }
+
+    @include media('<phoneXL'){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    svg{
+        width: 36px;
+        height: 31px;
+        fill: $white;
+        transition: all .5s ease 0s;
+    }
+
+    a{
+        &:hover{
+            svg{
+                fill: $hover-color;
+                transform: rotate3d(0, 1, 0, 180deg);
+                transition: all .5s ease 0s;
+            }
+        }
+    }
+}
+
+.footer__cookie{
+    display: flex;
+
+    a{
+        font-size: 16px;
+        font-weight: 300;
+        color: $white;
+        margin: 0 15px 20px 0;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer__menu-wrap{
+    width: 50%;
+
+    @include media('<tabletXL'){
+        display: none;
+    }
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+    }
+
+    li{
+        margin: 0;
+        padding: 0;
+    }
+
+    a{
+        font-size: 20px;
+        color: $white;
+        margin: 0 15px;
+        
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer__social-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include media('<phoneXL'){
+        align-items: flex-start;
+    }
+    
+    h3{
+        font-family: $Helvetica;
+        color: $white;
+        text-decoration: underline;
+        margin-bottom: 20px;
+
+        @include media('<phoneXL'){
+            display: none;
+        }
+    }
+}
+
+.footer__social{
+    display: flex;
+    margin: 0 0 20px 0;
+
+    @include media('<phoneXL'){
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    svg{
+        width: 22px;
+        height: 22px;
+        fill: $white;
+        transition: fill .3s ease 0s;
+    }
+
+    a{
+        height: 100%;
+        width: 100%;
+        margin: 0 0 0 15px;
+        
+        @include media('<phoneXL'){
+            margin: 0 15px 0 0;
+        }
+
+        &:hover{
+            animation-name: footer-icon;
+            animation-duration: .2s;
+
+            svg{
+                fill: $hover-color;
+                transition: fill 0s ease 0s;
+            }
+        }
+
+        @keyframes footer-icon {
+            0%{
+                transform: translateY(0px)
+            };
+            50%{
+                transform: translateY(-3px)
+            };
+            100%{
+                transform: translateY(0px)
+            }
+        }
+    }
+    
+}
+
+.footer__link-site{
+    font-size: 16px;
+    color: $white;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
