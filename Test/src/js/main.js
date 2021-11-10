@@ -104,17 +104,43 @@ tabsBtn.forEach(function(item) {
         let tabId = currentBtn.getAttribute('data-tab');
         let currentTab = document.querySelector(tabId);
 
-        if( ! currentBtn.classList.contains('tabs__nav-btn_active')) {
+        if( ! currentBtn.classList.contains('tab_active')) {
             tabsBtn.forEach(function(item) {
-                item.classList.remove('tabs__nav-btn_active');
+                item.classList.remove('tab_active');
             });
 
             tabsItem.forEach(function(item) {
-                item.classList.remove('tabs__item_active');
+                item.classList.remove('tab__item_active');
             });
 
-            currentBtn.classList.add('tabs__nav-btn_active');
-            currentTab.classList.add('tabs__item_active');
+            currentBtn.classList.add('tab_active');
+            currentTab.classList.add('tab__item_active');
+        }
+    });
+});
+
+/* Tabs2 */
+
+const tabsBtn2  = document.querySelectorAll('.tabs2__nav-btn');
+const tabsItem2 = document.querySelectorAll('.tabs2__item');
+
+tabsBtn2.forEach(function(item) {
+    item.addEventListener("click", function(){
+        let currentBtn2 = item;
+        let tabId2 = currentBtn2.getAttribute('data-tab');
+        let currentTab2 = document.querySelector(tabId2);
+
+        if( ! currentBtn2.classList.contains('tab2_active')) {
+            tabsBtn2.forEach(function(item) {
+                item.classList.remove('tab2_active');
+            });
+
+            tabsItem2.forEach(function(item) {
+                item.classList.remove('tab2__item_active');
+            });
+
+            currentBtn2.classList.add('tab2_active');
+            currentTab2.classList.add('tab2__item_active');
         }
     });
 });

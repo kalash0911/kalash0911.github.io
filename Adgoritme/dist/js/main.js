@@ -107,4 +107,14 @@ initSliders(".partners-slider", 99999, {
     }
   }]
 });
+$('.scrollto a').on('click', function () {
+  var href = $(this).attr('href');
+  $('html, body').animate({
+    scrollTop: $(href).offset().top
+  }, {
+    duration: 1500,
+    easing: "linear"
+  });
+  return false;
+});
 //# sourceMappingURL=main.js.map

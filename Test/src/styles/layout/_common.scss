@@ -59,29 +59,97 @@
     border: none;
 }
 
-.tabs__nav-btn_active{
+.tab_active{
     background-color: orange;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .tabs__item-wrap{
     padding: 20px 5px;
     background-color: orange;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .tabs__item{
-    height: 0;
+    max-height: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease-in-out;
 }
 
-.tabs__item_active{
-    height: auto;
+.tab__item_active{
+    max-height: 500px;
     visibility: visible;
     opacity: 1;
-    transition: all 0.3s ease-in-out;
+    transition: max-height .7s ease, opacity 1s ease;
+}
+
+/* ---------------tabs2------------- */
+
+.tabs2{
+    padding: 50px 0;
+}
+
+.tabs2__item-wrap{
+    position: relative;
+    padding: 50px 5px 20px;
+    background-color: orange;
+    transition: all 0.3s ease;
+}
+
+.tabs2__nav-btn{
+    position: absolute;
+    top: 0;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    
+    @include media ('<tablet'){
+        position: relative;
+        width: 100%;
+    }
+}
+
+.tab2_btn1{
+    left: 15%;
+
+    @include media ('<tablet'){
+        left: 0;
+    }
+}
+
+.tab2_btn2{
+    left: 50%;
+    transform: translate(-50%);
+
+    @include media ('<tablet'){
+        left: 0;
+        transform: translate(0%);
+    }
+}
+
+.tab2_btn3{
+    right: 15%;
+
+    @include media ('<tablet'){
+        right: 0;
+    }
+}
+
+.tab2_active{
+    transition: all 0.3s ease;
+}
+
+.tabs2__item{
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tab2__item_active{
+    max-height: 500px;
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 2s ease, opacity 1s ease;
 }
 
 /* ---------------accordion------------- */
@@ -265,4 +333,16 @@
             }
         }
     }
+}
+
+
+/* ---------------svg-anim------------- */
+
+.svg-anim{
+    padding: 50px 0;
+}
+
+.svg-anim-contant{
+    display: flex;
+    justify-content: center;
 }
