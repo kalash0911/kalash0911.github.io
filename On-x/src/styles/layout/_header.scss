@@ -1,0 +1,356 @@
+.body_lock{
+    overflow: hidden;
+}
+
+#header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+    button{
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0 20px 0;
+
+    @include media('<tablet'){
+        padding: 20px 0;
+    }
+
+    @include media('<phone'){
+        min-height: 70px;
+    }
+}
+
+.header__main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header__logo-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include media('<tablet'){
+        margin-bottom: 0;
+    }
+
+    svg{
+        fill: $main-blue;
+    }
+}
+
+.social-desk{
+    @include media('<tablet'){
+        display: none;
+    }
+}
+
+.menu{
+
+    @include media('<tablet'){
+        position: relative;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: -100%;
+        left: 0;
+        background-color: $main-blue;
+        padding: 100px 15px 30px 15px;
+        transition: all .5s ease 0s;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &::before{
+            content:'';
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+            transition: all .3s ease 0s;
+            z-index: 2;
+        }
+    }
+}
+
+.menu_active{
+    @include media('<tablet'){
+        top: 0;
+
+        &::before{
+            background-color: $main-blue;
+        }
+    }
+}
+
+.menu__wrap{
+    @include media('<tablet'){
+        margin-bottom: 30px;
+    }
+}
+
+.menu__list{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include media('<tablet'){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.menu-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+
+    @include media('<tablet'){
+        padding: 0;
+        margin: 0;
+        margin-bottom: 30px;
+
+        &:last-child{
+            margin: 0;
+            margin-bottom: 100px;
+
+            &::before{
+                left: 50%;
+                transform: translate(-50%);
+                top: 200px;
+                width: 150%;
+                height: 1px;
+                background-color: $white;
+            }
+        }
+    }
+
+    a{
+        font-size: 18px;
+        font-weight: 600;
+        color: $white;
+        transition: color .3s ease 0s;
+    
+        @include media('>=tablet'){
+    
+            &:hover{
+                color: $main-blue;
+            }
+        }
+    }
+}
+
+
+.menu__social{
+    display: none;
+
+    @include media('<tablet'){
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* ---------------burger */
+
+.burger{
+    display: none;
+    position: relative;
+    width: 35px;
+    height: 25px;
+    z-index: 5;
+    
+    @include media('<tablet'){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    span{
+        position: absolute;
+        right: 0;
+        height: 3px;
+        
+        &::before{
+            content:'';
+            display: block;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $main-blue;
+            border-radius: 10px;
+            transition: background-color .5s ease 0s;
+        }
+
+        &:nth-child(1){
+            top:0;
+            width: 100%;
+        }
+
+        &:nth-child(2){
+            width: 50%;
+            top: 11px;
+            transition: width .5s ease 0s;
+        }
+
+        &:nth-child(3){
+            width: 100%;
+            bottom: 0;
+        }
+    }
+}
+
+$toggle-size: 55px;
+$toggle-line-size: $toggle-size/10;
+$toggle-line-angle: 405deg;
+$toggle-anim-speed: 1s;
+
+.burger_active{
+
+    span{
+
+        &::before{
+            background-color: $white;
+            transition: background-color .5s ease 0s;
+        }
+
+        &:nth-child(1){
+            animation: jump-1 $toggle-anim-speed forwards ease;
+
+            &::before{
+                animation: line-1 $toggle-anim-speed forwards ease;
+            }
+        }
+
+        &:nth-child(2){
+            width: 100%;
+            transition: width .5s ease 0s;
+            animation: jump-2 $toggle-anim-speed forwards ease;
+
+            &::before{
+                animation: line-2 $toggle-anim-speed forwards ease;
+            }
+        }
+
+        &:nth-child(3){
+            animation: jump-3 $toggle-anim-speed forwards ease;
+        }
+    }
+}
+
+.burger_finish{
+
+    span{
+
+        &::before{
+            background-color: $main-blue;
+            transition: background-color .5s ease 0s;
+        }
+
+        &:nth-child(1){
+            animation: jump-1-end $toggle-anim-speed reverse ease;
+
+            &::before{
+                animation: line-1-end $toggle-anim-speed reverse ease;
+            }
+        }
+
+        &:nth-child(2){
+            width: 50%;
+            transition: width .5s ease .7s;
+            animation: jump-2-end $toggle-anim-speed reverse ease;
+
+            &::before{
+                animation: line-2-end $toggle-anim-speed reverse ease;
+            }
+        }
+
+        &:nth-child(3){
+            animation: jump-3-end $toggle-anim-speed reverse ease;
+        }
+    }
+}
+
+@keyframes line-1 {
+    10% { transform: translateZ(0) rotate(0) }
+    80% { transform: translateZ(0) rotate($toggle-line-angle - 10) }
+    90%, 100% { transform: translateZ(0) rotate($toggle-line-angle) }
+}
+  
+@keyframes line-2 {
+    10% { transform: translateZ(0) rotate(0) }
+    20% { transform: translateZ(0) rotate(10deg) }
+    90%, 100% { transform: translateZ(0) rotate(-$toggle-line-angle) }
+}
+  
+@keyframes jump-1 {
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    90%, 100% { transform: translateY(-$toggle-line-size * 0) }
+}
+  
+@keyframes jump-2 {
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    85%, 100% { transform: translateY(-$toggle-line-size * 2) }
+}
+  
+@keyframes jump-3 {
+    10% { transform: translateY(-$toggle-line-size*1) rotate(15deg) }
+    30% { transform: translateY(-$toggle-line-size*4) rotate(-10deg) }
+    50% { transform: translateY($toggle-line-size) rotate(5deg) }
+    80% { transform: translateY(0) }
+}
+
+@keyframes line-1-end {
+    10% { transform: translateZ(0) rotate(0) }
+    80% { transform: translateZ(0) rotate($toggle-line-angle - 10) }
+    90%, 100% { transform: translateZ(0) rotate($toggle-line-angle) }
+}
+  
+@keyframes line-2-end {
+    10% { transform: translateZ(0) rotate(0) }
+    20% { transform: translateZ(0) rotate(10deg) }
+    90%, 100% { transform: translateZ(0) rotate(-$toggle-line-angle) }
+}
+  
+@keyframes jump-1-end{
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    90%, 100% { transform: translateY(-$toggle-line-size * 0) }
+}
+  
+@keyframes jump-2-end {
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    85%, 100% { transform: translateY(-$toggle-line-size * 2) }
+}
+
+@keyframes jump-3-end {
+    10% { transform: translateY(-$toggle-line-size*1) rotate(15deg) }
+    30% { transform: translateY(-$toggle-line-size*4) rotate(-10deg) }
+    50% { transform: translateY($toggle-line-size) rotate(5deg) }
+    80% { transform: translateY(0) }
+}

@@ -1,0 +1,28 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.body_lock{
+    overflow: hidden;
+}
+
+.container, .container-sec{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container{
+    max-width: 1110px;
+}
+
+.container-sec{
+    max-width: 1330px;
+}
+
+/* -------------------main--------------------- */
+
+.main-section{
+    min-height: 100vh;
+    background: url('../images/main-bg1.jpg') 50% 0/cover no-repeat;
+}
