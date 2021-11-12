@@ -1,7 +1,3 @@
-.body_lock{
-    overflow: hidden;
-}
-
 #header{
     position: absolute;
     width: 100%;
@@ -170,9 +166,79 @@
     @include media('<tablet'){
         display: none !important;
     }
+}
 
-    svg{
-        fill: $main-blue;
+.social-email{
+    width: 40px;
+    height: 40px;
+
+    path{
+        stroke: $main-blue;
+        stroke-width: 3.5; 
+        stroke-dasharray: 403;
+        stroke-dashoffset: 0;
+        fill: transparent; 
+    }
+
+    &:hover{
+        path{
+            animation: social-email 1s ease forwards;
+        }
+    }
+
+    @keyframes social-email {
+        0%{
+            stroke-dashoffset: 0; 
+        }
+    
+        40%{
+            stroke-dashoffset: 403; 
+        }
+    
+        80%{
+            stroke-dashoffset: 806; 
+        }
+    
+        100%{
+            stroke-dashoffset: 806; 
+        }
+    }
+}
+
+.social-phone{
+    width: 25px;
+    height: 25px;
+
+    path{
+        stroke: $main-blue;
+        stroke-width: 2; 
+        stroke-dasharray: 66;
+        stroke-dashoffset: 0; 
+        fill: transparent;
+    }
+
+    &:hover{
+        path{
+            animation: social-phone .8s ease forwards;
+        }
+    }
+
+    @keyframes social-phone {
+        0%{
+            stroke-dashoffset: 0; 
+        }
+    
+        40%{
+            stroke-dashoffset: 66; 
+        }
+    
+        80%{
+            stroke-dashoffset: 132; 
+        }
+    
+        100%{
+            stroke-dashoffset: 132; 
+        }
     }
 }
 

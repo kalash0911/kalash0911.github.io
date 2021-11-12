@@ -78,37 +78,14 @@ function initSliders(selector, width, obj) {
     });
 };
 
-/* initSliders(".partners-slider", 99999, {
-    slidesToShow: 4,
-    slidesToScroll: 4,
+initSliders(".animation-slider", 479, {
+    slidesToShow: 1,
+    slidesToScroll: 1,
     speed: 700,
-    dots: false,
+    dots: true,
     arrows: true,
     adaptiveHeight: true,
     touchThreshold: 50,
-    nextArrow: document.querySelector('.arrow-next'),
-    prevArrow: document.querySelector('.arrow-prev'),
-    responsive: [
-        {
-        breakpoint: 1300,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-            },
-        },
-        {
-        breakpoint: 960,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-            },
-        },
-        {
-        breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            },
-        },
-    ],
-}); */
+    /* nextArrow: document.querySelector('.arrow-next'),
+    prevArrow: document.querySelector('.arrow-prev'), */
+});
