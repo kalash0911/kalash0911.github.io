@@ -22,6 +22,7 @@ body {
 
 .main-btn{
     position: relative;
+    display: inline-block;
     padding: 8px 10px;
     min-width: 175px;
     border: 2px solid $main-blue;
@@ -110,12 +111,28 @@ body {
     }
 }
 
+.btn-wrap{
+    text-align: center;
+}
+
 /* -------------------main--------------------- */
 
 .main-section{
+    position: relative;
     min-height: 100vh;
     padding: 240px 0 20px 0;
     background: url('../images/main-bg1.jpg') 50% 0/cover no-repeat;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        background-color: $black;
+        opacity: 70%;
+    }
 
     @include media('<tablet'){
         padding: 120px 0 20px 0;
@@ -127,12 +144,14 @@ body {
 }
 
 .main-content{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     min-height: calc(100vh - 260px);
+    z-index: 1;
 
     h1{
         @include adaptiv-vaule("font-size", 90, 36, 1);
@@ -413,15 +432,459 @@ body {
 
     .slick-prev{
         left: 20%;
-        background: url(../images/icon/arrow-left.svg);
+        background: url("../images/icon/arrow-left.svg");
     }
 
     .slick-next{
         right: 20%;
-        background: url(../images/icon/arrow-right.svg);
+        background: url("../images/icon/arrow-right.svg");
     }
 
     .slick-disabled{
         opacity: 40%;
+    }
+}
+
+/* //////////////////////pages-main///////////////////// */
+
+.pages-main{
+    position: relative;
+    @include adaptiv-vaule("padding-top", 300, 150, 1);
+    background: url('../images/services-page/services-bg.jpg') 50% 0/cover no-repeat;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        background-color: $black;
+        opacity: 70%;
+    }
+}
+
+.pages-main__title{
+    @include adaptiv-vaule("height", 175, 44, 1);
+    overflow: hidden;
+    text-align: center;
+
+    h1{
+        position: relative;
+        color: $main-blue;
+        font-weight: 800;
+        @include adaptiv-vaule("font-size", 200, 50, 1);
+        margin: 0;
+        z-index: 2;
+    }
+}
+
+/* --------------------------------services----------------------*/
+
+.services{
+    padding: 100px 0 65px 0;
+    background-color: $main-black;
+    overflow: hidden;
+
+    @include media ('<xl-tablet'){
+        padding: 0 0 30px 0;
+    }
+
+    .container{
+
+        @include media ('<phone'){
+            padding: 0;
+        }
+    }
+}
+
+.tabs__item-wrap{
+    position: relative;
+    padding-top: 50px;
+    transition: all 0.3s ease;
+}
+
+.tabs__nav-btn{
+    position: absolute;
+    top: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $main-blue;
+    font-weight: 600;
+    font-size: 20px;
+
+    @include media ('>=xl-tablet'){
+        &::before{
+            content:'';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: $main-blue;
+            transition: all 0.3s ease;
+        }
+    }
+
+    @include media ('<xl-tablet'){
+        position: relative;
+        display: block;
+        min-width: 310px;
+        text-align: left;
+        border: 1px solid $main-blue;
+        padding: 15px 50px 15px 15px;
+        background-color: #1D2525;
+        margin: 20px auto;
+        transition: all 0.5s ease;
+
+        &::before, &::after{
+            content:'';
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            width: 10px;
+            height: 2px;
+            background-color: $main-blue;
+            transition: all 0.5s ease;
+        }
+
+        &::before{
+            transform: rotate(90deg);
+        }
+
+        &::after{
+            transform: rotate(0);
+        }
+    }
+}
+
+.tab_btn1{
+    left: 5%;
+
+    @include media ('<xl-tablet'){
+        left: 0;
+    }
+}
+
+.tab_btn2{
+    left: 50%;
+    transform: translate(-50%);
+
+    @include media ('<xl-tablet'){
+        left: 0;
+        transform: translate(0%);
+    }
+}
+
+.tab_btn3{
+    right: 5%;
+
+    @include media ('<xl-tablet'){
+        right: 0;
+    }
+}
+
+.tab_active{
+    
+    @include media ('>=xl-tablet'){
+
+        &::before{
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+    }
+
+    @include media ('<xl-tablet'){
+        color: $white;
+        background-color: $main-blue;
+        transition: all 0.5s ease;
+
+        &::before, &::after{
+            background-color: $white;
+            transition: all 0.5s ease;
+        }
+
+        &::before{
+            transform: rotate(-135deg);
+        }
+
+        &::after{
+            transform: rotate(135deg);
+        }
+    }
+}
+
+.tabs__item{
+    color: $white;
+    border-top: 3px solid $main-blue;
+    transition: opacity 1s ease;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    @include media ('<xl-tablet'){
+        border: none;
+    }
+}
+
+.tab__item_active{
+    padding-top: 50px;
+    max-height: 99999px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s ease;
+
+    @include media ('<xl-tablet'){
+        transition: max-height 30s ease, opacity 2s ease;
+    }
+}
+
+.services-wrap{
+    display: flex;
+    
+    @include media ('<xl-tablet'){
+        flex-direction: column;
+    }
+}
+
+.services__text-wrap{
+
+    @include media ('<xl-tablet'){
+        order: 2;
+    }
+
+    @include media ('<phone'){
+        padding: 0 25px;
+    }
+}
+
+.services__text{
+    margin-bottom: 100px;
+
+    @include media ('<phone'){
+        margin-bottom: 50px;
+    }
+
+    h2{
+        font-weight: bold;
+        font-size: 40px;
+        color: $main-blue;
+        margin-bottom: 60px;
+
+        @include media ('<phone'){
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+    }
+    
+    p{
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+
+        @include media ('<phone'){
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    }
+
+    ul{
+        margin: 0 0 50px 0;
+        padding: 0;
+        list-style: none;
+        font-size: 20px;
+        line-height: 1.2;
+
+        @include media ('<phone'){
+            font-size: 18px;
+        }
+
+        li{
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+
+            &::before{
+                content:'';
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                left: 10px;
+                top: 10px;
+                border-radius: 50%;
+                background-color: $white;
+            }
+
+            &:first-child{
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.services__slider{
+    overflow: hidden;
+
+    @include media ('<xl-tablet'){
+        order: 1;
+    }
+
+    .slick-track{
+        display: flex;
+    }
+
+    .slick-dots{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 25px 0;
+        list-style: none;
+        
+        button{
+            font-size: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: #464646;
+            width: 14px;
+            height: 14px;
+            margin: 0 5px;
+            transition: all .3s ease 0s;
+        }
+
+        .slick-active{
+
+            button{
+                background-color: $main-blue;
+                transition: all .3s ease 0s;
+            }
+        }
+    }
+}
+
+.services__slider-item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.services__slider-img{
+    position: relative;
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+#tab_1 {
+
+    .services__text-wrap{
+        margin-right: 60px;
+
+        @include media ('<xl-tablet'){
+            margin-right: 0;
+        }
+    }
+    
+    .services__slider1 {
+        max-width: 60%;
+        margin-right: -180px;
+    
+        @include media ('<widescreen'){
+            max-width: 40%;
+            margin-right: 0;
+        }
+
+        @include media ('<xl-tablet'){
+            max-width: 100%;
+        }
+    }
+
+    .services__slider-img{
+        width: 648px;
+        height: 1300px;
+    
+        @include media ('<xl-tablet'){
+            width: 100%;
+            height: 600px;
+        }
+
+    }
+}
+
+#tab_2{
+
+    .services-wrap{
+        flex-direction: column;
+    }
+
+    .services__text-wrap{
+        display: flex;
+        justify-content: space-between;
+
+        @include media ('<xl-tablet'){
+            flex-direction: column;
+        }
+    }
+
+    .services__text{
+        width: 48%;
+
+        @include media ('<xl-tablet'){
+            width: 100%;
+        }
+    }
+
+    .services__slider-img{
+        width: 100%;
+        height: 425px;
+    }
+}
+
+#tab_3{
+
+    .services-wrap{
+        flex-direction: row-reverse;
+
+        @include media ('<xl-tablet'){
+            flex-direction: column;
+        }
+    }
+
+    .services__text-wrap{
+        margin-left: 60px;
+
+        @include media ('<xl-tablet'){
+            margin-left: 0;
+        }
+    }
+    
+    .services__slider3{
+        max-width: 60%;
+        margin-left: -180px;
+    
+        @include media ('<widescreen'){
+            max-width: 40%;
+            margin-left: 0;
+        }
+
+        @include media ('<xl-tablet'){
+            max-width: 100%;
+        }
+    }
+
+    .services__slider-img{
+        width: 648px;
+        height: 1300px;
+    
+        @include media ('<xl-tablet'){
+            width: 100%;
+            height: 600px;
+        }
     }
 }

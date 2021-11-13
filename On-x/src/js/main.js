@@ -79,13 +79,65 @@ function initSliders(selector, width, obj) {
 };
 
 initSliders(".animation-slider", 479, {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 700,
-    dots: true,
-    arrows: true,
-    adaptiveHeight: true,
-    touchThreshold: 50,
-    /* nextArrow: document.querySelector('.arrow-next'),
-    prevArrow: document.querySelector('.arrow-prev'), */
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  speed: 700,
+  dots: true,
+  arrows: true,
+  adaptiveHeight: true,
+  touchThreshold: 50,
+});
+
+const tabsBtn  = document.querySelectorAll('.tabs__nav-btn');
+const tabsItem = document.querySelectorAll('.tabs__item');
+
+tabsBtn.forEach(function(item) {
+    item.addEventListener("click", function(){
+        let currentBtn = item;
+        let tabId = currentBtn.getAttribute('data-tab');
+        let currentTab = document.querySelector(tabId);
+
+        if( ! currentBtn.classList.contains('tab_active')) {
+            tabsBtn.forEach(function(item) {
+                item.classList.remove('tab_active');
+            });
+
+            tabsItem.forEach(function(item) {
+                item.classList.remove('tab__item_active');
+            });
+
+            currentBtn.classList.add('tab_active');
+            currentTab.classList.add('tab__item_active');
+        }
+    });
+});
+
+initSliders(".services__slider1", 999999, {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  speed: 500,
+  dots: true,
+  arrows: false,
+  adaptiveHeight: true,
+  touchThreshold: 50,
+});
+
+initSliders(".services__slider2", 999999, {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  speed: 700,
+  dots: true,
+  arrows: false,
+  adaptiveHeight: true,
+  touchThreshold: 50,
+});
+
+initSliders(".services__slider3", 999999, {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  speed: 500,
+  dots: true,
+  arrows: false,
+  adaptiveHeight: true,
+  touchThreshold: 50,
 });
