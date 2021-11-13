@@ -212,7 +212,7 @@
     path{
         stroke: $main-blue;
         stroke-width: 2; 
-        stroke-dasharray: 66;
+        stroke-dasharray: 67;
         stroke-dashoffset: 0; 
         fill: transparent;
     }
@@ -229,15 +229,15 @@
         }
     
         40%{
-            stroke-dashoffset: 66; 
+            stroke-dashoffset: 67; 
         }
     
         80%{
-            stroke-dashoffset: 132; 
+            stroke-dashoffset: 134; 
         }
     
         100%{
-            stroke-dashoffset: 132; 
+            stroke-dashoffset: 134; 
         }
     }
 }

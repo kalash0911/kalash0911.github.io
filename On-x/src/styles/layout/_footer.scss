@@ -1,0 +1,137 @@
+#footer{
+    border-top: 1px solid $main-blue;
+    padding: 20px 0 10px 0;
+    background-color: $dark-gray;
+}
+
+.footer__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 40px 0;
+
+    @include media('<xl-phone'){
+        flex-direction: column;
+    }
+}
+
+.footer-logo{
+
+    @include media('<xl-phone'){
+        margin-bottom: 50px;
+    }
+}
+
+.footer__top-link{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    font-size: 22px;
+    color: $white;
+    margin-bottom: 30px;
+
+    svg{
+        width: 25px;
+        height: 25px;
+        margin-right: 25px;
+
+        @include media('<phone'){
+           margin-right: 15px;
+        }
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    @include media('<tablet'){
+        display: flex !important;
+    }
+
+    @include media('<xl-phone'){
+        justify-content: center;
+    }
+
+    @include media('<phone'){
+        font-size: 16px;
+    }
+}
+
+.footer__bot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid $main-blue;
+
+    @include media('<xl-phone'){
+       flex-direction: column;
+    }
+
+    a{
+        color: $white;
+        font-weight: 600;
+        font-size: 16px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer__bot-social{
+    display: flex;
+
+    @include media('<tablet'){
+        display: none;
+    }
+    
+    svg{
+        width: 22px;
+        height: 22px;
+        fill: $white;
+    }
+    
+    a{
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        transition: all .3s ease 0s;
+
+        &:hover{
+            text-decoration: none;
+            transition: all .3s ease 0s;
+        
+            svg{
+                fill: $main-blue;
+            }
+        }
+    }
+}
+
+.footer__bot-polici{
+
+    @include media('<xl-phone'){
+       padding-top: 20px;
+    }
+
+    a{
+        margin-right: 50px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        @include media('<xl-phone'){
+            margin-right: 20px;
+        }
+    }
+}
