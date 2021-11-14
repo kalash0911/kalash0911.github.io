@@ -888,3 +888,168 @@ body {
         }
     }
 }
+
+/* --------------------------------propos----------------------*/
+
+.propos{
+    @include adaptiv-vaule("padding-bottom", 130, 80, 1);
+    background-color: $main-black;
+
+    .container{
+        padding: 0;
+        max-width: 1440px;
+    }
+}
+
+.propos__item-wrap{
+    @include adaptiv-vaule("padding-top", 110, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 30 , 0, 1);
+
+    h2{
+        color: $main-blue;
+        margin-bottom: 50px;
+        font-weight: 600;
+    }
+
+    p{
+        color: $white;
+        font-size: 20px;
+        font-weight: 1.2;
+    }
+}
+
+.propos__item{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include adaptiv-vaule("margin-bottom", 100 , 80, 1);
+
+    &:nth-child(even){
+        flex-direction: row-reverse;
+
+        .propos__item-text{
+            margin: 0 15px 0 95px;
+
+            @include media ('<xl-tablet'){
+                width: 53%;
+                margin: 0 0 80px 0;
+                padding: 0 15px;
+            }
+        
+            @include media ('<tablet'){
+                width: 100%;
+            }
+        }
+
+        @include media ('<xl-tablet'){
+            justify-content: space-between;
+        }
+    
+        @include media ('<tablet'){
+            flex-direction: column;
+        }
+    }
+
+    @include media ('<xl-tablet'){
+        justify-content: space-between;
+    }
+
+    @include media ('<tablet'){
+        flex-direction: column;
+    }
+}
+
+.propos__item-text{
+    width: 40%;
+    margin: 0 95px 0 15px;
+
+    @include media ('<xl-tablet'){
+        width: 53%;
+        margin: 0 0 80px 0;
+        padding: 0 15px;
+    }
+
+    @include media ('<tablet'){
+        width: 100%;
+    }
+}
+
+.propos__item-img{
+    position: relative;
+    width: 42%;
+    height: 410px;
+
+    @include media ('<xl-desktop'){
+        height: 310px;
+    }
+
+    @include media ('<xl-tablet'){
+        width: 44%;
+    }
+
+    @include media ('<tablet'){
+        width: 100%;
+    }
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* --------------------------------galerie----------------------*/
+
+.galerie{
+    min-height: 100vh;
+    background-color: $main-black;
+    @include adaptiv-vaule("padding-top", 50, 40, 1);
+    @include adaptiv-vaule("padding-bottom", 130, 35, 1);
+
+    .container{
+        @include media ('<phone'){
+            padding: 0;
+        }
+    }
+}
+
+.galerie-contant{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.galerie__item{
+    width: 32%;
+    margin-bottom: 20px;
+
+    @include media ('<860px'){
+        width: 49%;
+    }
+
+    @include media ('<600px'){
+        width: 100%;
+    }
+}
+
+.galerie__item-img{
+    position: relative;
+    width: 100%;
+    height: 440px;
+
+    @include media ('<desktop'){
+        height: 365px;
+    }
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
