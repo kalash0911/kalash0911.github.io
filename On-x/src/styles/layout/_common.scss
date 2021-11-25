@@ -1017,31 +1017,30 @@ body {
 }
 
 .galerie-contant{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 20px;
 
-.galerie__item{
-    width: 32%;
-    margin-bottom: 20px;
-
-    @include media ('<860px'){
-        width: 49%;
+    @include media ('<900px'){
+        grid-template-columns: 49% 49%;
     }
 
     @include media ('<600px'){
-        width: 100%;
+        grid-template-columns: 100%;
+        gap: 0;
     }
 }
 
-.galerie__item-img{
+.galerie__item{
     position: relative;
-    width: 100%;
     height: 440px;
-
+    
     @include media ('<desktop'){
         height: 365px;
+    }
+
+    @include media ('<600px'){
+        margin-bottom: 20px;
     }
 
     img{
@@ -1051,5 +1050,151 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+/* --------------------------------contacts----------------------*/
+
+.contacts{
+    padding: 120px 0;
+    background-color: $main-black;
+
+    @include media ('<xl-tablet'){
+        padding: 60px 0;
+    }
+}
+
+.contacts-contant{
+
+    form{
+        text-align: center;
+        padding-bottom: 45px;
+
+        input, textarea, select{
+            width: 100%;
+            border: 1px solid $main-blue;
+            padding: 20px;
+            color: #888888;
+            background: $dark-gray;
+            font-size: 20px;
+
+            &::placeholder{
+                color: #888888;
+            }
+
+            &:active, &:focus, &:focus-visible{
+                border: 1px solid $main-blue;
+                border-radius: 0;
+            }
+
+            @include media ('<xl-phone'){
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+
+        button{
+            background: transparent;
+        }
+    }
+
+    .form__list{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 90px;
+
+        @include media ('<xl-tablet'){
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        select{
+            width: 49%;
+
+            @include media ('<xl-tablet'){
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            @include media ('<xl-phone'){
+                width: 100%;
+            }
+        }
+    }
+
+    .form__main{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        @include media ('<xl-tablet'){
+            flex-direction: column;
+            align-items: center;
+        }
+
+        textarea{
+            width: 60%;
+
+            @include media ('<xl-tablet'){
+                width: 80%;
+                height: 300px;
+            }
+
+            @include media ('<xl-phone'){
+                width: 100%;
+                height: 200px;
+            }
+        }
+    }
+    
+    .form__main-name{
+        width: 35%;
+
+        @include media ('<xl-tablet'){
+            width: 80%;
+        }
+
+        @include media ('<xl-phone'){
+            width: 100%;
+        }
+        
+        input{
+            margin-bottom: 30px;
+    
+            &:last-child{
+                margin-bottom: 0;
+
+                @include media ('<xl-tablet'){
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+.contacts__info{
+    padding: 50px 0 0 0;
+    border-top: 1px solid $main-blue;
+    
+    h2{
+        @include adaptiv-vaule("font-size", 40, 30, 1);
+        color: $main-blue;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    p{
+        @include adaptiv-vaule("font-size", 20, 18, 1);
+        color: $white;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 40px;
+    }
+
+    a{
+        @include adaptiv-vaule("font-size", 20, 18, 1);
+        font-weight: 300;
+        max-width: max-content;
     }
 }

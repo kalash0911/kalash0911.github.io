@@ -61,7 +61,7 @@
         stroke: $main-blue;
         stroke-dasharray: 147;
         stroke-dashoffset: 0;
-        animation: logo 2s forwards;
+        animation: logo 5s forwards;
     }
 
     @keyframes logo {
@@ -140,7 +140,7 @@
     line-height: 20px;
     transform: translateY(-30px);
     opacity: 0;
-    animation: logo-text 1s ease forwards;
+    animation: logo-text 2s ease forwards;
 
     @include media('<phone'){
         font-size: 13px;

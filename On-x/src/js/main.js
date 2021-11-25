@@ -120,6 +120,9 @@ initSliders(".services__slider1", 999999, {
   arrows: false,
   adaptiveHeight: true,
   touchThreshold: 50,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  infinite: true,
 });
 
 initSliders(".services__slider2", 999999, {
@@ -130,6 +133,9 @@ initSliders(".services__slider2", 999999, {
   arrows: false,
   adaptiveHeight: true,
   touchThreshold: 50,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  nfinite: true,
 });
 
 initSliders(".services__slider3", 999999, {
@@ -140,4 +146,7 @@ initSliders(".services__slider3", 999999, {
   arrows: false,
   adaptiveHeight: true,
   touchThreshold: 50,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  nfinite: true,
 });
