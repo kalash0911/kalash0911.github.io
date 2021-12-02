@@ -2,6 +2,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.body_lock{
+    overflow: hidden;
+}
+
 .container{
     width: 100%;
     max-width: 1180px;
@@ -21,7 +25,7 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 15px;
-    z-index: 2;
+    z-index: 1;
     overflow: hidden;
     transition: all .3s ease 0s;
     
