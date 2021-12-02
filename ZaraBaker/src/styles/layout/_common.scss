@@ -59,7 +59,7 @@ body {
 
 .main{
     position: relative;
-    padding: 50px 0;
+    padding: 90px 0;
     background-color: hsla(0, 0%, 4%, 0.80);
 
     video, iframe{
@@ -73,23 +73,45 @@ body {
     }
 
     .container{
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 180px);
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @include media('<desktop'){
+            justify-content: flex-end;
+        }
     }
 
     .content{
         max-width: 50%;
+
+        @include media('<tablet'){
+            max-width: 55%;
+        }
+
+        @include media('<600px'){
+            max-width: 100%;
+        }
     }
 
     h1{
+        @include adaptiv-vaule("font-size", 55, 24, 1);
         margin-bottom: 30px;
     }
 
     p{
-        font-size: 18px;
+        @include adaptiv-vaule("font-size", 18, 14, 1);
         line-height: 1.5;
         margin-bottom: 50px;
+    }
+
+    .main-btn{
+
+        @include media('<phone'){
+            display: block;
+            max-width: 191px;
+            margin: 0 auto;
+        }
     }
 }
