@@ -42,7 +42,7 @@ if (linkClose.length) {
     }
 };
 
-/* function initSliders(selector, width, obj) {
+function initSliders(selector, width, obj) {
     const init = {
       infinite: false,
       cssEase: "linear",
@@ -66,15 +66,39 @@ if (linkClose.length) {
     });
 };
 
-initSliders(".animation-slider", 479, {
-  slidesToShow: 1,
-  slidesToScroll: 1,
+initSliders(".icons-slider", 99999, {
   speed: 700,
   dots: true,
-  arrows: true,
-  adaptiveHeight: true,
+  arrows: false,
   touchThreshold: 50,
-}); */
+  slidesPerRow: 2,
+  rows: 3,
+  adaptiveHeight: true,
+  responsive:[
+    {
+      breakpoint: 1025,
+      settings: {
+        slidesPerRow: 3,
+        rows: 2,
+      },
+    },{
+      breakpoint: 768,
+      settings: {
+        slidesPerRow: 1,
+        rows: 3,
+      },
+    },
+  ],
+});
+
+initSliders(".testi-slider", 99999, {
+  slidesToShow: 1,
+  adaptiveHeight: true,
+  speed: 700,
+  dots: true,
+  arrows: false,
+  touchThreshold: 50,
+});
 
 /* const tabsBtn  = document.querySelectorAll('.tabs__nav-btn');
 const tabsItem = document.querySelectorAll('.tabs__item');
