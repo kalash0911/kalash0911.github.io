@@ -121,7 +121,7 @@ initSliders(".testi-slider", 99999, {
   touchThreshold: 50,
 });
 
-/* const tabsBtn  = document.querySelectorAll('.tabs__nav-btn');
+const tabsBtn  = document.querySelectorAll('.tabs__nav-btn');
 const tabsItem = document.querySelectorAll('.tabs__item');
 
 tabsBtn.forEach(function(item) {
@@ -143,4 +143,4 @@ tabsBtn.forEach(function(item) {
             currentTab.classList.add('tab__item_active');
         }
     });
-}); */
+});

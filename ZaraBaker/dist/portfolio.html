@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zara Baker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/jquery-3.5.1.min.js" defer></script>
+    <script src="./js/wow.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="container">
+                <div class="content">
+                    <a href="index.html" class="logo">
+                        <svg viewBox="0 0 195 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_4384_11414)">
+                            <path d="M0.133301 25.4477L13.2613 1.90479H16.9791L3.88475 25.4477H0.133301ZM1.94811 5.27859V1.90479H9.20736L7.48077 5.2439L1.94811 5.27859ZM16.6977 22.1693V25.4477H7.96808L9.69047 22.1043L16.6977 22.1693Z" fill="white"/>
+                            <path d="M19.3989 25.4176L24.3897 14.2684H28.1411L23.1504 25.4176H19.3989ZM25.8138 11.0551L30.4684 0.5L35.1567 11.0551H25.8138ZM32.9554 14.2381L36.4926 14.2077L41.4833 25.4827L37.7025 25.4523L32.9554 14.2381Z" fill="white"/>
+                            <path d="M48.163 1.96558C50.2215 2.07399 51.885 2.66376 53.1537 3.74789C54.4224 4.83202 55.103 6.34979 55.1828 8.30556C55.2893 9.52616 55.0971 10.7548 54.6241 11.8789C54.1589 12.7995 53.5017 13.6022 52.7 14.2292C51.9771 14.8111 51.1421 15.2265 50.2509 15.4478L57.237 25.4218L53.0025 25.3914L46.5918 15.8511C46.3482 15.8511 46.1087 15.8815 45.8651 15.8815L42.5043 15.8164L42.4749 12.6941H45.8903C46.3944 12.6941 46.8145 12.6941 47.1506 12.6941C47.5558 12.6751 47.9597 12.6331 48.3604 12.5684C48.767 12.5123 49.1678 12.418 49.5577 12.2865C49.909 12.1576 50.2434 11.9843 50.5533 11.7704C50.8756 11.5647 51.1496 11.2877 51.3557 10.9595C51.5636 10.588 51.7058 10.1812 51.7758 9.7583C51.8787 9.21854 51.9 8.66558 51.8388 8.11909C51.784 7.60799 51.5838 7.1251 51.2633 6.73141C50.9256 6.28757 50.4947 5.92872 50.003 5.68197C49.2748 5.36974 47.9025 5.22519 45.8861 5.24832H42.4707V1.87451C44.5936 1.87451 46.491 1.90487 48.163 1.96558Z" fill="white"/>
+                            <path d="M59.6272 25.4176L64.6179 14.2684H68.3694L63.3786 25.4176H59.6272ZM66.0421 11.0551L70.6967 0.5L75.385 11.0551H66.0421ZM73.1837 14.2381L76.7209 14.2077L81.7116 25.4827L77.9307 25.4523L73.1837 14.2381Z" fill="white"/>
+                            <path d="M101.397 2.00068C102.284 2.04407 103.15 2.28366 103.939 2.70319C104.632 3.06304 105.241 3.57343 105.724 4.19929C106.153 4.76937 106.5 5.40034 106.754 6.07267C106.99 6.70752 107.132 7.37572 107.174 8.05445C107.196 8.616 107.151 9.17823 107.039 9.72835C106.958 10.1881 106.816 10.6345 106.619 11.0553C106.452 11.38 106.264 11.6929 106.056 11.992C105.918 12.2025 105.751 12.3909 105.56 12.5514L105.346 12.7379L105.766 12.9113C106.096 13.0727 106.409 13.2658 106.703 13.4881C107.145 13.7996 107.542 14.1733 107.884 14.5983C108.294 15.1502 108.616 15.7666 108.837 16.4239C109.136 17.2574 109.293 18.1374 109.304 19.0258C109.318 20.126 109.008 21.2047 108.413 22.1178C107.79 23.1006 106.956 23.9225 105.976 24.5202C105.555 24.7573 105.11 24.9463 104.649 25.0839C104.03 25.249 103.397 25.3478 102.758 25.3788C101.981 25.4309 101.347 25.4612 100.851 25.4742C100.355 25.4872 99.5111 25.4742 98.3096 25.4742C97.1081 25.4742 96.247 25.4439 95.726 25.4439L95.7554 14.5766L95.726 12.018C97.0171 11.9978 98.1556 11.9877 99.1414 11.9877H99.9606C100.12 11.9877 100.381 11.9877 100.717 11.953C100.975 11.9459 101.232 11.9155 101.486 11.8619C101.658 11.8185 101.885 11.7578 102.166 11.6754C102.396 11.6177 102.612 11.5114 102.8 11.3632C102.943 11.2375 103.103 11.077 103.288 10.8775C103.468 10.6834 103.601 10.4489 103.678 10.1924C103.767 9.89595 103.833 9.59293 103.876 9.28602C103.921 8.89711 103.921 8.50407 103.876 8.11516C103.813 6.97033 103.422 6.17674 102.695 5.74309C101.969 5.30944 100.801 5.10562 99.1876 5.14899L95.7092 5.11863V1.90094C97.8097 1.86047 99.7057 1.89371 101.397 2.00068ZM99.07 14.9582C99.07 17.391 99.07 19.8194 99.0994 22.2305C101.34 22.2739 102.943 22.0758 103.909 21.6364C104.481 21.3827 104.974 20.9735 105.338 20.4525C105.705 19.9252 105.897 19.2892 105.884 18.6399C105.884 17.1944 105.308 16.1825 104.157 15.6043C103.212 15.1013 101.586 14.8975 99.2884 14.9799L99.07 14.9582Z" fill="white"/>
+                            <path d="M111.681 25.4176L116.681 14.2684H120.432L115.42 25.4176H111.681ZM118.096 11.0551L122.751 0.5L127.439 11.0551H118.096ZM125.238 14.2381L128.775 14.2077L133.766 25.4827L129.985 25.4523L125.238 14.2381Z" fill="white"/>
+                            <path d="M142.05 1.9655V6.52751L138.479 1.9655H142.05ZM138.66 25.4477L138.525 8.43124L142.096 13.0193L142.126 25.4477H138.66ZM152.725 1.90479L157.144 1.93514L147.251 12.3037L157.808 25.4477H153.027L145.377 15.9074V9.66281L152.725 1.90479Z" fill="white"/>
+                            <path d="M175.321 1.90479V5.21354L161.559 5.27859V1.93514L175.321 1.90479ZM175.321 22.1043V25.4477L161.63 25.4781L161.542 22.139L175.321 22.1043ZM175.073 10.8987V14.2378L161.584 14.1771V10.9291L175.073 10.8987Z" fill="white"/>
+                            <path d="M185.059 1.9655C187.118 2.07391 188.781 2.66368 190.05 3.74781C191.319 4.83193 191.995 6.34971 192.079 8.30548C192.187 9.52653 191.993 10.7558 191.516 11.8788C191.055 12.8033 190.399 13.6094 189.596 14.2378C188.873 14.8196 188.038 15.2351 187.147 15.4564L194.133 25.4304L189.899 25.4L183.476 15.8944C183.232 15.8944 182.992 15.9247 182.749 15.9247L179.388 15.8597L179.359 12.7374H182.774C183.278 12.7374 183.698 12.7374 184.034 12.7374C184.44 12.7184 184.843 12.6764 185.244 12.6116C185.649 12.5562 186.049 12.4619 186.437 12.3298C186.79 12.201 187.126 12.0277 187.437 11.8137C187.759 11.608 188.033 11.331 188.239 11.0028C188.446 10.6304 188.588 10.224 188.66 9.80158C188.762 9.26182 188.784 8.70886 188.723 8.16238C188.667 7.6516 188.466 7.16906 188.147 6.77469C187.809 6.33117 187.378 5.97239 186.887 5.72526C186.164 5.41303 184.786 5.2916 182.774 5.2916H179.359V1.9178C181.487 1.88889 183.387 1.90479 185.059 1.9655Z" fill="white"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_4384_11414">
+                            <rect width="194" height="25" fill="white" transform="translate(0.133301 0.5)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <nav class="menu-wrap">
+                        <ul class="menu">
+                            <li class="menu-name">
+                                <span>ME NU</span>
+                                <p>Menu</p>
+                            </li>
+                            <li class="menu-item main-item">
+                                <a class="link" href="#">Main</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="link" href="about.html">About me</a>
+                            </li>
+                            <li class="menu-item">
+                                <div class="controls">
+                                    <a class="link" href="service.html">Services</a>
+                                    <button class="arrows btn-arrow">
+                                        <span class="btn-arrow"></span>
+                                        <span class="btn-arrow"></span>
+                                    </button>
+                                </div>
+                                <ul class="sub-menu">
+                                    <li class="sub-item">
+                                        <a href="service-pages.html"> Full-service digital marketing</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="service-pages.html"> Brand identity and communications</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="service-pages.html"> Website and mobile app development</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a href="service-pages.html"> Corporate training and speaking</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a class="link" href="portfolio.html">Portfolio</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="link" href="#">News & Media</a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="link contact-btn" href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="social">
+                            <a href="#" target="_blank" class="link-close">
+                                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M33.3994 0.93042H6.15605C3.04403 0.93042 0.511719 3.46273 0.511719 6.57476V33.8181C0.511719 36.9301 3.04403 39.4624 6.15605 39.4624H33.3994C36.5114 39.4624 39.0437 36.9301 39.0437 33.8181V6.57476C39.0437 3.46273 36.5114 0.93042 33.3994 0.93042ZM14.1334 31.4851H9.61791V15.681H14.1334V31.4851ZM14.1334 13.4232H9.61791V8.90775H14.1334V13.4232ZM29.9375 31.4851H25.4221V22.4542C25.4221 21.2095 24.409 20.1964 23.1643 20.1964C21.9196 20.1964 20.9066 21.2095 20.9066 22.4542V31.4851H16.3911V15.681H20.9066V16.532C22.0895 16.1642 22.858 15.681 24.2932 15.681C27.3555 15.6842 29.9375 18.4314 29.9375 21.6781V31.4851Z"/>
+                                </svg>
+                            </a>
+                            <a href="#" target="_blank" class="link-close">
+                                <svg viewBox="0 0 46 40"  xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M40.7721 7.06626L45.3755 5.77964L45.6009 6.01022C44.3317 7.32682 43.1211 8.69646 41.7685 9.93006C41.1869 10.4696 40.9344 10.9492 40.9367 11.7609C40.9682 24.0069 33.2381 34.9478 22.0746 38.2474C14.3805 40.5232 6.99973 39.5917 0.0585938 35.4067C2.38959 35.0816 4.71834 34.9017 6.9772 34.4014C9.29241 33.8872 11.3844 32.7435 13.4246 31.0857C11.3303 30.8551 9.54264 30.2694 8.01419 29.0404C6.46874 27.8515 5.3308 26.1929 4.76342 24.302H8.41322C4.16377 22.4989 1.7381 19.4599 1.42474 14.6869L5.14216 15.7337L5.34054 15.5031C1.56676 11.8969 0.326858 7.78798 2.7886 2.74983C7.95331 8.84403 14.2858 12.2981 22.176 12.8215C22.176 11.5118 22.0227 10.2851 22.2053 9.10458C22.7779 5.41532 24.8519 2.84437 28.2515 1.56697C31.651 0.289559 34.859 0.893678 37.6363 3.29861C38.3126 3.88198 38.8627 4.03647 39.6359 3.7321C41.1621 3.13029 42.6973 2.54923 44.3024 1.93128C43.7095 4.07336 42.3208 5.57211 40.7721 7.06626Z"/>
+                                </svg> 
+                            </a>
+                        </div>
+                    </nav>
+                    <button class="burger">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main id="main" class="page-main">
+            <section class="services pages">
+                <div class="big-text">
+                    <p>port<br>folio</p>
+                </div>
+                <div class="container">
+                    <div class="content">
+                        <h1>Portfolio</h1>
+                        <div class="img">
+                            <img src="./images/portfolio.jpg" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="wing wing-revers">
+                    <img src="./images/wingGo.png" alt="img">
+                </div>
+            </section>
+            <section class="portfolio port">
+                <div class="container">
+                    <div class="content">
+                        <div class="tabs__item-wrap">
+                            <button class="tabs__nav-btn tab_btn1 tab_active " data-tab="#tab_1">Digital marketing</button>
+                            <div id="tab_1" class="tabs__item tab__item_active">
+                                <div class="item-wrap">
+                                    <div class="item item1 wow animate__animated animate__fadeInLeft">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/1.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Marketing</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2 wow animate__animated animate__fadeInRight">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/2.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Marketing</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1 wow animate__animated animate__fadeInLeft">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/3.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2 wow animate__animated animate__fadeInRight">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/4.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1 wow animate__animated animate__fadeInLeft">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/5.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2 wow animate__animated animate__fadeInRight">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/6.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1 wow animate__animated animate__fadeInLeft">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/7.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2 wow animate__animated animate__fadeInRight">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/8.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="tabs__nav-btn tab_btn2" data-tab="#tab_2">Brand identity</button>
+                            <div id="tab_2" class="tabs__item ">
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/5.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/6.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/7.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/8.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/1.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Marketing</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/2.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Marketing</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/3.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/4.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="tabs__nav-btn tab_btn3" data-tab="#tab_3">Web&App</button>
+                            <div id="tab_3" class="tabs__item ">
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/7.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/8.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/3.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/4.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/5.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/6.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="tabs__nav-btn tab_btn4" data-tab="#tab_4">Training</button>
+                            <div id="tab_4" class="tabs__item ">
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/3.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/4.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Brand identity</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/5.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/6.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Web&App</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/7.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/8.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Training</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-wrap">
+                                    <div class="item item1">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/1.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Marketing</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item item2">
+                                        <div class="item-content">
+                                            <div class="img">
+                                                <img src="./images/main-page/port/2.jpg" alt="img">
+                                            </div>
+                                            <div class="text">
+                                                <p>Lorem ipsum</p>
+                                                <span># Marketing</span>
+                                            </div>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="main-btn">
+                                                See more
+                                                <img src="./images/icon/arrow1.svg" alt="icon">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="container">
+        
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
