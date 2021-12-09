@@ -6,6 +6,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+new WOW().init();
+
 window.onload = function () {
   document.addEventListener("click", documentActions);
 
@@ -81,6 +83,22 @@ function initSliders(selector, width, obj) {
 }
 
 ;
+initSliders(".servis-slider", 767, {
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  adaptiveHeight: true,
+  speed: 700,
+  dots: true,
+  arrows: false,
+  touchThreshold: 50,
+  responsive: [{
+    breakpoint: 660,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }]
+});
 initSliders(".icons-slider", 99999, {
   speed: 700,
   dots: true,

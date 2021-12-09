@@ -4,7 +4,7 @@ header{
     top: 0;
     left: 0;
     padding: 40px 0 20px 0;
-    z-index: 2;
+    z-index: 10;
 
     @include media('<desktop'){
         padding: 35px 0 20px 0;
@@ -291,6 +291,20 @@ header{
 
             .link{
                 color: $yellow;
+            }
+        }
+
+        .contact-btn{
+            text-align: center;
+            min-width: 191px;
+            padding: 13px 15px;
+            border-radius: 5px;
+            background-color: $purpule-text;
+            transition: all .3s ease 0s;
+        
+            &:hover{
+                background-color: $purpule;
+                color: $white;
             }
         }
 

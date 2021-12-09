@@ -67,7 +67,7 @@
                 }
         
                 @include media('<tablet'){
-                    display: none;
+                    width: 100%;
                 }
             }
         
@@ -78,9 +78,6 @@
                     width: 48%;
                 }
         
-                @include media('<tablet'){
-                    width: 100%;
-                }
             }
         }
     }
