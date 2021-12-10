@@ -72,7 +72,6 @@ body {
 
 .wing{
     position: absolute;
-    top: -100px;
     right: -50%;
     width: 880px;
     height: 580px;
@@ -969,7 +968,7 @@ body {
     }
 
     .wing{
-        top: 70%;
+        bottom: -130px;
     }
 }
 
@@ -1078,7 +1077,7 @@ body {
     }
 
     .wing{
-        top: 70%;
+        bottom: -130px;
     }
 }
 
@@ -1124,6 +1123,10 @@ body {
 .full-digital-icon{
     position: relative;
     padding: 65px 0 60px 0;
+
+    .wing{
+        top: -200px;
+    }
 
     h3{
         @include adaptiv-vaule("margin-bottom", 90 , 35, 1);
@@ -1196,14 +1199,19 @@ body {
     color: $white;
 
     @include media ('>=tablet'){
-        &::before{
+
+        &::after{
             content:'';
             position: absolute;
             bottom: -10px;
             left: 0;
             width: 0;
-            height: 3px;
-            transition: all 0.3s ease;
+            height: 4px;
+            background-color: #FAB2FF;
+            border-radius: 10px;
+            transition: all .7s ease 0s;
+            box-shadow: 0px 5px 30px 5px #FAB2FF;
+            z-index: 2;            
         }
     }
 
@@ -1225,6 +1233,7 @@ body {
             width: 10px;
             height: 2px;
             transition: all 0.5s ease;
+            background-color: $purpule-text;
         }
 
         &::before{
@@ -1246,22 +1255,18 @@ body {
 }
 
 .tab_btn2{
-    left: 40%;
-    transform: translate(-40%);
+    left: 34%;
 
     @include media ('<tablet'){
         left: 0;
-        transform: translate(0%);
     }
 }
 
 .tab_btn3{
-    left: 70%;
-    transform: translate(-70%);
+    left: 62%;
 
     @include media ('<tablet'){
         left: 0;
-        transform: translate(0%);
     }
 }
 
@@ -1275,24 +1280,10 @@ body {
 
 .tab_active{
 
-    &::after{
-        content:'';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background-color: #FAB2FF;
-        border-radius: 10px;
-        transition: all .3s ease 0s;
-        box-shadow: 0px 5px 30px 5px #FAB2FF;
-        z-index: 2;
-    }
-    
     @include media ('>=tablet'){
 
-        &::before{
-            transition: all 0.3s ease;
+        &::after{
+            transition: all 0.7s ease;
             width: 100%;
         }
     }
@@ -1339,9 +1330,268 @@ body {
 /* -----------------------------portfolio------------------------- */
 
 .portfolio{
+
+    .container{
+        @include media('<phone'){
+            padding: 0;
+        }
+    }
+
+    .item{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include media('<tablet'){
+            margin-bottom: 60px;
+        }
+
+        @include media('<phone'){
+            text-align: center;
+        }
+    }
+
+    .item1{
+        width: 38%;
+
+        @include media('<Xtablet'){
+            width: 48%;
+        }
+
+        @include media('<tablet'){
+            width: 100%;
+        }
+    }
+
+    .item2{
+        width: 58%;
+
+        @include media('<Xtablet'){
+            width: 48%;
+        }
+
+        @include media('<tablet'){
+            width: 100%;
+        }
+    }
+
     .item-wrap{
-        .item2{
-            display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+
+        @include media('<tablet'){
+            flex-direction: column;
+            padding: 0;
+        }
+
+        &:nth-child(odd){
+            .item1{
+                width: 58%;
+        
+                @include media('<Xtablet'){
+                    width: 48%;
+                }
+        
+                @include media('<tablet'){
+                    width: 100%;
+                }
+            }
+        
+            .item2{
+                width: 38%;
+        
+                @include media('<Xtablet'){
+                    width: 48%;
+                }
+
+                @include media('<tablet'){
+                    width: 100%;
+                }
+        
+            }
+        }
+    }
+
+    .img{
+        height: 340px;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 20px;
+
+        @include media('<tablet'){
+            height: 440px;
+        }
+
+        @include media('<phone'){
+            height: 250px;
+        }
+    }
+
+    .text{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        p{
+            font-weight: bold;
+            @include adaptiv-vaule("font-size", 28, 18, 1);
+            line-height: 119%;
+            padding-right: 15px;
+
+            @include media('<phone'){
+                padding: 0 15px;
+                margin: 0 auto;
+            }
+        }
+
+        span{
+            font-size: 18px;
+            font-weight: normal;
+            color: $white;
+            text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 100px #ffffff, 0 0 10px #15F2FD, 0 0 50px #15F2FD, 0 0 10px #15F2FD, 0 0 0px #15F2FD, 0 0 1px #15F2FD;
+            white-space: nowrap;
+
+            @include media('<phone'){
+                display: none;
+            }
+        }
+    }
+}
+
+/* -----------------------------portfolio-pages------------------------- */
+
+.case{
+    position: relative;
+    @include adaptiv-vaule("padding-top", 315, 90, 1);
+    padding-bottom: 35px;
+
+    .big-text{
+        top: 10%;
+    }
+
+    .container{
+        position: relative;
+        z-index: 2;
+    }
+
+    h1{
+        @include adaptiv-vaule("font-size", 55, 36, 1);
+        margin-bottom: 75px;
+    }
+
+    span{
+        color: $purpule-text;
+    }
+
+    .wing{
+        bottom: -130px;
+    }
+}
+
+/* -----------------------------project------------------------- */
+
+.project{
+    padding: 35px 0 40px 0;
+
+    h3{
+        @include adaptiv-vaule("font-size", 30, 28, 1);
+        margin-bottom: 10px;
+
+        @include media('<phone'){
+            text-align: center;
+        }
+    }
+
+    p{
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    .title{
+        @include adaptiv-vaule("margin-bottom", 80 , 30, 1);
+
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+
+        @include media('<Ltablet'){
+            flex-direction: column;
+        }
+
+        h3{
+            @include adaptiv-vaule("font-size", 30, 22, 1);
+            margin-bottom: 10px;
+
+            @include media('<phone'){
+                text-align: start;
+            }
+        }
+
+        p{
+            margin-bottom: 40px;
+        }
+    }
+
+    .img-wrap{
+        width: 65%;
+
+        @include media('<desktop'){
+            width: 60%;
+        }
+
+        @include media('<tablet'){
+            width: 48%;
+        }
+
+        @include media('<Ltablet'){
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+
+    .description{
+        width: 28%;
+
+        @include media('<desktop'){
+            width: 37%;
+        }
+
+        @include media('<tablet'){
+            width: 48%;
+        }
+
+        @include media('<Ltablet'){
+            width: 100%;
+        }
+
+        @include media('<phone'){
+            text-align: center;
+        }
+
+        h3, p{
+            @include media('<phone'){
+                text-align: start;
+            }
+        }
+
+        .main-btn{
+            display: flex;
+
+            @include media('<Ltablet'){
+                display: inline-flex;
+            }
+        }
+    }
+    
+    .feedback{
+
+        .user{
+            margin-bottom: 40px;
         }
     }
 }
