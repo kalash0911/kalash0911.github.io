@@ -1754,6 +1754,7 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .lastnews .item {
+    position: relative;
     max-width: 361px;
     width: 32%; }
     @media (max-width: 479px) {
@@ -1771,6 +1772,20 @@ body {
       display: block;
       font-size: 15px;
       color: #7C2BFF; }
+    .lastnews .item a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: #090909;
+      font-size: 0;
+      color: transparent;
+      opacity: 0;
+      transition: all .3s ease 0s; }
+      .lastnews .item a:hover {
+        opacity: 50%; }
     @media (max-width: 1023px) {
       .lastnews .item {
         width: 48%; }
@@ -2453,14 +2468,23 @@ body {
     @media (max-width: 479px) {
       .project h3 {
         text-align: center; } }
-  .project p {
+  .project p, .project li {
     /* Только если меньше контейнера */
     font-size: 20px;
     font-weight: 300;
     line-height: 1.5; }
     @media (max-width: 1150px) {
-      .project p {
+      .project p, .project li {
         font-size: calc(16px + 4 * ((100vw - calc(320px)) / 830)); } }
+  .project ul {
+    margin: 0;
+    padding: 0 0 0 40px; }
+    @media (max-width: 479px) {
+      .project ul {
+        padding: 0 0 0 20px; } }
+  .project li {
+    letter-spacing: -0.01em;
+    color: #fff; }
   .project .title {
     /* Только если меньше контейнера */
     margin-bottom: 80px; }
@@ -2477,6 +2501,10 @@ body {
       .project .block {
         -ms-flex-direction: column;
         flex-direction: column; } }
+    @media (max-width: 479px) {
+      .project .block {
+        margin: 0 -15px;
+        margin-bottom: 35px; } }
     .project .block h3 {
       /* Только если меньше контейнера */
       font-size: 30px;
@@ -2501,6 +2529,12 @@ body {
       .project .img-wrap {
         width: 100%;
         margin-bottom: 40px; } }
+  .project .img-row {
+    margin-bottom: 60px; }
+    @media (max-width: 479px) {
+      .project .img-row {
+        margin: 0 -15px;
+        margin-bottom: 35px; } }
   .project .description {
     width: 28%; }
     @media (max-width: 1023px) {
@@ -2514,7 +2548,8 @@ body {
         width: 100%; } }
     @media (max-width: 479px) {
       .project .description {
-        text-align: center; } }
+        text-align: center;
+        padding: 0 15px; } }
     @media (max-width: 479px) {
       .project .description h3, .project .description p {
         text-align: start; } }
@@ -2527,6 +2562,238 @@ body {
           display: inline-flex; } }
   .project .feedback .user {
     margin-bottom: 40px; }
+  .project .block-img {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 70px; }
+    @media (max-width: 479px) {
+      .project .block-img {
+        margin: 0 -15px;
+        margin-bottom: 35px; } }
+    .project .block-img .img {
+      /* Только если меньше контейнера */
+      height: 565px;
+      width: 49.7%;
+      margin-bottom: 7px;
+      border-radius: 3px; }
+      @media (max-width: 1150px) {
+        .project .block-img .img {
+          height: calc(450px + 115 * ((100vw - calc(320px)) / 830)); } }
+      @media (max-width: 767px) {
+        .project .block-img .img {
+          width: 100%; } }
+  .project .block2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 959px) {
+      .project .block2 {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    @media (max-width: 479px) {
+      .project .block2 {
+        margin: 0 -15px;
+        margin-bottom: 35px; } }
+    .project .block2 .title {
+      width: 46%; }
+      @media (max-width: 959px) {
+        .project .block2 .title {
+          width: 100%;
+          margin-bottom: 35px; } }
+      @media (max-width: 479px) {
+        .project .block2 .title {
+          padding: 0 15px; } }
+    .project .block2 .img {
+      height: 685px;
+      width: 49%; }
+      @media (max-width: 1023px) {
+        .project .block2 .img {
+          height: 720px; } }
+      @media (max-width: 959px) {
+        .project .block2 .img {
+          height: 450px;
+          width: 100%; } }
+  .project .btn-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 35px; }
+    @media (max-width: 767px) {
+      .project .btn-wrap {
+        margin-bottom: 50px; } }
+  .project .nextbtn-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .project .nextbtn-wrap a {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 24px; }
+      @media (max-width: 767px) {
+        .project .nextbtn-wrap a {
+          font-size: 0;
+          color: transparent; } }
+      .project .nextbtn-wrap a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        transition: all .3s ease 0s; }
+      .project .nextbtn-wrap a:hover::after {
+        width: 100%; }
+      @media (max-width: 767px) {
+        .project .nextbtn-wrap a:first-child {
+          margin-left: 60px; } }
+      .project .nextbtn-wrap a:first-child img {
+        margin-right: 30px; }
+      @media (max-width: 767px) {
+        .project .nextbtn-wrap a:last-child {
+          margin-right: 60px; } }
+      .project .nextbtn-wrap a:last-child img {
+        margin-left: 30px; }
+
+/* -----------------------------news------------------------- */
+.news {
+  position: relative;
+  /* Только если меньше контейнера */
+  margin-bottom: 130px;
+  min-height: 50vh; }
+  @media (max-width: 1150px) {
+    .news {
+      margin-bottom: calc(70px + 60 * ((100vw - calc(320px)) / 830)); } }
+  @media (max-width: 479px) {
+    .news .container {
+      padding: 0; } }
+  .news .wing {
+    top: 50%; }
+  .news .content {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 30px; }
+    @media (max-width: 1023px) {
+      .news .content {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        gap: 0; } }
+    @media (max-width: 659px) {
+      .news .content {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .news .item {
+    position: relative;
+    /* Только если меньше контейнера */
+    margin-bottom: 100px; }
+    @media (max-width: 1150px) {
+      .news .item {
+        margin-bottom: calc(70px + 30 * ((100vw - calc(320px)) / 830)); } }
+    @media (max-width: 1023px) {
+      .news .item {
+        width: 48%;
+        max-width: 360px; } }
+    @media (max-width: 659px) {
+      .news .item {
+        width: 100%;
+        max-width: 100%; } }
+    .news .item p {
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 119%;
+      margin-bottom: 20px; }
+      @media (max-width: 479px) {
+        .news .item p {
+          padding: 0 15px; } }
+    .news .item span {
+      font-size: 15px;
+      line-height: 115.5%;
+      letter-spacing: 0.05em;
+      color: #7C2BFF; }
+      @media (max-width: 479px) {
+        .news .item span {
+          padding: 0 15px; } }
+    .news .item a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: #090909;
+      font-size: 0;
+      color: transparent;
+      opacity: 0;
+      transition: all .3s ease 0s; }
+      .news .item a:hover {
+        opacity: 50%; }
+  .news .img {
+    width: 100%;
+    height: 360px;
+    margin-bottom: 20px; }
+
+/* -----------------------------news-pages------------------------- */
+.news-pages {
+  position: relative;
+  padding-bottom: 50px; }
+  .news-pages h3 {
+    font-weight: bold;
+    font-size: 36px;
+    /* Только если меньше контейнера */
+    margin-bottom: 80px;
+    text-align: center; }
+    @media (max-width: 1150px) {
+      .news-pages h3 {
+        margin-bottom: calc(30px + 50 * ((100vw - calc(320px)) / 830)); } }
+  .news-pages .img-wrap {
+    margin-bottom: 30px;
+    text-align: center; }
+  .news-pages .discription {
+    padding: 15px 0; }
+    .news-pages .discription p {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.5; }
+  .news-pages .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .news-pages .block .discription {
+      width: 48%; }
+    .news-pages .block .img {
+      width: 48%;
+      height: 550px; }
+  .news-pages .author {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center; }
+    .news-pages .author .data {
+      font-size: 16px;
+      line-height: 133%;
+      color: #fff; }
+  .news-pages .wing {
+    bottom: 0; }
 
 .port {
   background-color: #211242; }

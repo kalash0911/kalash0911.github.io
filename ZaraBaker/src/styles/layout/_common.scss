@@ -678,6 +678,7 @@ body {
     }
 
     .item{
+        position: relative;
         max-width: 361px;
         width: 32%;
 
@@ -695,6 +696,24 @@ body {
             display: block;
             font-size: 15px;
             color: $purpule-text;
+        }
+
+        a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color:  $main-black;
+            font-size: 0;
+            color: transparent;
+            opacity: 0;
+            transition: all .3s ease 0s;
+
+            &:hover{
+                opacity: 50%;
+            }
         }
 
         @include media('<desktop'){
@@ -1503,15 +1522,28 @@ body {
         }
     }
 
-    p{
+    p, li{
         @include adaptiv-vaule("font-size", 20, 16, 1);
         font-weight: 300;
         line-height: 1.5;
     }
 
+    ul{
+        margin: 0;
+        padding: 0 0 0 40px;
+
+        @include media('<phone'){
+            padding: 0 0 0 20px;
+        }
+    }
+
+    li{
+        letter-spacing: -0.01em;
+        color: $white;
+    }
+
     .title{
         @include adaptiv-vaule("margin-bottom", 80 , 30, 1);
-
     }
 
     .block{
@@ -1521,6 +1553,11 @@ body {
 
         @include media('<Ltablet'){
             flex-direction: column;
+        }
+
+        @include media('<phone'){
+            margin: 0 -15px;
+            margin-bottom: 35px;
         }
 
         h3{
@@ -1554,6 +1591,15 @@ body {
         }
     }
 
+    .img-row{
+        margin-bottom: 60px;
+
+        @include media('<phone'){
+            margin: 0 -15px;
+            margin-bottom: 35px;
+        }
+    }
+
     .description{
         width: 28%;
 
@@ -1571,6 +1617,7 @@ body {
 
         @include media('<phone'){
             text-align: center;
+            padding: 0 15px;
         }
 
         h3, p{
@@ -1593,5 +1640,290 @@ body {
         .user{
             margin-bottom: 40px;
         }
+    }
+
+    .block-img{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 70px;
+
+        @include media('<phone'){
+            margin: 0 -15px;
+            margin-bottom: 35px;
+        }
+
+        .img{
+            @include adaptiv-vaule("height", 565, 450, 1);
+            width: 49.7%;
+            margin-bottom: 7px;
+            border-radius: 3px;
+
+            @include media('<tablet'){
+                width: 100%;
+            }
+        }
+    }
+
+    .block2{
+        display: flex;
+        justify-content: space-between;
+
+        @include media('<Xtablet'){
+            flex-direction: column;
+        }
+
+        @include media('<phone'){
+            margin: 0 -15px;
+            margin-bottom: 35px;
+        }
+        
+        .title{
+            width: 46%;
+
+            @include media('<Xtablet'){
+                width: 100%;
+                margin-bottom: 35px;
+            }
+
+            @include media('<phone'){
+                padding: 0 15px;
+            }
+        }
+
+        .img{
+            height: 685px;
+            width: 49%;
+
+            @include media('<desktop'){
+                height: 720px;
+            }
+
+            @include media('<Xtablet'){
+                height: 450px;
+                width: 100%;
+            }
+        }
+    }
+
+    .btn-wrap{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+
+        @include media('<tablet'){
+            margin-bottom: 50px;
+        }
+    }
+
+    .nextbtn-wrap{
+        display: flex;
+        justify-content: space-between;
+
+        a{
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+
+            @include media('<tablet'){
+                font-size: 0;
+                color: transparent;
+            }
+
+            &::after{
+                content:'';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background-color: $white;
+                transition: all .3s ease 0s;
+            }
+
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+
+            &:first-child{
+                @include media('<tablet'){
+                    margin-left: 60px;
+                }
+
+                img{
+                    margin-right: 30px;
+                }
+            }
+
+            &:last-child{
+                @include media('<tablet'){
+                    margin-right: 60px;
+                }
+
+                img{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}
+
+/* -----------------------------news------------------------- */
+
+.news{
+    position: relative;
+    @include adaptiv-vaule("margin-bottom", 130 , 70, 1);
+    min-height: 50vh;
+
+    .container{
+        @include media('<phone'){
+            padding: 0;
+        }
+    }
+
+    .wing{
+        top: 50%;
+    }
+
+    .content{
+        display: grid;
+        grid-template-columns: 32% 32% 32%;
+        justify-content: center;
+        gap: 30px;
+
+        @include media('<desktop'){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        @include media('<Ltablet'){
+            flex-direction: column;
+        }
+    }
+
+    .item{
+        position: relative;
+        @include adaptiv-vaule("margin-bottom", 100 , 70, 1);
+
+        @include media('<desktop'){
+            width: 48%;
+            max-width: 360px;
+        }
+
+        @include media('<Ltablet'){
+            width: 100%;
+            max-width: 100%;
+        }
+
+        p{
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 119%;
+            margin-bottom: 20px;
+
+            @include media('<phone'){
+                padding: 0 15px;
+            }
+        }
+
+        span{
+            font-size: 15px;
+            line-height: 115.5%;
+            letter-spacing: 0.05em;
+            color: $purpule-text;
+
+            @include media('<phone'){
+                padding: 0 15px;
+            }
+        }
+
+        a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: $main-black;
+            font-size: 0;
+            color: transparent;
+            opacity: 0;
+            transition: all .3s ease 0s;
+
+            &:hover{
+                opacity: 50%;
+            }
+        }
+    }
+
+    .img{
+        width: 100%;
+        height: 360px;
+        margin-bottom: 20px;
+    }
+}
+
+/* -----------------------------news-pages------------------------- */
+
+.news-pages{
+    position: relative;
+    padding-bottom: 50px;
+
+    h3{
+        font-weight: bold;
+        font-size: 36px;
+        @include adaptiv-vaule("margin-bottom", 80 , 30, 1);
+        text-align: center;
+    }
+
+    .img-wrap{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .discription{
+        padding: 15px 0;
+
+        p{
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+
+        .discription{
+            width: 48%;
+        }
+
+        .img{
+            width: 48%;
+            height: 550px;
+        }
+    }
+
+    .author{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .data{
+            font-size: 16px;
+            line-height: 133%;
+            color: $white;
+        }
+    }
+
+    .wing{
+        bottom: 0;
     }
 }
