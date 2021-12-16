@@ -149,4 +149,57 @@ tabsBtn.forEach(function (item) {
     }
   });
 });
+var progressCircle = document.querySelector('.progress-content');
+document.addEventListener('DOMContentLoaded', function () {
+  initCounter();
+});
+
+function initCounter() {
+  var statWrapEl = document.querySelector('.init-progress');
+  var initStart = false;
+  var maxNumbersElArr = document.querySelectorAll('.progress-title > span');
+  window.addEventListener('scroll', function () {
+    if (isVisible(statWrapEl) && !initStart) {
+      progressCircle.classList.add('progress_active');
+      initStart = true;
+      maxNumbersElArr.forEach(function (el) {
+        var maxNumber = Number(el.textContent);
+        var startCount = 1;
+        var intervalId = setInterval(function () {
+          if (startCount < maxNumber) {
+            startCount += 1;
+
+            if (startCount > maxNumber) {
+              startCount = maxNumber;
+              clearInterval(intervalId);
+            }
+
+            el.textContent = formatNumber(startCount);
+          }
+        }, 20);
+      });
+    }
+  });
+}
+
+function isVisible(elem) {
+  var coords = elem.getBoundingClientRect();
+  var windowHeight = document.documentElement.clientHeight;
+  var topVisible = coords.top > 0 && coords.top < windowHeight;
+  var bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+  return topVisible || bottomVisible;
+}
+
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+;
+$(document).ready(function () {
+  $(".itemU").hover(function () {
+    var position = $(this).attr("position");
+    $(".first-item").removeClass("first-item_active");
+    $(".first-item" + position).addClass("first-item_active");
+  });
+});
 //# sourceMappingURL=main.js.map

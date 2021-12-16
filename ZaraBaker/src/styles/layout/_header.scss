@@ -295,15 +295,7 @@ header{
         }
 
         .contact-btn{
-            text-align: center;
-            min-width: 191px;
-            padding: 13px 15px;
-            border-radius: 5px;
-            background-color: $purpule-text;
-            transition: all .3s ease 0s;
-        
             &:hover{
-                background-color: $purpule;
                 color: $white;
             }
         }
@@ -317,6 +309,10 @@ header{
         flex-direction: column;
         margin: 0;
         margin-bottom: 50px;
+
+        .contact-btn{
+            background: none;
+        }
     }
 
     @include media('<tablet'){
