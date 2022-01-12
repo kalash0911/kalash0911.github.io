@@ -81,7 +81,7 @@ body {
     align-items: center;
     width: 50px;
     height: 50px;
-    border: 1px solid $purpule-text;
+    border: 1px solid $blue-light;
     border-radius: 50%;
     background-color: transparent;
 
@@ -93,8 +93,8 @@ body {
         transform: translate(-50%);
         width: 1px;
         height: 1px;
-        background-color: $purpule-text;
-        box-shadow: 0px 0px 25px 18px $purpule-text;
+        background-color: $blue-light;
+        box-shadow: 0px 0px 25px 18px $blue-light;
         z-index: -1;
     }
 }
@@ -121,6 +121,24 @@ body {
 
     100%{
         right: 100%;
+    }
+}
+
+.wingS{
+    animation-name: wingS;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes wingS {
+    0%{
+        right: 0;
+    }
+
+    100%{
+        right: 40%;
     }
 }
 
@@ -245,28 +263,179 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 700px;
+    width: 100%;
+    max-width: 800px;
+
+    &::before, &::after{
+        content:'';
+        position: absolute;
+        width: 120px;
+        height: 0px;
+        z-index: -1;
+
+        animation-name: bl;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    &::before{
+        top: 100px;
+        right: 40%;
+        box-shadow: 0 0 180px 85px #fab2ff;
+    }
+
+    &::after{
+        bottom: 50px;
+        right: 55%;
+        box-shadow: 0 0 180px 45px #1904e5;
+    }
+
+    @keyframes bl {
+        0%{
+            opacity: 1;
+        }
+    
+        4% {
+            opacity: 0.9;
+        }
+    
+        6% {
+            opacity: 0.85;
+        }
+    
+        8% {
+            opacity: 0.95;
+        }
+    
+        10% {
+            opacity: 0.9;
+        }
+    
+        11% {
+            opacity: 0.5;
+        }
+    
+        12% {
+            opacity: 0.9;
+        }
+    
+        14% {
+            opacity: 0.95;
+        }
+    
+        16% {
+            opacity: 0.98;
+        }
+    
+        17% {
+            opacity: 0.9;
+        }
+    
+        19% {
+            opacity: 0.93;
+        }
+    
+        20% {
+            opacity: 0.99;
+        }
+    
+        24% {
+            opacity: 1;
+        }
+    
+        26% {
+            opacity: 0.94;
+        }
+    
+        28% {
+            opacity: 0.98;
+        }
+    
+        37% {
+            opacity: 0.93;
+        }
+    
+        38% {
+            opacity: 0.5;
+        }
+    
+        39% {
+            opacity: 0.96;
+        }
+    
+        42% {
+            opacity: 1;
+        }
+    
+        44% {
+            opacity: 0.97;
+        }
+    
+        46% {
+            opacity: 0.94;
+        }
+    
+        56% {
+            opacity: 0.9;
+        }
+    
+        58% {
+            opacity: 0.9;
+        }
+    
+        60% {
+            opacity: 0.99;
+        }
+    
+        68% {
+            opacity: 1;
+        }
+    
+        70% {
+            opacity: 0.9;
+        }
+    
+        72% {
+            opacity: 0.95;
+        }
+    
+        93% {
+            opacity: 0.93;
+        }
+    
+        95% {
+            opacity: 0.95;
+        }
+    
+        97% {
+            opacity: 0.93;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
 
     .wing1 {
         position: absolute;
-        top: 33%;
-        left: 0;
+        top: -80px;
+        right: 0;
         z-index: -1;
+
+        @include media('<phone'){
+            top: 0;
+        }
     }
 
     .wing2{
         position: absolute;
-        top: 49%;
-        left: -45px;
-        width: 400px;
+        top: 47%;
         z-index: 2;
-        opacity: 90%;
     }
-
-    svg{
-        stroke-dashoffset: 5000;
-        stroke-dasharray: 5000;
+    
+    .servis-icon{
+        position: relative;
+        z-index: 1;
     }
 }
 
@@ -1138,6 +1307,10 @@ body {
 
 .service-pages{
     position: relative;
+
+    .container{
+        max-width: 1330px;
+    }
 
     .content{
         display: flex;
