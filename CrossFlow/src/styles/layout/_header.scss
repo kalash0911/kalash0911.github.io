@@ -1,0 +1,325 @@
+.body_lock{
+    overflow: hidden;
+}
+
+header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .container{
+        position: relative;
+        background-color: $main-orage;
+        padding-top: 44px;
+        padding-bottom: 44px;
+
+        @include media ('<desktop'){
+            padding-top: 32px;
+            padding-bottom: 31px;
+        }
+
+        @include media ('<phone'){
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        &::before{
+            content:'';
+            position: absolute;
+            width: 33.4%;
+            max-width: 504px;
+            height: 101%;
+            top: 0;
+            left: 0;
+            background-color: $main-white;
+
+            @include media ('<desktopS'){
+                width: 35%;
+                height: 100%;
+            }
+
+            @include media ('<800px'){
+                width: 45%;
+            }
+
+            @include media ('<phone'){
+                width: 50%;
+            }
+        }
+    }
+
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button{
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.logo{
+    position: relative;
+    z-index: 2;
+
+    @include media ('<desktop'){
+        width: 146px;
+    }
+
+    @include media ('<phone'){
+        width: 119px;
+    }
+}
+
+.menu-wrap{
+    @include media('<desktop'){
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        top: -150%;
+        left: 0;
+        background: url('../images/menu-bg.jpg') 0 0/cover no-repeat;
+        transition: all .5s ease 0s;
+        z-index: -1;
+        padding-top: 90px;
+    }
+
+    @media (max-height:800px){
+        justify-content: flex-start;
+    }    
+}
+
+.menu_active{
+    @include media('<desktop'){
+        top: 0;
+    }
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    @include media('<desktop'){
+        flex-direction: column;
+    }
+}
+
+.menu-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+
+    @include media('<desktop'){
+        flex-direction: column;
+        margin: 0;
+        margin-bottom: 95px;
+    }
+
+    @include media('<tablet'){
+        margin-bottom: 60px;
+    }
+
+    a{
+        position: relative;
+        color: $black;
+        transition: color .3s ease 0s;
+        font-size: 16px;
+        font-weight: 400;
+    
+        @include media('<desktop'){
+            font-size: 64px;
+            font-weight: 700;
+        }
+    
+        @include media('<tablet'){
+            font-size: 45px;
+        }
+    
+        @include media('<phone'){
+            font-size: 30px;
+        }
+
+        @include media('>=desktop'){
+            &::before{
+                content:'';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background-color: $text-color;
+                transition: all .5s ease 0s;
+            }
+        
+            &:hover{
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}
+
+/* ---------------burger */
+
+.burger{
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 15px;
+    z-index: 5;
+
+    @include media('<desktop'){
+        display: block;
+    }
+
+    span{
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        border-radius: 10px;
+        transition: all .7s ease 0s;
+    }
+    
+    &::before, &::after{
+        content:'';
+        position: absolute;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        background-color: black;
+        border-radius: 10px;
+    }
+
+    &::before{
+        top: 0;
+    }
+
+    &::after{
+        bottom: 0;
+        width: 50%;
+    }
+}
+
+.burger_active{
+
+    span{
+        opacity: 0;
+    }
+    
+    &::before, &::after{
+        animation-duration: .7s;
+        animation-fill-mode: forwards;
+    }
+    
+    &::before{
+        animation-name: burger1;
+    }
+
+    &::after{
+        animation-name: burger2;
+    }
+
+   @keyframes burger1 {
+        0%{
+            top: 0px;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            top: 6px;
+        }
+
+        100%{
+            transform: rotate(45deg);
+            top: 6px;
+        }
+    }
+    
+    @keyframes burger2 {
+        0%{
+            bottom: 0;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            bottom: 7px;
+            width: 100%;
+        }
+
+        100%{
+            transform: rotate(-45deg);
+            bottom: 7px;
+            width: 100%;
+        }
+    }
+}
+
+.burger_finish{
+
+    &::before, &::after{
+        animation-duration: .7s;
+        animation-fill-mode: forwards;
+    }
+
+    &::before{
+        animation-name: burger3;
+    }
+
+    &::after{
+        animation-name: burger4;
+    }
+
+    @keyframes burger3 {
+        0%{
+            transform: rotate(45deg);
+            top: 6px;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            top: 6px;
+        }
+
+        100%{
+            top: 0;
+        }
+    }
+    
+    @keyframes burger4 {
+        0%{
+            transform: rotate(-45deg);
+            bottom: 6px;
+            width: 100%;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            bottom: 6px;
+            width: 100%;
+        }
+
+        100%{
+            bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,468 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: $main-white;
+}
+
+h1{
+    @include adaptiv-vaule("font-size", 37, 25, 1);
+}
+
+h2{
+    @include adaptiv-vaule("font-size", 40, 35, 1);
+}
+
+.container{
+    width: 100%;
+    max-width: 1512px;
+    margin: 0 auto;
+    @include adaptiv-vaule("padding-right", 70, 20, 1);
+    @include adaptiv-vaule("padding-left", 70, 20, 1);
+}
+
+.img-wrap{
+    position: relative;
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.main-btn{
+    position: relative;
+    font-size: 20px;
+    width: max-content;
+
+    &::before{
+        content:'';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: $text-color;
+        transition: all .3s ease 0s;
+    }
+
+    &:hover{
+        &::before{
+            width: 100%;
+        }
+    }
+}
+
+/* ____________________________#main_________________________ */
+
+.main{
+    padding-top: 130px;
+    display: flex;
+
+    @include media ('<desktop'){
+        padding-top: 90px;
+    }
+
+    @include media ('<phone'){
+        padding-top: 50px;
+    }
+
+    .container{
+        padding-right: 0;
+
+        @include media ('<desktopS'){
+            padding: 0;
+        }
+    }
+
+    .content{
+        min-height: calc(100vh - 130px);
+        display: flex;
+        justify-content: space-between;
+
+        @include media ('<desktop'){
+            min-height: calc(100vh - 90px);
+        }
+
+        @include media ('<desktopS'){
+            min-height: 0;
+            flex-direction: column-reverse;
+            justify-content: start;
+        }
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 27.5%;
+        padding: 20px 0;
+
+        @include media ('<desktopS'){
+            width: 100%;
+            padding: 50px 0;
+            @include adaptiv-vaule("padding-right", 70, 20, 1);
+            @include adaptiv-vaule("padding-left", 70, 20, 1);
+        }
+
+        @include media ('<phone'){
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+    }
+
+    h1{
+        line-height: 1.5;
+
+        @include media ('<desktopS'){
+            margin-bottom: 35px;
+        }
+    }
+
+    p{
+        @include media ('<desktopS'){
+            margin-bottom: 55px;
+        }
+    }
+
+    .img-wrap{
+        width: 70%;
+        min-height: 100%;
+        max-width: 1008px;
+
+        @include media ('<desktopS'){
+            width: 100%;
+            height: 400px;
+        }
+
+        @include media ('<phone'){
+            height: 320px;
+        }
+    }
+}
+
+/* ____________________________#service_________________________ */
+
+.service{
+
+    .container{
+        padding: 0;
+    }
+
+    .content{
+        display: flex;
+
+        @include media ('<desktopS'){
+            flex-direction: column;
+        }
+    }
+
+    .block{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 33.7%;
+        max-width: 505px;
+        background-color: $main-orage;
+        padding: 20px 0 80px 0;
+        @include adaptiv-vaule("padding-left", 70, 20, 1);
+        @include adaptiv-vaule("padding-right", 70, 20, 1);
+
+        @include media ('<desktop'){
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        @include media ('<desktopS'){
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+    }
+    
+    .title-wrap{
+        p{
+            color: $white;
+            max-width: 270px;
+
+            @include media ('<desktopS'){
+                max-width: 100%;
+            }
+        }
+    }
+
+    .controls{
+        position: relative;
+        height: 100px;
+
+        @include media ('<desktopS'){
+            height: 0;
+        }
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+        z-index: 2;
+        color: $white;
+        
+        @include media ('<desktopS'){
+            top: 300px;
+
+            &::after{
+                font-size: 50px;
+                font-weight: 700;
+            }
+        }
+        
+    }
+
+    .swiper-pagination{
+        color: $text-color;
+        font-size: 72px;
+        font-weight: 700;
+        letter-spacing: -8px;
+        z-index: 1;
+
+        @include media ('<desktopS'){
+            display: none;
+        }
+
+        span{
+            &:first-child{
+                color: $white;
+            }
+        }
+    }
+
+    .service-slider{
+        width: 67.3%;
+        overflow: hidden;
+
+        @include media ('<desktopS'){
+            width: 100%;
+        }
+    }
+    
+    .item{
+        display: flex;
+        min-height: 370px;
+
+        @include media ('<desktop'){
+            min-height: 235px;
+        }
+
+        @include media ('<desktopS'){
+            flex-direction: column;
+        }
+    }
+
+    h3{
+        @include adaptiv-vaule("font-size", 40, 35, 1);
+    }
+
+    .img-wrap{
+        width: 50%;
+
+        @include media ('<desktopS'){
+            height: 430px;
+            width: 100%;
+        }
+    }
+
+    .text-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        padding: 30px 30px 55px 55px;
+
+        @include media ('<desktop'){
+            padding: 20px 0 20px 35px;
+            @include adaptiv-vaule("padding-right", 70, 20, 1);
+        }
+
+        @include media ('<desktopS'){
+            width: auto;
+            @include adaptiv-vaule("padding-left", 70, 20, 1);
+        }
+    }
+}
+
+/* ____________________________#news_________________________ */
+
+.news{
+
+    .container{
+        padding-right: 0;
+
+        @include media ('<desktopS'){
+            padding: 0;
+        }
+    }
+
+    .content{
+        display: flex;
+
+        @include media ('<desktopS'){
+            flex-direction: column-reverse;
+        }
+    }
+
+    .partners{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 62.3%;
+        padding: 140px 20px 40px 0;
+
+        @include media ('<desktopS'){
+            width: 100%;
+            max-width: 100%;
+            @include adaptiv-vaule("padding-right", 70, 20, 1);
+            @include adaptiv-vaule("padding-left", 70, 20, 1);
+        }
+    }
+
+    .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 110px;
+        margin-bottom: 100px;
+
+        @include media ('<desktop'){
+            width: 43%;
+        }
+        
+        @include media ('<phone'){
+            width: 100%;
+        }
+    }
+
+    .text{
+        width: 38.7%;
+        max-width: 545px;
+        background: $main-orage;
+        padding: 60px 0 60px 50px;
+        @include adaptiv-vaule("padding-right", 70, 20, 1);
+
+        @include media ('<1125px'){
+            width: 39.7%;
+        }
+
+        @include media ('<desktop'){
+            padding: 20px 0 20px 35px;
+            @include adaptiv-vaule("padding-right", 70, 20, 1);
+        }
+
+        @include media ('<desktopS'){
+            width: 100%;
+            max-width: 100%;
+            @include adaptiv-vaule("padding-left", 70, 20, 1);
+        }
+
+        h2{
+            @include media ('<desktopS'){
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* ____________________________#contact_________________________ */
+
+.contact{
+    padding: 80px 0 150px 0;
+    background: url('../images/main-page/contact-bg.jpg') 0 0/cover no-repeat;
+
+    @include media ('<desktop'){
+        padding: 70px 0;
+    }
+
+    @include media ('<phone'){
+        padding: 50px 0;
+    }
+
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media ('<desktopS'){
+            flex-direction: column;
+        }
+    }
+
+    .text{
+        max-width: 470px;
+        margin-right: 40px;
+
+        @include media ('<desktopS'){
+            max-width: 100%;
+            margin: 0 0 90px 0;
+        }
+    }
+
+    h2, p{
+        color: $white;
+    }
+
+    .form-wrap{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        form{
+            display: flex;
+            flex-direction: column;
+
+            @include media ('<540px'){
+                width: 100%;
+            }
+        }
+
+        input, textarea{
+            width: 100vw;
+            max-width: 470px;
+            padding: 17px;
+            font-size: 20px;
+            color: $main-orage;
+            margin-bottom: 10px;
+            border: none;
+
+            &:active,
+            &:focus{
+                border: none;
+            }
+
+            @include media ('<540px'){
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        textarea{
+            min-height: 130px;
+        }
+
+        button{
+            margin: 0 auto;
+            min-width: 191px;
+            padding: 16px;
+            background-color: $main-orage;
+            color: $white;
+            font-weight: 700;
+            font-size: 22px;
+            border: none;
+            transition: all .3s ease 0s;
+            
+            &:hover{
+                background-color: $black;
+            }
+        }
+    }
+}
