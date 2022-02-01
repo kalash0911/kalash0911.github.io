@@ -202,3 +202,20 @@ $( document ).ready(function(){
     $(".first-item" + position).addClass("first-item_active");
   });
 });
+
+
+const openVideo = document.querySelector(".open-video");
+const closeVideo = document.querySelector(".close-video");
+const videoBlock = document.querySelector(".video-block");
+
+openVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.add("video-block_active");
+});
+
+closeVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.remove("video-block_active");
+});
+
+

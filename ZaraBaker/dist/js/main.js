@@ -202,4 +202,15 @@ $(document).ready(function () {
     $(".first-item" + position).addClass("first-item_active");
   });
 });
+var openVideo = document.querySelector(".open-video");
+var closeVideo = document.querySelector(".close-video");
+var videoBlock = document.querySelector(".video-block");
+openVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.add("video-block_active");
+});
+closeVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.remove("video-block_active");
+});
 //# sourceMappingURL=main.js.map

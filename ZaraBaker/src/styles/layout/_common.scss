@@ -3,6 +3,10 @@ body {
     background-color: $main-black;
 }
 
+h1, h2, h3, h4, h5{
+    font-family: 'Poppins', sans-serif;
+}
+
 .body_lock{
     overflow: hidden;
 }
@@ -446,7 +450,7 @@ body {
     padding: 90px 0;
     background-color: hsla(0, 0%, 4%, 0.80);
 
-    video, iframe{
+    .video-bg{
         position: absolute;
         top: 0;
         left: 0;
@@ -461,20 +465,24 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-        @include media('<desktop'){
-            justify-content: flex-end;
-        }
     }
 
     .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        @include media('<desktop'){
+            flex-direction: column-reverse;
+            min-height: calc(100vh - 180px);
+            justify-content: space-evenly;
+        }
+    }
+
+    .text{
         max-width: 50%;
 
-        @include media('<tablet'){
-            max-width: 55%;
-        }
-
-        @include media('<600px'){
+        @include media('<desktop'){
             max-width: 100%;
         }
     }
@@ -497,6 +505,136 @@ body {
             max-width: 191px;
             margin: 0 auto;
         }
+    }
+
+    .media{
+        width: 50%;
+        margin-bottom: 30px;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+
+        
+        .open-video{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-weight: 700;
+            font-size: 35px;
+            color: #575757;
+            text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 22px #ffffff, 0 0 0px #15f2fd, 0 0 0px #15f2fd, 0 0 5px #15f2fd, 0 0 0px #15f2fd, 0 0 6px #15f2fd;
+            transition: all .5s ease;
+
+            &::before{
+                content:'';
+                top: 46px;
+                position: absolute;
+                width: 0x;
+                height: 0x;
+                background:rgba(255, 255, 255, 0);
+                border-radius: 50%;
+                box-shadow: 0 0 100px 45px #15f2fd;
+                opacity: 0;
+                transition: all .5s ease;
+            }
+
+            &:hover{
+                text-shadow: 0 0 1px #ffffff, 0 0 1px #ffffff, 0 0 70px #ffffff, 0 0 0px #15f2fd, 0 0 0px #15f2fd, 0 0 30px #15f2fd, 0 0 0px #15f2fd, 0 0 6px #15f2fd;
+
+                &::before{
+                    opacity: 60%;
+                }
+            }
+
+            svg{
+                width: 97px;
+                height: 97px;
+                margin-bottom: 50px;
+
+    
+                @include media('<desktop'){
+                    width: 155px;
+                    height: 155px;
+                }
+    
+                @include media('<tablet'){
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+
+
+    .video-block{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 80%;
+        transform: translateY(-50%) translateX(-50%);
+        z-index: 10;
+
+        @include media('<tablet'){
+            width: 100%;
+            height: 100%;
+        }
+
+        video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .close-video{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            opacity: .6;
+            transition: all .3s ease;
+
+            @include media('<tablet'){
+                top: 15%;
+                right: 5%;
+            }
+
+            &:hover{
+                opacity: 1;
+            }
+
+            &::before,
+            &::after{
+                content:'';
+                position: absolute;
+                top: 13px;
+                left: 8px;
+                width: 15px;
+                height: 2px;
+                background: $black;
+            }
+
+            &::before{
+                transform: rotate(45deg);
+            }
+
+            &::after{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .video-block_active{
+        display: block;
     }
 }
 
