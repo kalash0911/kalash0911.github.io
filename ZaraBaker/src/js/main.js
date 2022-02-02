@@ -207,15 +207,31 @@ $( document ).ready(function(){
 const openVideo = document.querySelector(".open-video");
 const closeVideo = document.querySelector(".close-video");
 const videoBlock = document.querySelector(".video-block");
+var isOpenVideo = false;
 
 openVideo.addEventListener("click", function (e) {
   e.preventDefault();
   videoBlock.classList.add("video-block_active");
+  document.body.classList.add("body_overflow");
+  isOpenVideo = true;
 });
+
+document.body.addEventListener("click", closeVideoEvent);
 
 closeVideo.addEventListener("click", function (e) {
   e.preventDefault();
   videoBlock.classList.remove("video-block_active");
+  document.body.classList.remove("body_overflow");
+  isOpenVideo = false;
 });
+
+function closeVideoEvent (e) {
+  if(e.target.id!='video'){
+    videoBlock.classList.remove("video-block_active");
+    document.body.classList.remove("body_overflow");
+    document.body.removeEventListener("click", closeVideoEvent);
+  }
+}
+
 
 
