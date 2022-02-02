@@ -51,3 +51,31 @@ const swiper = new Swiper('.service-slider', {
       },
     }
 });
+
+function initSliders(selector, width, obj) {
+  const init = {
+    ...obj,
+  };
+
+  $(() => {
+    const win = $(window);
+    const slider = $(selector);
+
+    win.on("load resize", () => {
+      if (win.width() <= width) {
+        slider.not(".slick-initialized").slick(init);
+      } else if (slider.hasClass("slick-initialized")) {
+        slider.slick("unslick");
+      }
+    });
+  });
+};
+
+initSliders(".cross-slider", 960, {
+  spaceBetween: 20,
+
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  
+});
