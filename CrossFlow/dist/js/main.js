@@ -15,19 +15,17 @@ if (burger) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
 
-    if (burger.classList.contains('burger_active')) {
-      burger.classList.add('burger_finish');
-      burger.classList.remove('burger_active');
+    if (burger.classList.contains("burger_active")) {
+      burger.classList.add("burger_finish");
+      burger.classList.remove("burger_active");
     } else {
-      burger.classList.add('burger_active');
-      burger.classList.remove('burger_finish');
+      burger.classList.add("burger_active");
+      burger.classList.remove("burger_finish");
     }
 
     menuBody.classList.toggle("menu_active");
   });
 }
-
-;
 
 if (linkClose.length) {
   for (var i = 0; i < linkClose.length; ++i) {
@@ -35,54 +33,51 @@ if (linkClose.length) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
       burger.classList.remove("burger_active");
-      burger.classList.add('burger_finish');
+      burger.classList.add("burger_finish");
       menuBody.classList.remove("menu_active");
     });
   }
 }
 
-;
-var swiper = new Swiper('.service-slider', {
+destroySlidersOnResize(".service-slider", 999999, {
   spaceBetween: 20,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction"
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  breakpoints: {
-    320: {
-      autoHeight: true
-    },
-    961: {
-      autoHeight: false
-    }
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
   }
 });
-
-function initSliders(selector, width, obj) {
-  var init = _objectSpread({}, obj);
-
-  $(function () {
-    var win = $(window);
-    var slider = $(selector);
-    win.on("load resize", function () {
-      if (win.width() <= width) {
-        slider.not(".slick-initialized").slick(init);
-      } else if (slider.hasClass("slick-initialized")) {
-        slider.slick("unslick");
-      }
-    });
-  });
-}
-
-;
-initSliders(".cross-slider", 960, {
+destroySlidersOnResize(".cross-slider", 960, {
   spaceBetween: 20,
   pagination: {
     el: ".swiper-pagination"
   }
-});
+}); // Helpers:
+
+function destroySlidersOnResize(selector, width, obj, moreThan) {
+  var init = _objectSpread({}, obj);
+
+  var win = window;
+  var sliderSelector = document.querySelector(selector);
+  var swiper = new Swiper(selector, init);
+
+  var toggleInit = function toggleInit() {
+    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+
+    if (neededWidth) {
+      if (!sliderSelector.classList.contains("swiper-initialized")) {
+        swiper = new Swiper(selector, init);
+      }
+    } else if (sliderSelector.classList.contains("swiper-initialized")) {
+      swiper.destroy();
+    }
+  };
+
+  ["load", "resize"].forEach(function (evt) {
+    return win.addEventListener(evt, toggleInit, false);
+  });
+}
 //# sourceMappingURL=main.js.map

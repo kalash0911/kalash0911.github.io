@@ -205,23 +205,21 @@ $(document).ready(function () {
 var openVideo = document.querySelector(".open-video");
 var closeVideo = document.querySelector(".close-video");
 var videoBlock = document.querySelector(".video-block");
-var isOpenVideo = false;
 openVideo.addEventListener("click", function (e) {
   e.preventDefault();
   videoBlock.classList.add("video-block_active");
   document.body.classList.add("body_overflow");
-  isOpenVideo = true;
+  document.body.addEventListener("click", closeVideoEvent);
 });
-document.body.addEventListener("click", closeVideoEvent);
 closeVideo.addEventListener("click", function (e) {
   e.preventDefault();
   videoBlock.classList.remove("video-block_active");
   document.body.classList.remove("body_overflow");
-  isOpenVideo = false;
+  document.body.removeEventListener("click", closeVideoEvent);
 });
 
 function closeVideoEvent(e) {
-  if (e.target.id != 'video') {
+  if (e.target.id != 'video' && !e.target.closest('.open-video')) {
     videoBlock.classList.remove("video-block_active");
     document.body.classList.remove("body_overflow");
     document.body.removeEventListener("click", closeVideoEvent);

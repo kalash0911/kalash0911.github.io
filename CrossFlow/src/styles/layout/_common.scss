@@ -581,6 +581,10 @@ h2{
 .cross{
     padding-bottom: 80px;
 
+    @include media ('<desktopS'){
+        padding-bottom: 50px;
+    }
+
     .container{
         padding: 0;
     }
@@ -633,6 +637,21 @@ h2{
                 font-size: 30px;
             }
         }
+    }
+
+    .swiper-pagination{
+        display: none;
+
+        @include media ('<desktopS'){
+            display: block;
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .swiper-pagination-bullet-active{
+            background-color: $text-color;
+        }
+
     }
 }
 

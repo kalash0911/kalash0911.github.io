@@ -28,6 +28,21 @@ if (linkClose.length) {
   }
 }
 
+destroySlidersOnResize(".service-slider", 999999, {
+  spaceBetween: 20,
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+
 destroySlidersOnResize(".cross-slider", 960, {
   spaceBetween: 20,
 
