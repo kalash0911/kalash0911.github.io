@@ -125,6 +125,8 @@ tabsBtn.forEach(function (item) {
     }
   });
 });
+/* ///// */
+
 /* Tabs2 */
 
 var tabsBtn2 = document.querySelectorAll('.tabs2__nav-btn');
@@ -147,6 +149,8 @@ tabsBtn2.forEach(function (item) {
     }
   });
 });
+/* ///// */
+
 /* Открытие кнопки и её закрытие при клике вне её области */
 
 var langWrap = document.querySelector(".lang-wrap");
@@ -167,6 +171,8 @@ if (langName) {
 }
 
 ;
+/* ///// */
+
 /* Плавный скрол на ссылку якоря на jQuery */
 
 $('.scrollto a').on('click', function () {
@@ -182,4 +188,85 @@ $('.scrollto a').on('click', function () {
   });
   return false;
 });
+/* ///// */
+
+/* Анимация при скролле */
+
+var progressCircle = document.querySelector('.progress-content');
+document.addEventListener('DOMContentLoaded', function () {
+  initCounter();
+});
+
+function initCounter() {
+  var statWrapEl = document.querySelector('.init-progress');
+  var initStart = false;
+  var maxNumbersElArr = document.querySelectorAll('.progress-title > span');
+  window.addEventListener('scroll', function () {
+    if (isVisible(statWrapEl) && !initStart) {
+      progressCircle.classList.add('progress_active');
+      initStart = true;
+      maxNumbersElArr.forEach(function (el) {
+        var maxNumber = Number(el.textContent);
+        var startCount = 1;
+        var intervalId = setInterval(function () {
+          if (startCount < maxNumber) {
+            startCount += 1;
+
+            if (startCount > maxNumber) {
+              startCount = maxNumber;
+              clearInterval(intervalId);
+            }
+
+            el.textContent = formatNumber(startCount);
+          }
+        }, 20);
+      });
+    }
+  });
+}
+
+function isVisible(elem) {
+  var coords = elem.getBoundingClientRect();
+  var windowHeight = document.documentElement.clientHeight;
+  var topVisible = coords.top > 0 && coords.top < windowHeight;
+  var bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+  return topVisible || bottomVisible;
+}
+
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+;
+/* ///// */
+
+/* Открытие попапа с помощью кнопки */
+
+var openVideo = document.querySelector(".open-video");
+var closeVideo = document.querySelector(".close-video");
+var videoBlock = document.querySelector(".video-block");
+openVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.add("video-block_active");
+  document.body.classList.add("body_overflow");
+  document.body.classList.add("body_lock");
+  document.body.addEventListener("click", closeVideoEvent);
+});
+closeVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.remove("video-block_active");
+  document.body.classList.remove("body_overflow");
+  document.body.classList.remove("body_lock");
+  document.body.removeEventListener("click", closeVideoEvent);
+});
+
+function closeVideoEvent(e) {
+  if (e.target.id != 'video' && !e.target.closest('.open-video')) {
+    videoBlock.classList.remove("video-block_active");
+    document.body.classList.remove("body_overflow");
+    document.body.classList.remove("body_lock");
+    document.body.removeEventListener("click", closeVideoEvent);
+  }
+}
+/* ///// */
 //# sourceMappingURL=main.js.map

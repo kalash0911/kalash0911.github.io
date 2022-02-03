@@ -119,6 +119,8 @@ tabsBtn.forEach(function(item) {
     });
 });
 
+/* ///// */
+
 /* Tabs2 */
 
 const tabsBtn2  = document.querySelectorAll('.tabs2__nav-btn');
@@ -145,6 +147,8 @@ tabsBtn2.forEach(function(item) {
     });
 });
 
+/* ///// */
+
 /* Открытие кнопки и её закрытие при клике вне её области */
 
 const langWrap = document.querySelector(".lang-wrap");
@@ -163,6 +167,8 @@ if (langName) {
 	});
 };
 
+/* ///// */
+
 /* Плавный скрол на ссылку якоря на jQuery */
 
 $('.scrollto a').on('click', function() { /* добавить класс scrollto в тег nav */
@@ -178,3 +184,92 @@ $('.scrollto a').on('click', function() { /* добавить класс scrollt
 
     return false;
 });
+
+/* ///// */
+
+/* Анимация при скролле */
+
+const progressCircle = document.querySelector('.progress-content');
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCounter();
+});
+
+function initCounter() {
+  let statWrapEl = document.querySelector('.init-progress');
+  let initStart = false;
+  let maxNumbersElArr = document.querySelectorAll('.progress-title > span');
+
+  window.addEventListener('scroll', () => {
+      if(isVisible(statWrapEl) && !initStart) {
+        progressCircle.classList.add('progress_active');
+          initStart = true;
+          maxNumbersElArr.forEach((el) => {
+              const maxNumber = Number(el.textContent);
+              let startCount = 1;
+              let intervalId = setInterval(() => {
+                  if(startCount < maxNumber) {
+                      startCount += 1;
+                      if (startCount > maxNumber) {
+                          startCount = maxNumber;
+                          clearInterval(intervalId);
+                      }
+                      el.textContent = formatNumber(startCount);
+                  } 
+              }, 20)
+          })
+      } 
+  });
+}
+
+function isVisible(elem) {
+
+  let coords = elem.getBoundingClientRect();
+
+  let windowHeight = document.documentElement.clientHeight;
+
+  let topVisible = coords.top > 0 && coords.top < windowHeight;
+
+  let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+
+  return topVisible || bottomVisible;
+}
+
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+/* ///// */
+
+/* Открытие попапа с помощью кнопки */
+
+const openVideo = document.querySelector(".open-video");
+const closeVideo = document.querySelector(".close-video");
+const videoBlock = document.querySelector(".video-block");
+
+openVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.add("video-block_active");
+  document.body.classList.add("body_overflow");
+  document.body.classList.add("body_lock");
+  document.body.addEventListener("click", closeVideoEvent);
+});
+
+closeVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.remove("video-block_active");
+  document.body.classList.remove("body_overflow");
+  document.body.classList.remove("body_lock");
+  document.body.removeEventListener("click", closeVideoEvent);
+});
+
+function closeVideoEvent (e) {
+  if(e.target.id!='video' && !e.target.closest('.open-video')){
+    videoBlock.classList.remove("video-block_active");
+    document.body.classList.remove("body_overflow");
+    document.body.classList.remove("body_lock");
+    document.body.removeEventListener("click", closeVideoEvent);
+  }
+}
+
+/* ///// */

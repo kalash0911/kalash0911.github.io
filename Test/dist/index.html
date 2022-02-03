@@ -249,22 +249,47 @@
                     </div>
                 </div>
             </section>
-            <section class="svg-anim">
+            <section class="progress">
                 <div class="container">
-                    <div class="svg-anim-contant">
-                        <a href="#">
-                            <svg id="svg1" xmlns="http://www.w3.org/2000/svg" 
-                                xmlns:xlink="http://www.w3.org/1999/xlink"   
-                                width="200" height="200" viewBox="0 0 120 120" >  
-                                <!-- Путь заполнения линии прогрессбара     -->
-                                <circle cx="60" cy="60" r="50" fill="none" stroke="#E1E1E1" stroke-width="8"/>
-                                <circle cx="60" cy="60" r="50" transform="rotate(-90 60 60)" fill="none" stroke-dashoffset="314" stroke-dasharray="314"  stroke="dodgerblue" stroke-width="8" >
-                                    <!--Анимация  изменение отступа линии stroke-dashoffset от 314 до 0 -->
-                                <animate attributeName="stroke-dashoffset" dur="4s" begin="svg1.click" values="314;0" /> 
-                                </circle>
-                            </svg>   
-                        </a>
+                    <div class="progress-content init-progress">
+                        <div class="progress-circle">
+                            <div class="progress-title">
+                                <span>105</span>
+                                <p>Strategy</p>
+                            </div>
+                        </div>
+                        <div class="progress-circle">
+                            <div class="progress-title">
+                                <span>90</span>
+                                <p>Creativity</p>
+                            </div>
+                        </div>
+                        <div class="progress-circle">
+                            <div class="progress-title">
+                                <span>95</span>
+                                <p>Technology</p>
+                            </div>
+                        </div>
+                        <div class="progress-circle">
+                            <div class="progress-title">
+                                <span>98</span>
+                                <p>Analytics</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </section>
+            <section class="popup-btn">
+                <div class="container">
+                    <div class="content">
+                        <div class="media">
+                            <a class="main-btn open-video" href="#">Play Showreel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-block">
+                    <img src="./images/example.jpg" alt="img">
+                    <a class="close-video" href="#"></a>
                 </div>
             </section>
         </main>

@@ -1072,6 +1072,11 @@ body {
   padding: 0 15px;
   margin: 0 auto; }
 
+.main-btn {
+  min-width: 190px;
+  border: 1px solid black;
+  padding: 15px; }
+
 /* ---------------gallery------------- */
 .gallery {
   padding-top: 200px;
@@ -1331,15 +1336,168 @@ body {
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
-/* ---------------svg-anim------------- */
-.svg-anim {
+/* ---------------progress------------- */
+.progress {
   padding: 50px 0; }
 
-.svg-anim-contant {
+.progress-content {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 1023px) {
+    .progress-content {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-pack: center;
+      justify-content: center; } }
+
+.progress-circle {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  min-width: 208px;
+  max-width: 208px;
+  min-height: 208px;
+  max-height: 208px;
+  border-radius: 50%;
+  overflow: hidden; }
+  @media (max-width: 1023px) {
+    .progress-circle {
+      margin: 40px 8%; } }
+  @media (max-width: 479px) {
+    .progress-circle {
+      margin: 40px 10px; } }
+  .progress-circle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3813c2;
+    background: linear-gradient(180deg, #3813c2 0%, #ff6fd8 100%);
+    z-index: -1; }
+
+.progress-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+  width: 80%;
+  height: 80%;
+  background: #101010;
+  background: linear-gradient(45deg, #101010 0%, #1f1f1f 100%);
+  border-radius: 50%; }
+  .progress-title span {
+    font-weight: bold;
+    font-size: 55px;
+    color: #5E3DA6; }
+  .progress-title p {
+    margin: 0;
+    color: white; }
+
+.progress_active .progress-circle::before {
+  -webkit-animation-name: progress;
+  animation-name: progress;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes progress {
+  0% {
+    bottom: -110%; }
+  100% {
+    bottom: 0; } }
+
+@keyframes progress {
+  0% {
+    bottom: -110%; }
+  100% {
+    bottom: 0; } }
+
+/* ---------------popup-btn------------- */
+.popup-btn {
+  padding: 50px 0; }
+
+.media {
+  text-align: center; }
+
+.video-block {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 3; }
+  @media (max-width: 767px) {
+    .video-block {
+      width: 100%;
+      height: 100%; } }
+  .video-block video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .video-block .close-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    opacity: .6;
+    transition: all .3s ease; }
+    @media (max-width: 767px) {
+      .video-block .close-video {
+        top: 15%;
+        right: 5%; } }
+    .video-block .close-video:hover {
+      opacity: 1; }
+    .video-block .close-video::before, .video-block .close-video::after {
+      content: '';
+      position: absolute;
+      top: 13px;
+      left: 8px;
+      width: 15px;
+      height: 2px;
+      background: #000; }
+    .video-block .close-video::before {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .video-block .close-video::after {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+
+.video-block_active {
+  display: block; }
+
+.body_overflow {
+  position: relative; }
+  .body_overflow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2; }
 
 .modal-img {
   position: fixed;
