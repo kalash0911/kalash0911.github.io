@@ -1869,29 +1869,94 @@ h1, h2, h3, h4, h5{
 
 .case{
     position: relative;
-    @include adaptiv-vaule("padding-top", 315, 90, 1);
-    padding-bottom: 35px;
+    padding: 110px 0;
 
-    .big-text{
-        top: 10%;
+    @include media('<Ltablet'){
+        padding: 110px 0 230px 0;
     }
 
-    .container{
-        position: relative;
-        z-index: 2;
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+    }
+
+    .title{
+        margin-right: 30px;
+
+        @include media('<desktop'){
+            margin-right: 0;
+        }
     }
 
     h1{
         @include adaptiv-vaule("font-size", 55, 36, 1);
-        margin-bottom: 75px;
+        margin-bottom: 65px;
+
+        @include media('<phone'){
+           padding: 0 15px;
+        }
     }
 
-    span{
-        color: $purpule-text;
+    .btn-wrap {
+        display: flex;
+
+        @include media('<desktop'){
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translate(-50%);
+            min-width: max-content;
+        }
+
+        @include media('<Ltablet'){
+            flex-direction: column;
+            bottom: -220px;
+        }
+
+        a{
+            &:not(:last-child){
+                margin-right: 35px;
+
+                @include media('<Ltablet'){
+                    margin: 0 0 25px 0;
+                }
+            }
+        }
+
+        .link-btn{
+
+            @include media('<Ltablet'){
+                margin: 0 auto;
+            }
+        }
     }
 
-    .wing{
-        bottom: -130px;
+    .img-wrap{
+        position: relative;
+        width: 100%;
+        max-width: 430px;
+        min-width: 430px;
+        height: 400px;
+
+        @include media('<desktop'){
+            max-width: 100%;
+            height: 500px;
+        }
+
+        @include media('<phone'){
+            height: 320px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 
@@ -1900,261 +1965,251 @@ h1, h2, h3, h4, h5{
 .project{
     padding: 35px 0 40px 0;
 
-    h3{
-        @include adaptiv-vaule("font-size", 30, 28, 1);
-        margin-bottom: 10px;
-
-        @include media('<phone'){
-            text-align: center;
-        }
+    h2{
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 
-    p, li{
+    p{
         @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-style: normal;
         font-weight: 300;
         line-height: 1.5;
-    }
-
-    ul{
         margin: 0;
-        padding: 0 0 0 40px;
-
-        @include media('<phone'){
-            padding: 0 0 0 20px;
-        }
     }
 
-    li{
-        letter-spacing: -0.01em;
-        color: $white;
-    }
-
-    .title{
-        @include adaptiv-vaule("margin-bottom", 80 , 30, 1);
-    }
-
-    .block{
-        display: flex;
-        justify-content: space-between;
+    .text{
         margin-bottom: 35px;
-
-        @include media('<Ltablet'){
-            flex-direction: column;
-        }
-
-        @include media('<phone'){
-            margin: 0 -15px;
-            margin-bottom: 35px;
-        }
-
-        h3{
-            @include adaptiv-vaule("font-size", 30, 22, 1);
-            margin-bottom: 10px;
-
-            @include media('<phone'){
-                text-align: start;
-            }
-        }
-
-        p{
-            margin-bottom: 40px;
-        }
-    }
-
-    .img-wrap{
-        width: 65%;
-
-        @include media('<desktop'){
-            width: 60%;
-        }
-
-        @include media('<tablet'){
-            width: 48%;
-        }
-
-        @include media('<Ltablet'){
-            width: 100%;
-            margin-bottom: 40px;
-        }
-    }
-
-    .img-row{
-        margin-bottom: 60px;
-
-        @include media('<phone'){
-            margin: 0 -15px;
-            margin-bottom: 35px;
-        }
-    }
-
-    .description{
-        width: 28%;
-
-        @include media('<desktop'){
-            width: 37%;
-        }
-
-        @include media('<tablet'){
-            width: 48%;
-        }
-
-        @include media('<Ltablet'){
-            width: 100%;
-        }
-
-        @include media('<phone'){
-            text-align: center;
-            padding: 0 15px;
-        }
-
-        h3, p{
-            @include media('<phone'){
-                text-align: start;
-            }
-        }
-
-        .main-btn{
-            display: flex;
-
-            @include media('<Ltablet'){
-                display: inline-flex;
-            }
-        }
     }
     
-    .feedback{
+    .page-img{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
 
-        .user{
-            margin-bottom: 40px;
+    .item-wrap{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+
+        @include media('<Stablet'){
+            flex-direction: column;
         }
     }
 
-    .block-img{
+    .item{
+        width: 30.5%;
+        min-height: 255px;
+        padding: 45px 25px;
+        border: 1px solid #7C2BFF;
+
+        @include media('<Stablet'){
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    .item-text-wrap{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: 70px;
-
-        @include media('<phone'){
-            margin: 0 -15px;
-            margin-bottom: 35px;
-        }
-
-        .img{
-            @include adaptiv-vaule("height", 565, 450, 1);
-            width: 49.7%;
-            margin-bottom: 7px;
-            border-radius: 3px;
-
-            @include media('<tablet'){
-                width: 100%;
-            }
-        }
+        margin-bottom: 30px;
     }
 
-    .block2{
-        display: flex;
-        justify-content: space-between;
+    .item-text{
+        width: 31%;
 
-        @include media('<Xtablet'){
-            flex-direction: column;
-            margin-bottom: 35px;
+        @include media('<desktop'){
+            width: 42%;
+            margin-bottom: 30px;
         }
-
-        @include media('<phone'){
-            margin: 0 -15px;
-        }
-        
-        .title{
-            width: 46%;
-
-            @include media('<Xtablet'){
-                width: 100%;
-                margin-bottom: 35px;
-            }
-
-            @include media('<phone'){
-                padding: 0 15px;
-            }
-        }
-
-        .img{
-            height: 685px;
-            width: 49%;
-
-            @include media('<desktop'){
-                height: 720px;
-            }
-
-            @include media('<Xtablet'){
-                height: 450px;
-                width: 100%;
-            }
-        }
-    }
-
-    .btn-wrap{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 35px;
 
         @include media('<tablet'){
-            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        &:last-child{
+            @include media('<desktop'){
+                width: 100%;
+                margin-bottom: 0;
+            }
+        }
+
+        h2{
+            font-size: 20px;
+            color: #7C2BFF;
+            margin-bottom: 15px;
         }
     }
 
-    .nextbtn-wrap{
+    .video-wrap{
+
+        video{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h2{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .wrap{
         display: flex;
         justify-content: space-between;
+        margin-bottom: 35px;
 
-        a{
-            position: relative;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 24px;
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+        
+        .item-text-wrap{
+            flex-direction: column;
+            width: 58%;
 
-            @include media('<tablet'){
-                font-size: 0;
-                color: transparent;
+            @include media('<desktop'){
+                width: 100%;
             }
+        }
 
-            &::after{
-                content:'';
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 0;
-                height: 2px;
-                background-color: $white;
-                transition: all .3s ease 0s;
+        .item-text{
+            width: 100%;
+        }
+    }
+
+    .feed-wrap {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        width: 38%;
+        padding: 30px;
+        background-color: #252323;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+        
+        .text {
+            margin-bottom: 20px;
+        }
+
+        h2{
+            @include adaptiv-vaule("font-size", 30, 20, 1);
+        }
+    }
+
+    .stars {
+        margin-bottom: 20px;
+    }
+
+    .case-slider{
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 80px;
+
+        .slide{
+            width: 100%;
+            height: 685px;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
+        }
 
-            &:hover{
-                &::after{
-                    width: 100%;
+        .slick-arrow{
+            position: absolute;
+            bottom: 33px;
+            width: 20px;
+            height: 22px;
+            font-size: 0;
+            outline: none;
+            border: none;
+            z-index: 20;
+        }
+
+        .slick-prev {
+            left: 0;
+            background: url('../images/icon/arrow-left-purp.svg') 0 0/cover no-repeat;
+        }
+
+        .slick-next {
+            right: 0;
+            background: url('../images/icon/arrow-right-purp.svg')0 0/cover no-repeat;
+        }
+
+        .slick-dots{
+            padding: 40px 0;
+
+            li{
+                width: 14px;
+                height: 14px;
+                background: #3F3D3D;
+                border: none;
+
+                button{
+                    outline: none;
                 }
             }
 
-            &:first-child{
-                @include media('<tablet'){
-                    margin-left: 60px;
-                }
-
-                img{
-                    margin-right: 30px;
-                }
+            .slick-active{
+                background: #603EA8;
             }
+        }
+    }
+}
 
-            &:last-child{
-                @include media('<tablet'){
-                    margin-right: 60px;
-                }
+.stars {
+    position: relative;
+    display: flex;
 
-                img{
-                    margin-left: 30px;
-                }
-            }
+    .star-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        &:nth-child(2){
+            left: 0;
+        }
+
+        &:nth-child(2){
+            left: 23px; 
+        }
+
+        &:nth-child(3){
+            left: 46px;
+        }
+
+        &:nth-child(4){
+            left: 69px;
+        }
+
+        &:nth-child(5){
+            left: 92px;
+        }
+    }
+
+    .icon-star{
+        position: relative;
+        display: block;
+        z-index: 2;
+        margin-right: 5px;
+
+        &::after{
+            content:'';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 1px;
+            height: 1px;
+            background-color: #15f2fd;
+            box-shadow: 0px 0px 14px 6px #15f2fd;
+            z-index: -1;
         }
     }
 }

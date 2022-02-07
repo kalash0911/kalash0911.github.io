@@ -121,6 +121,14 @@ initSliders(".testi-slider", 99999, {
   touchThreshold: 50,
 });
 
+initSliders(".case-slider", 99999, {
+  slidesToShow: 1,
+  speed: 700,
+  dots: true,
+  arrows: true,
+  touchThreshold: 50,
+});
+
 const tabsBtn  = document.querySelectorAll('.tabs__nav-btn');
 const tabsItem = document.querySelectorAll('.tabs__item');
 
