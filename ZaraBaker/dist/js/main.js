@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function initCounter() {
   var statWrapEl = document.querySelector('.init-progress');
   var initStart = false;
-  var maxNumbersElArr = document.querySelectorAll('.progress-title > span');
+  var maxNumbersElArr = document.querySelectorAll('.number');
   window.addEventListener('scroll', function () {
     if (isVisible(statWrapEl) && !initStart) {
       progressCircle.classList.add('progress_active');

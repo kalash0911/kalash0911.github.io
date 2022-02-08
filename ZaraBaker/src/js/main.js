@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initCounter() {
   let statWrapEl = document.querySelector('.init-progress');
   let initStart = false;
-  let maxNumbersElArr = document.querySelectorAll('.progress-title > span');
+  let maxNumbersElArr = document.querySelectorAll('.number');
 
   window.addEventListener('scroll', () => {
       if(isVisible(statWrapEl) && !initStart) {
