@@ -1639,6 +1639,34 @@ h2 {
       .supplier .item p {
         font-size: 14px; } }
 
+.supplier .text {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  @media (max-width: 599px) {
+    .supplier .text {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
+.supplier .list {
+  list-style: none;
+  margin: 0 0 25px 0;
+  padding: 0 15px; }
+  .supplier .list li {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5; }
+    @media (max-width: 599px) {
+      .supplier .list li {
+        text-align: center; } }
+    .supplier .list li:first-child {
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: underline; }
+
 /* ____________________________#benefits_________________________ */
 .benefits {
   background-color: #FDB813;
