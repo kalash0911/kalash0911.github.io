@@ -3,15 +3,15 @@ body {
     background-color: $main-white;
 }
 
-h1{
+h1 {
     @include adaptiv-vaule("font-size", 37, 25, 1);
 }
 
-h2{
+h2 {
     @include adaptiv-vaule("font-size", 40, 35, 1);
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 1512px;
     margin: 0 auto;
@@ -19,10 +19,10 @@ h2{
     @include adaptiv-vaule("padding-left", 70, 20, 1);
 }
 
-.img-wrap{
+.img-wrap {
     position: relative;
 
-    img{
+    img {
         position: absolute;
         top: 0;
         left: 0;
@@ -32,13 +32,13 @@ h2{
     }
 }
 
-.main-btn{
+.main-btn {
     position: relative;
     font-size: 20px;
     width: max-content;
 
-    &::before{
-        content:'';
+    &::before {
+        content: '';
         position: absolute;
         left: 0;
         bottom: 0;
@@ -48,8 +48,8 @@ h2{
         transition: all .3s ease 0s;
     }
 
-    &:hover{
-        &::before{
+    &:hover {
+        &::before {
             width: 100%;
         }
     }
@@ -57,109 +57,193 @@ h2{
 
 /* ____________________________#main_________________________ */
 
-.main{
+.main {
     padding-top: 130px;
     display: flex;
 
-    @include media ('<desktop'){
+    @include media ('<desktop') {
         padding-top: 90px;
     }
 
-    @include media ('<phone'){
+    @include media ('<phone') {
         padding-top: 50px;
     }
 
-    .container{
+    .container {
         padding-right: 0;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             padding: 0;
         }
     }
 
-    .content{
+    .content {
         min-height: calc(100vh - 130px);
         display: flex;
         justify-content: space-between;
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             min-height: calc(100vh - 90px);
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             min-height: 0;
             flex-direction: column-reverse;
             justify-content: start;
         }
     }
 
-    .text{
+    .text {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         width: 27.5%;
         padding: 20px 0;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             padding: 50px 0;
             @include adaptiv-vaule("padding-right", 70, 20, 1);
             @include adaptiv-vaule("padding-left", 70, 20, 1);
         }
 
-        @include media ('<phone'){
+        @include media ('<phone') {
             padding-top: 35px;
             padding-bottom: 35px;
         }
     }
 
-    h1{
+    h1 {
         line-height: 1.5;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             margin-bottom: 35px;
         }
     }
 
-    p{
-        @include media ('<desktopS'){
+    p {
+        @include media ('<desktopS') {
             margin-bottom: 55px;
         }
     }
 
-    .img-wrap{
+    .img-wrap {
         width: 70%;
         min-height: 100%;
         max-width: 1008px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             height: 400px;
         }
 
-        @include media ('<phone'){
+        @include media ('<phone') {
             height: 320px;
         }
+    }
+
+    .video-block {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 80%;
+        transform: translateY(-50%) translateX(-50%);
+        z-index: 10;
+
+        @include media('<tablet') {
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .close-video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            opacity: .6;
+            transition: all .3s ease;
+            z-index: 4;
+
+            @include media('<tablet') {
+                top: 15%;
+                right: 5%;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 13px;
+                left: 8px;
+                width: 15px;
+                height: 2px;
+                background: $black;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .video-block_active {
+        display: block;
+    }
+}
+
+.body_overflow {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 3;
     }
 }
 
 /* ____________________________#service_________________________ */
 
-.service{
+.service {
 
-    .container{
+    .container {
         padding: 0;
     }
 
-    .content{
+    .content {
         display: flex;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column;
         }
     }
 
-    .block{
+    .block {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -170,12 +254,12 @@ h2{
         @include adaptiv-vaule("padding-left", 70, 20, 1);
         @include adaptiv-vaule("padding-right", 70, 20, 1);
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             padding-top: 20px;
             padding-bottom: 20px;
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             max-width: 100%;
             text-align: center;
@@ -183,108 +267,109 @@ h2{
             padding-bottom: 35px;
         }
     }
-    
-    .title-wrap{
-        p{
+
+    .title-wrap {
+        p {
             color: $white;
             max-width: 270px;
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 max-width: 100%;
             }
         }
     }
 
-    .controls{
+    .controls {
         position: relative;
         height: 100px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             height: 0;
         }
     }
 
-    .swiper-button-next, .swiper-button-prev{
+    .swiper-button-next,
+    .swiper-button-prev {
         z-index: 2;
         color: $white;
-        
-        @include media ('<desktopS'){
+
+        @include media ('<desktopS') {
             top: 300px;
 
-            &::after{
+            &::after {
                 font-size: 50px;
                 font-weight: 700;
             }
         }
-        
+
     }
 
-    .swiper-pagination{
+    .swiper-pagination {
         color: $text-color;
         font-size: 72px;
         font-weight: 700;
         letter-spacing: -8px;
         z-index: 1;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             display: none;
         }
 
-        span{
-            &:first-child{
+        span {
+            &:first-child {
                 color: $white;
             }
         }
     }
 
-    .service-slider{
+    .service-slider {
         width: 67.3%;
         overflow: hidden;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
         }
     }
-    
-    .item{
+
+    .item {
         display: flex;
         min-height: 370px;
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             min-height: 235px;
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column;
         }
     }
 
-    h3{
+    h3 {
         @include adaptiv-vaule("font-size", 40, 35, 1);
     }
 
-    .img-wrap{
+    .img-wrap {
         width: 50%;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             height: 430px;
             width: 100%;
         }
     }
 
-    .text-wrap{
+    .text-wrap {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 50%;
         padding: 30px 30px 55px 55px;
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             padding: 20px 0 20px 35px;
             @include adaptiv-vaule("padding-right", 70, 20, 1);
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: auto;
             @include adaptiv-vaule("padding-left", 70, 20, 1);
         }
@@ -293,32 +378,32 @@ h2{
 
 /* ____________________________#news_________________________ */
 
-.news{
+.news {
 
-    .container{
+    .container {
         padding-right: 0;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             padding: 0;
         }
     }
 
-    .content{
+    .content {
         display: flex;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column-reverse;
         }
     }
 
-    .partners{
+    .partners {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         width: 62.3%;
         padding: 140px 20px 40px 0;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             max-width: 100%;
             @include adaptiv-vaule("padding-right", 70, 20, 1);
@@ -326,7 +411,7 @@ h2{
         }
     }
 
-    .item{
+    .item {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -334,39 +419,39 @@ h2{
         height: 110px;
         margin-bottom: 100px;
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             width: 43%;
         }
-        
-        @include media ('<phone'){
+
+        @include media ('<phone') {
             width: 100%;
         }
     }
 
-    .text{
+    .text {
         width: 38.7%;
         max-width: 545px;
         background: $main-orage;
         padding: 60px 0 60px 50px;
         @include adaptiv-vaule("padding-right", 70, 20, 1);
 
-        @include media ('<1125px'){
+        @include media ('<1125px') {
             width: 39.7%;
         }
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             padding: 20px 0 20px 35px;
             @include adaptiv-vaule("padding-right", 70, 20, 1);
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             max-width: 100%;
             @include adaptiv-vaule("padding-left", 70, 20, 1);
         }
 
-        h2{
-            @include media ('<desktopS'){
+        h2 {
+            @include media ('<desktopS') {
                 text-align: center;
             }
         }
@@ -375,58 +460,60 @@ h2{
 
 /* ____________________________#contact_________________________ */
 
-.contact{
+.contact {
     padding: 80px 0 150px 0;
     background: url('../images/main-page/contact-bg.jpg') 0 0/cover no-repeat;
 
-    @include media ('<desktop'){
+    @include media ('<desktop') {
         padding: 70px 0;
     }
 
-    @include media ('<phone'){
+    @include media ('<phone') {
         padding: 50px 0;
     }
 
-    .content{
+    .content {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column;
         }
     }
 
-    .text{
+    .text {
         max-width: 470px;
         margin-right: 40px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             max-width: 100%;
             margin: 0 0 90px 0;
         }
     }
 
-    h2, p{
+    h2,
+    p {
         color: $white;
     }
 }
 
-.form-wrap{
+.form-wrap {
     display: flex;
     justify-content: center;
     width: 100%;
 
-    form{
+    form {
         display: flex;
         flex-direction: column;
-    
-        @include media ('<540px'){
+
+        @include media ('<540px') {
             width: 100%;
         }
     }
-    
-    input, textarea{
+
+    input,
+    textarea {
         width: 100vw;
         max-width: 470px;
         padding: 17px;
@@ -434,23 +521,23 @@ h2{
         color: $main-orage;
         margin-bottom: 10px;
         border: none;
-    
+
         &:active,
-        &:focus{
+        &:focus {
             border: none;
         }
-    
-        @include media ('<540px'){
+
+        @include media ('<540px') {
             width: 100%;
             max-width: 100%;
         }
     }
-    
-    textarea{
+
+    textarea {
         min-height: 130px;
     }
-    
-    button{
+
+    button {
         margin: 0 auto;
         min-width: 191px;
         padding: 16px;
@@ -460,8 +547,8 @@ h2{
         font-size: 22px;
         border: none;
         transition: all .3s ease 0s;
-        
-        &:hover{
+
+        &:hover {
             background-color: $black;
         }
     }
@@ -470,19 +557,19 @@ h2{
 
 /* ____________________________#work_________________________ */
 
-.page{
+.page {
     padding-top: 130px;
 
-    @include media ('<desktop'){
+    @include media ('<desktop') {
         padding-top: 90px;
     }
 
-    @include media ('<phone'){
+    @include media ('<phone') {
         padding-top: 50px;
     }
 }
 
-.title-page{
+.title-page {
     color: $white;
     background-color: $text-color;
     margin: 0;
@@ -492,40 +579,40 @@ h2{
     @include adaptiv-vaule("padding-right", 70, 20, 1);
 }
 
-.work{
-       
-    .container{
+.work {
+
+    .container {
         padding: 0;
     }
 
-    .item{
+    .item {
         display: flex;
         justify-content: space-between;
         min-height: 770px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column;
         }
 
-        &:nth-child(even){
+        &:nth-child(even) {
             flex-direction: row-reverse;
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 flex-direction: column;
             }
         }
     }
 
-    .img-wrap{
+    .img-wrap {
         width: 66%;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             height: 400px;
             width: 100%;
         }
     }
 
-    .text{
+    .text {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -535,42 +622,42 @@ h2{
         @include adaptiv-vaule("padding-left", 50, 20, 1);
         @include adaptiv-vaule("padding-right", 70, 20, 1);
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
         }
 
-        h2{
+        h2 {
             margin-bottom: 50px;
         }
 
-        p{
+        p {
             color: $black;
         }
     }
 
-    .markers{
+    .markers {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 50px;
     }
 
-    .has{
+    .has {
         font-weight: 300;
         font-size: 20px;
         color: $white;
         background-color: $text-color;
         padding: 5px 15px;
-        margin:0 20px 10px 0;
+        margin: 0 20px 10px 0;
 
-        @include media ('<desktop'){
+        @include media ('<desktop') {
             font-size: 16px;
         }
     }
 
-    .main-btn{
+    .main-btn {
         margin-bottom: 2px;
 
-        @include media ('<phone'){
+        @include media ('<phone') {
             margin: 0 auto;
         }
     }
@@ -578,77 +665,77 @@ h2{
 
 /* ____________________________#cross_________________________ */
 
-.cross{
+.cross {
     padding-bottom: 80px;
 
-    @include media ('<desktopS'){
+    @include media ('<desktopS') {
         padding-bottom: 50px;
     }
 
-    .container{
+    .container {
         padding: 0;
     }
 
-    .cross-slider{
+    .cross-slider {
         display: flex;
     }
 
-    .item{
+    .item {
         width: 33.3%;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
         }
     }
 
-    .img-wrap{
+    .img-wrap {
         min-height: 740px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             min-height: 655px;
         }
     }
 
-    .text{
+    .text {
         text-align: center;
         padding: 20px;
 
-        h2{
+        h2 {
             font-size: 22px;
             margin-bottom: 10px;
 
-            @include media ('<desktop'){
-               font-size: 25px;
+            @include media ('<desktop') {
+                font-size: 25px;
             }
         }
 
-        p{
+        p {
             font-weight: 300;
             font-size: 16px;
             margin-bottom: 20px;
 
-            @include media ('<desktop'){
+            @include media ('<desktop') {
                 font-size: 14px;
             }
         }
 
-        .main-btn{
-            @include media ('<desktopS'){
+        .main-btn {
+            @include media ('<desktopS') {
                 font-size: 30px;
             }
         }
     }
 
-    .swiper-pagination{
+    .swiper-pagination {
         display: none;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             display: block;
             position: relative;
             padding: 30px 0;
         }
 
-        .swiper-pagination-bullet-active{
+        .swiper-pagination-bullet-active {
             background-color: $text-color;
         }
 
@@ -657,21 +744,21 @@ h2{
 
 /* ____________________________#supplier_________________________ */
 
-.supplier{
+.supplier {
 
-    .container{
+    .container {
         padding: 0;
     }
 
-    .content{
+    .content {
         display: flex;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column;
         }
     }
 
-    .titel{
+    .titel {
         width: 40%;
         @include adaptiv-vaule("padding-top", 90, 35, 1);
         @include adaptiv-vaule("padding-bottom", 90, 35, 1);
@@ -679,22 +766,22 @@ h2{
         @include adaptiv-vaule("padding-right", 95, 20, 1);
         background: url('../images/cross-page/bg.jpg') 0 0/cover no-repeat;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
         }
 
-        h2{
+        h2 {
             font-size: 36px;
             color: $main-orage;
             line-height: 1.5;
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 text-align: center;
             }
         }
     }
 
-    .block{
+    .block {
         width: 60%;
         display: flex;
         align-items: center;
@@ -704,35 +791,35 @@ h2{
         @include adaptiv-vaule("padding-left", 70, 20, 1);
         @include adaptiv-vaule("padding-right", 70, 20, 1);
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
         }
     }
 
-    .item{
+    .item {
         max-width: 690px;
         text-align: center;
 
-        img{
+        img {
             margin-bottom: 25px;
         }
 
-        h3{
+        h3 {
             color: $black;
             line-height: 1.5;
             margin-bottom: 25px;
 
-            @include media ('<tablet'){
+            @include media ('<tablet') {
                 font-size: 20px;
             }
         }
 
-        p{
+        p {
             font-size: 16px;
             font-weight: 300;
             margin-bottom: 35px;
 
-            @include media ('<desktop'){
+            @include media ('<desktop') {
                 font-size: 14px;
             }
         }
@@ -741,118 +828,118 @@ h2{
 
 /* ____________________________#benefits_________________________ */
 
-.benefits{
+.benefits {
     background-color: $main-orage;
     @include adaptiv-vaule("padding-top", 85, 70, 1);
     @include adaptiv-vaule("padding-bottom", 115, 60, 1);
 
-    .content{
+    .content {
         display: flex;
 
-        @include media ('<tablet'){
+        @include media ('<tablet') {
             flex-direction: column
         }
     }
 
-    .title{
+    .title {
         width: 40%;
         padding-right: 100px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             padding-right: 50px
         }
 
-        @include media ('<tablet'){
+        @include media ('<tablet') {
             width: 100%;
             padding: 0;
             margin-bottom: 90px;
         }
-        
-        h2{
-            @include adaptiv-vaule("margin-bottom", 60 , 30, 1);
+
+        h2 {
+            @include adaptiv-vaule("margin-bottom", 60, 30, 1);
         }
-        
-        p{
+
+        p {
             max-width: 330px;
             color: $text-color;
             @include adaptiv-vaule("font-size", 16, 14, 1);
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 max-width: 100%;
             }
         }
     }
 
-    .block{
+    .block {
         width: 60%;
         padding-left: 60px;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             padding-left: 50px;
         }
 
-        @include media ('<tablet'){
+        @include media ('<tablet') {
             width: 100%;
             padding: 0;
         }
 
-        h3{
+        h3 {
             font-weight: 600;
             max-width: 420px;
             font-size: 20px;
             line-height: 1.5;
             margin-bottom: 65px;
 
-            @include media ('<tablet'){
-               max-width: 100%;
+            @include media ('<tablet') {
+                max-width: 100%;
             }
         }
     }
 
-    .item-wrap{
+    .item-wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
 
-        @include media ('<tablet'){
+        @include media ('<tablet') {
             justify-content: center;
         }
     }
 
-    .item{
+    .item {
         display: flex;
         width: 44%;
         max-width: 370px;
         margin-bottom: 75px;
 
-        @include media ('<1250px'){
+        @include media ('<1250px') {
             width: 100%;
         }
 
-        @include media ('<phone'){
+        @include media ('<phone') {
             flex-direction: column
         }
 
-        p{
+        p {
             font-size: 14px;
             line-height: 1.5;
             font-weight: 300;
             color: $text-color;
         }
     }
-    
-    .icon-wrap{
+
+    .icon-wrap {
         text-align: center;
         margin-right: 30px;
         min-width: 45px;
 
-        @include media ('<phone'){
+        @include media ('<phone') {
             margin: 0 0 40px 0;
             min-height: 100px;
         }
 
-        img{
-            @include media ('<phone'){
+        img {
+            @include media ('<phone') {
                 height: 100%;
             }
         }
@@ -861,23 +948,23 @@ h2{
 
 /* ____________________________#registr_________________________ */
 
-.registr{
+.registr {
 
-    .container{
+    .container {
         padding: 0;
     }
 
-    .block{
+    .block {
         display: flex;
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             flex-direction: column;
         }
     }
 
-    .registr-form{
+    .registr-form {
         width: 70%;
-        display:flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         @include adaptiv-vaule("padding-top", 90, 45, 1);
@@ -886,75 +973,75 @@ h2{
         padding-right: 20px;
         background: url('../images/registr-bg.jpg') 0 0/cover no-repeat;
 
-        @include media ('<1250px'){
+        @include media ('<1250px') {
             width: 60%;
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             @include adaptiv-vaule("padding-right", 70, 20, 1);
         }
 
-        h2{
+        h2 {
             max-width: 650px;
             color: $white;
             text-align: center;
-            @include adaptiv-vaule("margin-bottom", 95 , 45, 1);
+            @include adaptiv-vaule("margin-bottom", 95, 45, 1);
         }
 
-        button{
+        button {
             background-color: $text-color;
 
-            &:hover{
+            &:hover {
                 background-color: $black;
             }
         }
     }
 
-    .text{
+    .text {
         width: 30%;
         @include adaptiv-vaule("padding-top", 70, 40, 1);
         @include adaptiv-vaule("padding-bottom", 70, 40, 1);
         @include adaptiv-vaule("padding-right", 70, 20, 1);
         padding-left: 30px;
 
-        @include media ('<1250px'){
+        @include media ('<1250px') {
             width: 40%;
         }
 
-        @include media ('<desktopS'){
+        @include media ('<desktopS') {
             width: 100%;
             @include adaptiv-vaule("padding-left", 70, 20, 1);
         }
     }
 
-    .active-form{
-        @include adaptiv-vaule("margin-bottom", 55 , 40, 1);
+    .active-form {
+        @include adaptiv-vaule("margin-bottom", 55, 40, 1);
 
-        p{
+        p {
             font-size: 15px;
             color: $black;
             margin: 0;
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 text-align: center;
             }
 
-            @include media ('<phone'){
+            @include media ('<phone') {
                 text-align: left;
             }
         }
 
-        form{
+        form {
             width: 100%;
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 max-width: 470px;
                 margin: 0 auto;
             }
         }
 
-        input{
+        input {
             width: 100%;
             max-width: 345px;
             border: 1px solid #BEA363;
@@ -962,13 +1049,13 @@ h2{
             color: $black;
             margin-bottom: 30px;
 
-            @include media ('<desktopS'){
+            @include media ('<desktopS') {
                 text-align: center;
                 max-width: 100%;
             }
         }
 
-        button{
+        button {
             min-width: 230px;
             padding: 14px;
             color: $text-color;
@@ -979,18 +1066,19 @@ h2{
             font-size: 22px;
             transition: all .3s ease 0s;
 
-            @include media ('<desktop'){
+            @include media ('<desktop') {
                 min-width: 100%;
             }
 
-            &:hover{
+            &:hover {
                 background-color: $text-color;
                 color: $white;
             }
         }
     }
 
-    .namber-list, .dots-list{
+    .namber-list,
+    .dots-list {
         padding: 0;
         margin: 0;
         font-weight: 300;
@@ -1000,15 +1088,15 @@ h2{
         margin-bottom: 20px;
     }
 
-    .namber-list{
-        li{
+    .namber-list {
+        li {
             padding-left: 5px;
             margin-left: 20px;
         }
     }
 
-    .dots-list{
-        li{
+    .dots-list {
+        li {
             margin-left: 30px;
         }
     }
