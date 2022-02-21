@@ -1781,83 +1781,64 @@ h2 {
 
 .registr .block {
   display: -ms-flexbox;
-  display: flex; }
-  @media (max-width: 959px) {
+  display: flex;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse; }
+  @media (max-width: 1024px) {
     .registr .block {
-      -ms-flex-direction: column;
-      flex-direction: column; } }
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; } }
 
 .registr .registr-form {
-  width: 70%;
+  width: 30%;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-align: center;
-  align-items: center;
-  /* Только если меньше контейнера */
-  padding-top: 90px;
-  /* Только если меньше контейнера */
-  padding-bottom: 90px;
-  /* Только если меньше контейнера */
-  padding-left: 70px;
-  padding-right: 20px;
-  background: url("../images/registr-bg.jpg") 0 0/cover no-repeat; }
-  @media (max-width: 1512px) {
-    .registr .registr-form {
-      padding-top: calc(45px + 45 * ((100vw - calc(320px)) / 1192)); } }
-  @media (max-width: 1512px) {
-    .registr .registr-form {
-      padding-bottom: calc(45px + 45 * ((100vw - calc(320px)) / 1192)); } }
-  @media (max-width: 1512px) {
-    .registr .registr-form {
-      padding-left: calc(20px + 50 * ((100vw - calc(320px)) / 1192)); } }
-  @media (max-width: 1249px) {
-    .registr .registr-form {
-      width: 60%; } }
-  @media (max-width: 959px) {
+  padding: 60px 30px;
+  padding-right: 20px; }
+  @media (max-width: 1024px) {
     .registr .registr-form {
       width: 100%;
-      /* Только если меньше контейнера */
-      padding-right: 70px; } }
-  @media (max-width: 959px) and (max-width: 1512px) {
-    .registr .registr-form {
-      padding-right: calc(20px + 50 * ((100vw - calc(320px)) / 1192)); } }
+      -ms-flex-align: center;
+      align-items: center; } }
+  @media (max-width: 1024px) {
+    .registr .registr-form form {
+      width: 100%;
+      max-width: 470px; } }
   .registr .registr-form h2 {
-    max-width: 650px;
-    color: #fff;
-    text-align: center;
-    /* Только если меньше контейнера */
-    margin-bottom: 95px; }
-    @media (max-width: 1512px) {
-      .registr .registr-form h2 {
-        margin-bottom: calc(45px + 50 * ((100vw - calc(320px)) / 1192)); } }
+    font-size: 18px; }
+  .registr .registr-form form {
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .registr .registr-form input,
+  .registr .registr-form textarea {
+    width: 100%;
+    max-width: 345px;
+    border: 1px solid #BEA363; }
+    @media (max-width: 1024px) {
+      .registr .registr-form input,
+      .registr .registr-form textarea {
+        max-width: 470px; } }
   .registr .registr-form button {
-    background-color: #4F4F4F; }
+    background-color: #FDB813;
+    margin: 0; }
+    @media (max-width: 1024px) {
+      .registr .registr-form button {
+        margin: 0 auto; } }
     .registr .registr-form button:hover {
-      background-color: #000; }
+      background-color: #4F4F4F; }
 
 .registr .text {
-  width: 30%;
-  /* Только если меньше контейнера */
-  padding-top: 70px;
-  /* Только если меньше контейнера */
-  padding-bottom: 70px;
-  /* Только если меньше контейнера */
-  padding-right: 70px;
-  padding-left: 30px; }
-  @media (max-width: 1512px) {
+  width: 70%;
+  padding: 70px 30px;
+  background: url("../images/registr-bg.jpg") 0 0/cover no-repeat;
+  /* background: url({{ get_asset_url('/client_theme/images/registr-bg.jpg') }}) 0 0/cover no-repeat; }} */ }
+  @media (max-width: 1024px) {
     .registr .text {
-      padding-top: calc(40px + 30 * ((100vw - calc(320px)) / 1192)); } }
-  @media (max-width: 1512px) {
-    .registr .text {
-      padding-bottom: calc(40px + 30 * ((100vw - calc(320px)) / 1192)); } }
-  @media (max-width: 1512px) {
-    .registr .text {
-      padding-right: calc(20px + 50 * ((100vw - calc(320px)) / 1192)); } }
-  @media (max-width: 1249px) {
-    .registr .text {
-      width: 40%; } }
+      width: 100%; } }
   @media (max-width: 959px) {
     .registr .text {
       width: 100%;
@@ -1874,9 +1855,15 @@ h2 {
     .registr .active-form {
       margin-bottom: calc(40px + 15 * ((100vw - calc(320px)) / 1192)); } }
   .registr .active-form p {
-    font-size: 15px;
-    color: #000;
-    margin: 0; }
+    /* Только если меньше контейнера */
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin: 0 0 20px 0; }
+    @media (max-width: 1512px) {
+      .registr .active-form p {
+        font-size: calc(25px + 15 * ((100vw - calc(320px)) / 1192)); } }
     @media (max-width: 959px) {
       .registr .active-form p {
         text-align: center; } }
@@ -1884,15 +1871,22 @@ h2 {
       .registr .active-form p {
         text-align: left; } }
   .registr .active-form form {
-    width: 100%; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto; }
     @media (max-width: 959px) {
       .registr .active-form form {
         max-width: 470px;
         margin: 0 auto; } }
   .registr .active-form input {
     width: 100%;
-    max-width: 345px;
-    border: 1px solid #BEA363;
+    border: none;
     padding: 20px;
     color: #000;
     margin-bottom: 30px; }
@@ -1903,9 +1897,9 @@ h2 {
   .registr .active-form button {
     min-width: 230px;
     padding: 14px;
-    color: #4F4F4F;
+    color: #fff;
     text-align: center;
-    background-color: #FDB813;
+    background-color: #4F4F4F;
     border: none;
     font-weight: 300;
     font-size: 22px;
@@ -1914,8 +1908,13 @@ h2 {
       .registr .active-form button {
         min-width: 100%; } }
     .registr .active-form button:hover {
-      background-color: #4F4F4F;
+      background-color: #000;
       color: #fff; }
+
+.registr .list-wrap {
+  width: 100%;
+  max-width: 755px;
+  margin: 0 auto; }
 
 .registr .namber-list,
 .registr .dots-list {
@@ -1923,7 +1922,7 @@ h2 {
   margin: 0;
   font-weight: 300;
   font-size: 18px;
-  color: black;
+  color: #FFFFFF;
   line-height: 1.6;
   margin-bottom: 20px; }
 

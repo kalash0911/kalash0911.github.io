@@ -989,57 +989,76 @@ h2 {
 
     .block {
         display: flex;
+        flex-direction: row-reverse;
 
-        @include media ('<desktopS') {
-            flex-direction: column;
+        @include media ('<desktop') {
+            flex-direction: column-reverse;
         }
     }
 
     .registr-form {
-        width: 70%;
+        width: 30%;
         display: flex;
+        justify-content: flex-start;
         flex-direction: column;
-        align-items: center;
-        @include adaptiv-vaule("padding-top", 90, 45, 1);
-        @include adaptiv-vaule("padding-bottom", 90, 45, 1);
-        @include adaptiv-vaule("padding-left", 70, 20, 1);
+        padding: 60px 30px;
         padding-right: 20px;
-        background: url('../images/registr-bg.jpg') 0 0/cover no-repeat;
 
-        @include media ('<1250px') {
-            width: 60%;
+        @include media ('<desktop') {
+            width: 100%;
+            align-items: center;
         }
 
-        @include media ('<desktopS') {
-            width: 100%;
-            @include adaptiv-vaule("padding-right", 70, 20, 1);
+        form {
+
+            @include media ('<desktop') {
+                width: 100%;
+                max-width: 470px;
+            }
         }
 
         h2 {
-            max-width: 650px;
-            color: $white;
-            text-align: center;
-            @include adaptiv-vaule("margin-bottom", 95, 45, 1);
+            font-size: 18px;
+        }
+
+        form {
+            align-items: flex-start;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            max-width: 345px;
+            border: 1px solid #BEA363;
+
+            @include media ('<desktop') {
+                max-width: 470px;
+            }
         }
 
         button {
-            background-color: $text-color;
+            background-color: $main-orage;
+            margin: 0;
+
+
+            @include media ('<desktop') {
+                margin: 0 auto;
+            }
 
             &:hover {
-                background-color: $black;
+                background-color: $text-color;
             }
         }
     }
 
     .text {
-        width: 30%;
-        @include adaptiv-vaule("padding-top", 70, 40, 1);
-        @include adaptiv-vaule("padding-bottom", 70, 40, 1);
-        @include adaptiv-vaule("padding-right", 70, 20, 1);
-        padding-left: 30px;
+        width: 70%;
+        padding: 70px 30px;
+        background: url('../images/registr-bg.jpg') 0 0/cover no-repeat;
+        /* background: url({{ get_asset_url('/client_theme/images/registr-bg.jpg') }}) 0 0/cover no-repeat; }} */
 
-        @include media ('<1250px') {
-            width: 40%;
+        @include media ('<desktop') {
+            width: 100%;
         }
 
         @include media ('<desktopS') {
@@ -1052,9 +1071,11 @@ h2 {
         @include adaptiv-vaule("margin-bottom", 55, 40, 1);
 
         p {
-            font-size: 15px;
-            color: $black;
-            margin: 0;
+            @include adaptiv-vaule("font-size", 40, 25, 1);
+            text-align: center;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin: 0 0 20px 0;
 
             @include media ('<desktopS') {
                 text-align: center;
@@ -1066,7 +1087,12 @@ h2 {
         }
 
         form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
             width: 100%;
+            max-width: 470px;
+            margin: 0 auto;
 
             @include media ('<desktopS') {
                 max-width: 470px;
@@ -1076,8 +1102,7 @@ h2 {
 
         input {
             width: 100%;
-            max-width: 345px;
-            border: 1px solid #BEA363;
+            border: none;
             padding: 20px;
             color: $black;
             margin-bottom: 30px;
@@ -1091,9 +1116,9 @@ h2 {
         button {
             min-width: 230px;
             padding: 14px;
-            color: $text-color;
+            color: $white;
             text-align: center;
-            background-color: $main-orage;
+            background-color: $text-color;
             border: none;
             font-weight: 300;
             font-size: 22px;
@@ -1104,10 +1129,16 @@ h2 {
             }
 
             &:hover {
-                background-color: $text-color;
+                background-color: $black;
                 color: $white;
             }
         }
+    }
+
+    .list-wrap {
+        width: 100%;
+        max-width: 755px;
+        margin: 0 auto;
     }
 
     .namber-list,
@@ -1116,7 +1147,7 @@ h2 {
         margin: 0;
         font-weight: 300;
         font-size: 18px;
-        color: black;
+        color: #FFFFFF;
         line-height: 1.6;
         margin-bottom: 20px;
     }
