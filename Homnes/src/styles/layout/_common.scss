@@ -47,6 +47,7 @@
         width: 100%;
         max-width: 50%;
         display: flex;
+        flex-direction: column;
         justify-content: flex-end;
 
         @include media("<tablet") {
@@ -56,25 +57,25 @@
     }
 
     .title {
-        max-width: 375px;
-        line-height: 1.1;
+        font-size: 35px;
+    }
 
-        @include media("<desktop") {
-            font-size: 55px;
-        }
+    ul {
+        padding: 0;
+    }
 
-        @include media("<tablet") {
-            max-width: 100%;
-            text-align: center;
-        }
+    li {
+        margin-left: 30px;
 
-        @include media("<phone-bg") {
-            flex-direction: column;
-            font-size: 45px;
-        }
+        a {
+            text-decoration: underline;
+            font-weight: 600;
+            color: #c40000;
+            transition: all .3s ease 0s;
 
-        @include media("<phone") {
-            font-size: 40px;
+            &:hover {
+                color: #910000;
+            }
         }
     }
 
@@ -105,10 +106,7 @@
         font-weight: 600;
         color: #fff;
         margin-bottom: 50px;
-
-        @include media("<tablet") {
-            text-align: center;
-        }
+        text-align: center;
 
         @include media("<phone") {
             font-size: 35px;
