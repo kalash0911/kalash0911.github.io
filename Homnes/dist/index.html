@@ -6,17 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homnes</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
     <script src="./js/main.js" defer></script>
 </head>
 
 <body>
+    <header id="header">
+        <div class="container">
+            <img src="./images/logo.svg" alt="logo">
+        </div>
+    </header>
     <div id="wrapper">
         <main id="main">
             <section class="main-section">
                 <div class="container">
                     <div class="content">
-                        <h1 class="title">Nos Produits Phares</h1>
-                        <img src="./images/top-brush.png" alt="img">
+                        <div class="text">
+                            <h1 class="title">Nos Produits Phares</h1>
+                        </div>
+                        <img class="img" src="./images/top-brush.png" alt="img">
+                    </div>
+                </div>
+            </section>
+            <section class="form-section">
+                <div class="container">
+                    <div class="content">
+                        <h2 class="title">Subscribe to our newsletter</h2>
+                        <form action="#">
+                            <div class="input-wrap">
+                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Surname">
+                                <input type="email" placeholder="Email">
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <p>J'accepte de recevoir la newsletter de HOMNES. nous nous engageons à ne jamais
+                                    communiquer votre email à des tiers.</p>
+                            </div>
+                            <button class="btn">Subscribe</button>
+                        </form>
                     </div>
                 </div>
             </section>
