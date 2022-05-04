@@ -2097,6 +2097,8 @@ ________________________portfolio-section_____________________ */
     .swiper-nav {
         display: flex;
         align-items: center;
+        justify-content: center;
+        padding-top: 40px;
     }
 
     .swiper-slide {
@@ -2110,45 +2112,36 @@ ________________________portfolio-section_____________________ */
 
     .swiper-button-prev,
     .swiper-button-next {
+        position: relative;
+        top: auto;
+        height: 12px;
         color: $black;
-        width: 15px;
-        height: 20px;
-        top: 99%;
+        margin: 0;
 
         @include media ("<tablet") {
             display: none;
         }
 
         &::after {
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 700;
             height: auto;
         }
     }
 
-    .swiper-button-prev {
-        left: 42%;
-    }
-
-    .swiper-button-next {
-        right: 42%;
-    }
-
     .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
-
+        margin: 0 9px !important;
     }
 
     .swiper-pagination {
+        position: relative;
         display: flex;
         align-items: center;
-        top: 92%;
         width: auto;
-        left: 50%;
-        transform: translate(-50%);
-        height: 15px;
-
+        bottom: auto;
+        margin: 0 21px;
     }
 
     .swiper-pagination-bullet-active {
