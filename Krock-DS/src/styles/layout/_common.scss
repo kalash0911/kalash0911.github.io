@@ -19,11 +19,13 @@ body {
         background: $orange;
         color: $white;
         border-color: $orange;
+        transition: all 0.4s ease;
 
         &:hover {
             background-color: #352F2D;
             color: $white;
             border-color: #352F2D;
+            transition: all 0.4s ease;
         }
     }
 
