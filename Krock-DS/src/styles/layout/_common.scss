@@ -1,7 +1,8 @@
 body {
     font-family: Montserrat;
 
-    .btn-orange-sm, .btn-white {
+    .btn-orange-sm,
+    .btn-white {
         display: inline-flex;
         justify-content: center;
         text-align: center;
@@ -12,8 +13,9 @@ body {
         font-size: 16px;
         line-height: 20px;
         border: 2px solid;
+        z-index: 1;
     }
-    
+
     .btn-orange-sm {
         background: $orange;
         color: $white;
@@ -56,7 +58,7 @@ body {
 
     .pages {
         background: url(../images/about-us/bg-logo.png) no-repeat 0 169px/100%;
-        
+
         @include media("<tablet") {
             background: url(../images/about-us/bg-logo.png) no-repeat 0 31px/100%;
             padding: 80px 0 90px 0;
@@ -121,7 +123,7 @@ h4 {
         @include media("<phone") {
             padding: 280px 0 32px 0;
         }
-    
+
         h1 {
             line-height: 59px;
             margin: 53px 0 25px 0;
@@ -129,13 +131,13 @@ h4 {
             @include media("<phone") {
                 font-size: 26px;
                 line-height: 32px;
-                margin:25px 0 28px 0;
+                margin: 25px 0 28px 0;
             }
         }
-    
+
         p {
             font-size: 18px;
-            line-height: 22px;  
+            line-height: 22px;
             margin: 0 auto;
             margin-bottom: 66px;
             max-width: 470px;
@@ -147,7 +149,7 @@ h4 {
             }
         }
     }
-    
+
     .main-btn-wrap {
 
         @include media("<phone") {
@@ -155,7 +157,7 @@ h4 {
             flex-direction: column;
             align-items: center;
         }
-        
+
         .btn-orange-sm {
             margin-right: 22px;
 
@@ -165,7 +167,7 @@ h4 {
         }
     }
 
-   .mob-main-logo {
+    .mob-main-logo {
         display: none;
 
         @include media("<phone") {
@@ -193,7 +195,7 @@ h4 {
     @include media("<phone") {
         padding: 52px 0 92px 0;
     }
-    
+
     h4 {
         text-align: center;
         line-height: 27px;
@@ -203,7 +205,7 @@ h4 {
             margin-bottom: 22px;
         }
     }
-    
+
     .total {
         display: flex;
         justify-content: space-around;
@@ -211,11 +213,11 @@ h4 {
         @include media("<desktop") {
             flex-wrap: wrap;
         }
-    
+
         @include media("<phone") {
             flex-direction: column;
         }
-    
+
         .item {
             display: flex;
             flex-direction: column;
@@ -232,18 +234,18 @@ h4 {
                     margin-bottom: 0;
                 }
             }
-    
+
             .item-icon {
                 font-size: 35px;
             }
-    
+
             p {
                 margin-top: 15px;
                 text-align: center;
                 font-size: 20px;
                 line-height: 24px;
             }
-    
+
             &::after {
                 content: '';
                 display: block;
@@ -266,7 +268,7 @@ h4 {
 
     .container {
 
-        @include media("<phone"){
+        @include media("<phone") {
             padding: 0;
         }
     }
@@ -278,7 +280,7 @@ h4 {
             text-align: center;
             margin-bottom: 50px;
 
-            @include media("<phone"){
+            @include media("<phone") {
                 margin-bottom: 40px;
             }
         }
@@ -294,69 +296,69 @@ h4 {
         @include media("<1330px") {
             flex-direction: column;
             justify-content: center;
-            align-items:center;
-            
+            align-items: center;
+
         }
     }
-    
+
     .card {
         padding: 87px 55px 87px 63px;
         display: flex;
         justify-content: space-between;
         width: 50%;
         max-width: 650px;
-        
+
         @include media("<1330px") {
             width: 100%;
-            max-width: 650px;  
+            max-width: 650px;
         }
 
-        @include media("<tablet"){
+        @include media("<tablet") {
             padding: 60px 20px 30px 0;
         }
 
-        @include media("<phone"){
+        @include media("<phone") {
             flex-direction: column;
             align-items: center;
             padding: 23px 0 34px 0;
             min-width: 100%;
         }
 
-        @include media(">phone"){
+        @include media(">phone") {
             &:hover {
                 color: $white;
-        
+
                 .btn-orange-bg {
                     background-color: $white;
                     color: $orange;
                 }
             }
         }
- 
+
         .card-icon {
             text-align: center;
             max-width: 170px;
 
-            @include media("<phone"){
+            @include media("<phone") {
                 width: 100%;
             }
-    
+
             .icon-card {
                 font-size: 71px;
             }
-    
+
             h3 {
                 font-style: normal;
                 font-weight: bold;
                 margin: 0 auto;
                 margin-top: 45px;
 
-                @include media("<phone"){
+                @include media("<phone") {
                     margin: 15px 0;
                 }
             }
         }
-    
+
         .card-text {
             width: 55%;
             margin-left: 45px;
@@ -367,7 +369,7 @@ h4 {
             font-size: 14px;
             line-height: 17px;
 
-            @include media("<phone"){
+            @include media("<phone") {
                 align-items: center;
                 margin: 0;
 
@@ -376,10 +378,10 @@ h4 {
                 }
             }
 
-            @include media("<tablet"){
+            @include media("<tablet") {
                 margin-left: 0;
             }
-    
+
             .icon-arrow {
                 font-size: 14px;
                 text-align: center;
@@ -387,15 +389,16 @@ h4 {
             }
         }
     }
-    
-    .card-1, .card-4 {
+
+    .card-1,
+    .card-4 {
         background-color: rgba(248, 249, 250, 1);
     }
-    
+
     .card-1 {
 
         @include media("<phone") {
-            background: url(../images/list-bg/1.png);   
+            background: url(../images/list-bg/1.png);
             color: $white;
 
             .btn-orange-bg {
@@ -412,30 +415,31 @@ h4 {
             }
         }
 
-        @include media(">phone"){
+        @include media(">phone") {
 
             &:hover {
-                background: url(../images/list-bg/1.png);  
-            } 
+                background: url(../images/list-bg/1.png);
+            }
         }
     }
+
     .card-2 {
 
         @include media("<phone") {
-            background: url(../images/mob/mob-bg-card.png);   
+            background: url(../images/mob/mob-bg-card.png);
         }
 
-        @include media(">phone"){
+        @include media(">phone") {
             &:hover {
-               background: url(../images/list-bg/2.png);   
+                background: url(../images/list-bg/2.png);
             }
         }
     }
-    
+
     .card-3 {
 
         @include media("<phone") {
-            background: url(../images/list-bg/1.png);   
+            background: url(../images/list-bg/1.png);
             color: $white;
 
             .btn-orange-bg {
@@ -452,23 +456,23 @@ h4 {
             }
         }
 
-        @include media(">phone"){
+        @include media(">phone") {
 
             &:hover {
-                background: url(../images/list-bg/3.png);   
+                background: url(../images/list-bg/3.png);
             }
         }
     }
-    
+
     .card-4 {
 
         @include media("<phone") {
-            background: url(../images/mob/mob-bg-card.png);     
+            background: url(../images/mob/mob-bg-card.png);
         }
 
-        @include media(">phone"){
+        @include media(">phone") {
             &:hover {
-                background: url(../images/list-bg/4.png);   
+                background: url(../images/list-bg/4.png);
             }
         }
     }
@@ -481,19 +485,19 @@ h4 {
     font-size: 20px;
 
     .problems-content {
-        
+
         @include media("<phone") {
-            display: flex;   
-            justify-content: space-between; 
+            display: flex;
+            justify-content: space-between;
         }
     }
 
     .item-wrapper-problem {
         display: flex;
         flex-direction: column;
-        
+
         @include media("<phone") {
-            width: 50%; 
+            width: 50%;
             align-items: center;
         }
     }
@@ -505,7 +509,7 @@ h4 {
             margin: 0 0 23px 0;
         }
     }
-    
+
     .problems-wrapper {
         display: flex;
         justify-content: space-between;
@@ -513,16 +517,16 @@ h4 {
         text-align: center;
 
         @include media("<phone") {
-            flex-direction: column; 
+            flex-direction: column;
             height: 100%;
-            margin: 0; 
+            margin: 0;
         }
 
         div {
             max-width: 30%;
 
             @include media("<phone") {
-                max-width: none; 
+                max-width: none;
                 min-height: 240px;
             }
 
@@ -566,10 +570,10 @@ h4 {
         flex-direction: column;
 
         @include media("<phone") {
-            width: 50%; 
+            width: 50%;
         }
     }
-    
+
     .solution {
         margin: 40px 0 40px 0;
         align-self: flex-end;
@@ -587,19 +591,19 @@ h4 {
         text-align: center;
 
         @include media("<phone") {
-            flex-direction: column; 
+            flex-direction: column;
             height: 100%;
-            margin: 0; 
+            margin: 0;
         }
 
         div {
             max-width: 30%;
 
             @include media("<phone") {
-                max-width: none; 
+                max-width: none;
                 min-height: 240px;
             }
-            
+
             .solutions-icon {
                 font-size: 35px;
                 color: #00BE4C;
@@ -632,7 +636,7 @@ h4 {
         }
 
         @include media("<phone") {
-            display: none;     
+            display: none;
         }
     }
 }
@@ -645,44 +649,44 @@ h4 {
     h4 {
         text-align: center;
     }
-    
+
     .mob-swiper {
         display: flex;
-    
+
         .slide1 {
-            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/1.png) 50%/cover no-repeat;
+            background: linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/1.png) 50%/cover no-repeat;
         }
-    
+
         .slide2 {
-            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/2.png) 50%/cover no-repeat;
+            background: linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/2.png) 50%/cover no-repeat;
         }
-    
+
         .slide3 {
-            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/3.png) 50%/cover no-repeat;
+            background: linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/3.png) 50%/cover no-repeat;
         }
-    
+
         .slide4 {
-            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/4.png) 50%/cover no-repeat;
+            background: linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/4.png) 50%/cover no-repeat;
         }
-    
+
         .slide5 {
-            background:linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/5.png) 50%/cover no-repeat;
+            background: linear-gradient(0deg, rgba(235, 91, 49, 0.8) 41.12%, rgba(235, 91, 49, 0) 100%), url(../images/Our-projects/5.png) 50%/cover no-repeat;
         }
-    
+
         .text-slide {
             color: $white;
             margin: 0 auto;
             width: 60%;
             padding: 380px 24px 46px 24px;
-    
+
             @include media("<tablet") {
-                width: 85%;     
+                width: 85%;
             }
-    
+
             p {
                 text-align: justify;
             }
-    
+
             .btn-projects {
                 display: block;
                 margin: 0 auto;
@@ -696,27 +700,28 @@ h4 {
                 border-radius: 3px 3px 0px 0px;
             }
         }
-        
+
         .swiper-pagination {
-            
+
             .swiper-pagination-bullet {
                 background-color: $white;
                 opacity: 1;
                 width: 10px;
                 height: 10px;
             }
-            
+
             .swiper-pagination-bullet-active {
                 border: 2px solid #FFFFFF;
                 background-color: hsla(210, 17%, 98%, 0);
             }
         }
-    
-        .swiper-button-prev, .swiper-button-next {
+
+        .swiper-button-prev,
+        .swiper-button-next {
             color: $white;
-    
+
             @include media("<tablet") {
-                display: none;    
+                display: none;
             }
         }
     }
@@ -738,7 +743,7 @@ h4 {
 
         @include media("<phone") {
             padding: 0;
-         }
+        }
     }
 
     h4 {
@@ -755,12 +760,12 @@ h4 {
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         @include media("<phone") {
-           justify-content: center;
-           width: 303px;
-           margin: 0 auto;
-           margin-bottom: 72px;
+            justify-content: center;
+            width: 303px;
+            margin: 0 auto;
+            margin-bottom: 72px;
         }
     }
 
@@ -772,7 +777,7 @@ h4 {
         min-width: 310px;
         border-radius: 6px;
         margin-right: 20px;
-        
+
         @include media("<1330px") {
             margin: 20px 10px 0;
         }
@@ -793,7 +798,8 @@ h4 {
                 border-width: 0 0 1px 0;
             }
 
-            &:nth-child(3n), &:nth-child(4n){
+            &:nth-child(3n),
+            &:nth-child(4n) {
                 padding-top: 19px;
                 border-width: 0 1px 0 0;
             }
@@ -821,7 +827,7 @@ h4 {
             }
         }
 
-        p{
+        p {
             margin-top: 66px;
 
             @include media("<phone") {
@@ -900,7 +906,7 @@ h4 {
             text-align: center;
             margin-bottom: 16px;
             color: $orange;
-            
+
             &:focus {
                 border: 1px solid #EB5B31;
             }
@@ -976,12 +982,12 @@ h4 {
     }
 
     .item-wrap {
-       display: flex;
-       justify-content: center;
-       align-items:center;
-       padding: 50px 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0 0 0;
 
-       @include media("<desktop") {
+        @include media("<desktop") {
             justify-content: space-between;
         }
 
@@ -1012,7 +1018,7 @@ h4 {
             max-width: 360px;
             min-width: 0;
         }
-        
+
         div {
             display: flex;
             margin-bottom: 30px;
@@ -1065,7 +1071,7 @@ h4 {
         @include media("<phone") {
             width: 80%;
         }
-        
+
         .icon-arrow {
             color: $white;
             font-size: 14px;
@@ -1107,7 +1113,7 @@ h4 {
         padding: 16px 0 19px 0;
         color: #fff;
         margin-bottom: 56px;
-        
+
         h3 {
             margin: 0;
             padding: 0 10px;
@@ -1118,7 +1124,8 @@ h4 {
         }
     }
 
-    .about-us-text, .our-wrap {
+    .about-us-text,
+    .our-wrap {
         display: flex;
         justify-content: space-around;
         font-size: 24px;
@@ -1133,7 +1140,7 @@ h4 {
         @include media("<phone") {
             font-size: 18px;
         }
-        
+
         p {
             max-width: 500px;
             margin: 0 15px 40px 15px;
@@ -1226,7 +1233,7 @@ h4 {
         .top-icon {
             font-size: 32px;
         }
-        
+
         p {
             font-size: 20px;
             margin: 0;
@@ -1252,7 +1259,7 @@ h4 {
     .container {
         width: 100%;
     }
-    
+
     .clutch-widget-desk {
         max-width: 1020px;
         margin: 0 auto;
@@ -1283,7 +1290,7 @@ h4 {
 
 .services-section {
     padding: 275px 0 90px 0;
-    
+
     @include media("<tablet") {
         padding: 80px 0 90px 0;
     }
@@ -1292,7 +1299,7 @@ h4 {
         color: $orange;
         text-align: center;
         margin-bottom: 115px;
-        
+
         @include media("<tablet") {
             margin-bottom: 0;
         }
@@ -1341,7 +1348,7 @@ h4 {
         .item {
             width: 50%;
             border: #C4C4C4;
-            border-style:solid;
+            border-style: solid;
             border-width: 0 1px 1px 0;
 
             &:nth-child(even) {
@@ -1386,7 +1393,7 @@ h4 {
         background: url(../images/services/buy-bg.jpg);
         padding: 12px 0 48px 0;
         text-align: center;
-        
+
         color: $white;
     }
 
@@ -1403,7 +1410,9 @@ h4 {
         }
     }
 
-    .wrap1, .wrap2, .wrap3 {
+    .wrap1,
+    .wrap2,
+    .wrap3 {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -1415,7 +1424,8 @@ h4 {
         }
     }
 
-    .wrap1, .wrap3 {
+    .wrap1,
+    .wrap3 {
         align-self: center;
     }
 
@@ -1441,7 +1451,8 @@ h4 {
         }
     }
 
-    .item1, .item6 {
+    .item1,
+    .item6 {
         margin-right: 125px;
 
         @include media("<tablet") {
@@ -1530,7 +1541,7 @@ h4 {
             font-size: 30px;
             margin-bottom: 0;
         }
-        
+
         p {
             margin: 20px 0 20px 0;
         }
@@ -1544,7 +1555,7 @@ h4 {
         @include media("<desktop") {
             justify-content: center;
         }
-        
+
         a {
             color: $orange;
             padding: 5px 20px;
@@ -1562,6 +1573,7 @@ h4 {
         }
     }
 }
+
 /* 
 ________________________portfolio-section_____________________ */
 
@@ -1596,7 +1608,7 @@ ________________________portfolio-section_____________________ */
             flex-direction: column;
             align-items: center;
         }
-    }  
+    }
 
     .card {
         display: flex;
@@ -1609,9 +1621,9 @@ ________________________portfolio-section_____________________ */
             position: relative;
             height: auto;
             max-height: none;
-            
+
             &::after {
-                content:'';
+                content: '';
                 position: absolute;
                 height: 1px;
                 width: 30%;
@@ -1620,9 +1632,9 @@ ________________________portfolio-section_____________________ */
                 left: 50%;
                 transform: translateX(-50%);
             }
-        }     
+        }
     }
-    
+
     .card-content {
         position: relative;
         display: flex;
@@ -1637,7 +1649,7 @@ ________________________portfolio-section_____________________ */
         @include media(">tablet") {
 
             &:hover {
-    
+
                 .hover-wrap {
                     opacity: 1;
                 }
@@ -1673,7 +1685,7 @@ ________________________portfolio-section_____________________ */
             height: 100%;
             padding: 25px;
             color: $white;
-            background:$orange;
+            background: $orange;
             opacity: 0;
             transition: all 0.3s ease-in-out;
             width: 100vh;
@@ -1688,13 +1700,13 @@ ________________________portfolio-section_____________________ */
                 order: 3;
                 height: auto;
             }
-            
+
             h3 {
 
                 @include media("<tablet") {
                     display: none;
                 }
-                
+
             }
 
             p {
@@ -1706,7 +1718,7 @@ ________________________portfolio-section_____________________ */
                     color: black;
                 }
             }
-    
+
             .btn-orange-sm {
                 border-color: $white;
                 align-self: center;
@@ -1749,14 +1761,14 @@ ________________________portfolio-section_____________________ */
     .btn-orange-sm {
         align-self: center;
     }
-    
+
     .portfolio-btn {
-        
+
         @include media("<tablet") {
-           background: $white;
-           color:rgba(140, 140, 140, 1);
-           border: 1px solid rgba(140, 140, 140, 1);
-           margin-bottom: 50px;
+            background: $white;
+            color: rgba(140, 140, 140, 1);
+            border: 1px solid rgba(140, 140, 140, 1);
+            margin-bottom: 50px;
 
         }
     }
@@ -1805,7 +1817,7 @@ ________________________portfolio-section_____________________ */
             flex-direction: column;
             align-items: center;
         }
-        
+
         .text {
             margin-right: 60px;
             max-width: 814px;
@@ -1823,14 +1835,14 @@ ________________________portfolio-section_____________________ */
             }
         }
     }
-    
+
     .about {
-        margin-bottom: 50px;    
-        
+        margin-bottom: 50px;
+
         h3 {
             margin-bottom: 15px;
         }
-    
+
         p {
             margin-bottom: 15px;
         }
@@ -1902,7 +1914,7 @@ ________________________portfolio-section_____________________ */
 
     .profil-wrap {
         display: flex;
-        
+
         @include media("<tablet") {
             justify-content: center;
         }
@@ -1957,11 +1969,11 @@ ________________________portfolio-section_____________________ */
 .see-section {
     margin-top: 50px;
     background: url(../images/orenge-bg.png) 0 0/50% 100% no-repeat,
-                url(/dist/images/project/see-bg.jpg) 100% 0/50% 100% no-repeat;
+        url(/dist/images/project/see-bg.jpg) 100% 0/50% 100% no-repeat;
 
-                @include media("<desktop") {
-                    display: none;
-                }
+    @include media("<desktop") {
+        display: none;
+    }
 
     .see-content {
         display: flex;
@@ -2023,7 +2035,7 @@ ________________________portfolio-section_____________________ */
     padding: 275px 0 100px 0;
 
     @include media("<phone") {
-        padding:  275px 0 0 0;
+        padding: 275px 0 0 0;
     }
 
     .blog-content {
@@ -2078,7 +2090,7 @@ ________________________portfolio-section_____________________ */
             height: 100%;
         }
     }
-    
+
     .blog-item-text {
         height: 100%;
         display: flex;
@@ -2097,7 +2109,7 @@ ________________________portfolio-section_____________________ */
             margin-bottom: 19px;
             font-size: 18px;
         }
-        
+
         .btn-orange-sm {
             align-self: center;
             background: $white;
@@ -2109,7 +2121,7 @@ ________________________portfolio-section_____________________ */
     .btn-orange-sm {
         align-self: center;
     }
-    
+
     .blog-btn {
         @include media("<phone") {
             display: none;
@@ -2136,9 +2148,9 @@ ________________________portfolio-section_____________________ */
         max-width: 100%;
         max-height: 626px;
         overflow: hidden;
-        
+
         img {
-            object-fit: cover ;
+            object-fit: cover;
             object-position: center;
         }
     }
@@ -2160,10 +2172,10 @@ ________________________portfolio-section_____________________ */
     .blog-title {
         display: flex;
         justify-content: center;
-        align-items:center;
+        align-items: center;
 
         h1 {
-            margin: 0 7% 0; 
+            margin: 0 7% 0;
         }
 
         a {
@@ -2180,7 +2192,7 @@ ________________________portfolio-section_____________________ */
     .blog-text-wrap {
         display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
     }
 
     .blog-text-item {
@@ -2201,7 +2213,7 @@ ________________________portfolio-section_____________________ */
             @include media("<1100px") {
                 max-width: 100%;
                 margin-right: 0;
-            }  
+            }
         }
 
         .blog-img {
@@ -2209,7 +2221,7 @@ ________________________portfolio-section_____________________ */
 
             @include media("<1100px") {
                 margin-top: 30px;
-            }  
+            }
         }
     }
 
@@ -2221,15 +2233,15 @@ ________________________portfolio-section_____________________ */
 
             @include media("<1100px") {
                 margin: 0;
-            }  
-        
+            }
+
             h2 {
                 font-size: 32px;
                 margin-bottom: 15px;
 
                 @include media("<1100px") {
                     text-align: center;
-                }  
+                }
             }
         }
 
@@ -2243,21 +2255,21 @@ ________________________portfolio-section_____________________ */
 
     .item3 {
         margin-bottom: 30px;
-        
+
         .blog-text {
             max-width: 895px;
             display: flex;
             flex-direction: column;
-            align-items:center;
+            align-items: center;
             margin: 0;
-            
+
             h3 {
                 margin-top: 36px;
                 max-width: 528px;
                 text-align: center;
             }
         }
-        
+
         .paragraph1 {
             margin: 0 0 30px 0;
 
@@ -2272,12 +2284,12 @@ ________________________portfolio-section_____________________ */
                 display: none;
             }
         }
-        
+
     }
 
     .paragraph2 {
         margin: 0;
-        
+
     }
 }
 
@@ -2319,7 +2331,7 @@ ________________________portfolio-section_____________________ */
         justify-content: space-between;
         flex-direction: column;
         max-width: 405px;
-        
+
         input {
             border: 1px solid $orange;
             margin-bottom: 30px;
@@ -2448,8 +2460,9 @@ ________________________portfolio-section_____________________ */
             max-width: 100%;
         }
 
-        .first-adres, .second-adres {
-            margin:0 0 24px 0;
+        .first-adres,
+        .second-adres {
+            margin: 0 0 24px 0;
         }
 
         i {
@@ -2457,10 +2470,11 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    .emeil1-wrap, .emeil2-wrap {
+    .emeil1-wrap,
+    .emeil2-wrap {
         margin: 24px 20px 0 0;
-    } 
-    
+    }
+
     #map {
         max-height: 350px;
         max-width: 100%;
@@ -2491,8 +2505,8 @@ ________________________portfolio-section_____________________ */
         max-width: 646px;
 
         @include media("<tablet") {
-        flex-direction: column;
-        align-items: center;
+            flex-direction: column;
+            align-items: center;
         }
 
         input {
@@ -2508,7 +2522,7 @@ ________________________portfolio-section_____________________ */
             border: none;
             color: $white;
             margin: 0 13px 20px 13px;
-            
+
             &::placeholder {
                 color: $white;
             }
@@ -2547,9 +2561,9 @@ ________________________portfolio-section_____________________ */
     align-items: center;
 
     @include media("<phone") {
-        height: 100%;   
+        height: 100%;
     }
-    
+
     .error-content {
         display: flex;
         flex-direction: column;
@@ -2602,7 +2616,7 @@ ________________________portfolio-section_____________________ */
     @include media("<phone") {
         height: 100%;
     }
-    
+
     .thank-content {
         display: flex;
         flex-direction: column;
@@ -2664,16 +2678,16 @@ ________________________portfolio-section_____________________ */
 
 /* ______________________________career_______________________________ */
 
-.career{
+.career {
     padding-bottom: 55px;
 
-    .container{
+    .container {
         @include media ('<phone') {
-           padding: 0;
+            padding: 0;
         }
     }
 
-    p{
+    p {
         font-size: 24px;
         line-height: 150%;
         margin-bottom: 30px;
@@ -2683,7 +2697,7 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    h3{
+    h3 {
         margin-bottom: 20px;
 
         @include media ('<phone') {
@@ -2691,14 +2705,14 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    .btn-wrap{
+    .btn-wrap {
         display: flex;
         justify-content: center;
     }
 
 }
 
-.career__item-wrap{
+.career__item-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(413px, 413px));
     grid-template-rows: repeat(auto-fit, minmax(265px, 1fr));
@@ -2715,7 +2729,7 @@ ________________________portfolio-section_____________________ */
     }
 }
 
-.career__item{
+.career__item {
     padding: 20px 50px;
     border: 1px solid $orange;
     border-left: 8px solid $orange;
@@ -2726,12 +2740,12 @@ ________________________portfolio-section_____________________ */
     }
 }
 
-.career__item-title{
+.career__item-title {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
 
-    h3{
+    h3 {
         margin-bottom: 20px;
 
         @include media ('<phone') {
@@ -2739,15 +2753,15 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    span{
+    span {
         display: flex;
         font-size: 14px;
         margin-bottom: 10px;
         position: relative;
         padding-left: 31px;
 
-        &::before{
-            content:'';
+        &::before {
+            content: '';
             position: absolute;
             left: 0;
             top: 0;
@@ -2757,7 +2771,7 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    p{
+    p {
         margin-bottom: 0;
         font-size: 14px;
 
@@ -2765,20 +2779,20 @@ ________________________portfolio-section_____________________ */
             padding: 0;
         }
 
-        i{
+        i {
             font-size: 15px;
             margin-right: 15px;
         }
     }
 }
 
-.career__item-title-text{
+.career__item-title-text {
     margin-right: 20px;
     word-wrap: break-word;
     max-width: 230px;
 }
 
-.career__item-title-img{
+.career__item-title-img {
     width: 100%;
     max-width: 51px;
     padding-top: 5px;
@@ -2788,8 +2802,8 @@ ________________________portfolio-section_____________________ */
     }
 }
 
-.career__item-description{
-    p{
+.career__item-description {
+    p {
         font-size: 12px;
         line-height: 150%;
 
