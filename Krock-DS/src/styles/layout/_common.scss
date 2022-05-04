@@ -1868,6 +1868,10 @@ ________________________portfolio-section_____________________ */
 
     .top-text {
         padding: 35px 0 35px 0;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
     }
 
     h2 {
@@ -1875,11 +1879,9 @@ ________________________portfolio-section_____________________ */
         line-height: 37 / 30 * 100%;
         margin-bottom: 16px;
 
-
         @include media ("<minscreen") {
             font-size: 32px;
             margin-bottom: 30px;
-            padding: 0 15px;
         }
 
         @include media ("<tablet") {
@@ -1898,7 +1900,6 @@ ________________________portfolio-section_____________________ */
         }
 
         @include media ("<minscreen") {
-            padding: 0 15px;
             margin-bottom: 100px;
         }
 
@@ -1912,18 +1913,22 @@ ________________________portfolio-section_____________________ */
         width: 65%;
         margin-right: 60px;
 
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
         @include media ("<minscreen") {
             margin-right: 50px;
         }
 
         @include media ("<desktop") {
             margin-right: 0;
-            width: 80%;
+            width: 100%;
             margin-bottom: 50px;
         }
 
         @include media ("<tablet") {
-            width: 100%;
             margin-bottom: 30px;
         }
     }
@@ -1961,11 +1966,10 @@ ________________________portfolio-section_____________________ */
         width: 40%;
 
         @include media ("<desktop") {
-            width: 80%;
+            width: 100%;
         }
 
         @include media ("<tablet") {
-            width: 100%;
             padding: 0 15px;
         }
 
@@ -2013,15 +2017,10 @@ ________________________portfolio-section_____________________ */
             font-size: 20px;
             line-height: 24 / 20 * 100%;
             margin-bottom: 40px;
-            padding: 0;
 
             @include media ("<minscreen") {
                 font-size: 18px;
                 margin-bottom: 40px;
-            }
-
-            @include media ("<desktop") {
-                max-width: 100%;
             }
 
             @include media ("<tablet") {
@@ -2033,11 +2032,11 @@ ________________________portfolio-section_____________________ */
     .seo-person {
         display: flex;
         margin-bottom: 25px;
-        max-width: 270px;
         padding-top: 50px;
 
         @include media ("<tablet") {
             margin: 0 auto;
+            margin-bottom: 25px;
         }
 
         @include media ("<phone") {
@@ -2050,7 +2049,6 @@ ________________________portfolio-section_____________________ */
         width: 40px;
         height: 40px;
         margin-right: 15px;
-        margin-bottom: 20px;
     }
 
     .name {
@@ -2075,61 +2073,82 @@ ________________________portfolio-section_____________________ */
     }
 
     .middle-text {
-
+        padding: 0 15px;
 
         p {
             margin-bottom: 20px;
-            padding: 0 15px;
         }
     }
 
     .challange-swiper {
         padding: 50px 0 100px 0;
         position: relative;
+        min-height: 440px;
 
         @include media ("<minscreen") {
             padding: 50px 0 80px 0;
         }
 
         @include media ("<tablet") {
-            padding: 30px 0 40px 0;
+            padding: 30px 0 80px 0;
         }
-
     }
 
-    .swiper-wrapper {
-        width: 100%;
+    .swiper-nav {
+        display: flex;
+        align-items: center;
     }
 
     .swiper-slide {
-        width: 100vw;
 
         img {
             width: 100%;
+            height: 100%;
         }
     }
+
 
     .swiper-button-prev,
     .swiper-button-next {
         color: $black;
-        font-size: 10px;
-        position: absolute;
-        bottom: 0px;
         width: 15px;
-        height: 15px;
+        height: 20px;
+        top: 99%;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+
+        &::after {
+            font-size: 15px;
+            font-weight: 700;
+            height: auto;
+        }
     }
 
     .swiper-button-prev {
-        left: 35%;
+        left: 42%;
     }
 
     .swiper-button-next {
-        right: 35%;
+        right: 42%;
     }
 
     .swiper-pagination-bullet {
         width: 12px;
         height: 12px;
+
+    }
+
+    .swiper-pagination {
+        display: flex;
+        align-items: center;
+        top: 92%;
+        width: auto;
+        left: 50%;
+        transform: translate(-50%);
+        height: 15px;
+
     }
 
     .swiper-pagination-bullet-active {
@@ -2146,6 +2165,7 @@ ________________________portfolio-section_____________________ */
 
         @include media ("<tablet") {
             margin-bottom: 10px;
+            padding: 0 15px;
         }
 
         p {
@@ -2223,37 +2243,20 @@ ________________________portfolio-section_____________________ */
             width: 100%;
         }
 
-
     }
 
     .web-text {
         width: 46%;
         margin-right: 50px;
+        padding: 0 15px;
 
         @include media ("<desktop") {
-            width: 80%;
-            margin: 0 0 35px 0;
-        }
-
-        @include media ("<phone") {
             width: 100%;
+            margin: 0 0 35px 0;
         }
 
         h2 {
             margin-bottom: 30px;
-            padding: 0;
-
-            @include media ("<tablet") {
-                padding: 0 15px;
-            }
-        }
-
-        p {
-            padding: 0;
-
-            @include media ("<tablet") {
-                padding: 0 15px;
-            }
         }
     }
 
@@ -2262,12 +2265,11 @@ ________________________portfolio-section_____________________ */
         min-height: 685px;
 
         @include media ("<desktop") {
-            width: 80%;
+            width: 100%;
         }
 
         @include media ("<tablet") {
             min-height: 100%;
-            width: 100%;
         }
 
         img {
@@ -2289,6 +2291,7 @@ ________________________portfolio-section_____________________ */
 
             @include media ("<tablet") {
                 margin-bottom: 50px;
+                padding: 0 15px;
             }
         }
 
