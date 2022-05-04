@@ -85,6 +85,7 @@ new Swiper('.challange-swiper', {
 
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
     },
 
     navigation: {
@@ -92,7 +93,7 @@ new Swiper('.challange-swiper', {
         prevEl: '.swiper-button-prev',
     },
 
-    effect: 'coverflow',
+    effect: 'slide',
     autoHeight: true,
     speed: 1000,
 });
