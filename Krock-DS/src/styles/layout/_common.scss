@@ -2083,14 +2083,21 @@ ________________________portfolio-section_____________________ */
     .challange-swiper {
         padding: 50px 0 100px 0;
         position: relative;
-        min-height: 440px;
+
 
         @include media ("<minscreen") {
             padding: 50px 0 80px 0;
         }
 
         @include media ("<tablet") {
-            padding: 30px 0 80px 0;
+            padding: 30px 0 50px 0;
+        }
+    }
+
+    .swiper-wrapper {
+
+        @include media ("<tablet") {
+            min-height: 440px;
         }
     }
 
@@ -2103,9 +2110,14 @@ ________________________portfolio-section_____________________ */
 
     .swiper-slide {
 
+        @include media ("<tablet") {
+            height: 100%;
+        }
+
         img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
     }
 
@@ -2145,7 +2157,22 @@ ________________________portfolio-section_____________________ */
     }
 
     .swiper-pagination-bullet-active {
-        background: $orange;
+        background: transparent;
+        border: 1px solid $orange;
+        position: relative;
+        transition: all 0.6s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $orange;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
 
@@ -2275,6 +2302,10 @@ ________________________portfolio-section_____________________ */
     .marketing {
         margin-bottom: 50px;
 
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
         h2 {
             margin-bottom: 20px;
 
@@ -2284,7 +2315,6 @@ ________________________portfolio-section_____________________ */
 
             @include media ("<tablet") {
                 margin-bottom: 50px;
-                padding: 0 15px;
             }
         }
 
