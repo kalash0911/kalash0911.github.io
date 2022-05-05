@@ -94,7 +94,34 @@ new Swiper('.challange-swiper', {
     },
 
     effect: 'slide',
-    autoHeight: true,
     speed: 1000,
 });
 
+/* const openVideo = document.querySelector(".open-video");
+const closeVideo = document.querySelector(".close-video");
+const videoBlock = document.querySelector(".video-block");
+
+openVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.add("video-block_active");
+  document.body.classList.add("body_overflow");
+  document.body.classList.add("body_lock");
+  document.body.addEventListener("click", closeVideoEvent);
+});
+
+closeVideo.addEventListener("click", function (e) {
+  e.preventDefault();
+  videoBlock.classList.remove("video-block_active");
+  document.body.classList.remove("body_overflow");
+  document.body.classList.remove("body_lock");
+  document.body.removeEventListener("click", closeVideoEvent);
+});
+
+function closeVideoEvent (e) {
+  if(e.target.id!='video' && !e.target.closest('.open-video')){
+    videoBlock.classList.remove("video-block_active");
+    document.body.classList.remove("body_overflow");
+    document.body.classList.remove("body_lock");
+    document.body.removeEventListener("click", closeVideoEvent);
+  }
+} */
