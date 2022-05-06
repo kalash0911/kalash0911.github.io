@@ -1921,21 +1921,20 @@ ________________________portfolio-section_____________________ */
     }
 
     .type-img {
+        position: relative;
         width: 65%;
+        min-height: 1200px;
+        display: flex;
+        align-items: flex-end;
         margin-right: 60px;
-
-        img {
-            width: 100%;
-            object-fit: cover;
-        }
 
         @include media ("<minscreen") {
             margin-right: 50px;
         }
 
         @include media ("<desktop") {
-            margin-right: 0;
             width: 100%;
+            margin-right: 0;
             margin-bottom: 50px;
         }
 
@@ -1943,10 +1942,29 @@ ________________________portfolio-section_____________________ */
             margin-bottom: 30px;
         }
 
+        @include media ("<580px") {
+            min-height: 700px;
+        }
+
+        @include media ("<phone") {
+            min-height: 500px;
+        }
+
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .btn-orange-sm {
+            position: relative;
             width: 100%;
             border-radius: 0;
             padding: 7px 0;
+            z-index: 2;
 
             @include media ("<tablet") {
                 padding: 12px 0;
@@ -2074,14 +2092,6 @@ ________________________portfolio-section_____________________ */
         }
     }
 
-    .swiper-wrapper {
-        height: calc(100vh - 250px);
-
-        @include media ("<tablet") {
-            height: calc(100vh - 170px);
-        }
-    }
-
     .swiper-nav {
         display: flex;
         align-items: center;
@@ -2090,17 +2100,10 @@ ________________________portfolio-section_____________________ */
     }
 
     .swiper-slide {
-        position: relative;
         border-radius: 3px;
-        overflow: hidden;
 
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        img{
             width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     }
 
@@ -2290,6 +2293,86 @@ ________________________portfolio-section_____________________ */
             &:last-child {
                 margin-left: 15px;
             }
+        }
+    }
+
+    .video-block{
+        display: none;
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%);
+        height: max-content;
+        text-align: center;
+        z-index: 3;
+
+        img{
+            width: 90%;
+            height: auto;
+
+            @include media ("<desktop") {
+                width: 100%;
+            }
+        }
+    }
+
+    .video-block_active{
+        display: block;
+    }
+
+    .close-video{
+        position: absolute;
+        top: 10px;
+        right: 1%;
+        width: 30px;
+        height: 30px;
+        background: white;
+        border-radius: 50%;
+        opacity: .6;
+        transition: all .3s ease;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &::before,
+        &::after{
+            content:'';
+            position: absolute;
+            top: 14px;
+            left: 8px;
+            width: 15px;
+            height: 2px;
+            background: $black;
+        }
+
+        &::before{
+            transform: rotate(45deg);
+        }
+
+        &::after{
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+#wrapper{
+    position: relative;
+    overflow: hidden;
+    
+    &::before{
+        content:'';
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+
+        .body_overflow &{
+            display: block;
         }
     }
 }

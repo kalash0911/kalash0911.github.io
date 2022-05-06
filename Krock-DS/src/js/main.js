@@ -97,7 +97,7 @@ new Swiper('.challange-swiper', {
     speed: 1000,
 });
 
-/* const openVideo = document.querySelector(".open-video");
+const openVideo = document.querySelector(".open-video");
 const closeVideo = document.querySelector(".close-video");
 const videoBlock = document.querySelector(".video-block");
 
@@ -124,4 +124,4 @@ function closeVideoEvent (e) {
     document.body.classList.remove("body_lock");
     document.body.removeEventListener("click", closeVideoEvent);
   }
-} */
+}
