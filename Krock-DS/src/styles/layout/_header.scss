@@ -21,7 +21,7 @@
     text-align: start;
     max-width: 145px;
 
-    a{
+    a {
         display: flex;
         align-items: center;
         color: black;
@@ -31,8 +31,8 @@
         margin-left: 10px;
         align-self: center;
         padding: 1px 0;
-        
-        h6{
+
+        h6 {
             max-width: 82px;
             font-weight: 900;
             font-size: 15px;
@@ -43,13 +43,14 @@
             animation-duration: 1.5s;
             animation-fill-mode: forwards;
             font-family: Gilroy;
-    
-            @keyframes text-logo{
-    
-                0%{
+
+            @keyframes text-logo {
+
+                0% {
                     width: 0;
                 }
-                100%{
+
+                100% {
                     width: 125px;
                 }
             }
@@ -80,13 +81,14 @@
         animation-duration: 150ms;
         animation-fill-mode: forwards;
 
-        @keyframes c1{
+        @keyframes c1 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 8px;
                 width: 8px;
             }
@@ -105,13 +107,14 @@
         animation-delay: 150ms;
         animation-fill-mode: forwards;
 
-        @keyframes l1{
+        @keyframes l1 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 3px;
                 width: 11px;
             }
@@ -129,13 +132,14 @@
         animation-delay: 300ms;
         animation-fill-mode: forwards;
 
-        @keyframes c2{
+        @keyframes c2 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 8px;
                 width: 8px;
             }
@@ -154,13 +158,14 @@
         animation-delay: 450ms;
         animation-fill-mode: forwards;
 
-        @keyframes l2{
+        @keyframes l2 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 3px;
                 width: 11px;
             }
@@ -178,13 +183,14 @@
         animation-delay: 600ms;
         animation-fill-mode: forwards;
 
-        @keyframes c3{
+        @keyframes c3 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 8px;
                 width: 8px;
             }
@@ -203,13 +209,14 @@
         animation-delay: 750ms;
         animation-fill-mode: forwards;
 
-        @keyframes l3{
+        @keyframes l3 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 3px;
                 width: 15px;
             }
@@ -227,13 +234,14 @@
         animation-delay: 900ms;
         animation-fill-mode: forwards;
 
-        @keyframes c4{
+        @keyframes c4 {
 
-            0%{
+            0% {
                 height: 0;
                 width: 0;
             }
-            100%{
+
+            100% {
                 height: 8px;
                 width: 8px;
             }
@@ -259,10 +267,10 @@
 
     .header-fixed {
 
-        .logo-test {       
+        .logo-test {
             opacity: 1;
             transition: all 0.5s ease 0s;
-            
+
         }
     }
 }
@@ -286,26 +294,26 @@
             transition: all 0.5s ease 0s;
         }
 
-       .menu-li {
+        .menu-li {
 
-           a {
-               color: $white;
-               transition: all 0.5s ease 0s;
-           }
+            a {
+                color: $white;
+                transition: all 0.5s ease 0s;
+            }
         }
-    
+
         .down {
-    
+
             &:hover {
                 color: $orange;
-                
+
                 .submenu {
                     background-color: $darkgray;
                     border-radius: 5px;
                     width: 40px;
                 }
             }
-        }    
+        }
     }
 }
 
@@ -313,7 +321,7 @@
     top: 0;
 }
 
-.burger{
+.burger {
     position: absolute;
     display: none;
     overflow: hidden;
@@ -328,7 +336,7 @@
         display: block;
     }
 
-    span{
+    span {
         display: block;
         position: relative;
         height: 3px;
@@ -336,39 +344,39 @@
         background-color: $orange;
         border-radius: 5px;
     }
-  
-    .sp1{
+
+    .sp1 {
         transition: all .3s .5s;
     }
-    
-    .sp2{
+
+    .sp2 {
         transition: all .3s .3s;
     }
-    
-    .sp3{
+
+    .sp3 {
         transition: all .3s .1s;
         margin-left: 50%;
         width: 50%;
     }
 
 }
- 
+
 .burger-active {
 
-    .sp1{
+    .sp1 {
         width: 30px;
         height: 30px;
         margin: 5px auto;
         transition: all .3s .1s;
     }
 
-    .sp2{
+    .sp2 {
         background-color: $white;
         transform: translateY(-21px) rotateZ(45deg);
         transition: all .3s .3s;
     }
 
-    .sp3{
+    .sp3 {
         background-color: $white;
         transform: translateY(-28px) rotateZ(-45deg);
         transition: all .3s .5s;
@@ -430,7 +438,8 @@
         width: 50%;
         text-align: center;
 
-        &:nth-child(1), &:nth-child(2) {
+        &:nth-child(1),
+        &:nth-child(2) {
 
             a {
                 padding: 48px 0;
@@ -464,11 +473,11 @@
             padding: 66px 0;
 
             &:hover {
-                background-color:$orange;
+                background-color: $orange;
                 border: 1px solid $orange;
             }
         }
-        
+
         @include media("<desktop") {
             margin-right: 15px;
         }
@@ -506,7 +515,7 @@
             right: 0;
         }
     }
-    
+
     .submenu {
         position: absolute;
         list-style-type: none;
@@ -522,7 +531,7 @@
         }
 
         a {
-            
+
             &:hover {
                 color: $orange;
             }
@@ -589,4 +598,3 @@
         }
     }
 }
-
