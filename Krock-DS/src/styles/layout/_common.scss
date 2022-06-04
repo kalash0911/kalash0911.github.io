@@ -55,6 +55,7 @@ body {
         background: $orange;
         color: $white;
         margin-top: 40px;
+        transition: all 0.5s ease 0s;
     }
 
     .pages {
@@ -2272,9 +2273,23 @@ ________________________portfolio-section_____________________ */
             line-height: 29 / 24 * 100%;
             text-decoration-line: underline;
             color: #1B1B1B;
+            transition: all 0.4s ease;
+
+            &:hover {
+                color: $orange;
+
+                svg {
+                    fill: $orange;
+                }
+            }
 
             @include media ("<tablet") {
                 font-size: 0;
+            }
+
+            svg {
+                fill: #1B1B1B;
+                transition: all 0.4s ease;
             }
         }
 

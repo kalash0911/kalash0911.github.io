@@ -1313,8 +1313,8 @@ input[type='submit'] {
   }
 
   .header-fixed .menu-li a {
-    color: #fff;
     transition: all 0.5s ease 0s;
+    color: #fff;
   }
 
   .header-fixed .down:hover {
@@ -1555,6 +1555,7 @@ input[type='submit'] {
   transform: scaleY(0);
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
+  transition: all 0.4s ease;
 }
 
 .down .submenu li {
@@ -1693,6 +1694,7 @@ body .btn-orange-bg {
   background: #EB5B31;
   color: #fff;
   margin-top: 40px;
+  transition: all 0.5s ease 0s;
 }
 
 body .pages {
@@ -4338,12 +4340,26 @@ ________________________portfolio-section_____________________ */
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
   color: #1B1B1B;
+  transition: all 0.4s ease;
+}
+
+.project-type .arrow a:hover {
+  color: #EB5B31;
+}
+
+.project-type .arrow a:hover svg {
+  fill: #EB5B31;
 }
 
 @media (max-width: 767px) {
   .project-type .arrow a {
     font-size: 0;
   }
+}
+
+.project-type .arrow a svg {
+  fill: #1B1B1B;
+  transition: all 0.4s ease;
 }
 
 .project-type .arrow img {
@@ -5603,6 +5619,11 @@ ________________________portfolio-section_____________________ */
 
 .title-footer a {
   color: #fff;
+  transition: all 0.3s ease;
+}
+
+.title-footer a:hover {
+  color: #352F2D;
 }
 
 .title-footer ul {
@@ -5702,6 +5723,7 @@ ________________________portfolio-section_____________________ */
   line-height: 15px;
   display: block;
   float: right;
+  transition: all 0.3s ease;
 }
 
 .contact .btn-form:hover {
@@ -5777,6 +5799,11 @@ ________________________portfolio-section_____________________ */
 
 .second-footer-section .policy a {
   margin-right: 50px;
+  transition: all 0.3s ease;
+}
+
+.second-footer-section .policy a:hover {
+  color: #EB5B31;
 }
 
 @media (max-width: 479px) {
@@ -5847,6 +5874,11 @@ ________________________portfolio-section_____________________ */
 .second-footer-section .reserved {
   -ms-flex-item-align: center;
   align-self: center;
+  transition: all 0.3s ease;
+}
+
+.second-footer-section .reserved:hover {
+  color: #EB5B31;
 }
 
 @media (max-width: 479px) {

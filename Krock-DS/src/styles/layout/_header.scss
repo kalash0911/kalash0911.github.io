@@ -297,8 +297,8 @@
         .menu-li {
 
             a {
-                color: $white;
                 transition: all 0.5s ease 0s;
+                color: $white;
             }
         }
 
@@ -460,6 +460,7 @@
         margin-right: 38px;
         color: black;
 
+
         @include media("<tablet") {
             display: block;
             margin: 0;
@@ -525,6 +526,7 @@
         transform: scaleY(0);
         -webkit-transform-origin: 0 0;
         transform-origin: 0 0;
+        transition: all 0.4s ease;
 
         li {
             margin-top: 8px;
