@@ -728,6 +728,7 @@ body {
   object-fit: cover;
   z-index: -1; }
 
+/* ________________________#main-section____________________ */
 .main-section {
   position: relative;
   min-height: 100vh;
@@ -797,5 +798,55 @@ body {
     @media (max-width: 1023px) {
       .main-section .btn {
         display: inline-block; } }
+
+/* ________________________#service-section____________________ */
+.service-section {
+  padding: 120px 0 60px 0; }
+  @media (max-width: 1023px) {
+    .service-section {
+      padding: 80px 0 40px 0; } }
+  .service-section .container {
+    max-width: 1210px; }
+  .service-section .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .service-section .content {
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly; } }
+    @media (max-width: 559px) {
+      .service-section .content {
+        -ms-flex-pack: center;
+        justify-content: center; } }
+  .service-section .item {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 40px; }
+    @media (max-width: 1023px) {
+      .service-section .item {
+        width: 43%;
+        margin-bottom: 60px; } }
+    @media (max-width: 559px) {
+      .service-section .item {
+        width: 100%; } }
+  .service-section .icon {
+    margin-bottom: 50px; }
+  .service-section .title {
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #211F19;
+    margin-bottom: 15px; }
+  .service-section .sub-title {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #797874;
+    margin: 0; }
 
 /*# sourceMappingURL=main.css.map */

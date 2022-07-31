@@ -39,6 +39,9 @@ body {
     z-index: -1;
 }
 
+
+/* ________________________#main-section____________________ */
+
 .main-section{
     position: relative;
     min-height: 100vh;
@@ -127,4 +130,69 @@ body {
             display: inline-block;
         }
     }
+}
+
+/* ________________________#service-section____________________ */
+
+.service-section{
+    padding: 120px 0 60px 0;
+
+    @include media('<desktop'){
+        padding: 80px 0 40px 0;
+    }
+
+    .container{
+        max-width: 1210px;
+    }
+
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media('<desktop'){
+            justify-content: space-evenly;
+        }
+
+        @include media('<phone_x'){
+            justify-content: center;
+        }
+    }
+
+    .item{
+        width: 23%;
+        text-align: center;
+        margin-bottom: 40px;
+
+        @include media('<desktop'){
+            width: 43%;
+            margin-bottom: 60px;
+        }
+
+        @include media('<phone_x'){
+            width: 100%;
+        }
+    }
+
+    .icon{
+        margin-bottom: 50px;
+    }
+
+    .title{
+        font-weight: 600;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: $black-2;
+        margin-bottom: 15px;
+    }
+
+    .sub-title{
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: $gray-2;
+        margin: 0;
+    }
+
 }
