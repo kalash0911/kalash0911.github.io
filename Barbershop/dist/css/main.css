@@ -1191,4 +1191,83 @@ body {
     .price-section .price-btn {
       margin: 18px 0 0 10px; } }
 
+#footer {
+  background-color: #141210;
+  padding: 64px 0 36px 0; }
+  @media (max-width: 767px) {
+    #footer {
+      padding: 42px 0 24px 0;
+      border-top: solid 1px #797874; } }
+  #footer .top {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 40px; }
+    @media (max-width: 767px) {
+      #footer .top {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center; } }
+  #footer .block:not(:last-child) {
+    margin-right: 30px; }
+    @media (max-width: 767px) {
+      #footer .block:not(:last-child) {
+        margin-right: 0; } }
+  @media (max-width: 767px) {
+    #footer .block {
+      text-align: center;
+      margin: 0 0 40px 0; } }
+  #footer .title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 112%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 26px; }
+    @media (max-width: 1023px) {
+      #footer .title {
+        font-size: 20px;
+        margin-bottom: 12px; } }
+  #footer .sub-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 172%;
+    color: #ACA29A;
+    margin: 0; }
+    @media (max-width: 1023px) {
+      #footer .sub-title {
+        font-size: 15px; } }
+    #footer .sub-title p {
+      margin: 0; }
+  #footer .link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    transition: all .3s ease 0s; }
+    #footer .link:hover {
+      color: #fff; }
+      #footer .link:hover svg {
+        fill: #fff; }
+    @media (max-width: 767px) {
+      #footer .link {
+        -ms-flex-pack: center;
+        justify-content: center; } }
+    #footer .link svg {
+      width: 22px;
+      min-width: 22px;
+      height: 22px;
+      fill: #C99E58;
+      margin-right: 12px;
+      transition: all .3s ease 0s; }
+  #footer .bot {
+    padding-top: 36px;
+    border-top: solid 1px #797874;
+    text-align: center; }
+    @media (max-width: 767px) {
+      #footer .bot {
+        padding-top: 24px; } }
+
 /*# sourceMappingURL=main.css.map */
