@@ -879,7 +879,10 @@ body {
   .service-section .item {
     width: 23%;
     text-align: center;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0; }
     @media (max-width: 1023px) {
       .service-section .item {
         width: 43%;
@@ -887,6 +890,11 @@ body {
     @media (max-width: 559px) {
       .service-section .item {
         width: 100%; } }
+  .service-section .element-show {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 1s ease 0s; }
   .service-section .icon {
     margin-bottom: 50px; }
   .service-section .title {
@@ -1066,14 +1074,82 @@ body {
     line-height: 108%;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 120px; }
+    margin: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
     @media (max-width: 1023px) {
       .price-section .title {
         font-size: 42px; } }
     @media (max-width: 479px) {
       .price-section .title {
-        font-size: 36px;
+        font-size: 36px; } }
+  .price-section .text-anim {
+    position: relative;
+    margin-bottom: 120px;
+    overflow: hidden; }
+    @media (max-width: 479px) {
+      .price-section .text-anim {
         margin-bottom: 40px; } }
+  .price-section .elem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    display: block;
+    background-color: #fff; }
+  .price-section .element-show .elem {
+    -webkit-animation-name: over_anim1;
+    animation-name: over_anim1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes over_anim1 {
+  0% {
+    height: 1px; }
+  40% {
+    height: 100%; }
+  80% {
+    height: 100%; }
+  100% {
+    height: 0; } }
+
+@keyframes over_anim1 {
+  0% {
+    height: 1px; }
+  40% {
+    height: 100%; }
+  80% {
+    height: 100%; }
+  100% {
+    height: 0; } }
+  .price-section .element-show .title {
+    -webkit-animation-name: over_anim2;
+    animation-name: over_anim2;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s; }
+
+@-webkit-keyframes over_anim2 {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+
+@keyframes over_anim2 {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
   .price-section .list {
     font-weight: 600;
     font-size: 26px;
