@@ -12,7 +12,7 @@ module.exports = function html() {
   const injectCssPath = "<!-- inject:css -->";
 
   const cssLinks = cssFiles.reduce((prev, cur) => {
-    return (prev += `\n\t<link src="./css/${cur}"></link>`);
+    return (prev += `\n\t<link rel="stylesheet" href="./css/${cur}"></link>`);
   }, "");
 
   const jsScripts = jsFiles.reduce((prev, cur) => {

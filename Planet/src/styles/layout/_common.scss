@@ -1,3 +1,36 @@
 body {
-    
+    font-family: $raleway;
+}
+
+.container{
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+/* _________________________#main-section______________________ */
+
+.main-section{
+    min-height: 100vh;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(28, 28, 28, 0.44);
+    }
+
+    .img-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
 }
