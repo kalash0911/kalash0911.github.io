@@ -32,10 +32,14 @@ body {
     }
 }
 
-.text-line{
-    position: absolute;
-    top: 40%;
-    left: 10px;
+.tex{
+    position: relative;
+    
+    .text-line{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 }
 
 /* _________________________#main-section______________________ */
@@ -44,6 +48,10 @@ body {
     position: relative;
     padding: 150px 0 100px 0;
     min-height: 100vh;
+
+    @include media('<phone'){
+        padding: 100px 0;
+    }
 
     &::before{
         content:'';
@@ -82,15 +90,31 @@ body {
         color: $white;
         margin-bottom: 20px;
         text-align: center;
+
+        @include media('<tablet'){
+            font-size: 58px;
+        }
+
+        @include media('<phone'){
+            font-size: 48px;
+        }
     }
 
     .sub-title{
-        font-weight: 400;
+        font-weight: 300;
         font-size: 22px;
-        line-height: 155%;
+        line-height: 1.7;
         color: $white;
         text-align: center;
         max-width: 888px;
+
+        @include media('<tablet'){
+            font-size: 18px;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 }
 
@@ -98,6 +122,14 @@ body {
 
 .mission-section{
     padding: 160px 0 190px 0;
+
+    @include media('<tablet'){
+        padding: 100px 0 140px 0;
+    }
+
+    @include media('<phone'){
+        padding: 50px 0 100px 0;
+    }
 
     .container{
         text-align: center;
@@ -109,6 +141,15 @@ body {
         line-height: 154.9%;
         color: $blue;
         margin-bottom: 20px;
+
+        @include media('<tablet'){
+            font-size: 20px;
+        }
+
+        @include media('<phone'){
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
     }
 
     .title{
@@ -118,6 +159,14 @@ body {
         font-size: 52px;
         line-height: 124%;
         color: $black-2d;
+
+        @include media('<tablet'){
+            font-size: 36px;
+        }
+
+        @include media('<phone'){
+            font-size: 28px;
+        }
     }
 }
 
