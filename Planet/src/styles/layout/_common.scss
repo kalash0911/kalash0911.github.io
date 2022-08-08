@@ -14,9 +14,34 @@ body {
     margin: 0 auto;
 }
 
+.btn{
+    min-width: 105px;
+    padding: 14px;
+    background-color: $blue;
+    border-radius: 6px;
+    font-family: $raleway;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: $white;
+    text-transform: uppercase;
+    transition: all .3s ease 0s;
+    
+    &:hover{
+        background-color: $blue-h;
+    }
+}
+
+.text-line{
+    position: absolute;
+    top: 40%;
+    left: 10px;
+}
+
 /* _________________________#main-section______________________ */
 
 .main-section{
+    position: relative;
     padding: 150px 0 100px 0;
     min-height: 100vh;
 
@@ -66,5 +91,137 @@ body {
         color: $white;
         text-align: center;
         max-width: 888px;
+    }
+}
+
+/* _________________________#mission-section______________________ */
+
+.mission-section{
+    padding: 160px 0 190px 0;
+
+    .container{
+        text-align: center;
+    }
+
+    .plate{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 154.9%;
+        color: $blue;
+        margin-bottom: 20px;
+    }
+
+    .title{
+        position: relative;
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 52px;
+        line-height: 124%;
+        color: $black-2d;
+    }
+}
+
+/* _________________________#test-section______________________ */
+
+.test-section{
+    padding: 210px 0 140px 0;   
+    background-color: $yellow;
+
+    .line-bg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        line-height: 105.4%;
+        color: $black-2d;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .sub-title{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 155%;
+        color: $gray-80;
+        text-align: center;
+        max-width: 578px;
+        margin-bottom: 52px;
+    }
+}
+
+/* _________________________#test-section */
+
+#test{
+    position: relative;
+    width: 100%;
+    max-width: 920px;
+    padding: 45px 65px 56px 65px;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    background-color: $white;
+    z-index: 2;
+
+    .main-title{
+        font-family: $raleway;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input{
+        padding: 15px 18px;  
+        background: $white;
+        border: 1px solid $gray-60;
+        border-radius: 6px; 
+        font-weight: 500;
+        font-size: 16px;
+        color: $black-2d;
+        transition: all .3s ease 0s;
+
+        &:focus{
+            background: #EAF1FF;
+            border: 1px solid $blue;
+        }
+
+        &::placeholder{
+            color: $gray-60;
+        }
+    }
+
+    .btn-test{
+        border: none;
+        min-width: 240px;
+        padding: 14px;
+        background-color: $blue;
+        border-radius: 6px;
+        font-family: $raleway;
+        text-align: center;
+        font-weight: 600;
+        font-size: 15px;
+        color: $white;
+        text-transform: uppercase;
+        transition: all .3s ease 0s;
+        
+        &:hover{
+            background-color: $blue-h;
+        }
     }
 }

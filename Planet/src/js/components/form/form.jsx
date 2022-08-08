@@ -31,12 +31,12 @@ export const Form = () => {
 
   return (
     <div>
-        <h4>Введите Ваши персональные данные:</h4>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="main-title">Введите Ваши персональные данные:</h2>
+        <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <Field label='День*' registerLabel='day' register={register}/>
             <Field label='Месяц*' registerLabel='month' register={register}/>
             <Field label='Год*' registerLabel='year' register={register}/>
-            <input type="submit" />
+            <input className="btn-test" type="submit" />
         </form>
     </div>
   );
