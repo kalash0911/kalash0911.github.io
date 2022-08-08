@@ -78,18 +78,38 @@ header{
             opacity: 1;
         }
     }
+
+    .overflow{
+        display: none;
+
+        @include media('<widescreen'){
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: block;
+            z-index: 1;
+            background-color: $black;
+            opacity: 50%;
+        }
+
+
+    }
     
     .menu-wrap{
 
         @include media('<widescreen'){
             position: absolute;
             top: 0;
-            min-height: 100vh;
+            height: 100vh;
             right: -100%;
             flex-direction: column;
             transition: all .7s ease 0s;
             background-color: $white;
             padding: 140px 50px 50px;
+            overflow: auto;
+            z-index: 2;
 
             .active &{
                 right: 0;
@@ -119,7 +139,6 @@ header{
     
         @include media('<widescreen'){
             flex-direction: column;
-            overflow: auto;
         }
 
         @include media('<tablet'){
@@ -135,6 +154,14 @@ header{
     
         &:last-child{
             margin: 0 0 0 19px;
+
+            @include media('<widescreen'){
+                margin: 0;
+            }
+        }
+
+        @include media('<widescreen'){
+            margin: 0 0 20px 0;
         }
     }
     
@@ -184,7 +211,6 @@ header{
         @include media('<widescreen'){
             font-family: $garamond;
             font-size: 28px;
-            margin-bottom: 20px;
             letter-spacing: 0.2px; 
             font-weight: 500;
         }
