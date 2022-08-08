@@ -182,8 +182,18 @@ body {
     }
 
     .form{
-        display: flex;
+        // display: flex;
         justify-content: space-between;
+    }
+
+    .field {
+        &.error {
+            color: red;
+
+            input {
+                border: 1px solid red;
+            }
+        }
     }
 
     input{

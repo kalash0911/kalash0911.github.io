@@ -1,12 +1,28 @@
-import React from 'react'
+import React from "react";
 
-export const Field = ({ label, registerLabel, register }) => {
+export const Field = ({
+  label,
+  registerLabel,
+  register,
+  errors,
+  placeholder,
+  ...restProps
+}) => {
+  const errorCls = errors && errors[registerLabel] ? "error" : "";
   return (
-    <div className='field'>
-        <label>
-            {label}
-            <input type="text" {...register(registerLabel)}/>
-        </label>
+    <div className={`field ${errorCls}`}>
+      <label>
+        {label} <br />
+        <input
+          type="text"
+          placeholder={placeholder || label.replace("*", "")}
+          {...register(registerLabel)}
+          {...restProps}
+        />
+        <p className="error-text">
+          {errors && errors[registerLabel]?.message}&nbsp;
+        </p>
+      </label>
     </div>
-  )
-}
+  );
+};
