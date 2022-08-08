@@ -43,7 +43,7 @@ module.exports = function localServer(cb) {
       gulp.src("dist/css").pipe(server.stream()).on("end", cb)
     )
   );
-  gulp.watch("src/**/*", gulp.series(script, readyReload));
+  gulp.watch("src/js/**/*", gulp.series(script, readyReload));
   gulp.watch("src/fonts/*", gulp.series(fonts, readyReload));
   gulp.watch("src/files/*", gulp.series(files, readyReload));
   // gulp.watch('src/pages/**/*.pug', gulp.series(pug2html, readyReload))
