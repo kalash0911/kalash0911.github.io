@@ -230,22 +230,52 @@ body {
         margin-bottom: 30px;
     }
 
-    .form{
-        // display: flex;
+    .form-title{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 18px;
+        color: $black-2d;
+        margin-bottom: 12px;
+    }
+
+    .error-text{
+        font-size: 12px;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .row{
+        display: flex;
         justify-content: space-between;
     }
 
     .field {
+        width: 100%;
+
         &.error {
-            color: red;
+            color: $red;
 
             input {
-                border: 1px solid red;
+                border: 1px solid $red;
+                color: $red;
             }
         }
     }
 
+    .three-cols{
+        .field{
+            width: 32%;
+        }
+    }
+
+    .two-cols{
+        .field{
+            width: 49%;
+        }
+    }
+
     input{
+        width: 100%;
         padding: 15px 18px;  
         background: $white;
         border: 1px solid $gray-60;
@@ -266,9 +296,12 @@ body {
     }
 
     .btn-test{
-        border: none;
+        width: auto;
+        display: block;
         min-width: 240px;
         padding: 14px;
+        margin: 0 auto;
+        border: none;
         background-color: $blue;
         border-radius: 6px;
         font-family: $raleway;

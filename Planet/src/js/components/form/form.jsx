@@ -44,8 +44,8 @@ export const Form = () => {
     <div>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h2 className="main-title">Введите Ваши персональные данные:</h2>
-        <h6>Дата рождения</h6>
-        <div className="row 3-cols">
+        <h3 className="form-title">Дата рождения</h3>
+        <div className="row three-cols">
           <Field
             label="День*"
             registerLabel="day"
@@ -65,8 +65,8 @@ export const Form = () => {
             errors={errors}
           />
         </div>
-        <h6>Контактная информация</h6>
-        <div className="row 3-cols">
+        <h3 className="form-title">Контактная информация</h3>
+        <div className="row three-cols">
           <Field
             label="Имя*"
             registerLabel="firstName"
@@ -86,7 +86,7 @@ export const Form = () => {
             errors={errors}
           />
         </div>
-        <div className="row 2-cols">
+        <div className="row two-cols">
           <Field
             label="Телефон*"
             registerLabel="phone"
@@ -101,8 +101,8 @@ export const Form = () => {
             errors={errors}
           />
         </div>
-        <h6>Информация о Вас</h6>
-        <div className="row 2-cols">
+        <h3 className="form-title">Информация о Вас</h3>
+        <div className="row two-cols">
           <Field
             label="Пол*"
             registerLabel="sex"
@@ -116,7 +116,6 @@ export const Form = () => {
             errors={errors}
           />
         </div>
-        <h6>Откуда вы о нас узнали</h6>
         <div className="row">
           <Field
             label="Откуда вы о нас узнали"
