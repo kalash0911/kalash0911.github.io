@@ -4,10 +4,9 @@ import { TestRules } from "./test-rules/test-rules.jsx";
 import { TestApp } from "./test-app/test-app.jsx";
 
 export const App = () => {
-  const [formValues, setFormValues] = useState(true);
-  const [startTest, setStartTest] = useState(true);
+  const [formValues, setFormValues] = useState(null);
+  const [startTest, setStartTest] = useState(false);
 
-  console.log("formValues: ", formValues);
   if (formValues) {
     document.querySelector(".heading-block").classList.add("d-none");
   }

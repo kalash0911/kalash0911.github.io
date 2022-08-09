@@ -8,19 +8,19 @@ export const RULES = [
 ];
 
 export const ANSWERS_LIST = [
-    {
-      value: "2",
-      label: "Да или скорее всего да",
-      active: false,
-    },
-    {
-      value: "1",
-      label: "Может быть или неуверен",
-      active: false,
-    },
-    {
-      value: "0",
-      label: "Нет или скорее всего нет",
-      active: false,
-    },
+  {
+    value: "2",
+    label: "Да или скорее всего да",
+    active: false,
+  },
+  {
+    value: "1",
+    label: "Может быть или неуверен",
+    active: false,
+  },
+  {
+    value: "0",
+    label: "Нет или скорее всего нет",
+    active: false,
+  },
 ];

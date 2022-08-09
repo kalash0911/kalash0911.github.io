@@ -4,50 +4,65 @@ import { ANSWERS_LIST } from "../../constants/rules.js";
 
 export const TestApp = () => {
   const [questionList, setQuestionList] = useState(testsJson.tests);
-  console.log('questionList: ', questionList);
   const [currentQuestionIdx, setQuestionIdx] = useState(0);
-  const [answers, setAnswers] = useState(ANSWERS_LIST)
+  const [answers, setAnswers] = useState(ANSWERS_LIST);
 
   const questionLength = questionList.length;
 
-  const isBtnNextDisabled = questionList[currentQuestionIdx].answer === undefined;
+  const isBtnNextDisabled =
+    questionList[currentQuestionIdx].answer === undefined;
 
-  const setAnswerValue = (value, answerInd) => {
+  const setAnswerToQuestion = (value, answerInd) => {
     const newQuestionList = [...questionList];
-    const newAnswers = answers.map((answer, ind) => {
-        if(answerInd === ind) {
-            return {
-                ...answer,
-                active: true,
-            }
-        }
-        return {
-            ...answer,
-            active: false,
-        }
+    const newAnswers = [...answers];
+    newAnswers.forEach((answer, ind) => {
+      if (answerInd === ind) {
+        answer.active = true;
+        return;
+      }
+      answer.active = false;
     });
-
     newQuestionList[currentQuestionIdx].answer = value;
     setQuestionList(newQuestionList);
     setAnswers(newAnswers);
   };
 
   const handleNextQuestion = () => {
-    // TODO: add prev active class to <li>
     if (currentQuestionIdx < 200) {
-      setQuestionIdx(currentQuestionIdx + 1);
-      setAnswers(ANSWERS_LIST);
+      const nextQuestionInd = currentQuestionIdx + 1;
+      const nextQuestionAnswer = questionList[nextQuestionInd].answer;
+      const newAnswers = [...answers];
+      newAnswers.forEach((answer) => {
+        if (answer.value === nextQuestionAnswer) {
+          answer.active = true;
+          return;
+        }
+        answer.active = false;
+      });
+      setQuestionIdx(nextQuestionInd);
+      setAnswers(newAnswers);
     }
   };
 
   const handlePrevQuestion = () => {
-    if (currentQuestionIdx) {
-      setQuestionIdx(currentQuestionIdx - 1);
+    if (currentQuestionIdx > 0) {
+      const prevQuestionInd = currentQuestionIdx - 1;
+      const prevQuestionAnswer = questionList[prevQuestionInd].answer;
+      const newAnswers = [...answers];
+      newAnswers.forEach((answer) => {
+        if (answer.value === prevQuestionAnswer) {
+          answer.active = true;
+          return;
+        }
+        answer.active = false;
+      });
+      setQuestionIdx(prevQuestionInd);
+      setAnswers(newAnswers);
     }
   };
 
   return (
-    <div>
+    <div className="tests-wrap">
       <div className="question-wrap">
         <div className="progress-wrap">
           <div className="progress-heading">
@@ -57,12 +72,12 @@ export const TestApp = () => {
             <span className="test-name">Оксфордский тест</span>
           </div>
         </div>
-        <h2>{questionList[currentQuestionIdx].text}</h2>
+        <h2 className="main-title">{questionList[currentQuestionIdx].text}</h2>
         <ul className="answer-list">
           {answers.map(({ value, label, active }, answerInd) => (
             <li
-              onClick={() => setAnswerValue(value, answerInd)}
-              className={`answer-option ${active ? 'active' : ''}`}
+              onClick={() => setAnswerToQuestion(value, answerInd)}
+              className={`answer-option ${active ? "active" : ""}`}
               key={answerInd}
             >
               {label}
