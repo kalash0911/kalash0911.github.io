@@ -19,13 +19,14 @@ body {
 }
 
 .btn{
+    display: inline-block;
     min-width: 105px;
-    padding: 14px;
+    padding: 14px 32px;
     background-color: $blue;
     border-radius: 6px;
     font-family: $raleway;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
     color: $white;
     text-transform: uppercase;
@@ -44,6 +45,46 @@ body {
         bottom: 0;
         left: 0;
     }
+}
+
+.img-wrap{
+    position: relative;
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.plate{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 154.9%;
+    color: $blue;
+    margin-bottom: 20px;
+
+    @include media('<tablet'){
+        font-size: 20px;
+    }
+
+    @include media('<phone'){
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+.img-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 /* _________________________#main-section______________________ */
@@ -65,16 +106,6 @@ body {
         width: 100%;
         height: 100%;
         background: rgba(28, 28, 28, 0.44);
-    }
-
-    .img-bg{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
     }
 
     .container{
@@ -139,23 +170,6 @@ body {
         text-align: center;
     }
 
-    .plate{
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 154.9%;
-        color: $blue;
-        margin-bottom: 20px;
-
-        @include media('<tablet'){
-            font-size: 20px;
-        }
-
-        @include media('<phone'){
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-    }
-
     .title{
         position: relative;
         font-family: $garamond;
@@ -173,6 +187,182 @@ body {
         }
     }
 }
+
+/* _________________________#carts-section______________________ */
+
+.carts-section{
+    background-color: $yellow;
+
+    .container{
+
+        @include media('<desktop_l'){
+           padding: 0;
+        }
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media('<desktop_l'){
+            flex-direction: column;
+        }
+
+        &:nth-child(even){
+            flex-direction: row-reverse;
+
+            @include media('<desktop_l'){
+                flex-direction: column;
+            }
+
+            .img-wrap{
+                @include adaptiv-vaule("margin-right", -165, 0, 1);
+                margin-left: 0;
+
+                @include media('<desktop_l'){
+                    max-width: 100%;
+                    margin: 0;
+                    height: 550px;
+                }
+        
+                @include media('<tablet'){
+                    height: 380px;
+                }
+            }
+            
+            .text{
+                margin-right: 25px;
+
+                @include media('<desktop_l'){
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .img-wrap{
+        width: 100%;
+        max-width: 720px;
+        height: 735px;
+        @include adaptiv-vaule("margin-left", -165, 100, 1);
+
+        @include media('<desktop_l'){
+            max-width: 100%;
+            margin: 0;
+            height: 550px;
+        }
+
+        @include media('<tablet'){
+            height: 380px;
+        }
+    }
+
+    .text{
+        width: 100%;
+        max-width: 440px;
+        margin-left: 25px;
+        padding: 25px 0;
+
+        @include media('<desktop_l'){
+            max-width: 100%;
+            margin: 0;
+            padding: 50px 30px 35px 30px;
+        }
+    }
+
+    .plate{
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .title{
+        position: relative;
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 52px;
+        line-height: 114%;
+        color: $black-2d;
+        margin-bottom: 15px;
+
+        @include media('<tablet'){
+            font-size: 44px;
+        }
+
+        @include media('<phone'){
+            font-size: 32px;
+        }
+    }
+
+    .description{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 25px;
+    }
+
+    .btn{
+        @include media('<phone'){
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+/* _________________________#history-section______________________ */
+
+.history-section{
+    position: relative;
+    padding: 40px 0;
+    min-height: 100vh;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $black-2d;
+        opacity: 40%;
+    }
+
+    .container{
+        position: relative;
+        min-height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 80px;
+        line-height: 105.4%;
+        color: $white;
+        margin-bottom: 56px;
+
+        @include media('<tablet'){
+            font-size: 48px;
+        }
+    }
+
+    .btn{
+        background-color: $white;
+        color: $black-2d;
+
+        &:hover{
+            background-color: $blue-h;
+            color: $white;
+        }
+    }
+}
+
 
 /* _________________________#test-section______________________ */
 
