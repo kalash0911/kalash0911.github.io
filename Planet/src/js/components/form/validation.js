@@ -11,7 +11,7 @@ import {
   ERROR_FIELD_EMAIL,
   ERROR_FIELD_CITY,
 } from "../../constants/errors.js";
-import { PHONE_REGEX, EMAIL_REGEX } from '../../constants/regex.js'
+import { PHONE_REGEX, EMAIL_REGEX } from "../../constants/regex.js";
 
 export const validationSchema = yup
   .object({
@@ -21,11 +21,14 @@ export const validationSchema = yup
     firstName: yup.string().required(ERROR_FIELD_FIRST_NAME),
     lastName: yup.string().required(ERROR_FIELD_LAST_NAME),
     patronymic: yup.string(),
-    // phone: yup.string().matches(PHONE_REGEX, {
-    //     message: ERROR_FIELD_PHONE_MATCH
-    // }).required(ERROR_FIELD_PHONE),
+    phone: yup
+      .string()
+      .matches(PHONE_REGEX, {
+        message: ERROR_FIELD_PHONE_MATCH,
+      })
+      .required(ERROR_FIELD_PHONE),
     email: yup.string().matches(EMAIL_REGEX, {
-        message: ERROR_FIELD_EMAIL,
+      message: ERROR_FIELD_EMAIL,
     }),
     sex: yup.string().required(ERROR_FIELD_SEX),
     city: yup.string().required(ERROR_FIELD_CITY),

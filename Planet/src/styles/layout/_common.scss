@@ -249,11 +249,68 @@ body {
         justify-content: space-between;
     }
 
-    .field {
+    .label {
+        margin-bottom: 6px;
+        display: inline-block;
+    }
+
+    .select-wrap {
+        position: relative;
+    }
+
+    .select {
+        position: relative;
+        padding: 15px 45px 18px 15px;
+        border: 1px solid $gray-60;
+        border-radius: 6px; 
+        font-weight: 500;
+        font-size: 16px;
+
+        .placeholder {
+            color: $gray-60;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25px;
+            width: 20px;
+            height: 20px;
+            fill: $gray-60;
+        }
+    }
+
+    .select-list {
+        max-height: 250px;
+        overflow-y: auto;
+        position: absolute;
+        top: calc(100% - 25px);
+        left: 0;
+        right: 0;
+        background: $white;
+        margin: 0;
+        padding: 15px 0;
+        list-style: none;
+        border: 1px solid $gray-60;
+        border-radius: 6px; 
+
+        > li {
+            padding: 5px 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba($gray-60, .2);
+            }
+        }
+    }
+
+    .field, .select-wrap {
         width: 100%;
 
         &.error {
-            color: $red;
+            .label, .error-text {
+                color: $red;
+            }
 
             input {
                 border: 1px solid $red;
@@ -262,14 +319,18 @@ body {
         }
     }
 
+    .col {
+        width: 100%;
+    }
+
     .three-cols{
-        .field{
+        .col{
             width: 32%;
         }
     }
 
     .two-cols{
-        .field{
+        .col{
             width: 49%;
         }
     }

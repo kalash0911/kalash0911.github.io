@@ -12,7 +12,7 @@ export const Field = ({
   return (
     <div className={`field ${errorCls}`}>
       <label>
-        {label} <br />
+        <span className="label">{label}</span> <br />
         <input
           type="text"
           placeholder={placeholder || label.replace("*", "")}
@@ -20,7 +20,7 @@ export const Field = ({
           {...restProps}
         />
         <p className="error-text">
-          {errors && errors[registerLabel]?.message}&nbsp;
+          {(errors && errors[registerLabel]?.message) || <>&nbsp;</>}
         </p>
       </label>
     </div>
