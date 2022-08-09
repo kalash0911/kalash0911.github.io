@@ -185,7 +185,7 @@ export const Form = () => {
             />
           </div>
         </div>
-        <input className="btn-test" type="submit" />
+        <input className="btn-test" type="submit" value='Начать тест'/>
       </form>
     </div>
   );
