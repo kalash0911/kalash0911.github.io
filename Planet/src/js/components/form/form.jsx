@@ -5,13 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./validation.js";
 import { maskPhoneNumber } from "../../utils/general.js";
 import { Select } from "../shared/select/select.jsx";
-import {
-  MONTH_ARRAY,
-  YEARS_ARRAY,
-  DAYS_ARRAY,
-} from "../../constants/form.js";
+import { MONTH_ARRAY, YEARS_ARRAY, DAYS_ARRAY } from "../../constants/form.js";
 
-export const Form = () => {
+export const Form = ({ setFormValues }) => {
   const defaultValues = {
     day: "",
     month: "",
@@ -38,7 +34,9 @@ export const Form = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    setFormValues(data);
+  };
 
   const handlePhoneNumber = (event) => {
     const value = event.target.value.replace(/\D/g, "");
@@ -185,7 +183,7 @@ export const Form = () => {
             />
           </div>
         </div>
-        <input className="btn-test" type="submit" value='Начать тест'/>
+        <input className="btn-test" type="submit" value="Начать тест" />
       </form>
     </div>
   );
