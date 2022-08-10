@@ -394,7 +394,7 @@ body {
         flex-direction: column;
     }
 
-    .text-wrap{
+    .heading-block{
 
         @include media('<phone'){
             padding: 0 30px;
@@ -611,6 +611,54 @@ body {
 
         &::placeholder{
             color: $gray-60;
+        }
+    }
+
+    .rules-list{
+        list-style-type: none;
+        counter-reset:  item;
+        padding: 0;
+        margin: 0 auto 18px auto;
+        max-width: 600px;
+
+        li{
+            position: relative;
+            display: flex;
+            padding: 0 0 18px 48px;
+            font-family: $raleway;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            color: $black-2d;
+
+            @include media('<tablet'){
+                font-size: 15px;
+            }
+        
+            @include media('<phone'){
+                font-size: 14px;
+            }
+
+            &::before {
+                content: counter(item) ''; 
+                counter-increment: item;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: $blue-40;
+                font-family: $raleway;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.5;
+                color: $blue;
+            }
         }
     }
 
