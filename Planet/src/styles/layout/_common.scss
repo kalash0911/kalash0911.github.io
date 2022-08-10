@@ -464,6 +464,44 @@ body {
 
     &.test-started {
         max-width: none;
+        padding: 0 0 0 55px;
+
+        @include media('<tablet_x'){
+            padding: 0 0 0 30px;
+        }
+
+        @include media('<tablet_8'){
+            padding: 0;
+        }
+
+        .questions-block{
+            padding: 40px 0;
+
+            @include media('<tablet_x'){
+                padding: 30px 0;
+            }
+
+            @include media('<tablet_8'){
+                padding: 25px;
+            }
+        }
+
+        .btns-wrap{
+
+            @include media('<650px'){
+                flex-direction: column-reverse;
+            }
+
+            .btn{
+
+                &:first-child{
+
+                    @include media('<650px'){
+                        margin: 25px 0 0 0;
+                    }
+                }
+            }
+        }
     }
 
     .main-title{
@@ -712,6 +750,10 @@ body {
 
     .tests-wrap {
         display: flex;
+
+        @include media('<tablet_8'){
+            flex-direction: column;
+        }
     }
 
     .questions-block {
@@ -719,6 +761,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         min-height: 600px;
+        width: 100%;
 
         .main-title{
             padding: 30px 0;
@@ -728,6 +771,14 @@ body {
             font-size: 20px;
             line-height: 1.3;
             color: $black-2d;
+
+            @include media('<tablet_x'){
+                font-size: 18px;
+            }
+
+            @include media('<phone'){
+                font-size: 16px;
+            }
         }
     }
 
@@ -761,7 +812,15 @@ body {
         font-weight: 700;
         font-size: 18px;
         line-height: 1.2;
-        color: $black-2d
+        color: $black-2d;
+
+        @include media('<tablet_x'){
+            font-size: 16px;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     .test-name{
@@ -770,6 +829,14 @@ body {
         font-size: 16px;
         line-height: 1.2; 
         color: $gray-60;
+
+        @include media('<tablet_x'){
+            font-size: 15px;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     .answer-list{
@@ -789,6 +856,14 @@ body {
         color: $gray-70;
         transition: all .3s ease 0s;
         cursor: pointer;
+
+        @include media('<tablet_x'){
+            font-size: 16px;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
         
         &:before {
             content: "";
@@ -826,8 +901,112 @@ body {
                 cursor: no-drop;
                 opacity: .3;
             }
+
+            &:first-child{
+                margin-right: 30px;
+            }
         }
     }
+
+    .pagination-block{
+        position: relative;
+        max-width: 300px;
+        max-height: 700px;
+        overflow: hidden;
+        padding: 40px 55px 40px 40px;
+        margin-left: 40px;
+        background: #F7F9FD;
+
+        @include media('<tablet_x'){
+            padding: 30px;
+        }
+
+        @include media('<tablet_8'){
+            max-width: 100%;
+            height: 300px;
+            padding: 25px;
+            margin: 0;
+        }
+
+        &::before{
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 145px;
+            background: linear-gradient(180deg, rgba(247, 249, 253, .5) 0%, #F7F9FD 100%);
+
+            @include media('<tablet_8'){
+                height: 40px;
+            }
+        }
+    }
+
+    .form-title{
+        font-family: $raleway;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.1;
+        color: $black-2d;
+        margin-bottom: 25px;
+
+        @include media('<tablet_x'){
+            font-size: 16px;
+        }
+    }
+
+    .pagination{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 95%;
+        overflow: auto;
+
+        @include media('<tablet_8'){
+            height: 85%;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    .pagination-item{
+        min-width: 30px;
+        height: 30px;
+        margin: 0 2px 7px 2px;
+    }
+
+    .pagination-btn{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 11px;
+        text-align: center;
+        color: $blue;
+        border: 0.5px solid #2758B7;
+        background: #EAF1FF;
+        border-radius: 5px;
+        min-width: 30px;
+        height: 30px;
+        transition: all .3s ease 0s;
+
+        &:disabled{
+            color: $gray-60;
+            border: 0.5px solid $gray-60;
+            background: $white;
+        }
+
+        &.current{
+            color: $white;
+            border: 0.5px solid $blue;
+            background: $blue;
+        }
+    }
+
 }
 
 /* _________________________#management-section______________________ */
