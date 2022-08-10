@@ -4,7 +4,7 @@ import { ANSWERS_LIST } from "../../constants/rules.js";
 import { ProgressBar } from "../shared/progress-bar/progress-bar.jsx";
 
 export const TestApp = ({ setUserAnswers, questionInd }) => {
-  const [questionList, setQuestionList] = useState(testsJson.tests.slice(0, 1));
+  const [questionList, setQuestionList] = useState(testsJson.tests);
   const [currentQuestionIdx, setQuestionIdx] = useState(questionInd);
   const [answers, setAnswers] = useState(ANSWERS_LIST);
 
