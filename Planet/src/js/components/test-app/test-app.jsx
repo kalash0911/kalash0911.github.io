@@ -3,9 +3,9 @@ import testsJson from "../../json/tests.json";
 import { ANSWERS_LIST } from "../../constants/rules.js";
 import { ProgressBar } from "../shared/progress-bar/progress-bar.jsx";
 
-export const TestApp = () => {
-  const [questionList, setQuestionList] = useState(testsJson.tests);
-  const [currentQuestionIdx, setQuestionIdx] = useState(0);
+export const TestApp = ({ setUserAnswers, questionInd }) => {
+  const [questionList, setQuestionList] = useState(testsJson.tests.slice(0, 1));
+  const [currentQuestionIdx, setQuestionIdx] = useState(questionInd);
   const [answers, setAnswers] = useState(ANSWERS_LIST);
 
   const questionLength = questionList.length;
@@ -13,14 +13,16 @@ export const TestApp = () => {
   const isBtnNextDisabled =
     questionList[currentQuestionIdx].answer === undefined;
 
-  useEffect(() => {
-    const root = document.getElementById('test');
-    root.classList.add('test-started');
+  const isLastQuestion = questionList[currentQuestionIdx].id === questionLength;
 
-    return (() => {
-      root.classList.remove('test-started');
-    })
-  }, [])
+  useEffect(() => {
+    const root = document.getElementById("test");
+    root.classList.add("test-started");
+
+    return () => {
+      root.classList.remove("test-started");
+    };
+  }, []);
 
   useEffect(() => {
     generateAnswers(questionList[currentQuestionIdx].answer);
@@ -54,9 +56,11 @@ export const TestApp = () => {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestionIdx + 1 < questionLength) {
-      setQuestionIdx(currentQuestionIdx + 1);
+    if (isLastQuestion) {
+      setUserAnswers(questionList);
+      return;
     }
+    setQuestionIdx(currentQuestionIdx + 1);
   };
 
   const handlePrevQuestion = () => {
@@ -120,7 +124,7 @@ export const TestApp = () => {
             onClick={handleNextQuestion}
             disabled={isBtnNextDisabled}
           >
-            Следующий
+            {!isLastQuestion ? "Следующий" : "Продолжить"}
           </button>
         </div>
       </div>
