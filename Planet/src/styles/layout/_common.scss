@@ -87,6 +87,14 @@ body {
     z-index: -1;
 }
 
+.line-bg{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+}
+
 /* _________________________#main-section______________________ */
 
 .main-section{
@@ -374,18 +382,15 @@ body {
         padding: 100px 0;
     }
 
+    .line-bg{
+        z-index: 1;
+    }
+
     .container{
 
         @include media('<phone'){
             padding: 0;
         }
-    }
-
-    .line-bg{
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%);
     }
 
     .content{
@@ -795,5 +800,116 @@ body {
                 cursor: no-drop;
             }
         }
+    }
+}
+
+/* _________________________#management-section______________________ */
+
+.management-section{
+    position: relative;
+    padding: 200px 0 0 0;
+    text-align: center;
+    background-color: $yellow;
+
+    .line-bg{
+        top: 17%;
+        z-index: 1;
+    }
+
+    .container{
+        position: relative;
+        z-index: 2;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 80px;
+        line-height: 105.4%;
+        color: $black-2d;
+        margin-bottom: 10px;
+    }
+
+    .sub-title{
+        font-family: $raleway;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.7;
+        letter-spacing: -0.66px;
+        color: $gray-80;
+        max-width: 560px;
+        margin: 0 auto 80px auto;
+    }
+}
+
+/* _________________________#team-section______________________ */
+
+.team-section{
+    padding: 100px 0 60px 0;
+
+    .container{
+        max-width: 980px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .item{
+        min-width: 350px;
+        padding: 38px;
+        display: flex;
+        align-items: flex-start;
+        background: $yellow;
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+        &:last-child{
+            margin: 0;
+        }
+    }
+
+    .icon{
+        margin-right: 20px;
+    }
+
+    .text-wrap{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: -0.75px;
+        color: $gray-80;
+    }
+
+    .title-sm{
+        margin: 0;
+    }
+
+    .sub-title{
+        margin: 0;
+        font-weight: 700;
+        color: $black-2d;
+    }
+
+    .text{
+        margin-left: 25px;
+        max-width: 475px;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 114%;    
+        color: $black-2d;
+        margin-bottom: 20px;
+    }
+
+    .description{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 2;
+        color: $gray-80;
+        margin: 0;
     }
 }
