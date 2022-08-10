@@ -125,7 +125,7 @@ export const TestApp = () => {
         </div>
       </div>
       <div className="pagination-block">
-        <h5 className="form-title">Список вопросов</h5>
+        <h3 className="form-title">Список вопросов</h3>
         <ul className="pagination">{paginationItems}</ul>
       </div>
     </div>
