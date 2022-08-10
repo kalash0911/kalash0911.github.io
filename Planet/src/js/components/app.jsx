@@ -4,7 +4,7 @@ import { TestRules } from "./test-rules/test-rules.jsx";
 import { TestApp } from "./test-app/test-app.jsx";
 
 export const App = () => {
-  const [formValues, setFormValues] = useState(true);
+  const [formValues, setFormValues] = useState(null);
   const [startTest, setStartTest] = useState(false);
 
   if (formValues) {

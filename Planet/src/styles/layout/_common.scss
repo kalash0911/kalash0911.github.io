@@ -505,6 +505,7 @@ body {
         border-radius: 6px; 
         font-weight: 500;
         font-size: 16px;
+        transition: all .3s ease 0s;
 
         .placeholder {
             color: $gray-60;
@@ -518,6 +519,18 @@ body {
             width: 20px;
             height: 20px;
             fill: $gray-60;
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .open{
+        .select{
+            background: #EAF1FF;
+            border: 1px solid $blue;
+        }
+
+        .arrow {
+            transform: rotate(180deg) translateY(50%);
         }
     }
 
@@ -552,9 +565,13 @@ body {
                 color: $red;
             }
 
-            input {
+            input, .select {
                 border: 1px solid $red;
                 color: $red;
+
+                &::placeholder, .placeholder{
+                    color: $red;
+                }
             }
         }
     }
@@ -681,6 +698,102 @@ body {
         
         &:hover{
             background-color: $blue-h;
+        }
+    }
+
+    .tests-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 600px;
+
+        .main-title{
+            padding: 30px 0;
+            margin: 0;
+            text-align: left;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.3;
+            color: $black-2d;
+        }
+    }
+
+    .progress-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .counter{
+        font-family: $raleway;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.2;
+        color: $black-2d
+    }
+
+    .test-name{
+        font-family: 'Raleway';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.2; 
+        color: $gray-60;
+    }
+
+    .answer-list{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .answer-option {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        margin: 0 0 24px 0;
+        font-family: $raleway;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.4;
+        color: $gray-70;
+        transition: all .3s ease 0s;
+        cursor: pointer;
+        
+        &:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: 1px solid $gray-40;
+            border-radius: 50%;
+            margin-right: 14px;
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .active{
+        color: $black-2d;
+
+        &:before {
+            border: 5px solid $blue-h;
+        }
+    }
+
+    .btns-wrap{
+        display: flex;
+        justify-content: space-between;
+        
+        .btn{
+            min-width: 240px;
+            padding: 18px;
+            border: 1px solid $blue;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:disabled{
+                background-color: $white;
+                color: $blue;
+                cursor: no-drop;
+            }
         }
     }
 }
