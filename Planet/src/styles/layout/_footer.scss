@@ -10,6 +10,7 @@
 
     .top{
         padding: 70px 0;
+        border-top: 1px solid $gray-20;
 
         @include media('<tablet_x'){
             padding: 50px 0;
