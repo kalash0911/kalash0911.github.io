@@ -1535,3 +1535,255 @@ body {
         }
     }
 }
+
+/* _________________________#business-section______________________ */
+
+.business-section{
+
+    .container{
+
+        @include media('<phone'){
+            padding: 0;
+        }
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+        padding: 100px 0;
+
+        @include media('<tablet_x'){
+            flex-direction: column;
+            padding: 50px 0;
+        }
+    }
+
+    .img-cont{
+        width: 100%;
+        max-width: 555px;
+
+        @include media('<tablet_x'){
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        img{
+
+            &:nth-child(2){
+                display: block;
+                margin-left: auto;
+                margin-top: -10px;
+            }
+        }
+    }
+
+    .text-wrap{
+        width: 100%;
+        max-width: 445px;
+        margin-left: 30px;
+
+        @include media('<tablet_x'){
+            max-width: 100%;
+            margin: 0;
+        }
+
+        @include media('<phone'){
+            padding: 0 30px;
+        }
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 1.1;
+        color: $black-2d;
+        margin-bottom: 30px;
+
+        @include media('<tablet'){
+            font-size: 38px;
+        }
+
+        @include media('<phone'){
+            font-size: 30px;
+        }
+    }
+
+    .plate{
+        font-size: 20px;
+        margin-bottom: 12px;
+
+        @include media('<tablet'){
+            font-size: 18px;
+        }
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
+    }
+
+    .list{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .item{
+        display: flex;
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.75;
+        color: #616161;
+        padding: 8px 0;
+
+        @include media('<phone'){
+            font-size: 14px;
+            padding: 4px 0;
+        }
+
+        &::before{
+            content: "\2713";
+            color: $blue;
+            margin-right: 15px;
+        }
+    }
+}
+
+.revert-section{
+    background-color: $yellow;
+
+    .block{
+        flex-direction: row-reverse;
+
+        @include media('<tablet_x'){
+            flex-direction: column;
+        }  
+    }
+
+    .text-wrap{
+        margin: 0 30px 0 0;
+
+        @include media('<tablet_x'){
+            margin: 0;
+        }
+    }
+
+    .img-cont{
+
+        @include media('<tablet_x'){
+            text-align: center;
+        }
+    }
+}
+
+/* _________________________#education-section______________________ */
+
+.education-section{
+    position: relative;
+    padding: 100px 0 150px 0;
+
+    @include media('<tablet_x'){
+        padding: 50px 0;
+    }
+
+    .line-bg{
+        
+        @include media('<phone'){
+           top: 70%;
+        }
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        max-width: 980px;
+
+        @include media('<tablet_8'){
+            flex-direction: column;
+        }
+    }
+
+    .text-wrap{
+        width: 45%;
+
+        @include media('<tablet_8'){
+            width: 100%;
+        }
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 1.1;
+        color: $black-2d;
+        margin-bottom: 20px;
+
+        @include media('<tablet'){
+            font-size: 38px;
+        }
+
+        @include media('<phone'){
+            font-size: 30px;
+        }
+    }
+
+    .description{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 2;
+        color: $gray-80;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+        width: 45%;
+
+        @include media('<tablet_8'){
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+
+    .item{
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .num{
+        display: block;
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 100px;
+        line-height: 1.1;
+        color: $blue;
+        margin-bottom: 5px;
+
+        @include media('<tablet'){
+            font-size: 90px;
+        }
+
+        @include media('<phone'){
+            font-size: 75px;
+        }
+    }
+
+    .text{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 1.7;
+        color: $gray-80;
+
+        @include media('<phone'){
+            font-size: 20px;
+        }
+    }
+}
