@@ -1490,3 +1490,48 @@ body {
         }
     }
 }
+
+/* _________________________#discount-section______________________ */
+
+.discount-section{
+    padding: 50px 0;
+    background-color: $yellow;
+
+    .container{
+        text-align: center;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 1.2;
+        text-align: center;
+        letter-spacing: -1.98px;
+        color: $black-2d;
+        margin: 0 auto 35px auto;
+
+        @include media('<tablet'){
+            font-size: 48px;
+        }
+
+        @include media('<phone'){
+            font-size: 36px;
+        }
+    }
+
+    .btn{
+        position: relative;
+    }
+
+    .arrow-line{
+        position: absolute;
+        min-width: 300px;
+        top: -150px;
+        left: -360px;
+
+        @include media('<phone'){
+            left: -300px;
+        }
+    }
+}
