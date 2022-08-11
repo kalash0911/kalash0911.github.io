@@ -11,8 +11,23 @@ const jsFiles = [];
 const reactJsFile = [];
 
 const optimizeScripts = (paths, isProd, sourceName, files) => {
+  if(isProd) {
+    return browserify(paths)
+      .transform(babelify)
+      .bundle()
+      .on("error", (err) => {
+        console.log("JS Error", err);
+      })
+      .pipe(source(sourceName))
+      .pipe(buffer())
+      .pipe(hash())
+      .pipe(uglify())
+      .pipe(rename((path) => generateFileNames(path, files, isProd)))
+      .pipe(gulp.dest("dist/js"));
+  }
+
   return browserify(paths, {
-    debug: isProd ? false : true,
+    debug: true,
   })
     .transform(babelify)
     .bundle()
@@ -20,9 +35,6 @@ const optimizeScripts = (paths, isProd, sourceName, files) => {
       console.log("JS Error", err);
     })
     .pipe(source(sourceName))
-    .pipe(buffer())
-    .pipe(hash())
-    .pipe(uglify())
     .pipe(rename((path) => generateFileNames(path, files, isProd)))
     .pipe(gulp.dest("dist/js"));
 };
