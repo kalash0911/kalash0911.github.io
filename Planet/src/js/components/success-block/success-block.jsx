@@ -122,7 +122,7 @@ export const SuccessBlock = ({ backToTest, submitForm, phone }) => {
             <p>{label}</p>
           </div>
           {active && !isEdit && (
-            <div>
+            <div className="data">
               <span>
                 {activeLabel} {value}
               </span>
