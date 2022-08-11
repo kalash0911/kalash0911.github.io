@@ -1014,6 +1014,43 @@ body {
         }
     }
 
+    .success-block{
+
+        .main-title{
+            margin-bottom: 10px;
+        }
+    }
+
+
+    .heading{
+        text-align: center;
+    }
+
+    .success-img{
+        margin-bottom: 35px;
+    }
+
+    .subtitle{
+        max-width: 530px;
+        margin: 0 auto 50px auto;
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.5;
+        color: $gray-80;
+    }
+
+    .feedback{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feedback-option{
+
+        .field{
+            max-width: 300px;
+        }
+    }
 }
 
 /* _________________________#management-section______________________ */
@@ -1196,6 +1233,10 @@ body {
 .who-section{
     padding: 60px 0 0 0;
 
+    @include media('<tablet'){
+        padding: 50px 0 0 0;
+    }
+
     .title{
         font-family: $garamond;
         font-weight: 500;
@@ -1227,6 +1268,7 @@ body {
 
         @include media('<tablet_x'){
             font-size: 18px;
+            margin: 0 auto 45px auto;
         }
 
         @include media('<phone'){
@@ -1237,6 +1279,14 @@ body {
     .block{
         display: flex;
         justify-content: space-between;
+
+        @include media('<tablet_x'){
+            justify-content: space-around;
+        }
+
+        @include media('<phone'){
+            flex-direction: column;
+        }
     }
 
     .list{
@@ -1244,19 +1294,77 @@ body {
         counter-reset:  item;
         padding: 0;
         margin: 0;
-        
+
+        &:last-child{
+            counter-reset: item 4;
+
+            .item{
+                margin-left: 30px;
+
+                @include media('<tablet_x'){
+                    margin: 0 0 30px 0;
+                }
+
+                &:before {
+                    content: '0' counter(item) '';
+                    counter-increment: item;
+                }
+
+                &:first-child, &:last-child{
+                    margin-left: 0px;
+                }
+            }
+        }
     }
 
     .item{
+        display: flex;
+        flex-direction: column;
         font-family: $raleway;
         font-weight: 500;
         font-size: 16px;
         line-height: 2;
         color: $gray-80;
+        margin-bottom: 30px;
+
+        @include media('<tablet_x'){
+            margin-right: 30px;
+        }
+
+        @include media('<phone'){
+            margin:0 0 20px 0;
+            flex-direction: row;
+        }
 
         &:before {
-            content: counter(item) '';
+            content: '0' counter(item);
             counter-increment: item;
+            font-family: $garamond;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.2;
+            color: $black-2d;
+            margin-bottom: 10px;
+
+            @include media('<phone'){
+                margin: 0 10px 0 0;
+            }
+        }
+
+        &:first-child, &:last-child{
+            margin-left: 30px;
+
+            @include media('<tablet_x'){
+                margin-left: 0;
+            }
+        }
+    }
+
+    img{
+        margin: 0 30px;
+
+        @include media('<tablet_x'){
+            display: none;
         }
     }
 }
