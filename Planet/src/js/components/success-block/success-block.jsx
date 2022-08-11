@@ -101,10 +101,8 @@ export const SuccessBlock = ({ backToTest, submitForm, phone }) => {
       (option) => option.active && option.value
     );
     submitForm({
-      comunicationMethod: {
-        name: comunicationMethod.name,
-        contact: comunicationMethod.value,
-      },
+      name: comunicationMethod.name,
+      contact: comunicationMethod.value,
     });
   };
 
