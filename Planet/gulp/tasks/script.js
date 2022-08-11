@@ -8,41 +8,40 @@ const hash = require("gulp-hash-filename");
 const rename = require("gulp-rename");
 const { generateFileNames } = require("../utils/utils.js");
 const jsFiles = [];
-const jsPaths = ["src/js/main.js"]
+const reactJsFile = [];
+
+const optimizeScripts = (paths, isProd, sourceName, files) => {
+  return browserify(paths, {
+    debug: isProd ? false : true,
+  })
+    .transform(babelify)
+    .bundle()
+    .on("error", (err) => {
+      console.log("JS Error", err);
+    })
+    .pipe(source(sourceName))
+    .pipe(buffer())
+    .pipe(hash())
+    .pipe(uglify())
+    .pipe(rename((path) => generateFileNames(path, files, isProd)))
+    .pipe(gulp.dest("dist/js"));
+};
 
 module.exports = {
   jsFiles,
-  script: function () {
-    const isProd = process.env.NODE_ENV === "production";
-    if(process.env.WITH_REACT === 'true') {
-      jsPaths.push('src/js/index.jsx')
-    }
+  reactJsFile,
 
-    if (isProd) {
-      return browserify(jsPaths)
-        .transform(babelify)
-        .bundle()
-        .on("error", (err) => {
-          console.log("JS Error", err);
-        })
-        .pipe(source("main.js"))
-        .pipe(buffer())
-        .pipe(hash())
-        .pipe(uglify())
-        .pipe(rename((path) => generateFileNames(path, jsFiles, isProd)))
-        .pipe(gulp.dest("dist/js"));
-      }
-  
-    return browserify(jsPaths, {
-      debug: true,
-    })
-      .transform(babelify)
-      .bundle()
-      .on("error", (err) => {
-        console.log("JS Error", err);
-      })
-      .pipe(source("main.js"))
-      .pipe(rename((path) => generateFileNames(path, jsFiles, isProd)))
-      .pipe(gulp.dest("dist/js"));
-  }
-}
+  reactScript: function () {
+    const jsPaths = ["src/js/index.jsx"];
+    const isProd = process.env.NODE_ENV === "production";
+
+    return optimizeScripts(jsPaths, isProd, "react.js", reactJsFile);
+  },
+
+  script: function () {
+    const jsPaths = ["src/js/main.js"];
+    const isProd = process.env.NODE_ENV === "production";
+
+    return optimizeScripts(jsPaths, isProd, "main.js", jsFiles);
+  },
+};
