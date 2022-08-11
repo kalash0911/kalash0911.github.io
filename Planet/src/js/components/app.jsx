@@ -15,13 +15,12 @@ export const App = () => {
 
   const testEndCookie = getCookie(TEST_END);
 
-  if(testEndCookie || testIsDone) {
-
-    return <TestDone />;
+  if (formValues || testEndCookie) {
+    document.querySelector(".heading-block").classList.add("d-none");
   }
 
-  if (formValues) {
-    document.querySelector(".heading-block").classList.add("d-none");
+  if(testEndCookie || testIsDone) {
+    return <TestDone />;
   }
 
   const questionId = userAnswers?.length - 1 || 0;

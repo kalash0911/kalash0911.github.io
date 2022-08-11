@@ -512,6 +512,12 @@ body {
     }
 }
 
+/* _________________________#test-app */
+
+#test-app {
+    display: none;
+}
+
 /* _________________________#test-form */
 
 #test{
@@ -1189,9 +1195,9 @@ body {
     }
 }
 
-/* _________________________#test-end */
+/* _________________________#test-info */
 
-#test-end{
+#test-info{
     width: 100%;
 
     .plate{
@@ -1996,4 +2002,12 @@ body {
             font-weight: 700;
         }
     }
+}
+
+.fixed-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white;
 }
