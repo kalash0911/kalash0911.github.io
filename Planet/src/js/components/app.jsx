@@ -7,7 +7,7 @@ import { SuccessBlock } from "./success-block/success-block.jsx";
 export const App = () => {
   const [formValues, setFormValues] = useState(true);
   const [startTest, setStartTest] = useState(true);
-  const [userAnswers, setUserAnswers] = useState(null);
+  const [userAnswers, setUserAnswers] = useState(true);
 
   if (formValues) {
     document.querySelector(".heading-block").classList.add("d-none");

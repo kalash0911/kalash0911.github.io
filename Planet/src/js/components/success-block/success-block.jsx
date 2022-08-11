@@ -199,7 +199,7 @@ export const SuccessBlock = ({ backToTest, submitForm, phone }) => {
           Вернуться к тесту
         </button>
         <button
-          className="btn btn-text"
+          className="btn"
           onClick={onSubmit}
           disabled={!isSubmitBtnEnabled}
         >

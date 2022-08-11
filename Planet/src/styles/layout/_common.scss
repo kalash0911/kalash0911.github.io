@@ -95,6 +95,13 @@ body {
     z-index: -1;
 }
 
+.title{
+
+    span{
+        color: $blue;
+    }
+}
+
 /* _________________________#main-section______________________ */
 
 .main-section{
@@ -1017,6 +1024,17 @@ body {
     text-align: center;
     background-color: $yellow;
 
+    @include media('<tablet'){
+        padding: 100px 0 0 0;
+    }
+
+    .container{
+
+        @include media('<phone'){
+            padding: 0;
+        }
+    }
+
     .line-bg{
         top: 17%;
         z-index: 1;
@@ -1034,6 +1052,15 @@ body {
         line-height: 105.4%;
         color: $black-2d;
         margin-bottom: 10px;
+
+        @include media('<tablet'){
+            font-size: 58px;
+        }
+
+        @include media('<phone'){
+            font-size: 48px;
+            padding: 0 30px;
+        }
     }
 
     .sub-title{
@@ -1045,6 +1072,16 @@ body {
         color: $gray-80;
         max-width: 560px;
         margin: 0 auto 80px auto;
+
+        @include media('<tablet'){
+            font-size: 18px;
+        }
+
+        @include media('<phone'){
+            font-size: 16px;
+            padding: 0 30px;
+            margin: 0 auto 40px auto;
+        }
     }
 }
 
@@ -1053,10 +1090,18 @@ body {
 .team-section{
     padding: 100px 0 60px 0;
 
+    @include media('<phone'){
+        padding: 50px 0;
+    }
+
     .container{
         max-width: 980px;
         display: flex;
         justify-content: space-between;
+
+        @include media('<tablet_8'){
+            flex-direction: column-reverse;
+        }
     }
 
     .item{
@@ -1067,6 +1112,11 @@ body {
         background: $yellow;
         border-radius: 10px;
         margin-bottom: 20px;
+
+        @include media('<phone'){
+            padding: 20px;
+            min-width: auto;
+        }
 
         &:last-child{
             margin: 0;
@@ -1084,6 +1134,10 @@ body {
         line-height: 1.4;
         letter-spacing: -0.75px;
         color: $gray-80;
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
     }
 
     .title-sm{
@@ -1099,6 +1153,11 @@ body {
     .text{
         margin-left: 25px;
         max-width: 475px;
+
+        @include media('<tablet_8'){
+            max-width: 100%;
+            margin: 0 0 30px 0;
+        }
     }
 
     .title{
@@ -1108,6 +1167,14 @@ body {
         line-height: 114%;    
         color: $black-2d;
         margin-bottom: 20px;
+
+        @include media('<tablet_x'){
+            font-size: 38px;
+        }
+
+        @include media('<phone'){
+            font-size: 30px;
+        }
     }
 
     .description{
@@ -1117,5 +1184,79 @@ body {
         line-height: 2;
         color: $gray-80;
         margin: 0;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+}
+
+/* _________________________#who-section______________________ */
+
+.who-section{
+    padding: 60px 0 0 0;
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 1.1;
+        text-align: center;
+        color: $black-2d;
+        margin-bottom: 20px;
+
+        @include media('<tablet_x'){
+            font-size: 48px;
+        }
+
+        @include media('<phone'){
+            font-size: 32px;
+        }
+    }
+
+    .sub-title{
+        font-family: $raleway;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.7;
+        text-align: center;
+        letter-spacing: -0.66px;
+        color: $gray-80;
+        max-width: 590px;
+        margin: 0 auto 65px auto;
+
+        @include media('<tablet_x'){
+            font-size: 18px;
+        }
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .list{
+        list-style-type: none;
+        counter-reset:  item;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+    .item{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 2;
+        color: $gray-80;
+
+        &:before {
+            content: counter(item) '';
+            counter-increment: item;
+        }
     }
 }
