@@ -3,6 +3,7 @@ import { Form } from "./form/form.jsx";
 import { TestRules } from "./test-rules/test-rules.jsx";
 import { TestApp } from "./test-app/test-app.jsx";
 import { SuccessBlock } from "./success-block/success-block.jsx";
+import { setCookie } from "../utils/cookie.js";
 
 export const App = () => {
   const [formValues, setFormValues] = useState(true);
@@ -12,6 +13,8 @@ export const App = () => {
   if (formValues) {
     document.querySelector(".heading-block").classList.add("d-none");
   }
+
+  // setCookie('test_end', '1', 5);
 
   const questionId = userAnswers?.length - 1 || 0;
 
