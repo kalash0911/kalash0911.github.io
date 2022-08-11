@@ -1688,7 +1688,7 @@ body {
     }
 
     .line-bg{
-        
+
         @include media('<phone'){
            top: 70%;
         }
@@ -1784,6 +1784,111 @@ body {
 
         @include media('<phone'){
             font-size: 20px;
+        }
+    }
+}
+
+/* _________________________#holding-section______________________ */
+
+.holding-section{
+    padding: 80px 0;
+    background-color: $yellow;
+
+    @include media('<tablet_8'){
+        padding: 50px 0;
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<tablet_8'){
+            flex-direction: column;
+        }
+
+        @include media('<phone'){
+            padding: 0;
+        }
+    }
+
+    .img-cont{
+        position: relative;
+        width: 45%;
+        max-width: 445px;
+        text-align: center;
+
+        @include media('<tablet_8'){
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        img{
+            height: auto;
+        }
+    }
+
+    .badge{
+        display: inline-block;
+        margin: 0 auto;
+        min-width: 340px;
+        background-color: $white;
+        border-radius: 7px; 
+        padding: 16px;
+        margin-top: -40px;
+        text-align: center;
+        
+        @include media('<phone'){
+            min-width: 0;
+            width: 100%;
+        }
+    }
+
+    .user{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.5;
+        color: $blue;
+    }
+
+    .position{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.7;
+        color: $gray-70;
+        margin: 0;
+    }
+
+    .text-wrap{
+        width: 45%;
+
+        @include media('<tablet_8'){
+            width: 100%;
+            text-align: center;
+        }
+
+        @include media('<phone'){
+            padding: 0 30px;
+        }
+    }
+
+    .discription{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 2;
+        color: $gray-80;
+        margin-bottom: 20px;
+
+        @include media('<tablet_8'){
+            text-align: left;
+        }
+
+        span{
+            color: $blue;
+            font-weight: 700;
         }
     }
 }
