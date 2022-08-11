@@ -37,8 +37,16 @@ body {
     }
 }
 
+.title{
+
+    span{
+        color: $blue;
+    }
+}
+
 .tex{
     position: relative;
+    font-style: normal;
     
     .text-line{
         position: absolute;
@@ -93,13 +101,6 @@ body {
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
-}
-
-.title{
-
-    span{
-        color: $blue;
-    }
 }
 
 /* _________________________#main-section______________________ */
@@ -1077,6 +1078,7 @@ body {
 
         @include media('<phone'){
             width: 100%;
+            margin-bottom: 60px;
         }
     }
 
