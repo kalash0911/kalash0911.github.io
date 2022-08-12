@@ -13,15 +13,16 @@ export const MONTH_ARRAY = [
     { displayValue: "Декабрь", value: "12" },
   ]
 
-const minYear = new Date().getFullYear() - 100;
+const maxYear = new Date().getFullYear() - 14;
 
-export const YEARS_ARRAY =  new Array(101).fill(100).map((_, ind) => {
-    const year = minYear + ind + '';
+export const YEARS_ARRAY =  new Array(101 - 14).fill(100).map((_, ind) => {
+    const year = maxYear - ind + '';
     return {
         displayValue: year,
         value: year,
     }
-}).reverse();
+});
+
 
 export const DAYS_ARRAY =  new Array(31).fill(0).map((_, ind) => {
     const curDay = ind + 1;
