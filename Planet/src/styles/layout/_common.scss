@@ -177,13 +177,26 @@ body {
 }
 
 .btn-fix{
-    padding: 14px 0;
+    padding: 20px 0 50px 0;
     text-align: center;
-    box-shadow: 1px -12px 42px rgba(153, 153, 153, 0.21);
+    box-shadow: none;
+    background-color: $yellow;
+    padding-bottom: 50px;
+    transition: all .3s ease 0s;
     
     .btn{
         min-width: 240px;
     }
+}
+
+.fixed-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    box-shadow: 1px -12px 42px rgba(153, 153, 153, 0.21);
+    padding: 20px 0;
 }
 
 .overlay{
@@ -223,10 +236,10 @@ body {
     transition: all .5s ease 0s;
 
     @include media('<tablet'){
-        top: 2%;
+        top: 0;
         padding: 30px 30px 60px 30px;
         overflow: auto;
-        height: 90vh;
+        height: 100vh;
     }
 
     &.active{
@@ -278,12 +291,6 @@ body {
         width: auto;
         min-width: 240px;
     }
-
-    input{
-        @include media('<phone'){
-           padding: 13px;
-        }
-    }
 }
 
 .form-block{
@@ -332,9 +339,12 @@ input{
         border: 1px solid $blue;
     }
 
-
     &::placeholder{
         color: $gray-60;
+    }
+
+    @include media('<phone'){
+        padding: 13px;
     }
 }
 
@@ -677,7 +687,8 @@ input{
         color: $gray-80;
         text-align: center;
         max-width: 578px;
-        margin-bottom: 52px;
+        margin: 0 auto 52px auto;
+        
 
         @include media('<tablet'){
             font-size: 16px;
@@ -693,6 +704,7 @@ input{
 
 #test-app {
     display: none;
+    width: 100%;
 }
 
 /* _________________________#test-form */
@@ -706,6 +718,7 @@ input{
     border-radius: 4px;
     background-color: $white;
     z-index: 2;
+    margin: 0 auto;
 
     @include media('<tablet'){
         padding: 40px;
@@ -847,6 +860,7 @@ input{
         list-style: none;
         border: 1px solid $gray-60;
         border-radius: 6px; 
+        z-index: 2;
 
         > li {
             padding: 5px 10px;
@@ -876,7 +890,7 @@ input{
         }
     }
 
-    .col {
+    .col, .row {
         width: 100%;
     }
 
@@ -1297,6 +1311,12 @@ input{
         margin: 20px 0 0 12px;
         border: none;
 
+        @include media('<phone'){
+            min-width: 46px;
+            width: 47px;
+            height: 47px;
+        }
+
         &:disabled{
             cursor: no-drop;
             
@@ -1349,12 +1369,22 @@ input{
             overflow-wrap: anywhere;
         }
     }
+
+    .test-done-wrap{
+        text-align: center;
+        width: 100%;
+
+        .btn{
+            border: none;
+        }
+    }
 }
 
 /* _________________________#test-info */
 
 #test-info{
     width: 100%;
+    z-index: 2;
 
     .plate{
         text-align: center;
@@ -1378,7 +1408,7 @@ input{
         }
 
         @include media('<phone'){
-            font-size: 40px;
+            font-size: 36px;
             padding: 0 30px;
         }
     }
@@ -2158,12 +2188,4 @@ input{
             font-weight: 700;
         }
     }
-}
-
-.fixed-btn {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: $white;
 }
