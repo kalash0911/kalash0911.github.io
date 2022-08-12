@@ -1817,7 +1817,7 @@ input{
         }
     }
 
-    .btn{
+    .btn-wrap{
         position: relative;
     }
 
@@ -1825,11 +1825,7 @@ input{
         position: absolute;
         min-width: 300px;
         top: -150px;
-        left: -360px;
-
-        @include media('<phone'){
-            left: -300px;
-        }
+        @include adaptiv-vaule("left", 100, -250, 1);
     }
 }
 
