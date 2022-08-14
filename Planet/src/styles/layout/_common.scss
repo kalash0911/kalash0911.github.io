@@ -180,6 +180,34 @@ body {
     }
 }
 
+.list-check{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+        display: flex;
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.75;
+        color: #616161;
+        padding: 8px 0;
+    
+        @include media('<phone'){
+            font-size: 14px;
+            padding: 4px 0;
+        }
+    
+        &::before{
+            content: "\2713";
+            color: $blue;
+            margin-right: 15px;
+        }
+    }
+}
+
+
 .btn-fix{
     padding: 20px 0 50px 0;
     text-align: center;
@@ -1923,33 +1951,6 @@ input{
             font-size: 16px;
         }
     }
-
-    .list{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .item{
-        display: flex;
-        font-family: $raleway;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.75;
-        color: #616161;
-        padding: 8px 0;
-
-        @include media('<phone'){
-            font-size: 14px;
-            padding: 4px 0;
-        }
-
-        &::before{
-            content: "\2713";
-            color: $blue;
-            margin-right: 15px;
-        }
-    }
 }
 
 .revert-section{
@@ -2226,6 +2227,10 @@ input{
             .tab_nav-btn{
                 margin: 0;
             }
+
+            .btn_active{
+                margin: 0 0 18px 0;
+            }
         }
     }
 
@@ -2358,6 +2363,10 @@ input{
 
     .rules-list{
         margin: 0;
+    }
+
+    .list-check{
+        margin-bottom: 8px;
     }
 
 }
