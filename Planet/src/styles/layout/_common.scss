@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: $raleway;
 }
@@ -2195,26 +2199,37 @@ input{
 
 .service-section{
     padding: 180px 0;
+    scroll-behavior: smooth;
 
     .container{
         display: flex;
+        align-items: flex-start;
         justify-content: space-between;
     }
 
     .menu-sec{
         width: 100%;
         max-width: 260px;
-        padding: 30px 12px;
+        padding: 4px 12px 30px 12px;
         background: #F4F8FF;
         border-radius: 12px;
     }
 
     .menu-item{
-        padding-bottom: 16px;
+        padding: 24px 0 6px 0;
         border-bottom: 1px solid $blue-40;
+
+        &:last-child{
+            border: none;
+            padding-bottom: 0;
+
+            .tab_nav-btn{
+                margin: 0;
+            }
+        }
     }
 
-    .nav-btn{
+    .tab_nav-btn{
         width: 100%;
         font-family: $raleway;
         font-weight: 700;
@@ -2226,13 +2241,27 @@ input{
         justify-content: space-between;
         border: none;
         background-color: transparent;
-        margin: 0 0 18px 8px;
+        margin: 0 0 18px 0;
+        padding: 0 6px 0 8px;
+        text-align: left;
+        transition: all .3s ease 0s;
+
+        svg{
+            transition: all .3s ease 0s;
+        }
+
+        &.active, &:hover{
+            color: $black-2d;
+        }
     }
 
-    .list{
+    .tab_list{
         padding: 0;
         margin: 0;
         list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
     }
 
     .link{
@@ -2245,7 +2274,6 @@ input{
         padding: 14px;
         margin-bottom: 8px;
         border-radius: 8px;
-        transition: all .3s ease 0s;
 
         &:hover, &.active{
             background-color: $white;
@@ -2253,4 +2281,83 @@ input{
             font-weight: 600;
         }
     }
+
+    .btn_active{
+
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+    
+    .list_active{
+        opacity: 1;
+        visibility: visible;
+        max-height: 99999px;
+        transition: max-height 80s ease, opacity .7s ease .2s;
+    }
+
+    .content{
+        margin-left: 70px;
+        max-width: 777px;
+    }
+
+    .block{
+        border-bottom: 1px solid $gray-20;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 1.1;
+        margin-bottom: 30px;
+        color: $blue;
+    }
+
+    .sub-title{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 2;
+        color: $black-2d;
+    }
+
+    span{
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .block-title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 1.1;
+        color: $blue;
+        margin-bottom: 20px;
+    }
+
+    .discription{
+        font-family: $raleway;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 2;
+        color: $gray-80;
+        margin-bottom: 25px;
+    }
+
+    .list-title{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 2;
+        color: $black-2d;
+        margin-bottom: 20px;
+    }
+
+    .rules-list{
+        margin: 0;
+    }
+
 }

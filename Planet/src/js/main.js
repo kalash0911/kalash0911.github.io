@@ -70,3 +70,29 @@ function closePopUp(e) {
   popUp.classList.remove("active");
   document.body.classList.remove("body_lock");
 }
+
+/* navmenu service pages */
+
+const tabsBtn  = document.querySelectorAll('.tab_nav-btn');
+const tabsItem = document.querySelectorAll('.tab_list');
+
+tabsBtn.forEach(function(item) {
+    item.addEventListener("click", function(){
+        let currentBtn = item;
+        let tabId = currentBtn.getAttribute('data-tab');
+        let currentTab = document.querySelector(tabId);
+
+        if( ! currentBtn.classList.contains('btn_active')) {
+            tabsBtn.forEach(function(item) {
+                item.classList.remove('btn_active');
+            });
+
+            tabsItem.forEach(function(item) {
+                item.classList.remove('list_active');
+            });
+
+            currentBtn.classList.add('btn_active');
+            currentTab.classList.add('list_active');
+        }
+    });
+});
