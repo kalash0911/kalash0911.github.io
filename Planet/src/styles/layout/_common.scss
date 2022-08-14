@@ -2298,7 +2298,7 @@ input{
         opacity: 1;
         visibility: visible;
         max-height: 99999px;
-        transition: max-height 80s ease, opacity .7s ease .2s;
+        transition: max-height 30s ease, opacity .7s ease .2s;
     }
 
     .content{
@@ -2378,5 +2378,4 @@ input{
     .list-check{
         margin-bottom: 8px;
     }
-
 }
