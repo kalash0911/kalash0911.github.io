@@ -126,6 +126,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 
 destroySlidersOnResize(".reviews-slider", 99999, {
   spaceBetween: 20,
+  speed: 800,
   autoHeight: true,
 
   navigation: {
