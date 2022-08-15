@@ -133,3 +133,20 @@ destroySlidersOnResize(".reviews-slider", 99999, {
     prevEl: '.swiper-button-prev',
   },
 });
+
+/* reviews opener */
+
+const reviewsBlock = document.querySelectorAll(".text-wrap");
+
+reviewsBlock.forEach(function(review){
+  const btnOpen = review.querySelector('.rev-open');
+  const btnClose = review.querySelector('.rev-close');
+
+  btnOpen.addEventListener('click', function(){
+    review.classList.add("active_review");
+  });
+
+  btnClose.addEventListener('click', function(){
+    review.classList.remove("active_review");
+  });
+});
