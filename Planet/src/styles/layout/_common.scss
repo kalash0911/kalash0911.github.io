@@ -2676,7 +2676,7 @@ input{
         padding: 50px;
         background-color: $yellow;
         border-radius: 16px;
-        transition: all .3s ease 0s;
+        transition: all 1.5s ease 0s;
 
         @include media('<widescreen'){
             width: 75%;
@@ -2704,7 +2704,7 @@ input{
         max-height: 288px;
         overflow: hidden;
         margin-bottom: 16px;
-        transition: all .3s ease 0s;
+        transition: max-height 1s ease-out 0s;
 
         @include media('<tablet'){
             font-size: 28px;
@@ -2755,9 +2755,11 @@ input{
 
     .active_review{
         width: 100%;
+        transition: all 1s ease 0s;
 
         .text{
-            max-height: 100%;
+            max-height: 3000px;
+            transition: max-height 3s ease 0s;
         }
 
         .btn-close{
