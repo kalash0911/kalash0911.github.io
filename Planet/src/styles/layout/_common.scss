@@ -2200,20 +2200,41 @@ input{
 
 .service-section{
     padding: 180px 0;
-    scroll-behavior: smooth;
+
+    @include media('<tablet'){
+        padding: 100px 0;
+    }
+
+    @include media('<phone'){
+        padding: 100px 0 50px 0;
+    }
 
     .container{
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+
+        @include media('<tablet_x'){
+            flex-direction: column;
+        }
+
+        @include media('<phone'){
+            padding: 0;
+        }
     }
 
     .menu-sec{
         width: 100%;
         max-width: 260px;
+        min-width: 260px;
         padding: 4px 12px 30px 12px;
         background: #F4F8FF;
         border-radius: 12px;
+
+        @include media('<tablet_x'){
+            max-width: 100%;
+            margin-bottom: 50px;
+        }
     }
 
     .menu-item{
@@ -2251,13 +2272,18 @@ input{
         text-align: left;
         transition: all .3s ease 0s;
 
+        @include media('<phone'){
+            font-size: 16px;
+        }
+        
+        &.active, &:hover{
+            color: $black-2d;
+        }
+
         svg{
             transition: all .3s ease 0s;
         }
 
-        &.active, &:hover{
-            color: $black-2d;
-        }
     }
 
     .tab_list{
@@ -2279,6 +2305,10 @@ input{
         padding: 14px;
         margin-bottom: 8px;
         border-radius: 8px;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
 
         &:hover, &.active{
             background-color: $white;
@@ -2304,12 +2334,22 @@ input{
     .content{
         margin-left: 70px;
         max-width: 777px;
+
+        @include media('<tablet_x'){
+            max-width: 100%;
+            margin-left: 0;
+        }
     }
 
     .block{
         border-bottom: 1px solid $gray-20;
         padding-bottom: 50px;
         margin-bottom: 50px;
+
+        @include media('<phone'){
+            padding: 0 30px 30px 30px;
+            margin-bottom: 30px;
+        }
     }
 
     .title{
@@ -2319,6 +2359,14 @@ input{
         line-height: 1.1;
         margin-bottom: 30px;
         color: $blue;
+
+        @include media('<tablet'){
+            font-size: 50px;
+        }
+
+        @include media('<phone'){
+            font-size: 38px;
+        }
     }
 
     .sub-title{
@@ -2327,6 +2375,10 @@ input{
         font-size: 16px;
         line-height: 2;
         color: $black-2d;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     span{
@@ -2341,6 +2393,14 @@ input{
         line-height: 1.1;
         color: $blue;
         margin-bottom: 20px;
+
+        @include media('<tablet'){
+            font-size: 36px;
+        }
+
+        @include media('<phone'){
+            font-size: 28px;
+        }
     }
 
     .sub-title-block{
@@ -2351,6 +2411,10 @@ input{
         letter-spacing: -0.66px;
         color: $blue;
         margin-bottom: 16px;
+
+        @include media('<phone'){
+            font-size: 18px;
+        }
     }
 
     .discription{
@@ -2360,6 +2424,10 @@ input{
         line-height: 2;
         color: $gray-80;
         margin-bottom: 25px;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     .list-title{
@@ -2369,6 +2437,10 @@ input{
         line-height: 2;
         color: $black-2d;
         margin-bottom: 20px;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     .rules-list{
@@ -2377,5 +2449,144 @@ input{
 
     .list-check{
         margin-bottom: 8px;
+    }
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\ #reviews-slider */
+
+.reviews{
+
+    .reviews-title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 1.1;
+        color: $blue;
+        margin-bottom: 30px;
+
+        @include media('<tablet'){
+            font-size: 36px;
+        }
+
+        @include media('<phone'){
+            font-size: 28px;
+            padding: 0 30px;
+        }
+    }
+
+    .slider-wrap{
+        padding: 30px 65px 50px 65px;
+        background-color: $yellow;
+        border-radius: 20px;
+    
+        @include media('<tablet'){
+            padding: 40px;
+        }
+    
+        @include media('<phone'){
+            padding: 25px;
+        }
+    }
+}
+
+
+.reviews-slider{
+    overflow: hidden;
+
+    .controls-cont{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .img{
+            width: 46px;
+            height: 40px;
+        }
+    }
+
+    .controls{
+        display: flex;
+    }
+
+    .arrow{
+        position: relative;
+        margin: 0 20px;
+        right: auto;
+        top: auto;
+        width: 44px;
+        border-radius: 50%;
+        transition: all .3s ease 0s;
+
+        &:hover{
+            background-color: $blue-h;
+
+            svg{
+                fill: $white;
+            }
+        }
+
+        &::after{
+            display: none;
+        }
+
+        svg{
+            fill: $blue;
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .swiper-slide{
+        width: 100% !important;
+    }
+
+    .text{
+        font-family: $raleway;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 2.1;
+        color: $black-2d;
+        margin-bottom: 20px;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+
+    .user{
+        display: flex;
+    }
+
+    .img-wrap{
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+        margin-right: 20px;
+
+        @include media('<phone'){
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+        }
+    }
+
+    .name, .position{
+        font-family: $raleway;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1;
+        color: $blue;
+
+        @include media('<tablet'){
+            font-size: 16px;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+
+    .position{
+        color: $black-2d;
+        font-weight: 500;
     }
 }

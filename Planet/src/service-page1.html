@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <!-- inject:js -->
     <!-- endinject -->
 </head>
@@ -27,9 +29,9 @@
                                 </svg>
                             </button>
                             <ul class="tab_list list_active" id="tab_1">
-                                <li class="list-item"><a class="link active" href="service-page1.html">Определение</a></li>
-                                <li class="list-item"><a class="link" href="#p-2">Цель</a></li>
-                                <li class="list-item"><a class="link" href="#p-3">Детально о проекте</a></li>
+                                <li class="list-item"><a class="link active" href="service-page1.html#p-1">Определение</a></li>
+                                <li class="list-item"><a class="link" href="service-page1.html#p-2">Цель</a></li>
+                                <li class="list-item"><a class="link" href="service-page1.html#p-3">Детально о проекте</a></li>
                             </ul>
                         </div>
                         <div class="menu-item">
@@ -39,7 +41,7 @@
                                 </svg>
                             </button>
                             <ul class="tab_list " id="tab_2">
-                                <li class="list-item"><a class="link" href="service-page2.html">Почему вы не так энергичны?</a></li>
+                                <li class="list-item"><a class="link" href="service-page2.html#p-1">Почему вы не так энергичны?</a></li>
                                 <li class="list-item"><a class="link" href="service-page2.html#p-2">Цель программы</a></li>
                                 <li class="list-item"><a class="link" href="service-page2.html#p-3">Как проходит программа</a></li>
                                 <li class="list-item"><a class="link" href="service-page2.html#p-4">Продукт программы</a></li>
@@ -52,7 +54,7 @@
                                 </svg>
                             </button>
                             <ul class="tab_list" id="tab_3">
-                                <li class="list-item"><a class="link" href="service-page3.html">Описание</a></li>
+                                <li class="list-item"><a class="link" href="service-page3.html#p-1">Описание</a></li>
                                 <li class="list-item"><a class="link" href="service-page3.html#p-2">1. Как себя мотивировать</a></li>
                                 <li class="list-item"><a class="link" href="service-page3.html#p-3">2. Формулы для жизни</a></li>
                                 <li class="list-item"><a class="link" href="service-page3.html#p-4">3. Инструменты для успешной организации</a></li>
@@ -75,7 +77,7 @@
                         </div>
                     </nav>
                     <div class="content">
-                        <div class="block">
+                        <div class="block" id="p-1">
                             <h1 class="title">
                                 <i class="tex"><img class="text-line" src="./images/text-line.svg" alt="img-line">Ремонт</i> жизни
                             </h1>
@@ -108,6 +110,75 @@
                                 Программа «Ремонт жизни и бизнеса» работает со вторым и третьим пунктами списка. Следует отметить, что третий пункт является основополагающим: чем больше у человека жизненной энергии, тем больше у него контроля, тем большей компанией или областью деятельности он может управлять.
                                 Владельцы и ТОП-менеджеру компаний проходят программы индивидуальных консультаций по восстановлению жизненной силы и увеличению личного потенциала, называющиеся одитингом. 
                             </p>
+                        </div>
+                        <div class="reviews">
+                            <h3 class="reviews-title">Отзывы</h3>
+                            <div class="slider-wrap">
+                                <div class="reviews-slider swiper">
+                                    <div class="controls-cont">
+                                        <img src="./images/icons/quote.svg" alt="icon">
+                                        <div class="controls">
+                                            <div class="arrow swiper-button-prev">
+                                                <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.03125 13.7949C9.34375 13.4824 9.3125 13.0137 9.03125 12.7012L5.25 9.10742H14.25C14.6562 9.10742 15 8.79492 15 8.35742V7.35742C15 6.95117 14.6562 6.60742 14.25 6.60742H5.25L9.03125 3.04492C9.3125 2.73242 9.34375 2.26367 9.03125 1.95117L8.34375 1.26367C8.0625 0.982422 7.5625 0.982422 7.28125 1.26367L1.21875 7.35742C0.90625 7.63867 0.90625 8.10742 1.21875 8.38867L7.28125 14.4824C7.5625 14.7637 8.03125 14.7637 8.34375 14.4824L9.03125 13.7949Z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="arrow swiper-button-next">
+                                                <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.9375 1.95117C5.625 2.26367 5.65625 2.73242 5.9375 3.04492L9.71875 6.60742H0.75C0.3125 6.60742 0 6.95117 0 7.35742V8.35742C0 8.79492 0.3125 9.10742 0.75 9.10742H9.71875L5.9375 12.7012C5.65625 13.0137 5.65625 13.4824 5.9375 13.7949L6.625 14.4824C6.9375 14.7637 7.40625 14.7637 7.6875 14.4824L13.7812 8.38867C14.0625 8.10742 14.0625 7.63867 13.7812 7.32617L7.6875 1.26367C7.40625 0.982422 6.9375 0.982422 6.625 1.26367L5.9375 1.95117Z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-wrapper">
+                                      <div class="swiper-slide">
+                                        <p class="text">
+                                            “Я рекомендую эту программу всем своим знакомым, друзьям, коллегам! Это то, что точно меняет жизни людей к лучшему.  Да, программа требует времени, сил, намерения и денег. Но она окупается очень быстро! Ведь что может быть дороже состояния счастья? Я благодарна группе «Планета» за их искреннюю заботу и помощь! Я обрела не только хороших специалистов, но и настоящих друзей в вашем лице! Спасибо Вам огромное!!! Продолжайте делать то, что вы делаете. Это очень ценно!
+                                        </p>
+                                        <div class="user">
+                                            <div class="img-wrap">
+                                                <img src="./images/user.jpg" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <p class="name">Елена Александрова</p>
+                                                <p class="position">Исполнительный директор компании «БогушТайм»</p>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <p class="text">
+                                            Эти три составляющие представляют собой потенциал компании, который можно представить ввиде вектора, направленного вверх, к выживанию и процветанию. Но по мере развития негативное влияние внешней среды на компанию увеличивается, что также можно представить в виде вектора, который направлен вниз, к деградации и смерти компании. Когда эти два вектора становятся равны, рост дохода прекращается, развитие останавливается. Вдохнуть жизнь в компанию и вновь добиться ее роста и развития можно только в том случае, если мы увеличим одну из составляющих данного списка.
+                                            
+                                            Эти три составляющие представляют собой потенциал компании, который можно представить ввиде вектора, направленного вверх, к выживанию и процветанию. Но по мере развития негативное влияние внешней среды на компанию увеличивается, что также можно представить в виде вектора, который направлен вниз, к деградации и смерти компании. Когда эти два вектора становятся равны, рост дохода прекращается, развитие останавливается. Вдохнуть жизнь в компанию и вновь добиться ее роста и развития можно только в том случае, если мы увеличим одну из составляющих данного списка.
+                                        
+                                        </p>
+                                        <div class="user">
+                                            <div class="img-wrap">
+                                                <img src="./images/user.jpg" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <p class="name">Елена Александрова</p>
+                                                <p class="position">Исполнительный директор компании «БогушТайм»</p>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-slide">
+                                        <p class="text">
+                                            Эти три составляющие представляют собой потенциал компании, который можно представить ввиде вектора, направленного вверх, к выживанию                                         
+                                        </p>
+                                        <div class="user">
+                                            <div class="img-wrap">
+                                                <img src="./images/user.jpg" alt="img">
+                                            </div>
+                                            <div class="info">
+                                                <p class="name">Елена Александрова</p>
+                                                <p class="position">Исполнительный директор компании «БогушТайм»</p>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
