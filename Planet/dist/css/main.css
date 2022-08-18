@@ -1276,7 +1276,8 @@ input, textarea {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.75;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    color: #616161; }
   @media (max-width: 479px) {
     .carts-section .btn {
       display: block;
@@ -1286,7 +1287,7 @@ input, textarea {
 .history-section {
   position: relative;
   padding: 40px 0;
-  min-height: 100vh; }
+  min-height: 1081px; }
   .history-section::before {
     content: '';
     position: absolute;
@@ -1298,7 +1299,7 @@ input, textarea {
     opacity: 40%; }
   .history-section .container {
     position: relative;
-    min-height: calc(100vh - 80px);
+    min-height: 1001px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -2634,13 +2635,14 @@ input, textarea {
     font-weight: 600;
     font-size: 16px;
     line-height: 2;
-    color: #2D2D2D; }
+    color: #616161; }
     @media (max-width: 479px) {
       .service-section .sub-title {
         font-size: 14px; } }
   .service-section span {
     font-weight: 700;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    color: #2D2D2D; }
   .service-section .block-title {
     font-family: "Cormorant Garamond", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
@@ -3169,7 +3171,7 @@ input, textarea {
   .contact-section .form-wrap {
     padding: 40px 65px 55px 65px;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 16px;
     box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12); }
     @media (max-width: 767px) {
       .contact-section .form-wrap {
