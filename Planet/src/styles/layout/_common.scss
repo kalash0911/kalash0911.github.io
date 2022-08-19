@@ -3242,3 +3242,62 @@ input, textarea{
         }
     }
 }
+
+.business-section{
+
+    .list-check{
+
+        li{
+            opacity: 0;
+            transform: translate(-50%);
+        }
+    }
+
+    .element-show{
+        
+        li{
+            opacity: 1;
+            transform: translate(0);
+
+            &:nth-child(1){
+                transition: all 2s ease 0s;
+            }
+
+            &:nth-child(2){
+                transition: all 2s ease .2s;
+            }
+
+            &:nth-child(3){
+                transition: all 2s ease .4s;
+            }
+
+            &:nth-child(4){
+                transition: all 2s ease .6s;
+            }
+
+            &:nth-child(5){
+                transition: all 2s ease .8s;
+            }
+
+            &:nth-child(6){
+                transition: all 2s ease 1s;
+            }
+
+            &:nth-child(7){
+                transition: all 2s ease 1.2s;
+            }
+
+            &:nth-child(8){
+                transition: all 2s ease 1.4s;
+            }
+
+            &:nth-child(9){
+                transition: all 2s ease 1.6s;
+            }
+
+            &:nth-child(10){
+                transition: all 2s ease 1.8s;
+            }
+        }
+    }
+}
