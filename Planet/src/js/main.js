@@ -143,11 +143,31 @@ reviewsBlock.forEach(function(review){
   const btnOpen = review.querySelector('.rev-open');
   const btnClose = review.querySelector('.rev-close');
 
-  btnOpen.addEventListener('click', function(){
-    review.classList.add("active_review");
-  });
+  if(btnOpen){
+    btnOpen.addEventListener('click', function(){
+      review.classList.add("active_review");
+    });
 
-  btnClose.addEventListener('click', function(){
-    review.classList.remove("active_review");
-  });
+    btnClose.addEventListener('click', function(){
+      review.classList.remove("active_review");
+    });
+  }
 });
+
+new WOW().init();
+
+/* castom anim */
+
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('element-show');
+    }
+  });
+}
+let options = { threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.element-animation');
+for (let elm of elements) {
+  observer.observe(elm);
+}

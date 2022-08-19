@@ -2220,10 +2220,10 @@ input, textarea {
     position: relative; }
   .discount-section .anim-btn {
     box-shadow: 0 0 0 0 rgba(88, 120, 243, 0.4);
-    -webkit-animation: pulse 2s infinite;
-    animation: pulse 2s infinite; }
+    -webkit-animation: pulseAnimBtn 2s infinite;
+    animation: pulseAnimBtn 2s infinite; }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes pulseAnimBtn {
   0% {
     box-shadow: 0 0 0 0 #5878f3; }
   70% {
@@ -2231,7 +2231,7 @@ input, textarea {
   100% {
     box-shadow: 0 0 0 50px rgba(88, 120, 243, 0); } }
 
-@keyframes pulse {
+@keyframes pulseAnimBtn {
   0% {
     box-shadow: 0 0 0 0 #5878f3; }
   70% {
@@ -2409,6 +2409,25 @@ input, textarea {
     @media (max-width: 479px) {
       .education-section .num {
         font-size: 75px; } }
+  .education-section .num-amin {
+    -webkit-animation: rotateNumAmin 4s linear infinite;
+    animation: rotateNumAmin 4s linear infinite; }
+
+@-webkit-keyframes rotateNumAmin {
+  from {
+    -webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);
+    transform: rotate(0deg) translateX(10px) rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg) translateX(10px) rotate(-360deg);
+    transform: rotate(360deg) translateX(10px) rotate(-360deg); } }
+
+@keyframes rotateNumAmin {
+  from {
+    -webkit-transform: rotate(0deg) translateX(10px) rotate(0deg);
+    transform: rotate(0deg) translateX(10px) rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg) translateX(10px) rotate(-360deg);
+    transform: rotate(360deg) translateX(10px) rotate(-360deg); } }
   .education-section .text {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
@@ -3199,6 +3218,39 @@ input, textarea {
     display: block;
     max-width: 240px;
     margin: 0 auto; }
+
+/* animation */
+.animate__animated {
+  --animate-duration: 2.5s; }
+
+.who-section .item, .who-section .img {
+  opacity: 0; }
+
+.who-section .element-show .list1 .item {
+  opacity: 1; }
+  .who-section .element-show .list1 .item:nth-child(1) {
+    transition: opacity 2s ease 0s; }
+  .who-section .element-show .list1 .item:nth-child(2) {
+    transition: opacity 2s ease .2s; }
+  .who-section .element-show .list1 .item:nth-child(3) {
+    transition: opacity 2s ease .4s; }
+  .who-section .element-show .list1 .item:nth-child(4) {
+    transition: opacity 2s ease .6s; }
+
+.who-section .element-show .list2 .item {
+  opacity: 1; }
+  .who-section .element-show .list2 .item:nth-child(1) {
+    transition: opacity 2s ease .8s; }
+  .who-section .element-show .list2 .item:nth-child(2) {
+    transition: opacity 2s ease 1s; }
+  .who-section .element-show .list2 .item:nth-child(3) {
+    transition: opacity 2s ease 1.2s; }
+  .who-section .element-show .list2 .item:nth-child(4) {
+    transition: opacity 2s ease 1.4s; }
+
+.who-section .element-show .img {
+  opacity: 1;
+  transition: opacity 2s ease 0s; }
 
 #footer {
   display: -ms-flexbox;

@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <!-- inject:js -->
 	<script src="./js/main.js" defer></script>
     <!-- endinject -->
@@ -65,22 +69,22 @@
             <section class="management-section"> 
                 <img class="line-bg" src="./images/line-bg.svg" alt="line-bg">
                 <div class="container">
-                    <h1 class="title">Outstress Management</h1>
-                    <p class="sub-title">Помощь с улучшением бизнеса путем общения и доведением дела до конца</p>
-                    <video class="video" autoplay controls playsinline src="./files/outstress-management.mp4"></video>
+                    <h1 class="title wow animate__animated animate__fadeInUp">Outstress Management</h1>
+                    <p class="sub-title wow animate__animated animate__fadeInUp">Помощь с улучшением бизнеса путем общения и доведением дела до конца</p>
+                    <video class="video wow animate__animated animate__fadeIn" autoplay controls playsinline src="./files/outstress-management.mp4"></video>
                 </div>
             </section>
             <section class="team-section">
                 <div class="container">
                     <div class="item-wrap">
-                        <div class="item">
+                        <div class="item wow animate__animated animate__fadeInLeft">
                             <img class="icon" src="./images/icons/calendar.svg" alt="icon">
                             <div class="text-wrap">
                                 <p class="title-sm">Длительность курса:</p>
                                 <p class="sub-title">2 недели</p>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item wow animate__animated animate__fadeInLeft">
                             <img class="icon" src="./images/icons/clock.svg" alt="icon">
                             <div class="text-wrap">
                                 <p class="title-sm">График:</p>
@@ -88,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text">
+                    <div class="text wow animate__animated animate__fadeInUp">
                         <h2 class="title">Команда наших специалистов готова приехать к вам</h2>
                         <p class="description">Мы приедем и поможем провести Ваших сотрудников по этому курсу. Вам не надо отрывать их от работы и организовать их приезд - мы приедем к Вам сами.</p>
                     </div>
@@ -96,18 +100,18 @@
             </section>
             <section class="who-section">
                 <div class="container">
-                    <h2 class="title"><span>Кому подходит</span> этот курс</h2>
-                    <p class="sub-title">Всем, для кого важно получать результат и эффективно общаться с людьми в бизнесе
+                    <h2 class="title wow animate__animated animate__fadeInUp"><span>Кому подходит</span> этот курс</h2>
+                    <p class="sub-title wow animate__animated animate__fadeInUp">Всем, для кого важно получать результат и эффективно общаться с людьми в бизнесе
                     </p>
-                    <div class="block">
-                        <ol class="list">
+                    <div class="block element-animation">
+                        <ol class="list list1">
                             <li class="item">Собственнику бизнеса</li>
                             <li class="item">ТОП-менеджеру</li>
                             <li class="item">Предпринимателю</li>
                             <li class="item">Менеджеру среднего звена</li>
                         </ol>
                         <img class="img" src="./images/management-page/who-img.png" alt="img">
-                        <ol class="list">
+                        <ol class="list list2">
                             <li class="item">Руководителю отдела продаж</li>
                             <li class="item">HR-менеджеру</li>
                             <li class="item">Руководителю проектов</li>
@@ -118,32 +122,32 @@
             </section>
             <section class="discount-section">
                 <div class="container">
-                    <h2 class="title">Запишись сейчас <br> и получи <span>скидку 15%</span></h2>
+                    <h2 class="title wow animate__animated animate__fadeInRight">Запишись сейчас <br> и получи <span>скидку 15%</span></h2>
                     <div class="btn-wrap">
                         <a class="btn open-popup anim-btn" href="/" onclick="event.preventDefault()">Записаться</a>
-                        <img class="arrow-line" src="./images/arrow-line-bg.svg" alt="icon">
+                        <img class="arrow-line wow animate__animated animate__rotateInUpLeft" src="./images/arrow-line-bg.svg" alt="icon">
                     </div>       
                 </div>
             </section>
             <section class="business-section">
                 <div class="container">
                     <div class="block">
-                        <div class="img-cont">
+                        <div class="img-cont wow animate__animated animate__fadeIn">
                             <img src="./images/management-page/1.jpg" alt="img">
                             <img src="./images/management-page/2.jpg" alt="img">
                         </div>
                         <div class="text-wrap">
-                            <h2 class="title">Как довести дело до конца</h2>
-                            <p class="plate">Навыки, приобретенные в конце курсa:</p>
+                            <h2 class="title wow animate__animated animate__fadeIn">Как довести дело до конца</h2>
+                            <p class="plate wow animate__animated animate__fadeIn">Навыки, приобретенные в конце курсa:</p>
                             <ul class="list-check">
-                                <li>Доводить работу группы до конца</li>
-                                <li>Пресекать на корню искажения Ваших распоряжений</li>
-                                <li>Добиваться выполнения приказов и просьб без задержек</li>
-                                <li>Делегировать и точно знать, что задача будет выполнена</li>
-                                <li>Не допускать неправильного выполнения задачи, поставленной другому человеку</li>
-                                <li>Добиваться быстрого и корректного предоставления информации от группы людей</li>
-                                <li>Комфортно чувствовать себя в своем рабочем окружении и с легкостью контролировать его</li>
-                                <li>Добиваться, чтобы задача была выполнена, несмотря на то, что другие люди создают помехи и не хотят этого делать</li>
+                                <li class="wow animate__animated animate__fadeInRight">Доводить работу группы до конца</li>
+                                <li class="wow animate__animated animate__fadeInRight">Пресекать на корню искажения Ваших распоряжений</li>
+                                <li class="wow animate__animated animate__fadeInRight">Добиваться выполнения приказов и просьб без задержек</li>
+                                <li class="wow animate__animated animate__fadeInRight">Делегировать и точно знать, что задача будет выполнена</li>
+                                <li class="wow animate__animated animate__fadeInRight">Не допускать неправильного выполнения задачи, поставленной другому человеку</li>
+                                <li class="wow animate__animated animate__fadeInRight">Добиваться быстрого и корректного предоставления информации от группы людей</li>
+                                <li class="wow animate__animated animate__fadeInRight">Комфортно чувствовать себя в своем рабочем окружении и с легкостью контролировать его</li>
+                                <li class="wow animate__animated animate__fadeInRight">Добиваться, чтобы задача была выполнена, несмотря на то, что другие люди создают помехи и не хотят этого делать</li>
                             </ul>
                         </div>
                     </div>
@@ -151,23 +155,23 @@
             <section class="business-section revert-section">
                 <div class="container">
                     <div class="block">
-                        <div class="img-cont">
+                        <div class="img-cont wow animate__animated animate__fadeIn">
                             <img src="./images/management-page/3.jpg" alt="img">
                         </div>
                         <div class="text-wrap">
-                            <h2 class="title">Улучшение бизнеса путем общения</h2>
-                            <p class="plate">Навыки, приобретенные в конце курсa:</p>
+                            <h2 class="title wow animate__animated animate__fadeIn">Улучшение бизнеса путем общения</h2>
+                            <p class="plate wow animate__animated animate__fadeIn">Навыки, приобретенные в конце курсa:</p>
                             <ul class="list-check">
-                                <li>Hачать разговор с любым человеком</li>
-                                <li>Доносить свое сообщения до другого человека, несмотря на помехи</li>
-                                <li>Вернуть человека к теме разговора</li>
-                                <li>Разговорить человека, не желающего общаться</li>
-                                <li>Перевести разговор на другую тему</li>
-                                <li>Прекратить расспросы, когда есть дела поважнее </li>
-                                <li>Добиться ответа на вопрос</li>
-                                <li>Устранить расстройство, возникшее в ходе общения</li>
-                                <li>Добиваться, чтобы другой человек продолжал говорить, а не замыкался и прекращал общение</li>
-                                <li>Завершить разговор так, чтоб все остались довольны общением</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Hачать разговор с любым человеком</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Доносить свое сообщения до другого человека, несмотря на помехи</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Вернуть человека к теме разговора</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Разговорить человека, не желающего общаться</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Перевести разговор на другую тему</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Прекратить расспросы, когда есть дела поважнее </li>
+                                <li class="wow animate__animated animate__fadeInLeft">Добиться ответа на вопрос</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Устранить расстройство, возникшее в ходе общения</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Добиваться, чтобы другой человек продолжал говорить, а не замыкался и прекращал общение</li>
+                                <li class="wow animate__animated animate__fadeInLeft">Завершить разговор так, чтоб все остались довольны общением</li>
                             </ul>
                         </div>
                     </div>
@@ -176,17 +180,17 @@
             <section class="education-section">
                 <img class="line-bg" src="./images/line-bg.svg" alt="line-bg">
                 <div class="container">
-                    <div class="text-wrap">
+                    <div class="text-wrap wow animate__animated animate__fadeInLeft">
                         <h2 class="title">Как проходит обучение:</h2>
                         <div class="description">Наш курс расчитан на отработку в парах и группах. Чем больше будет ваша группа, тем веселее, и тем слажаннее эти ребята будут в дальнейшем выполнять командные задачи!</div>
                     </div>
                     <div class="block">
-                        <div class="item">
-                            <span class="num">10%</span>
+                        <div class="item wow animate__animated animate__fadeInUp">
+                            <span class="num num-amin">10%</span>
                             <p class="text">Теория</p>
                         </div>
-                        <div class="item">
-                            <span class="num">90%</span>
+                        <div class="item wow animate__animated animate__fadeInUp">
+                            <span class="num num-amin">90%</span>
                             <p class="text">Практика</p>
                         </div>
                     </div>
@@ -195,13 +199,13 @@
             <section class="holding-section">
                 <div class="container">
                     <div class="img-cont">
-                        <img src="./images/management-page/4.jpg" alt="img">
-                        <div class="badge">
+                        <img class="wow animate__animated animate__fadeIn" src="./images/management-page/4.jpg" alt="img">
+                        <div class="badge wow animate__animated animate__fadeInUp">
                             <span class="user">Евгений Сотников</span>
                             <p class="position">Владелец холдинга «Sotnikovgroup»</p>
                         </div>
                     </div>
-                    <div class="text-wrap">
+                    <div class="text-wrap wow animate__animated animate__fadeInUp">
                         <p class="discription"><span>«SotnikovGroup»</span> — это одно из направлений холдинга. Холдингу 25 лет, в нем работает более 350 сотрудников.</p>
                         <p class="discription"><span>Цель «SotnikovGroup»</span> — помогать владельцам, Исполнительным директорам и ТОП-менеджерам компаний выводить их бизнесы на новый уровень развития, осуществляя переход от «семейных компаний» к «системному бизнесу».</p>
                         <a class="btn" href="#">Посетить сайт</a>

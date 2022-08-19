@@ -1862,9 +1862,9 @@ input, textarea{
 
     .anim-btn{
         box-shadow: 0 0 0 0 rgba(88, 120, 243, 0.4);
-        animation: pulse 2s infinite;
+        animation: pulseAnimBtn 2s infinite;
 
-        @keyframes pulse {
+        @keyframes pulseAnimBtn {
             0% {
                 box-shadow: 0 0 0 0 rgba(88, 120, 243, 1);
             }
@@ -2098,6 +2098,19 @@ input, textarea{
 
         @include media('<phone'){
             font-size: 75px;
+        }
+    }
+
+    .num-amin{
+        animation: rotateNumAmin 4s linear infinite;
+
+        @keyframes rotateNumAmin {
+            from {
+                transform: rotate(0deg) translateX(10px) rotate(0deg);
+            }
+	        to {
+                transform: rotate(360deg) translateX(10px) rotate(-360deg);
+            }
         }
     }
 
@@ -3160,5 +3173,72 @@ input, textarea{
         display: block;
         max-width: 240px;
         margin: 0 auto;
+    }
+}
+
+/* animation */
+
+.animate__animated {
+    --animate-duration: 2.5s;
+}
+
+.who-section{
+
+    .item, .img{
+        opacity: 0;
+    }
+
+    .element-show{
+
+        .list1{
+
+            .item{
+                opacity: 1;
+    
+                &:nth-child(1){
+                    transition: opacity 2s ease 0s;
+                }
+    
+                &:nth-child(2){
+                    transition: opacity 2s ease .2s;
+                }
+    
+                &:nth-child(3){
+                    transition: opacity 2s ease .4s;
+                }
+    
+                &:nth-child(4){
+                    transition: opacity 2s ease .6s;
+                }
+            }
+        }
+
+        .list2{
+
+            .item{
+                opacity: 1;
+    
+                &:nth-child(1){
+                    transition: opacity 2s ease .8s;
+                }
+    
+                &:nth-child(2){
+                    transition: opacity 2s ease 1s;
+                }
+    
+                &:nth-child(3){
+                    transition: opacity 2s ease 1.2s;
+                }
+    
+                &:nth-child(4){
+                    transition: opacity 2s ease 1.4s;
+                }
+            }
+        }
+
+        .img{
+            opacity: 1;
+            transition: opacity 2s ease 0s;
+        }
     }
 }
