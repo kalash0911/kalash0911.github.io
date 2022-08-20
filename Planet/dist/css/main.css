@@ -3252,36 +3252,6 @@ input, textarea {
   opacity: 1;
   transition: opacity 2s ease 0s; }
 
-.business-section .list-check li {
-  opacity: 0;
-  -webkit-transform: translate(-50%);
-  transform: translate(-50%); }
-
-.business-section .element-show li {
-  opacity: 1;
-  -webkit-transform: translate(0);
-  transform: translate(0); }
-  .business-section .element-show li:nth-child(1) {
-    transition: all 2s ease 0s; }
-  .business-section .element-show li:nth-child(2) {
-    transition: all 2s ease .2s; }
-  .business-section .element-show li:nth-child(3) {
-    transition: all 2s ease .4s; }
-  .business-section .element-show li:nth-child(4) {
-    transition: all 2s ease .6s; }
-  .business-section .element-show li:nth-child(5) {
-    transition: all 2s ease .8s; }
-  .business-section .element-show li:nth-child(6) {
-    transition: all 2s ease 1s; }
-  .business-section .element-show li:nth-child(7) {
-    transition: all 2s ease 1.2s; }
-  .business-section .element-show li:nth-child(8) {
-    transition: all 2s ease 1.4s; }
-  .business-section .element-show li:nth-child(9) {
-    transition: all 2s ease 1.6s; }
-  .business-section .element-show li:nth-child(10) {
-    transition: all 2s ease 1.8s; }
-
 #footer {
   display: -ms-flexbox;
   display: flex;
