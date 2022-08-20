@@ -2988,6 +2988,98 @@ input, textarea{
     }
 }
 
+/* _________________________#about-section______________________ */
+
+.about-section{
+    position: relative;
+    padding: 200px 0 140px 0;
+    background-color: $yellow;
+
+    @include media('<tablet'){
+        padding: 100px 0 70px 0;
+    }
+
+    @include media('<phone'){
+        padding: 100px 0 50px 0;
+    }
+
+    .title{
+        font-family: $garamond;
+        font-weight: 500;
+        font-size: 64px;
+        text-align: center;
+        color: $black-2d;
+        margin: 0;
+
+        @include media('<tablet'){
+            font-size: 58px;
+        }
+
+        @include media('<phone'){
+            font-size: 48px;
+            padding: 0 30px;
+        }
+    }
+}
+
+/* _________________________#aboutus-section______________________ */
+
+.aboutus-section{
+    padding: 90px 0 160px 0;
+
+    @include media('<tablet'){
+        padding: 70px 0 100px 0;
+    }
+
+    @include media('<phone'){
+        padding: 50px 0;
+    }
+
+    .container{
+        max-width: 837px;
+    }
+
+    .discription{
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 2;
+        color: $gray-80;
+        margin-bottom: 20px;
+
+        span{
+            color: $blue;
+        }
+    }
+
+    .img-block{
+
+        @include media('<850px'){
+            text-align: center;
+        }
+        
+        img{
+            width: auto;
+
+            &:first-child{
+                margin-right: 35px;
+
+                @include media('<850px'){
+                    margin-right: 0;
+                }
+                
+            }
+        }
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+
 /* _________________________#contact-section______________________ */
 
 .contact-section{
