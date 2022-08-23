@@ -216,14 +216,42 @@
         @include media('<phone'){
             padding: 24px 0;
         }
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include media('<600px'){
+                flex-direction: column;
+            }
+        }
     }
 
     .site-title{
-        margin: 0 auto;
         font-family: $raleway;
         font-weight: 500;
         font-size: 16px;
         line-height: 1.75;
         color: $gray-60;
+        margin: 0;
+
+        @include media('<600px'){
+           margin-bottom: 20px;
+        }
+    }
+
+    .site-link{
+
+        svg{
+            fill: #ACA29A;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover{
+            svg{
+                fill: $blue-h;
+            }
+        }
     }
 }
