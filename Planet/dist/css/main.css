@@ -3558,5 +3558,10 @@ input, textarea {
     @media (max-width: 599px) {
       #footer .site-title {
         margin-bottom: 20px; } }
+  #footer .site-link svg {
+    fill: #ACA29A;
+    transition: all .3s ease 0s; }
+  #footer .site-link:hover svg {
+    fill: #4379E0; }
 
 /*# sourceMappingURL=main.css.map */
