@@ -6,12 +6,17 @@ import { SuccessBlock } from "./success-block/success-block.jsx";
 import { TestDone } from "./test-done/test-done.jsx";
 import { setCookie, getCookie } from "../utils/cookie.js";
 import { TEST_END } from "../constants/cookie.js";
+import { PLANET_ENDPOINT } from "../constants/link.js";
+import { Spinner } from "./shared/spinner/spinner.jsx";
+import { ERROR_API } from "../constants/errors.js";
 
 export const App = () => {
   const [formValues, setFormValues] = useState(null);
   const [startTest, setStartTest] = useState(false);
   const [userAnswers, setUserAnswers] = useState(null);
   const [testIsDone, setTestToDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const testEndCookie = getCookie(TEST_END);
 
@@ -31,7 +36,10 @@ export const App = () => {
   };
 
   const submitForm = (comunicationMethod) => {
-    const onlyAnswers = userAnswers.map(({ id, answer }) => ({
+    setLoading(true);
+    setError("");
+
+    const onlyAnswers = userAnswers?.map(({ id, answer }) => ({
       id,
       answer,
     }));
@@ -61,13 +69,30 @@ export const App = () => {
       userAnswers: onlyAnswers,
     };
 
-    // TODO: Отправить
-    console.log("request: ", request);
-    console.log("formValues: ", formValues);
-    console.log("userAnswers: ", userAnswers);
-    console.log("comunicationMethod: ", comunicationMethod);
-    setCookie(TEST_END, "true", 31);
-    setTestToDone(true);
+    fetch(PLANET_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      body: JSON.stringify(request),
+    })
+      .then((res) => {
+        if (res.ok) {
+          setCookie(TEST_END, "true", 31);
+          setTestToDone(true);
+        } else {
+          setError(ERROR_API);
+        }
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+        setError(ERROR_API);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const backToTest = () => {
@@ -76,6 +101,7 @@ export const App = () => {
 
   return (
     <>
+      {loading && <Spinner />}
       {!formValues && <Form setFormValues={setFormValues} />}
       {!!formValues && !userAnswers && !startTest && (
         <TestRules setStartTest={setStartTest} />
@@ -88,6 +114,7 @@ export const App = () => {
           submitForm={submitForm}
           backToTest={backToTest}
           phone={formValues?.phone}
+          apiError={error}
         />
       )}
     </>

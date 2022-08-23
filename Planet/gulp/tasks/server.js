@@ -8,6 +8,14 @@ const fonts = require("./fonts");
 let devip = require("dev-ip");
 const server = require("browser-sync").create();
 let reload = server.reload;
+let {createProxyMiddleware} = require('http-proxy-middleware');
+
+const jsonPlaceholderProxy = createProxyMiddleware('/result', {
+  target: 'https://planetaemailsender.azurewebsites.net',
+  changeOrigin: true,
+  logLevel: 'debug',
+  logger: console,
+});
 
 function readyReload(cb) {
   server.reload();
@@ -17,7 +25,10 @@ function readyReload(cb) {
 module.exports = function localServer(cb) {
   server.init({
     watch: true,
-    server: true,
+    server: {
+      baseDir: "dist",
+      middleware: [jsonPlaceholderProxy]
+    },
     notify: false,
     open: true,
     cors: true,

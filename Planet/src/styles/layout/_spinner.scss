@@ -1,0 +1,122 @@
+.spinnerWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes ldio-dlddypcolna {
+  0% {
+    opacity: 1;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.5, 1.5);
+  }
+  100% {
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1);
+  }
+}
+.ldio-dlddypcolna div > div {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2758b7;
+  animation: ldio-dlddypcolna 1s linear infinite;
+}
+.ldio-dlddypcolna div:nth-child(1) > div {
+  left: 74px;
+  top: 44px;
+  animation-delay: -0.875s;
+}
+.ldio-dlddypcolna > div:nth-child(1) {
+  transform: rotate(0deg);
+  transform-origin: 80px 50px;
+}
+.ldio-dlddypcolna div:nth-child(2) > div {
+  left: 65px;
+  top: 65px;
+  animation-delay: -0.75s;
+}
+.ldio-dlddypcolna > div:nth-child(2) {
+  transform: rotate(45deg);
+  transform-origin: 71px 71px;
+}
+.ldio-dlddypcolna div:nth-child(3) > div {
+  left: 44px;
+  top: 74px;
+  animation-delay: -0.625s;
+}
+.ldio-dlddypcolna > div:nth-child(3) {
+  transform: rotate(90deg);
+  transform-origin: 50px 80px;
+}
+.ldio-dlddypcolna div:nth-child(4) > div {
+  left: 23px;
+  top: 65px;
+  animation-delay: -0.5s;
+}
+.ldio-dlddypcolna > div:nth-child(4) {
+  transform: rotate(135deg);
+  transform-origin: 29px 71px;
+}
+.ldio-dlddypcolna div:nth-child(5) > div {
+  left: 14px;
+  top: 44px;
+  animation-delay: -0.375s;
+}
+.ldio-dlddypcolna > div:nth-child(5) {
+  transform: rotate(180deg);
+  transform-origin: 20px 50px;
+}
+.ldio-dlddypcolna div:nth-child(6) > div {
+  left: 23px;
+  top: 23px;
+  animation-delay: -0.25s;
+}
+.ldio-dlddypcolna > div:nth-child(6) {
+  transform: rotate(225deg);
+  transform-origin: 29px 29px;
+}
+.ldio-dlddypcolna div:nth-child(7) > div {
+  left: 44px;
+  top: 14px;
+  animation-delay: -0.125s;
+}
+.ldio-dlddypcolna > div:nth-child(7) {
+  transform: rotate(270deg);
+  transform-origin: 50px 20px;
+}
+.ldio-dlddypcolna div:nth-child(8) > div {
+  left: 65px;
+  top: 23px;
+  animation-delay: 0s;
+}
+.ldio-dlddypcolna > div:nth-child(8) {
+  transform: rotate(315deg);
+  transform-origin: 71px 29px;
+}
+.loadingio-spinner-spin-d3mtgzoxi6 {
+  width: 74px;
+  height: 74px;
+  display: inline-block;
+  overflow: hidden;
+}
+.ldio-dlddypcolna {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.74);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-dlddypcolna div {
+  box-sizing: content-box;
+}

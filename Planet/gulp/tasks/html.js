@@ -8,6 +8,7 @@ const { cssFiles } = require("./sass2css");
 const htmlmin = require("gulp-htmlmin");
 
 module.exports = function html() {
+  const isProd = process.env.NODE_ENV === "production";
   const injectJsPath = "<!-- inject:js -->";
   const injectReactJsPath = "<!-- inject:reactjs -->";
   const injectCssPath = "<!-- inject:css -->";
@@ -20,7 +21,10 @@ module.exports = function html() {
     return (prev += `\n\t<script src="./js/${cur}" defer></script>`);
   }, "");
 
-  const reactJsScript = reactJsFile.reduce((prev, cur) => {
+  const reactJsScript = reactJsFile.reduce((prev, cur, ind) => {
+    if(!isProd) {
+      prev += `\n\t<script>var DEVELOPMENT_MODE = true;</script>`
+    }
     return (prev += `\n\t<script src="./js/${cur}" defer></script>`);
   }, "");
 

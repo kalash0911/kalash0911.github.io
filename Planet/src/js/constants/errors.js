@@ -10,3 +10,5 @@ export const ERROR_FIELD_SEX = 'Введите ваше пол';
 export const ERROR_FIELD_CITY = 'Введите ваш город';
 export const ERROR_FIELD_SKYPE = 'Введите ваш логин skype';
 export const ERROR_FIELD_ZOOM = 'Введите ваш zoom';
+
+export const ERROR_API = 'Произошла ошибка! Повторите попытку немного позже.'

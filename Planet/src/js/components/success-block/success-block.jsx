@@ -5,7 +5,7 @@ import { Field } from "../shared/field/field.jsx";
 import { maskPhoneNumber } from "../../utils/general.js";
 import { validationSchema } from "./validation.js";
 
-export const SuccessBlock = ({ backToTest, submitForm, phone }) => {
+export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
   const defaultValues = {
     phone: phone || "",
     skype: "",
@@ -204,6 +204,7 @@ export const SuccessBlock = ({ backToTest, submitForm, phone }) => {
           Продолжить
         </button>
       </div>
+      {apiError && <div className="api-error">{apiError}</div>}
     </div>
   );
 };
