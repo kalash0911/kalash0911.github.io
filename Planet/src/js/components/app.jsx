@@ -44,6 +44,7 @@ export const App = () => {
       answer,
     }));
 
+    // Note: Can test app with random answers:
     // const fakeAnswers = new Array(200).fill(0).map((el, ind) => ({
     //   id: ind + 1,
     //   answer: Math.floor(Math.random() * 3) + "",

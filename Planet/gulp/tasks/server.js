@@ -8,12 +8,12 @@ const fonts = require("./fonts");
 let devip = require("dev-ip");
 const server = require("browser-sync").create();
 let reload = server.reload;
-let {createProxyMiddleware} = require('http-proxy-middleware');
+let { createProxyMiddleware } = require("http-proxy-middleware");
 
-const jsonPlaceholderProxy = createProxyMiddleware('/result', {
-  target: 'https://planetaemailsender.azurewebsites.net',
+const planetProxyMidleware = createProxyMiddleware("/result", {
+  target: "https://planetaemailsender.azurewebsites.net",
   changeOrigin: true,
-  logLevel: 'debug',
+  logLevel: "debug",
   logger: console,
 });
 
@@ -27,7 +27,7 @@ module.exports = function localServer(cb) {
     watch: true,
     server: {
       baseDir: "dist",
-      middleware: [jsonPlaceholderProxy]
+      middleware: [planetProxyMidleware],
     },
     notify: false,
     open: true,
