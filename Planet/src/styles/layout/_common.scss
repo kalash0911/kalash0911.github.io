@@ -1744,11 +1744,13 @@ input, textarea{
         justify-content: space-between;
 
         @include media('<tablet_x'){
-            justify-content: space-around;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        @include media('<phone'){
+        @include media('<tablet'){
             flex-direction: column;
+            align-items: center;
         }
     }
 
@@ -1757,6 +1759,20 @@ input, textarea{
         counter-reset:  item;
         padding: 0;
         margin: 0;
+
+        @include media('<tablet_x'){
+            margin: 0 5%;
+        }
+
+        @include media('<tablet'){
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        @include media('<phone'){
+            text-align: left;
+        }
 
         &:last-child{
             counter-reset: item 4;
@@ -1790,10 +1806,6 @@ input, textarea{
         color: $gray-80;
         margin-bottom: 30px;
 
-        @include media('<tablet_x'){
-            margin-right: 30px;
-        }
-
         @include media('<phone'){
             margin:0 0 20px 0;
             flex-direction: row;
@@ -1823,11 +1835,25 @@ input, textarea{
         }
     }
 
+    
+    .list1{
+        @include media('<tablet_x'){
+            order: 1;
+        }
+    }
+
+    .list2{
+        @include media('<tablet_x'){
+            order: 2;
+        }
+    }
+
     img{
         margin: 0 30px;
 
         @include media('<tablet_x'){
-            display: none;
+            order: 3;
+            width: 50%;
         }
     }
 }
@@ -1914,6 +1940,10 @@ input, textarea{
             flex-direction: column;
             padding: 50px 0;
         }
+
+        @include media('<tablet_x'){
+            padding: 0 0 50px 0;
+        }
     }
 
     .img-cont{
@@ -1931,6 +1961,10 @@ input, textarea{
                 display: block;
                 margin-left: auto;
                 margin-top: -10px;
+
+                @include media('<600px'){
+                    margin-left: 50px;
+                }
             }
         }
     }
@@ -2140,6 +2174,10 @@ input, textarea{
 
     @include media('<tablet_8'){
         padding: 50px 0;
+    }
+
+    @include media('<phone'){
+        padding: 0 0 50px 0;
     }
 
     .container{
@@ -2621,15 +2659,24 @@ input, textarea{
         @include media('<tablet'){
             font-size: 16px;
         }
+    }
 
-        @include media('<phone'){
-            font-size: 14px;
+    .name {
+        margin-bottom: 10px;
+
+        @include media('<tablet'){
+            margin-bottom: 5px;
         }
     }
 
     .position{
         color: $black-2d;
         font-weight: 500;
+        line-height: 1.5;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 }
 
@@ -2695,6 +2742,8 @@ input, textarea{
 
         @include media('<tablet'){
             padding: 100px 0;
+            display: flex;
+            flex-direction: column-reverse;
         }
 
         @include media('<phone'){
@@ -2725,6 +2774,12 @@ input, textarea{
         height: 100%;
         object-fit: cover;
         z-index: -1;
+
+        @include media('<tablet'){
+            position: relative;
+            min-height: 370px;
+            margin-top: -70px;
+        }
     }
 
     .text-wrap{
@@ -2819,7 +2874,14 @@ input, textarea{
 
     .active_review{
         width: 100%;
-        transition: width 1s ease 0s;
+        transition: width 1s ease 0s, transform .3s ease 0s;
+
+        &:hover{
+            @include media('>tablet'){
+                opacity: 1;
+                transform: none;
+            }
+        }
 
         .text{
             max-height: 3000px;
