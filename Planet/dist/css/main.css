@@ -940,7 +940,7 @@ body {
     display: flex;
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.75;
     color: #616161;
     padding: 8px 0; }
@@ -1278,7 +1278,7 @@ input, textarea {
   .carts-section .description {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.75;
     margin-bottom: 25px;
     color: #616161; }
@@ -1951,7 +1951,7 @@ input, textarea {
   #test-info .discription {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     color: #616161;
     margin-bottom: 30px; }
@@ -2085,7 +2085,7 @@ input, textarea {
   .team-section .description {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161;
     margin: 0; }
@@ -2182,7 +2182,7 @@ input, textarea {
     flex-direction: column;
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161;
     margin-bottom: 30px; }
@@ -2410,7 +2410,7 @@ input, textarea {
   .education-section .description {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161; }
     @media (max-width: 479px) {
@@ -2546,7 +2546,7 @@ input, textarea {
   .holding-section .discription {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161;
     margin-bottom: 20px; }
@@ -3133,7 +3133,7 @@ input, textarea {
   .books-section .description {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161;
     margin-bottom: 16px; }
@@ -3181,7 +3181,7 @@ input, textarea {
   .aboutus-section .discription {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161;
     margin-bottom: 20px; }
