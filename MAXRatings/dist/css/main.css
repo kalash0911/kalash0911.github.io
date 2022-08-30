@@ -1127,16 +1127,12 @@ body {
     height: 100%;
     background: #F84F38;
     opacity: 0.64;
-    -webkit-filter: blur(306.126px);
-    filter: blur(306.126px);
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
     border-radius: 50%;
     z-index: -1; }
-    @media (max-width: 479px) {
-      .icon-wrap::before {
-        -webkit-filter: blur(160px);
-        filter: blur(160px); } }
   @media (max-width: 479px) {
     .icon-wrap img {
       max-width: 240px; } }
@@ -1380,5 +1376,83 @@ body {
         margin: 0 0 40px 0; } }
 
 /* -------------globe-section--------------- */
+.globe-section {
+  position: relative;
+  margin: 110px 0;
+  /* Только если меньше контейнера */
+  padding-top: 285px;
+  /* Только если меньше контейнера */
+  padding-bottom: 285px; }
+  @media (max-width: 1545px) {
+    .globe-section {
+      padding-top: calc(80px + 205 * ((100vw - calc(375px)) / 1170)); } }
+  @media (max-width: 1545px) {
+    .globe-section {
+      padding-bottom: calc(80px + 205 * ((100vw - calc(375px)) / 1170)); } }
+  @media (max-width: 767px) {
+    .globe-section {
+      margin: 85px 0; } }
+  @media (max-width: 479px) {
+    .globe-section {
+      margin: 65px 0; } }
+  .globe-section .content::before, .globe-section .content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 0%;
+    height: 72%;
+    background-color: #F84F38;
+    z-index: -1;
+    transition: all 2s ease 0s; }
+  .globe-section .content::before {
+    left: 0; }
+  .globe-section .content::after {
+    right: 0; }
+  .globe-section .block {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    height: 100%;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: #000;
+    border-radius: 50%;
+    /* Только если меньше контейнера */
+    max-width: 750px; }
+    @media (max-width: 1545px) {
+      .globe-section .block {
+        max-width: calc(316px + 434 * ((100vw - calc(375px)) / 1170)); } }
+    .globe-section .block img {
+      opacity: 0.4;
+      /* Только если меньше контейнера */
+      width: 610px;
+      /* Только если меньше контейнера */
+      height: 610px; }
+      @media (max-width: 1545px) {
+        .globe-section .block img {
+          width: calc(260px + 350 * ((100vw - calc(375px)) / 1170)); } }
+      @media (max-width: 1545px) {
+        .globe-section .block img {
+          height: calc(260px + 350 * ((100vw - calc(375px)) / 1170)); } }
+  .globe-section .title {
+    position: relative;
+    display: block;
+    text-align: center;
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto;
+    z-index: 2; }
+  .globe-section .element-show::before, .globe-section .element-show::after {
+    width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
