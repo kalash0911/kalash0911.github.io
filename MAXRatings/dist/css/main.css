@@ -1455,4 +1455,29 @@ body {
   .globe-section .element-show::before, .globe-section .element-show::after {
     width: 100%; }
 
+/* -------------whyus-section--------------- */
+@media (max-width: 1023px) {
+  .whyus-section .container {
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; } }
+
+.whyus-section .elips {
+  top: 0;
+  right: -550px;
+  left: auto; }
+
+.whyus-section .text {
+  max-width: 620px;
+  margin: 0 0 0 35px; }
+  @media (max-width: 1023px) {
+    .whyus-section .text {
+      max-width: 100%;
+      margin: 0 0 40px 0; } }
+
+@media (max-width: 479px) {
+  .whyus-section .icon-wrap img {
+    max-width: 150px; } }
+
 /*# sourceMappingURL=main.css.map */

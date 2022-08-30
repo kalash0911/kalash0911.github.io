@@ -479,3 +479,42 @@ body {
         }
     }
 }
+
+/* -------------whyus-section--------------- */
+
+.whyus-section{
+
+    .container{
+
+        @include media('<desktop'){
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .elips{
+        top: 0;
+        right: -550px;
+        left: auto;
+    }
+
+    .text{
+        max-width: 620px;
+        margin: 0 0 0 35px;
+
+        @include media('<desktop'){
+            max-width: 100%;
+            margin: 0 0 40px 0;
+        }
+    }
+
+    .icon-wrap{
+    
+        img{
+
+            @include media('<phone'){
+               max-width: 150px;
+            }
+        }
+    }
+}
