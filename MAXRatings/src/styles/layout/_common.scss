@@ -107,6 +107,40 @@ body {
             height: 50px;
             background-color: $black;
         }
+
+        svg{
+            position: absolute;
+            @include adaptiv-vaule("top", -20, -5, 1);
+            left: 50%;
+            transform: translate(-50%);
+            @include adaptiv-vaule("width", 84, 19, 1);
+            @include adaptiv-vaule("height", 84, 19, 1);
+
+            path{
+                stroke-width: 3;
+                stroke: $orange;
+                stroke-dasharray: 397;
+                stroke-dashoffset: 397;
+                animation-name: svg-anim;
+                animation-duration: 1.5s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    @keyframes svg-anim {
+        0%{
+            fill: transparent;
+            stroke-dasharray: 397;
+            stroke-dashoffset: 397;
+        }
+
+        100%{
+            fill: $orange;
+            stroke-dasharray: 0;
+            stroke-dashoffset: 397;
+        }
     }
 
     .cart{

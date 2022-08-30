@@ -632,6 +632,59 @@ body {
       @media (max-width: 1545px) {
         .main-section .star::before {
           top: calc(-30px + 70 * ((100vw - calc(375px)) / 1170)); } }
+    .main-section .star svg {
+      position: absolute;
+      /* Только если меньше контейнера */
+      top: -20px;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%);
+      /* Только если меньше контейнера */
+      width: 84px;
+      /* Только если меньше контейнера */
+      height: 84px; }
+      @media (max-width: 1545px) {
+        .main-section .star svg {
+          top: calc(-5px + -15 * ((100vw - calc(375px)) / 1170)); } }
+      @media (max-width: 1545px) {
+        .main-section .star svg {
+          width: calc(19px + 65 * ((100vw - calc(375px)) / 1170)); } }
+      @media (max-width: 1545px) {
+        .main-section .star svg {
+          height: calc(19px + 65 * ((100vw - calc(375px)) / 1170)); } }
+      .main-section .star svg path {
+        stroke-width: 3;
+        stroke: #F84F38;
+        stroke-dasharray: 397;
+        stroke-dashoffset: 397;
+        -webkit-animation-name: svg-anim;
+        animation-name: svg-anim;
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards; }
+
+@-webkit-keyframes svg-anim {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 397;
+    stroke-dashoffset: 397; }
+  100% {
+    fill: #F84F38;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 397; } }
+
+@keyframes svg-anim {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 397;
+    stroke-dashoffset: 397; }
+  100% {
+    fill: #F84F38;
+    stroke-dasharray: 0;
+    stroke-dashoffset: 397; } }
   .main-section .cart {
     position: relative;
     padding: 16px 16px 40px 16px;
