@@ -20,6 +20,7 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size: $h2-font-size;
+	@include adaptiv-vaule("font-size", 50, 26, 1);
 }
 
 h3, .h3 {
