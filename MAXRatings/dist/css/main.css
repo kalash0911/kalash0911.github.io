@@ -666,13 +666,16 @@ header {
     font-size: 20px;
     line-height: 154%;
     text-transform: uppercase;
-    color: #fff; }
+    color: #fff;
+    transition: all .3s ease 0s; }
     @media (max-width: 1023px) {
       header .link {
         font-size: 18px; } }
     @media (max-width: 767px) {
       header .link {
         font-size: 26px; } }
+    header .link:hover {
+      color: #F84F38; }
   header .link-icon {
     display: none;
     width: 19px;
@@ -1050,6 +1053,20 @@ body {
   transform: rotate(-15deg);
   z-index: -1; }
 
+.elips-first {
+  left: -450px; }
+  @media (max-width: 479px) {
+    .elips-first {
+      left: -600px; } }
+
+.elips-sec {
+  right: -250px;
+  top: 25%; }
+  @media (max-width: 479px) {
+    .elips-sec {
+      right: -650px;
+      top: 5%; } }
+
 .img-wrap {
   position: relative; }
   .img-wrap img {
@@ -1070,10 +1087,14 @@ body {
   font-family: "DM Sans", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: 500;
   font-size: 20px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transition: all .3s ease 0s; }
   @media (max-width: 1023px) {
     .btn {
       font-size: 16px; } }
+  .btn:hover {
+    background-color: #F84F38;
+    color: #fff; }
 
 .stik {
   display: -ms-flexbox;
@@ -1152,18 +1173,6 @@ body {
     text-align: center; }
   .main-section .elips {
     z-index: 2; }
-  .main-section .elips-first {
-    left: -450px; }
-    @media (max-width: 479px) {
-      .main-section .elips-first {
-        left: -600px; } }
-  .main-section .elips-sec {
-    right: -250px;
-    top: 25%; }
-    @media (max-width: 479px) {
-      .main-section .elips-sec {
-        right: -650px;
-        top: 5%; } }
   .main-section .title {
     position: relative;
     margin-bottom: 20px;
@@ -1541,5 +1550,75 @@ body {
   .platforms-sections .bbb {
     width: 133px;
     height: 50px; }
+
+/* -------------contact-sections--------------- */
+.contact-sections {
+  position: relative;
+  padding: 110px 0 200px 0; }
+  @media (max-width: 767px) {
+    .contact-sections {
+      padding: 85px 0 170px 0; } }
+  @media (max-width: 479px) {
+    .contact-sections {
+      padding: 65px 0 130px 0; } }
+  .contact-sections .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .contact-sections .title {
+    text-align: center;
+    max-width: 550px;
+    margin-bottom: 40px; }
+  .contact-sections form {
+    width: 100%;
+    max-width: 515px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .contact-sections input, .contact-sections textarea {
+    width: 100%;
+    padding: 17px 27px;
+    border: 1px solid #E1D4D4;
+    color: #F84F38;
+    font-family: "DM Sans", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: transparent;
+    margin-bottom: 15px;
+    transition: all .3s ease 0s; }
+    .contact-sections input::-webkit-input-placeholder, .contact-sections textarea::-webkit-input-placeholder {
+      color: #E1D4D4;
+      opacity: 0.6; }
+    .contact-sections input::-moz-placeholder, .contact-sections textarea::-moz-placeholder {
+      color: #E1D4D4;
+      opacity: 0.6; }
+    .contact-sections input:-ms-input-placeholder, .contact-sections textarea:-ms-input-placeholder {
+      color: #E1D4D4;
+      opacity: 0.6; }
+    .contact-sections input::-ms-input-placeholder, .contact-sections textarea::-ms-input-placeholder {
+      color: #E1D4D4;
+      opacity: 0.6; }
+    .contact-sections input::placeholder, .contact-sections textarea::placeholder {
+      color: #E1D4D4;
+      opacity: 0.6; }
+    .contact-sections input:focus, .contact-sections textarea:focus {
+      border-color: #F84F38; }
+  .contact-sections textarea {
+    min-height: 160px; }
+  .contact-sections .btn-form {
+    background: #F84F38;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #F84F38;
+    border-radius: 40px; }
+    .contact-sections .btn-form:hover {
+      background-color: transparent;
+      color: #F84F38; }
 
 /*# sourceMappingURL=main.css.map */

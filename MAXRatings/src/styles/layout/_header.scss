@@ -130,6 +130,7 @@ header{
         line-height: 154%;
         text-transform: uppercase;
         color: $white; 
+        transition: all .3s ease 0s;
 
         @include media('<desktop'){
             font-size: 18px;
@@ -137,6 +138,10 @@ header{
     
         @include media('<tablet'){
             font-size: 26px;
+        }
+
+        &:hover{
+            color: $orange;
         }
     }
 
