@@ -6,6 +6,9 @@
         display: flex;
         justify-content: space-between;
         max-width: 1545px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all .7s ease 0s;
 
         @include media('<desktop'){
             flex-wrap: wrap;
@@ -15,6 +18,11 @@
             flex-direction: column;
             align-items: center;
         }
+    }
+    
+    .element-show{
+        opacity: 1;
+        transform: translateY(0px);
     }
 
     .logo-wrap{

@@ -85,22 +85,34 @@ body {
 .stik{
     display: flex;
     align-items: center;
-    font-family: $sans;
-    font-weight: 700;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: $white;
     margin-bottom: 40px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all .7s ease .5s;
 
     @include media('<phone'){
-        font-size: 14px;
         margin-bottom: 30px;
+    }
+
+    .name{
+        font-family: $sans;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $white;
+        margin: 0;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     img{
         width: 46px;
         height: 46px;
         margin-right: 10px;
+        transform: rotate(0deg);
+        transition: all 1.5s ease 0s;
 
         @include media('<phone'){
             width: 32px;
@@ -132,6 +144,7 @@ body {
 
 .icon-wrap{
     position: relative;
+    animation: rotateNumAmin 5s linear infinite;
 
     &::before{
         content:'';
@@ -147,6 +160,15 @@ body {
         border-radius: 50%;
         z-index: -1;
     }
+
+    @keyframes rotateNumAmin {
+        from {
+            transform: rotate(0deg) translateX(10px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(10px) rotate(-360deg);
+        }
+    }
 }
 
 .orang{
@@ -160,14 +182,18 @@ body {
         color: $orange;
     }
 
-    .title{
+    .title, .discr {
         opacity: 1;
         transform: translateY(0);
     }
 
-    .discr{
+    .stik{
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
+    
+        img{
+            transform: rotate(180deg);
+        }
     }
 }
 
@@ -209,6 +235,9 @@ body {
         max-width: 445px;
         margin-bottom: 50px;
         z-index: 3;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all .7s ease 0s;
     }
 
     .star{
@@ -382,6 +411,14 @@ body {
     .swiper-slide-next{
         align-items: flex-start;
         transition: all .7s ease 0s;
+    }
+}
+
+.element-show{
+
+    .sub-title{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -843,6 +880,9 @@ body {
         max-width: 515px;
         display: flex;
         flex-direction: column;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all .7s ease 0s;
     }
 
     input, textarea{
@@ -885,5 +925,12 @@ body {
             color: $orange;
         }
     }
+}
 
+.element-show{
+
+    form{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
