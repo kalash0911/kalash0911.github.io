@@ -17,10 +17,6 @@ body {
     margin: 0 auto;
 }
 
-.orang{
-    color: $orange;
-}
-
 .elips{
     position: absolute;
     width: 640px;
@@ -118,6 +114,9 @@ body {
     font-weight: 700;
     color: $white;
     margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .7s ease 0s;
 }
 
 .discr{
@@ -126,6 +125,9 @@ body {
     @include adaptiv-vaule("font-size", 22, 16, 1);
     line-height: 145.5%;
     color: $white_10;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .7s ease .5s;
 }
 
 .icon-wrap{
@@ -145,11 +147,27 @@ body {
         border-radius: 50%;
         z-index: -1;
     }
+}
 
-    img{
-        @include media('<phone'){
-           max-width: 240px;
-        }
+.orang{
+    color: $white;
+    transition: all .7s ease .5s;
+}
+
+.element-show{
+
+    .orang{
+        color: $orange;
+    }
+
+    .title{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .discr{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -405,6 +423,167 @@ body {
             margin: 0 0 40px 0;
         }
     }
+
+    .icon-wrap{
+        position: relative;
+        
+        svg{
+            width: 405px;
+            height: 490px;
+
+            @include media('<phone'){
+                width: 220px;
+                height: 290px;
+            }
+        }
+    }
+
+    .eye1, .eye2{
+        position: absolute;
+        width: 43px;
+        height: 90px;
+        background-color: $orange;
+        z-index: 2;
+        border-radius: 50%;
+        transform: rotate(-13deg);
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        transition: all .5s ease 0;
+
+        @include media('<phone'){
+            width: 25px;
+            height: 53px;
+        }
+    }
+
+    .eye1 {
+        top: 32%;
+        left: 32%;
+        animation-name: eye1;
+
+        @include media('<phone'){
+            animation-name: eye1-mob;
+        }
+    }
+
+    .eye2{
+        top: 25%;
+        left: 59%;
+        animation-name: eye2;
+
+        @include media('<phone'){
+            animation-name: eye2-mob;
+        }
+    }
+
+    @keyframes eye1 {
+        0%{
+            height: 0;
+            top: 40%;
+        }
+
+        5%{
+            height: 90px;
+            top: 32%;
+        }
+
+        10%{
+            height: 0px;
+            top: 40%;
+        }
+
+        15%{
+            height: 90px;
+            top: 32%;
+        }
+        
+        100%{
+            height: 90px;
+            top: 32%;
+        }
+    }
+
+    @keyframes eye2 {
+        0%{
+            height: 0;
+            top: 35%;
+        }
+
+        5%{
+            height: 90px;
+            top: 25%;
+        }
+
+        10%{
+            height: 0px;
+            top: 35%;
+        }
+
+        15%{
+            height: 90px;
+            top: 25%;
+        }
+
+        100%{
+            height: 90px;
+            top: 25%;
+        }
+    }
+
+    @keyframes eye1-mob {
+        0%{
+            height: 0;
+            top: 40%;
+        }
+
+        5%{
+            height: 53px;
+            top: 32%;
+        }
+
+        10%{
+            height: 0px;
+            top: 40%;
+        }
+
+        15%{
+            height: 53px;
+            top: 32%;
+        }
+        
+        100%{
+            height: 53px;
+            top: 32%;
+        }
+    }
+
+    @keyframes eye2-mob {
+        0%{
+            height: 0;
+            top: 35%;
+        }
+
+        5%{
+            height: 53px;
+            top: 25%;
+        }
+
+        10%{
+            height: 0px;
+            top: 35%;
+        }
+
+        15%{
+            height: 53px;
+            top: 25%;
+        }
+
+        100%{
+            height: 53px;
+            top: 25%;
+        }
+    }
 }
 
 /* -------------globe-section--------------- */
@@ -516,12 +695,39 @@ body {
     }
 
     .icon-wrap{
-    
-        img{
+        position: relative;
+        
+        svg{
+            width: 260px;
+            height: 570px;
+
+            animation-name: look;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
 
             @include media('<phone'){
-               max-width: 150px;
+                width: 150px;
+                height: 297px;
             }
+        }
+    }
+
+    @keyframes look {
+        0%{
+            transform: rotate3d(1, 1, 1, -4deg);
+        }
+
+        5%{
+            transform: rotate3d(1, 1, 1, 4deg);
+        }
+
+        10%{
+            transform: rotate3d(1, 1, 1, 0deg);
+        }
+
+        100%{
+            transform: rotate3d(1, 1, 1, 0deg);
         }
     }
 }
