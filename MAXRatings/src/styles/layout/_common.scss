@@ -74,6 +74,7 @@ body {
     font-size: 20px;
     text-transform: uppercase;
     transition: all .3s ease 0s;
+    line-height: 1;
 
     @include media('<desktop'){
         font-size: 16px;
