@@ -93,16 +93,16 @@ destroySlidersOnResize(".main-slider", 99999, {
       slidesPerView: 2.5
     },
     1025: {
-      slidesPerView: 3
+      slidesPerView: 3.5
     },
     1100: {
-      slidesPerView: 3.6
-    },
-    1250: {
       slidesPerView: 4
     },
-    1400: {
+    1250: {
       slidesPerView: 4.5
+    },
+    1400: {
+      slidesPerView: 5.2
     }
   }
 });

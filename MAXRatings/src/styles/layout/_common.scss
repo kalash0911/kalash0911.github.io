@@ -310,6 +310,9 @@ body {
         line-height: 1.6;
         transition: all .7s ease 0s;
         transform: scale(.8);
+        min-height: 60px;
+        max-height: 60px;
+        overflow: hidden;
 
         @include media('<tablet'){
             font-size: 16px;
@@ -403,13 +406,7 @@ body {
         }
     }
 
-    .swiper-slide-prev{
-        align-items: flex-end;
-        transition: all .7s ease 0s;
-    }
-
-    .swiper-slide-next{
-        align-items: flex-start;
+    .swiper-slide-prev, .swiper-slide-next{
         transition: all .7s ease 0s;
     }
 }
