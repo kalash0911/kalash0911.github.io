@@ -129,10 +129,23 @@ try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     var elm = _step.value;
     observer.observe(elm);
-  }
+  } // GSAP ScrollTrigger
+
 } catch (err) {
   _iterator.e(err);
 } finally {
   _iterator.f();
 }
+
+ScrollTrigger.create({
+  trigger: "#platforms",
+  start: "top bottom",
+  endTrigger: "#contact",
+  end: "bottom 50%+=100px",
+  onUpdate: function onUpdate(self) {
+    gsap.to("#platforms .cont", {
+      x: self.progress.toFixed(3) * 300
+    });
+  }
+});
 //# sourceMappingURL=main.js.map

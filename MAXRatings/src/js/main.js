@@ -104,7 +104,7 @@ destroySlidersOnResize(".main-slider", 99999, {
 /* scroll logic */
 
 function onEntry(entry) {
-  entry.forEach(change => {
+  entry.forEach((change) => {
     if (change.isIntersecting) {
       change.target.classList.add('element-show');
     }
@@ -116,4 +116,16 @@ let elements = document.querySelectorAll('.element-animation');
 for (let elm of elements) {
   observer.observe(elm);
 }
-  
+
+// GSAP ScrollTrigger
+ScrollTrigger.create({
+  trigger: "#platforms",
+  start: "top bottom",
+  endTrigger: "#contact",
+  end: "bottom 50%+=100px",
+  onUpdate: self => {
+    gsap.to("#platforms .cont", {
+      x: self.progress.toFixed(3) * 300
+    });
+  }
+});

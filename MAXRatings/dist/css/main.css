@@ -1801,14 +1801,13 @@ body {
     max-width: 550px; }
   .platforms-sections .line {
     padding: 40px 0;
-    width: 102%;
+    width: calc(102% + 300px);
     margin-left: -10px;
     background-color: #F84F38;
-    -webkit-transform: rotate(-3deg);
-    transform: rotate(-3deg); }
+    -webkit-transform: translateX(-300px) rotate(-3deg);
+    transform: translateX(-300px) rotate(-3deg); }
   .platforms-sections .cont {
     width: 100%;
-    max-width: 1545px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -1817,6 +1816,8 @@ body {
     align-items: center;
     padding: 0 30px;
     margin: 0 auto; }
+    .platforms-sections .cont img {
+      margin: 0 15px; }
   .platforms-sections .google {
     width: 160px;
     height: 53px; }
