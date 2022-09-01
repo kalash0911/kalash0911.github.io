@@ -147,5 +147,39 @@ ScrollTrigger.create({
       x: self.progress.toFixed(3) * 300
     });
   }
-});
+}); // Open review in popup
+
+handleReviewOpen();
+
+function handleReviewOpen() {
+  var swiperSlides = document.querySelectorAll('.swiper-slide');
+  var popup = document.querySelector('.popup');
+  var popupText = popup.querySelector('.popup-text');
+  var closeBtn = popup.querySelector('.btn-close');
+  var backDrop = document.querySelector('.backdrop');
+  swiperSlides.forEach(function (slide) {
+    slide.addEventListener('click', function () {
+      if (slide.classList.contains('swiper-slide-active')) {
+        var text = slide.querySelector('p.discription').textContent;
+        openPopup(text);
+      }
+    });
+  });
+  backDrop.addEventListener('click', closePopup);
+  closeBtn.addEventListener('click', closePopup);
+
+  function openPopup(text) {
+    popup.classList.add('open');
+    backDrop.classList.add('open');
+    document.body.classList.add("body_lock");
+    popupText.textContent = text;
+  }
+
+  function closePopup() {
+    popup.classList.remove('open');
+    backDrop.classList.remove('open');
+    document.body.classList.remove("body_lock");
+    popupText.textContent = '';
+  }
+}
 //# sourceMappingURL=main.js.map

@@ -46,6 +46,48 @@ body {
     }
 }
 
+.backdrop {
+    display: none;
+    background: rgba($white, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 500;
+
+    &.open {
+        display: block;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    max-width: 850px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $gray;
+    border-radius: 4px;
+    z-index: 750;
+    background: linear-gradient(111.9deg, #F84F38 0%, #F87D38 97.63%);
+
+    &.open {
+        display: block;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .popup-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+    }
+}
+
 .img-wrap{
     position: relative;
 

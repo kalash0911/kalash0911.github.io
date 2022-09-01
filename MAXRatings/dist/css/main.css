@@ -1064,6 +1064,41 @@ body {
       right: -650px;
       top: 5%; } }
 
+.backdrop {
+  display: none;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500; }
+  .backdrop.open {
+    display: block; }
+
+.popup {
+  display: none;
+  position: fixed;
+  max-width: 850px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 750;
+  background: linear-gradient(111.9deg, #F84F38 0%, #F87D38 97.63%); }
+  .popup.open {
+    display: block; }
+  .popup .popup-content {
+    padding: 15px; }
+  .popup .popup-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 15px; }
+
 .img-wrap {
   position: relative; }
   .img-wrap img {
