@@ -842,16 +842,15 @@ body {
     }
 
     .line{
-        padding: 40px 0;
-        width: calc(102% + 300px);
-        margin-left: -10px;
+        @include adaptiv-vaule("padding-top", 40, 20, 1);
+        @include adaptiv-vaule("padding-bottom", 40, 20, 1);
+        width: calc(105% + 300px);
         background-color: $orange;
         transform: translateX(-300px) rotate(-3deg);
     }
 
     .cont{
         width: 100%;
-        // max-width: 1545px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -860,37 +859,41 @@ body {
 
         img {
             margin: 0 15px;
+
+            @include media('<phone'){
+                margin: 0 8px;
+            }
         }
     }
 
     .google{
-        width: 160px;
-        height: 53px;
+        @include adaptiv-vaule("width", 160, 43, 1);
+        @include adaptiv-vaule("height", 53, 16, 1);
     }
 
     .trust{
-        width: 180px;
-        height: 44px;
+        @include adaptiv-vaule("width", 180, 62, 1);
+        @include adaptiv-vaule("height", 50, 20, 1);
     }
     
     .amazon{
-        width: 150px;
-        height: 44px;
+        @include adaptiv-vaule("width", 150, 35, 1);
+        @include adaptiv-vaule("height", 44, 15, 1);
     }
 
     .yelp{
-        width: 150px;
-        height: 60px;
+        @include adaptiv-vaule("width", 150, 40, 1);
+        @include adaptiv-vaule("height", 60, 21, 1);
     }
 
     .face{
-        width: 185px;
-        height: 35px;
+        @include adaptiv-vaule("width", 185, 55, 1);
+        @include adaptiv-vaule("height", 35, 14, 1);
     }
 
     .bbb{
-        width: 133px;
-        height: 50px;
+        @include adaptiv-vaule("width", 133, 33, 1);
+        @include adaptiv-vaule("height", 50, 15, 1);
     }
 }
 

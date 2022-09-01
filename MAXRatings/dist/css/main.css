@@ -1835,12 +1835,20 @@ body {
   .platforms-sections .title {
     max-width: 550px; }
   .platforms-sections .line {
-    padding: 40px 0;
-    width: calc(102% + 300px);
-    margin-left: -10px;
+    /* Только если меньше контейнера */
+    padding-top: 40px;
+    /* Только если меньше контейнера */
+    padding-bottom: 40px;
+    width: calc(105% + 300px);
     background-color: #F84F38;
     -webkit-transform: translateX(-300px) rotate(-3deg);
     transform: translateX(-300px) rotate(-3deg); }
+    @media (max-width: 1545px) {
+      .platforms-sections .line {
+        padding-top: calc(20px + 20 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .line {
+        padding-bottom: calc(20px + 20 * ((100vw - calc(375px)) / 1170)); } }
   .platforms-sections .cont {
     width: 100%;
     display: -ms-flexbox;
@@ -1853,24 +1861,75 @@ body {
     margin: 0 auto; }
     .platforms-sections .cont img {
       margin: 0 15px; }
+      @media (max-width: 479px) {
+        .platforms-sections .cont img {
+          margin: 0 8px; } }
   .platforms-sections .google {
+    /* Только если меньше контейнера */
     width: 160px;
+    /* Только если меньше контейнера */
     height: 53px; }
+    @media (max-width: 1545px) {
+      .platforms-sections .google {
+        width: calc(43px + 117 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .google {
+        height: calc(16px + 37 * ((100vw - calc(375px)) / 1170)); } }
   .platforms-sections .trust {
+    /* Только если меньше контейнера */
     width: 180px;
-    height: 44px; }
-  .platforms-sections .amazon {
-    width: 150px;
-    height: 44px; }
-  .platforms-sections .yelp {
-    width: 150px;
-    height: 60px; }
-  .platforms-sections .face {
-    width: 185px;
-    height: 35px; }
-  .platforms-sections .bbb {
-    width: 133px;
+    /* Только если меньше контейнера */
     height: 50px; }
+    @media (max-width: 1545px) {
+      .platforms-sections .trust {
+        width: calc(62px + 118 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .trust {
+        height: calc(20px + 30 * ((100vw - calc(375px)) / 1170)); } }
+  .platforms-sections .amazon {
+    /* Только если меньше контейнера */
+    width: 150px;
+    /* Только если меньше контейнера */
+    height: 44px; }
+    @media (max-width: 1545px) {
+      .platforms-sections .amazon {
+        width: calc(35px + 115 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .amazon {
+        height: calc(15px + 29 * ((100vw - calc(375px)) / 1170)); } }
+  .platforms-sections .yelp {
+    /* Только если меньше контейнера */
+    width: 150px;
+    /* Только если меньше контейнера */
+    height: 60px; }
+    @media (max-width: 1545px) {
+      .platforms-sections .yelp {
+        width: calc(40px + 110 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .yelp {
+        height: calc(21px + 39 * ((100vw - calc(375px)) / 1170)); } }
+  .platforms-sections .face {
+    /* Только если меньше контейнера */
+    width: 185px;
+    /* Только если меньше контейнера */
+    height: 35px; }
+    @media (max-width: 1545px) {
+      .platforms-sections .face {
+        width: calc(55px + 130 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .face {
+        height: calc(14px + 21 * ((100vw - calc(375px)) / 1170)); } }
+  .platforms-sections .bbb {
+    /* Только если меньше контейнера */
+    width: 133px;
+    /* Только если меньше контейнера */
+    height: 50px; }
+    @media (max-width: 1545px) {
+      .platforms-sections .bbb {
+        width: calc(33px + 100 * ((100vw - calc(375px)) / 1170)); } }
+    @media (max-width: 1545px) {
+      .platforms-sections .bbb {
+        height: calc(15px + 35 * ((100vw - calc(375px)) / 1170)); } }
 
 /* -------------contact-sections--------------- */
 .contact-sections {
