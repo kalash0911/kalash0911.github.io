@@ -844,6 +844,10 @@ body {
         top: 0;
         right: -550px;
         left: auto;
+
+        @include media('<phone'){
+            display: none;
+        }
     }
 
     .text{
