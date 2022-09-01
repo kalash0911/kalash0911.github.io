@@ -164,15 +164,14 @@ function handleReviewOpen() {
       if (slide.classList.contains('swiper-slide-active')) {
         var text = slide.querySelector('p.discription').textContent;
         var imagePath = slide.querySelector('.img-wrap img').getAttribute('src');
-        var ratingHTML = slide.querySelector('.reiting');
-        openPopup(text, imagePath, ratingHTML.cloneNode(true));
+        openPopup(text, imagePath);
       }
     });
   });
   backDrop.addEventListener('click', closePopup);
   closeBtn.addEventListener('click', closePopup);
 
-  function openPopup(text, imagePath, ratingHTML) {
+  function openPopup(text, imagePath) {
     popup.classList.add('open');
     backDrop.classList.add('open');
     document.body.classList.add("body_lock");
