@@ -40,51 +40,116 @@ body {
     right: -250px;
     top: 25%;
 
-    @include media('<phone'){
+    @include media('<tablet'){
         right: -650px;
         top: 5%;
     }
 }
 
 .backdrop {
-    display: none;
-    background: rgba($white, .8);
+    background: $black;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 500;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease 0s;
 
     &.open {
-        display: block;
+        opacity: 70%;
+        z-index: 5;
+        visibility: visible;
     }
 }
 
 .popup {
-    display: none;
     position: fixed;
-    max-width: 850px;
+    width: 100%;
+    max-width: 1200px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid $gray;
-    border-radius: 4px;
-    z-index: 750;
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
     background: linear-gradient(111.9deg, #F84F38 0%, #F87D38 97.63%);
+    transition: all .3s ease 0s;
+
+    @include media('<1300px'){
+        max-width: 85%;
+    }
+
+    @include media('<tablet'){
+        max-width: 90%;
+    }
+
+    @include media('<phone'){
+        max-width: 100%;
+    }
 
     &.open {
-        display: block;
+        opacity: 1;
+        z-index: 6;
+        visibility: visible;
     }
 
     .popup-content {
-        padding: 15px;
+        max-width: 550px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 100px 30px;
+
+        @include media('<tablet'){
+            padding: 70px 20px;
+        }
+
+        @include media('<phone'){
+            padding: 50px 20px;
+        }
     }
 
-    .popup-footer {
-        display: flex;
-        justify-content: flex-end;
-        padding: 15px;
+    .popup-text{
+        text-align: justify;
+    }
+
+    .btn-popup{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 30px;
+        height: 25px;
+        border: none;
+        background-color: transparent;
+
+        @include media('<phone'){
+            top: 15px;
+            right: 15px;
+        }
+
+        &::before, &::after{
+            content:'';
+            position: absolute;
+            top: 12px;
+            left: 4px;
+            width: 20px;
+            height: 1px;
+            background-color: $black;
+        }
+
+        &::before{
+            transform: rotate(45deg);
+        }
+
+        &::after{
+            transform: rotate(-45deg);
+        }
     }
 }
 
@@ -239,7 +304,6 @@ body {
     }
 }
 
-
 /* -------------main-section--------------- */
 
 .main-section{
@@ -359,10 +423,14 @@ body {
         @include media('<tablet'){
             font-size: 16px;
             margin: 0 0 10px 0;
+            min-height: 55px;
+            max-height: 55px;
         }
 
         @include media('<phone'){
             font-size: 12px;
+            min-height: 40px;
+            max-height: 40px;
         }
     }
 
@@ -438,6 +506,7 @@ body {
     .swiper-slide-active{
         z-index: 3;
         transform: scale(1.3);
+        cursor: pointer;
 
         .cart{
             max-width: 100%;     
