@@ -147,8 +147,7 @@ function handleReviewOpen() {
       if(slide.classList.contains('swiper-slide-active')) {
         const text = slide.querySelector('p.discription').textContent;
         const imagePath = slide.querySelector('.img-wrap img').getAttribute('src');
-        const ratingHTML = slide.querySelector('.reiting');
-        openPopup(text, imagePath, ratingHTML.cloneNode(true));
+        openPopup(text, imagePath);
       }
     })
   });
@@ -156,7 +155,7 @@ function handleReviewOpen() {
   backDrop.addEventListener('click', closePopup)
   closeBtn.addEventListener('click', closePopup)
 
-  function openPopup(text,imagePath, ratingHTML) {
+  function openPopup(text,imagePath) {
     popup.classList.add('open');
     backDrop.classList.add('open');
     document.body.classList.add("body_lock");
