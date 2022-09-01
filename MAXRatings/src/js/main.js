@@ -168,6 +168,5 @@ function handleReviewOpen() {
     backDrop.classList.remove('open');
     document.body.classList.remove("body_lock");
     popupText.textContent = '';
-    popupImg.setAttribute('src', '')
   }
 }
