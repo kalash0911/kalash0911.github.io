@@ -137,6 +137,8 @@ function handleReviewOpen() {
   const swiperSlides = document.querySelectorAll('.swiper-slide');
   const popup = document.querySelector('.popup');
   const popupText = popup.querySelector('.popup-text');
+  const popupContentBlock = popup.querySelector('.popup-content');
+  const popupImg = popup.querySelector('.img-wrap img');
   const closeBtn = popup.querySelector('.btn-close')
   const backDrop = document.querySelector('.backdrop');
 
@@ -144,7 +146,9 @@ function handleReviewOpen() {
     slide.addEventListener('click', () => {
       if(slide.classList.contains('swiper-slide-active')) {
         const text = slide.querySelector('p.discription').textContent;
-        openPopup(text);
+        const imagePath = slide.querySelector('.img-wrap img').getAttribute('src');
+        const ratingHTML = slide.querySelector('.reiting');
+        openPopup(text, imagePath, ratingHTML.cloneNode(true));
       }
     })
   });
@@ -152,11 +156,12 @@ function handleReviewOpen() {
   backDrop.addEventListener('click', closePopup)
   closeBtn.addEventListener('click', closePopup)
 
-  function openPopup(text) {
+  function openPopup(text,imagePath, ratingHTML) {
     popup.classList.add('open');
     backDrop.classList.add('open');
     document.body.classList.add("body_lock");
     popupText.textContent = text;
+    popupImg.setAttribute('src', imagePath)
   }
 
   function closePopup() {

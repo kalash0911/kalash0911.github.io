@@ -155,24 +155,29 @@ function handleReviewOpen() {
   var swiperSlides = document.querySelectorAll('.swiper-slide');
   var popup = document.querySelector('.popup');
   var popupText = popup.querySelector('.popup-text');
+  var popupContentBlock = popup.querySelector('.popup-content');
+  var popupImg = popup.querySelector('.img-wrap img');
   var closeBtn = popup.querySelector('.btn-close');
   var backDrop = document.querySelector('.backdrop');
   swiperSlides.forEach(function (slide) {
     slide.addEventListener('click', function () {
       if (slide.classList.contains('swiper-slide-active')) {
         var text = slide.querySelector('p.discription').textContent;
-        openPopup(text);
+        var imagePath = slide.querySelector('.img-wrap img').getAttribute('src');
+        var ratingHTML = slide.querySelector('.reiting');
+        openPopup(text, imagePath, ratingHTML.cloneNode(true));
       }
     });
   });
   backDrop.addEventListener('click', closePopup);
   closeBtn.addEventListener('click', closePopup);
 
-  function openPopup(text) {
+  function openPopup(text, imagePath, ratingHTML) {
     popup.classList.add('open');
     backDrop.classList.add('open');
     document.body.classList.add("body_lock");
     popupText.textContent = text;
+    popupImg.setAttribute('src', imagePath);
   }
 
   function closePopup() {
