@@ -10,7 +10,11 @@ const server = require("browser-sync").create();
 let reload = server.reload;
 let { createProxyMiddleware } = require("http-proxy-middleware");
 
-const planetProxyMidleware = createProxyMiddleware("/result", {
+const pathFilter = function (pathname, req) {
+  return (pathname.match('/result') || pathname.match('/contact'))&& req.method === 'POST';
+};
+
+const planetProxyMidleware = createProxyMiddleware(pathFilter, {
   target: "https://planetaemailsender.azurewebsites.net",
   changeOrigin: true,
   logLevel: "debug",

@@ -18,13 +18,13 @@ module.exports = function html() {
   }, "");
 
   const jsScripts = jsFiles.reduce((prev, cur) => {
+    if(!isProd) {
+      prev += `\n\t<script>var DEVELOPMENT_MODE = true;</script>`
+    }
     return (prev += `\n\t<script src="./js/${cur}" defer></script>`);
   }, "");
 
   const reactJsScript = reactJsFile.reduce((prev, cur, ind) => {
-    if(!isProd) {
-      prev += `\n\t<script>var DEVELOPMENT_MODE = true;</script>`
-    }
     return (prev += `\n\t<script src="./js/${cur}" defer></script>`);
   }, "");
 
