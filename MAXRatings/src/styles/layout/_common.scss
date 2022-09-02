@@ -211,6 +211,7 @@ body {
     opacity: 0;
     transform: translateX(-50px);
     transition: all .7s ease .5s;
+    background-color: transparent;
 
     @include media('<phone'){
         margin-bottom: 30px;
@@ -564,6 +565,7 @@ body {
 
     .elips{
         left: -550px;
+        z-index: 2;
     }
 
     .text{
@@ -823,6 +825,8 @@ body {
 .whyus-section{
 
     .container{
+        position: relative;
+        z-index: 3;
 
         @include media('<desktop'){
             align-items: center;
@@ -834,6 +838,7 @@ body {
         top: 0;
         right: -550px;
         left: auto;
+        z-index: 2;
 
         @include media('<phone'){
             display: none;
@@ -902,6 +907,11 @@ body {
         padding: 65px 0;
     }
 
+    .container{
+        position: relative;
+        z-index: 3;
+    }
+
     .text{
         position: relative;
         display: flex;
@@ -913,8 +923,9 @@ body {
 
     .elips{
         left: 45%;
-        bottom: -100%;
+        top: 0;
         filter: blur(240px);
+        z-index: 2;
     }
 
     .title{
@@ -991,10 +1002,16 @@ body {
         padding: 65px 0 130px 0;
     }
 
+    .elips{
+        z-index: 3;
+    }
+
     .container{
+        position: relative;
         display: flex;
         align-items: center;
         flex-direction: column;
+        z-index: 4;
     }
 
     .title{

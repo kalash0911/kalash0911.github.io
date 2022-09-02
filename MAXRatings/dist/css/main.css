@@ -1200,7 +1200,8 @@ body {
   opacity: 0;
   -webkit-transform: translateX(-50px);
   transform: translateX(-50px);
-  transition: all .7s ease .5s; }
+  transition: all .7s ease .5s;
+  background-color: transparent; }
   @media (max-width: 479px) {
     .stik {
       margin-bottom: 30px; } }
@@ -1516,7 +1517,8 @@ body {
         -ms-flex-direction: column;
         flex-direction: column; } }
   .about-section .elips {
-    left: -550px; }
+    left: -550px;
+    z-index: 2; }
   .about-section .text {
     max-width: 600px;
     margin-right: 35px; }
@@ -1789,17 +1791,21 @@ body {
     width: 100%; }
 
 /* -------------whyus-section--------------- */
-@media (max-width: 1023px) {
-  .whyus-section .container {
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse; } }
+.whyus-section .container {
+  position: relative;
+  z-index: 3; }
+  @media (max-width: 1023px) {
+    .whyus-section .container {
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; } }
 
 .whyus-section .elips {
   top: 0;
   right: -550px;
-  left: auto; }
+  left: auto;
+  z-index: 2; }
   @media (max-width: 479px) {
     .whyus-section .elips {
       display: none; } }
@@ -1868,6 +1874,9 @@ body {
   @media (max-width: 479px) {
     .platforms-sections {
       padding: 65px 0; } }
+  .platforms-sections .container {
+    position: relative;
+    z-index: 3; }
   .platforms-sections .text {
     position: relative;
     display: -ms-flexbox;
@@ -1880,9 +1889,10 @@ body {
     margin-bottom: 60px; }
   .platforms-sections .elips {
     left: 45%;
-    bottom: -100%;
+    top: 0;
     -webkit-filter: blur(240px);
-    filter: blur(240px); }
+    filter: blur(240px);
+    z-index: 2; }
   .platforms-sections .title {
     max-width: 550px; }
   .platforms-sections .line {
@@ -1992,13 +2002,17 @@ body {
   @media (max-width: 479px) {
     .contact-sections {
       padding: 65px 0 130px 0; } }
+  .contact-sections .elips {
+    z-index: 3; }
   .contact-sections .container {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    z-index: 4; }
   .contact-sections .title {
     text-align: center;
     max-width: 550px;
