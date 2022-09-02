@@ -1122,7 +1122,12 @@ body {
       .popup .popup-content {
         padding: 50px 20px; } }
   .popup .popup-text {
-    text-align: justify; }
+    text-align: justify;
+    font-weight: 500;
+    font-size: 18px; }
+    @media (max-width: 479px) {
+      .popup .popup-text {
+        font-size: 16px; } }
   .popup .btn-popup {
     position: absolute;
     top: 25px;
@@ -1141,8 +1146,9 @@ body {
       top: 12px;
       left: 4px;
       width: 20px;
-      height: 1px;
-      background-color: #000; }
+      height: 2px;
+      background-color: #000;
+      border-radius: 10px; }
     .popup .btn-popup::before {
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg); }
@@ -1434,7 +1440,7 @@ body {
         margin: 0 6px; } }
   .main-section .img-wrap {
     position: absolute;
-    bottom: -35px;
+    bottom: -30px;
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
@@ -1508,6 +1514,8 @@ body {
     position: relative;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between; }
     @media (max-width: 1023px) {
@@ -1921,7 +1929,7 @@ body {
     padding: 0 30px;
     margin: 0 auto; }
     .platforms-sections .cont img {
-      margin: 0 15px; }
+      margin: 0 25px; }
       @media (max-width: 479px) {
         .platforms-sections .cont img {
           margin: 0 8px; } }
@@ -1949,15 +1957,15 @@ body {
         height: calc(20px + 30 * ((100vw - calc(375px)) / 1170)); } }
   .platforms-sections .amazon {
     /* Только если меньше контейнера */
-    width: 150px;
+    width: 230px;
     /* Только если меньше контейнера */
-    height: 44px; }
+    height: 71px; }
     @media (max-width: 1545px) {
       .platforms-sections .amazon {
-        width: calc(35px + 115 * ((100vw - calc(375px)) / 1170)); } }
+        width: calc(50px + 180 * ((100vw - calc(375px)) / 1170)); } }
     @media (max-width: 1545px) {
       .platforms-sections .amazon {
-        height: calc(15px + 29 * ((100vw - calc(375px)) / 1170)); } }
+        height: calc(22px + 49 * ((100vw - calc(375px)) / 1170)); } }
   .platforms-sections .yelp {
     /* Только если меньше контейнера */
     width: 150px;
