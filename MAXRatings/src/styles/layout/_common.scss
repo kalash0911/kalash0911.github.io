@@ -927,6 +927,10 @@ body {
         flex-direction: column;
         text-align: center;
         margin-bottom: 60px;
+
+        @include media('<phone'){
+            margin-bottom: 30px;
+        }
     }
 
     .elips{

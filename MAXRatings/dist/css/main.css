@@ -1895,6 +1895,9 @@ body {
     flex-direction: column;
     text-align: center;
     margin-bottom: 60px; }
+    @media (max-width: 479px) {
+      .platforms-sections .text {
+        margin-bottom: 30px; } }
   .platforms-sections .elips {
     left: 45%;
     top: 0;
