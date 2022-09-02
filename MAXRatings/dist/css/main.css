@@ -561,23 +561,21 @@ header {
   padding: 20px 0;
   z-index: 5; }
   @media (max-width: 767px) {
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-      opacity: 0;
-      transition: opacity 0s ease 0s;
+    header {
+      position: fixed;
       background-color: #000; }
-      .active header::before {
-        transition: opacity 0s ease .1s;
-        opacity: 1; } }
+      header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-color: #000; } }
   @media (max-width: 479px) {
     header {
-      padding: 20px 0; } }
+      padding: 10px 0; } }
   header .container {
     max-width: 1545px; }
   header .content {
@@ -1071,13 +1069,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 5;
   opacity: 0;
   visibility: hidden;
   transition: all .4s ease 0s; }
   .backdrop.open {
     opacity: 70%;
-    z-index: 5;
     visibility: visible; }
 
 .popup {
@@ -1089,7 +1086,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 25px;
-  z-index: -1;
+  z-index: 6;
   opacity: 0;
   visibility: hidden;
   background: linear-gradient(111.9deg, #F84F38 0%, #F87D38 97.63%);
@@ -1105,7 +1102,6 @@ body {
       max-width: 100%; } }
   .popup.open {
     opacity: 1;
-    z-index: 6;
     visibility: visible; }
   .popup .popup-content {
     max-width: 550px;
@@ -1296,7 +1292,8 @@ body {
   transition: all .7s ease .5s; }
 
 .element-show .orang {
-  color: #F84F38; }
+  color: #F84F38;
+  fill: #F84F38; }
 
 .element-show .title, .element-show .discr {
   opacity: 1;
@@ -1313,6 +1310,7 @@ body {
 
 /* -------------main-section--------------- */
 .main-section {
+  position: relative;
   padding: 150px 0 125px 0; }
   @media (max-width: 767px) {
     .main-section {
@@ -1326,11 +1324,6 @@ body {
     text-align: center; }
   .main-section .elips {
     z-index: 2; }
-  .main-section .title {
-    position: relative;
-    margin-bottom: 20px;
-    white-space: nowrap;
-    z-index: 3; }
   .main-section .sub-title {
     position: relative;
     display: block;
@@ -1342,73 +1335,64 @@ body {
     -webkit-transform: translateY(50px);
     transform: translateY(50px);
     transition: all .7s ease 0s; }
+  .main-section .main-logo {
+    position: relative;
+    z-index: 3; }
+    .main-section .main-logo svg {
+      fill: #fff; }
   .main-section .star {
-    position: relative; }
-    .main-section .star::before {
-      content: '';
-      position: absolute;
-      /* Только если меньше контейнера */
-      top: 40px;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      background-color: #000; }
-      @media (max-width: 1545px) {
-        .main-section .star::before {
-          top: calc(-30px + 70 * ((100vw - calc(375px)) / 1170)); } }
-    .main-section .star svg {
-      position: absolute;
-      /* Только если меньше контейнера */
-      top: -20px;
-      left: 50%;
-      -webkit-transform: translate(-50%);
-      transform: translate(-50%);
-      /* Только если меньше контейнера */
-      width: 84px;
-      /* Только если меньше контейнера */
-      height: 84px; }
-      @media (max-width: 1545px) {
-        .main-section .star svg {
-          top: calc(-5px + -15 * ((100vw - calc(375px)) / 1170)); } }
-      @media (max-width: 1545px) {
-        .main-section .star svg {
-          width: calc(19px + 65 * ((100vw - calc(375px)) / 1170)); } }
-      @media (max-width: 1545px) {
-        .main-section .star svg {
-          height: calc(19px + 65 * ((100vw - calc(375px)) / 1170)); } }
-      .main-section .star svg path {
-        stroke-width: 3;
-        stroke: #F84F38;
-        stroke-dasharray: 397;
-        stroke-dashoffset: 397;
-        -webkit-animation-name: svg-anim;
-        animation-name: svg-anim;
-        -webkit-animation-duration: 1.5s;
-        animation-duration: 1.5s;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards; }
+    stroke-width: 0.7;
+    stroke: #F84F38;
+    stroke-dasharray: 397;
+    stroke-dashoffset: 397;
+    -webkit-animation-name: svg-anim;
+    animation-name: svg-anim;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
 
 @-webkit-keyframes svg-anim {
   0% {
     fill: transparent;
     stroke-dasharray: 397;
     stroke-dashoffset: 397; }
-  100% {
-    fill: #F84F38;
+  50% {
+    fill: transparent;
     stroke-dasharray: 0;
-    stroke-dashoffset: 397; } }
+    stroke-dashoffset: 397; }
+  70% {
+    fill: #F84F38; }
+  71% {
+    fill: transparent; }
+  72% {
+    fill: #F84F38; }
+  73% {
+    fill: transparent; }
+  100% {
+    fill: #F84F38; } }
 
 @keyframes svg-anim {
   0% {
     fill: transparent;
     stroke-dasharray: 397;
     stroke-dashoffset: 397; }
-  100% {
-    fill: #F84F38;
+  50% {
+    fill: transparent;
     stroke-dasharray: 0;
-    stroke-dashoffset: 397; } }
+    stroke-dashoffset: 397; }
+  70% {
+    fill: #F84F38; }
+  71% {
+    fill: transparent; }
+  72% {
+    fill: #F84F38; }
+  73% {
+    fill: transparent; }
+  100% {
+    fill: #F84F38; } }
   .main-section .cart {
     position: relative;
     padding: 16px 16px 40px 16px;
@@ -1426,9 +1410,6 @@ body {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.6;
-    transition: all .7s ease 0s;
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
     min-height: 60px;
     max-height: 60px;
     overflow: hidden; }
@@ -1504,11 +1485,6 @@ body {
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
     cursor: pointer; }
-    .main-section .swiper-slide-active .cart {
-      max-width: 100%; }
-    .main-section .swiper-slide-active .discription {
-      -webkit-transform: scale(1);
-      transform: scale(1); }
   .main-section .swiper-slide-prev, .main-section .swiper-slide-next {
     transition: all .7s ease 0s; }
 
@@ -1519,6 +1495,7 @@ body {
 
 /* -------------about-section--------------- */
 .about-section {
+  position: relative;
   padding: 125px 0 55px 0; }
   @media (max-width: 767px) {
     .about-section {
