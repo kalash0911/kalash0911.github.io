@@ -1,3 +1,5 @@
+import { PLANET_ENDPOINT_CONTACT } from './constants/link.js';
+
 /* header */
 
 const burger = document.querySelector(".burger");
@@ -189,10 +191,10 @@ initContactForm();
 
 function initContactForm() {
   const formWrap = document.querySelector(".form-wrap");
+  
+  if (!formWrap) return;
+  
   const form = formWrap.querySelector("#contactForm");
-
-  if (!form && !formWrap) return;
-
   const successMsgBlock = formWrap.querySelector('.success-msg');
   const formContent = formWrap.querySelector('.form-content');
   const EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
@@ -212,21 +214,47 @@ function initContactForm() {
     validateForm("firstNameInput", firstNameInput.value);
     validateForm("lastNameInput", lastNameInput.value);
     validateForm("emailInput", emailInput.value);
+
     if(!isFormValid) return;
-    const payload = {
+
+    fetchErrorEl.classList.remove('active');
+
+    const request = {
       firstName: firstNameInput.value,
       lastName: lastNameInput.value,
       email: emailInput.value,
       message: messageInput.value,
     }
-    console.log('payload: ', payload);
+
     spinner.classList.remove('d-none');
-    setTimeout(() => {
-      successMsgBlock.classList.add('active');
-      formContent.classList.add('d-none');
-      spinner.classList.add('d-none');
-      formWrap.classList.add('form-send');
-    }, 3000)
+
+    fetch(PLANET_ENDPOINT_CONTACT, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      body: JSON.stringify(request),
+    })
+      .then((res) => {
+        if (res.ok) {
+          successMsgBlock.classList.add('active');
+          formContent.classList.add('d-none');
+          spinner.classList.add('d-none');
+          formWrap.classList.add('form-send');
+        } else {
+          fetchErrorEl.classList.add('active');
+        }
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+        fetchErrorEl.classList.add('active');
+      })
+      .finally(() => {
+        spinner.classList.add('d-none');
+      });
+
   });
 
   firstNameInput.addEventListener("input", (event) => {
