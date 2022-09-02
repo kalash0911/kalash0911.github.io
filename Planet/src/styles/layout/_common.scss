@@ -12,7 +12,7 @@ body {
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 .container{
@@ -3299,6 +3299,40 @@ input, textarea{
         background: $white;
         border-radius: 16px;
         box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+
+        &.form-send {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-text,
+        .fetch-error {
+            display: none;
+            color: $red;
+            font-size: 12px;
+            margin: 0;
+            padding: 10px 0;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        .fetch-error {
+            text-align: center;
+        }
+
+        .success-msg {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+
+            &.active {
+                display: flex;
+            }
+        }
 
         @include media('<tablet'){
             padding: 40px;

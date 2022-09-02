@@ -106,6 +106,9 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 
   const win = window;
   const sliderSelector = document.querySelector(selector);
+
+  if(!sliderSelector) return;
+
   let swiper = new Swiper(selector, init);
 
   const toggleInit = () => {
@@ -179,4 +182,92 @@ let pageId = document.querySelector("[data-id-page]").getAttribute("data-id-page
 
 if(pageId == navItem.getAttribute("data-id-nav")) {
     navItem.classList.add("active-link");
+}
+
+/* contact form */
+initContactForm();
+
+function initContactForm() {
+  const formWrap = document.querySelector(".form-wrap");
+  const form = formWrap.querySelector("#contactForm");
+
+  if (!form && !formWrap) return;
+
+  const successMsgBlock = formWrap.querySelector('.success-msg');
+  const formContent = formWrap.querySelector('.form-content');
+  const EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+  const firstNameInput = form.querySelector("#firstName");
+  const lastNameInput = form.querySelector("#lastName");
+  const emailInput = form.querySelector("#email");
+  const messageInput = form.querySelector("#message");
+  const firstNameErrorEl = form.querySelector("#firstNameError");
+  const lastNameErrorEl = form.querySelector("#lastNameError");
+  const emailErrorEl = form.querySelector("#emailError");
+  const fetchErrorEl = formWrap.querySelector('.fetch-error');
+  const spinner = document.querySelector('.spinnerWrap');
+  let isFormValid = false;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    validateForm("firstNameInput", firstNameInput.value);
+    validateForm("lastNameInput", lastNameInput.value);
+    validateForm("emailInput", emailInput.value);
+    if(!isFormValid) return;
+    const payload = {
+      firstName: firstNameInput.value,
+      lastName: lastNameInput.value,
+      email: emailInput.value,
+      message: messageInput.value,
+    }
+    console.log('payload: ', payload);
+    spinner.classList.remove('d-none');
+    setTimeout(() => {
+      successMsgBlock.classList.add('active');
+      formContent.classList.add('d-none');
+      spinner.classList.add('d-none');
+      formWrap.classList.add('form-send');
+    }, 3000)
+  });
+
+  firstNameInput.addEventListener("input", (event) => {
+    validateForm("firstNameInput", event.target.value);
+  });
+  lastNameInput.addEventListener("input", (event) => {
+    validateForm("lastNameInput", event.target.value);
+  });
+  emailInput.addEventListener("input", (event) => {
+    validateForm("emailInput", event.target.value);
+  });
+
+  function validateForm(field, value) {
+    switch (field) {
+      case "firstNameInput":
+        if(value < 1) {
+          firstNameErrorEl.classList.add("active");
+          isFormValid = false;
+          return;
+        }
+        isFormValid = true;
+        firstNameErrorEl.classList.remove("active");
+        break;
+      case "lastNameInput":
+        if(value < 1) {
+          lastNameErrorEl.classList.add("active")
+          isFormValid = false;
+          return;
+        }
+        isFormValid = true;
+        lastNameErrorEl.classList.remove("active");
+        break;
+      case "emailInput":
+        if(!EMAIL_REGEX.test(value)) {
+          emailErrorEl.classList.add("active")
+          isFormValid = false;
+          return;
+        }
+        isFormValid = true;
+        emailErrorEl.classList.remove("active");
+        break;
+    }
+  }
 }

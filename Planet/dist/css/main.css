@@ -787,7 +787,7 @@ body {
   overflow: hidden; }
 
 .d-none {
-  display: none; }
+  display: none !important; }
 
 .container {
   width: 100%;
@@ -3321,6 +3321,36 @@ input, textarea {
     background: #fff;
     border-radius: 16px;
     box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12); }
+    .contact-section .form-wrap.form-send {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    .contact-section .form-wrap .error-text,
+    .contact-section .form-wrap .fetch-error {
+      display: none;
+      color: #B72727;
+      font-size: 12px;
+      margin: 0;
+      padding: 10px 0; }
+      .contact-section .form-wrap .error-text.active,
+      .contact-section .form-wrap .fetch-error.active {
+        display: block; }
+    .contact-section .form-wrap .fetch-error {
+      text-align: center; }
+    .contact-section .form-wrap .success-msg {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: none; }
+      .contact-section .form-wrap .success-msg.active {
+        display: -ms-flexbox;
+        display: flex; }
     @media (max-width: 767px) {
       .contact-section .form-wrap {
         padding: 40px; } }
