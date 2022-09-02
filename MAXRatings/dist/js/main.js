@@ -141,10 +141,10 @@ ScrollTrigger.create({
   trigger: "#platforms",
   start: "top bottom",
   endTrigger: "#contact",
-  end: "bottom 50%+=100px",
+  end: "bottom",
   onUpdate: function onUpdate(self) {
     gsap.to("#platforms .cont", {
-      x: self.progress.toFixed(3) * 300
+      x: self.progress.toFixed(3) * 600
     });
   }
 }); // Open review in popup
