@@ -2651,7 +2651,10 @@ input, textarea {
         -webkit-transform: none;
         transform: none; } }
   .service-section .third-menu {
-    right: 0; }
+    right: 0;
+    height: 60vh;
+    overflow: auto;
+    padding-bottom: 20px; }
     @media (max-width: 479px) {
       .service-section .third-menu {
         right: auto;

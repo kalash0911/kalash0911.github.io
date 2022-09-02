@@ -2389,6 +2389,9 @@ input, textarea{
 
     .third-menu{
         right: 0;
+        height: 60vh;
+        overflow: auto;
+        padding-bottom: 20px;
 
         @include media('<phone'){
             right: auto;
