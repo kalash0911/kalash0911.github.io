@@ -2571,7 +2571,8 @@ input, textarea {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    max-width: 837px; }
+    max-width: 837px;
+    position: relative; }
     @media (max-width: 479px) {
       .service-section .container {
         padding: 0; } }
@@ -2585,11 +2586,24 @@ input, textarea {
     background: #F4F8FF;
     border-radius: 12px;
     margin-bottom: 40px;
-    z-index: 2; }
+    z-index: 2;
+    transition: top .3s ease-out;
+    position: absolute;
+    top: 0; }
     @media (max-width: 479px) {
       .service-section .menu-sec {
         -ms-flex-direction: column;
-        flex-direction: column; } }
+        flex-direction: column;
+        right: 0;
+        left: 0; } }
+    .service-section .menu-sec.fixed {
+      position: fixed;
+      top: 0; }
+  .service-section .content {
+    padding-top: 90px; }
+    @media (max-width: 479px) {
+      .service-section .content {
+        padding-top: 125px; } }
   .service-section .menu-item {
     position: relative;
     display: -ms-flexbox;

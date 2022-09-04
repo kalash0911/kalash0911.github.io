@@ -2292,6 +2292,7 @@ input, textarea{
         display: flex;
         flex-direction: column;
         max-width: 837px;
+        position: relative;
 
         @include media('<phone'){
             padding: 0;
@@ -2306,9 +2307,27 @@ input, textarea{
         border-radius: 12px;
         margin-bottom: 40px;
         z-index: 2;
+        transition: top .3s ease-out;
+        position: absolute;
+        top: 0;
 
         @include media('<phone'){
             flex-direction: column;
+            right: 0;
+            left: 0;
+        }
+
+        &.fixed {
+            position: fixed;
+            top: 0;
+        }
+    }
+
+    .content {
+        padding-top: 90px;
+
+        @include media('<phone'){
+            padding-top: 125px;
         }
     }
 
