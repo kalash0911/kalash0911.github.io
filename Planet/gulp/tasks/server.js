@@ -11,7 +11,12 @@ let reload = server.reload;
 let { createProxyMiddleware } = require("http-proxy-middleware");
 
 const pathFilter = function (pathname, req) {
-  return (pathname.match('/result') || pathname.match('/contact'))&& req.method === 'POST';
+  return (
+    (pathname.match("/result") ||
+      pathname.match("/contact") ||
+      pathname.match("/course")) &&
+    req.method === "POST"
+  );
 };
 
 const planetProxyMidleware = createProxyMiddleware(pathFilter, {

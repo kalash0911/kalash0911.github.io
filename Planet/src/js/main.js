@@ -310,13 +310,18 @@ function initServiceMenu() {
     const targetElement = event.target;
 
     if (targetElement.classList.contains('arrows')) {
+      closeOpenItems();
       targetElement.closest('.menu-item').classList.toggle('menu-item_active');
     } else {
-      menuItem.forEach((el) => {
-        el.classList.remove('menu-item_active');
-      })
+      closeOpenItems();
     };
   });
+
+  function closeOpenItems() {
+    menuItem.forEach((el) => {
+      el.classList.remove('menu-item_active');
+    })
+  }
 }
 
 /* Sticky */
