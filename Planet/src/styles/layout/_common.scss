@@ -2303,6 +2303,8 @@ input, textarea{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        width: 100%;
+        max-width: 777px;
         background: #F4F8FF;
         border-radius: 12px;
         margin-bottom: 40px;
@@ -2320,11 +2322,16 @@ input, textarea{
         &.fixed {
             position: fixed;
             top: 0;
+            box-shadow: 0px 5px 50px 0px rgba(0,0,0,0.15);
         }
     }
 
     .content {
         padding-top: 90px;
+
+        @include media('<830px'){
+            padding-top: 190px;
+        }
 
         @include media('<phone'){
             padding-top: 125px;
@@ -2388,6 +2395,10 @@ input, textarea{
         text-align: left;
         transition: all .3s ease 0s;
         padding: 16px 25px;
+
+        @include media('<830px'){
+            width: 100%;
+        }
 
         @include media('<phone'){
             padding: 10px 30px;
