@@ -2311,7 +2311,7 @@ input, textarea{
         position: absolute;
         top: 0;
 
-        @include media('<phone'){
+        @include media('<830px'){
             flex-direction: column;
             right: 0;
             left: 0;
@@ -2438,7 +2438,7 @@ input, textarea{
         left: 50%;
         transform: translate(-50%);
 
-        @include media('<phone'){
+        @include media('<830px'){
             left: 0;
             transform: none;
         }
@@ -2450,7 +2450,7 @@ input, textarea{
         overflow: auto;
         padding-bottom: 20px;
 
-        @include media('<phone'){
+        @include media('<830px'){
             right: auto;
             left: 0;
         }
@@ -2466,6 +2466,10 @@ input, textarea{
         color: $gray-80;
         padding: 8px 14px;
         border-radius: 8px;
+
+        @include media('<830px'){
+            padding: 8px 16px;
+        }
 
         @include media('<phone'){
             font-size: 14px;
