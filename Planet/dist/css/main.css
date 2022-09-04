@@ -1041,6 +1041,31 @@ body {
       .pop-up .btn-close {
         top: 30px;
         right: 30px; } }
+  .pop-up .success-msg {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: none; }
+    .pop-up .success-msg.active {
+      display: -ms-flexbox;
+      display: flex; }
+    .pop-up .success-msg .form-title {
+      font-size: 26px; }
+  .pop-up .error-text,
+  .pop-up .fetch-error {
+    display: none;
+    color: #B72727;
+    font-size: 12px;
+    margin: 0;
+    padding: 10px 0; }
+    .pop-up .error-text.active,
+    .pop-up .fetch-error.active {
+      display: block; }
 
 .form {
   display: -ms-flexbox;
@@ -2732,6 +2757,13 @@ input, textarea {
       .service-section .block {
         padding: 0 30px 30px 30px;
         margin-bottom: 30px; } }
+    .service-section .block img {
+      margin-bottom: 50px; }
+      @media (max-width: 479px) {
+        .service-section .block img {
+          margin-bottom: 15px; } }
+    .service-section .block .text-line {
+      margin: 0px; }
   .service-section .title {
     font-family: "Cormorant Garamond", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
@@ -2806,6 +2838,11 @@ input, textarea {
     margin: 0; }
   .service-section .list-check {
     margin-bottom: 8px; }
+  .service-section .reviews {
+    margin-bottom: 100px; }
+    @media (max-width: 479px) {
+      .service-section .reviews {
+        margin-bottom: 70px; } }
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\ #reviews-slider */
 .reviews {

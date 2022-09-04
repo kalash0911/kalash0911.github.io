@@ -2533,7 +2533,20 @@ input, textarea{
             padding: 0 30px 30px 30px;
             margin-bottom: 30px;
         }
+
+        img{
+            margin-bottom: 50px;
+
+            @include media('<phone'){
+                margin-bottom: 15px;
+            }
+        }
+
+        .text-line{
+            margin: 0px;
+        }
     }
+
 
     .title{
         font-family: $garamond;
@@ -2633,6 +2646,14 @@ input, textarea{
 
     .list-check{
         margin-bottom: 8px;
+    }
+
+    .reviews{
+        margin-bottom: 100px;
+
+        @include media('<phone'){
+            margin-bottom: 70px;
+        }
     }
 }
 
