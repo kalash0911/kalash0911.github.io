@@ -299,3 +299,30 @@ function initContactForm() {
     }
   }
 }
+
+/* services menu logic */
+
+const menuItem = document.querySelector(".menu-item");
+
+window.onload = function () {
+  document.addEventListener("click", documentActions);
+
+  function documentActions(e) {
+      const targetElement = e.target;
+      if (window.innerWidth < 1024) {
+          if (targetElement.classList.contains('arrows')) {
+              targetElement.closest('.menu-item').classList.toggle('menu-item_active');
+          }
+      }
+  }
+};
+
+const secLinkClose = document.querySelectorAll(".sec-link-close");
+
+if (secLinkClose.length) {
+  for(var i =0;i<secLinkClose.length;++i){
+    secLinkClose[i].addEventListener("click", function (e) {
+      menuItem.classList.remove("menu-item_active");
+    });
+  }
+};

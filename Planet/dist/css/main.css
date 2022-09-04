@@ -2584,7 +2584,8 @@ input, textarea {
     flex-wrap: wrap;
     background: #F4F8FF;
     border-radius: 12px;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    z-index: 2; }
     @media (max-width: 479px) {
       .service-section .menu-sec {
         -ms-flex-direction: column;
@@ -2595,15 +2596,26 @@ input, textarea {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column; }
-    .service-section .menu-item:hover .nav-btn {
-      color: #2758B7; }
-    .service-section .menu-item:hover svg {
-      -webkit-transform: rotate(-180deg);
-      transform: rotate(-180deg); }
-    .service-section .menu-item:hover .sub-menu {
-      opacity: 1;
-      z-index: 2;
-      visibility: visible; }
+    @media (min-width: 1024px) {
+      .service-section .menu-item:hover .nav-btn {
+        color: #2758B7; }
+      .service-section .menu-item:hover svg {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg); }
+      .service-section .menu-item:hover .sub-menu {
+        opacity: 1;
+        z-index: 2;
+        visibility: visible; } }
+    @media (max-width: 1023px) {
+      .service-section .menu-item.menu-item_active .nav-btn {
+        color: #2758B7; }
+      .service-section .menu-item.menu-item_active svg {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg); }
+      .service-section .menu-item.menu-item_active .sub-menu {
+        opacity: 1;
+        z-index: 2;
+        visibility: visible; } }
   .service-section .nav-btn {
     display: -ms-flexbox;
     display: flex;
@@ -2618,6 +2630,10 @@ input, textarea {
     text-align: left;
     transition: all .3s ease 0s;
     padding: 16px 25px; }
+    @media (max-width: 479px) {
+      .service-section .nav-btn {
+        padding: 10px 30px;
+        font-size: 14px; } }
     .service-section .nav-btn svg {
       width: 12px;
       min-width: 12px;
@@ -2625,6 +2641,10 @@ input, textarea {
       fill: #2758B7;
       margin-left: 10px;
       transition: all .3s ease 0s; }
+      @media (max-width: 479px) {
+        .service-section .nav-btn svg {
+          width: 8px;
+          min-width: 8px; } }
   .service-section .sub-menu {
     position: absolute;
     width: 1000%;
@@ -2639,6 +2659,10 @@ input, textarea {
     z-index: -1;
     visibility: hidden;
     transition: all .3s ease; }
+    @media (max-width: 479px) {
+      .service-section .sub-menu {
+        top: 40px;
+        padding: 15px; } }
   .service-section .first-menu {
     left: 0; }
   .service-section .sec-menu {

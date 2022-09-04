@@ -2305,6 +2305,7 @@ input, textarea{
         background: #F4F8FF;
         border-radius: 12px;
         margin-bottom: 40px;
+        z-index: 2;
 
         @include media('<phone'){
             flex-direction: column;
@@ -2316,20 +2317,42 @@ input, textarea{
         display: flex;
         flex-direction: column;
 
-        &:hover{
-
-            .nav-btn{
-                color: $blue;
+        @include media('>=desktop'){
+            &:hover{
+    
+                .nav-btn{
+                    color: $blue;
+                }
+    
+                svg{
+                    transform: rotate(-180deg);
+                }
+    
+                .sub-menu{
+                    opacity: 1;
+                    z-index: 2;
+                    visibility: visible;
+                }
             }
+        }
 
-            svg{
-                transform: rotate(-180deg);
-            }
+        &.menu-item_active{
 
-            .sub-menu{
-                opacity: 1;
-                z-index: 2;
-                visibility: visible;
+            @include media('<desktop'){
+
+                .nav-btn{
+                    color: $blue;
+                }
+    
+                svg{
+                    transform: rotate(-180deg);
+                }
+    
+                .sub-menu{
+                    opacity: 1;
+                    z-index: 2;
+                    visibility: visible;
+                }
             }
         }
     }
@@ -2347,6 +2370,11 @@ input, textarea{
         transition: all .3s ease 0s;
         padding: 16px 25px;
 
+        @include media('<phone'){
+            padding: 10px 30px;
+            font-size: 14px;
+        }
+
         svg{
             width: 12px;
             min-width: 12px;
@@ -2354,6 +2382,11 @@ input, textarea{
             fill: $blue;
             margin-left: 10px;
             transition: all .3s ease 0s;
+
+            @include media('<phone'){
+                width: 8px;
+                min-width: 8px;
+            }
         }
     }
 
@@ -2371,6 +2404,11 @@ input, textarea{
         z-index: -1;
         visibility: hidden;
         transition: all .3s ease;
+
+        @include media('<phone'){
+            top: 40px;
+            padding: 15px;
+        }
     }
 
     .first-menu{
