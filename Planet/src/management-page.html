@@ -21,6 +21,7 @@
     <div id="wrapper">
         //= templates/header.html
         <main id="main">
+            //= templates/spinner.html
             <section class="management-section"> 
                 <img class="line-bg" src="./images/line-bg.svg" alt="line-bg">
                 <div class="container">
@@ -173,31 +174,40 @@
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.0662 1.9948C9.3591 1.70191 9.3591 1.22704 9.0662 0.934145C8.7734 0.641255 8.2985 0.641255 8.0056 0.934145L5.0004 3.9393L1.99519 0.934145C1.70229 0.641255 1.22742 0.641255 0.934529 0.934145C0.641629 1.22704 0.641629 1.70191 0.934529 1.9948L3.9397 5L0.934519 8.00521C0.641619 8.29811 0.641619 8.77301 0.934519 9.06591C1.22741 9.35881 1.70228 9.35881 1.99518 9.06591L5.0004 6.06071L8.0056 9.06591C8.2985 9.35881 8.7734 9.35881 9.0663 9.06591C9.3591 8.77301 9.3591 8.29811 9.0663 8.00521L6.061 5L9.0662 1.9948Z" fill="#2758B7"/>
                     </svg>
-                    </a>
-                <h3 class="title">Записаться на курс</h3>
-                <form class="form" action="#">
-                    <div class="form-block">
-                        <label>
-                            <p class="label-title">Имя*</p>
-                            <input type="text" placeholder="Имя">
-                        </label>
-                        <label>
-                            <p class="label-title">Фамилия*</p>
-                            <input type="text" placeholder="Фамилия">
-                        </label>
+                </a>
+                <div class="form-wrap">
+                    //= templates/success-msg.html
+                    <div class="form-content">
+                        <h3 class="title">Записаться на курс</h3>
+                        <form class="form" action="#" id="courseForm">
+                            <div class="form-block">
+                                <label>
+                                    <p class="label-title">Имя*</p>
+                                    <input id="firstName" type="text" placeholder="Имя">
+                                    <p class="error-text" id="firstNameError">Введите ваше имя</p>
+                                </label>
+                                <label>
+                                    <p class="label-title">Фамилия*</p>
+                                    <input id="lastName" type="text" placeholder="Фамилия">
+                                    <p class="error-text" id="lastNameError">Введите ваше фамилию</p>
+                                </label>
+                            </div>
+                            <div class="form-block">
+                                <label>
+                                    <p class="label-title">Телефон*</p>
+                                    <input id="phone" type="phone" placeholder="Телефон">
+                                    <p class="error-text" id="phoneError">Введите корректно ваш номер телефона</p>
+                                </label>
+                                <label>
+                                    <p class="label-title">Электронная почта</p>
+                                    <input id="email" type="email" placeholder="Электронная почта">
+                                </label>
+                            </div>
+                            <p class="fetch-error">Произошла неизвестная ошибка. Повторите попытку позже!</p>
+                            <input class="btn" type="submit" value="Продолжить">
+                        </form>
                     </div>
-                    <div class="form-block">
-                        <label>
-                            <p class="label-title">Телефон*</p>
-                            <input type="phone" placeholder="Телефон">
-                        </label>
-                        <label>
-                            <p class="label-title">Электронная почта</p>
-                            <input type="email" placeholder="Электронная почта">
-                        </label>
-                    </div>
-                    <input class="btn" type="submit" value="Продолжить">
-                </form>
+                </div>
             </div>
         </main>
         //= templates/footer.html

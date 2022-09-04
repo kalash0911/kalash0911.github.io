@@ -313,6 +313,37 @@ body {
             right: 30px;
         }
     }
+
+    
+    .success-msg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+
+        .form-title {
+            font-size: 26px;
+        }
+    }
+
+    .error-text,
+    .fetch-error {
+        display: none;
+        color: $red;
+        font-size: 12px;
+        margin: 0;
+        padding: 10px 0;
+
+        &.active {
+            display: block;
+        }
+    }
 }
 
 .form{

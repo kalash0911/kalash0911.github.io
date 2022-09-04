@@ -1,4 +1,6 @@
-import { PLANET_ENDPOINT_CONTACT } from './constants/link.js';
+import { PLANET_ENDPOINT_CONTACT, PLANET_ENDPOINT_COURSE } from './constants/link.js';
+import { PHONE_REGEX } from './constants/regex.js';
+import { maskPhoneNumber } from './utils/general.js';
 
 /* header */
 
@@ -195,6 +197,9 @@ function initContactForm() {
   if (!formWrap) return;
   
   const form = formWrap.querySelector("#contactForm");
+
+  if(!form) return;
+
   const successMsgBlock = formWrap.querySelector('.success-msg');
   const formContent = formWrap.querySelector('.form-content');
   const EMAIL_REGEX = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
@@ -295,6 +300,126 @@ function initContactForm() {
         }
         isFormValid = true;
         emailErrorEl.classList.remove("active");
+        break;
+    }
+  }
+}
+
+/* contact form */
+initCourseForm();
+
+function initCourseForm() {
+  const formWrap = document.querySelector(".form-wrap");
+  
+  if (!formWrap) return;
+  
+  const form = formWrap.querySelector("#courseForm");
+
+  if(!form) return;
+
+  const successMsgBlock = formWrap.querySelector('.success-msg');
+  const formContent = formWrap.querySelector('.form-content');
+  const firstNameInput = form.querySelector("#firstName");
+  const lastNameInput = form.querySelector("#lastName");
+  const emailInput = form.querySelector("#email");
+  const phoneInput = form.querySelector("#phone");
+  const firstNameErrorEl = form.querySelector("#firstNameError");
+  const lastNameErrorEl = form.querySelector("#lastNameError");
+  const phoneErrorEl = form.querySelector("#phoneError");
+  const fetchErrorEl = formWrap.querySelector('.fetch-error');
+  const spinner = document.querySelector('.spinnerWrap');
+  let isFormValid = false;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    validateForm("firstNameInput", firstNameInput.value);
+    validateForm("lastNameInput", lastNameInput.value);
+    validateForm("emailInput", emailInput.value);
+    validateForm("phoneInput", phoneInput.value)
+
+    if(!isFormValid) return;
+
+    fetchErrorEl.classList.remove('active');
+
+    const request = {
+      firstName: firstNameInput.value,
+      lastName: lastNameInput.value,
+      email: emailInput.value,
+      phoneNumber: phoneInput.value,
+    }
+
+    spinner.classList.remove('d-none');
+
+    fetch(PLANET_ENDPOINT_COURSE, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      body: JSON.stringify(request),
+    })
+      .then((res) => {
+        if (res.ok) {
+          successMsgBlock.classList.add('active');
+          formContent.classList.add('d-none');
+          spinner.classList.add('d-none');
+          formWrap.classList.add('form-send');
+        } else {
+          fetchErrorEl.classList.add('active');
+        }
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+        fetchErrorEl.classList.add('active');
+      })
+      .finally(() => {
+        spinner.classList.add('d-none');
+      });
+
+  });
+
+  firstNameInput.addEventListener("input", (event) => {
+    validateForm("firstNameInput", event.target.value);
+  });
+  lastNameInput.addEventListener("input", (event) => {
+    validateForm("lastNameInput", event.target.value);
+  });
+  phoneInput.addEventListener("input", (event) => {
+    validateForm("phoneInput", event.target.value);
+  });
+
+  function validateForm(field, value) {
+    switch (field) {
+      case "firstNameInput":
+        if(value < 1) {
+          firstNameErrorEl.classList.add("active");
+          isFormValid = false;
+          return;
+        }
+        isFormValid = true;
+        firstNameErrorEl.classList.remove("active");
+        break;
+      case "lastNameInput":
+        if(value < 1) {
+          lastNameErrorEl.classList.add("active")
+          isFormValid = false;
+          return;
+        }
+        isFormValid = true;
+        lastNameErrorEl.classList.remove("active");
+        break;
+      case "phoneInput":
+        const phoneValue = value ? value.replace(/\D/g, "") : '';
+        const maskedPhoneNumber = maskPhoneNumber(phoneValue);
+        phoneInput.value = maskedPhoneNumber;
+        if(!PHONE_REGEX.test(maskedPhoneNumber)) {
+          phoneErrorEl.classList.add("active")
+          isFormValid = false;
+          return;
+        }
+        isFormValid = true;
+        phoneErrorEl.classList.remove("active");
         break;
     }
   }
