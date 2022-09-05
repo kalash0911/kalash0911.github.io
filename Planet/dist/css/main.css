@@ -1317,6 +1317,14 @@ input, textarea {
   position: relative;
   padding: 40px 0;
   min-height: 1081px; }
+  @media (max-width: 767px) {
+    .history-section {
+      min-height: 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      padding: 80px 0 40px 0; } }
   .history-section::before {
     content: '';
     position: absolute;
@@ -1326,6 +1334,12 @@ input, textarea {
     height: 100%;
     background: #2D2D2D;
     opacity: 40%; }
+    @media (max-width: 767px) {
+      .history-section::before {
+        display: none; } }
+  @media (max-width: 767px) {
+    .history-section .img-bg {
+      position: relative; } }
   .history-section .container {
     position: relative;
     min-height: 1001px;
@@ -1339,19 +1353,33 @@ input, textarea {
     justify-content: center;
     text-align: center;
     z-index: 2; }
+    @media (max-width: 767px) {
+      .history-section .container {
+        min-height: 0;
+        margin-bottom: 50px; } }
   .history-section .title {
     font-family: "Cormorant Garamond", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
     font-size: 80px;
     line-height: 105.4%;
     color: #fff;
-    margin-bottom: 56px; }
+    margin-bottom: 56px;
+    max-width: 250px; }
     @media (max-width: 767px) {
       .history-section .title {
-        font-size: 48px; } }
+        font-size: 48px;
+        color: #2D2D2D;
+        max-width: 100%; } }
   .history-section .btn {
     background-color: #fff;
     color: #2D2D2D; }
+    @media (max-width: 767px) {
+      .history-section .btn {
+        background-color: #2758B7;
+        color: #fff; } }
+    @media (max-width: 479px) {
+      .history-section .btn {
+        width: 100%; } }
     .history-section .btn:hover {
       background-color: #4379E0;
       color: #fff; }
