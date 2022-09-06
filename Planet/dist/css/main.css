@@ -1256,23 +1256,14 @@ input, textarea {
         @media (max-width: 1014px) {
           .carts-section .block:nth-child(even) .text {
             margin: 0; } }
-  .carts-section .img-wrap {
-    width: 100%;
-    max-width: 720px;
-    height: 735px;
-    /* Только если меньше контейнера */
-    margin-left: -165px; }
-    @media (max-width: 1390px) {
-      .carts-section .img-wrap {
-        margin-left: calc(100px + -265 * ((100vw - calc(375px)) / 1015)); } }
-    @media (max-width: 1014px) {
-      .carts-section .img-wrap {
-        max-width: 100%;
-        margin: 0;
-        height: 550px; } }
-    @media (max-width: 767px) {
-      .carts-section .img-wrap {
-        height: 380px; } }
+  .carts-section .img {
+    max-width: 555px; }
+    @media (max-width: 1023px) {
+      .carts-section .img {
+        max-width: 100%; } }
+    .carts-section .img img {
+      width: 100%;
+      height: auto; }
   .carts-section .text {
     width: 100%;
     max-width: 440px;

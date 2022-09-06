@@ -566,20 +566,17 @@ input, textarea{
         }
     }
 
-    .img-wrap{
-        width: 100%;
-        max-width: 720px;
-        height: 735px;
-        @include adaptiv-vaule("margin-left", -165, 100, 1);
+    
+    .img{
+        max-width: 555px;
 
-        @include media('<desktop_l'){
+        @include media('<desktop'){
             max-width: 100%;
-            margin: 0;
-            height: 550px;
         }
 
-        @include media('<tablet'){
-            height: 380px;
+        img{
+            width: 100%;
+            height: auto;
         }
     }
 
