@@ -3488,10 +3488,25 @@ input, textarea{
     .form-wrap{
         width: 100%;
         max-width: 835px;
+        transform: translateY(80px);
+        opacity: 0;
+        animation: showform 3s forwards;
 
         @include media('<tablet_x'){
             max-width: 100%;
             margin-bottom: 40px;
+        }
+
+        @keyframes showform {
+            0%{
+                transform: translateY(80px);
+                opacity: 0;
+            }
+
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
         }
     }
 
