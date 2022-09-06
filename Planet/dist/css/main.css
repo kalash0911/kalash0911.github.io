@@ -898,7 +898,7 @@ body {
     padding: 0 0 18px 48px;
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     color: #2D2D2D; }
     @media (max-width: 767px) {
@@ -2808,7 +2808,7 @@ input, textarea {
   .service-section .sub-title {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161; }
     @media (max-width: 479px) {
@@ -2845,7 +2845,7 @@ input, textarea {
   .service-section .discription {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #616161;
     margin-bottom: 25px; }
@@ -2855,7 +2855,7 @@ input, textarea {
   .service-section .list-title {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
     color: #2D2D2D;
     margin-bottom: 20px; }
@@ -2968,7 +2968,7 @@ input, textarea {
   .reviews-slider .text {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2.1;
     color: #2D2D2D;
     margin-bottom: 20px; }
