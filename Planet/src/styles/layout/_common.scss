@@ -150,14 +150,6 @@ body {
         line-height: 1.5;
         color: $black-2d;
 
-        @include media('<tablet'){
-            font-size: 15px;
-        }
-    
-        @include media('<phone'){
-            font-size: 14px;
-        }
-
         &::before {
             content: counter(item) ''; 
             counter-increment: item;
@@ -196,7 +188,6 @@ body {
         padding: 8px 0;
     
         @include media('<phone'){
-            font-size: 14px;
             padding: 4px 0;
         }
     
@@ -380,7 +371,7 @@ body {
 .label-title{
     font-family: $raleway;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.7;
     color: #757575;
     margin-bottom: 6px;
@@ -470,10 +461,6 @@ input, textarea{
 
         @include media('<tablet'){
             font-size: 18px;
-        }
-
-        @include media('<phone'){
-            font-size: 14px;
         }
     }
 }
@@ -594,7 +581,7 @@ input, textarea{
     }
 
     .plate{
-        font-size: 14px;
+        font-size: 18px;
         margin-bottom: 15px;
     }
 
@@ -785,14 +772,9 @@ input, textarea{
         text-align: center;
         max-width: 578px;
         margin: 0 auto 52px auto;
-        
 
         @include media('<tablet'){
-            font-size: 16px;
-        }
-
-        @include media('<phone'){
-            font-size: 14px;
+            font-size: 18px;
         }
     }
 }
@@ -1494,7 +1476,7 @@ input, textarea{
         margin-bottom: 15px;
 
         @include media('<phone'){
-            font-size: 16;
+            font-size: 18;
             padding: 0 30px;
         }
     }
@@ -1567,10 +1549,6 @@ input, textarea{
         line-height: 1.5;
         color: $gray-80;
         margin-bottom: 30px;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 }
 
@@ -1641,7 +1619,6 @@ input, textarea{
         }
 
         @include media('<phone'){
-            font-size: 16px;
             padding: 0 30px;
             margin: 0 auto 40px auto;
         }
@@ -1699,18 +1676,20 @@ input, textarea{
         color: $gray-80;
 
         @include media('<phone'){
-            font-size: 16px;
+            font-size: 18px;
         }
     }
 
     .title-sm{
         margin: 0;
+        font-size: 18px;
     }
 
     .sub-title{
         margin: 0;
         font-weight: 700;
         color: $black-2d;
+        font-size: 18px;
     }
 
     .text{
@@ -1747,10 +1726,6 @@ input, textarea{
         line-height: 2;
         color: $gray-80;
         margin: 0;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 }
 
@@ -1795,10 +1770,6 @@ input, textarea{
         @include media('<tablet_x'){
             font-size: 18px;
             margin: 0 auto 45px auto;
-        }
-
-        @include media('<phone'){
-            font-size: 16px;
         }
     }
 
@@ -2071,10 +2042,6 @@ input, textarea{
         @include media('<tablet'){
             font-size: 18px;
         }
-
-        @include media('<phone'){
-            font-size: 16px;
-        }
     }
 }
 
@@ -2163,10 +2130,6 @@ input, textarea{
         font-size: 18px;
         line-height: 2;
         color: $gray-80;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 
     .block{
@@ -2300,7 +2263,7 @@ input, textarea{
     .position{
         font-family: $raleway;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.7;
         color: $gray-70;
         margin: 0;
@@ -2603,10 +2566,6 @@ input, textarea{
         font-size: 18px;
         line-height: 2;
         color: $gray-80;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 
     span{
@@ -2653,10 +2612,6 @@ input, textarea{
         line-height: 2;
         color: $gray-80;
         margin-bottom: 25px;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 
     .list-title{
@@ -2666,10 +2621,6 @@ input, textarea{
         line-height: 2;
         color: $black-2d;
         margin-bottom: 20px;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 
     .rules-list{
@@ -2824,10 +2775,6 @@ input, textarea{
         line-height: 2.1;
         color: $black-2d;
         margin-bottom: 20px;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 
     .user{
@@ -2853,10 +2800,6 @@ input, textarea{
         font-size: 18px;
         line-height: 1;
         color: $blue;
-
-        @include media('<tablet'){
-            font-size: 16px;
-        }
     }
 
     .name {
@@ -2871,10 +2814,6 @@ input, textarea{
         color: $black-2d;
         font-weight: 500;
         line-height: 1.5;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 }
 
@@ -2927,10 +2866,6 @@ input, textarea{
 
         @include media('<tablet'){
             font-size: 18px;
-        }
-
-        @include media('<phone'){
-            font-size: 16px;
         }
     }
 
@@ -3143,10 +3078,6 @@ input, textarea{
         @include media('<tablet'){
             font-size: 18px;
         }
-
-        @include media('<phone'){
-            font-size: 16px;
-        }
     }
 }
 
@@ -3246,10 +3177,6 @@ input, textarea{
         line-height: 2;
         color: $gray-80;
         margin-bottom: 16px;
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
     }
 }
 

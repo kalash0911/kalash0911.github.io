@@ -901,12 +901,6 @@ body {
     font-size: 18px;
     line-height: 1.5;
     color: #2D2D2D; }
-    @media (max-width: 767px) {
-      .rules-list li {
-        font-size: 15px; } }
-    @media (max-width: 479px) {
-      .rules-list li {
-        font-size: 14px; } }
     .rules-list li::before {
       content: counter(item) "";
       counter-increment: item;
@@ -946,7 +940,6 @@ body {
     padding: 8px 0; }
     @media (max-width: 479px) {
       .list-check li {
-        font-size: 14px;
         padding: 4px 0; } }
     .list-check li::before {
       content: "\2713";
@@ -1099,7 +1092,7 @@ body {
 .label-title {
   font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.7;
   color: #757575;
   margin-bottom: 6px; }
@@ -1183,9 +1176,6 @@ input, textarea {
     @media (max-width: 767px) {
       .main-section .sub-title {
         font-size: 18px; } }
-    @media (max-width: 479px) {
-      .main-section .sub-title {
-        font-size: 14px; } }
 
 /* _________________________#mission-section______________________ */
 .mission-section {
@@ -1275,7 +1265,7 @@ input, textarea {
         margin: 0;
         padding: 50px 30px 35px 30px; } }
   .carts-section .plate {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 15px; }
   .carts-section .title {
     position: relative;
@@ -1423,10 +1413,7 @@ input, textarea {
     margin: 0 auto 52px auto; }
     @media (max-width: 767px) {
       .test-section .sub-title {
-        font-size: 16px; } }
-    @media (max-width: 479px) {
-      .test-section .sub-title {
-        font-size: 14px; } }
+        font-size: 18px; } }
 
 /* _________________________#test-app */
 #test-app {
@@ -1947,7 +1934,7 @@ input, textarea {
     margin-bottom: 15px; }
     @media (max-width: 479px) {
       #test-info .plate {
-        font-size: 16;
+        font-size: 18;
         padding: 0 30px; } }
   #test-info .title {
     font-size: 64px;
@@ -1999,9 +1986,6 @@ input, textarea {
     line-height: 1.5;
     color: #616161;
     margin-bottom: 30px; }
-    @media (max-width: 479px) {
-      #test-info .discription {
-        font-size: 14px; } }
 
 /* _________________________#management-section______________________ */
 .management-section {
@@ -2052,7 +2036,6 @@ input, textarea {
         font-size: 18px; } }
     @media (max-width: 479px) {
       .management-section .sub-title {
-        font-size: 16px;
         padding: 0 30px;
         margin: 0 auto 40px auto; } }
 
@@ -2099,13 +2082,15 @@ input, textarea {
     color: #616161; }
     @media (max-width: 479px) {
       .team-section .text-wrap {
-        font-size: 16px; } }
+        font-size: 18px; } }
   .team-section .title-sm {
-    margin: 0; }
+    margin: 0;
+    font-size: 18px; }
   .team-section .sub-title {
     margin: 0;
     font-weight: 700;
-    color: #2D2D2D; }
+    color: #2D2D2D;
+    font-size: 18px; }
   .team-section .text {
     margin-left: 25px;
     max-width: 475px; }
@@ -2133,9 +2118,6 @@ input, textarea {
     line-height: 2;
     color: #616161;
     margin: 0; }
-    @media (max-width: 479px) {
-      .team-section .description {
-        font-size: 14px; } }
 
 /* _________________________#who-section______________________ */
 .who-section {
@@ -2171,9 +2153,6 @@ input, textarea {
       .who-section .sub-title {
         font-size: 18px;
         margin: 0 auto 45px auto; } }
-    @media (max-width: 479px) {
-      .who-section .sub-title {
-        font-size: 16px; } }
   .who-section .block {
     display: -ms-flexbox;
     display: flex;
@@ -2391,9 +2370,6 @@ input, textarea {
   @media (max-width: 767px) {
     .business-section .plate {
       font-size: 18px; } }
-  @media (max-width: 479px) {
-    .business-section .plate {
-      font-size: 16px; } }
 
 .revert-section {
   background-color: #FAF8F3; }
@@ -2457,9 +2433,6 @@ input, textarea {
     font-size: 18px;
     line-height: 2;
     color: #616161; }
-    @media (max-width: 479px) {
-      .education-section .description {
-        font-size: 14px; } }
   .education-section .block {
     display: -ms-flexbox;
     display: flex;
@@ -2574,7 +2547,7 @@ input, textarea {
   .holding-section .position {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.7;
     color: #757575;
     margin: 0; }
@@ -2802,9 +2775,6 @@ input, textarea {
     font-size: 18px;
     line-height: 2;
     color: #616161; }
-    @media (max-width: 479px) {
-      .service-section .sub-title {
-        font-size: 14px; } }
   .service-section span {
     font-weight: 700;
     margin-bottom: 25px;
@@ -2840,9 +2810,6 @@ input, textarea {
     line-height: 2;
     color: #616161;
     margin-bottom: 25px; }
-    @media (max-width: 479px) {
-      .service-section .discription {
-        font-size: 14px; } }
   .service-section .list-title {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
@@ -2850,9 +2817,6 @@ input, textarea {
     line-height: 2;
     color: #2D2D2D;
     margin-bottom: 20px; }
-    @media (max-width: 479px) {
-      .service-section .list-title {
-        font-size: 14px; } }
   .service-section .rules-list {
     margin: 0; }
   .service-section .list-check {
@@ -2963,9 +2927,6 @@ input, textarea {
     line-height: 2.1;
     color: #2D2D2D;
     margin-bottom: 20px; }
-    @media (max-width: 479px) {
-      .reviews-slider .text {
-        font-size: 14px; } }
   .reviews-slider .user {
     display: -ms-flexbox;
     display: flex; }
@@ -2985,9 +2946,6 @@ input, textarea {
     font-size: 18px;
     line-height: 1;
     color: #2758B7; }
-    @media (max-width: 767px) {
-      .reviews-slider .name, .reviews-slider .position {
-        font-size: 16px; } }
   .reviews-slider .name {
     margin-bottom: 10px; }
     @media (max-width: 767px) {
@@ -2997,9 +2955,6 @@ input, textarea {
     color: #2D2D2D;
     font-weight: 500;
     line-height: 1.5; }
-    @media (max-width: 479px) {
-      .reviews-slider .position {
-        font-size: 14px; } }
 
 /* _________________________#reviews-section______________________ */
 .reviews-section {
@@ -3038,9 +2993,6 @@ input, textarea {
     @media (max-width: 767px) {
       .reviews-section .sub-title {
         font-size: 18px; } }
-    @media (max-width: 479px) {
-      .reviews-section .sub-title {
-        font-size: 16px; } }
   .reviews-section .block {
     position: relative;
     padding: 150px 0; }
@@ -3204,9 +3156,6 @@ input, textarea {
     @media (max-width: 767px) {
       .mainbooks-section .sub-title {
         font-size: 18px; } }
-    @media (max-width: 479px) {
-      .mainbooks-section .sub-title {
-        font-size: 16px; } }
 
 /* _________________________#books-section______________________ */
 .books-section {
@@ -3284,9 +3233,6 @@ input, textarea {
     line-height: 2;
     color: #616161;
     margin-bottom: 16px; }
-    @media (max-width: 479px) {
-      .books-section .description {
-        font-size: 14px; } }
 
 /* _________________________#about-section______________________ */
 .about-section {
