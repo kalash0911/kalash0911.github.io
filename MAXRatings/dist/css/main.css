@@ -2086,6 +2086,21 @@ body {
   -webkit-transform: translateY(0px);
   transform: translateY(0px); }
 
+.site-link {
+  display: block;
+  fill: #E1D4D4;
+  transition: all .3s ease 0s; }
+  @media (max-width: 1023px) {
+    .site-link {
+      margin: 40px auto 0 auto; } }
+  .site-link:hover {
+    fill: #fff; }
+    .site-link:hover .pur {
+      fill: #fff; }
+  .site-link .pur {
+    fill: #F84F38;
+    transition: all .3s ease 0s; }
+
 #footer {
   padding: 60px 0;
   border-top: 1px solid #373737; }
