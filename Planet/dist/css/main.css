@@ -2871,6 +2871,9 @@ input, textarea {
     @media (max-width: 479px) {
       .service-section .reviews {
         margin-bottom: 70px; } }
+  .service-section .img-wrap {
+    border-radius: 50%;
+    overflow: hidden; }
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\ #reviews-slider */
 .reviews {
