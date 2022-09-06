@@ -2874,6 +2874,35 @@ input, textarea {
   .service-section .img-wrap {
     border-radius: 50%;
     overflow: hidden; }
+  .service-section .backtop {
+    position: fixed;
+    bottom: 20px;
+    right: 10%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #2758B7;
+    background-color: #2758B7;
+    transition: all .3s ease 0s;
+    z-index: 2; }
+    @media (max-width: 1023px) {
+      .service-section .backtop {
+        right: 20px; } }
+    .service-section .backtop:hover {
+      background-color: transparent; }
+      .service-section .backtop:hover svg {
+        fill: #2758B7; }
+    .service-section .backtop svg {
+      fill: #fff;
+      width: 15px;
+      height: 10px;
+      transition: all .3s ease 0s; }
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\ #reviews-slider */
 .reviews {
