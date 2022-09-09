@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./components/app.jsx";
 import { getCookie } from "./utils/cookie.js";
 import { TEST_END } from "./constants/cookie.js";
+import './localization/index.js';
 
 initReactApp();
 
