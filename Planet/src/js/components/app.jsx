@@ -9,6 +9,7 @@ import { TEST_END } from "../constants/cookie.js";
 import { PLANET_ENDPOINT } from "../constants/link.js";
 import { Spinner } from "./shared/spinner/spinner.jsx";
 import { ERROR_API } from "../constants/errors.js";
+import { useTranslation } from "react-i18next";
 
 export const App = () => {
   const [formValues, setFormValues] = useState(null);
@@ -17,6 +18,14 @@ export const App = () => {
   const [testIsDone, setTestToDone] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const { i18n } = useTranslation();
+
+  document.addEventListener('onChangeLanguage', (event) => {
+    // Trigger react app localization from native js code
+    if(event.target.dataset.lang) {
+      i18n.changeLanguage(event.target.dataset.lang)
+    }
+  })
 
   const testEndCookie = getCookie(TEST_END);
 

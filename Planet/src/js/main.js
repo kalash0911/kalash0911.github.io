@@ -1,7 +1,9 @@
 import { PLANET_ENDPOINT_CONTACT, PLANET_ENDPOINT_COURSE } from './constants/link.js';
 import { PHONE_REGEX } from './constants/regex.js';
 import { maskPhoneNumber } from './utils/general.js';
-import './localization/index.js'
+import { initLanguageSelect } from './localization/language-select.js';
+
+initLanguageSelect();
 
 /* header */
 
