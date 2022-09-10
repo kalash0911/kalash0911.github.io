@@ -1,0 +1,22 @@
+.language-select {
+    position: relative;
+
+    button {
+        text-transform: uppercase;
+    }
+
+    &.active {
+        .language-list {
+            transform: scale(1);
+        }
+    }
+    .language-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: transform .3s ease-out;
+        transform: scale(0);
+        transform-origin: 50% 0;
+        z-index: 500;
+    }
+}

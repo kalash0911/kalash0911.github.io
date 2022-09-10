@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Field } from "../shared/field/field.jsx";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +6,7 @@ import { validationSchema } from "./validation.js";
 import { maskPhoneNumber } from "../../utils/general.js";
 import { Select } from "../shared/select/select.jsx";
 import { MONTH_ARRAY, YEARS_ARRAY, DAYS_ARRAY } from "../../constants/form.js";
+import { useTranslation } from "react-i18next";
 
 export const Form = ({ setFormValues }) => {
   const defaultValues = {
@@ -21,6 +22,8 @@ export const Form = ({ setFormValues }) => {
     city: "",
     findUs: "",
   };
+
+  const { t } = useTranslation();
 
   const {
     register,
@@ -97,7 +100,7 @@ export const Form = ({ setFormValues }) => {
         <div className="row three-cols">
           <div className="col">
             <Field
-              label="Имя*"
+              label={`${t('name')}*`}
               registerLabel="firstName"
               register={register}
               errors={errors}

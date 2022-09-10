@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planeta</title>
     <!-- inject:css -->
-	<link rel="stylesheet" href="./css/main-fcd2338c61a01f8373afa40efbc768b2-min.css"></link>
+	<link rel="stylesheet" href="./css/main.css"></link>
     <!-- endinject -->
     <link rel="shortcut icon" href="./images/favicon-white.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,8 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <!-- inject:js -->
-	<script src="./js/main-1b9d0da60572f6bece2e1f831b4f0ddd-min.js" defer></script>
+	<script>var DEVELOPMENT_MODE = true;</script>
+	<script src="./js/main.js" defer></script>
     <!-- endinject -->
 </head>
 
@@ -36,13 +37,13 @@
                                 <a class="link" href="index.html" data-id-nav="index">Главная</a>
                             </li>
                             <li class="menu-item">
-                                <a class="link" href="test-page.html" data-id-nav="test-page">Тест</a>
+                                <a class="link" href="test-page.html" data-id-nav="test-page" data-localization="test">Тест</a>
                             </li>
                             <li class="menu-item">
                                 <a class="link" href="management-page.html" data-id-nav="management-page">Outstress management</a>
                             </li>
                             <li class="menu-item">
-                                <a class="link" href="service-page.html" data-id-nav="service-page">Услуги</a>
+                                <a class="link" href="service-page.html" data-id-nav="service-page"  data-localization="services">Услуги</a>
                             </li>
                             <li class="menu-item">
                                 <a class="link" href="reviews-page.html" data-id-nav="reviews-page">Отзывы</a>
@@ -175,7 +176,7 @@
                                     <div class="form-block">
                                         <label>
                                             <p class="label-title">Имя*</p>
-                                            <input id="firstName" type="text" placeholder="Имя">
+                                            <input id="firstName" type="text" data-localization-placeholder="name" placeholder="Имя">
                                             <p class="error-text" id="firstNameError">Введите ваше имя</p>
                                         </label>
                                         <label>
