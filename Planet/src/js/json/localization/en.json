@@ -5,5 +5,7 @@
     "reviewsPage": "Reviews",
     "booksPage": "Books",
     "aboutUsPage": "About Us",
-    "contactPage": "Contacts"
+    "contactPage": "Contacts",
+    "aboutUsTitle": "{{imgTag}}",
+    "aboutUsText": "О Нас"
 }
