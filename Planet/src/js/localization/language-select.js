@@ -57,7 +57,9 @@ function changeLanguageOnWebsite() {
   );
 
   localizationTags.forEach((el) => {
-    el.textContent = `${i18next.t(el.dataset.localization)}`;
+    el.innerHTML = `${i18next.t(el.dataset.localization, {interpolation: {
+      escapeValue: false,
+    }})}`;
   });
 
   localizationPlaceholders.forEach((el) => {

@@ -1,5 +1,9 @@
 {
-    "services": "Services",
-    "test": "Test",
-    "name": "First Name"
+    "mainPage": "Main",
+    "testPage": "Test",
+    "servicesPage": "Services",
+    "reviewsPage": "Reviews",
+    "booksPage": "Books",
+    "aboutUsPage": "About Us",
+    "contactPage": "Contacts"
 }

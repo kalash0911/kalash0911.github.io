@@ -620,25 +620,28 @@ header {
     @media (max-width: 767px) {
       header .overflow {
         display: none; } }
-  @media (max-width: 1199px) {
-    header .menu-wrap {
-      position: absolute;
-      top: 0;
-      height: 100vh;
-      right: -100%;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      transition: all .7s ease 0s;
-      background-color: #fff;
-      padding: 140px 50px 50px;
-      overflow: auto;
-      z-index: 2; }
-      .active header .menu-wrap {
-        right: 0; } }
-  @media (max-width: 767px) {
-    header .menu-wrap {
-      width: 100%;
-      padding: 120px 30px; } }
+  header .menu-wrap {
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 1199px) {
+      header .menu-wrap {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        right: -100%;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        transition: all .7s ease 0s;
+        background-color: #fff;
+        padding: 140px 50px 50px;
+        overflow: auto;
+        z-index: 2; }
+        .active header .menu-wrap {
+          right: 0; } }
+    @media (max-width: 767px) {
+      header .menu-wrap {
+        width: 100%;
+        padding: 120px 30px; } }
   @media (max-width: 1199px) {
     header .menu_active {
       top: 0; } }
@@ -667,11 +670,6 @@ header {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0 19px; }
-    header .menu-item:last-child {
-      margin: 0 0 0 19px; }
-      @media (max-width: 1199px) {
-        header .menu-item:last-child {
-          margin: 0; } }
     @media (max-width: 1199px) {
       header .menu-item {
         margin: 0 0 20px 0; } }
@@ -3738,24 +3736,54 @@ input, textarea {
   box-sizing: content-box; }
 
 .language-select {
-  position: relative; }
-  .language-select button {
-    text-transform: uppercase; }
+  position: relative;
+  margin-left: 25px; }
+  .language-select:hover {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2; }
   .language-select.active .language-list {
     -webkit-transform: scale(1);
     transform: scale(1); }
+  .language-select .selected-language {
+    position: relative;
+    text-transform: uppercase;
+    padding: 8px 35px 8px 14px;
+    border: 1px solid #2758B7;
+    border-radius: 12px;
+    z-index: 2; }
+  .language-select .icon {
+    position: absolute;
+    right: 19px;
+    top: 12px;
+    z-index: 1;
+    transition: all .3s ease 0s; }
+  .language-select .arrow {
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    top: 5px;
+    background-color: #2758B7; }
+  .language-select .arrow-l {
+    left: -2px;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg); }
+  .language-select .arrow-r {
+    right: -1px;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg); }
   .language-select .language-list {
     position: absolute;
     top: 100%;
     left: 0;
+    padding: 12px 18px;
+    margin: 0;
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
     transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-    z-index: 500; }
+    /*  opacity: 0;
+        visibility: hidden;
+        z-index: -1; */ }
 
 #footer {
   display: -ms-flexbox;

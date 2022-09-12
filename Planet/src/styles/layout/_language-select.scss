@@ -1,22 +1,64 @@
 .language-select {
     position: relative;
+    margin-left: 25px;
 
-    button {
-        text-transform: uppercase;
+    &:hover {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
     }
-
+    
     &.active {
+        
         .language-list {
             transform: scale(1);
         }
     }
+    
+    .selected-language {
+        position: relative;
+        text-transform: uppercase;
+        padding: 8px 35px 8px 14px;
+        border: 1px solid #2758B7;
+        border-radius: 12px;
+        z-index: 2;
+    }
+
+    .icon{
+        position: absolute;
+        right: 19px;
+        top: 12px;
+        z-index: 1;
+        transition: all .3s ease 0s;
+    }
+
+    .arrow{
+        position: absolute;
+        width: 8px;
+        height: 2px;
+        top: 5px;
+        background-color: $blue;
+    }
+
+    .arrow-l{
+        left: -2px;
+        transform: rotate(135deg);
+    }
+
+    .arrow-r{
+        right: -1px;
+        transform: rotate(-135deg);
+    }
+
     .language-list {
         position: absolute;
         top: 100%;
         left: 0;
+        padding: 12px 18px;
+        margin: 0;
         transition: transform .3s ease-out;
-        transform: scale(0);
-        transform-origin: 50% 0;
-        z-index: 500;
+       /*  opacity: 0;
+        visibility: hidden;
+        z-index: -1; */
     }
 }

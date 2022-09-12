@@ -1,5 +1,14 @@
 {
-    "services": "Услуги",
-    "test": "Тест",
-    "name": "Имя"
+    "mainPage": "Главная",
+    "testPage": "Тест",
+    "servicesPage": "Услуги",
+    "reviewsPage": "Отзывы",
+    "booksPage": "Книги",
+    "aboutUsPage": "О нас",
+    "contactPage": "Контакты",
+    "mainPageTitle": "Группа “Планета”",
+    "mainPageSubTitle": "Мы команда профессионалов, специализирующихся на предоставлении душевного здоровья, самосовершествования и личной мотивации",
+    "mainPageMissionSubTitle": "Наша миссия",
+    "mainPageMissionTitle2": "Усиление владельцев,",
+    "mainPageMissionTitle1": "руководителей <br> и их окружения посредством увеличения обьема жизненной силы"
 }
