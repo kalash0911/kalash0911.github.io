@@ -19,33 +19,33 @@ function initLanguageSelect() {
 
   selectedLanguageBtn.textContent = selectedLang;
 
-  selectedLanguageBtn.addEventListener("click", () => {
-    languageSelect.classList.toggle("active");
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".language-select")) {
-      closeLangugeSelect();
+  const languageBtns = document.querySelectorAll('.language-button');
+  languageBtns.forEach((btn) => {
+    if(btn.dataset.lang === selectedLang) {
+      btn.classList.add('active');
     }
-    if(event.target.classList.contains("language-button")) {
-      const newLang = event.target.dataset.lang;
+    btn.addEventListener('click', (event) => {
+      const newLang = btn.dataset.lang;
       selectedLanguageBtn.textContent = newLang;
-      closeLangugeSelect();
+      removeActiveClass(languageBtns);
+      event.target.classList.add('active');
 
       if(i18next.language !== newLang) {
         setLanguage(newLang).then(() => {
           changeLanguageOnWebsite();
           // Trigger react app localization
           if(document.getElementById("test")) {
-            event.target.dispatchEvent(onChangeLanguage);
+            btn.dispatchEvent(onChangeLanguage);
           }
         })
       }
-    }
-  });
+    })
+  })
 
-  function closeLangugeSelect() {
-    languageSelect.classList.remove("active");
+  function removeActiveClass(elements) {
+    elements.forEach((el) => {
+      el.classList.remove('active');
+    })
   }
 }
 
