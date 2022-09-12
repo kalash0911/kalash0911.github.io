@@ -3736,34 +3736,55 @@ input, textarea {
   box-sizing: content-box; }
 
 .language-select {
-  position: relative;
-  margin-left: 25px; }
-  .language-select:hover {
-    opacity: 1;
-    visibility: visible;
-    z-index: 2; }
-  .language-select.active .language-list {
-    -webkit-transform: scale(1);
-    transform: scale(1); }
+  position: relative; }
+  @media (min-width: 1200px) {
+    .language-select {
+      margin-left: 25px; }
+      .language-select:hover .selected-language {
+        color: #2758B7; }
+      .language-select:hover .language-list {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2; }
+      .language-select:hover .arrow-l {
+        -webkit-transform: rotate(220deg);
+        transform: rotate(220deg); }
+      .language-select:hover .arrow-r {
+        -webkit-transform: rotate(-220deg);
+        transform: rotate(-220deg); } }
+  @media (max-width: 1199px) {
+    .language-select {
+      margin-top: 30px; } }
   .language-select .selected-language {
     position: relative;
     text-transform: uppercase;
     padding: 8px 35px 8px 14px;
     border: 1px solid #2758B7;
     border-radius: 12px;
-    z-index: 2; }
+    font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    z-index: 2;
+    transition: all .3s ease 0s; }
+    @media (max-width: 1199px) {
+      .language-select .selected-language {
+        display: none; } }
   .language-select .icon {
     position: absolute;
     right: 19px;
     top: 12px;
     z-index: 1;
     transition: all .3s ease 0s; }
+    @media (max-width: 1199px) {
+      .language-select .icon {
+        display: none; } }
   .language-select .arrow {
     position: absolute;
     width: 8px;
     height: 2px;
     top: 5px;
-    background-color: #2758B7; }
+    background-color: #2758B7;
+    transition: all .3s ease 0s; }
   .language-select .arrow-l {
     left: -2px;
     -webkit-transform: rotate(135deg);
@@ -3773,17 +3794,65 @@ input, textarea {
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg); }
   .language-select .language-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 12px 18px;
     margin: 0;
-    transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-    /*  opacity: 0;
+    list-style: none; }
+    @media (min-width: 1200px) {
+      .language-select .language-list {
+        position: absolute;
+        width: 100%;
+        top: 43px;
+        left: 0;
+        padding: 4px;
+        transition: all .3s ease 0s;
+        border: 1px solid #2758B7;
+        border-radius: 12px;
+        opacity: 0;
         visibility: hidden;
-        z-index: -1; */ }
+        z-index: -1; } }
+    @media (max-width: 1199px) {
+      .language-select .language-list {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 0; } }
+  .language-select .language-button {
+    padding: 8px 11px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    transition: all .3s ease 0s;
+    font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 16px; }
+    @media (min-width: 1200px) {
+      .language-select .language-button:hover {
+        background: #e4eeff;
+        color: #2758B7; } }
+    @media (max-width: 1199px) {
+      .language-select .language-button {
+        margin: 0 5px;
+        text-align: center; }
+        .language-select .language-button.active {
+          background: #e4eeff;
+          color: #2758B7;
+          border: 1px solid #2758B7;
+          transition: all .3s ease 0s; } }
+
+@media (min-width: 1200px) {
+  .white-header .language-select:hover .selected-language {
+    color: #fff; }
+  .white-header .selected-language {
+    border: 1px solid #fff;
+    color: #fff; }
+  .white-header .arrow {
+    background-color: #fff; }
+  .white-header .language-list {
+    border: 1px solid #fff;
+    background-color: #F4F8FF; }
+  .white-header .language-button:hover {
+    background: #fff;
+    color: #2758B7; } }
 
 #footer {
   display: -ms-flexbox;
