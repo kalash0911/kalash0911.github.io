@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import { LANG } from "../constants/cookie.js";
+import { LANG, LANGS_TYPES } from "../constants/cookie.js";
 
 export const setCookie = (cname, cvalue, exdays) => {
   const d = new Date();
