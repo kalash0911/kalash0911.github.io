@@ -57,7 +57,12 @@ function changeLanguageOnWebsite() {
   );
 
   localizationTags.forEach((el) => {
-    el.textContent = `${i18next.t(el.dataset.localization)}`;
+    el.innerHTML = `${i18next.t(el.dataset.localization, {
+      imgTag: `<i class="tex"><img class="text-line" src="./images/text-line.svg" alt="img-line">${i18next.t("aboutUsText")}</i>`,
+      interpolation: {
+        escapeValue: false,
+      }
+    })}`;
   });
 
   localizationPlaceholders.forEach((el) => {

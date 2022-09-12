@@ -1,5 +1,7 @@
 {
     "services": "Services",
     "test": "Test",
-    "name": "First Name"
+    "name": "First Name",
+    "aboutUsTitle": "{{imgTag}}",
+    "aboutUsText": "О Нас"
 }
