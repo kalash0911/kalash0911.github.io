@@ -799,6 +799,7 @@ body {
   padding: 14px 32px;
   background-color: #2758B7;
   border-radius: 6px;
+  border: none;
   font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   text-align: center;
   font-weight: 500;
