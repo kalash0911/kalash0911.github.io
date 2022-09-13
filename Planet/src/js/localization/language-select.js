@@ -58,7 +58,6 @@ function changeLanguageOnWebsite() {
 
   localizationTags.forEach((el) => {
     el.innerHTML = `${i18next.t(el.dataset.localization, {
-      mainPageMissionTitleText:  `<i class="tex"><img class="text-line" src="./images/text-line.svg" alt="img-line">${i18next.t("mainPageMissionTitle1")}</i> ${i18next.t("mainPageMissionTitle2")}`,
       interpolation: {
         escapeValue: false,
       }
