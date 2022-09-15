@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const TestDone = () => {
+  const { t } = useTranslation();
   return (
     <div className="test-done-wrap">
       <div className="done-img">
@@ -37,14 +39,14 @@ export const TestDone = () => {
           />
         </svg>
       </div>
-      <h2 className="main-title">Вы успешно прошли тест!</h2>
+      <h2 className="main-title">{t("testSuccess")}</h2>
       <button
         className="btn"
         onClick={() => {
           window.location.href = "/";
         }}
       >
-        на главную
+        {t("redirectToMain")}
       </button>
     </div>
   );

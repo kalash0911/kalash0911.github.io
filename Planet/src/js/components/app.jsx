@@ -8,7 +8,7 @@ import { setCookie, getCookie } from "../utils/cookie.js";
 import { TEST_END } from "../constants/cookie.js";
 import { PLANET_ENDPOINT } from "../constants/link.js";
 import { Spinner } from "./shared/spinner/spinner.jsx";
-import { ERROR_API } from "../constants/errors.js";
+import { ERROR_API_KEY } from "../constants/errors.js";
 import { useTranslation } from "react-i18next";
 
 export const App = () => {
@@ -93,12 +93,12 @@ export const App = () => {
           setCookie(TEST_END, "true", 31);
           setTestToDone(true);
         } else {
-          setError(ERROR_API);
+          setError(ERROR_API_KEY);
         }
       })
       .catch((error) => {
         console.log("error: ", error);
-        setError(ERROR_API);
+        setError(ERROR_API_KEY);
       })
       .finally(() => {
         setLoading(false);

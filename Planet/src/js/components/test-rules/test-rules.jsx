@@ -1,17 +1,20 @@
 import React from "react";
 import { RULES } from "../../constants/rules";
+import { useTranslation } from "react-i18next";
 
 export const TestRules = ({ setStartTest }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="rules-wrap">
-      <h2 className="main-title">Пожалуйста, прочитайте краткую инструкцию:</h2>
+      <h2 className="main-title">{t("instructionTitle")}</h2>
       <ol className="rules-list">
         {RULES.map((rule, ind) => {
-          return <li key={ind}>{rule}</li>;
+          return <li key={ind}>{t(rule)}</li>;
         })}
       </ol>
       <button className="btn-test" onClick={() => setStartTest(true)}>
-        Продолжить
+        {t("proceed")}
       </button>
     </div>
   );

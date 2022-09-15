@@ -1,12 +1,15 @@
+import { t } from "i18next";
 import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Select = React.forwardRef(
   (
     { items, onBlur, onChange, name, label, value, errors, ...restProps },
     ref
   ) => {
+    const { t } = useTranslation();
     const reference = useRef(ref);
-    const [displayLabel, setLabel] = useState(label || "Выберите");
+    const [displayLabel, setLabel] = useState(label || t("chooseWord"));
     const [open, setOpen] = useState(false);
     const errorCls = errors && errors[name] ? "error" : "";
 
@@ -41,14 +44,14 @@ export const Select = React.forwardRef(
       close();
     };
 
-    const itemsList = items.map(({ displayValue, value }) => (
+    const itemsList = items.map(({ displayValue, value, localizationKey }) => (
       <li
         onClick={(e) => handleValue(e, value, displayValue)}
         value={value}
-        key={value}
+        key={localizationKey || value}
         className="select-items"
       >
-        {displayValue}
+        {t(localizationKey) || displayValue}
       </li>
     ));
 
@@ -68,9 +71,9 @@ export const Select = React.forwardRef(
         </label>
         <div className="select" onClick={handleOpenItems}>
           {value ? (
-            displayLabel
+            t(displayLabel)
           ) : (
-            <span className="placeholder">{displayLabel.replace("*", "")}</span>
+            <span className="placeholder">{t(displayLabel).replace("*", "")}</span>
           )}
           <div className="arrow">
             <svg
@@ -83,7 +86,7 @@ export const Select = React.forwardRef(
           </div>
         </div>
         {open && <ul className={`select-list ${openClass}`}>{itemsList}</ul>}
-        <p className="error-text">{errors && errors[name]?.message}&nbsp;</p>
+        <p className="error-text">{errors && t(errors[name]?.message)}&nbsp;</p>
       </div>
     );
   }
