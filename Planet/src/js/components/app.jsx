@@ -74,6 +74,7 @@ export const App = () => {
           phone: formValues.phone || "",
           email: formValues.email || "",
         },
+        findUs: formValues.findUs || "",
       },
       comunicationContacts: { ...comunicationMethod },
       userAnswers: onlyAnswers,
