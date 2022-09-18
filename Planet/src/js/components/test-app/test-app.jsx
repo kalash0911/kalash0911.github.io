@@ -53,6 +53,7 @@ export const TestApp = ({ setUserAnswers, questionInd }) => {
     newQuestionList[currentQuestionIdx].answer = value;
     setQuestionList(newQuestionList);
     setAnswers(newAnswers);
+    handleNextQuestion();
   };
 
   const handleNextQuestion = () => {
