@@ -1146,10 +1146,19 @@ input, textarea{
             content: "";
             width: 20px;
             height: 20px;
-            border: 1px solid $gray-40;
+            border: 1px solid;
+            border-color:  $gray-40;
             border-radius: 50%;
             margin-right: 14px;
-            transition: all .3s ease 0s;
+            transition: border-color .3s ease 0s;
+            
+        }
+
+        &:hover{
+            &:before {
+                border: 2px solid;
+                border-color:  $blue-h;
+            }
         }
     }
 
