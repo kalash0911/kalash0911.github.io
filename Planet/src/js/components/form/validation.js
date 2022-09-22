@@ -23,9 +23,9 @@ export const validationSchema = yup
     patronymic: yup.string(),
     phone: yup
       .string()
-      .matches(PHONE_REGEX, {
-        message: ERROR_FIELD_PHONE_MATCH,
-      })
+      // .matches(PHONE_REGEX, {
+      //   message: ERROR_FIELD_PHONE_MATCH,
+      // })
       .required(ERROR_FIELD_PHONE),
     email: yup.string().matches(EMAIL_REGEX, {
       message: ERROR_FIELD_EMAIL,

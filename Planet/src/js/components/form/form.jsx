@@ -38,11 +38,11 @@ export const Form = ({ setFormValues }) => {
     setFormValues(data);
   };
 
-  const handlePhoneNumber = (event) => {
-    const value = event.target.value.replace(/\D/g, "");
-    const maskedPhoneNumber = maskPhoneNumber(value);
-    setValue("phone", maskedPhoneNumber);
-  };
+  // const handlePhoneNumber = (event) => {
+  //   const value = event.target.value.replace(/\D/g, "");
+  //   const maskedPhoneNumber = maskPhoneNumber(value);
+  //   setValue("phone", maskedPhoneNumber);
+  // };
 
   return (
     <div>
@@ -127,7 +127,7 @@ export const Form = ({ setFormValues }) => {
               registerLabel="phone"
               register={register}
               errors={errors}
-              onChange={handlePhoneNumber}
+              // onChange={handlePhoneNumber}
             />
           </div>
           <div className="col">

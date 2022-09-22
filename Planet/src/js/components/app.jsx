@@ -66,6 +66,7 @@ export const App = () => {
           email: formValues.email || "",
         },
         findUs: formValues.findUs || "",
+        city: formValues.city || "",
       },
       comunicationContacts: { ...comunicationMethod },
       userAnswers: onlyAnswers,
