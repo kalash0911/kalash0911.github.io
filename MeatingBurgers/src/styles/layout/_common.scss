@@ -9,21 +9,288 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     padding: 0 20px;
     margin: 0 auto;
 }
 
-.img-bg{
+.ibg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
 }
 
-.main-section{
-    padding-top: 130px;
+
+.main-section {
+    @include adaptiv-vaule("padding-top", 150, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 150, 100, 1);
+    background: $black;
+    position: relative;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        @include adaptiv-vaule("padding-top", 200, 130, 1);
+        padding-bottom: 5px;
+    }
+
+    .main-title {
+        max-width: 715px;
+        margin-bottom: 25px;
+        z-index: 2;
+
+        @include media ("<widescreen") {
+            max-width: 600px;
+        }
+
+        @include media ("<desktop") {
+            max-width: 470px;
+        }
+
+        @include media ("<tablet") {
+            max-width: 350px;
+        }
+
+        @include media ("<phone") {
+            max-width: 200px;
+        }
+    }
+
+    .main-board {
+        z-index: 1;
+        max-width: 1150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .main-btn {
+        background: $gray_10;
+        border-radius: 4px;
+        padding: 15px 25px;
+        font-weight: 700;
+        font-size: 16px;
+        color: $black;
+        text-transform: uppercase;
+        z-index: 2;
+        transition: all 0.3s ease;
+        display: inline-block;
+        border: 1px solid $gray_10;
+
+        @include media ("<tablet") {
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+
+        &:hover {
+            background: none;
+            color: $gray_10;
+        }
+    }
+}
+
+.menu {
+
+    .box-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media ("<widescreen") {
+                flex-direction: column-reverse;
+            }
+        }
+
+        @include media ("<widescreen") {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .box-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 50%;
+        height: 100%;
+        padding: 106px 0;
+
+        @include media ("<widescreen") {
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .ibg {
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .box-title {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .box-description {
+            font-style: italic;
+            font-size: 22px;
+            margin-bottom: 40px;
+            max-width: 455px;
+            font-weight: 500;
+            line-height: 125%;
+            text-align: center;
+        }
+
+        .box-img {
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            margin-bottom: 50px;
+        }
+
+        .ingridients {
+            text-align: center;
+            max-width: 525px;
+        }
+
+        .title-ingridients {
+            color: $gold;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .ingridients-description {
+            font-style: italic;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 125%;
+        }
+    }
+
+    .box-img-wrap {
+        width: 50%;
+        min-height: 900px;
+        position: relative;
+
+        @include media ("<widescreen") {
+            width: 100%;
+        }
+    }
+}
+
+
+.about_chef {
+    background: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 340px;
+        @include adaptiv-vaule("padding-top", 340, 100, 1);
+    }
+
+
+    .chef-board {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-title {
+        margin-bottom: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        z-index: 2;
+        text-align: center;
+        position: relative;
+
+        @include media ("<tablet_max") {
+            order: 1;
+        }
+    }
+
+    .text {
+        @include media ("<tablet_max") {
+            order: 3;
+        }
+    }
+
+    .about-description {
+        font-weight: 500;
+        @include adaptiv-vaule(" font-size", 22, 14, 1);
+        line-height: 125%;
+        margin-bottom: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        z-index: 2;
+        position: relative;
+    }
+
+    .about-btn {
+        padding: 15px 25px;
+        border: 1px solid $gray_10;
+        border-radius: 4px;
+        @include adaptiv-vaule(" font-size", 16, 12, 1);
+        color: $gray_10;
+        text-transform: uppercase;
+        display: inline-block;
+        transition: all 0.3s ease;
+        text-align: center;
+        margin-bottom: 40px;
+        z-index: 2;
+        position: relative;
+
+        &:hover {
+            background: $gray_10;
+            color: $black;
+        }
+    }
+
+    .chef-img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 520px;
+        height: 520px;
+        margin: 0 auto;
+        filter: drop-shadow(0px -30px 60px rgba(19, 10, 3, 0.6));
+
+        @include media ("<tablet_max") {
+            order: 2;
+            margin-bottom: 30px;
+        }
+
+        @include media ("<tablet") {
+            width: 350px;
+            height: 350px;
+        }
+
+        @include media ("<phone") {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
 }
