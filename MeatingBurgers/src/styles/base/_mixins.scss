@@ -257,3 +257,12 @@ $animation-speed: .3s !default;
 	font-size: $pxSize;
 	font-size: ($pxSize / 10px) + rem;
 }
+
+/* for text gradient color */
+
+@mixin gold_gradient{
+    background: #d8b241;
+    background: linear-gradient(to bottom, #d8b241 50%, #ffed78 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

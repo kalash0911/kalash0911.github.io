@@ -2,10 +2,11 @@
 // Color calculator - http://razorjam.github.io/sasscolourfunctioncalculator/
 // Color names - http://name-of-color.com/
 
-$black: #000;
-$white: #fff;
-$gray:  #ccc;
-
+$black:   #000;
+$white:   #fff;
+$gray:    #ccc;
+$gray_10: #FCF1EA;
+$gold:    #e2d26a;
 
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
 $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
@@ -15,7 +16,7 @@ $CD: 'CD', $base-font-sans-serif;
 $rem-base: 16px;
 
 // Body
-$base-text-color: $black !default;
+$base-text-color: $white !default;
 $base-background-color: $white !default;
 $font-size-base: 16px !default;
 $line-height-base: 1.2 !default;
