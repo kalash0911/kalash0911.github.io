@@ -1,0 +1,164 @@
+#footer {
+    position: relative;
+
+    .container{
+        padding: 85px 20px 55px 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .logo{
+        margin-bottom: 50px;
+    }
+
+    .link {
+       &:hover{
+            color: $gold;
+        }
+    }
+
+    .info{
+        padding: 40px 60px;
+        border-radius: 4px;
+        border: 1px solid rgba(252, 241, 234, 0.8);
+        text-align: center;
+
+        @include media('<tablet'){
+            padding: 30px;
+        }
+
+        @include media('<phone'){
+            padding: 18px;
+        }
+    }
+
+    .text{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 24px;
+        color: $white;
+        margin-bottom: 10px;
+
+        @include media('<phone'){
+            font-size: 17px;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
+
+        span {
+            color: $gold;
+
+            @include media('<phone'){
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .time{
+        width: 21px;
+        height: 21px;
+        margin: 0 10px;
+
+        @include media('<phone'){
+            width: 14px;
+            height: 14px;
+            margin: 0 8px 0 0;
+        }
+    }
+
+    .geo{
+        width: 17px;
+        height: 22px;
+        margin-right: 10px;
+
+        @include media('<phone'){
+            width: 11px;
+            height: 15px;
+            margin: 0 8px 0 0;
+        }
+    }
+
+    .mail{
+        width: 24px;
+        height: 19px;
+        margin-right: 10px;
+
+        @include media('<phone'){
+            width: 16px;
+            height: 12px;
+            margin: 0 8px 0 0;
+        }
+    }
+
+    .menu{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 50px 0 30px 0;
+    }
+
+    .menu-item{
+        margin: 0 20px;
+
+        .link{
+            font-weight: 500;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: $white;
+
+            &:hover{
+                color: $gold;
+            }
+        }
+    }
+
+    .social{
+        display: flex;
+    }
+
+    .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50px;
+        border: solid 1px $white;
+        margin: 0 7px;
+        transition: all .3s ease 0s;
+
+        svg{
+            fill: $white;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover{
+            border: solid 1px $gold;
+
+            svg{
+                fill: $gold;
+            }
+        }
+    }
+
+
+    .bot{
+        padding: 32px;
+        border-top: 1px solid rgba(252, 241, 234, 0.3);
+    }
+
+    .site-link{
+        display: block;
+        fill: $gray_10;
+        transition: all .3s ease 0s;
+        text-align: center;
+
+        &:hover{
+            fill: $gold;
+        }
+    }
+}
