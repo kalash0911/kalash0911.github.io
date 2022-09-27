@@ -533,4 +533,10 @@ input[type='submit'] {
 body {
   font-family: 'Karla', sans-serif; }
 
+.container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto; }
+
 /*# sourceMappingURL=main.css.map */
