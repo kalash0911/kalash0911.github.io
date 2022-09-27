@@ -372,16 +372,10 @@ th {
 /* 20 - минимальное значение свойства в px */
 /* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
 @font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Regular.ttf");
-  font-style: normal;
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Bold.ttf");
-  font-style: normal;
-  font-weight: 700; }
+  font-family: "CD";
+  src: url("../fonts/CanelaDeck-Medium-Trial.otf");
+  font-style: medium;
+  font-weight: 500; }
 
 .clearfix:after {
   content: '';
@@ -427,16 +421,14 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .h {
-  font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: bold;
-  margin: 0 0 0.5em;
-  color: inherit; }
+  margin: 0 0 0.5em; }
 
 h1, .h1 {
-  font-size: 32px; }
+  font-size: 60px; }
 
 h2, .h2 {
-  font-size: 28px; }
+  font-size: 48px; }
 
 h3, .h3 {
   font-size: 24px; }
@@ -537,5 +529,8 @@ input[type='submit'] {
   -webkit-border-radius: 0;
   cursor: pointer;
   font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
+
+body {
+  font-family: 'Karla', sans-serif; }
 
 /*# sourceMappingURL=main.css.map */
