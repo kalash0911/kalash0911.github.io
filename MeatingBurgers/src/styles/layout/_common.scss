@@ -36,7 +36,7 @@ body {
         align-items: center;
         flex-direction: column;
         text-align: center;
-        @include adaptiv-vaule("padding-top", 200, 130, 1);
+        padding-top: 200px;
         padding-bottom: 5px;
     }
 
@@ -64,9 +64,9 @@ body {
 
     .main-board {
         z-index: 1;
-        max-width: 1150px;
         left: 50%;
         transform: translateX(-50%);
+        object-fit: fill;
     }
 
     .main-btn {
@@ -198,7 +198,7 @@ body {
     justify-content: center;
     flex-direction: column;
     position: relative;
-
+    padding-bottom: 50px;
 
     .content {
         display: flex;

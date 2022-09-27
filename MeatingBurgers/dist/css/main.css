@@ -572,6 +572,11 @@ header {
   top: 0;
   left: 0;
   z-index: 5; }
+  header .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto; }
   header .content {
     display: -ms-flexbox;
     display: flex;
@@ -1126,12 +1131,8 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    /* Только если меньше контейнера */
     padding-top: 200px;
     padding-bottom: 5px; }
-    @media (max-width: 1200px) {
-      .main-section .content {
-        padding-top: calc(130px + 70 * ((100vw - calc(320px)) / 880)); } }
   .main-section .main-title {
     max-width: 715px;
     margin-bottom: 25px;
@@ -1150,10 +1151,11 @@ body {
         max-width: 200px; } }
   .main-section .main-board {
     z-index: 1;
-    max-width: 1150px;
     left: 50%;
     -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    -o-object-fit: fill;
+    object-fit: fill; }
   .main-section .main-btn {
     background: #FCF1EA;
     border-radius: 4px;
@@ -1265,7 +1267,8 @@ body {
   justify-content: center;
   -ms-flex-direction: column;
   flex-direction: column;
-  position: relative; }
+  position: relative;
+  padding-bottom: 50px; }
   .about_chef .content {
     display: -ms-flexbox;
     display: flex;
