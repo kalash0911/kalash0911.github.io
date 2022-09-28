@@ -1399,21 +1399,21 @@ body {
     padding: 15px 25px;
     border: 1px solid #FCF1EA;
     border-radius: 4px;
-    /* Только если меньше контейнера */
-     font-size: 16px;
+    font-size: 16px;
     color: #FCF1EA;
     text-transform: uppercase;
     display: inline-block;
     transition: all 0.3s ease;
     text-align: center;
     z-index: 2;
-    position: relative; }
-    @media (max-width: 1200px) {
-      .about_chef .about-btn {
-         font-size: calc(12px + 4 * ((100vw - calc(375px)) / 825)); } }
+    position: relative;
+    background-color: transparent; }
     .about_chef .about-btn:hover {
       background: #FCF1EA;
       color: #131212; }
+    @media (max-width: 479px) {
+      .about_chef .about-btn {
+        font-size: 14px; } }
   .about_chef .chef-img {
     border-radius: 50%;
     overflow: hidden;
@@ -1436,6 +1436,87 @@ body {
       .about_chef .chef-img {
         width: 250px;
         height: 250px; } }
+  .about_chef .pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
+    border-radius: 4px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    padding: 40px 65px 55px 65px;
+    width: 100%;
+    max-width: 920px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease 0s; }
+    @media (max-width: 767px) {
+      .about_chef .pop-up {
+        padding: 60px 30px; } }
+    @media (max-width: 479px) {
+      .about_chef .pop-up {
+        top: 0;
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+        padding: 30px 20px 50px 20px;
+        overflow: auto;
+        height: 100vh;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+    .about_chef .pop-up.active {
+      z-index: 3;
+      opacity: 1;
+      visibility: visible; }
+  .about_chef .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #131212;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease 0s; }
+    .about_chef .overlay.active {
+      z-index: 3;
+      opacity: 50%;
+      visibility: visible; }
+  .about_chef .text-popup {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 125%;
+    color: #131212; }
+    @media (max-width: 767px) {
+      .about_chef .text-popup {
+        font-size: 18px; } }
+    @media (max-width: 479px) {
+      .about_chef .text-popup {
+        font-size: 14px;
+        overflow: scroll; } }
+  .about_chef .btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px; }
+    @media (max-width: 479px) {
+      .about_chef .btn-close {
+        top: 10px;
+        right: 10px; } }
+    .about_chef .btn-close svg {
+      fill: #131212;
+      width: 20px;
+      height: 20px;
+      transition: all .3s ease 0s; }
+    .about_chef .btn-close:hover svg {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }
 
 #footer {
   position: relative; }

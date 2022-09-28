@@ -27,3 +27,32 @@ if (linkClose.length) {
       })
   }
 };
+
+/* popUp */
+
+const overlay = document.querySelector(".overlay");
+const popUp = document.querySelector(".pop-up");
+const btnOpenPopUp = document.querySelector('.open-popup');
+const btnClosePopUp = document.querySelector('.close-popup');
+
+
+if (btnOpenPopUp) {
+  btnOpenPopUp.addEventListener("click", openPopUp);
+};
+
+if (btnClosePopUp) {
+  btnClosePopUp.addEventListener("click", closePopUp);
+  overlay.addEventListener("click", closePopUp);
+};
+
+function openPopUp (e){
+  overlay.classList.add("active");
+  popUp.classList.add("active");
+  document.body.classList.add("body_lock");
+}
+
+function closePopUp(e) {
+  overlay.classList.remove("active");
+  popUp.classList.remove("active");
+  document.body.classList.remove("body_lock");
+}
