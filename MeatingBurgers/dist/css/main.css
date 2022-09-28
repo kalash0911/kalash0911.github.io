@@ -709,6 +709,10 @@ header {
     font-weight: 500;
     font-size: 18px;
     color: #e2d26a; }
+  @media (max-width: 479px) {
+    header .logo {
+      width: 52px;
+      height: 44px; } }
   header .phone-icon {
     position: relative;
     display: none;
@@ -1112,32 +1116,36 @@ body {
   object-fit: cover; }
 
 .main-video {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative; }
-  .main-video .logo {
-    width: 360px;
-    height: 467px;
-    z-index: 2;
-    padding: 120px 0 50px 0; }
-    .main-video .logo img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
+  padding: 120px 0 50px 0; }
+  @media (max-width: 767px) {
+    .main-video {
+      padding: 160px 0 50px 0; } }
   .main-video video {
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-    z-index: 1; }
+    z-index: -1; }
+  @media (max-width: 767px) {
+    .main-video .logo {
+      width: 150%; } }
+  @media (max-width: 479px) {
+    .main-video .logo {
+      width: 200%; } }
 
 .main-section {
   padding-bottom: 250px;
@@ -1153,35 +1161,31 @@ body {
   .main-section .content {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    /* Только если меньше контейнера */
-    padding-top: 400px;
-    padding-bottom: 5px; }
-    @media (max-width: 1200px) {
+    padding-top: 400px; }
+    @media (max-width: 959px) {
       .main-section .content {
-        padding-top: calc(130px + 270 * ((100vw - calc(375px)) / 825)); } }
+        /* Только если меньше контейнера */
+        padding-top: 500px; } }
+  @media (max-width: 959px) and (max-width: 1200px) {
+    .main-section .content {
+      padding-top: calc(155px + 345 * ((100vw - calc(375px)) / 825)); } }
   .main-section .main-title {
     max-width: 715px;
     margin-bottom: 25px;
-    z-index: 2; }
-    @media (max-width: 1199px) {
+    z-index: 2;
+    max-width: 700px; }
+    @media (max-width: 959px) {
       .main-section .main-title {
-        max-width: 600px; } }
-    @media (max-width: 1023px) {
-      .main-section .main-title {
-        max-width: 470px; } }
-    @media (max-width: 767px) {
-      .main-section .main-title {
-        max-width: 350px; } }
-    @media (max-width: 767px) {
-      .main-section .main-title {
-        max-width: 280px; } }
+        /* Только если меньше контейнера */
+         max-width: 700px; } }
+  @media (max-width: 959px) and (max-width: 1200px) {
+    .main-section .main-title {
+       max-width: calc(280px + 420 * ((100vw - calc(375px)) / 825)); } }
   .main-section .main-board {
     z-index: 1;
     position: absolute;
@@ -1213,8 +1217,7 @@ body {
 
 .menu .box-wrap {
   display: -ms-flexbox;
-  display: flex;
-  height: 100vh; }
+  display: flex; }
   .menu .box-wrap:nth-child(even) {
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
@@ -1240,11 +1243,14 @@ body {
   position: relative;
   width: 50%;
   height: 100%;
-  padding: 25px;
+  padding: 100px 25px;
   text-align: center; }
   @media (max-width: 959px) {
     .menu .box-text {
       width: 100%; } }
+  @media (max-width: 479px) {
+    .menu .box-text {
+      display: none; } }
   .menu .box-text .ibg {
     -o-object-fit: cover;
     object-fit: cover;
@@ -1289,48 +1295,62 @@ body {
     line-height: 125%; }
 
 .menu .box-video {
-  width: 50%;
-  height: 100%; }
+  position: relative;
+  width: 50%; }
+  @media (max-width: 959px) {
+    .menu .box-video {
+      width: 100%;
+      min-height: 450px; } }
+  @media (max-width: 479px) {
+    .menu .box-video {
+      display: none; } }
   .menu .box-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover; }
-  @media (max-width: 959px) {
-    .menu .box-video {
-      width: 100%;
-      height: 600px; } }
+
+.menu .mob-video {
+  position: relative;
+  display: none;
+  width: 100%;
+  min-height: 100vh; }
   @media (max-width: 479px) {
-    .menu .box-video {
-      height: 345px; } }
+    .menu .mob-video {
+      display: block; } }
+  .menu .mob-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
 
 .about_chef {
-  background: #131212;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-direction: column;
-  flex-direction: column;
   position: relative;
-  padding-bottom: 50px; }
+  background: #131212;
+  padding-bottom: 160px; }
+  @media (max-width: 479px) {
+    .about_chef {
+      padding-bottom: 100px; } }
   .about_chef .about-content {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
-    padding-top: 340px;
-    /* Только если меньше контейнера */
-    padding-top: 360px; }
-    @media (max-width: 1200px) {
+    padding-top: 340px; }
+    @media (max-width: 959px) {
       .about_chef .about-content {
-        padding-top: calc(170px + 190 * ((100vw - calc(375px)) / 825)); } }
-    @media (max-width: 479px) {
-      .about_chef .about-content {
-        padding-top: 160px; } }
+        /* Только если меньше контейнера */
+        padding-top: 460px; } }
+  @media (max-width: 959px) and (max-width: 1200px) {
+    .about_chef .about-content {
+      padding-top: calc(160px + 300 * ((100vw - calc(375px)) / 825)); } }
   .about_chef .chef-board {
     position: absolute;
     z-index: 0;
@@ -1351,26 +1371,30 @@ body {
         -ms-flex-order: 1;
         order: 1; } }
   .about_chef .text {
-    margin-bottom: 40px; }
+    margin-bottom: 30px; }
     @media (max-width: 959px) {
       .about_chef .text {
         -ms-flex-order: 3;
         order: 3;
         margin-bottom: 0; } }
   .about_chef .about-description {
+    position: relative;
     font-weight: 500;
-    /* Только если меньше контейнера */
-     font-size: 22px;
+    font-size: 22px;
     line-height: 125%;
-    margin-bottom: 25px;
     max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    max-height: 110px;
+    margin: 0 auto 25px auto;
     z-index: 2;
-    position: relative; }
-    @media (max-width: 1200px) {
+    overflow: hidden; }
+    @media (max-width: 767px) {
       .about_chef .about-description {
-         font-size: calc(14px + 8 * ((100vw - calc(375px)) / 825)); } }
+        font-size: 18px;
+        max-height: 115px; } }
+    @media (max-width: 479px) {
+      .about_chef .about-description {
+        font-size: 14px;
+        max-height: 108px; } }
   .about_chef .about-btn {
     padding: 15px 25px;
     border: 1px solid #FCF1EA;
