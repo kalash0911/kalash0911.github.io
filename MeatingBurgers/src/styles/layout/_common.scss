@@ -27,6 +27,31 @@ body {
     object-fit: cover;
 }
 
+.main-btn {
+    background: $gray_10;
+    border-radius: 4px;
+    padding: 17px 17px 16px 17px;
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 192px;
+    color: $black;
+    text-transform: uppercase;
+    line-height: 1.5;
+    z-index: 2;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid $gray_10;
+
+    @include media ("<tablet") {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: none;
+        color: $gray_10;
+    }
+}
+
 .main-video {
     position: relative;
     width: 100%;
@@ -92,6 +117,7 @@ body {
     @include adaptiv-vaule("padding-bottom", 250, 100, 1);
     background: $black;
     position: relative;
+    overflow: hidden;
 
     .container {
         padding: 0;
@@ -102,10 +128,10 @@ body {
         align-items: center;
         flex-direction: column;
         text-align: center;
-        padding-top: 400px;
+        padding-top: 260px;
 
         @include media ("<tablet_max") {
-            @include adaptiv-vaule("padding-top", 500, 155, 1);
+            @include adaptiv-vaule("padding-top", 300, 110, 1);
         }
     }
 
@@ -114,6 +140,8 @@ body {
         margin-bottom: 25px;
         z-index: 2;
         max-width: 700px;
+        color: $gray_10;
+        opacity: .9;
 
         @include media ("<tablet_max") {
             @include adaptiv-vaule(" max-width", 700, 280, 1);
@@ -123,33 +151,13 @@ body {
     .main-board {
         z-index: 1;
         position: absolute;
-        top: 0;
+        top: -120px;
         left: 50%;
         transform: translateX(-50%);
         object-fit: fill;
-    }
 
-    .main-btn {
-        background: $gray_10;
-        border-radius: 4px;
-        padding: 15px 25px;
-        font-weight: 700;
-        font-size: 16px;
-        color: $black;
-        text-transform: uppercase;
-        z-index: 2;
-        transition: all 0.3s ease;
-        display: inline-block;
-        border: 1px solid $gray_10;
-
-        @include media ("<tablet") {
-            font-size: 14px;
-            padding: 10px 20px;
-        }
-
-        &:hover {
-            background: none;
-            color: $gray_10;
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("top", -120, -40, 1);
         }
     }
 }
@@ -298,6 +306,11 @@ body {
         padding-bottom: 100px;
     }
 
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+
     .about-content {
         display: flex;
         flex-direction: column;
@@ -321,10 +334,11 @@ body {
         margin-bottom: 15px;
         max-width: 600px;
         margin: 0 auto;
-        margin-bottom: 15px;
-        z-index: 2;
+        margin-bottom: 10px;
         text-align: center;
         position: relative;
+        color: #FCF1EA;
+        opacity: .9;
 
         @include media ("<tablet_max") {
             order: 1;
@@ -348,7 +362,6 @@ body {
         max-width: 600px;
         max-height: 110px;
         margin: 0 auto 25px auto;
-        z-index: 2;
         overflow: hidden;
 
         @include media ("<tablet") {
@@ -362,31 +375,25 @@ body {
         }
     }
 
-    .about-btn {
-        padding: 15px 25px;
-        border: 1px solid $gray_10;
-        border-radius: 4px;
-        font-size: 16px;
-        color: $gray_10;
-        text-transform: uppercase;
-        display: inline-block;
-        transition: all 0.3s ease;
-        text-align: center;
-        z-index: 2;
+    .main-btn {
         position: relative;
+        color: $gray_10;
+        border: 1px solid $gray_10;
         background-color: transparent;
-
+        z-index: 2;
+    
+        @include media ("<tablet") {
+            font-size: 14px;
+        }
+    
         &:hover {
             background: $gray_10;
             color: $black;
         }
-
-        @include media ("<phone") {
-            font-size: 14px;
-        }
     }
 
     .chef-img {
+        position: relative;
         border-radius: 50%;
         overflow: hidden;
         width: 520px;
@@ -394,6 +401,7 @@ body {
         margin: 0 auto;
         position: relative;
         filter: drop-shadow(0px -30px 60px rgba(19, 10, 3, 0.6));
+        z-index: 1;
 
         @include media ("<tablet_max") {
             order: 2;

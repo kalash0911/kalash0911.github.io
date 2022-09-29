@@ -80,14 +80,15 @@ header {
     .menu {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         width: 100%;
+        min-width: 318px;
         padding: 0;
         margin: 0;
 
         @include media('<tablet') {
             flex-direction: column;
             margin-bottom: 40px;
+            min-width: auto;
         }
     }
 
