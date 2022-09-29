@@ -510,3 +510,405 @@ body {
         }
     }
 }
+
+/* --------------------- page-section ----------------- */
+
+.page-section{
+    margin: 102px 0 50px 0;
+
+    .board{
+        position: absolute;
+        top: -230px;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("top", -300, 0, 1);
+        }
+    }
+
+    .container{
+        position: relative;
+        padding-top: 135px;
+        text-align: center;
+        overflow: hidden;
+        min-height: 500px;
+        
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("padding-top", 200, 150, 1);
+            @include adaptiv-vaule("min-height", 600, 300, 1);
+        }
+    }
+
+    .logo{
+        margin-bottom: 40px;
+        width: 89px;
+        height: 116px;
+
+        @include media ("<tablet_max") {
+            display: none;
+        }
+    }
+
+    .title{
+        font-weight: 500;
+        font-size: 92px;
+        color: $gray_10;
+        opacity: .9;
+
+        @include media ("<tablet") {
+            @include adaptiv-vaule(" font-size", 92, 48, 1);
+        }
+    }
+}
+
+/* --------------------- menu-section ----------------------- */
+
+.menu-section{
+    padding: 100px 0 20px 0;
+
+    @include media ("<tablet") {
+        padding: 50px 0 60px 0;
+    }
+
+    .container{
+        max-width: 1320px;
+    }
+    
+    .block{
+        margin-bottom: 180px;
+
+        @include media ("<tablet") {
+            margin-bottom: 120px;
+        }
+    }
+
+    .title-wrap{
+        border-bottom: 2px solid $gold;
+        margin-bottom: 75px;
+    }
+
+    .title{
+        position: relative;
+        font-weight: 500;
+        padding: 0 24px;
+        text-align: center;
+        max-width: max-content;
+        margin: 0 auto;
+        @include gold_gradient;
+        text-transform: uppercase;
+        @include adaptiv-vaule(" font-size", 60, 34, 1);
+
+        &:before{
+            content:'';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: $black;
+        }
+
+        @include media ("<tablet") {
+            max-width: min-content;
+        }
+    }
+
+    .item-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 25px;
+        row-gap: 70px;
+        height: 100%;
+
+        @include media ("<phone") {
+            row-gap: 30px;
+        }
+    }
+
+    .item{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        overflow: hidden;
+        background: rgba(162, 127, 95, 0.12);
+        backdrop-filter: blur(2px);
+        width: 23%;
+
+        @include media ("<1300px") {
+            width: 31%;
+        }
+
+        @include media ("<desktop") {
+            width: 44%;
+        }
+
+        @include media ("<tablet") {
+            width: 70%;
+        }
+
+        @include media ("<670px") {
+            width: 100%;
+        }
+
+        &::after {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background-color: $black;
+            z-index: -1;
+        }
+    }
+
+    .text{
+        padding: 20px;
+    }
+
+    .img-wrap{
+        position: relative;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 25px auto;
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .name{
+        font-family: $CD;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #F5F5F5;
+        margin-bottom: 10px;
+    }
+
+    .descripton{
+        font-style: italic;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 125%;
+        text-align: center;
+        color: $gray_10;
+        opacity: 0.8;
+    }
+
+    .item-price{
+        width: 100%;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 125%;
+        text-align: center;
+        color: $gold;
+        padding: 20px 0;
+        border-top: 1px solid rgba(252, 241, 234, 0.2);
+    }
+
+    .item-big{
+        grid-column: span 2;
+        width: 46%;
+
+        @include media ("<1300px") {
+            width: 62%;
+        }
+
+        @include media ("<desktop") {
+            width: 88%;
+        }
+
+        @include media ("<tablet") {
+            width: 70%;
+        }
+
+        @include media ("<670px") {
+            width: 100%;
+        }
+
+        &::after {
+
+            @include media ("<tablet") {
+                height: 80px;
+            }
+        }
+
+        .text{
+            padding: 80px 20px 20px 20px;
+
+            @include media ("<tablet") {
+                padding: 20px;
+            }
+
+            @include media ("<phone") {
+                padding: 20px 0;
+            }
+        }
+
+        .img-wrap{
+            width: 162px;
+            height: 162px;
+
+            @include media ("<tablet") {
+                width: 96px;
+                height: 96px;
+                margin: 0;
+            }
+        }
+
+        .menu-wrap{
+            display: flex;
+            justify-content: space-around;
+
+            @include media ("<tablet") {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @include media ("<phone") {
+                padding: 0 20px;
+            }
+        }
+
+        .text-wrap{
+            max-width: 200px;
+
+            @include media ("<tablet") {
+                max-width: 255px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .name, .descripton{
+            text-align: left;
+
+            @include media ("<tablet") {
+                text-align: center;
+            }
+        }
+    }
+
+    .img-cont{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .price-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 300px;
+    }
+
+    .price-item{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 12px;
+        width: 32%;
+
+        @include media ("<tablet") {
+            align-items: center;
+        }
+    }
+
+    .price-name{
+        font-weight: 500;
+        font-size: 14px;
+        color: $gray;
+        margin-bottom: 5px;
+    }
+
+    .price{
+        font-weight: 500;
+        font-size: 14px;
+        color: $gold;
+    }
+
+    .plus{
+        @include media ("<phone") {
+            width: 11px;
+            height: 10px;
+        }
+    }
+
+    .list{
+        width: 100%;
+        max-width: 300px;
+
+        @include media ("<desktop") {
+            max-width: 48%;
+        }
+
+        @include media ("<670px") {
+            max-width: 100%;
+        }
+
+        @include media ("<phone") {
+            align-items: center;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        .text{
+            padding: 40px 20px 30px 20px;
+        }
+    }
+
+    .list-wrap{
+        margin: 0;
+    }
+
+    .list-item{
+        font-style: italic;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 125%;
+        color: $gray_10;
+        margin-bottom: 5px;
+
+        &::marker{
+            color: $gold;
+        }
+    }
+
+    .list-big{
+        width: 100%;
+        max-width: 626px;
+
+        @include media ("<desktop") {
+            max-width: 48%;
+        }
+
+        @include media ("<670px") {
+            max-width: 100%;
+        }
+    }
+
+    .list-cont{
+        display: flex;
+        justify-content: center;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+}

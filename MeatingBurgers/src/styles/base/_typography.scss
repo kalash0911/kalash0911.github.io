@@ -28,9 +28,6 @@ h1,
 h2,
 .h2 {
     @include adaptiv-vaule(" font-size", 60, 28, 1);
-    line-height: 112%;
-    mix-blend-mode: luminosity;
-    opacity: 0.9;
 }
 
 h3,
