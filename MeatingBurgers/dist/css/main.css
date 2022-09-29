@@ -1501,14 +1501,14 @@ body {
     top: 50%;
     left: 50%;
     background: #fff;
-    box-shadow: 1px 12px 42px rgba(155, 164, 162, 0.12);
-    border-radius: 4px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 3;
-    padding: 40px 65px 55px 65px;
+    padding: 130px 100px;
     width: 100%;
-    max-width: 920px;
+    max-width: 900px;
+    border-radius: 30px;
+    background: url("../images/popup-bg.jpg") 0 0/cover no-repeat;
     z-index: -1;
     opacity: 0;
     visibility: hidden;
@@ -1516,20 +1516,6 @@ body {
     @media (max-width: 767px) {
       .about_chef .pop-up {
         padding: 60px 30px; } }
-    @media (max-width: 479px) {
-      .about_chef .pop-up {
-        top: 0;
-        -webkit-transform: translate(-50%);
-        transform: translate(-50%);
-        padding: 30px 20px 50px 20px;
-        overflow: auto;
-        height: 100vh;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -ms-flex-pack: center;
-        justify-content: center; } }
     .about_chef .pop-up.active {
       z-index: 3;
       opacity: 1;
@@ -1552,25 +1538,30 @@ body {
   .about_chef .text-popup {
     font-weight: 500;
     font-size: 22px;
-    line-height: 125%;
-    color: #131212; }
+    line-height: 130%;
+    color: #FCF1EA;
+    text-align: center; }
     @media (max-width: 767px) {
       .about_chef .text-popup {
         font-size: 18px; } }
     @media (max-width: 479px) {
       .about_chef .text-popup {
-        font-size: 14px;
+        font-size: 16px;
         overflow: scroll; } }
   .about_chef .btn-close {
     position: absolute;
-    top: 20px;
-    right: 20px; }
+    top: 40px;
+    right: 40px; }
+    @media (max-width: 767px) {
+      .about_chef .btn-close {
+        top: 25px;
+        right: 40px; } }
     @media (max-width: 479px) {
       .about_chef .btn-close {
-        top: 10px;
-        right: 10px; } }
+        top: 15px;
+        right: 25px; } }
     .about_chef .btn-close svg {
-      fill: #131212;
+      fill: #fff;
       width: 20px;
       height: 20px;
       transition: all .3s ease 0s; }
