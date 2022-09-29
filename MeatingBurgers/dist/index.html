@@ -14,7 +14,7 @@
     
 </head>
 
-<body>
+<body data-id-page="main-page">
     <div id="wrapper">
         <header id="header">
             <div class="container">
@@ -26,8 +26,8 @@
                     </button>
                     <nav class="menu-wrap"> 
                         <ul class="menu">
-                            <li class="menu-item first-item"><a class="link link-close" href="index.html#header">Main page</a></li>
-                            <li class="menu-item"><a class="link link-close" href="menu-page.html">Menu</a></li>
+                            <li class="menu-item first-item"><a class="link link-close" href="index.html#main" data-id-nav="main-page">Main page</a></li>
+                            <li class="menu-item"><a class="link link-close" href="menu-page.html" data-id-nav="menu-page">Menu</a></li>
                             <li class="menu-item"><a class="link link-close" href="#footer">contact us</a></li>
                         </ul>
                         <div class="info">
@@ -44,6 +44,10 @@
                                 <img src="./images/icons/mail.svg" alt="icon">
                                 meatingburgers90@gmail.com
                             </a>
+                            <a class="text link link-close" href="tel:7868811473">
+                                <img src="./images/icons/phone.svg" alt="icon">
+                                786-881-1473
+                            </a> 
                         </div>
                     </nav>
                     <a class="logo" href="index.html">
@@ -73,6 +77,22 @@
         </header>
         <main id="main">
             <section class="main-video">
+                <div class="mob-contact">
+                    <div class="block">
+                        <p class="title">Phone</p>
+                        <a class="text link" href="tel:7868811473">
+                            <img src="./images/icons/phone.svg" alt="icon phone">
+                            786-881-1473
+                        </a> 
+                    </div>
+                    <div class="block">
+                        <p class="title">We work every day</p>
+                        <p class="text">
+                            <img src="./images/icons/time.svg" alt="icon">
+                            11AM - 11PM
+                        </p>
+                    </div>
+                </div>
                 <video autoplay loop muted playsinline src="./files/main-bg.mp4"></video>
                 <img class="main-img ibg" src="./images/main-bg.jpg" alt="bg-img">
                 <div class="logo">
@@ -205,7 +225,7 @@
         <footer id="footer">
             <img class="ibg" src="./images/footer-bg.jpg" alt="img-bg">
             <div class="container">
-                <a class="logo" href="index.html#header">
+                <a class="logo" href="index.html#main">
                     <img src="./images/icons/footer-logo.svg" alt="logo">
                 </a>
                 <div class="info">
@@ -222,10 +242,13 @@
                         <img class="mail" src="./images/icons/mail.svg" alt="icon">
                         meatingburgers90@gmail.com
                     </a>
+                    <a class="text link" href="tel:7868811473">
+                        <img class="phone" src="./images/icons/phone.svg" alt="icon phone">
+                        786-881-1473
+                    </a> 
                 </div>
                 <ul class="menu">
-                    <li class="menu-item"><a class="link" href="menu-page.html">Menu</a></li>
-                    <li class="menu-item"><a class="link" href="#footer">contact us</a></li>
+                    <li class="menu-item"><a class="link" href="menu-page.html"><img class="menu-icon" src="./images/icons/menu.svg" alt="icon">Menu</a></li>
                 </ul>
                 <div class="social">
                     <a href="https://m.facebook.com/profile.php?id=100085927857622&_rdr" target="_blank" class="icon">

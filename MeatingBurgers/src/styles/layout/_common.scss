@@ -110,6 +110,55 @@ body {
             width: 200%;
         }
     }
+    
+    .mob-contact{
+        position: absolute;
+        display: none;
+        justify-content: space-around;
+        top: 130px;
+        left: 0;
+        width: 100%;
+        padding: 0 20px;
+
+        @include media ("<tablet") {
+            display: flex;
+        }
+
+        @include media ("<phone") {
+            top: 110px;
+            justify-content: space-between;
+        }
+
+        .block {
+            margin-left: 35px;
+    
+            @include media('<tablet') {
+                margin: 0;
+            }
+        }
+    
+        .title {
+            font-weight: 500;
+            font-size: 14px;
+            color: $gray_10;
+            opacity: .8;
+            margin-bottom: 5px;
+        }
+    
+        .text {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            margin: 0;
+            color: $white;
+    
+            img {
+                margin-right: 5px;
+            }
+        }
+    }
 }
 
 .main-section {
@@ -339,6 +388,7 @@ body {
         position: relative;
         color: #FCF1EA;
         opacity: .9;
+        z-index: 2;
 
         @include media ("<tablet_max") {
             order: 1;

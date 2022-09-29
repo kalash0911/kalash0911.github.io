@@ -563,12 +563,18 @@ input[type='submit'] {
 .body_lock {
   overflow: hidden; }
 
+.bg {
+  background-color: #131212; }
+  .bg .content {
+    border: none; }
+
 header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 5; }
+  z-index: 5;
+  transition: all .3s ease 0s; }
   header .container {
     width: 100%;
     max-width: 1400px;
@@ -581,10 +587,8 @@ header {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 24px 0; }
-    @media (min-width: 768px) {
-      header .content {
-        border-bottom: 1px solid rgba(252, 241, 234, 0.3); } }
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(252, 241, 234, 0.3); }
     @media (max-width: 767px) {
       header .content {
         -ms-flex-wrap: wrap;
@@ -678,6 +682,8 @@ header {
         font-size: 24px; } }
     header .link:hover {
       color: #e2d26a; }
+  header .active-link {
+    color: #e2d26a; }
   header .link-icon {
     display: none;
     width: 19px;
@@ -705,7 +711,8 @@ header {
   header .info-title {
     font-weight: 500;
     font-size: 18px;
-    color: #e2d26a; }
+    color: #e2d26a;
+    margin-bottom: 20px; }
   @media (max-width: 479px) {
     header .logo {
       width: 52px;
@@ -736,16 +743,7 @@ header {
     display: flex; }
     @media (max-width: 767px) {
       header .contact-wrap {
-        width: 100%;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        padding: 24px 0;
-        margin-top: 24px;
-        border-top: 1px solid rgba(252, 241, 234, 0.3); } }
-    @media (max-width: 479px) {
-      header .contact-wrap {
-        -ms-flex-pack: justify;
-        justify-content: space-between; } }
+        display: none; } }
   header .block {
     margin-left: 35px; }
     @media (max-width: 767px) {
@@ -1183,6 +1181,47 @@ body {
     @media (max-width: 479px) {
       .main-video .logo {
         width: 200%; } }
+  .main-video .mob-contact {
+    position: absolute;
+    display: none;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    top: 130px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px; }
+    @media (max-width: 767px) {
+      .main-video .mob-contact {
+        display: -ms-flexbox;
+        display: flex; } }
+    @media (max-width: 479px) {
+      .main-video .mob-contact {
+        top: 110px;
+        -ms-flex-pack: justify;
+        justify-content: space-between; } }
+    .main-video .mob-contact .block {
+      margin-left: 35px; }
+      @media (max-width: 767px) {
+        .main-video .mob-contact .block {
+          margin: 0; } }
+    .main-video .mob-contact .title {
+      font-weight: 500;
+      font-size: 14px;
+      color: #FCF1EA;
+      opacity: .8;
+      margin-bottom: 5px; }
+    .main-video .mob-contact .text {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 100%;
+      margin: 0;
+      color: #fff; }
+      .main-video .mob-contact .text img {
+        margin-right: 5px; }
 
 .main-section {
   padding-bottom: 250px;
@@ -1391,7 +1430,8 @@ body {
     text-align: center;
     position: relative;
     color: #FCF1EA;
-    opacity: .9; }
+    opacity: .9;
+    z-index: 2; }
     @media (max-width: 959px) {
       .about_chef .about-title {
         -ms-flex-order: 1;
@@ -1910,7 +1950,12 @@ body {
     padding: 40px 60px;
     border-radius: 4px;
     border: 1px solid rgba(252, 241, 234, 0.8);
-    text-align: center; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center; }
     @media (max-width: 767px) {
       #footer .info {
         padding: 30px; } }
@@ -1967,6 +2012,19 @@ body {
         width: 16px;
         height: 12px;
         margin: 0 8px 0 0; } }
+  #footer .phone {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; }
+    @media (max-width: 479px) {
+      #footer .phone {
+        width: 13px;
+        height: 13px;
+        margin: 0 8px 0 0; } }
+  #footer .menu-icon {
+    width: 18px;
+    height: 20px;
+    margin-right: 10px; }
   #footer .menu {
     display: -ms-flexbox;
     display: flex;
