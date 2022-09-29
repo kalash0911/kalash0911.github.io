@@ -1580,39 +1580,35 @@ body {
 
 /* --------------------- page-section ----------------- */
 .page-section {
-  margin: 102px 0 50px 0; }
+  margin: 102px 0 20px 0; }
+  @media (max-width: 479px) {
+    .page-section {
+      margin: 93px 0 20px 0; } }
   .page-section .board {
     position: absolute;
-    top: -230px;
+    top: 0px;
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
     z-index: -1; }
-    @media (max-width: 959px) {
-      .page-section .board {
-        /* Только если меньше контейнера */
-        top: -300px; } }
-  @media (max-width: 959px) and (max-width: 1200px) {
-    .page-section .board {
-      top: calc(0px + -300 * ((100vw - calc(375px)) / 825)); } }
   .page-section .container {
     position: relative;
     padding-top: 135px;
+    padding-bottom: 200px;
     text-align: center;
-    overflow: hidden;
-    min-height: 500px; }
+    overflow: hidden; }
     @media (max-width: 959px) {
       .page-section .container {
         /* Только если меньше контейнера */
         padding-top: 200px;
         /* Только если меньше контейнера */
-        min-height: 600px; } }
+        padding-bottom: 300px; } }
   @media (max-width: 959px) and (max-width: 1200px) {
     .page-section .container {
-      padding-top: calc(150px + 50 * ((100vw - calc(375px)) / 825)); } }
+      padding-top: calc(70px + 130 * ((100vw - calc(375px)) / 825)); } }
   @media (max-width: 959px) and (max-width: 1200px) {
     .page-section .container {
-      min-height: calc(300px + 300 * ((100vw - calc(375px)) / 825)); } }
+      padding-bottom: calc(70px + 230 * ((100vw - calc(375px)) / 825)); } }
   .page-section .logo {
     margin-bottom: 40px;
     width: 89px;
@@ -1638,7 +1634,7 @@ body {
   padding: 100px 0 20px 0; }
   @media (max-width: 767px) {
     .menu-section {
-      padding: 50px 0 60px 0; } }
+      padding: 30px 0 60px 0; } }
   .menu-section .container {
     max-width: 1320px; }
   .menu-section .block {
@@ -1646,9 +1642,33 @@ body {
     @media (max-width: 767px) {
       .menu-section .block {
         margin-bottom: 120px; } }
-  .menu-section .title-wrap {
-    border-bottom: 2px solid #e2d26a;
+  .menu-section .title-cont {
+    position: relative;
     margin-bottom: 75px; }
+    .menu-section .title-cont::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #e2d26a;
+      z-index: 1; }
+  .menu-section .title-wrap {
+    position: relative;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 0 auto; }
+    .menu-section .title-wrap:before {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #131212;
+      z-index: 2; }
   .menu-section .title {
     position: relative;
     font-weight: 500;
@@ -1664,18 +1684,11 @@ body {
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     /* Только если меньше контейнера */
-     font-size: 60px; }
+     font-size: 60px;
+    z-index: 2; }
     @media (max-width: 1200px) {
       .menu-section .title {
          font-size: calc(34px + 26 * ((100vw - calc(375px)) / 825)); } }
-    .menu-section .title:before {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background-color: #131212; }
     @media (max-width: 767px) {
       .menu-section .title {
         max-width: -webkit-min-content;
@@ -1919,6 +1932,35 @@ body {
       .menu-section .list-cont {
         -ms-flex-direction: column;
         flex-direction: column; } }
+  .menu-section .thin {
+    max-width: 952px;
+    margin: 0 auto; }
+    @media (max-width: 1299px) {
+      .menu-section .thin {
+        max-width: 100%; } }
+    .menu-section .thin .item {
+      width: 31%; }
+      @media (max-width: 1299px) {
+        .menu-section .thin .item {
+          width: 31%; } }
+      @media (max-width: 1023px) {
+        .menu-section .thin .item {
+          width: 44%; } }
+      @media (max-width: 767px) {
+        .menu-section .thin .item {
+          width: 70%; } }
+      @media (max-width: 669px) {
+        .menu-section .thin .item {
+          width: 100%; } }
+      .menu-section .thin .item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background-color: #131212;
+        z-index: -1; }
 
 #footer {
   position: relative; }

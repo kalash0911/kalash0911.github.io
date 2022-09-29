@@ -83,3 +83,16 @@ let pageId = document.querySelector("[data-id-page]").getAttribute("data-id-page
 if(pageId == navItem.getAttribute("data-id-nav")) {
     navItem.classList.add("active-link");
 }
+
+/* amin */
+
+let animation = bodymovin.loadAnimation({
+  container: document.getElementById('animation'),
+  path: './files/anim.json',
+  render: 'svg',
+  loop: false,
+  autoplay: true,
+})
+setTimeout(() => {
+  animation.pause()
+}, 9600)

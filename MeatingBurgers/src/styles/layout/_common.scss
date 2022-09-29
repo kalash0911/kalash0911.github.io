@@ -572,30 +572,30 @@ body {
 /* --------------------- page-section ----------------- */
 
 .page-section{
-    margin: 102px 0 50px 0;
+    margin: 102px 0 20px 0;
+
+    @include media ("<480px") {
+        margin: 93px 0 20px 0;
+    }
 
     .board{
         position: absolute;
-        top: -230px;
+        top: 0px;
         left: 50%;
         transform: translate(-50%);
         z-index: -1;
-
-        @include media ("<tablet_max") {
-            @include adaptiv-vaule("top", -300, 0, 1);
-        }
     }
 
     .container{
         position: relative;
         padding-top: 135px;
+        padding-bottom: 200px;
         text-align: center;
         overflow: hidden;
-        min-height: 500px;
         
         @include media ("<tablet_max") {
-            @include adaptiv-vaule("padding-top", 200, 150, 1);
-            @include adaptiv-vaule("min-height", 600, 300, 1);
+            @include adaptiv-vaule("padding-top", 200, 70, 1);
+            @include adaptiv-vaule("padding-bottom", 300, 70, 1);
         }
     }
 
@@ -627,7 +627,7 @@ body {
     padding: 100px 0 20px 0;
 
     @include media ("<tablet") {
-        padding: 50px 0 60px 0;
+        padding: 30px 0 60px 0;
     }
 
     .container{
@@ -642,11 +642,39 @@ body {
         }
     }
 
-    .title-wrap{
-        border-bottom: 2px solid $gold;
+    .title-cont{
+        position: relative;
         margin-bottom: 75px;
+
+        &::after{
+            content:'';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $gold;
+            z-index: 1;
+        }
     }
 
+    .title-wrap{
+        position: relative;
+        max-width: max-content;
+        margin: 0 auto;
+        
+        &:before{
+            content:'';
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            z-index: 2;
+        }
+    }
+    
     .title{
         position: relative;
         font-weight: 500;
@@ -657,17 +685,8 @@ body {
         @include gold_gradient;
         text-transform: uppercase;
         @include adaptiv-vaule(" font-size", 60, 34, 1);
-
-        &:before{
-            content:'';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background-color: $black;
-        }
-
+        z-index: 2;
+        
         @include media ("<tablet") {
             max-width: min-content;
         }
@@ -967,6 +986,46 @@ body {
 
         @include media ("<tablet") {
             flex-direction: column;
+        }
+    }
+
+    .thin{
+        max-width: 952px;
+        margin: 0 auto;
+
+        @include media ("<1300px") {
+            max-width: 100%;
+        }
+
+        .item{
+            width: 31%;
+    
+            @include media ("<1300px") {
+                width: 31%;
+            }
+    
+            @include media ("<desktop") {
+                width: 44%;
+            }
+    
+            @include media ("<tablet") {
+                width: 70%;
+            }
+    
+            @include media ("<670px") {
+                width: 100%;
+            }
+    
+            &::after {
+                content:'';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                background-color: $black;
+                z-index: -1;
+            }
         }
     }
 }
