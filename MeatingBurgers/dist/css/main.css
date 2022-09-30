@@ -1117,6 +1117,87 @@ body {
   -o-object-fit: cover;
   object-fit: cover; }
 
+.logo-wrap .gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* Только если меньше контейнера */
+  max-width: 1400px;
+  -webkit-animation-name: gif-off;
+  animation-name: gif-off;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  opacity: 0;
+  transition: all .6s ease 0s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+  @media (max-width: 1200px) {
+    .logo-wrap .gif {
+      max-width: calc(700px + 700 * ((100vw - calc(375px)) / 825)); } }
+
+@-webkit-keyframes gif-off {
+  0% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+@keyframes gif-off {
+  0% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+.logo-wrap .gif-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* Только если меньше контейнера */
+  width: 360px;
+  /* Только если меньше контейнера */
+  height: 480px;
+  -webkit-animation-name: logo-on;
+  animation-name: logo-on;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transition: all .6s ease 0s; }
+  @media (max-width: 1200px) {
+    .logo-wrap .gif-logo {
+      width: calc(173px + 187 * ((100vw - calc(375px)) / 825)); } }
+  @media (max-width: 1200px) {
+    .logo-wrap .gif-logo {
+      height: calc(226px + 254 * ((100vw - calc(375px)) / 825)); } }
+
+@-webkit-keyframes logo-on {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes logo-on {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .main-btn {
   background: #FCF1EA;
   border-radius: 4px;

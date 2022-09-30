@@ -27,6 +27,68 @@ body {
     object-fit: cover;
 }
 
+.logo-wrap{
+    
+    .gif{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include adaptiv-vaule("max-width", 1400, 700, 1);
+        animation-name: gif-off;
+        animation-duration: 10s;
+        opacity: 0;
+        transition: all .6s ease 0s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes gif-off {
+        0%{
+            opacity: 1;
+        }
+
+        80%{
+            opacity: 1;
+        }
+
+        90%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 0;
+        }
+    }
+
+    .gif-logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include adaptiv-vaule("width", 360, 173, 1);
+        @include adaptiv-vaule("height", 480, 226, 1);
+        animation-name: logo-on;
+        animation-duration: 10s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        transition: all .6s ease 0s;
+    }
+
+    @keyframes logo-on {
+        0%{
+            opacity: 0;
+        }
+
+        90%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+}
+
 .main-btn {
     background: $gray_10;
     border-radius: 4px;

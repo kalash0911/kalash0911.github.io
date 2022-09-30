@@ -99,15 +99,14 @@ if (pageId == navItem.getAttribute("data-id-nav")) {
 }
 /* amin */
 
-
-var animation = bodymovin.loadAnimation({
+/* let animation = bodymovin.loadAnimation({
   container: document.getElementById('animation'),
   path: './files/anim.json',
   render: 'svg',
   loop: false,
-  autoplay: true
-});
-setTimeout(function () {
-  animation.pause();
-}, 9600);
+  autoplay: true,
+})
+setTimeout(() => {
+  animation.pause()
+}, 9600) */
 //# sourceMappingURL=main.js.map

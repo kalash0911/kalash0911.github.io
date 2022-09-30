@@ -86,7 +86,7 @@ if(pageId == navItem.getAttribute("data-id-nav")) {
 
 /* amin */
 
-let animation = bodymovin.loadAnimation({
+/* let animation = bodymovin.loadAnimation({
   container: document.getElementById('animation'),
   path: './files/anim.json',
   render: 'svg',
@@ -95,4 +95,4 @@ let animation = bodymovin.loadAnimation({
 })
 setTimeout(() => {
   animation.pause()
-}, 9600)
+}, 9600) */
