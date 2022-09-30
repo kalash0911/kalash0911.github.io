@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -19,7 +20,10 @@
         <main> 
             <section class="page-section">
                 <div class="container">
-                    <img class="board" src="./images/board2.png" alt="image not found">
+                    <picture class="board">
+                        <source srcset="./images/board2.webp" type="image/webp">
+                        <img data-src="./images/board2.png" alt="img" src="./images/board.png">
+                    </picture>
                     <img class="logo" src="./images/icons/footer-logo.svg" alt="logo">
                     <h1 class="title">MENU</h1>
                 </div>

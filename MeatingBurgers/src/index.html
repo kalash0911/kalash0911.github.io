@@ -36,14 +36,17 @@
                     </div>
                 </div>
                 <video autoplay loop muted playsinline poster="./images/main-bg-poster.jpg">
+                    <source src="./files/main-bg.webp" type='video/webp'>
                     <source src="./files/main-bg.mp4" type='video/mp4'>
-                    <source src="./files/main-bg.webm" type='video/webm'>
                 </video>
                 <img class="main-img ibg" src="./images/main-bg.jpg" alt="bg-img">
                 <div class="logo" id="animation"></div>
             </section>
             <section class="main-section">
-                <img class="main-board" src="./images/board.png" alt="image not found">
+                <picture class="main-board">
+                    <source srcset="./images/board.webp" type="image/webp">
+                    <img data-src="./images/board.png" alt="img" src="./images/board.png">
+                </picture>
                 <div class="container">
                     <div class="content">
                         <h1 class="main-title">
@@ -75,10 +78,16 @@
                             </div>
                         </div>
                         <div class="box-video">
-                            <video autoplay muted loop playsinline src="./files/BISON SIGNATURE vid.mp4"></video>
+                            <video autoplay muted loop playsinline>
+                                <source src="./files/bison.webp" type='video/webp'>
+                                <source src="./files/bison.mp4" type='video/mp4'>
+                            </video>
                         </div>
                         <div class="mob-video">
-                            <video autoplay muted loop playsinline src="./files/mob-bison.mp4"></video>
+                            <video autoplay muted loop playsinline>
+                                <source src="./files/mob-bison.webp" type='video/webp'>
+                                <source src="./files/mob-bison.mp4" type='video/mp4'>
+                            </video>
                         </div>
                     </div>
                     <div class="box-wrap">
@@ -100,10 +109,16 @@
                             </div>
                         </div>
                         <div class="box-video">
-                            <video autoplay muted loop playsinline src="./files/WAGYU CHEESE vid.mp4"></video>
+                            <video autoplay muted loop playsinline>
+                                <source src="./files/wagyu.webp" type='video/webp'>
+                                <source src="./files/wagyu.mp4" type='video/mp4'>
+                            </video>
                         </div>
                         <div class="mob-video">
-                            <video autoplay muted loop playsinline src="./files/mob-wagyu.mp4"></video>
+                            <video autoplay muted loop playsinline>
+                                <source src="./files/mob-wagyu.webp" type='video/webp'>
+                                <source src="./files/mob-wagyu.mp4" type='video/mp4'>
+                            </video>
                         </div>
                     </div>
                     <div class="box-wrap">
@@ -126,10 +141,16 @@
                             </div>
                         </div>
                         <div class="box-video">
-                            <video autoplay muted loop playsinline src="./files/VENISON vid.mp4"></video>
+                            <video autoplay muted loop playsinline>
+                                <source src="./files/venison.webp" type='video/webp'>
+                                <source src="./files/venison.mp4" type='video/mp4'>
+                            </video>
                         </div>
                         <div class="mob-video">
-                            <video autoplay muted loop playsinline src="./files/mob-venison.mp4"></video>
+                            <video autoplay muted loop playsinline>
+                                <source src="./files/mob-venison.webp" type='video/webp'>
+                                <source src="./files/mob-venison.mp4" type='video/mp4'>
+                            </video>
                         </div>
                     </div>
                 </div>
