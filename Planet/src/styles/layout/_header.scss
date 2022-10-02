@@ -219,6 +219,14 @@ header{
             letter-spacing: 0.2px; 
             font-weight: 500;
         }
+
+        .en & {
+            font-size: 17px;
+
+            @include media('<widescreen'){
+                font-size: 28px;
+            }
+        }
     }
 
     .active-link{

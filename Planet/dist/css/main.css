@@ -707,6 +707,11 @@ header {
         font-size: 28px;
         letter-spacing: 0.2px;
         font-weight: 500; } }
+    .en header .link {
+      font-size: 17px; }
+      @media (max-width: 1199px) {
+        .en header .link {
+          font-size: 28px; } }
   header .active-link {
     color: #2758B7; }
   header .burger {
