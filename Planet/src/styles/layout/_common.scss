@@ -498,6 +498,12 @@ input, textarea{
         @include media('<phone'){
             font-size: 28px;
         }
+
+        .en & {
+            @include media('<phone'){
+                font-size: 25px;
+            }
+        }
     }
 }
 
@@ -1496,6 +1502,12 @@ input, textarea{
             font-size: 36px;
             padding: 0 30px;
         }
+
+        .en &{
+            @include media('<phone'){
+                font-size: 32px;
+            }
+        }
     }
 
     .img-wrap{
@@ -1717,6 +1729,18 @@ input, textarea{
 
         @include media('<phone'){
             font-size: 30px;
+        }
+
+        .en &{
+            font-size: 46px;
+
+            @include media('<tablet_x'){
+                font-size: 34px;
+            }
+
+            @include media('<phone'){
+                font-size: 28px;
+            }
         }
     }
 

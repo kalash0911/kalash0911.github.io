@@ -123,12 +123,13 @@
         @include media('<widescreen'){
             margin: 0 5px;
             text-align: center;
+            border: 1px solid transparent;
+            background: transparent;
 
             &.active{
                 background: #e4eeff;
                 color: $blue;
                 border: 1px solid $blue;
-                transition: all .3s ease 0s;
             }
         }
     }

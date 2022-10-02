@@ -673,6 +673,11 @@ header {
     @media (max-width: 1199px) {
       header .menu-item {
         margin: 0 0 20px 0; } }
+    .en header .menu-item {
+      margin: 0 10px; }
+      @media (max-width: 1199px) {
+        .en header .menu-item {
+          margin: 0 0 20px 0; } }
   @media (min-width: 1200px) {
     header .home-item {
       display: none; } }
@@ -1205,6 +1210,9 @@ input, textarea {
     @media (max-width: 479px) {
       .mission-section .title {
         font-size: 28px; } }
+    @media (max-width: 479px) {
+      .en .mission-section .title {
+        font-size: 25px; } }
 
 /* _________________________#carts-section______________________ */
 .carts-section {
@@ -1952,6 +1960,9 @@ input, textarea {
       #test-info .title {
         font-size: 36px;
         padding: 0 30px; } }
+    @media (max-width: 479px) {
+      .en #test-info .title {
+        font-size: 32px; } }
   #test-info .img-wrap {
     min-height: 600px;
     width: 100%;
@@ -2115,6 +2126,14 @@ input, textarea {
     @media (max-width: 479px) {
       .team-section .title {
         font-size: 30px; } }
+    .en .team-section .title {
+      font-size: 46px; }
+      @media (max-width: 959px) {
+        .en .team-section .title {
+          font-size: 34px; } }
+      @media (max-width: 479px) {
+        .en .team-section .title {
+          font-size: 28px; } }
   .team-section .description {
     font-family: "Raleway", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 500;
@@ -3838,12 +3857,13 @@ input, textarea {
     @media (max-width: 1199px) {
       .language-select .language-button {
         margin: 0 5px;
-        text-align: center; }
+        text-align: center;
+        border: 1px solid transparent;
+        background: transparent; }
         .language-select .language-button.active {
           background: #e4eeff;
           color: #2758B7;
-          border: 1px solid #2758B7;
-          transition: all .3s ease 0s; } }
+          border: 1px solid #2758B7; } }
 
 @media (min-width: 1200px) {
   .white-header .language-select:hover .selected-language {

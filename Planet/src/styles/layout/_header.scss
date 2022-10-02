@@ -168,6 +168,14 @@ header{
         @include media('<widescreen'){
             margin: 0 0 20px 0;
         }
+
+        .en &{
+            margin: 0 10px;
+    
+            @include media('<widescreen'){
+                margin: 0 0 20px 0;
+            }
+        }
     }
     
     .home-item{
