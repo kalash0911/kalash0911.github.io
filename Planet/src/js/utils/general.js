@@ -21,3 +21,18 @@ export const maskPhoneNumber = (phoneNumber) => {
 
   return phoneNumber;
 };
+
+export const setLangClasses = (newLang) => {
+  document.body.classList.add(newLang);
+  document.querySelector('html').setAttribute('lang', newLang);
+
+  const langugeBtns = document.querySelectorAll('.language-button');
+  if(langugeBtns) {
+    langugeBtns.forEach((btn) => {
+      const lang = btn.dataset.lang;
+      if(lang !== newLang) {
+        document.body.classList.remove(lang);
+      }
+    })
+  }
+}

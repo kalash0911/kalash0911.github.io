@@ -1,5 +1,6 @@
 import i18next from "i18next";
 import { LANG, LANGS_TYPES } from "../constants/cookie.js";
+import { setLangClasses } from "./general.js";
 
 export const setCookie = (cname, cvalue, exdays) => {
   const d = new Date();
@@ -26,7 +27,7 @@ export const getCookie = (cname) => {
 
 export const setLanguage = (newLang) => {
   setCookie(LANG, newLang);
-  // window.location.reload();
+  setLangClasses(newLang);
   return i18next.changeLanguage(newLang);
 }
 
@@ -38,5 +39,6 @@ export const getCurrentLang = () => {
     selectedLang = LANGS_TYPES.RU;
   }
 
+  setLangClasses(selectedLang);
   return selectedLang;
 }
