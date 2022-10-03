@@ -62,6 +62,7 @@ export const Form = ({ setFormValues }) => {
                   {...field}
                   errors={errors}
                   label={t("dayWordRequired")}
+                  localizationKeyLabel="dayWordRequired"
                   items={DAYS_ARRAY}
                 />
               )}
@@ -76,6 +77,7 @@ export const Form = ({ setFormValues }) => {
                   {...field}
                   errors={errors}
                   label={t("monthWordRequired")}
+                  localizationKeyLabel="monthWordRequired"
                   items={MONTH_ARRAY}
                 />
               )}
@@ -90,6 +92,7 @@ export const Form = ({ setFormValues }) => {
                   {...field}
                   errors={errors}
                   label={t("yearWordRequired")}
+                  localizationKeyLabel="yearWordRequired"
                   items={YEARS_ARRAY}
                 />
               )}
@@ -153,13 +156,16 @@ export const Form = ({ setFormValues }) => {
                   {...field}
                   errors={errors}
                   label={t("sexWordRequired")}
+                  localizationKeyLabel="sexWordRequired"
                   items={[
                     {
                       displayValue: t("womenWord"),
+                      localizationKey: "womenWord",
                       value: "woman",
                     },
                     {
                       displayValue: t("manWord"),
+                      localizationKey: "manWord",
                       value: "man",
                     },
                   ]}

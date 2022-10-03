@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 export const Select = React.forwardRef(
   (
-    { items, onBlur, onChange, name, label, value, errors, ...restProps },
+    { items, onBlur, onChange, name, label, value, errors, localizationKeyLabel, ...restProps },
     ref
   ) => {
     const { t } = useTranslation();
@@ -46,7 +46,7 @@ export const Select = React.forwardRef(
 
     const itemsList = items.map(({ displayValue, value, localizationKey }) => (
       <li
-        onClick={(e) => handleValue(e, value, displayValue)}
+        onClick={(e) => handleValue(e, value, localizationKey || displayValue)}
         value={value}
         key={localizationKey || value}
         className="select-items"
@@ -67,13 +67,13 @@ export const Select = React.forwardRef(
         {...restProps}
       >
         <label onClick={handleOpenItems} className="label">
-          {label}
+          {t(localizationKeyLabel) || label}
         </label>
         <div className="select" onClick={handleOpenItems}>
           {value ? (
             t(displayLabel)
           ) : (
-            <span className="placeholder">{t(displayLabel).replace("*", "")}</span>
+            <span className="placeholder">{t(localizationKeyLabel || displayLabel).replace("*", "")}</span>
           )}
           <div className="arrow">
             <svg
