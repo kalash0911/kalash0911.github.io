@@ -5,8 +5,8 @@ import { ProgressBar } from "../shared/progress-bar/progress-bar.jsx";
 import { useTranslation } from "react-i18next";
 
 export const TestApp = ({ setUserAnswers, questionInd }) => {
-  const { t } = useTranslation();
-  const [questionList, setQuestionList] = useState(testsJson.tests);
+  const { t, i18n } = useTranslation();
+  const [questionList, setQuestionList] = useState(testsJson.tests.slice(0, 5));
   const [currentQuestionIdx, setQuestionIdx] = useState(questionInd);
   const [answers, setAnswers] = useState(ANSWERS_LIST);
 
@@ -109,7 +109,7 @@ export const TestApp = ({ setUserAnswers, questionInd }) => {
             lengthLabel={t("questions")}
           />
           <h2 className="main-title">
-            {questionList[currentQuestionIdx].text}
+            {questionList[currentQuestionIdx].text[i18n.language || 'ru']}
           </h2>
           <ul className="answer-list">{answerItems}</ul>
         </div>
