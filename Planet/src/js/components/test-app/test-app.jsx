@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 export const TestApp = ({ setUserAnswers, questionInd }) => {
   const { t, i18n } = useTranslation();
-  const [questionList, setQuestionList] = useState(testsJson.tests.slice(0, 5));
+  const [questionList, setQuestionList] = useState(testsJson.tests);
   const [currentQuestionIdx, setQuestionIdx] = useState(questionInd);
   const [answers, setAnswers] = useState(ANSWERS_LIST);
 
