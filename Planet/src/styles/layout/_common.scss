@@ -562,6 +562,7 @@ input, textarea{
 
     
     .img{
+        width: 100%;
         max-width: 555px;
 
         @include media('<desktop'){
@@ -2016,13 +2017,17 @@ input, textarea{
 
         img{
 
+            @include media('<600px'){
+                width: 100%;
+            }
+
             &:nth-child(2){
                 display: block;
                 margin-left: auto;
                 margin-top: -10px;
 
                 @include media('<600px'){
-                    margin-left: 50px;
+                    margin: 0;
                 }
             }
         }

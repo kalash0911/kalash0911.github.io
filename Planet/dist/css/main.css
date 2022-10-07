@@ -1259,6 +1259,7 @@ input, textarea {
           .carts-section .block:nth-child(even) .text {
             margin: 0; } }
   .carts-section .img {
+    width: 100%;
     max-width: 555px; }
     @media (max-width: 1023px) {
       .carts-section .img {
@@ -2353,13 +2354,16 @@ input, textarea {
     .business-section .img-cont {
       max-width: 100%;
       margin-bottom: 30px; } }
+  @media (max-width: 599px) {
+    .business-section .img-cont img {
+      width: 100%; } }
   .business-section .img-cont img:nth-child(2) {
     display: block;
     margin-left: auto;
     margin-top: -10px; }
     @media (max-width: 599px) {
       .business-section .img-cont img:nth-child(2) {
-        margin-left: 50px; } }
+        margin: 0; } }
 
 .business-section .text-wrap {
   width: 100%;
