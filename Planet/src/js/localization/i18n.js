@@ -1,5 +1,6 @@
 import enKeys from "../json/localization/en.json";
 import ruKeys from "../json/localization/ru.json";
+import uaKeys from "../json/localization/ua.json";
 import i18next from "i18next";
 import { getCurrentLang } from "../utils/cookie";
 import { initReactI18next } from "react-i18next";
@@ -20,6 +21,11 @@ const initLocalization = () => {
       ru: {
         translation: {
           ...ruKeys,
+        },
+      },
+      ua: {
+        translation: {
+          ...uaKeys,
         },
       },
     },

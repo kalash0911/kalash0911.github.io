@@ -678,6 +678,11 @@ header {
       @media (max-width: 1199px) {
         .en header .menu-item {
           margin: 0 0 20px 0; } }
+    .ua header .menu-item {
+      margin: 0 15px; }
+      @media (max-width: 1199px) {
+        .ua header .menu-item {
+          margin: 0 0 20px 0; } }
   @media (min-width: 1200px) {
     header .home-item {
       display: none; } }
@@ -712,11 +717,6 @@ header {
         font-size: 28px;
         letter-spacing: 0.2px;
         font-weight: 500; } }
-    .en header .link {
-      font-size: 17px; }
-      @media (max-width: 1199px) {
-        .en header .link {
-          font-size: 28px; } }
   header .active-link {
     color: #2758B7; }
   header .burger {
