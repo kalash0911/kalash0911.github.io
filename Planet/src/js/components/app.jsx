@@ -75,6 +75,7 @@ export const App = () => {
           email: formValues.email || "",
         },
         findUs: formValues.findUs || "",
+        language: i18n.language,
       },
       comunicationContacts: { ...comunicationMethod },
       userAnswers: onlyAnswers,
