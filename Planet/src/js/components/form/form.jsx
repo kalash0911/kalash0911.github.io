@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Field } from "../shared/field/field.jsx";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +6,7 @@ import { validationSchema } from "./validation.js";
 import { maskPhoneNumber } from "../../utils/general.js";
 import { Select } from "../shared/select/select.jsx";
 import { MONTH_ARRAY, YEARS_ARRAY, DAYS_ARRAY } from "../../constants/form.js";
+import { useTranslation } from "react-i18next";
 
 export const Form = ({ setFormValues }) => {
   const defaultValues = {
@@ -21,6 +22,8 @@ export const Form = ({ setFormValues }) => {
     city: "",
     findUs: "",
   };
+
+  const { t } = useTranslation();
 
   const {
     register,
@@ -47,8 +50,8 @@ export const Form = ({ setFormValues }) => {
   return (
     <div>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="main-title">Введите Ваши персональные данные:</h2>
-        <h3 className="form-title">Дата рождения</h3>
+        <h2 className="main-title">{t('personalInfoTitle')}</h2>
+        <h3 className="form-title">{t('dateOfBirthday')}</h3>
         <div className="row three-cols">
           <div className="col">
             <Controller
@@ -58,7 +61,8 @@ export const Form = ({ setFormValues }) => {
                 <Select
                   {...field}
                   errors={errors}
-                  label="День*"
+                  label={t("dayWordRequired")}
+                  localizationKeyLabel="dayWordRequired"
                   items={DAYS_ARRAY}
                 />
               )}
@@ -72,7 +76,8 @@ export const Form = ({ setFormValues }) => {
                 <Select
                   {...field}
                   errors={errors}
-                  label="Месяц*"
+                  label={t("monthWordRequired")}
+                  localizationKeyLabel="monthWordRequired"
                   items={MONTH_ARRAY}
                 />
               )}
@@ -86,18 +91,19 @@ export const Form = ({ setFormValues }) => {
                 <Select
                   {...field}
                   errors={errors}
-                  label="Год*"
+                  label={t("yearWordRequired")}
+                  localizationKeyLabel="yearWordRequired"
                   items={YEARS_ARRAY}
                 />
               )}
             />
           </div>
         </div>
-        <h3 className="form-title">Контактная информация</h3>
+        <h3 className="form-title">{t("contactInfoTitle")}</h3>
         <div className="row three-cols">
           <div className="col">
             <Field
-              label="Имя*"
+              label={t('formNameTitle')}
               registerLabel="firstName"
               register={register}
               errors={errors}
@@ -105,7 +111,7 @@ export const Form = ({ setFormValues }) => {
           </div>
           <div className="col">
             <Field
-              label="Фамилия*"
+              label={t("formSubNameTitle")}
               registerLabel="lastName"
               register={register}
               errors={errors}
@@ -113,7 +119,7 @@ export const Form = ({ setFormValues }) => {
           </div>
           <div className="col">
             <Field
-              label="Отчество"
+              label={t("patronymicWord")}
               registerLabel="patronymic"
               register={register}
               errors={errors}
@@ -123,7 +129,7 @@ export const Form = ({ setFormValues }) => {
         <div className="row two-cols">
           <div className="col">
             <Field
-              label="Телефон*"
+              label={t("formPhoneTitle")}
               registerLabel="phone"
               register={register}
               errors={errors}
@@ -132,14 +138,14 @@ export const Form = ({ setFormValues }) => {
           </div>
           <div className="col">
             <Field
-              label="Электронная почта"
+              label={t("formEmailTitle")}
               registerLabel="email"
               register={register}
               errors={errors}
             />
           </div>
         </div>
-        <h3 className="form-title">Информация о Вас</h3>
+        <h3 className="form-title">{t("infoAboutYou")}</h3>
         <div className="row two-cols">
           <div className="col">
             <Controller
@@ -149,14 +155,17 @@ export const Form = ({ setFormValues }) => {
                 <Select
                   {...field}
                   errors={errors}
-                  label="Пол*"
+                  label={t("sexWordRequired")}
+                  localizationKeyLabel="sexWordRequired"
                   items={[
                     {
-                      displayValue: "Женский",
+                      displayValue: t("womenWord"),
+                      localizationKey: "womenWord",
                       value: "woman",
                     },
                     {
-                      displayValue: "Мужской",
+                      displayValue: t("manWord"),
+                      localizationKey: "manWord",
                       value: "man",
                     },
                   ]}
@@ -166,7 +175,7 @@ export const Form = ({ setFormValues }) => {
           </div>
           <div className="col">
             <Field
-              label="Город*"
+              label={t("cityWordRequired")}
               registerLabel="city"
               register={register}
               errors={errors}
@@ -176,14 +185,14 @@ export const Form = ({ setFormValues }) => {
         <div className="row">
           <div className="col">
             <Field
-              label="Откуда вы о нас узнали"
+              label={t("whereDidUKnowLabel")}
               registerLabel="findUs"
-              placeholder="Например: от знакомых, из рекламы"
+              placeholder={t("exampleWhereDidUKnow")}
               register={register}
             />
           </div>
         </div>
-        <input className="btn-test" type="submit" value="Начать тест" />
+        <input className="btn-test" type="submit" value={t("startTestBtnText")} />
       </form>
     </div>
   );

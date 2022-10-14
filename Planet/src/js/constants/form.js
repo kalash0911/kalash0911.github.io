@@ -1,16 +1,17 @@
+// displayValue equal keys from localization
 export const MONTH_ARRAY = [
-    { displayValue: "Январь", value: "01" },
-    { displayValue: "Февраль", value: "02" },
-    { displayValue: "Март", value: "03" },
-    { displayValue: "Апрель", value: "04" },
-    { displayValue: "Май", value: "05" },
-    { displayValue: "Июнь", value: "06" },
-    { displayValue: "Июль", value: "07" },
-    { displayValue: "Август", value: "08" },
-    { displayValue: "Сентябрь", value: "09" },
-    { displayValue: "Октябрь", value: "10" },
-    { displayValue: "Ноябрь", value: "11" },
-    { displayValue: "Декабрь", value: "12" },
+    { localizationKey: "jan", displayValue: "Январь", value: "01" },
+    { localizationKey: "feb", displayValue: "Февраль", value: "02" },
+    { localizationKey: "mar", displayValue: "Март", value: "03" },
+    { localizationKey: "apr", displayValue: "Апрель", value: "04" },
+    { localizationKey: "may", displayValue: "Май", value: "05" },
+    { localizationKey: "jun", displayValue: "Июнь", value: "06" },
+    { localizationKey: "jul", displayValue: "Июль", value: "07" },
+    { localizationKey: "aug", displayValue: "Август", value: "08" },
+    { localizationKey: "sep", displayValue: "Сентябрь", value: "09" },
+    { localizationKey: "oct", displayValue: "Октябрь", value: "10" },
+    { localizationKey: "nov", displayValue: "Ноябрь", value: "11" },
+    { localizationKey: "dec", displayValue: "Декабрь", value: "12" },
   ]
 
 const maxYear = new Date().getFullYear() - 14;

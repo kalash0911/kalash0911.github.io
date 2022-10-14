@@ -1,0 +1,174 @@
+.language-select {
+    position: relative;
+    
+    @include media('>=widescreen'){
+        margin-left: 25px;
+
+        &:hover {
+
+            .selected-language {
+                color: $blue;
+            }
+    
+            .language-list {
+                opacity: 1;
+                visibility: visible;
+                z-index: 2;
+            }
+    
+            .arrow-l{
+                transform: rotate(220deg);
+            }
+        
+            .arrow-r{
+                transform: rotate(-220deg);
+            }
+        }
+    }
+
+    @include media('<widescreen'){
+        margin-top: 30px;
+    }
+    
+    .selected-language {
+        position: relative;
+        text-transform: uppercase;
+        padding: 8px 35px 8px 14px;
+        border: 1px solid $blue;
+        border-radius: 12px;
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 16px;
+        z-index: 2;
+        transition: all .3s ease 0s;
+
+        @include media('<widescreen'){
+            display: none;
+        }
+    }
+
+    .icon{
+        position: absolute;
+        right: 19px;
+        top: 12px;
+        z-index: 1;
+        transition: all .3s ease 0s;
+
+        @include media('<widescreen'){
+            display: none;
+        }
+    }
+
+    .arrow{
+        position: absolute;
+        width: 8px;
+        height: 2px;
+        top: 5px;
+        background-color: $blue;
+        transition: all .3s ease 0s;
+    }
+
+    .arrow-l{
+        left: -2px;
+        transform: rotate(135deg);
+    }
+
+    .arrow-r{
+        right: -1px;
+        transform: rotate(-135deg);
+    }
+
+    .language-list {
+        margin: 0;
+        list-style: none;
+        
+        @include media('>=widescreen'){
+            position: absolute;
+            width: 100%;
+            top: 43px;
+            left: 0;
+            padding: 4px;
+            transition: all .3s ease 0s;
+            border: 1px solid $blue;
+            border-radius: 12px;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+        }
+
+        @include media('<widescreen'){
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+    }
+
+    .language-button{
+        padding: 8px 11px;
+        border-radius: 8px;
+        width: 100%;
+        text-align: left;
+        transition: all .3s ease 0s;
+        font-family: $raleway;
+        font-weight: 600;
+        font-size: 16px;
+
+        @include media('>=widescreen'){
+            &:hover {
+                background: #e4eeff;
+                color: $blue;
+            }
+        }
+
+        @include media('<widescreen'){
+            margin: 0 5px;
+            text-align: center;
+            border: 1px solid transparent;
+            background: transparent;
+
+            &.active{
+                background: #e4eeff;
+                color: $blue;
+                border: 1px solid $blue;
+            }
+        }
+    }
+}
+
+.white-header{
+
+    @include media('>=widescreen'){
+
+        .language-select {
+            
+            &:hover {
+    
+                .selected-language {
+                    color: $white;
+                }
+            }
+        }
+
+        .selected-language {
+            border: 1px solid $white;
+            color: $white;
+        }
+
+        .arrow {
+            background-color: $white;
+        }
+
+        .language-list {
+            border: 1px solid $white;
+            background-color: #F4F8FF;
+        }
+
+        .language-button{
+    
+            &:hover {
+                background: $white;
+                color: $blue;
+            }
+        }
+    }
+}

@@ -1499,6 +1499,45 @@ body {
     background: rgba(0, 0, 0, 0.5);
     z-index: 2; }
 
+/* _________________card-section________________ */
+.card-section {
+  padding: 100px 0; }
+  .card-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 899px) {
+      .card-section .container {
+        -ms-flex-pack: center;
+        justify-content: center; } }
+  .card-section .card-wrap {
+    width: 100%;
+    max-width: 32.5%;
+    border-radius: 15px;
+    padding: 4px;
+    background: #fdb604;
+    background: linear-gradient(137deg, #fdb604 0%, rgba(255, 255, 255, 0) 21%, rgba(255, 255, 255, 0) 74%, #fdb604 100%);
+    margin-bottom: 30px; }
+    @media (max-width: 1199px) {
+      .card-section .card-wrap {
+        max-width: 44%; } }
+    @media (max-width: 899px) {
+      .card-section .card-wrap {
+        max-width: 420px; } }
+  .card-section .card {
+    padding: 60px;
+    background: linear-gradient(150.41deg, #F8F8F8 0%, #F1F1F1 98.06%);
+    border-radius: 15px;
+    text-align: center; }
+  .card-section .icon {
+    display: block;
+    margin-bottom: 50px; }
+  .card-section .discription {
+    font-size: 22px; }
+
 .modal-img {
   position: fixed;
   width: 100%;

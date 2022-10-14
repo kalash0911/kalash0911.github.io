@@ -4,8 +4,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Field } from "../shared/field/field.jsx";
 import { maskPhoneNumber } from "../../utils/general.js";
 import { validationSchema } from "./validation.js";
+import { useTranslation } from "react-i18next";
 
 export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
+  const { t } = useTranslation();
+
   const defaultValues = {
     phone: phone || "",
     skype: "",
@@ -28,9 +31,12 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
       name: "phone",
       active: true,
       label: "По номеру телефона",
+      localizationLabelKey: "comunicationByPhoneNumberLabel",
       activeLabel: "Вы указали номер ",
+      localizationaActiveLabelKey: "yourInputPhone",
       value: defaultValues.phone,
       placeholder: "Напишите свой номер телефона",
+      localizationPlaceholderKey: "yourPhonePlaceholder",
       isEdit: !defaultValues.phone,
     },
     {
@@ -38,9 +44,12 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
       name: "skype",
       active: false,
       label: "Связаться по Skype",
+      localizationLabelKey: "comunicationBySkypeLabel",
       activeLabel: "Вы указали логин",
+      localizationaActiveLabelKey: "yourInputSkype",
       value: defaultValues.skype,
       placeholder: "Напишите свой логин Skype",
+      localizationPlaceholderKey: "yourSkypePlaceholder",
       isEdit: !defaultValues.skype,
     },
     {
@@ -48,9 +57,12 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
       name: "zoom",
       active: false,
       label: "Связаться в Zoom",
+      localizationLabelKey: "comunicationByZoomLabel",
       activeLabel: "Вы указали zoom",
+      localizationaActiveLabelKey: "yourInputZoom",
       value: defaultValues.zoom,
       placeholder: "Напишите свой логин Zoom",
+      localizationPlaceholderKey: "yourZoomPlaceholder",
       isEdit: !defaultValues.zoom,
     },
   ]);
@@ -108,7 +120,19 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
 
   const feedBackOptionItems = comunicationOptions.map(
     (
-      { label, id, active, value, placeholder, activeLabel, isEdit, name },
+      {
+        label,
+        id,
+        active,
+        value,
+        placeholder,
+        activeLabel,
+        isEdit,
+        name,
+        localizationaActiveLabelKey,
+        localizationLabelKey,
+        localizationPlaceholderKey,
+      },
       ind
     ) => {
       return (
@@ -117,25 +141,25 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
             className={`answer-option ${active ? "active" : ""}`}
             onClick={() => handleChangeOption(ind)}
           >
-            <p>{label}</p>
+            <p>{t(localizationLabelKey) || label}</p>
           </div>
           {active && !isEdit && (
             <div className="data">
               <span>
-                {activeLabel} {value}
+                {t(localizationaActiveLabelKey) || activeLabel} {value}
               </span>
               <button
                 className="btn btn-link"
                 onClick={() => openEditOptionValue(ind)}
               >
-                Изменить
+                {t("edit")}
               </button>
             </div>
           )}
           {active && isEdit && (
             <div className="input-row">
               <Field
-                placeholder={placeholder}
+                placeholder={t(localizationPlaceholderKey) || placeholder}
                 registerLabel={name}
                 register={register}
                 errors={errors}
@@ -185,26 +209,23 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
             />
           </svg>
         </div>
-        <h2 className="main-title">Поздравляем! Вы прошли тест.</h2>
-        <p className="subtitle">
-          Чтобы наш специалист смог с вами связаться для проведения бесплатной
-          личной консультации выберите пожалуйста удобный для Вас способ связи:
-        </p>
+        <h2 className="main-title">{t("succeTestDone")}</h2>
+        <p className="subtitle">{t("callBackText")}</p>
       </div>
       <div className="feedback">{feedBackOptionItems}</div>
       <div className="btns-wrap">
         <button className="btn btn-text" onClick={backToTest}>
-          Вернуться к тесту
+          {t("backToTest")}
         </button>
         <button
           className="btn"
           onClick={onSubmit}
           disabled={!isSubmitBtnEnabled}
         >
-          Продолжить
+          {t("proceed")}
         </button>
       </div>
-      {apiError && <div className="api-error">{apiError}</div>}
+      {apiError && <div className="api-error">{t(apiError)}</div>}
     </div>
   );
 };

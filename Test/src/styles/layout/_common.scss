@@ -527,3 +527,54 @@ body{
         z-index: 2;
     }
 }
+
+ /* _________________card-section________________ */
+
+.card-section{
+    padding: 100px 0;
+
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media('<900px'){
+            justify-content: center;
+        }
+    }
+
+
+    .card-wrap{
+        width: 100%;
+        max-width: 32.5%;
+        border-radius: 15px;
+        padding: 4px;
+        background: rgb(253,182,4);
+        background: linear-gradient(137deg, rgba(253,182,4,1) 0%, rgba(255,255,255,0) 21%, rgba(255,255,255,0) 74%, rgba(253,182,4,1) 100%);
+        margin-bottom: 30px;
+
+        @include media('<1200px'){
+           max-width: 44%;
+        }
+
+        @include media('<900px'){
+            max-width: 420px;
+        }
+    }
+
+    .card{
+        padding: 60px;
+        background: linear-gradient(150.41deg, #F8F8F8 0%, #F1F1F1 98.06%);
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .icon{
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .discription{
+        font-size: 22px;
+    }
+}

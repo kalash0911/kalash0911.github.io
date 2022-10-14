@@ -28,6 +28,7 @@ body {
     padding: 14px 32px;
     background-color: $blue;
     border-radius: 6px;
+    border: none;
     font-family: $raleway;
     text-align: center;
     font-weight: 500;
@@ -497,6 +498,12 @@ input, textarea{
         @include media('<phone'){
             font-size: 28px;
         }
+
+        .en & {
+            @include media('<phone'){
+                font-size: 25px;
+            }
+        }
     }
 }
 
@@ -555,6 +562,7 @@ input, textarea{
 
     
     .img{
+        width: 100%;
         max-width: 555px;
 
         @include media('<desktop'){
@@ -1504,6 +1512,12 @@ input, textarea{
             font-size: 36px;
             padding: 0 30px;
         }
+
+        .en &{
+            @include media('<phone'){
+                font-size: 32px;
+            }
+        }
     }
 
     .img-wrap{
@@ -1725,6 +1739,18 @@ input, textarea{
 
         @include media('<phone'){
             font-size: 30px;
+        }
+
+        .en &{
+            font-size: 46px;
+
+            @include media('<tablet_x'){
+                font-size: 34px;
+            }
+
+            @include media('<phone'){
+                font-size: 28px;
+            }
         }
     }
 
@@ -2000,13 +2026,17 @@ input, textarea{
 
         img{
 
+            @include media('<600px'){
+                width: 100%;
+            }
+
             &:nth-child(2){
                 display: block;
                 margin-left: auto;
                 margin-top: -10px;
 
                 @include media('<600px'){
-                    margin-left: 50px;
+                    margin: 0;
                 }
             }
         }

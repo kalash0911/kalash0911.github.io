@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Field = ({
   label,
@@ -9,6 +10,7 @@ export const Field = ({
   ...restProps
 }) => {
   const errorCls = errors && errors[registerLabel] ? "error" : "";
+  const { t } = useTranslation();
   return (
     <div className={`field ${errorCls}`}>
       <label>
@@ -20,7 +22,7 @@ export const Field = ({
           {...restProps}
         />
         <p className="error-text">
-          {(errors && errors[registerLabel]?.message) || <>&nbsp;</>}
+          {(errors && t(errors[registerLabel]?.message)) || <>&nbsp;</>}
         </p>
       </label>
     </div>

@@ -1,0 +1,1102 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: $black;
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.ibg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-wrap{
+    
+    .gif{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include adaptiv-vaule("max-width", 1400, 700, 1);
+        animation-name: gif-off;
+        animation-duration: 10s;
+        opacity: 0;
+        transition: all .6s ease 0s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes gif-off {
+        0%{
+            opacity: 1;
+        }
+
+        80%{
+            opacity: 1;
+        }
+
+        90%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 0;
+        }
+    }
+
+    .gif-logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include adaptiv-vaule("width", 360, 173, 1);
+        @include adaptiv-vaule("height", 480, 226, 1);
+        animation-name: logo-on;
+        animation-duration: 10s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        transition: all .6s ease 0s;
+    }
+
+    @keyframes logo-on {
+        0%{
+            opacity: 0;
+        }
+
+        90%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+}
+
+.main-btn {
+    background: $gray_10;
+    border-radius: 4px;
+    padding: 17px 17px 16px 17px;
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 192px;
+    color: $black;
+    text-transform: uppercase;
+    line-height: 1.5;
+    z-index: 2;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid $gray_10;
+
+    @include media ("<tablet") {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: none;
+        color: $gray_10;
+    }
+}
+
+.main-video {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 50px 0;
+
+    @include media ("<tablet") {
+        padding: 160px 0 50px 0;
+    }
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(19, 18, 18, 0) 60.42%, #131212 100%);
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+
+        @include media ("<phone") {
+            display: none;
+        }
+    }
+
+    .main-img{
+        display: none;
+        z-index: -1;
+
+        @include media ("<phone") {
+            display: block;
+        }
+    }
+
+    .logo{
+        width: 90%;
+
+        @include media ("<tablet") {
+            width: 150%;
+        }
+
+        @include media ("<phone") {
+            width: 200%;
+        }
+    }
+    
+    .mob-contact{
+        position: absolute;
+        display: none;
+        justify-content: space-around;
+        top: 130px;
+        left: 0;
+        width: 100%;
+        padding: 0 20px;
+
+        @include media ("<tablet") {
+            display: flex;
+        }
+
+        @include media ("<phone") {
+            top: 110px;
+            justify-content: space-between;
+        }
+
+        .block {
+            margin-left: 35px;
+    
+            @include media('<tablet') {
+                margin: 0;
+            }
+        }
+    
+        .title {
+            font-weight: 500;
+            font-size: 14px;
+            color: $gray_10;
+            opacity: .8;
+            margin-bottom: 5px;
+        }
+    
+        .text {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            margin: 0;
+            color: $white;
+    
+            img {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.main-section {
+    padding-bottom: 250px;
+    @include adaptiv-vaule("padding-bottom", 250, 100, 1);
+    background: $black;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        padding: 0;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 260px;
+
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("padding-top", 300, 110, 1);
+        }
+    }
+
+    .main-title {
+        max-width: 715px;
+        margin-bottom: 25px;
+        z-index: 2;
+        max-width: 700px;
+        color: $gray_10;
+        opacity: .9;
+
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule(" max-width", 700, 280, 1);
+        }
+    }
+
+    .main-board {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: fill;
+    }
+}
+
+.menu {
+
+    .box-wrap {
+        display: flex;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media ("<tablet_max") {
+                flex-direction: column-reverse;
+            }
+        }
+
+        @include media ("<tablet_max") {
+            flex-direction: column-reverse;
+            height: 100%;
+        }
+    }
+
+    .box-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 50%;
+        height: 100%;
+        padding: 100px 25px;
+        text-align: center;
+
+        @include media ("<tablet_max") {
+            width: 100%;
+        }
+
+        @include media ("<phone") {
+            display: none;
+        }
+
+        .ibg {
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .box-title {
+            font-size: 48px;
+            margin-bottom: 15px;
+
+            @include media ("<tablet") {
+                font-size: 42px;
+            }
+        }
+
+        .box-description {
+            font-style: italic;
+            font-size: 22px;
+            margin-bottom: 40px;
+            max-width: 455px;
+            font-weight: 500;
+            line-height: 125%;
+            text-align: center;
+
+            @include media ("<tablet") {
+                font-size: 20px;
+            }
+        }
+
+        .box-img {
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 50px;
+        }
+
+        .ingridients {
+            text-align: center;
+            max-width: 525px;
+        }
+
+        .title-ingridients {
+            color: $gold;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .ingridients-description {
+            font-style: italic;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 125%;
+        }
+    }
+
+    .box-video {
+        position: relative;
+        width: 50%;
+
+        @include media ("<tablet_max") {
+            width: 100%;
+            min-height: 450px;
+        }
+
+        @include media ("<phone") {
+            display: none;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .mob-video{
+        position: relative;
+        display: none;
+        width: 100%;
+
+        @include media ("<phone") {
+            display: block;
+        }
+
+        video{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.about_chef {
+    position: relative;
+    background: $black;
+    padding-bottom: 160px;
+
+    @include media ("<phone") {
+        padding-bottom: 100px;
+    }
+
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 230px;
+        
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("padding-top", 300, 80, 1);
+        }
+    }
+
+    .chef-board {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-title {
+        margin-bottom: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        text-align: center;
+        position: relative;
+        color: #FCF1EA;
+        opacity: .9;
+        z-index: 2;
+
+        @include media ("<tablet_max") {
+            order: 1;
+        }
+    }
+
+    .text {
+        margin-bottom: 30px;
+
+        @include media ("<tablet_max") {
+            order: 3;
+            margin-bottom: 0;
+        }
+    }
+
+    .about-description {
+        position: relative;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 125%;
+        max-width: 600px;
+        max-height: 110px;
+        margin: 0 auto 25px auto;
+        overflow: hidden;
+
+        @include media ("<tablet") {
+            font-size: 18px;
+            max-height: 115px;
+        }
+
+        @include media ("<phone") {
+            font-size: 14px;
+            max-height: 108px;
+        }
+    }
+
+    .main-btn {
+        position: relative;
+        color: $gray_10;
+        border: 1px solid $gray_10;
+        background-color: transparent;
+        z-index: 2;
+    
+        @include media ("<tablet") {
+            font-size: 14px;
+        }
+    
+        &:hover {
+            background: $gray_10;
+            color: $black;
+        }
+    }
+
+    .chef-img {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 520px;
+        height: 520px;
+        margin: 0 auto;
+        position: relative;
+        filter: drop-shadow(0px -30px 60px rgba(19, 10, 3, 0.6));
+        z-index: 1;
+
+        @include media ("<tablet_max") {
+            order: 2;
+            margin-bottom: 30px;
+        }
+
+        @include media ("<tablet") {
+            width: 350px;
+            height: 350px;
+        }
+
+        @include media ("<phone") {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    .pop-up{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background: $white;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        padding: 130px 100px;
+        width: 100%;
+        max-width: 900px;
+        border-radius: 30px;
+        background: url("../images/popup-bg.jpg") 0 0/cover no-repeat;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease 0s;
+
+        @include media ("<tablet") {
+            padding: 60px 30px;
+        }
+        
+        &.active{
+            z-index: 3;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease 0s;
+
+        &.active{
+            z-index: 3;
+            opacity: 50%;
+            visibility: visible;
+        }
+    }
+
+    .text-popup{
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 130%;
+        color: #FCF1EA;
+        text-align: center;
+
+        @include media ("<tablet") {
+            font-size: 18px;
+        }
+
+        @include media ("<phone") {
+            font-size: 16px;
+            overflow: scroll;
+        }
+    }
+
+    .btn-close{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+
+        @include media('<tablet'){
+            top: 25px;
+            right: 40px;
+        }
+
+        @include media('<phone'){
+            top: 15px;
+            right: 25px;
+        }
+
+        svg{
+            fill: $white;
+            width: 20px;
+            height: 20px;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover{
+
+            svg{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+/* --------------------- page-section ----------------- */
+
+.page-section{
+    margin: 102px 0 20px 0;
+
+    @include media ("<480px") {
+        margin: 93px 0 20px 0;
+    }
+
+    .board{
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        z-index: -1;
+    }
+
+    .container{
+        position: relative;
+        padding-top: 135px;
+        padding-bottom: 200px;
+        text-align: center;
+        overflow: hidden;
+        
+        @include media ("<tablet_max") {
+            @include adaptiv-vaule("padding-top", 200, 70, 1);
+            @include adaptiv-vaule("padding-bottom", 300, 70, 1);
+        }
+    }
+
+    .logo{
+        margin-bottom: 40px;
+        width: 89px;
+        height: 116px;
+
+        @include media ("<tablet_max") {
+            display: none;
+        }
+    }
+
+    .title{
+        font-weight: 500;
+        font-size: 92px;
+        color: $gray_10;
+        opacity: .9;
+
+        @include media ("<tablet") {
+            @include adaptiv-vaule(" font-size", 92, 48, 1);
+        }
+    }
+}
+
+/* --------------------- menu-section ----------------------- */
+
+.menu-section{
+    padding: 100px 0 20px 0;
+
+    @include media ("<tablet") {
+        padding: 30px 0 60px 0;
+    }
+
+    .container{
+        max-width: 1320px;
+    }
+    
+    .block{
+        margin-bottom: 180px;
+
+        @include media ("<tablet") {
+            margin-bottom: 120px;
+        }
+    }
+
+    .title-cont{
+        position: relative;
+        margin-bottom: 75px;
+
+        &::after{
+            content:'';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $gold;
+            z-index: 1;
+        }
+    }
+
+    .title-wrap{
+        position: relative;
+        max-width: max-content;
+        margin: 0 auto;
+        
+        &:before{
+            content:'';
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            z-index: 2;
+        }
+    }
+    
+    .title{
+        position: relative;
+        font-weight: 500;
+        padding: 0 24px;
+        text-align: center;
+        max-width: max-content;
+        margin: 0 auto;
+        @include gold_gradient;
+        text-transform: uppercase;
+        @include adaptiv-vaule(" font-size", 60, 34, 1);
+        z-index: 2;
+        
+        @include media ("<tablet") {
+            max-width: min-content;
+        }
+    }
+
+    .item-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 25px;
+        row-gap: 70px;
+        height: 100%;
+
+        @include media ("<phone") {
+            row-gap: 30px;
+        }
+    }
+
+    .item{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        overflow: hidden;
+        width: 23%;
+        cursor: pointer;
+
+        @include media ("<1300px") {
+            width: 31%;
+        }
+
+        @include media ("<desktop") {
+            width: 44%;
+        }
+
+        @include media ("<tablet") {
+            width: 70%;
+        }
+
+        @include media ("<670px") {
+            width: 100%;
+        }
+
+        &::after {
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background-color: $black;
+            z-index: -1;
+            background: rgba(162, 127, 95, 0.12);
+            backdrop-filter: blur(2px);
+            border: 1px solid transparent;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover{
+
+            &::after {
+                border: 1px solid $gold;
+            }
+
+            .text{
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .text{
+        padding: 20px;
+        transition: all .3s ease 0s;
+    }
+
+    .img-wrap{
+        position: relative;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 25px auto;
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .name{
+        font-family: $CD;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #F5F5F5;
+        margin-bottom: 10px;
+    }
+
+    .descripton{
+        font-style: italic;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 125%;
+        text-align: center;
+        color: $gray_10;
+        opacity: 0.8;
+    }
+
+    .item-price{
+        width: 100%;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 125%;
+        text-align: center;
+        color: $gold;
+        padding: 20px 0;
+        border-top: 1px solid rgba(252, 241, 234, 0.2);
+    }
+
+    .item-big{
+        grid-column: span 2;
+        width: 46%;
+
+        @include media ("<1300px") {
+            width: 62%;
+        }
+
+        @include media ("<desktop") {
+            width: 88%;
+        }
+
+        @include media ("<tablet") {
+            width: 70%;
+        }
+
+        @include media ("<670px") {
+            width: 100%;
+        }
+
+        &::after {
+
+            @include media ("<tablet") {
+                height: 84%;
+            }
+        }
+
+        .text{
+            padding: 80px 20px 20px 20px;
+
+            @include media ("<tablet") {
+                padding: 20px;
+            }
+
+            @include media ("<phone") {
+                padding: 20px 0;
+            }
+        }
+
+        .img-wrap{
+            width: 162px;
+            height: 162px;
+
+            @include media ("<tablet") {
+                width: 96px;
+                height: 96px;
+                margin: 0;
+            }
+        }
+
+        .menu-wrap{
+            display: flex;
+            justify-content: space-around;
+
+            @include media ("<tablet") {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @include media ("<phone") {
+                padding: 0 20px;
+            }
+        }
+
+        .text-wrap{
+            max-width: 200px;
+
+            @include media ("<tablet") {
+                max-width: 255px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .name, .descripton{
+            text-align: left;
+
+            @include media ("<tablet") {
+                text-align: center;
+            }
+        }
+    }
+
+    .img-cont{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .price-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 300px;
+    }
+
+    .price-item{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 12px;
+        width: 32%;
+
+        @include media ("<tablet") {
+            align-items: center;
+        }
+    }
+
+    .price-name{
+        font-weight: 500;
+        font-size: 14px;
+        color: $gray;
+        margin-bottom: 5px;
+    }
+
+    .price{
+        font-weight: 500;
+        font-size: 14px;
+        color: $gold;
+    }
+
+    .plus{
+        @include media ("<phone") {
+            width: 11px;
+            height: 10px;
+        }
+    }
+
+    .list{
+        width: 100%;
+        max-width: 300px;
+        background: rgba(162, 127, 95, 0.12);
+        backdrop-filter: blur(2px);
+        border: 1px solid transparent;
+        transition: all .3s ease 0s;
+
+        @include media ("<desktop") {
+            max-width: 48%;
+        }
+
+        @include media ("<670px") {
+            max-width: 100%;
+        }
+
+        @include media ("<phone") {
+            align-items: center;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &:hover{
+            border: 1px solid $gold;
+        }
+
+        .text{
+            padding: 40px 20px 30px 20px;
+        }
+    }
+
+    .list-wrap{
+        margin: 0;
+    }
+
+    .list-item{
+        font-style: italic;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 125%;
+        color: $gray_10;
+        margin-bottom: 5px;
+
+        &::marker{
+            color: $gold;
+        }
+    }
+
+    .list-big{
+        width: 100%;
+        max-width: 626px;
+
+        @include media ("<desktop") {
+            max-width: 48%;
+        }
+
+        @include media ("<670px") {
+            max-width: 100%;
+        }
+    }
+
+    .list-cont{
+        display: flex;
+        justify-content: center;
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .thin{
+        max-width: 952px;
+        margin: 0 auto;
+
+        @include media ("<1300px") {
+            max-width: 100%;
+        }
+
+        .item{
+            width: 31%;
+    
+            @include media ("<1300px") {
+                width: 31%;
+            }
+    
+            @include media ("<desktop") {
+                width: 44%;
+            }
+    
+            @include media ("<tablet") {
+                width: 70%;
+            }
+    
+            @include media ("<670px") {
+                width: 100%;
+            }
+        }
+    }
+}

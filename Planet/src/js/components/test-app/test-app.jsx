@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import testsJson from "../../json/tests.json";
 import { ANSWERS_LIST } from "../../constants/rules.js";
 import { ProgressBar } from "../shared/progress-bar/progress-bar.jsx";
+import { useTranslation } from "react-i18next";
 
 export const TestApp = ({ setUserAnswers, questionInd }) => {
+  const { t, i18n } = useTranslation();
   const [questionList, setQuestionList] = useState(testsJson.tests);
   const [currentQuestionIdx, setQuestionIdx] = useState(questionInd);
   const [answers, setAnswers] = useState(ANSWERS_LIST);
@@ -70,13 +72,13 @@ export const TestApp = ({ setUserAnswers, questionInd }) => {
     }
   };
 
-  const answerItems = answers.map(({ value, label, active }, answerInd) => (
+  const answerItems = answers.map(({ value, label, active, localizationKey }, answerInd) => (
     <li
       onClick={() => setAnswerToQuestion(value, answerInd)}
       className={`answer-option ${active ? "active" : ""}`}
       key={answerInd}
     >
-      {label}
+      {t(localizationKey) || label}
     </li>
   ));
 
@@ -102,13 +104,13 @@ export const TestApp = ({ setUserAnswers, questionInd }) => {
       <div className="questions-block">
         <div className="question-wrap">
           <ProgressBar
-            label="Оксфордский тест"
+            label={t("oxfTest")}
             current={currentQuestionIdx + 1}
             length={questionLength}
-            lengthLabel="вопросов"
+            lengthLabel={t("questions")}
           />
           <h2 className="main-title">
-            {questionList[currentQuestionIdx].text}
+            {questionList[currentQuestionIdx].text[i18n.language || 'ru']}
           </h2>
           <ul className="answer-list">{answerItems}</ul>
         </div>
@@ -118,19 +120,19 @@ export const TestApp = ({ setUserAnswers, questionInd }) => {
             onClick={handlePrevQuestion}
             disabled={!currentQuestionIdx}
           >
-            Предыдущий
+            {t("prev")}
           </button>
           <button
             className="btn"
             onClick={handleNextQuestion}
             disabled={isBtnNextDisabled}
           >
-            {!isLastQuestion ? "Следующий" : "Продолжить"}
+            {!isLastQuestion ? t("next") : t("proceed")}
           </button>
         </div>
       </div>
       <div className="pagination-block">
-        <h3 className="form-title">Список вопросов</h3>
+        <h3 className="form-title">{t("questionsList")}</h3>
         <ul className="pagination">{paginationItems}</ul>
       </div>
     </div>

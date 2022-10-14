@@ -110,6 +110,7 @@ header{
     }
     
     .menu-wrap{
+        display: flex;
 
         @include media('<widescreen'){
             position: absolute;
@@ -164,16 +165,24 @@ header{
         justify-content: space-between;
         margin: 0 19px;
     
-        &:last-child{
-            margin: 0 0 0 19px;
+        @include media('<widescreen'){
+            margin: 0 0 20px 0;
+        }
 
+        .en &{
+            margin: 0 10px;
+    
             @include media('<widescreen'){
-                margin: 0;
+                margin: 0 0 20px 0;
             }
         }
 
-        @include media('<widescreen'){
-            margin: 0 0 20px 0;
+        .ua &{
+            margin: 0 15px;
+    
+            @include media('<widescreen'){
+                margin: 0 0 20px 0;
+            }
         }
     }
     
