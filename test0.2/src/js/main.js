@@ -87,16 +87,14 @@ if (linkClose.length) {
 let m1 = document.getElementById('m1');
 let m2 = document.getElementById('m2');
 let m3 = document.getElementById('m3');
-let m4 = document.getElementById('m4');
 let grad = document.getElementById('grad');
 
 
 window.addEventListener('scroll', function(){
   let value = window.scrollY;
-  m2.style.top = 90 + value * -0.1 + 'px';
-  m3.style.top = 280 + value * -0.18 + 'px';
-  m4.style.top = 185 + value * -0.2 + 'px';
-  grad.style.top = 380 + value * -0.2 + 'px';
+  m2.style.top = 90 + value * -0.15 + 'px';
+  m3.style.top = 185 + value * -0.3 + 'px';
+  grad.style.top = 375 + value * -0.3 + 'px';
 })
 
 

@@ -97,14 +97,12 @@ if (linkClose.length) {
 var m1 = document.getElementById('m1');
 var m2 = document.getElementById('m2');
 var m3 = document.getElementById('m3');
-var m4 = document.getElementById('m4');
 var grad = document.getElementById('grad');
 window.addEventListener('scroll', function () {
   var value = window.scrollY;
-  m2.style.top = 90 + value * -0.1 + 'px';
-  m3.style.top = 280 + value * -0.18 + 'px';
-  m4.style.top = 185 + value * -0.2 + 'px';
-  grad.style.top = 380 + value * -0.2 + 'px';
+  m2.style.top = 90 + value * -0.15 + 'px';
+  m3.style.top = 185 + value * -0.3 + 'px';
+  grad.style.top = 375 + value * -0.3 + 'px';
 });
 /* ///// */
 

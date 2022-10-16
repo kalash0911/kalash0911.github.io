@@ -1053,7 +1053,7 @@ header {
   100% {
     bottom: 0; } }
 
-* {
+html {
   scroll-behavior: smooth; }
 
 body {
@@ -1076,7 +1076,7 @@ body {
 /* ---------------first------------- */
 .first {
   position: relative;
-  min-height: 100vh; }
+  min-height: calc(100vh + 210px); }
   .first::after {
     content: '';
     position: absolute;
@@ -1103,14 +1103,14 @@ body {
 
 #grad {
   position: absolute;
-  top: 380px;
+  top: 375px;
   left: 0;
   width: 100%;
   height: 100%;
   background: white;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fefefe 100%); }
 
-#m1, #m2, #m3, #m4 {
+#m1, #m2, #m3 {
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%);
@@ -1125,9 +1125,6 @@ body {
   top: 90px; }
 
 #m3 {
-  top: 280px; }
-
-#m4 {
   top: 185px; }
 
 /* ---------------gallery------------- */
