@@ -47,6 +47,16 @@ function initLanguageSelect() {
       el.classList.remove('active');
     })
   }
+
+  const preloader = document.querySelector('.preloader');
+
+  if(preloader) {
+    preloader.style.opacity = 0;
+    preloader.classList.add('loaded');
+    setTimeout(() => {
+      preloader.classList.add('d-none');
+    }, 300)
+  }
 }
 
 function changeLanguageOnWebsite() {
