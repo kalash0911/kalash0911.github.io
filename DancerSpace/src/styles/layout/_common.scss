@@ -36,6 +36,7 @@ body {
 /* ------------------main-section-------------------- */
 
 .main-section {
+    position: relative;
     display: flex;
     align-items: center;
     min-height: 100vh;
@@ -57,7 +58,7 @@ body {
         }
 
         @include media('<phone'){
-            padding-bottom: 45px;
+            padding: 0 15px 45px 15px;
         }
     }
 
@@ -216,5 +217,22 @@ body {
         min-width: 19px;
         opacity: 100%;
         border-radius: 20px;
+    }
+
+    .icon-s {
+        position: absolute;
+        left: -200px;
+        bottom: -170px;
+
+        @include media('<phone'){
+            width: 128px;
+            left: -65px;
+            bottom: -50px;
+        }
+    }
+
+    .icon-line {
+        position: absolute;
+        right: -70px;
     }
 }
