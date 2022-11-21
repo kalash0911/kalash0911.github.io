@@ -1,0 +1,14 @@
+#header {
+    position: absolute;
+    width: 100%;
+    padding: 35px 0;
+
+    .logo {
+
+        @include media('<phone'){
+            display: block;
+            width: 105px;
+            margin: 0 auto;
+        }
+    }
+}

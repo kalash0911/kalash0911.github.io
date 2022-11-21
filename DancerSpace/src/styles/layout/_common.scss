@@ -1,0 +1,220 @@
+body {
+    font-family: $SF;
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1340px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.main-btn {
+    display: inline-block;
+    min-width: 155px;
+    padding: 9px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: $white;
+    background: $purple;
+    border-radius: 50px;
+    border: 2px solid $purple;
+    transition: all .3s ease 0s;
+
+    &:hover{
+        color: $purple;
+        background: transparent;
+    }   
+}
+
+
+/* ------------------main-section-------------------- */
+
+.main-section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 0;
+    background: linear-gradient(180deg, #F4F4F4 0%, #F8EFFF 100%);
+
+    @include media('<phone'){
+        padding: 100px 0 25px 0;
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<=widescreen') {
+            flex-direction: column;
+        }
+
+        @include media('<phone'){
+            padding-bottom: 45px;
+        }
+    }
+
+    .text-block {
+        margin-left: 80px;
+        margin-right: 20px;
+
+        @include media('<laptop_sm'){
+            margin-left: 0;
+        }
+
+        @include media('<widescreen'){
+            margin: 0 0 50px 0;
+            text-align: center;
+        }
+
+        @include media('<phone'){
+            margin: 0;
+        }
+    }
+
+    .title {
+        color: $purple;
+        margin-bottom: 30px;
+
+        @include media('<phone'){
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .sub-title {
+        font-size: 20px;
+        margin-bottom: 40px;
+
+        @include media('<phone'){
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+    }
+
+    .main-btn {
+
+        @include media('<phone'){
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+
+    .main-slider {
+        width: 100%;
+        margin: 0;
+    }
+
+    .swiper-wrapper {
+        justify-content: space-between;
+        min-height: 700px;
+
+        @include media('>widescreen'){
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        @include media('<widescreen'){
+            min-height: 500px;
+        }
+
+        @include media('<tablet_x'){
+            min-height: 470px;
+        }
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        max-width: 100px;
+        min-height: 660px;
+        transition: all .7s ease 0s;
+        overflow: hidden;
+        border-radius: 20px;
+        margin: 0 10px;
+
+        @include media('<widescreen'){
+            max-width: 32%;
+            min-height: 450px;
+            margin: 0;
+            box-shadow: 0px 18px 45px -22px rgba(87,84,84,0.83);
+        }
+
+        @include media('<tablet_x'){
+            max-width: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        @include media('>widescreen'){
+
+            &:hover{
+                max-width: 365px;
+                box-shadow: 0px 18px 45px -22px rgba(87,84,84,0.83);
+
+                .slide-title {
+                    opacity: 1;
+                    transition: all .4s ease .5s;
+                }
+            }
+        }
+    }
+
+    .slide-wrap {
+        padding: 50px 20px 50px 35px;
+
+        @include media('<widescreen'){
+            padding: 35px 25px;
+        }
+    }
+
+    .slide-title {
+        color: $white;
+
+        @include media('>widescreen'){
+            opacity: 0;
+            transition: all .2s ease 0s;
+        }
+    }
+
+    .swiper-pagination {
+        display: none;
+        position: relative;
+        top: 0;
+        padding: 0 0 20px 0;
+
+        @include media('<tablet_x'){
+            display: block;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        background: $purple;
+        opacity: 30%;
+        transition: all .5s ease 0s;
+    }
+
+    .swiper-pagination-bullet-active {
+        min-width: 19px;
+        opacity: 100%;
+        border-radius: 20px;
+    }
+}
