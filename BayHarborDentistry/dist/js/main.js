@@ -6,7 +6,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// Swiper:
+// btn logic
+var btn = document.querySelector('.btn');
+
+btn.onmousemove = function (e) {
+  var x = e.pageX - btn.offsetLeft;
+  var y = e.pageY - btn.offsetTop;
+  btn.style.setProperty('--x', x + 'px');
+  btn.style.setProperty('--y', y + 'px');
+}; // Swiper:
+
+
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
 
