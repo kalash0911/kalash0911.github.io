@@ -559,8 +559,8 @@ input[type='submit'] {
 
 .container {
   width: 100%;
-  max-width: 1340px;
-  padding: 0 30px;
+  max-width: 1320px;
+  padding: 0 20px;
   margin: 0 auto; }
 
 .main-btn {
@@ -579,6 +579,12 @@ input[type='submit'] {
   color: #010B6C;
   overflow: hidden;
   transition: color 2s; }
+  @media (max-width: 479px) {
+    .main-btn {
+      width: 180px;
+      height: 180px;
+      padding: 30px;
+      font-size: 14px; } }
   .main-btn::before {
     content: '';
     position: absolute;
@@ -612,8 +618,11 @@ input[type='submit'] {
   -ms-flex-align: center;
   align-items: center;
   min-height: 100vh;
-  padding: 100px;
+  padding: 100px 0 200px 0;
   background-color: rgba(243, 242, 237, 0.7); }
+  @media (max-width: 479px) {
+    .main-section {
+      min-height: calc(100vh - 55px); } }
   .main-section .ml {
     position: absolute;
     top: -50%;
@@ -623,23 +632,26 @@ input[type='submit'] {
     background-color: #fff;
     opacity: 40%;
     z-index: 1; }
+    @media (max-width: 479px) {
+      .main-section .ml {
+        width: 115px; } }
   .main-section .ml1 {
     left: 50%;
     -webkit-transform: translate(-115%) rotate(35deg);
     transform: translate(-115%) rotate(35deg);
-    -webkit-animation: ml1 2s;
-    animation: ml1 2s; }
+    -webkit-animation: ml1 3s;
+    animation: ml1 3s; }
   .main-section .ml2 {
     right: 50%;
     -webkit-transform: translate(107%) rotate(35deg);
     transform: translate(107%) rotate(35deg);
-    -webkit-animation: ml2 2s;
-    animation: ml2 2s; }
+    -webkit-animation: ml2 3s;
+    animation: ml2 3s; }
 
 @-webkit-keyframes ml1 {
   0% {
     left: -50%; }
-  50% {
+  70% {
     left: 66%; }
   100% {
     left: 50%; } }
@@ -647,7 +659,7 @@ input[type='submit'] {
 @keyframes ml1 {
   0% {
     left: -50%; }
-  50% {
+  70% {
     left: 66%; }
   100% {
     left: 50%; } }
@@ -655,7 +667,7 @@ input[type='submit'] {
 @-webkit-keyframes ml2 {
   0% {
     right: 0; }
-  50% {
+  70% {
     right: 66%; }
   100% {
     right: 50%; } }
@@ -663,7 +675,7 @@ input[type='submit'] {
 @keyframes ml2 {
   0% {
     right: 0; }
-  50% {
+  70% {
     right: 66%; }
   100% {
     right: 50%; } }
@@ -672,29 +684,51 @@ input[type='submit'] {
   .main-section .main-title {
     font-family: "Queensila", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: normal;
+    /* Только если меньше контейнера */
     font-size: 126px;
     text-transform: uppercase;
     color: #010B6C;
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
+    @media (max-width: 1280px) {
+      .main-section .main-title {
+        font-size: calc(64px + 62 * ((100vw - calc(360px)) / 920)); } }
+    @media (max-width: 767px) {
+      .main-section .main-title br {
+        display: none; } }
+    @media (max-width: 479px) {
+      .main-section .main-title {
+        text-align: justify; } }
     .main-section .main-title i {
       font-style: normal;
       color: #EEB663; }
-  .main-section span {
-    display: inline-block;
-    text-align: right; }
   .main-section .title-line {
+    display: inline-block;
     height: 2px;
     min-width: 190px;
     background-color: #EEB663;
     -webkit-transform: translateY(-40px);
     transform: translateY(-40px); }
+    @media (max-width: 767px) {
+      .main-section .title-line {
+        min-width: 160px;
+        -webkit-transform: translateY(-25px);
+        transform: translateY(-25px); } }
   .main-section .main-sub-title {
+    text-align: center;
     font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;
+    /* Только если меньше контейнера */
     font-size: 24px;
     text-transform: uppercase;
     color: #4E5168;
     margin: 0; }
+    @media (max-width: 1280px) {
+      .main-section .main-sub-title {
+        font-size: calc(18px + 6 * ((100vw - calc(360px)) / 920)); } }
+    @media (max-width: 479px) {
+      .main-section .main-sub-title {
+        text-align: left; } }
   .main-section .main-btn {
     position: absolute;
     left: 50%;
@@ -702,5 +736,8 @@ input[type='submit'] {
     transform: translate(-50%);
     bottom: -130px;
     z-index: 1; }
+    @media (max-width: 479px) {
+      .main-section .main-btn {
+        bottom: -90px; } }
 
 /*# sourceMappingURL=main.css.map */

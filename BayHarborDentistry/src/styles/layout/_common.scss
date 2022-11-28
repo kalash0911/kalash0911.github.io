@@ -4,8 +4,8 @@
 
 .container {
     width: 100%;
-    max-width: 1340px;
-    padding: 0 30px;
+    max-width: 1320px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -24,6 +24,13 @@
     color: $blue;
     overflow: hidden;
     transition: color 2s;
+
+    @include media('<phone'){
+        width: 180px;
+        height: 180px;
+        padding: 30px;
+        font-size: 14px;
+    }
 
     &::before {
         content:'';
@@ -64,8 +71,12 @@
     display: flex;
     align-items: center;
     min-height: 100vh;
-    padding: 100px;
+    padding: 100px 0 200px 0;
     background-color: rgba($white_2, 0.7);
+
+    @include media('<phone'){
+        min-height: calc(100vh - 55px);
+    }
 
     .ml {
         position: absolute;
@@ -76,25 +87,29 @@
         background-color: $white;
         opacity: 40%;
         z-index: 1;
+
+        @include media('<phone'){
+            width: 115px;
+        }
     }
 
     .ml1 {
         left: 50%;
         transform: translate(-115%) rotate(35deg);
-        animation: ml1 2s;
+        animation: ml1 3s;
     }
 
     .ml2 {
         right: 50%;
         transform: translate(107%) rotate(35deg);
-        animation: ml2 2s;
+        animation: ml2 3s;
     }
 
     @keyframes ml1 {
         0%{
             left: -50%;
         }
-        50%{
+        70%{
             left: 66%;
         }
         100%{
@@ -106,7 +121,7 @@
         0%{
             right: 0;
         }
-        50%{
+        70%{
             right: 66%;
         }
         100%{
@@ -121,10 +136,22 @@
     .main-title {
         font-family: $queensila;
         font-weight: normal;
-        font-size: 126px;
+        @include adaptiv-vaule("font-size", 126, 64, 1);
         text-transform: uppercase;
         color: $blue;
         margin: 0;
+        text-align: center;
+
+        @include media('<tablet'){
+
+            br{
+                display: none;
+            }
+        }
+
+        @include media('<phone'){
+            text-align: justify;
+        }
 
         i{
             font-style: normal;
@@ -132,25 +159,31 @@
         }
     }
 
-    span {
-        display: inline-block;
-        text-align: right;
-    }
-
     .title-line {
+        display: inline-block;
         height: 2px;
         min-width: 190px;
         background-color: $gold;
         transform: translateY(-40px);
+
+        @include media('<tablet'){
+            min-width: 160px;
+            transform: translateY(-25px);
+        }
     }
 
     .main-sub-title {
+        text-align: center;
         font-family: $gilroy;
         font-weight: 400;
-        font-size: 24px;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
         text-transform: uppercase;
         color: $blue_2;
         margin: 0;
+
+        @include media('<phone'){
+            text-align: left;
+        }
     }
 
     .main-btn {
@@ -159,5 +192,9 @@
         transform: translate(-50%);
         bottom: -130px;
         z-index: 1;
+
+        @include media('<phone'){
+            bottom: -90px;
+        }
     }
 }
