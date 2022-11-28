@@ -73,6 +73,7 @@
     min-height: 100vh;
     padding: 100px 0 200px 0;
     background-color: rgba($white_2, 0.7);
+    overflow: hidden;
 
     @include media('<phone'){
         min-height: calc(100vh - 55px);
@@ -196,5 +197,21 @@
         @include media('<phone'){
             bottom: -90px;
         }
+    }
+}
+
+/* ---------------------------video-section------------------------ */
+
+.video-section {
+    position: relative;
+    @include adaptiv-vaule("min-height", 750, 260, 1);
+
+    video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
