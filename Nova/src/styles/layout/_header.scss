@@ -1,0 +1,356 @@
+#header {
+    position: relative;
+    z-index: 5;
+}
+
+.up {
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<desktop'){
+            flex-direction: row-reverse;
+        }
+    }
+
+    .warrior {
+        display: flex;
+        align-items: center;
+
+        img {
+            @include media('<tablet'){
+                width: 45px;
+                height: 62px;
+            }
+        }
+    }
+
+    .title {
+        margin-left: 16px;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .logo-wrpa {
+
+        img{
+            @include media('<tablet'){
+                width: 121px;
+                height: 46px;
+            }
+        }
+    }
+
+    .weather {
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+}
+
+.bot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    background-color: $blue;
+
+    @include media('<tablet_x'){
+        &:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 50px;
+            background-color: $blue;
+            z-index: 1;
+            transition: $all_03;
+    
+            .active & {
+                left: 0;
+            }
+        }
+    }  
+
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .search {
+        color: $white;
+    }
+
+    .menu-wrap {
+
+        @include media('<tablet_x'){
+            position: absolute;
+            top: -18px;
+            left: 100%;
+            width: 100%;
+            height: calc(100vh - 115px);
+            background-color: $blue;
+            padding: 42px 30px 70px 30px;
+            overflow: auto;
+            transition: $all_03;
+
+            .active & {
+                left: 0;
+            }
+        }
+
+        @include media('<tablet'){
+            height: calc(100vh - 62px);
+        }
+    }
+
+    .list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include media('<tablet_x'){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .item {
+        margin-left: 48px;
+
+        @include media('<desktop'){
+            margin-left: 28px;
+        }
+
+        @include media('<tablet_x'){
+            margin: 0;
+            width: 100%;
+            padding: 14px 0;
+            text-align: center;
+            border-bottom: 1.5px solid #DEDEDE;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .link {
+        color: $white;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transform: $all_03;
+
+        @include media('<tablet_x'){
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &:hover{
+            color: $gold;
+        }
+    }
+
+    .current-menu-item {
+
+        .link {
+            font-weight: 600;
+        }
+    }
+
+    .drop {
+
+        &:hover{
+
+            .link {
+                color: $gold;
+
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+
+            .sub-menu{
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+
+                @include media('<tablet_x'){
+                    max-height: 500px;
+                }
+            }
+        }
+
+        .link {
+            position: relative;
+
+            &::after {
+                content:'\276E';
+                position: absolute;
+                top: 0;
+                right: -20px;
+                transform: rotate(-90deg);
+                transition: $all_03;
+
+                @include media('<desktop'){
+                    right: -15px;
+                }
+
+                @include media('<tablet_x'){
+                    right: -25px;
+                }
+            }
+        }
+    }
+    
+    .sub-menu {
+        list-style: none;   
+        transition: $all_03;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        @include media('>=tablet_x'){
+            position: absolute;
+            left: 0;
+            top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 11px 0 40px 0;   
+            background-color: $white;
+
+            &::before {
+                content:'';
+                position: absolute;
+                top: -20px;
+                left: 0;
+                width: 100%;
+                height: 25px;
+            }
+    
+            &::after {
+                content:'';
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 150%;
+                height: 1px;
+                background-color: #DEDEDE;
+            }
+
+        }
+
+        @include media('<tablet_x'){
+            position: relative;
+            max-height: 0;
+        }
+
+
+    }
+    
+    .sub-item {
+
+        @include media('>=tablet_x'){
+            width: 100%;
+            max-width: 200px;
+            margin: 7px 15px;
+        }
+
+        @include media('<tablet_x'){
+            padding: 8px 0;
+            margin: 0;
+        }
+    }
+
+    .sub-link {
+        display: inline-block;
+        color: $black_2;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transform: $all_03;
+
+        @include media('<tablet_x'){
+            color: $white;
+        }
+
+        &:hover{
+            color: $blue;
+
+            @include media('<tablet_x'){
+                color: $gold;
+            }
+        }
+    }
+}
+
+.burger {
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    z-index: 5;
+    padding: 0;
+    border: none;
+    background: none;
+
+    @include media('<tablet_x'){
+        display: block;
+    }
+
+    span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        transition: $all_03;
+
+        &:nth-child(1) {
+            top: 0;
+
+            .active &{
+                transform: rotate(45deg);
+                top: 11px;
+            }
+        }
+
+        &:nth-child(2) {
+            top: 11px;
+
+            .active &{
+                transform: translate(20px);
+                opacity: 0;
+            }
+        }
+
+        &:nth-child(3) {
+            bottom: 0;
+
+            .active &{
+                transform: rotate(-45deg);
+                bottom: 11px;
+            }
+        }
+    }
+}
