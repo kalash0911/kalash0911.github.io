@@ -310,3 +310,241 @@
         }
     }
 }
+
+/* --------------------------content---------------------- */
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 56px 0;
+
+    @include media('<tablet'){
+        flex-direction: column;
+    }
+
+    @include media('<phone'){
+        padding: 36px 0;
+    }
+
+    .title-sec {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 45px;
+
+        @include media('<phone'){
+            margin-bottom: 28px;
+        }
+
+        &:hover{
+
+            h2{
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                transform: scale(1.2);
+            }
+        }
+        
+        a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        h2 {
+            position: relative;
+            color: $blue;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+
+            @include media('<tablet'){
+                font-size: 30px;
+            }
+
+            @include media('<phone'){
+                font-size: 26px;
+            }
+
+            &::before {
+                content:'';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $blue;
+                opacity: 0;
+                transition: $all_03;
+            }
+        }
+
+        img{
+            transition: $all_03;
+        }
+    }
+}
+
+/* --------------------lastnews-section-------------------- */
+
+.lastnews-section {
+    padding-bottom: 56px;
+    border-bottom: 1.5px solid #DEDEDE;
+
+    .container {
+        padding: 0px 20px 0 30px;
+
+        @include media('<tablet'){
+            padding: 0 30px;
+        }
+    }
+
+    .block {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        column-gap: 40px;
+        row-gap: 20px;
+
+        @include media('<widescreen'){
+            column-gap: 20px;
+        }
+    }
+
+    .item {
+        position: relative;
+        padding-bottom: 20px;
+        border-bottom: 1.5px solid #DEDEDE;
+
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        &:nth-child(4) {
+            grid-column: span 2;
+            grid-row: span 3;
+            border: none;
+
+            @include media('<widescreen'){
+                grid-column: span 1;
+                grid-row: span 1;
+                order: -1;
+                border-bottom: 1.5px solid #DEDEDE;
+            }
+
+            .img-wrap {
+                height: 430px;
+
+                @include media('<widescreen'){
+                    height: 200px;
+                }
+
+                @include media('<phone'){
+                    height: 400px;
+                }
+            }
+        }
+
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7) {
+
+            .img-wrap {
+                display: none;
+            }
+        }
+
+        &:nth-child(7) {
+            border: none;
+        }
+    }
+
+    .link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .img-wrap {
+        position: relative;
+        height: 200px;
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: $all_03;
+        }
+    }
+
+    .cat-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        @include media('<phone'){
+            margin-bottom: 15px;
+        }
+    }
+
+    .cat {
+        position: relative;
+        color: $blue;
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration: uppercase;
+        z-index: 2;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .date {
+        color: $gray_2; 
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .title {
+        font-weight: 700;
+        line-height: 1.15;
+        color: $black_2;
+        margin-bottom: 5px;
+    }
+
+    .description {
+        color: $gray_3;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+}
+
+
+/* ---------------------general-section--------------------- */
+
+.general-section {
+    min-width: 290px;
+}

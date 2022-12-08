@@ -6,6 +6,8 @@ $black:   #000;
 $black_2: #282828;
 $white:   #fff;
 $gray:    #ccc;
+$gray_2:  #A8A8A8;
+$gray_3:  #737373;
 $gold:    #FFC224;
 $blue:    #185ADB;
 
@@ -47,10 +49,10 @@ $placeholder-color: $gray !default;
 // Headers
 $h1-font-size: 40px;
 $h2-font-size: 36px;
-$h3-font-size: 20px;
-$h4-font-size: 16px;
-$h5-font-size: 15px;
-$h6-font-size: 14px;
+$h3-font-size: 16px;
+$h4-font-size: 15px;
+$h5-font-size: 14px;
+$h6-font-size: 12px;
 
 $headings-font-family: $base-font-sans-serif;
 $headings-color: inherit !default;
