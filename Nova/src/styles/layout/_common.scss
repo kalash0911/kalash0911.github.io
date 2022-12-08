@@ -399,6 +399,7 @@
 /* --------------------lastnews-section-------------------- */
 
 .lastnews-section {
+    position: relative;
     padding-bottom: 56px;
     border-bottom: 1.5px solid #DEDEDE;
 
@@ -430,6 +431,10 @@
 
             img {
                 transform: scale(1.1);
+            }
+
+            .title {
+                text-decoration: underline;
             }
         }
 
@@ -540,11 +545,132 @@
         font-weight: 400;
         line-height: 1.2;
     }
+
+    .gre {
+        position: absolute;
+        top: 20%;
+        left: -155px;
+        z-index: -1;
+    }
+
+    .gre2 {
+        position: absolute;
+        bottom: -100px;
+        left: 60%;
+        transform: translate(-50%) rotate(65deg);
+        z-index: -1;
+    }
 }
 
 
 /* ---------------------general-section--------------------- */
 
 .general-section {
-    min-width: 290px;
+    min-width: 340px;
+    max-width: 340px;
+
+    @include media('<tablet'){
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 0 30px 0 20px;
+
+        @include media('<tablet'){
+            padding: 36px 30px;
+        }
+    }
+
+    .block {
+        background: rgba(255, 194, 36, 0.22);
+        border: 1.5px solid $gold;
+        padding: 36px;
+
+        @include media('<phone'){
+            padding: 36px 20px;
+        }
+    }
+
+    .title {
+        margin-bottom: 10px;
+        color: $blue;
+        font-size: 30px;
+        font-weight: 700;
+
+        @include media('<phone'){
+            margin-bottom: 4px;
+            font-size: 26px;
+        }
+    }
+
+    .item {
+        position: relative;
+        padding: 35px 0 20px 0;
+        border-bottom: 1.5px solid $gold;
+
+        @include media('<phone'){
+            display: none;
+            padding: 24px 0;
+        }
+
+        &:last-child {
+            border: none;
+            padding-bottom: 0;
+        }
+
+        &:nth-child(-n+5) {
+            display: block;
+        }
+
+        &:nth-child(5) {
+
+            @include media('<phone'){
+                border: none;
+                padding-bottom: 0;
+            }
+        }
+
+        &:hover {
+
+            .item-title {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cut {
+        position: relative;
+        display: block;
+        color: #626262;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        transition: $all_03;
+        z-index: 1;
+
+        @include media('<phone'){
+            margin-bottom: 10px;
+        }
+
+        &:hover{
+            color: $blue;
+        }
+    }
+
+    .item-title {
+        color: $black_2;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.15;
+    }
 }
