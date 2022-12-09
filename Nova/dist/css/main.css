@@ -1133,16 +1133,20 @@ input[type='submit'] {
     .content .title-sec img {
       transition: all 0.3s ease 0s; }
 
+.col .container {
+  padding: 0px 20px 0 30px; }
+  @media (max-width: 767px) {
+    .col .container {
+      padding: 0 30px; } }
+
 /* --------------------lastnews-section-------------------- */
 .lastnews-section {
   position: relative;
   padding-bottom: 56px;
   border-bottom: 1.5px solid #DEDEDE; }
-  .lastnews-section .container {
-    padding: 0px 20px 0 30px; }
-    @media (max-width: 767px) {
-      .lastnews-section .container {
-        padding: 0 30px; } }
+  @media (max-width: 479px) {
+    .lastnews-section {
+      padding-bottom: 36px; } }
   .lastnews-section .block {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1186,7 +1190,8 @@ input[type='submit'] {
     .lastnews-section .item:nth-child(5) .img-wrap, .lastnews-section .item:nth-child(6) .img-wrap, .lastnews-section .item:nth-child(7) .img-wrap {
       display: none; }
     .lastnews-section .item:nth-child(7) {
-      border: none; }
+      border: none;
+      padding: 0; }
   .lastnews-section .link {
     position: absolute;
     top: 0;
@@ -1253,6 +1258,109 @@ input[type='submit'] {
     -webkit-transform: translate(-50%) rotate(65deg);
     transform: translate(-50%) rotate(65deg);
     z-index: -1; }
+
+/* -----------------------view-section---------------------- */
+.view-section {
+  margin: 56px 0; }
+  @media (max-width: 479px) {
+    .view-section {
+      margin: 36px 0; } }
+  @media (min-width: 768px) {
+    .view-section .container {
+      padding-right: 0; } }
+  .view-section .wrap {
+    padding: 56px 40px;
+    background-color: #185ADB; }
+    @media (max-width: 479px) {
+      .view-section .wrap {
+        padding: 36px 20px; } }
+  .view-section .title-sec h2 {
+    color: #fff; }
+    .view-section .title-sec h2::before {
+      background-color: #fff; }
+  .view-section .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .view-section .item {
+    position: relative;
+    width: 30%;
+    padding-bottom: 20px; }
+    @media (max-width: 1199px) {
+      .view-section .item {
+        width: 47%; } }
+    @media (max-width: 959px) {
+      .view-section .item {
+        width: 100%; } }
+    @media (max-width: 767px) {
+      .view-section .item {
+        width: 47%; } }
+    @media (max-width: 579px) {
+      .view-section .item {
+        width: 100%; } }
+    .view-section .item:hover img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+    @media (max-width: 1199px) {
+      .view-section .item:last-child {
+        padding: 0; } }
+  .view-section .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+  .view-section .img-wrap {
+    position: relative;
+    height: 200px;
+    margin-bottom: 20px;
+    overflow: hidden; }
+    .view-section .img-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      transition: all 0.3s ease 0s; }
+  .view-section .cat-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 20px; }
+    @media (max-width: 479px) {
+      .view-section .cat-wrap {
+        margin-bottom: 15px; } }
+  .view-section .cat {
+    position: relative;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    -webkit-text-decoration: uppercase;
+    text-decoration: uppercase;
+    z-index: 2; }
+    .view-section .cat:hover {
+      text-decoration: underline; }
+  .view-section .date {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: 400; }
+  .view-section .title {
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 5px; }
+  .view-section .description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2; }
 
 /* ---------------------general-section--------------------- */
 .general-section {
