@@ -717,6 +717,80 @@
     }
 }
 
+/* ------------------------video-section-------------------- */
+
+.video-section {
+    padding: 32px 0;
+    border-top: 1.5px solid #DEDEDE;
+    
+    .item {
+        display: flex;
+        align-items: center;
+        padding: 24px 0;
+        border-bottom: 1.5px solid #DEDEDE;
+        
+        @include media('<desktop'){
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .video-wrap {
+        position: relative;
+        width: 100%;
+        height: 240px;
+        max-width: 400px;
+        min-width: 300px;
+
+        @include media('<desktop'){
+            margin-bottom: 30px;
+            max-width: 100%;
+            min-width: 0;
+            height: 315px;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .text {
+        margin-left: 40px;
+        width: 100%;
+        max-width: 510px;
+
+        @include media('<desktop'){
+            margin: 0;
+            max-width: 100%;
+        }
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: $black_2;
+        margin-bottom: 20px;
+
+        @include media('<phone'){
+            font-size: 18px;
+        }
+    }
+
+    .description {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: $gray_3;
+    }
+}
+
 /* ---------------------general-section--------------------- */
 
 .general-section {
