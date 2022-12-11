@@ -1,0 +1,155 @@
+#footer {
+    border-top: 1.5px solid #DEDEDE;
+    padding: 80px 0 28px 0;
+
+    @include media('<tablet'){
+        padding: 40px 0 12px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 0 30px;
+
+        @include media('<widescreen'){
+            flex-wrap: wrap;
+        }
+
+        @include media('<tablet'){
+            align-items: center;
+            flex-direction: column;
+            padding: 0 30px;
+        }
+    }
+
+    .logo {
+        width: 203px;
+
+        @include media('<widescreen'){
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    .block {
+        max-width: 290px;
+        margin: 0 30px;
+
+        @include media('<tablet'){
+            margin: 0;
+        }
+    }
+
+    .wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 28px;
+
+        @include media('<tablet'){
+            text-align: center;
+        }
+    }
+
+    .title {
+        color: $blue;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 18px;
+
+        @include media('<phone'){
+            font-size: 20px;
+        }
+    }
+
+    .item-wrap {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .item {
+        padding: 0;
+        margin-bottom: 14px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .link, .cont-link, .address {
+        color: $black_2;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        transition: all .1s ease 0s;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+
+    .link, .cont-link {
+
+        svg {
+            transition: all .1s ease 0s;
+        }
+
+        &:hover{
+            color: $blue;
+            text-shadow: $blue 0 0 1px;
+
+            svg {
+                fill: $blue;
+            }
+        }
+    }
+
+    .cont-link, .address  {
+        display: flex;
+        margin-bottom: 23px;
+        text-transform: none;
+        font-style: normal;
+
+        svg {
+            min-width: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    .address {
+
+        @include media('<tablet'){
+            text-align: left;
+        }
+    }
+
+    .socials {
+        display: flex;
+
+        @include media('<tablet'){
+            justify-content: space-between;
+        }
+    }
+
+    .soc-link {
+        margin-right: 14px;
+
+        svg {
+            transition: $all_03;
+        }
+
+        &:hover{
+
+            svg {
+                fill: $blue;
+            }
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
