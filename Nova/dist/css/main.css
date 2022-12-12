@@ -1729,6 +1729,101 @@ input[type='submit'] {
 .partners-section .main-row .col {
   text-align: center; }
 
+/* -------------------------contact-section------------------- */
+.contact-section #myInput {
+  display: none; }
+
+.contact-section .contacts {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.contact-section .cont-link {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  color: #282828;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease 0s;
+  margin: 0 0 30px 0; }
+  @media (max-width: 479px) {
+    .contact-section .cont-link {
+      margin: 0 0 20px 0; } }
+  .contact-section .cont-link svg {
+    min-width: 20px;
+    margin-right: 10px;
+    transition: all 0.3s ease 0s; }
+  .contact-section .cont-link:hover {
+    color: #185ADB; }
+    .contact-section .cont-link:hover svg {
+      fill: #185ADB; }
+
+.contact-section .map {
+  padding-bottom: 30px;
+  border-bottom: 1.5px solid #DEDEDE; }
+  .contact-section .map iframe {
+    width: 100%;
+    height: 306px; }
+
+.contact-section .socials {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 30px; }
+  @media (max-width: 799px) {
+    .contact-section .socials {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+
+.contact-section .link {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 19%;
+  border: 1.5px solid #185ADB;
+  color: #185ADB;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  background-color: transparent;
+  transition: all 0.3s ease 0s; }
+  @media (max-width: 799px) {
+    .contact-section .link {
+      max-width: 48%;
+      margin-bottom: 30px; } }
+  .contact-section .link:hover {
+    color: #fff;
+    background-color: #185ADB; }
+    .contact-section .link:hover svg {
+      fill: #fff; }
+  .contact-section .link svg {
+    margin-right: 13px;
+    fill: #185ADB;
+    transition: all 0.3s ease 0s; }
+
+@media (max-width: 799px) {
+  .contact-section .spec {
+    max-width: 100%;
+    margin: 0; } }
+
+.contact-section .spec:hover svg {
+  fill: #fff;
+  stroke: #185ADB; }
+
+.contact-section .spec svg {
+  fill: #185ADB;
+  stroke: #fff; }
+
 #footer {
   border-top: 1.5px solid #DEDEDE;
   padding: 80px 0 28px 0; }
