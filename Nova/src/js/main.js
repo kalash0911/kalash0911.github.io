@@ -10,6 +10,17 @@ if (burger) {
   });
 };
 
+const control = document.querySelector(".control");
+const drop = document.querySelector(".drop");
+
+if (window.innerWidth < 800) {
+  if (control) {
+    control.addEventListener("click", function (e) {
+      drop.classList.toggle("drop-active");
+    });
+  }
+}
+
 // for copy link
 
 function myFunction() {

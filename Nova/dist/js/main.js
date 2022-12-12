@@ -11,7 +11,18 @@ if (burger) {
   });
 }
 
-; // for copy link
+;
+var control = document.querySelector(".control");
+var drop = document.querySelector(".drop");
+
+if (window.innerWidth < 800) {
+  if (control) {
+    control.addEventListener("click", function (e) {
+      drop.classList.toggle("drop-active");
+    });
+  }
+} // for copy link
+
 
 function myFunction() {
   var copyText = document.getElementById("myInput");

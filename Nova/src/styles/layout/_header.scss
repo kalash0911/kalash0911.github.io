@@ -172,29 +172,38 @@
 
     .drop {
 
-        &:hover{
+        @include media('>=tablet_x'){
 
-            .link {
-                color: $gold;
-
-                &::after {
-                    transform: rotate(0deg);
+            &:hover{
+    
+                .link {
+                    color: $gold;
+    
+                    &::after {
+                        transform: rotate(0deg);
+                    }
                 }
-            }
-
-            .sub-menu{
-                opacity: 1;
-                visibility: visible;
-                pointer-events: all;
-
-                @include media('<tablet_x'){
-                    max-height: 500px;
+    
+                .sub-menu{
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: all;
+    
+                    @include media('<tablet_x'){
+                        max-height: 500px;
+                    }
                 }
             }
         }
 
         .link {
             position: relative;
+
+            &:hover{
+                @include media('<tablet_x'){
+                    color: $white;
+                }
+            }
 
             &::after {
                 content:'\276E';
@@ -212,6 +221,30 @@
                     right: -25px;
                 }
             }
+        }
+    }
+
+    .drop-active {
+        
+        @include media('<tablet_x'){
+
+            .link {
+                color: $gold;
+
+                &::after {
+                    transform: rotate(0deg);
+                }
+            }
+
+            .sub-menu{
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+
+                @include media('<tablet_x'){
+                    max-height: 500px;
+                }
+            }  
         }
     }
     
