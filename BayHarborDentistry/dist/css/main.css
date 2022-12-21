@@ -387,13 +387,13 @@ th {
   font-family: "Gilroy";
   src: url("../fonts/gilroy-medium.ttf");
   font-style: normal;
-  font-weight: 400; }
+  font-weight: 500; }
 
 @font-face {
   font-family: "Gilroy";
   src: url("../fonts/gilroy-regular.ttf");
   font-style: regular;
-  font-weight: 500; }
+  font-weight: 400; }
 
 @font-face {
   font-family: "Gilroy";
@@ -827,22 +827,7 @@ input[type='submit'] {
     text-align: center;
     margin: 0 auto;
     /* Только если меньше контейнера */
-    margin-bottom: 25px;
-    /*    &::before{
-            content: '';
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            height: 2px;
-            background-color: $gold;
-
-            @include media ("<phone") {
-                width: 100%;
-                left: 0;
-            }
-
-        } */ }
+    margin-bottom: 25px; }
     @media (max-width: 1280px) {
       .emegrency_dental .emegrency_dental_title {
         margin-bottom: calc(35px + -10 * ((100vw - calc(375px)) / 905)); } }
@@ -915,10 +900,6 @@ input[type='submit'] {
   padding-top: 160px;
   /* Только если меньше контейнера */
   padding-bottom: 160px;
-  /* Только если меньше контейнера */
-  margin-top: 80px;
-  /* Только если меньше контейнера */
-  margin-bottom: 80px;
   background-color: #F3F2ED; }
   @media (max-width: 1280px) {
     .for_you {
@@ -926,12 +907,6 @@ input[type='submit'] {
   @media (max-width: 1280px) {
     .for_you {
       padding-bottom: calc(80px + 80 * ((100vw - calc(375px)) / 905)); } }
-  @media (max-width: 1280px) {
-    .for_you {
-      margin-top: calc(40px + 40 * ((100vw - calc(375px)) / 905)); } }
-  @media (max-width: 1280px) {
-    .for_you {
-      margin-bottom: calc(40px + 40 * ((100vw - calc(375px)) / 905)); } }
   .for_you .for_you_title {
     margin-bottom: 50px;
     position: relative; }
@@ -963,7 +938,8 @@ input[type='submit'] {
     margin-right: 30px; }
     @media (max-width: 1023px) {
       .for_you .for_you_text {
-        width: 100%; } }
+        width: 100%;
+        margin: 0; } }
   .for_you .for_you_img {
     position: relative;
     -ms-flex: 0 0 49%;
@@ -1052,11 +1028,22 @@ input[type='submit'] {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin-bottom: 50px; }
+    @media (max-width: 1023px) {
+      .changes .changes_text {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
   .changes .changes_title {
     margin-right: 25px; }
+    @media (max-width: 1023px) {
+      .changes .changes_title {
+        margin: 0 0 30px 0; } }
   .changes .changes_description {
     text-align: right;
     width: 66%; }
+    @media (max-width: 1023px) {
+      .changes .changes_description {
+        text-align: left;
+        width: 100%; } }
   .changes .changes_subtitle {
     font-weight: 600;
     font-size: 20px;
@@ -1073,15 +1060,33 @@ input[type='submit'] {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .changes .changes_img {
+        -ms-flex-pack: center;
+        justify-content: center; } }
   .changes .changes_img_before,
   .changes .changes_img_after {
     position: relative;
     width: 48%;
+    height: 400px;
+    /* Только если меньше контейнера */
     height: 400px; }
+    @media (max-width: 1280px) {
+      .changes .changes_img_before,
+      .changes .changes_img_after {
+        height: calc(260px + 140 * ((100vw - calc(375px)) / 905)); } }
     .changes .changes_img_before:hover .blur,
     .changes .changes_img_after:hover .blur {
       visibility: hidden;
       opacity: 0; }
+  @media (max-width: 1023px) {
+    .changes .changes_img_before img {
+      -o-object-position: 20%;
+      object-position: 20%; } }
+  @media (max-width: 1023px) {
+    .changes .changes_img_after img {
+      -o-object-position: 80%;
+      object-position: 80%; } }
   .changes .tip {
     position: absolute;
     bottom: 25px;
@@ -1120,6 +1125,9 @@ input[type='submit'] {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all .3s ease; }
+    @media (max-width: 1023px) {
+      .changes .blur {
+        display: none; } }
   .changes .blur_img {
     width: 50px;
     height: 50px;
@@ -1215,7 +1223,8 @@ input[type='submit'] {
   /* Только если меньше контейнера */
   padding-top: 80px;
   /* Только если меньше контейнера */
-  padding-bottom: 80px; }
+  padding-bottom: 80px;
+  overflow: hidden; }
   @media (max-width: 1280px) {
     .serving {
       padding-top: calc(40px + 40 * ((100vw - calc(375px)) / 905)); } }
@@ -1304,8 +1313,10 @@ input[type='submit'] {
       z-index: -1; }
       @media (max-width: 1023px) {
         .serving .serving_body_text::before {
+          top: -20%;
           left: -5%;
-          width: 110%; } }
+          width: 110%;
+          height: 140%; } }
   .serving .number {
     font-weight: 300;
     /* Только если меньше контейнера */
@@ -1352,12 +1363,27 @@ input[type='submit'] {
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .serving_2 .serving_content {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
   .serving_2 .serving_body_text {
     width: 43%; }
+    @media (max-width: 1023px) {
+      .serving_2 .serving_body_text {
+        width: 100%; } }
   .serving_2 .serving_img {
     position: relative;
     -ms-flex: 0 0 51%;
     flex: 0 0 51%; }
+    @media (max-width: 1023px) {
+      .serving_2 .serving_img {
+        /* Только если меньше контейнера */
+        min-height: 315px;
+        margin-bottom: 35px; } }
+  @media (max-width: 1023px) and (max-width: 1280px) {
+    .serving_2 .serving_img {
+      min-height: calc(260px + 55 * ((100vw - calc(375px)) / 905)); } }
   .serving_2 .number {
     font-weight: 300;
     /* Только если меньше контейнера */

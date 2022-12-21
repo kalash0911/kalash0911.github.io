@@ -14,22 +14,6 @@
         text-align: center;
         margin: 0 auto;
         @include adaptiv-vaule("margin-bottom", 25, 35, 1);
-
-        /*    &::before{
-            content: '';
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            height: 2px;
-            background-color: $gold;
-
-            @include media ("<phone") {
-                width: 100%;
-                left: 0;
-            }
-
-        } */
     }
 
     .emegrency_dental_description {
@@ -90,8 +74,6 @@
 .for_you {
     @include adaptiv-vaule("padding-top", 160, 80, 1);
     @include adaptiv-vaule("padding-bottom", 160, 80, 1);
-    @include adaptiv-vaule("margin-top", 80, 40, 1);
-    @include adaptiv-vaule("margin-bottom", 80, 40, 1);
     background-color: $white_2;
 
     .for_you_title {
@@ -133,6 +115,7 @@
 
         @include media ("<desktop") {
             width: 100%;
+            margin: 0;
         }
     }
 
@@ -214,15 +197,28 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 50px;
+
+        @include media ("<desktop") {
+            flex-direction: column;
+        }
     }
 
     .changes_title {
         margin-right: 25px;
+
+        @include media ("<desktop") {
+            margin: 0 0 30px 0;
+        }
     }
 
     .changes_description {
         text-align: right;
         width: 66%;
+
+        @include media ("<desktop") {
+            text-align: left;
+            width: 100%;
+        }
     }
 
     .changes_subtitle {
@@ -242,6 +238,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include media ("<desktop") {
+            justify-content: center;
+        }
     }
 
     .changes_img_before,
@@ -249,11 +249,29 @@
         position: relative;
         width: 48%;
         height: 400px;
+        @include adaptiv-vaule("height", 400, 260, 1);
 
         &:hover {
             .blur {
                 visibility: hidden;
                 opacity: 0;
+            }
+        }
+    }
+
+    .changes_img_before {
+
+        @include media ("<desktop") {
+            img {
+               object-position: 20%;
+            }
+        }
+    }
+    .changes_img_after {
+
+        @include media ("<desktop") {
+            img {
+                object-position: 80%;
             }
         }
     }
@@ -291,6 +309,10 @@
         background-color: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
         transition: all .3s ease;
+
+        @include media ("<desktop") {
+            display: none;
+        }
     }
 
     .blur_img {
@@ -392,6 +414,7 @@
 .serving {
     @include adaptiv-vaule("padding-top", 80, 40, 1);
     @include adaptiv-vaule("padding-bottom", 80, 40, 1);
+    overflow: hidden;
 
     .serving_content {
         border-top: 2px solid $gold;
@@ -476,8 +499,10 @@
             z-index: -1;
 
             @include media ("<desktop") {
+                top: -20%;
                 left: -5%;
                 width: 110%;
+                height: 140%;
             }
         }
     }
@@ -513,15 +538,28 @@
     .serving_content {
         display: flex;
         justify-content: space-between;
+
+        @include media ("<desktop") {
+            flex-direction: column-reverse;
+        }
     }
 
     .serving_body_text {
         width: 43%;
+
+        @include media ("<desktop") {
+            width: 100%;
+        }
     }
 
     .serving_img {
         position: relative;
         flex: 0 0 51%;
+
+        @include media ("<desktop") {
+            @include adaptiv-vaule("min-height", 315, 260, 1);
+            margin-bottom: 35px;
+        }
     }
 
     .number {
@@ -551,7 +589,6 @@
 .novelties {
     @include adaptiv-vaule("padding-top", 80, 40, 1);
     @include adaptiv-vaule("padding-bottom", 80, 40, 1);
-
     text-align: center;
 
     .novelties_title {
@@ -650,8 +687,8 @@
     }
 }
 
-.reverse{
-    .novelties_body_img{
+.reverse {
+    .novelties_body_img {
         order: 2;
 
         @include media ("<desktop") {
