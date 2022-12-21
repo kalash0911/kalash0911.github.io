@@ -7,8 +7,11 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .h {
-	margin: 0 0 0.5em;
+	margin: 0;
+	font-family: 'Queensila';
 	color: $headings-color;
+	text-transform: uppercase;
+	color:$blue;
 }
 
 h1, .h1 {
@@ -16,11 +19,15 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: $h2-font-size;
+	@include adaptiv-vaule("font-size", 80, 42, 1);
+	line-height: 85 / 80 * 100%;
+	font-weight: 400;
 }
 
 h3, .h3 {
-	font-size: $h3-font-size;
+	@include adaptiv-vaule("font-size", 48, 32, 1);
+	line-height: 60 / 48 * 100%;
+	font-weight: 400;
 }
 
 h4, .h4 {
@@ -36,12 +43,25 @@ h6, .h6 {
 }
 
 p {
-	margin: 0 0 1em;
+	margin: 0;
+	font-family: 'Gilroy';
+	color: $gray_2;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26 / 16 * 100%;
+}
+
+ul{
+	margin: 0;
+	li{
+		font-family: 'Gilroy';
+	}
 }
 
 a {
 	color: $base-link-color;
 	text-decoration: none;
+	font-family: 'Gilroy';
 	transition: color .3s ease;
 	&:hover,
 	&:focus {

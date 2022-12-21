@@ -178,7 +178,7 @@
         font-weight: 400;
         @include adaptiv-vaule("font-size", 24, 18, 1);
         text-transform: uppercase;
-        color: $blue_2;
+        color: $gray_2;
         margin: 0;
 
         @include media('<phone'){
