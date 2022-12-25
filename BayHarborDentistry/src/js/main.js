@@ -38,11 +38,16 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     );
 }
 
-destroySlidersOnResize(".me-slider", 960, {
-    spaceBetween: 20,
+destroySlidersOnResize(".main-slider", 99999, {
+  spaceBetween: 30,
+  effect: "fade",
+  mousewheel: true,
+  autoHeight: true,
+  speed: 700,
   
-    pagination: {
-      el: ".swiper-pagination",
-    },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 });
   

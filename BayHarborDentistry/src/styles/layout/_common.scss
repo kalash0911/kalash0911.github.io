@@ -63,6 +63,56 @@
     }
 }
 
+.line-btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: $gilroy;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: $all_03;
+
+    &:hover{
+        color: $gold;
+
+        img {
+            transform: translate(10px);
+        }
+    }
+
+    img{
+        padding-left: 8px;
+        transition: $all_03;
+    }
+}
+
+.stiker {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 2px solid $gold;
+    padding: 40px;
+    transform: rotate(-90deg);
+    font-family: $gilroy;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include media('<tablet_max'){
+        width: 180px;
+        height: 180px;
+    }
+
+    @include media('<phone'){
+        font-size: 14px;
+        padding: 30px;
+    }
+}
+
 /* --------------------------main-section----------------------- */
 
 .main-section {
@@ -213,5 +263,144 @@
         height: 100%;
         object-fit: cover;
         cursor: pointer;
+    }
+}
+
+/* ----------------------------veneers-section------------------------ */
+
+.veneers-section {
+    position: relative;
+    padding: 160px 0;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .stiker {
+        top: 50%;
+        right: -170px;
+        transform: translateY(-50%) rotate(-90deg);
+
+        @include media('<tablet_max'){
+            right: -100px;
+            @include adaptiv-vaule("top", 500, 175, 1);
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+/* ----------------------------main-slider------------------------ */
+
+.main-slider {
+
+    .swiper-wrapper {
+        padding-bottom: 30px;
+    }
+
+    .slide {
+        opacity: 0 !important;
+        z-index: -1 !important;
+    }
+
+    .swiper-slide-active {
+        opacity: 1 !important;
+        z-index: 1 !important;
+    }
+
+    .title {
+        display: inline-block;
+        border-top: 1px solid $gold;
+        padding: 18px 0 24px 0;
+        color: $blue;
+        @include adaptiv-vaule("font-size", 80, 42, 1);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include media('<phone'){
+            padding: 14px 0 36px 0;
+        }
+    }
+
+    .content {
+        display: flex;
+        padding-right: 75px;
+
+        @include media('<tablet_max'){
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+
+    .img-cont {
+
+        @include media('<tablet_max'){
+            padding-right: 80px;
+            margin-bottom: 36px;
+        }
+    }
+
+    .text {
+        max-width: 300px;
+        min-width: 300px;
+        margin: 0 0 56px 42px;
+
+        @include media('<tablet_max'){
+            max-width: 100%;
+            min-width: 0;
+            margin: 0 0 56px 0;
+        }
+    }
+
+    .description {
+        margin-bottom: 20px;
+        font-family: $gilroy;
+        color: $gray_2;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.6;
+
+        @include media('<tablet_max'){
+            margin-bottom: 36px;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+
+    #pagination {
+        display: inline-flex;
+        justify-content: flex-end;
+        right: 0;
+        bottom: 50px;
+        padding-right: 100px;
+
+        @include media('<laptop_min'){
+            justify-content: center;
+            bottom: 0;
+            padding: 0;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: 83px;
+        height: 3px;
+        background-color: $gold;
+        border-radius: 0;
+        margin-left: 20px !important;
+        opacity: .3;
+
+        @include media('<phone'){
+            margin-left: 10px !important;
+        }
+
+        &:first-child {
+            margin-left: 0 !important;
+        }
+
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
     }
 }
