@@ -94,13 +94,14 @@
     border-radius: 50%;
     border: 2px solid $gold;
     padding: 40px;
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
     font-family: $gilroy;
     color: $blue;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
+    transition: $all_1;
 
     @include media('<tablet_max'){
         width: 180px;
@@ -113,6 +114,60 @@
     }
 }
 
+.show {
+    .stiker {
+        transform: rotate(-90deg);
+    }
+}
+
+.title-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 18px 0 24px 0;
+
+    @include media('<phone'){
+        padding: 14px 0 36px 0;
+    }
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: $gold;
+        transition: $all_1;
+    }
+
+    .title {
+        color: $blue;
+        @include adaptiv-vaule("font-size", 80, 42, 1);
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: all .7s ease .7s;
+        transform: translateY(-100px);
+    }
+}
+
+.title-wrap.show{
+
+    &::before {
+        width: 100%;
+    }
+
+    .title {
+        transform: translateY(0);
+    }
+}
+
+.animate__animated {
+    --animate-duration: 1.5s;
+}
+
+.animate__fadeIn {
+    --animate-duration: 3s;
+}
 /* --------------------------main-section----------------------- */
 
 .main-section {
@@ -279,11 +334,54 @@
     .stiker {
         top: 50%;
         right: -170px;
-        transform: translateY(-50%) rotate(-90deg);
+        transform: translateY(-50%) rotate(0deg);
 
         @include media('<tablet_max'){
             right: -100px;
             @include adaptiv-vaule("top", 500, 175, 1);
+            transform: rotate(50deg);
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .bg {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 93%;
+        height: 80%;
+        background-color: #F3F2ED;
+        z-index: -1;
+        overflow: hidden;
+
+        @include media('<tablet_max'){
+            height: 90%;
+        }
+
+        img {
+            position: absolute;
+            right: 0;
+            bottom: -60px;
+
+            @include media('<phone'){
+                width: 98px;
+                height: 90px;
+                right: 10px;
+                bottom: 0px;
+            }
+        }
+    }
+}
+
+.show {
+
+    .stiker {
+        transform: translateY(-50%) rotate(-90deg);
+
+        @include media('<tablet_max'){
             transform: rotate(-90deg);
         }
     }
@@ -305,20 +403,6 @@
     .swiper-slide-active {
         opacity: 1 !important;
         z-index: 1 !important;
-    }
-
-    .title {
-        display: inline-block;
-        border-top: 1px solid $gold;
-        padding: 18px 0 24px 0;
-        color: $blue;
-        @include adaptiv-vaule("font-size", 80, 42, 1);
-        font-weight: 400;
-        text-transform: uppercase;
-
-        @include media('<phone'){
-            padding: 14px 0 36px 0;
-        }
     }
 
     .content {
@@ -347,7 +431,7 @@
         @include media('<tablet_max'){
             max-width: 100%;
             min-width: 0;
-            margin: 0 0 56px 0;
+            margin: 0 6% 56px 0;
         }
     }
 
@@ -389,6 +473,7 @@
         border-radius: 0;
         margin-left: 20px !important;
         opacity: .3;
+        transition: $all_05;
 
         @include media('<phone'){
             margin-left: 10px !important;

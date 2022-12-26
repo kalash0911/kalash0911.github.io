@@ -7,6 +7,8 @@
     <title>Bay Harbor Dentistry</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -30,18 +32,23 @@
             <section class="video-section">
                 <video controls autobuffer src="./files/video.mp4" poster="./images/main-page/video-prev.jpg"></video>
             </section>
-            <section class="veneers-section">
+            <section class="veneers-section anim">
                 <span class="stiker">Scroll</span>
                 <div class="container">
+                    <div class="bg">
+                        <img src="./images/icons/gerb.svg" alt="icon">
+                    </div>
                     <div class="main-slider swiper">
                         <div class="swiper-wrapper">
                             <div class="slide swiper-slide">
-                                <h2 class="title">Veneers</h2>
+                                <div class="title-wrap anim">
+                                    <h2 class="title">Veneers</h2>
+                                </div>
                                 <div class="content">
-                                    <div class="img-cont">
+                                    <div class="img-cont wow animate__animated animate__fadeInLeft">
                                         <img class="img" src="./images/main-page/1.jpg" alt="img">
                                     </div>
-                                    <div class="text">
+                                    <div class="text wow animate__animated animate__fadeIn">
                                         <p class="description">
                                             We can convert that unattractive smile to a beautiful one you love to show off. Whether the problem is broken or missing teeth, discolored teeth or a crooked smile, we can quickly get you started on the road to a beautiful, even and healthier smile.
                                         </p>
@@ -53,7 +60,9 @@
                                 </div>
                             </div>
                             <div class="slide swiper-slide">
-                                <h2 class="title">Implants</h2>
+                                <div class="title-wrap show">
+                                    <h2 class="title">Implants</h2>
+                                </div>
                                 <div class="content">
                                     <div class="img-cont">
                                         <img class="img" src="./images/main-page/2.jpg" alt="img">
@@ -70,7 +79,9 @@
                                 </div>
                             </div>
                             <div class="slide swiper-slide">
-                                <h2 class="title">Invise Line</h2>
+                                <div class="title-wrap show">
+                                    <h2 class="title">Invise Line</h2>
+                                </div>
                                 <div class="content">
                                     <div class="img-cont">
                                         <img class="img" src="./images/main-page/3.jpg" alt="img">
@@ -87,7 +98,9 @@
                                 </div>
                             </div>
                             <div class="slide swiper-slide">
-                                <h2 class="title">Bad breath</h2>
+                                <div class="title-wrap show">
+                                    <h2 class="title">Bad breath</h2>
+                                </div>
                                 <div class="content">
                                     <div class="img-cont">
                                         <img class="img" src="./images/main-page/4.jpg" alt="img">

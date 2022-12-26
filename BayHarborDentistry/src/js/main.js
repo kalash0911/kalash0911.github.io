@@ -1,3 +1,5 @@
+new WOW().init();
+
 // btn logic
 
 const btn = document.querySelector('.btn');
@@ -8,6 +10,23 @@ btn.onmousemove = function(e){
                       
   btn.style.setProperty('--x', x + 'px');
   btn.style.setProperty('--y', y + 'px');
+}
+
+// Animation
+
+function onEntry(entry) {
+  entry.forEach(change => {
+      if (change.isIntersecting) {
+      change.target.classList.add('show');
+      }
+  });
+}
+
+let options = { threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.anim');
+for (let elm of elements) {
+  observer.observe(elm);
 }
 
 
