@@ -14,6 +14,10 @@ background-color: #FDFAF8;
 }
 
 .main-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -130px;
     display: inline-flex;
     width: 260px;
     height: 260px;
@@ -25,10 +29,13 @@ background-color: #FDFAF8;
     font-size: 16px;
     text-align: center;
     color: $blue;
+    text-transform: uppercase;
     overflow: hidden;
     transition: color 2s;
+    z-index: 1;
 
     @include media('<phone'){
+        bottom: -90px;
         width: 180px;
         height: 180px;
         padding: 30px;
@@ -39,13 +46,13 @@ background-color: #FDFAF8;
         content:'';
         position: absolute;
         top: var(--y);
-        left: var(--x);
-        transform: translate(-50%, -50%);
-        width: 0;
-        height: 0;
+        left: calc(var(--x) + 130px);
+        transform: translate(-50%, -50%) scale(0);
+        width: 260px; 
+        height: 260px;
         border-radius: 50%;
         background-color: $gold;
-        transition: width .7s, height .7s;
+        transition: all .7s ease;
     }
 
     &:hover{
@@ -54,8 +61,7 @@ background-color: #FDFAF8;
 
         &::before{
             border: 2px solid $gold;
-            width: 1000px;
-            height: 1000px;
+            transform: translate(-50%, -50%) scale(5);
         }
     }
 
@@ -389,18 +395,6 @@ background-color: #FDFAF8;
 
         @include media('<phone'){
             text-align: left;
-        }
-    }
-
-    .main-btn {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        bottom: -130px;
-        z-index: 1;
-
-        @include media('<phone'){
-            bottom: -90px;
         }
     }
 }
