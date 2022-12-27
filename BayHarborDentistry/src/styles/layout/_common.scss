@@ -73,6 +73,10 @@
     text-transform: uppercase;
     transition: $all_03;
 
+    @include media('<phone'){
+        font-size: 14px;
+    }
+
     &:hover{
         color: $gold;
 
@@ -158,6 +162,78 @@
 
     .title {
         transform: translateY(0);
+    }
+}
+
+.sec-title-wrap {
+    position: relative;
+    width: 220%;
+    padding: 100px 0 0 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    @include media('<desktop'){
+        width: 100%;
+    }
+
+    @include media('<tablet'){
+        padding: 56px 0 0 0;
+    }
+
+    &::before {
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: $gold;
+        transition: all 1.5s linear 0s;
+    }
+
+    &::after {
+        content:'';
+        position: absolute;
+        bottom: -191px;
+        right: 20%;
+        width: 382px;
+        height: 382px;
+        border-radius: 50%;
+        border: 3px solid $gold;
+        border-bottom: 3px solid transparent;
+        border-left: 3px solid transparent;
+        transform: rotate(-225deg);
+        transition: all .7s linear 1.5s;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .sec-title {
+        position: relative;
+        color: $blue;
+        @include adaptiv-vaule("min-height", 80, 42, 1);
+        font-weight: 400;
+        text-transform: uppercase;
+        transform: translateY(100%);
+        transition: all 1s ease .7s;
+        z-index: 1;
+    }
+}
+
+.sec-title-wrap.show {
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+
+    &::before {
+        width: 100%;
+    }
+
+    .sec-title {
+        transform: translate(0);
     }
 }
 
@@ -309,6 +385,11 @@
 .video-section {
     position: relative;
     @include adaptiv-vaule("min-height", 750, 260, 1);
+    margin-bottom: 80px;
+
+    @include media('<tablet'){
+        margin-bottom: 44px;
+    }
 
     video{
         position: absolute;
@@ -325,10 +406,10 @@
 
 .veneers-section {
     position: relative;
-    padding: 160px 0;
+    padding: 80px 0;
 
     @include media('<tablet'){
-        padding: 88px 0;
+        padding: 44px 0;
     }
 
     .stiker {
@@ -374,22 +455,6 @@
             }
         }
     }
-}
-
-.show {
-
-    .stiker {
-        transform: translateY(-50%) rotate(-90deg);
-
-        @include media('<tablet_max'){
-            transform: rotate(-90deg);
-        }
-    }
-}
-
-/* ----------------------------main-slider------------------------ */
-
-.main-slider {
 
     .swiper-wrapper {
         padding-bottom: 30px;
@@ -437,11 +502,6 @@
 
     .description {
         margin-bottom: 20px;
-        font-family: $gilroy;
-        color: $gray_2;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.6;
 
         @include media('<tablet_max'){
             margin-bottom: 36px;
@@ -487,5 +547,89 @@
 
     .swiper-pagination-bullet-active {
         opacity: 1;
+    }
+}
+
+.show {
+
+    .stiker {
+        transform: translateY(-50%) rotate(-90deg);
+
+        @include media('<tablet_max'){
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+/* ----------------------------aboutdr-section------------------------ */
+
+.aboutdr-section {
+    position: relative;
+    margin: 80px 0;
+    background: #F9F4EF;
+
+    @include media('<tablet'){
+        margin: 44px 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: flex-end;
+
+        @include media('<desktop'){
+            align-items: center; 
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+
+    .text {
+        padding-bottom: 100px;
+
+        @include media('<desktop'){
+            padding: 0 20px 36px 20px;
+        }
+    }
+
+    .description {
+        max-width: 600px;
+        margin-bottom: 15px;
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: 40px;
+        }
+
+        @include media('<desktop'){
+            max-width: 100%;
+        }
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+    }
+
+    .img-cont {
+        position: relative;
+        z-index: 1;
+
+        @include media('<desktop'){
+            width: 100%;
+            text-align: center;
+            margin: 0 -20px;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 150%;
+        display: none;
+        z-index: -1;
+
+        @include media('<desktop'){
+            display: block;
+        }
     }
 }
