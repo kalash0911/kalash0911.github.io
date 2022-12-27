@@ -88,4 +88,43 @@ destroySlidersOnResize(".main-slider", 99999, {
     clickable: true
   }
 });
+destroySlidersOnResize(".sec-slider", 99999, {
+  spaceBetween: 30,
+  autoHeight: true,
+  speed: 700,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction"
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    draggable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.01,
+      spaceBetween: 10
+    },
+    480: {
+      slidesPerView: 1.05,
+      spaceBetween: 20
+    },
+    640: {
+      slidesPerView: 1.1,
+      spaceBetween: 30
+    },
+    860: {
+      slidesPerView: 1.2
+    },
+    960: {
+      slidesPerView: 1.3
+    },
+    1024: {
+      slidesPerView: 1.5
+    },
+    1300: {
+      slidesPerView: 1.7
+    }
+  }
+});
 //# sourceMappingURL=main.js.map
