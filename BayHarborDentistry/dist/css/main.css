@@ -711,7 +711,8 @@ input[type='submit'] {
 .title-wrap {
   position: relative;
   display: inline-block;
-  padding: 18px 0 24px 0; }
+  padding: 18px 0 24px 0;
+  overflow: hidden; }
   @media (max-width: 479px) {
     .title-wrap {
       padding: 14px 0 36px 0; } }
@@ -1145,6 +1146,41 @@ input[type='submit'] {
     @media (max-width: 1023px) {
       .aboutdr-section .icon {
         display: block; } }
+
+/* -----------------------certifications-section------------------------ */
+.certifications-section {
+  padding: 80px 0; }
+  @media (max-width: 767px) {
+    .certifications-section {
+      padding: 44px 0; } }
+  .certifications-section .container {
+    text-align: center; }
+  .certifications-section .title-wrap {
+    margin-bottom: 52px; }
+    @media (max-width: 479px) {
+      .certifications-section .title-wrap {
+        margin-bottom: 36px; } }
+  .certifications-section .title {
+    /* Только если меньше контейнера */
+    font-size: 60px; }
+    @media (max-width: 1280px) {
+      .certifications-section .title {
+        font-size: calc(42px + 18 * ((100vw - calc(375px)) / 905)); } }
+  .certifications-section .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: -25px; }
+  .certifications-section .img {
+    margin: 25px; }
+    @media (max-width: 479px) {
+      .certifications-section .img {
+        width: 35%; } }
 
 .servise_page {
   background-color: #fff; }
