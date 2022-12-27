@@ -1,3 +1,7 @@
+body {
+background-color: #FDFAF8;
+}
+
 #wrapper{
     overflow: hidden;
 }
@@ -151,7 +155,7 @@
         font-weight: 400;
         text-transform: uppercase;
         transition: all .7s ease .7s;
-        transform: translateY(-100px);
+        transform: translateY(-110%);
     }
 }
 
@@ -683,13 +687,13 @@
     position: relative;
     background: #F6F4F0;
     padding-top: 80px;
-    margin: 80px 0;
+    margin-top: 80px;
     text-align: center;
     overflow: hidden;
 
     @include media('<tablet'){
         padding-top: 56px;
-        margin: 44px 0;
+        margin-top: 44px;
     }
 
     .bg {
@@ -818,5 +822,35 @@
 
             }
         }
+    }
+}
+
+/* ----------------------------cruising-section------------------------ */
+
+.cruising-section {
+    position: relative;
+    padding: 100px 0;
+    background: #FFFFFF;
+    overflow: hidden;
+
+    @include media('<tablet'){
+        padding: 88px 0; 
+    }
+
+    .bg {
+        position: absolute;
+        bottom: -80px;
+        left: 50%;
+        transform: translate(-50%);
+
+        @include media('<phone'){
+            bottom: 0;
+        }
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+        z-index: 1;
     }
 }
