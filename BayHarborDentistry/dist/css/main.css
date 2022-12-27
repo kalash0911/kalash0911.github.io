@@ -1422,7 +1422,8 @@ body {
   overflow: hidden; }
   @media (max-width: 767px) {
     .contact_form-section {
-      margin: 44px 0; } }
+      margin: 44px 0;
+      padding: 56px 0; } }
   .contact_form-section .socials {
     display: -ms-flexbox;
     display: flex;
@@ -1456,6 +1457,9 @@ body {
       transition: all 0.3s ease 0s; }
   .contact_form-section .sub-title {
     margin-bottom: 12px; }
+    @media (max-width: 479px) {
+      .contact_form-section .sub-title {
+        font-size: 14px; } }
   .contact_form-section .phone {
     display: -ms-inline-flexbox;
     display: inline-flex;
