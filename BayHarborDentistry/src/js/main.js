@@ -77,11 +77,6 @@ destroySlidersOnResize(".sec-slider", 99999, {
   spaceBetween: 30,
   autoHeight: true,
   speed: 700,
-  
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-  },
 
   scrollbar: {
     el: ".swiper-scrollbar",
