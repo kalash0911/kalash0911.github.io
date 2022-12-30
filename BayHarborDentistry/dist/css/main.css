@@ -835,6 +835,16 @@ body {
     -o-object-fit: cover;
     object-fit: cover; }
 
+.bg-gerb-big {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%); }
+  @media (max-width: 479px) {
+    .bg-gerb-big {
+      bottom: 0; } }
+
 .animate__animated {
   --animate-duration: 1.5s; }
 
@@ -1250,15 +1260,6 @@ body {
     .cruising-section {
       padding: 56px 0;
       margin-bottom: 44px; } }
-  .cruising-section .bg {
-    position: absolute;
-    bottom: -80px;
-    left: 50%;
-    -webkit-transform: translate(-50%);
-    transform: translate(-50%); }
-    @media (max-width: 479px) {
-      .cruising-section .bg {
-        bottom: 0; } }
   .cruising-section .container {
     position: relative;
     text-align: center;
@@ -1365,7 +1366,8 @@ body {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
   .page-section::before {
     content: '';
     position: absolute;
@@ -1398,6 +1400,47 @@ body {
     @media (max-width: 1280px) {
       .page-section .title {
         font-size: calc(64px + 62 * ((100vw - calc(375px)) / 905)); } }
+  .page-section .main-btn {
+    color: #fff; }
+
+/* -----------------------------quote-section---------------------------- */
+.quote-section {
+  position: relative;
+  padding: 80px 0 140px 0;
+  margin: -80px 0;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .quote-section {
+      padding: 60px 0 85px 0;
+      margin: -44px 0; } }
+  .quote-section .container {
+    position: relative;
+    z-index: 1; }
+  .quote-section .title {
+    max-width: 880px;
+    margin: 0 auto 36px auto;
+    padding: 0 10px;
+    /* Только если меньше контейнера */
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    text-transform: none; }
+    @media (max-width: 1280px) {
+      .quote-section .title {
+        font-size: calc(21px + 15 * ((100vw - calc(375px)) / 905)); } }
+  .quote-section .name {
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px; }
+    @media (max-width: 479px) {
+      .quote-section .name {
+        font-size: 16px; } }
+  .quote-section .position {
+    font-weight: 400; }
+    @media (max-width: 479px) {
+      .quote-section .position {
+        font-size: 14px; } }
 
 /* --------------------------contact_form-section------------------- */
 .contact_form-section {

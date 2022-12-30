@@ -268,6 +268,17 @@ background-color: #FDFAF8;
     }
 }
 
+.bg-gerb-big {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translate(-50%);
+
+    @include media('<phone'){
+        bottom: 0;
+    }
+}
+
 .animate__animated {
     --animate-duration: 1.5s;
 }
@@ -772,17 +783,6 @@ background-color: #FDFAF8;
         margin-bottom: 44px;
     }
 
-    .bg {
-        position: absolute;
-        bottom: -80px;
-        left: 50%;
-        transform: translate(-50%);
-
-        @include media('<phone'){
-            bottom: 0;
-        }
-    }
-
     .container {
         position: relative;
         text-align: center;
@@ -919,6 +919,7 @@ background-color: #FDFAF8;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     &::before {
         content:'';
@@ -951,5 +952,57 @@ background-color: #FDFAF8;
         @include adaptiv-vaule("font-size", 126, 64, 1);
         font-weight: 400;
         z-index: 1;
+    }
+
+    .main-btn {
+        color: $white;
+    }
+}
+
+/* -----------------------------quote-section---------------------------- */
+
+.quote-section {
+    position: relative;
+    padding: 80px 0 140px 0;
+    margin: -80px 0;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 60px 0 85px 0; 
+        margin: -44px 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .title {
+        max-width: 880px;
+        margin: 0 auto 36px auto;
+        padding: 0 10px;
+        @include adaptiv-vaule("font-size", 36, 21, 1);
+        letter-spacing: 0.02em;
+        text-transform: none;
+    }
+
+    .name{
+        font-family: $gilroy;
+        color: $blue;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 5px;
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
+    }
+
+    .position {
+        font-weight: 400;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 }
