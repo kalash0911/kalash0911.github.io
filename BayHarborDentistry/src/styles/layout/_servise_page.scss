@@ -2,14 +2,12 @@
 
 .contact_form-section {
     position: relative;
-    margin: 80px 0;
     padding: 100px 0 150px 0;
     background: #F9F4EF;
     text-align: center;
     overflow: hidden;
 
     @include media('<tablet'){
-        margin: 44px 0;
         padding: 56px 0;
     }
 
@@ -133,43 +131,52 @@
 /* ----------------------------aboutdr-section------------------------ */
 
 .aboutdr-section {
-    position: relative;
-    margin: 80px 0;
     background: #F9F4EF;
 
-    @include media('<tablet'){
-        margin: 44px 0;
+    .container {
+        position: relative;
+
+        @include media('<desktop_min'){
+            padding: 0;
+        }
     }
 
-    .container {
+    .sec-title-wrap {
+
+        @include media('<desktop_min'){
+            margin: 0 30px 15px 30px;
+        }
+    }
+
+    .content {
         display: flex;
         align-items: flex-end;
 
-        @include media('<desktop'){
+        @include media('<desktop_min'){
             align-items: center; 
             flex-direction: column;
-            padding: 0;
         }
     }
 
     .text {
         padding-bottom: 100px;
+        width: 50%;
 
-        @include media('<desktop'){
-            padding: 0 20px 36px 20px;
+        @include media('<widescreen'){
+            padding-bottom: 36px;
+        }
+
+        @include media('<desktop_min'){
+            width: 100%;
+            padding: 0 30px 36px 30px;
         }
     }
 
     .description {
-        max-width: 600px;
         margin-bottom: 15px;
 
         &:nth-last-child(-n+2) {
             margin-bottom: 40px;
-        }
-
-        @include media('<desktop'){
-            max-width: 100%;
         }
 
         @include media('<phone'){
@@ -178,13 +185,29 @@
     }
 
     .img-cont {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        
+        @include media('<desktop_min'){
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+        }
+    }
+
+    .img {
         position: relative;
         z-index: 1;
 
-        @include media('<desktop'){
-            width: 100%;
-            text-align: center;
-            margin: 0 -20px;
+        @include media('<desktop_min'){
+            width: 50%;
+        }
+
+        @include media('<phone'){
+            width: 70%;
         }
     }
 
@@ -195,9 +218,8 @@
         transform: translate(-50%);
         width: 150%;
         display: none;
-        z-index: -1;
 
-        @include media('<desktop'){
+        @include media('<desktop_min'){
             display: block;
         }
     }
