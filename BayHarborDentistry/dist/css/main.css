@@ -601,6 +601,19 @@ input[type='submit'] {
   text-transform: uppercase;
   font-weight: 500; }
 
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 3; }
+  #header .container {
+    display: -ms-flexbox;
+    display: flex; }
+  #header a {
+    margin-right: 20px; }
+
 body {
   background-color: #FDFAF8; }
 
@@ -686,8 +699,11 @@ body {
     .line-btn:hover img {
       -webkit-transform: translate(10px);
       transform: translate(10px); }
-  .line-btn img {
+  .line-btn .img {
     padding-left: 8px;
+    transition: all 0.3s ease 0s; }
+  .line-btn .img-v {
+    padding-right: 13px;
     transition: all 0.3s ease 0s; }
 
 .stiker {
@@ -1547,6 +1563,53 @@ body {
     @media (max-width: 767px) {
       .meetour-section .icon {
         display: block; } }
+
+/* ------------------------ourteam-section------------------------ */
+.ourteam-section {
+  padding: 160px 0 200px 0; }
+  @media (max-width: 767px) {
+    .ourteam-section {
+      padding: 88px 0; } }
+  .ourteam-section .container {
+    text-align: center; }
+  .ourteam-section .sub-title {
+    max-width: 640px;
+    margin: 0 auto 52px auto; }
+  .ourteam-section .block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    row-gap: 60px; }
+    @media (max-width: 1023px) {
+      .ourteam-section .block {
+        gap: 20px; } }
+  .ourteam-section .img-wrap {
+    /* Только если меньше контейнера */
+    min-height: 510px;
+    margin-bottom: 10px; }
+    @media (max-width: 1280px) {
+      .ourteam-section .img-wrap {
+        min-height: calc(170px + 340 * ((100vw - calc(375px)) / 905)); } }
+  .ourteam-section .name {
+    display: block;
+    text-align: left;
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #2C2E4C;
+    /* Только если меньше контейнера */
+    font-size: 24px;
+    font-weight: 500; }
+    @media (max-width: 1280px) {
+      .ourteam-section .name {
+        font-size: calc(18px + 6 * ((100vw - calc(375px)) / 905)); } }
+  .ourteam-section .position {
+    text-align: left;
+    /* Только если меньше контейнера */
+    font-size: 16px; }
+    @media (max-width: 1280px) {
+      .ourteam-section .position {
+        font-size: calc(12px + 4 * ((100vw - calc(375px)) / 905)); } }
 
 /* --------------------------contact_form-section------------------- */
 .contact_form-section {

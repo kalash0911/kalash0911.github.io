@@ -95,8 +95,13 @@ background-color: #FDFAF8;
         }
     }
 
-    img{
+    .img{
         padding-left: 8px;
+        transition: $all_03;
+    }
+
+    .img-v {
+        padding-right: 13px;
         transition: $all_03;
     }
 }
@@ -1143,5 +1148,53 @@ background-color: #FDFAF8;
             display: block;
         }
     }
+}
 
+/* ------------------------ourteam-section------------------------ */
+
+.ourteam-section {
+    padding: 160px 0 200px 0;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+    
+    .container {
+        text-align: center;
+    }
+
+    .sub-title {
+        max-width: 640px;
+        margin: 0 auto 52px auto;
+    }
+
+    .block {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        column-gap: 40px;
+        row-gap: 60px;
+
+        @include media('<desktop'){
+            gap: 20px;
+        }
+    }
+
+    .img-wrap {
+        @include adaptiv-vaule("min-height", 510, 170, 1);
+        margin-bottom: 10px;
+    }
+
+    .name {
+        display: block;
+        text-align: left;
+        font-family: $gilroy;
+        color: $blue_2;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+        font-weight: 500;
+    }
+
+    .position {
+        text-align: left;
+        @include adaptiv-vaule("font-size", 16, 12, 1);
+    }
 }
