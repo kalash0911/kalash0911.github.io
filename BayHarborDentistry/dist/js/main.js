@@ -62,13 +62,29 @@ try {
   for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
     var elm = _step2.value;
     observer.observe(elm);
-  } // Swiper:
+  } // For added video controls
 
 } catch (err) {
   _iterator2.e(err);
 } finally {
   _iterator2.f();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var videos = document.getElementsByClassName('video');
+  videos = [].slice.call(videos);
+  videos.forEach(function (item) {
+    var media = item;
+
+    media.onclick = function () {
+      media.controls = true;
+    };
+
+    media.addEventListener('ended', function () {
+      media.controls = false;
+    });
+  });
+}); // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);

@@ -33,6 +33,22 @@ for (let elm of elements) {
 }
 
 
+// For added video controls
+
+document.addEventListener("DOMContentLoaded", function(){
+  let videos = document.getElementsByClassName('video'); 
+  videos = [].slice.call(videos); 
+  videos.forEach(function(item) { 
+    let media = item;
+    media.onclick = function () {
+      media.controls = true;
+    };
+    media.addEventListener('ended', function() {
+      media.controls = false;
+    });
+  });
+});
+
 // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {

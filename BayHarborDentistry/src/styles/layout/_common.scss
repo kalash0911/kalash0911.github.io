@@ -95,7 +95,7 @@ background-color: #FDFAF8;
         }
     }
 
-    .img{
+    .icon-arrow{
         padding-left: 8px;
         transition: $all_03;
     }
@@ -319,6 +319,10 @@ background-color: #FDFAF8;
     }
 }
 
+.video {
+    cursor: pointer;
+}
+
 .animate__animated {
     --animate-duration: 1.5s;
 }
@@ -399,7 +403,7 @@ background-color: #FDFAF8;
     .main-title {
         font-family: $queensila;
         font-weight: normal;
-        @include adaptiv-vaule("font-size", 126, 64, 1);
+        @include adaptiv-vaule("font-size", 126, 62, 1);
         text-transform: uppercase;
         color: $blue;
         margin: 0;
@@ -430,7 +434,7 @@ background-color: #FDFAF8;
         transform: translateY(-40px);
 
         @include media('<tablet'){
-            min-width: 160px;
+            min-width: 145px;
             transform: translateY(-25px);
         }
     }
@@ -469,165 +473,6 @@ background-color: #FDFAF8;
         height: 100%;
         object-fit: cover;
         cursor: pointer;
-    }
-}
-
-/* ----------------------------main-slider-section------------------------ */
-
-.main-slider-section {
-    position: relative;
-    padding: 80px 0;
-
-    @include media('<tablet'){
-        padding: 44px 0;
-    }
-
-    .stiker {
-        top: 50%;
-        right: -170px;
-        transform: translateY(-50%) rotate(0deg);
-
-        @include media('<tablet_max'){
-            right: -100px;
-            @include adaptiv-vaule("top", 500, 175, 1);
-            transform: rotate(50deg);
-        }
-    }
-
-    .container {
-        position: relative;
-    }
-
-    .bg {
-        position: absolute;
-        top: 35px;
-        left: 0;
-        width: 93%;
-        height: 80%;
-        background-color: #F3F2ED;
-        z-index: -1;
-        overflow: hidden;
-
-        @include media('<tablet_max'){
-            height: 90%;
-        }
-
-        img {
-            position: absolute;
-            right: 0;
-            bottom: -60px;
-
-            @include media('<phone'){
-                width: 98px;
-                height: 90px;
-                right: 10px;
-                bottom: 0px;
-            }
-        }
-    }
-
-    .swiper-wrapper {
-        padding-bottom: 30px;
-    }
-
-    .slide {
-        opacity: 0 !important;
-        z-index: -1 !important;
-    }
-
-    .swiper-slide-active {
-        opacity: 1 !important;
-        z-index: 1 !important;
-    }
-
-    .content {
-        display: flex;
-        padding-right: 75px;
-
-        @include media('<tablet_max'){
-            flex-direction: column;
-            padding: 0;
-        }
-    }
-
-    .img-cont {
-
-        @include media('<tablet_max'){
-            padding-right: 80px;
-            margin-bottom: 36px;
-        }
-    }
-
-    .text {
-        max-width: 300px;
-        min-width: 300px;
-        margin: 0 0 56px 42px;
-
-        @include media('<tablet_max'){
-            max-width: 100%;
-            min-width: 0;
-            margin: 0 6% 56px 0;
-        }
-    }
-
-    .description {
-        margin-bottom: 20px;
-
-        @include media('<tablet_max'){
-            margin-bottom: 36px;
-        }
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
-    }
-
-    #pagination {
-        display: inline-flex;
-        justify-content: flex-end;
-        right: 0;
-        bottom: 50px;
-        padding-right: 100px;
-
-        @include media('<laptop_min'){
-            justify-content: center;
-            bottom: 0;
-            padding: 0;
-        }
-    }
-
-    .swiper-pagination-bullet {
-        width: 83px;
-        height: 3px;
-        background-color: $gold;
-        border-radius: 0;
-        margin-left: 20px !important;
-        opacity: .3;
-        transition: $all_05;
-
-        @include media('<phone'){
-            margin-left: 10px !important;
-        }
-
-        &:first-child {
-            margin-left: 0 !important;
-        }
-
-    }
-
-    .swiper-pagination-bullet-active {
-        opacity: 1;
-    }
-}
-
-.show {
-
-    .stiker {
-        transform: translateY(-50%) rotate(-90deg);
-
-        @include media('<tablet_max'){
-            transform: rotate(-90deg);
-        }
     }
 }
 
@@ -827,127 +672,6 @@ background-color: #FDFAF8;
         position: relative;
         text-align: center;
         z-index: 1;
-    }
-}
-
-/* ------------------------------sec-slider-section------------------------- */
-
-.sec-slider-section {
-    padding: 80px 20px;
-
-    @include media('<tablet'){
-        padding: 44px 20px; 
-    }
-
-    .container {
-        padding: 0;
-    }
-
-    .title-wrap {
-        margin-bottom: 56px;
-    }
-    
-    .sec-slider {
-        max-width: 1320px;
-        padding-right: 15px;
-        margin: 0 auto;
-        overflow: visible;
-    }
-
-    .slide {
-        min-height: 355px;
-        display: flex;
-        border: 2px solid #E4E2EA;
-        overflow: hidden;
-        cursor: grab;
-
-        @include media('<tablet_max'){
-            flex-direction: column;
-        }
-    }
-
-    .img-slide {
-        min-width: 245px;
-        
-        @include media('<tablet_max'){
-            min-height: 660px;
-        }
-
-        @include media('<phone_max'){
-            min-height: 460px;
-        }
-
-        @include media('<phone'){
-            min-height: 280px;
-        }
-    }
-
-    .text {
-        max-width: 420px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        padding: 30px;
-    }
-
-    .description {
-        font-size: 22px;
-        font-weight: 400;
-        margin-bottom: 24px;
-    }
-
-    .user {
-        display: flex;
-        align-items: center;
-    }
-
-    .user-img {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .name {
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    .slider-nav {
-        padding-top: 52px;
-    }
-
-    #pagination {
-        position: relative;
-        bottom: 0;
-        margin-bottom: 10px;
-        font-family: $gilroy;
-        color: #A4A5B1;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-    #scrollbar {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        z-index: 1;
-        max-width: 1320px;
-        padding-right: 20px;
-        margin: 0 auto;
-    }
-
-    .swiper-scrollbar {
-        background: rgba($gold, 0.2);
-        border-radius: 0;
-
-    }
-
-    .swiper-scrollbar-drag {
-        background: $gold;
-        border-radius: 0;
-        cursor: grab;
     }
 }
 
