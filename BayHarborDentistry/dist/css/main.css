@@ -892,14 +892,184 @@ body {
     .bg-gerb-big {
       bottom: 0; } }
 
-.video {
-  cursor: pointer; }
-
 .animate__animated {
   --animate-duration: 1.5s; }
 
 .animate__fadeIn {
   --animate-duration: 3s; }
+
+/* ---------------for video player */
+.video-wrap {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  overflow: hidden; }
+  .video-wrap video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+  .video-wrap .icon-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 20%;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease 0s; }
+  .video-wrap .player-controls {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease 0s; }
+  .video-wrap .play-button, .video-wrap .fullscreen-button {
+    width: 10%;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    color: #010B6C;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap; }
+    .video-wrap .play-button:hover, .video-wrap .fullscreen-button:hover {
+      background-color: #EEB663;
+      color: #fff; }
+  .video-wrap .play-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .video-wrap .other-controls {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    z-index: 1; }
+  .video-wrap .video-progress {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 5px;
+    transition: all 0.3s ease 0s;
+    background: rgba(1, 11, 108, 0.6);
+    cursor: pointer; }
+  .video-wrap .video-progress-filled {
+    width: 0;
+    background: #EEB663; }
+  .video-wrap .volume[type="range"] {
+    -webkit-appearance: none;
+    width: 15%;
+    min-width: 50px;
+    background: transparent;
+    margin: 0 5px;
+    padding: 0;
+    overflow: hidden; }
+    @media (max-width: 767px) {
+      .video-wrap .volume[type="range"] {
+        display: none; } }
+  .video-wrap .volume[type="range"]:focus {
+    outline: none; }
+  .video-wrap .volume[type="range"]::-ms-fill-lower {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 10px;
+    background: #EEB663;
+    cursor: pointer; }
+  .video-wrap .volume[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 10px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: -100vh 0 0 100vh #EEB663; }
+  .video-wrap .volume[type="range"]::-ms-fill-lower {
+    background-color: #EEB663; }
+  .video-wrap .volume[type="range"]::-moz-range-progress {
+    background-color: #EEB663; }
+  .video-wrap .volume[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(1, 11, 108, 0.6);
+    cursor: pointer; }
+  .video-wrap .mute-button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: none;
+    background: none; }
+    .video-wrap .mute-button svg {
+      width: 20px;
+      height: 20px; }
+  .video-wrap .on {
+    display: block;
+    fill: #010B6C;
+    transition: all 0.3s ease 0s; }
+    .video-wrap .on:hover {
+      fill: #EEB663; }
+  .video-wrap .off {
+    display: none;
+    fill: #EEB663; }
+  .video-wrap .mute .on {
+    display: none; }
+  .video-wrap .mute .off {
+    display: block; }
+  .video-wrap .time {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0 5px;
+    text-align: center;
+    color: #010B6C;
+    font-size: 14px; }
+  .video-wrap .fullscreen-button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .video-wrap .fullscreen-button:hover svg {
+      fill: #fff; }
+    .video-wrap .fullscreen-button svg {
+      width: 20px;
+      min-width: 15px;
+      height: 20px;
+      fill: #010B6C;
+      transition: all 0.3s ease 0s; }
+
+.video-wrap.active .icon-play {
+  opacity: 0; }
+
+.video-wrap.active .player-controls {
+  opacity: 1; }
 
 /* --------------------------main-section----------------------- */
 .main-section {
@@ -1034,15 +1204,6 @@ body {
   @media (max-width: 767px) {
     .video-section {
       margin-bottom: 44px; } }
-  .video-section video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    cursor: pointer; }
 
 /* -----------------------certifications-section------------------------ */
 .certifications-section {
@@ -1306,17 +1467,26 @@ body {
       .meetour-section .content {
         -ms-flex-direction: column;
         flex-direction: column; } }
-  .meetour-section video {
-    width: 100%;
-    height: auto;
-    padding-right: 40%; }
-    @media (max-width: 1023px) {
-      .meetour-section video {
-        padding-right: 45%; } }
+  .meetour-section .video-wrap {
+    /* Только если меньше контейнера */
+    width: 800px;
+    /* Только если меньше контейнера */
+    height: 450px; }
+    @media (max-width: 1280px) {
+      .meetour-section .video-wrap {
+        width: calc(160px + 640 * ((100vw - calc(375px)) / 905)); } }
+    @media (max-width: 1280px) {
+      .meetour-section .video-wrap {
+        height: calc(90px + 360 * ((100vw - calc(375px)) / 905)); } }
     @media (max-width: 767px) {
-      .meetour-section video {
-        padding: 0 30px;
+      .meetour-section .video-wrap {
+        width: 100%;
+        /* Только если меньше контейнера */
+        height: 450px;
         margin-bottom: 36px; } }
+  @media (max-width: 767px) and (max-width: 1280px) {
+    .meetour-section .video-wrap {
+      height: calc(260px + 190 * ((100vw - calc(375px)) / 905)); } }
   .meetour-section .img-cont {
     position: absolute;
     bottom: 0;

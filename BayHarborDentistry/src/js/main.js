@@ -32,22 +32,92 @@ for (let elm of elements) {
   observer.observe(elm);
 }
 
+// Video controls
 
-// For added video controls
+const videoWrap = document.querySelector('.video-wrap');
+const videoPlayer = document.querySelector('.video-player');
+const video = document.querySelector('.video');
+const playButton = document.querySelector('.play-button');
+const muteButton = document.querySelector('.mute-button');
+const fullscreenButton = document.querySelector('.fullscreen-button');
+const volume = document.querySelector('.volume');
+const currentTimeElement = document.querySelector('.current');
+const durationTimeElement = document.querySelector('.duration');
+const progress = document.querySelector('.video-progress');
+const progressBar = document.querySelector('.video-progress-filled');
 
-document.addEventListener("DOMContentLoaded", function(){
-  let videos = document.getElementsByClassName('video'); 
-  videos = [].slice.call(videos); 
-  videos.forEach(function(item) { 
-    let media = item;
-    media.onclick = function () {
-      media.controls = true;
-    };
-    media.addEventListener('ended', function() {
-      media.controls = false;
-    });
-  });
+
+//Play and Pause button
+playButton.addEventListener('click', (e) => {
+  if(video.paused){
+    video.play();
+    e.target.textContent = '| |';
+    videoWrap.classList.toggle('active');
+  } else {
+    video.pause();
+    e.target.textContent = '►';
+    videoWrap.classList.toggle('active');
+  }
 });
+
+//Mute button
+muteButton.addEventListener('click', (e) => {
+  if(video.muted){
+    video.muted = false;
+    muteButton.classList.toggle('mute');
+  } else {
+    video.muted = true;
+    muteButton.classList.toggle('mute');
+  }
+});
+
+//Fullscreen button
+fullscreenButton.addEventListener('click', (e) => {
+  if(video.requestFullScreen){
+    video.requestFullscreen();
+  } else if(video.webkitRequestFullScreen) {
+    video.webkitRequestFullScreen();
+  }else if(video.mozRequestFullScreen) {
+    video.mozRequestFullScreen();
+  }
+});
+
+//volume
+volume.addEventListener('mousemove', (e)=> {
+  video.volume = e.target.value;
+});
+
+//current time and duration
+const currentTime = () => {
+  let currentMinutes = Math.floor(video.currentTime / 60);
+  let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
+  let durationMinutes = Math.floor(video.duration / 60);
+  let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+
+  currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0'+currentSeconds : currentSeconds}`;
+  durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
+};
+
+video.addEventListener('timeupdate', currentTime);
+
+//Progress bar
+video.addEventListener('timeupdate', () =>{
+  const percentage = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = `${percentage}%`;
+});
+
+//change progress bar on click
+progress.addEventListener('click', (e) =>{
+  const progressTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = progressTime;
+});
+
+video.addEventListener('ended', stopMedia);
+function stopMedia() {
+  video.pause();
+  video.currentTime = 0;
+  videoWrap.classList.remove('active');
+}
 
 // Swiper:
 
@@ -79,9 +149,13 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 destroySlidersOnResize(".main-slider", 99999, {
   spaceBetween: 30,
   effect: "fade",
-  mousewheel: true,
   autoHeight: true,
   speed: 700,
+  
+  mousewheel: {
+    invert: false,
+    releaseOnEdges: true,
+  },
   
   pagination: {
     el: ".swiper-pagination",

@@ -62,7 +62,7 @@ try {
   for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
     var elm = _step2.value;
     observer.observe(elm);
-  } // For added video controls
+  } // Video controls
 
 } catch (err) {
   _iterator2.e(err);
@@ -70,21 +70,82 @@ try {
   _iterator2.f();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  var videos = document.getElementsByClassName('video');
-  videos = [].slice.call(videos);
-  videos.forEach(function (item) {
-    var media = item;
+var videoWrap = document.querySelector('.video-wrap');
+var videoPlayer = document.querySelector('.video-player');
+var video = document.querySelector('.video');
+var playButton = document.querySelector('.play-button');
+var muteButton = document.querySelector('.mute-button');
+var fullscreenButton = document.querySelector('.fullscreen-button');
+var volume = document.querySelector('.volume');
+var currentTimeElement = document.querySelector('.current');
+var durationTimeElement = document.querySelector('.duration');
+var progress = document.querySelector('.video-progress');
+var progressBar = document.querySelector('.video-progress-filled'); //Play and Pause button
 
-    media.onclick = function () {
-      media.controls = true;
-    };
+playButton.addEventListener('click', function (e) {
+  if (video.paused) {
+    video.play();
+    e.target.textContent = '| |';
+    videoWrap.classList.toggle('active');
+  } else {
+    video.pause();
+    e.target.textContent = '►';
+    videoWrap.classList.toggle('active');
+  }
+}); //Mute button
 
-    media.addEventListener('ended', function () {
-      media.controls = false;
-    });
-  });
-}); // Swiper:
+muteButton.addEventListener('click', function (e) {
+  if (video.muted) {
+    video.muted = false;
+    muteButton.classList.toggle('mute');
+  } else {
+    video.muted = true;
+    muteButton.classList.toggle('mute');
+  }
+}); //Fullscreen button
+
+fullscreenButton.addEventListener('click', function (e) {
+  if (video.requestFullScreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullScreen) {
+    video.webkitRequestFullScreen();
+  } else if (video.mozRequestFullScreen) {
+    video.mozRequestFullScreen();
+  }
+}); //volume
+
+volume.addEventListener('mousemove', function (e) {
+  video.volume = e.target.value;
+}); //current time and duration
+
+var currentTime = function currentTime() {
+  var currentMinutes = Math.floor(video.currentTime / 60);
+  var currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
+  var durationMinutes = Math.floor(video.duration / 60);
+  var durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+  currentTimeElement.innerHTML = "".concat(currentMinutes, ":").concat(currentSeconds < 10 ? '0' + currentSeconds : currentSeconds);
+  durationTimeElement.innerHTML = "".concat(durationMinutes, ":").concat(durationSeconds);
+};
+
+video.addEventListener('timeupdate', currentTime); //Progress bar
+
+video.addEventListener('timeupdate', function () {
+  var percentage = video.currentTime / video.duration * 100;
+  progressBar.style.width = "".concat(percentage, "%");
+}); //change progress bar on click
+
+progress.addEventListener('click', function (e) {
+  var progressTime = e.offsetX / progress.offsetWidth * video.duration;
+  video.currentTime = progressTime;
+});
+video.addEventListener('ended', stopMedia);
+
+function stopMedia() {
+  video.pause();
+  video.currentTime = 0;
+  videoWrap.classList.remove('active');
+} // Swiper:
+
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
@@ -113,9 +174,12 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 destroySlidersOnResize(".main-slider", 99999, {
   spaceBetween: 30,
   effect: "fade",
-  mousewheel: true,
   autoHeight: true,
   speed: 700,
+  mousewheel: {
+    invert: false,
+    releaseOnEdges: true
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true
