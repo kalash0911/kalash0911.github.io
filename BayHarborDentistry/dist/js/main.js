@@ -144,7 +144,14 @@ function stopMedia() {
   video.pause();
   video.currentTime = 0;
   videoWrap.classList.remove('active');
-} // Swiper:
+} // Castum cursor
+
+/* const bd = document.body,
+      cur = document.getElementById("cursor");
+      bd.addEventListener("mousemove", function(n) {
+      (cur.style.left = n.clientX + "px"), (cur.style.top = n.clientY + "px");
+}); */
+// Swiper:
 
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
@@ -188,6 +195,7 @@ destroySlidersOnResize(".main-slider", 99999, {
 destroySlidersOnResize(".sec-slider", 99999, {
   spaceBetween: 30,
   autoHeight: true,
+  freeMode: true,
   speed: 700,
   scrollbar: {
     el: ".swiper-scrollbar",

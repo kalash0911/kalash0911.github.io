@@ -1,5 +1,5 @@
 body {
-background-color: #FDFAF8;
+    background-color: #FDFAF8;
 }
 
 #wrapper{
@@ -13,10 +13,28 @@ background-color: #FDFAF8;
     margin: 0 auto;
 }
 
+/* #cursor {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    border: 2px solid $gold;
+    backdrop-filter: blur(2px);
+    z-index: 100;
+    pointer-events: none;
+} */
+
 .main-btn {
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%) rotate(-180deg);
     bottom: -130px;
     display: inline-flex;
     width: 260px;
@@ -31,7 +49,7 @@ background-color: #FDFAF8;
     color: $blue;
     text-transform: uppercase;
     overflow: hidden;
-    transition: color 2s;
+    transition: color 2s, transform 1s;
     z-index: 1;
 
     @include media('<phone'){
@@ -71,6 +89,11 @@ background-color: #FDFAF8;
         font-style: normal;
         z-index: 1;
     }
+}
+
+
+.main-btn.show {
+    transform: translate(-50%) rotate(0deg);
 }
 
 .line-btn {
@@ -350,6 +373,7 @@ background-color: #FDFAF8;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 20%;
+        max-width: 192px;
         z-index: 1;
         opacity: 1;
         transition: $all_03;
@@ -774,6 +798,8 @@ background-color: #FDFAF8;
     }
 
     .img-cont {
+        align-self: flex-end;
+
         @include media('<tablet'){
             order: 3;
             margin: 0 auto;
@@ -789,13 +815,13 @@ background-color: #FDFAF8;
 
     .item {
         max-width: 260px;
-        padding: 24px 0;
+        padding: 12px 0;
         margin: 0;
         font-family: $gilroy;
         color: $blue;
         font-size: 16px;
         font-weight: 500;
-        line-height: 2;
+        line-height: 1.8;
         text-transform: uppercase;
 
         @include media('<tablet'){
@@ -830,7 +856,7 @@ background-color: #FDFAF8;
         .item {
             &:first-child,
             &:last-child {
-                padding: 24px 0 30px 24px;
+                padding: 12px 0 12px 30px;
 
                 @include media('<tablet'){
                     padding: 12px 0;
@@ -846,7 +872,7 @@ background-color: #FDFAF8;
     .last {
 
         .item {
-            padding: 24px 0 24px 30px;
+            padding: 12px 0 12px 30px;
 
             @include media('<tablet'){
                 padding: 12px 0;
