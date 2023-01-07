@@ -32,13 +32,17 @@ body {
 } */
 
 .main-btn {
+    --height: 260px;
+    --width: 260px
+    --half-of-height: 260px / 2;
     position: absolute;
     left: 50%;
     transform: translate(-50%) rotate(-180deg);
-    bottom: -130px;
+    // Fix IntersectionObserver:
+    bottom: calc(-(var(--half-of-height)) + 0.1px);
     display: inline-flex;
-    width: 260px;
-    height: 260px;
+    width: var(--width);
+    height: var(--height);
     padding: 50px;
     border-radius: 50%;
     border: 2px solid $gold;
