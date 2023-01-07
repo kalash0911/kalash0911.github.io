@@ -24,8 +24,9 @@ try {
     var btn = _step.value;
 
     btn.onmousemove = function (e) {
+      var top = btn.offsetTop + document.documentElement.scrollTop;
       var x = e.pageX - btn.offsetLeft;
-      var y = e.pageY - btn.offsetTop;
+      var y = e.pageY - top;
       btn.style.setProperty('--x', x + 'px');
       btn.style.setProperty('--y', y + 'px');
     };

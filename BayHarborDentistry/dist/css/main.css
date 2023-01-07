@@ -644,15 +644,17 @@ body {
     pointer-events: none;
 } */
 .main-btn {
+  --height: 260px;
+  --width: 260px;
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%) rotate(-180deg);
   transform: translate(-50%) rotate(-180deg);
-  bottom: -130px;
+  bottom: calc((var(--height) / -2) + 0.1px);
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 260px;
-  height: 260px;
+  width: var(--width);
+  height: var(--height);
   padding: 50px;
   border-radius: 50%;
   border: 2px solid #EEB663;
