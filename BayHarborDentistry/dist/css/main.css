@@ -2060,6 +2060,7 @@ body {
 
 /* ----------------------------aboutdr-section------------------------ */
 .aboutdr-section {
+  position: relative;
   background: #F9F4EF; }
   .aboutdr-section .container {
     position: relative; }
@@ -2128,6 +2129,76 @@ body {
     @media (max-width: 959px) {
       .aboutdr-section .icon {
         display: block; } }
+  .aboutdr-section .video-block {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 10; }
+    @media (max-width: 767px) {
+      .aboutdr-section .video-block {
+        width: 100%; } }
+    .aboutdr-section .video-block .video {
+      width: 100%;
+      height: auto; }
+    .aboutdr-section .video-block .close-video {
+      position: absolute;
+      top: -35px;
+      right: -35px;
+      width: 30px;
+      height: 30px;
+      background: transparent;
+      border: 2px solid #EEB663;
+      border-radius: 50%;
+      opacity: .6;
+      transition: all .3s ease;
+      z-index: 1; }
+      @media (max-width: 767px) {
+        .aboutdr-section .video-block .close-video {
+          top: 10px;
+          right: 10px; } }
+      .aboutdr-section .video-block .close-video:hover {
+        opacity: 1; }
+        .aboutdr-section .video-block .close-video:hover::before, .aboutdr-section .video-block .close-video:hover::after {
+          background: #EEB663; }
+        .aboutdr-section .video-block .close-video:hover::before {
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+        .aboutdr-section .video-block .close-video:hover::after {
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+      .aboutdr-section .video-block .close-video::before, .aboutdr-section .video-block .close-video::after {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 6px;
+        width: 15px;
+        height: 2px;
+        background: #010B6C;
+        transition: all 0.3s ease 0s; }
+      .aboutdr-section .video-block .close-video::before {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .aboutdr-section .video-block .close-video::after {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
+  .aboutdr-section .video-block_active {
+    display: block; }
+
+.body_overflow {
+  position: relative;
+  overflow: hidden; }
+  .body_overflow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2; }
 
 .servise_page {
   background-color: #fff; }

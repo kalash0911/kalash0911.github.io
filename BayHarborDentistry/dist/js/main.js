@@ -144,15 +144,22 @@ function stopMedia() {
   video.pause();
   video.currentTime = 0;
   videoWrap.classList.remove('active');
-} // Castum cursor
+} // for video pop-up
 
-/* const bd = document.body,
-      cur = document.getElementById("cursor");
-      bd.addEventListener("mousemove", function(n) {
-      (cur.style.left = n.clientX + "px"), (cur.style.top = n.clientY + "px");
-}); */
-// Swiper:
 
+var openVideo = document.querySelector(".open-video");
+var closeVideo = document.querySelector(".close-video");
+var videoBlock = document.querySelector(".video-block");
+openVideo.addEventListener("click", function (e) {
+  videoBlock.classList.add("video-block_active");
+  document.body.classList.add("body_overflow");
+  document.body.addEventListener("click", closeVideoEvent);
+});
+closeVideo.addEventListener("click", function (e) {
+  videoBlock.classList.remove("video-block_active");
+  document.body.classList.remove("body_overflow");
+  document.body.removeEventListener("click", closeVideoEvent);
+}); // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
