@@ -7,7 +7,7 @@ const btns = document.querySelectorAll('.btn');
 for (let btn of btns) {
   btn.onmousemove = function(e){
     const x = e.pageX - btn.offsetLeft;
-    const y = e.pageY - btn.offsetTop;
+    const y = e.pageY - btn.getBoundingClientRect().top - window.scrollY;
                         
     btn.style.setProperty('--x', x + 'px');
     btn.style.setProperty('--y', y + 'px');

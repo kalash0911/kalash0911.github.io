@@ -25,7 +25,7 @@ try {
 
     btn.onmousemove = function (e) {
       var x = e.pageX - btn.offsetLeft;
-      var y = e.pageY - btn.offsetTop;
+      var y = e.pageY - btn.getBoundingClientRect().top - window.scrollY;
       btn.style.setProperty('--x', x + 'px');
       btn.style.setProperty('--y', y + 'px');
     };
