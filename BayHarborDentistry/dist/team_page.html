@@ -15,15 +15,44 @@
 
 <body>
     <div id="wrapper">
-        //= templates/header.html
+        <header id="header">
+            <div class="container">
+                <a href="index.html">home</a>
+                <a href="team_page.html">our team</a>
+                <a href="blog_page.html">blog</a>
+            </div>
+         </header>
         <main id="main">
             <section class="page-section">
                 <img class="bg" src="./images/team-page/main-img.jpg" alt="img">
-                <h1 class="title">Our team</h1>
+                <div class="container">
+                    <h1 class="title">Our team</h1>
+                </div>
             </section>
-            //= templates/content-blocks/text-blocks/aboutdr_video-section(1.11-v).html
+            <section class="aboutdr-section">
+                <div class="container">
+                    <div class="sec-title-wrap anim">
+                        <h2 class="sec-title">About <br> Dr. Anatoly Ripa</h2>
+                    </div>
+                    <div class="content">
+                        <div class="text">
+                            <p class="description wow animate__animated animate__fadeIn">Dr. Anatoly Ripa's credentials span the course of two continents, with a proficient practice in both Russia and the States. Dr. Ripa attended Stony Brook University School of Dental Medicine in New York, where he received his D.D.S. He has been practicing clinical and cosmetic dentistry for over 20 years, with an emphasis on patient comfort and care. 
+                            </p>
+                            <p class="description wow animate__animated animate__fadeIn"> Dr. Ripa is a member of the American Dental Association, where he stays current with the latest advancements in dentistry, enabling him to provide his patients with the best quality of care. In addition, to his dental practice, Dr. Ripa is an avid reader of science fiction and enjoys experimental cooking with his family. He resides the Bal Harbour region with his wife and their six children.
+                            </p>
+                            <a class="line-btn wow animate__animated animate__fadeIn" href="#">
+                                <img class="img-v" src="./images/icons/video-arrow.svg" alt="icon">
+                                watch video
+                            </a>
+                        </div>
+                        <div class="img-cont wow animate__animated animate__fadeInRight">
+                            <img class="img" src="./images/main-page/doctor.png" alt="img">
+                            <img class="icon" src="./images/icons/circle&line.svg" alt="icon">
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="quote-section">
-                <img class="bg-gerb-big wow animate__animated animate__fadeIn" src="./images/icons/gerb-big-gray.svg" alt="icon">
                 <div class="container">
                     <h2 class="title wow animate__animated animate__fadeInUp">“It was against this background that the king fund carried out a short piece of exploratory work for the Prince’s Trust into the younger workforce in health and social care.”</h2>
                     <span class="name wow animate__animated animate__fadeInUpBig">Dr. Anatoly Ripa</span>
@@ -200,9 +229,50 @@
                     </div>
                 </div>
             </section>
-            //= templates/content-blocks/contact_form-section.html
+            <section class="contact_form-section">
+                <div class="container">
+                    <div class="socials">
+                        <a class="icon-soc wow animate__animated animate__bounce" href="#" target="_blank">
+                            <img src="./images/icons/insta.svg" alt="icon">
+                        </a>
+                        <a class="icon-soc wow animate__animated animate__bounce" data-wow-delay=".1s" href="#" target="_blank">
+                            <img src="./images/icons/facebook.svg" alt="icon">
+                        </a>
+                        <a class="icon-soc wow animate__animated animate__bounce" data-wow-delay=".2s" href="#" target="_blank">
+                            <img src="./images/icons/youtube.svg" alt="icon">
+                        </a>
+                        <a class="icon-soc wow animate__animated animate__bounce" data-wow-delay=".3s" href="#" target="_blank">
+                            <img src="./images/icons/tiktok.svg" alt="icon">
+                        </a>
+                        <a class="icon-soc wow animate__animated animate__bounce" data-wow-delay=".4s" href="#" target="_blank">
+                            <img src="./images/icons/geo.svg" alt="icon">
+                        </a>
+                    </div>
+                    <div class="title-wrap anim">
+                        <h2 class="title">Contact Us</h2>
+                    </div>
+                    <p class="sub-title wow animate__animated animate__fadeInUp">Send us a message or give us a call</p>
+                    <a class="phone wow animate__animated animate__fadeInUp" data-wow-delay=".7s" href="tel:3059024270">
+                        <img src="./images/icons/phone.svg" alt="icon">
+                        305-902-4270
+                    </a>
+                    <div class="wow animate__animated animate__fadeInUp">
+                        <form action="#">
+                            <input class="input" type="text" placeholder="Name">
+                            <input class="input" type="Email" placeholder="Email">
+                            <input class="input" type="tel" placeholder="Phone">
+                            <textarea class="input textarea" placeholder="How can we help you?"></textarea>
+                            <input id="form-btn" type="submit">
+                        </form>
+                    </div>
+                </div>
+                <label class="main-btn btn anim" for="form-btn"><i>Send <br> message</i></label>
+            </section>
         </main>
-        //= templates/footer.html
+        <footer id="footer">
+            <div class="container">
+            </div>
+        </footer>
     </div>
 </body>
 

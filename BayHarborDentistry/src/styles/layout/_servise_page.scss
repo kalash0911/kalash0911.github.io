@@ -171,19 +171,6 @@
         @include media('<tablet_max'){
             height: 90%;
         }
-
-        img {
-            position: absolute;
-            right: 0;
-            bottom: -60px;
-
-            @include media('<phone'){
-                width: 98px;
-                height: 90px;
-                right: 10px;
-                bottom: 0px;
-            }
-        }
     }
 
     .swiper-wrapper {
@@ -315,12 +302,6 @@
         margin: 0 auto;
         overflow: visible;
         cursor: url(../images/icons/cursor.png), pointer;
-/* 
-        &:hover{
-            #cursor {
-                display: flex;
-            }
-        } */
     }
 
     .slide {
