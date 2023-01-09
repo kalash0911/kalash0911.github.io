@@ -125,17 +125,22 @@ const openVideo = document.querySelector(".open-video");
 const closeVideo = document.querySelector(".close-video");
 const videoBlock = document.querySelector(".video-block");
 
-openVideo.addEventListener("click", function (e) {
-  videoBlock.classList.add("video-block_active");
-  document.body.classList.add("body_overflow");
-  document.body.addEventListener("click", closeVideoEvent);
-});
+if (videoBlock !== null) {
+  openVideo.addEventListener("click", function (e) {
+    videoBlock.classList.add("video-block_active");
+    document.body.classList.add("body_overflow");
+    document.body.addEventListener("click", closeVideoEvent);
+  });
+}
 
-closeVideo.addEventListener("click", function (e) {
-  videoBlock.classList.remove("video-block_active");
-  document.body.classList.remove("body_overflow");
-  document.body.removeEventListener("click", closeVideoEvent);
-});
+if (videoBlock !== null) {
+  closeVideo.addEventListener("click", function (e) {
+    videoBlock.classList.remove("video-block_active");
+    document.body.classList.remove("body_overflow");
+    document.body.removeEventListener("click", closeVideoEvent);
+  });
+}
+
 
 // Swiper:
 

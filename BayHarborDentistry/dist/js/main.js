@@ -150,16 +150,23 @@ function stopMedia() {
 var openVideo = document.querySelector(".open-video");
 var closeVideo = document.querySelector(".close-video");
 var videoBlock = document.querySelector(".video-block");
-openVideo.addEventListener("click", function (e) {
-  videoBlock.classList.add("video-block_active");
-  document.body.classList.add("body_overflow");
-  document.body.addEventListener("click", closeVideoEvent);
-});
-closeVideo.addEventListener("click", function (e) {
-  videoBlock.classList.remove("video-block_active");
-  document.body.classList.remove("body_overflow");
-  document.body.removeEventListener("click", closeVideoEvent);
-}); // Swiper:
+
+if (videoBlock !== null) {
+  openVideo.addEventListener("click", function (e) {
+    videoBlock.classList.add("video-block_active");
+    document.body.classList.add("body_overflow");
+    document.body.addEventListener("click", closeVideoEvent);
+  });
+}
+
+if (videoBlock !== null) {
+  closeVideo.addEventListener("click", function (e) {
+    videoBlock.classList.remove("video-block_active");
+    document.body.classList.remove("body_overflow");
+    document.body.removeEventListener("click", closeVideoEvent);
+  });
+} // Swiper:
+
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
