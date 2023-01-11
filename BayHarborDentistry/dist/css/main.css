@@ -616,7 +616,9 @@ input[type='submit'] {
   z-index: 3; }
   #header .container {
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
   #header a {
     margin-right: 20px; }
 
@@ -1934,6 +1936,55 @@ body {
   @media (max-width: 479px) {
     .review-us-section .blue-btn, .review-us-section .white-btn {
       width: 100%; } }
+
+/* ------------------------------text-video-section-------------------- */
+.text-video-section {
+  position: relative;
+  padding: 160px 0; }
+  @media (max-width: 767px) {
+    .text-video-section {
+      padding: 88px 0; } }
+  .text-video-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 959px) {
+      .text-video-section .container {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
+  .text-video-section .text {
+    width: 48%; }
+    @media (max-width: 959px) {
+      .text-video-section .text {
+        width: 100%; } }
+  @media (max-width: 959px) {
+    .text-video-section .title-linedown-wrap {
+      display: none; } }
+  .text-video-section .mob {
+    display: none; }
+    @media (max-width: 959px) {
+      .text-video-section .mob {
+        display: block; } }
+  .text-video-section .description {
+    margin-bottom: 30px; }
+    @media (max-width: 479px) {
+      .text-video-section .description {
+        font-size: 14px; } }
+  .text-video-section .video-section {
+    width: 48%;
+    /* Только если меньше контейнера */
+     min-height: 480px;
+    margin: 0; }
+    @media (max-width: 1280px) {
+      .text-video-section .video-section {
+         min-height: calc(260px + 220 * ((100vw - calc(375px)) / 905)); } }
+    @media (max-width: 959px) {
+      .text-video-section .video-section {
+        width: 100%;
+        margin-bottom: 36px; } }
 
 /* ------------------------contact_form-section------------------- */
 .contact_form-section {
