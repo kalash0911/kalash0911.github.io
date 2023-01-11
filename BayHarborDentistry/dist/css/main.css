@@ -784,6 +784,29 @@ body {
     background-color: #010B6C;
     color: #fff; }
 
+.blur-btn {
+  display: inline-block;
+  min-width: 306px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1.5px solid #EEB663;
+  -webkit-backdrop-filter: blur(11.5px);
+  backdrop-filter: blur(11.5px);
+  font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s; }
+  @media (max-width: 479px) {
+    .blur-btn {
+      padding: 12px;
+      font-size: 14px;
+      width: 100%;
+      min-width: 0; } }
+  .blur-btn:hover {
+    background: #EEB663; }
+
 .stiker {
   position: absolute;
   width: 260px;
@@ -1985,6 +2008,64 @@ body {
       .text-video-section .video-section {
         width: 100%;
         margin-bottom: 36px; } }
+
+/* -----------------------------text-video-col-section----------------- */
+.text-video-col-section {
+  position: relative;
+  padding: 160px 0;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .text-video-col-section {
+      padding: 88px 0; } }
+  .text-video-col-section .discription {
+    max-width: 1020px;
+    margin: 0 auto 52px auto; }
+    @media (max-width: 767px) {
+      .text-video-col-section .discription {
+        font-size: 14px;
+        margin: 0 auto 36px auto; } }
+
+/* ---------------------------------img-bg-section--------------------- */
+.img-bg-section {
+  position: relative;
+  padding: 160px 0;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .img-bg-section {
+      padding: 88px 0; } }
+  .img-bg-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .4; }
+  .img-bg-section .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: -1; }
+  .img-bg-section .container {
+    position: relative;
+    z-index: 1; }
+  .img-bg-section .title {
+    color: #fff;
+    margin-bottom: 20px; }
+  .img-bg-section .discription {
+    max-width: 760px;
+    margin: 0 auto 32px auto;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400; }
+    @media (max-width: 479px) {
+      .img-bg-section .discription {
+        font-size: 14px; } }
 
 /* ------------------------contact_form-section------------------- */
 .contact_form-section {
