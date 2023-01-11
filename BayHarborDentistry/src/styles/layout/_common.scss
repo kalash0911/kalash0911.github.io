@@ -138,6 +138,54 @@ body {
     }
 }
 
+.blue-btn {
+    display: inline-block;
+    min-width: 245px;
+    padding: 17px;
+    background-color: $blue;
+    border: 1px solid $blue;
+    font-family: $gilroy;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: $all_03;
+
+    @include media('<phone'){
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    &:hover{
+        background-color: $white;
+        color: $blue;
+    }
+}
+
+.white-btn {
+    display: inline-block;
+    min-width: 245px;
+    padding: 17px;
+    background-color: $white;
+    border: 1px solid $blue;
+    font-family: $gilroy;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: $all_03;
+
+    @include media('<phone'){
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    &:hover{
+        background-color: $blue;
+        color: $white;
+    }
+}
+
 .stiker {
     position: absolute;
     width: 260px;
@@ -704,7 +752,7 @@ body {
     }
 }
 
-/* ---------------------------video-section------------------------ */
+/* --------------------------video-section----------------------- */
 
 .video-section {
     position: relative;
@@ -716,7 +764,7 @@ body {
     }
 }
 
-/* -----------------------certifications-section------------------------ */
+/* -----------------------certifications-section------------------ */
 
 .certifications-section {
     padding: 80px 0;
@@ -750,7 +798,7 @@ body {
     }
 }
 
-/* --------------------------------why-section---------------------------- */
+/* ----------------------------why-section------------------------- */
 
 .why-section {
     position: relative;
@@ -885,7 +933,7 @@ body {
     }
 }
 
-/* ----------------------------cruising-section------------------------ */
+/* ---------------------------cruising-section---------------------- */
 
 .cruising-section {
     position: relative;
@@ -906,7 +954,7 @@ body {
     }
 }
 
-/* ----------------------------page-section--------------------- */
+/* -----------------------------page-section------------------------- */
 
 .page-section {
     position: relative;
@@ -955,7 +1003,7 @@ body {
     }
 }
 
-/* -----------------------------quote-section---------------------------- */
+/* -----------------------------quote-section------------------------ */
 
 .quote-section {
     position: relative;
@@ -1003,7 +1051,7 @@ body {
     }
 }
 
-/* ----------------------meetour-section--------------------- */
+/* -----------------------------meetour-section---------------------- */
 
 .meetour-section {
     padding-top: 100px;
@@ -1102,7 +1150,7 @@ body {
     }
 }
 
-/* ------------------------ourteam-section------------------------ */
+/* -----------------------------ourteam-section----------------------- */
 
 .ourteam-section {
     padding: 160px 0 200px 0;
@@ -1151,7 +1199,7 @@ body {
     }
 }
 
-/* -----------------------------------blog-section--------------------------- */
+/* -------------------------------blog-section------------------------ */
 
 .blog-section {
 
@@ -1205,7 +1253,7 @@ body {
     }
 }
 
-/* --------------------blog-cont-section---------------------- */
+/* -----------------------------blog-cont-section--------------------- */
 
 .blog-cont-section {
     padding: 60px 0 100px 0;
@@ -1315,7 +1363,7 @@ body {
     }
 }
 
-/* ------------------------gallery-section-------------------- */
+/* ------------------------------gallery-section----------------------- */
 
 .gallery-section {
     padding: 100px 0;
@@ -1454,6 +1502,67 @@ body {
 
         @include media('<tablet'){
             font-size: 18px;
+        }
+    }
+}
+
+/* ------------------------------review-us-section--------------------- */
+
+.review-us-section {
+    padding: 160px 0;
+    background-color: $white;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+
+        br {
+            display: none;
+        }
+    }
+
+    .description {
+        max-width: 965px;
+        margin: 0 auto 15px auto;
+
+        @include media('<tablet'){
+            margin-bottom: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    } 
+
+    .btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px;
+
+        @include media('<tablet'){
+            flex-direction: column;
+            padding-top: 30px;
+        }
+    }
+
+    .blue-btn {
+        margin-right: 16px;
+
+        @include media('<tablet'){
+            margin: 0 0 14px 0;
+        }
+    }
+
+    .blue-btn, .white-btn {
+
+        @include media('<phone'){
+            width: 100%;
         }
     }
 }

@@ -742,6 +742,46 @@ body {
     padding-right: 13px;
     transition: all 0.3s ease 0s; }
 
+.blue-btn {
+  display: inline-block;
+  min-width: 245px;
+  padding: 17px;
+  background-color: #010B6C;
+  border: 1px solid #010B6C;
+  font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s; }
+  @media (max-width: 479px) {
+    .blue-btn {
+      padding: 15px;
+      font-size: 14px; } }
+  .blue-btn:hover {
+    background-color: #fff;
+    color: #010B6C; }
+
+.white-btn {
+  display: inline-block;
+  min-width: 245px;
+  padding: 17px;
+  background-color: #fff;
+  border: 1px solid #010B6C;
+  font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #010B6C;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s; }
+  @media (max-width: 479px) {
+    .white-btn {
+      padding: 15px;
+      font-size: 14px; } }
+  .white-btn:hover {
+    background-color: #010B6C;
+    color: #fff; }
+
 .stiker {
   position: absolute;
   width: 260px;
@@ -1228,7 +1268,7 @@ body {
       .main-section .main-sub-title {
         text-align: left; } }
 
-/* ---------------------------video-section------------------------ */
+/* --------------------------video-section----------------------- */
 .video-section {
   position: relative;
   /* Только если меньше контейнера */
@@ -1241,7 +1281,7 @@ body {
     .video-section {
       margin-bottom: 44px; } }
 
-/* -----------------------certifications-section------------------------ */
+/* -----------------------certifications-section------------------ */
 .certifications-section {
   padding: 80px 0; }
   @media (max-width: 767px) {
@@ -1268,7 +1308,7 @@ body {
     align-items: center;
     gap: 25px; }
 
-/* --------------------------------why-section---------------------------- */
+/* ----------------------------why-section------------------------- */
 .why-section {
   position: relative;
   background: #F6F4F0;
@@ -1368,7 +1408,7 @@ body {
     .why-section .last .item:first-child, .why-section .last .item:last-child {
       padding-left: 0; }
 
-/* ----------------------------cruising-section------------------------ */
+/* ---------------------------cruising-section---------------------- */
 .cruising-section {
   position: relative;
   padding: 100px 0;
@@ -1384,7 +1424,7 @@ body {
     text-align: center;
     z-index: 1; }
 
-/* ----------------------------page-section--------------------- */
+/* -----------------------------page-section------------------------- */
 .page-section {
   position: relative;
   min-height: 100vh;
@@ -1430,7 +1470,7 @@ body {
   .page-section .main-btn {
     color: #fff; }
 
-/* -----------------------------quote-section---------------------------- */
+/* -----------------------------quote-section------------------------ */
 .quote-section {
   position: relative;
   padding: 80px 0 140px 0;
@@ -1469,7 +1509,7 @@ body {
       .quote-section .position {
         font-size: 14px; } }
 
-/* ----------------------meetour-section--------------------- */
+/* -----------------------------meetour-section---------------------- */
 .meetour-section {
   padding-top: 100px;
   background: #F6F4F0;
@@ -1553,7 +1593,7 @@ body {
       .meetour-section .icon {
         display: block; } }
 
-/* ------------------------ourteam-section------------------------ */
+/* -----------------------------ourteam-section----------------------- */
 .ourteam-section {
   padding: 160px 0 200px 0; }
   @media (max-width: 767px) {
@@ -1600,7 +1640,7 @@ body {
       .ourteam-section .position {
         font-size: calc(12px + 4 * ((100vw - calc(375px)) / 905)); } }
 
-/* -----------------------------------blog-section--------------------------- */
+/* -------------------------------blog-section------------------------ */
 .blog-section::before {
   opacity: 20%; }
 
@@ -1651,7 +1691,7 @@ body {
   .blog-section input:focus {
     border: 1.5px solid #EEB663; }
 
-/* --------------------blog-cont-section---------------------- */
+/* -----------------------------blog-cont-section--------------------- */
 .blog-cont-section {
   padding: 60px 0 100px 0; }
   @media (max-width: 479px) {
@@ -1736,7 +1776,7 @@ body {
   .blog-cont-section .line-btn {
     padding: 0; }
 
-/* ------------------------gallery-section-------------------- */
+/* ------------------------------gallery-section----------------------- */
 .gallery-section {
   padding: 100px 0;
   text-align: center;
@@ -1851,6 +1891,49 @@ body {
     @media (max-width: 767px) {
       .gallery-section .inscr {
         font-size: 18px; } }
+
+/* ------------------------------review-us-section--------------------- */
+.review-us-section {
+  padding: 160px 0;
+  background-color: #fff;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .review-us-section {
+      padding: 88px 0; }
+      .review-us-section br {
+        display: none; } }
+  .review-us-section .description {
+    max-width: 965px;
+    margin: 0 auto 15px auto; }
+    @media (max-width: 767px) {
+      .review-us-section .description {
+        margin-bottom: 0; } }
+    .review-us-section .description a {
+      color: inherit;
+      text-decoration: underline; }
+      .review-us-section .description a:hover {
+        text-decoration: none; }
+  .review-us-section .btn-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 15px; }
+    @media (max-width: 767px) {
+      .review-us-section .btn-wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-top: 30px; } }
+  .review-us-section .blue-btn {
+    margin-right: 16px; }
+    @media (max-width: 767px) {
+      .review-us-section .blue-btn {
+        margin: 0 0 14px 0; } }
+  @media (max-width: 479px) {
+    .review-us-section .blue-btn, .review-us-section .white-btn {
+      width: 100%; } }
 
 /* ------------------------contact_form-section------------------- */
 .contact_form-section {
