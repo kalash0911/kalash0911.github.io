@@ -2357,6 +2357,144 @@ body {
     cursor: -webkit-grab;
     cursor: grab; }
 
+/* ------------------------reviews-slider-section-------------------- */
+.reviews-slider-section {
+  padding: 160px 0;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .reviews-slider-section {
+      padding: 88px 0; } }
+  .reviews-slider-section .container {
+    position: relative; }
+    .reviews-slider-section .container::after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: 0px;
+      width: 100%;
+      height: 90%;
+      background-color: #F3F2ED;
+      opacity: 0.7;
+      z-index: -1; }
+  .reviews-slider-section .reviews-slider {
+    padding: 20px 0 90px 0; }
+    @media (max-width: 767px) {
+      .reviews-slider-section .reviews-slider {
+        padding: 0 0 56px 0; } }
+  .reviews-slider-section .content {
+    opacity: 0 !important;
+    transition: all 0.5s ease 0s; }
+  .reviews-slider-section .swiper-slide-active .content {
+    opacity: 1 !important; }
+  .reviews-slider-section .text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 0 auto 16px auto;
+    overflow: hidden; }
+    .reviews-slider-section .text img {
+      margin-right: 6px;
+      transition: all 1s ease 0s; }
+  .reviews-slider-section .labe {
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #EEB663;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
+    transition: all 1s ease 0s; }
+    @media (max-width: 479px) {
+      .reviews-slider-section .labe {
+        font-size: 16px; } }
+  .reviews-slider-section .text.show .labe {
+    -webkit-transform: translate(0);
+    transform: translate(0); }
+  .reviews-slider-section .text.show img {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); }
+  .reviews-slider-section .stars {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 24px; }
+  .reviews-slider-section .star {
+    margin: 0 3px; }
+  .reviews-slider-section .discription {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto 24px auto;
+    font-family: "Queensila", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em; }
+    @media (max-width: 767px) {
+      .reviews-slider-section .discription {
+        font-size: 26px; } }
+    @media (max-width: 479px) {
+      .reviews-slider-section .discription {
+        font-size: 21px; } }
+  .reviews-slider-section .user-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 0 auto;
+    overflow: hidden; }
+  .reviews-slider-section .user-img {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    margin-right: 16px;
+    z-index: 1; }
+  .reviews-slider-section .name {
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    font-size: 22px;
+    font-weight: 600;
+    -webkit-transform: translate(-120%);
+    transform: translate(-120%);
+    transition: all 1s ease 0s; }
+    @media (max-width: 479px) {
+      .reviews-slider-section .name {
+        font-size: 20px; } }
+  .reviews-slider-section .user-wrap.show .name {
+    -webkit-transform: translate(0%);
+    transform: translate(0%); }
+  .reviews-slider-section .reviews-swiper-pagination {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .reviews-slider-section .swiper-pagination-bullet {
+    width: 100%;
+    max-width: 83px;
+    height: 3px;
+    background-color: #EEB663;
+    border-radius: 0;
+    opacity: .3;
+    transition: all 0.5s ease 0s;
+    margin: 0 10px !important; }
+  .reviews-slider-section .swiper-pagination-bullet-active {
+    opacity: 1; }
+
 /* ----------------------------aboutdr-section------------------------ */
 .aboutdr-section {
   position: relative;

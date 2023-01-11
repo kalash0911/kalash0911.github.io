@@ -280,4 +280,18 @@ destroySlidersOnResize(".video-slider", 99999, {
     }
   }
 });
+destroySlidersOnResize(".reviews-slider", 99999, {
+  spaceBetween: 30,
+  effect: "fade",
+  autoHeight: true,
+  speed: 700,
+  mousewheel: {
+    invert: false,
+    releaseOnEdges: true
+  },
+  pagination: {
+    el: ".reviews-swiper-pagination",
+    clickable: true
+  }
+});
 //# sourceMappingURL=main.js.map
