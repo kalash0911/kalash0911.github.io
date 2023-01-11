@@ -1,4 +1,4 @@
-/* --------------------------contact_form-section------------------- */
+/* ------------------------contact_form-section------------------- */
 
 .contact_form-section {
     position: relative;
@@ -132,7 +132,7 @@
     }
 }
 
-/* ----------------------------main-slider-section------------------------ */
+/* -------------------------main-slider-section-------------------- */
 
 .main-slider-section {
     position: relative;
@@ -278,7 +278,7 @@
     }
 }
 
-/* ------------------------------sec-slider-section------------------------- */
+/* --------------------------sec-slider-section--------------------- */
 
 .sec-slider-section {
     padding: 80px 20px;
@@ -381,28 +381,68 @@
         padding-top: 52px;
     }
 
-    #pagination {
-        position: relative;
-        bottom: 0;
-        margin-bottom: 10px;
-        font-family: $gilroy;
-        color: #A4A5B1;
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-    #scrollbar {
+    .sec-swiper-scrollbar {
         position: relative;
         left: 0;
         bottom: 0;
         width: 100%;
+        height: 5px;
         z-index: 1;
         max-width: 1320px;
         padding-right: 20px;
         margin: 0 auto;
+        background: rgba($gold, 0.2);
+        border-radius: 0;
     }
 
-    .swiper-scrollbar {
+    .swiper-scrollbar-drag {
+        background: $gold;
+        border-radius: 0;
+        cursor: grab;
+    }
+}
+
+/* -------------------------video-slider-section--------------------- */
+
+.video-slider-section {
+    padding: 160px 20px;
+
+    @include media('<tablet'){
+        padding: 88px 20px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .video-slider {
+        max-width: 1320px;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    .video-section {
+        width: 100%;
+        height: auto;
+        @include adaptiv-vaule("min-height", 355, 260, 1);
+        margin: 0;
+    }
+
+    .slider-nav {
+        padding-top: 52px;
+    }
+
+
+    .video-swiper-scrollbar {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+        z-index: 1;
+        max-width: 1320px;
+        padding-right: 20px;
+        margin: 0 auto;
         background: rgba($gold, 0.2);
         border-radius: 0;
 
@@ -590,6 +630,8 @@
         display: block;
     }
 }
+
+
 
 .body_overflow{
     position: relative;

@@ -1739,7 +1739,8 @@ body {
 /* ------------------------gallery-section-------------------- */
 .gallery-section {
   padding: 100px 0;
-  text-align: center; }
+  text-align: center;
+  background: #FFFFFF; }
   @media (max-width: 767px) {
     .gallery-section {
       padding: 56px 0; } }
@@ -1851,7 +1852,7 @@ body {
       .gallery-section .inscr {
         font-size: 18px; } }
 
-/* --------------------------contact_form-section------------------- */
+/* ------------------------contact_form-section------------------- */
 .contact_form-section {
   position: relative;
   padding: 100px 0 150px 0;
@@ -1973,7 +1974,7 @@ body {
   .contact_form-section .main-btn {
     cursor: pointer; }
 
-/* ----------------------------main-slider-section------------------------ */
+/* -------------------------main-slider-section-------------------- */
 .main-slider-section {
   position: relative;
   padding: 80px 0; }
@@ -2085,7 +2086,7 @@ body {
       -webkit-transform: rotate(-90deg);
       transform: rotate(-90deg); } }
 
-/* ------------------------------sec-slider-section------------------------- */
+/* --------------------------sec-slider-section--------------------- */
 .sec-slider-section {
   padding: 80px 20px; }
   @media (max-width: 767px) {
@@ -2161,27 +2162,60 @@ body {
     font-weight: 500; }
   .sec-slider-section .slider-nav {
     padding-top: 52px; }
-  .sec-slider-section #pagination {
-    position: relative;
-    bottom: 0;
-    margin-bottom: 10px;
-    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-    color: #A4A5B1;
-    font-size: 14px;
-    font-weight: 400; }
-  .sec-slider-section #scrollbar {
+  .sec-slider-section .sec-swiper-scrollbar {
     position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 5px;
     z-index: 1;
     max-width: 1320px;
     padding-right: 20px;
-    margin: 0 auto; }
-  .sec-slider-section .swiper-scrollbar {
+    margin: 0 auto;
     background: rgba(238, 182, 99, 0.2);
     border-radius: 0; }
   .sec-slider-section .swiper-scrollbar-drag {
+    background: #EEB663;
+    border-radius: 0;
+    cursor: -webkit-grab;
+    cursor: grab; }
+
+/* -------------------------video-slider-section--------------------- */
+.video-slider-section {
+  padding: 160px 20px; }
+  @media (max-width: 767px) {
+    .video-slider-section {
+      padding: 88px 20px; } }
+  .video-slider-section .container {
+    padding: 0; }
+  .video-slider-section .video-slider {
+    max-width: 1320px;
+    margin: 0 auto;
+    overflow: visible; }
+  .video-slider-section .video-section {
+    width: 100%;
+    height: auto;
+    /* Только если меньше контейнера */
+    min-height: 355px;
+    margin: 0; }
+    @media (max-width: 1280px) {
+      .video-slider-section .video-section {
+        min-height: calc(260px + 95 * ((100vw - calc(375px)) / 905)); } }
+  .video-slider-section .slider-nav {
+    padding-top: 52px; }
+  .video-slider-section .video-swiper-scrollbar {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 1;
+    max-width: 1320px;
+    padding-right: 20px;
+    margin: 0 auto;
+    background: rgba(238, 182, 99, 0.2);
+    border-radius: 0; }
+  .video-slider-section .swiper-scrollbar-drag {
     background: #EEB663;
     border-radius: 0;
     cursor: -webkit-grab;

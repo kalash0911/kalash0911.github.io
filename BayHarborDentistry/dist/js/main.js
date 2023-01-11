@@ -214,7 +214,7 @@ destroySlidersOnResize(".sec-slider", 99999, {
   freeMode: true,
   speed: 700,
   scrollbar: {
-    el: ".swiper-scrollbar",
+    el: ".sec-swiper-scrollbar",
     draggable: true
   },
   breakpoints: {
@@ -241,6 +241,42 @@ destroySlidersOnResize(".sec-slider", 99999, {
     },
     1300: {
       slidesPerView: 1.7
+    }
+  }
+});
+destroySlidersOnResize(".video-slider", 99999, {
+  spaceBetween: 30,
+  autoHeight: true,
+  freeMode: true,
+  speed: 700,
+  scrollbar: {
+    el: ".video-swiper-scrollbar",
+    draggable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.01,
+      spaceBetween: 10
+    },
+    480: {
+      slidesPerView: 1.05,
+      spaceBetween: 20
+    },
+    640: {
+      slidesPerView: 1.1,
+      spaceBetween: 30
+    },
+    860: {
+      slidesPerView: 1.2
+    },
+    960: {
+      slidesPerView: 1.5
+    },
+    1024: {
+      slidesPerView: 1.9
+    },
+    1300: {
+      slidesPerView: 2.05
     }
   }
 });
