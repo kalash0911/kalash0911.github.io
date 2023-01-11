@@ -2049,21 +2049,23 @@ body {
       .main-slider-section .description {
         font-size: 14px; } }
   .main-slider-section #pagination {
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
     right: 0;
+    left: auto;
     bottom: 50px;
-    padding-right: 100px; }
+    padding-right: 60px; }
     @media (max-width: 1299px) {
       .main-slider-section #pagination {
         -ms-flex-pack: center;
         justify-content: center;
         bottom: 0;
+        max-width: 100%;
         padding: 0; } }
   .main-slider-section .swiper-pagination-bullet {
-    width: 83px;
+    width: 100%;
     height: 3px;
     background-color: #EEB663;
     border-radius: 0;
