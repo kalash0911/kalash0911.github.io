@@ -380,7 +380,7 @@ th {
 @font-face {
   font-family: "Boska";
   src: url("../fonts/Boska-Light.ttf");
-  font-style: normal;
+  font-style: light;
   font-weight: 300; }
 
 @font-face {
@@ -388,6 +388,12 @@ th {
   src: url("../fonts/Boska-Regular.ttf");
   font-style: normal;
   font-weight: 400; }
+
+@font-face {
+  font-family: "Boska";
+  src: url("../fonts/Boska-Medium.ttf");
+  font-style: medium;
+  font-weight: 500; }
 
 @font-face {
   font-family: "Gilroy";
@@ -2024,6 +2030,8 @@ body {
       .text-video-col-section .discription {
         font-size: 14px;
         margin: 0 auto 36px auto; } }
+  .text-video-col-section .video-section {
+    margin-bottom: 0; }
 
 /* ---------------------------------img-bg-section--------------------- */
 .img-bg-section {
@@ -2066,6 +2074,102 @@ body {
     @media (max-width: 479px) {
       .img-bg-section .discription {
         font-size: 14px; } }
+
+/* ---------------------------------offers-section---------------------- */
+.offers-section {
+  position: relative;
+  padding: 160px 0;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .offers-section {
+      padding: 88px 0; } }
+  .offers-section .block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 24px;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    @media (max-width: 479px) {
+      .offers-section .block {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); } }
+  .offers-section .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border: 1px solid #D6D7E3;
+    padding: 32px 25px; }
+    .offers-section .item .title {
+      font-size: 36px;
+      border-bottom: 1px solid #D6D7E3;
+      padding-bottom: 10px;
+      margin-bottom: 20px; }
+      @media (max-width: 479px) {
+        .offers-section .item .title {
+          font-size: 21px;
+          margin-bottom: 16px; } }
+  .offers-section .price {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    font-size: 52px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px; }
+    @media (max-width: 479px) {
+      .offers-section .price {
+        font-size: 36px;
+        margin-bottom: 16px; } }
+    .offers-section .price i {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+      font-style: normal;
+      font-size: 35px; }
+      @media (max-width: 479px) {
+        .offers-section .price i {
+          font-size: 27px; } }
+  .offers-section .discription {
+    font-weight: 600;
+    line-height: 1.75;
+    margin-bottom: 20px; }
+    @media (max-width: 479px) {
+      .offers-section .discription {
+        font-size: 14px;
+        margin-bottom: 16px; } }
+  .offers-section .blue-btn {
+    min-width: 175px; }
+
+/* ----------------------------------ready-section----------------------- */
+.ready-section {
+  position: relative;
+  padding: 100px 0 200px 0;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .ready-section {
+      padding: 88px 0 200px 0; } }
+  @media (max-width: 479px) {
+    .ready-section {
+      padding: 88px 0 150px 0; } }
+  @media (max-width: 479px) {
+    .ready-section .title-wrap {
+      padding: 14px 0 16px 0; } }
+  @media (max-width: 479px) {
+    .ready-section .description {
+      font-size: 14px; } }
+  .ready-section .description a {
+    color: #4E5168;
+    text-decoration: underline; }
+    .ready-section .description a:hover {
+      text-decoration: none; }
 
 /* ------------------------contact_form-section------------------- */
 .contact_form-section {

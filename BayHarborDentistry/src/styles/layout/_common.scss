@@ -1677,6 +1677,10 @@ body {
             margin: 0 auto 36px auto;
         }
     }
+
+    .video-section {
+        margin-bottom: 0;
+    }
 }
 
 /* ---------------------------------img-bg-section--------------------- */
@@ -1730,6 +1734,131 @@ body {
 
         @include media('<phone'){
             font-size: 14px;
+        }
+    }
+}
+
+/* ---------------------------------offers-section---------------------- */
+
+.offers-section {
+    position: relative;
+    padding: 160px 0;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .block {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+        gap: 24px;
+        justify-content: center;
+
+        @include media('<phone'){
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #D6D7E3;
+        padding: 32px 25px;
+
+        .title {
+            font-size: 36px;
+            border-bottom: 1px solid #D6D7E3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+    
+            @include media('<phone'){
+                font-size: 21px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .price {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        font-family: $boska;
+        color: $blue;
+        font-size: 52px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @include media('<phone'){
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        i{
+            transform: translateY(5px);
+            font-style: normal;
+            font-size: 35px;
+
+            @include media('<phone'){
+                font-size: 27px;
+            }
+        }
+    }
+
+    .discription {
+        font-weight: 600;
+        line-height: 1.75;
+        margin-bottom: 20px;
+
+        @include media('<phone'){
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .blue-btn {
+        min-width: 175px;
+    }
+}
+
+/* ----------------------------------ready-section----------------------- */
+
+.ready-section {
+    position: relative;
+    padding: 100px 0 200px 0;
+    overflow: hidden;
+    background-color: $white;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 88px 0 200px 0;
+    }
+
+    @include media('<phone'){
+        padding: 88px 0 150px 0;
+    }
+
+    .title-wrap {
+        @include media('<phone'){
+            padding: 14px 0 16px 0;
+        }
+    }
+
+    .description {
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+
+        a {
+            color: #4E5168;
+            text-decoration: underline;
+
+            &:hover{
+                text-decoration: none;
+            }
         }
     }
 }

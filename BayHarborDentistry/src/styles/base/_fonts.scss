@@ -8,7 +8,7 @@
 @font-face {
     font-family: "Boska";
     src: url("../fonts/Boska-Light.ttf");
-    font-style: normal;
+    font-style: light;
     font-weight: 300;
 }
 
@@ -17,6 +17,13 @@
     src: url("../fonts/Boska-Regular.ttf");
     font-style: normal;
     font-weight: 400;
+}
+
+@font-face {
+    font-family: "Boska";
+    src: url("../fonts/Boska-Medium.ttf");
+    font-style: medium;
+    font-weight: 500;
 }
 
 @font-face {
