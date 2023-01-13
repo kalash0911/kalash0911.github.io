@@ -2149,31 +2149,6 @@ body {
   .offers-section .blue-btn {
     min-width: 175px; }
 
-/* ----------------------------------ready-section----------------------- */
-.ready-section {
-  position: relative;
-  padding: 100px 0 200px 0;
-  overflow: hidden;
-  background-color: #fff;
-  text-align: center; }
-  @media (max-width: 767px) {
-    .ready-section {
-      padding: 88px 0 200px 0; } }
-  @media (max-width: 479px) {
-    .ready-section {
-      padding: 88px 0 150px 0; } }
-  @media (max-width: 479px) {
-    .ready-section .title-wrap {
-      padding: 14px 0 16px 0; } }
-  @media (max-width: 479px) {
-    .ready-section .description {
-      font-size: 14px; } }
-  .ready-section .description a {
-    color: #4E5168;
-    text-decoration: underline; }
-    .ready-section .description a:hover {
-      text-decoration: none; }
-
 /* ---------------------------------img-text-section--------------------- */
 .img-text-section {
   position: relative;
@@ -2243,7 +2218,49 @@ body {
       .payments-text-section .description {
         margin-bottom: 16px; } }
 
-/* ------------------------contact_form-section------------------- */
+/* -----------------------------------contact-section-------------------- */
+.contact-section {
+  position: relative;
+  padding: 160px 0;
+  background-color: #fff;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .contact-section {
+      padding: 88px 0; } }
+  .contact-section .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .contact-section .contacts {
+    width: 49%; }
+  .contact-section .contact-form {
+    width: 49%;
+    max-width: 680px;
+    border: 1px solid #EEB663; }
+  .contact-section .item {
+    display: -ms-flexbox;
+    display: flex; }
+  .contact-section .blue-btn {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .contact-section .blue-btn:hover svg {
+      stroke: #010B6C;
+      fill: #fff;
+      -webkit-transform: translate(10px);
+      transform: translate(10px); }
+    .contact-section .blue-btn svg {
+      width: 29px;
+      height: 16px;
+      stroke: #fff;
+      margin-left: 8px;
+      transition: all 0.3s ease 0s; }
+
+/* -----------------------------contact_form-section------------------- */
 .contact_form-section {
   position: relative;
   padding: 100px 0 150px 0;
@@ -2365,7 +2382,7 @@ body {
   .contact_form-section .main-btn {
     cursor: pointer; }
 
-/* -------------------------main-slider-section-------------------- */
+/* ------------------------------main-slider-section-------------------- */
 .main-slider-section {
   position: relative;
   padding: 80px 0; }
@@ -2479,7 +2496,7 @@ body {
       -webkit-transform: rotate(-90deg);
       transform: rotate(-90deg); } }
 
-/* --------------------------sec-slider-section--------------------- */
+/* ------------------------------sec-slider-section---------------------- */
 .sec-slider-section {
   padding: 80px 20px; }
   @media (max-width: 767px) {
@@ -2573,7 +2590,7 @@ body {
     cursor: -webkit-grab;
     cursor: grab; }
 
-/* -------------------------video-slider-section--------------------- */
+/* ------------------------------video-slider-section--------------------- */
 .video-slider-section {
   padding: 160px 20px; }
   @media (max-width: 767px) {
@@ -2614,7 +2631,7 @@ body {
     cursor: -webkit-grab;
     cursor: grab; }
 
-/* ------------------------reviews-slider-section-------------------- */
+/* -----------------------------reviews-slider-section-------------------- */
 .reviews-slider-section {
   padding: 160px 0;
   text-align: center; }
@@ -2752,7 +2769,7 @@ body {
   .reviews-slider-section .swiper-pagination-bullet-active {
     opacity: 1; }
 
-/* ----------------------------aboutdr-section------------------------ */
+/* ---------------------------------aboutdr-section------------------------ */
 .aboutdr-section {
   position: relative;
   background: #F9F4EF; }
@@ -2880,6 +2897,31 @@ body {
         transform: rotate(-45deg); }
   .aboutdr-section .video-block_active {
     display: block; }
+
+/* ----------------------------------ready-section------------------------- */
+.ready-section {
+  position: relative;
+  padding: 100px 0 200px 0;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .ready-section {
+      padding: 88px 0 200px 0; } }
+  @media (max-width: 479px) {
+    .ready-section {
+      padding: 88px 0 150px 0; } }
+  @media (max-width: 479px) {
+    .ready-section .title-wrap {
+      padding: 14px 0 16px 0; } }
+  @media (max-width: 479px) {
+    .ready-section .description {
+      font-size: 14px; } }
+  .ready-section .description a {
+    color: #4E5168;
+    text-decoration: underline; }
+    .ready-section .description a:hover {
+      text-decoration: none; }
 
 .body_overflow {
   position: relative;

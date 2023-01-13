@@ -1827,46 +1827,6 @@ body {
     }
 }
 
-/* ----------------------------------ready-section----------------------- */
-
-.ready-section {
-    position: relative;
-    padding: 100px 0 200px 0;
-    overflow: hidden;
-    background-color: $white;
-    text-align: center;
-
-    @include media('<tablet'){
-        padding: 88px 0 200px 0;
-    }
-
-    @include media('<phone'){
-        padding: 88px 0 150px 0;
-    }
-
-    .title-wrap {
-        @include media('<phone'){
-            padding: 14px 0 16px 0;
-        }
-    }
-
-    .description {
-
-        @include media('<phone'){
-            font-size: 14px;
-        }
-
-        a {
-            color: #4E5168;
-            text-decoration: underline;
-
-            &:hover{
-                text-decoration: none;
-            }
-        }
-    }
-}
-
 /* ---------------------------------img-text-section--------------------- */
 
 .img-text-section {
@@ -1964,6 +1924,61 @@ body {
 
         @include media('<tablet'){
             margin-bottom: 16px;
+        }
+    }
+}
+
+/* -----------------------------------contact-section-------------------- */
+
+.contact-section {
+    position: relative;
+    padding: 160px 0;
+    background-color: $white;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contacts {
+        width: 49%;
+    }
+
+    .contact-form {
+        width: 49%;
+        max-width: 680px;
+        border: 1px solid $gold;
+    }
+
+    .item {
+        display: flex;
+    }
+
+    .blue-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover{
+
+            svg {
+                stroke: $blue;
+                fill: $white;
+                transform: translate(10px);
+            }
+        }
+
+        svg {
+            width: 29px;
+            height: 16px;
+            stroke: $white;
+            margin-left: 8px;
+            transition: $all_03;
         }
     }
 }

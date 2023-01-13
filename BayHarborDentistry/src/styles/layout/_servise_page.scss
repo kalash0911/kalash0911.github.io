@@ -1,4 +1,4 @@
-/* ------------------------contact_form-section------------------- */
+/* -----------------------------contact_form-section------------------- */
 
 .contact_form-section {
     position: relative;
@@ -132,7 +132,7 @@
     }
 }
 
-/* -------------------------main-slider-section-------------------- */
+/* ------------------------------main-slider-section-------------------- */
 
 .main-slider-section {
     position: relative;
@@ -281,7 +281,7 @@
     }
 }
 
-/* --------------------------sec-slider-section--------------------- */
+/* ------------------------------sec-slider-section---------------------- */
 
 .sec-slider-section {
     padding: 80px 20px;
@@ -405,7 +405,7 @@
     }
 }
 
-/* -------------------------video-slider-section--------------------- */
+/* ------------------------------video-slider-section--------------------- */
 
 .video-slider-section {
     padding: 160px 20px;
@@ -458,7 +458,7 @@
     }
 }
 
-/* ------------------------reviews-slider-section-------------------- */
+/* -----------------------------reviews-slider-section-------------------- */
 
 .reviews-slider-section {
     padding: 160px 0;
@@ -633,7 +633,7 @@
     }
 }
 
-/* ----------------------------aboutdr-section------------------------ */
+/* ---------------------------------aboutdr-section------------------------ */
 
 .aboutdr-section {
     position: relative;
@@ -808,6 +808,48 @@
         display: block;
     }
 }
+
+/* ----------------------------------ready-section------------------------- */
+
+.ready-section {
+    position: relative;
+    padding: 100px 0 200px 0;
+    overflow: hidden;
+    background-color: $white;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 88px 0 200px 0;
+    }
+
+    @include media('<phone'){
+        padding: 88px 0 150px 0;
+    }
+
+    .title-wrap {
+        @include media('<phone'){
+            padding: 14px 0 16px 0;
+        }
+    }
+
+    .description {
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
+
+        a {
+            color: #4E5168;
+            text-decoration: underline;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
 
 
 
