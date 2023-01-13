@@ -1939,6 +1939,9 @@ body {
     @media (max-width: 767px) {
       .review-us-section .description {
         margin-bottom: 0; } }
+    @media (max-width: 479px) {
+      .review-us-section .description {
+        font-size: 14px; } }
     .review-us-section .description a {
       color: inherit;
       text-decoration: underline; }
@@ -2170,6 +2173,75 @@ body {
     text-decoration: underline; }
     .ready-section .description a:hover {
       text-decoration: none; }
+
+/* ---------------------------------img-text-section--------------------- */
+.img-text-section {
+  position: relative;
+  padding: 160px 0;
+  background-color: #fff; }
+  @media (max-width: 767px) {
+    .img-text-section {
+      padding: 88px 0; } }
+  .img-text-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .img-text-section .container {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .img-text-section .img-cont {
+    width: 49%; }
+    @media (max-width: 1023px) {
+      .img-text-section .img-cont {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 32px; } }
+    @media (max-width: 1023px) {
+      .img-text-section .img-cont img {
+        width: 100%; } }
+  .img-text-section .block {
+    width: 49%; }
+    @media (max-width: 1023px) {
+      .img-text-section .block {
+        width: 100%; } }
+  .img-text-section .discription {
+    margin-bottom: 10px; }
+    @media (max-width: 479px) {
+      .img-text-section .discription {
+        margin: 0;
+        font-size: 14px; } }
+  .img-text-section .title-linedown {
+    letter-spacing: -0.3px; }
+  .img-text-section .mob {
+    display: none;
+    text-align: center; }
+    @media (max-width: 1023px) {
+      .img-text-section .mob {
+        display: block; } }
+  .img-text-section .desc {
+    margin-bottom: 34px; }
+    @media (max-width: 1023px) {
+      .img-text-section .desc {
+        display: none; } }
+  @media (max-width: 479px) {
+    .img-text-section .img {
+      padding-top: 14px; } }
+
+/* --------------------------------payments-text-section----------------- */
+.payments-text-section {
+  padding: 100px 0;
+  background: #FDFAF8; }
+  @media (max-width: 767px) {
+    .payments-text-section {
+      padding: 56px 0; } }
+  .payments-text-section .description {
+    max-width: 826px;
+    margin-bottom: 24px; }
+    @media (max-width: 767px) {
+      .payments-text-section .description {
+        margin-bottom: 16px; } }
 
 /* ------------------------contact_form-section------------------- */
 .contact_form-section {

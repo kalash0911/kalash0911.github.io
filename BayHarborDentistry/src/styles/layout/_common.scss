@@ -1555,6 +1555,10 @@ body {
             margin-bottom: 0;
         }
 
+        @include media('<phone'){
+            font-size: 14px;
+        }
+
         a {
             color: inherit;
             text-decoration: underline;
@@ -1859,6 +1863,107 @@ body {
             &:hover{
                 text-decoration: none;
             }
+        }
+    }
+}
+
+/* ---------------------------------img-text-section--------------------- */
+
+.img-text-section {
+    position: relative;
+    padding: 160px 0;
+    background-color: $white;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+    }
+
+    .img-cont {
+        width: 49%;
+
+        @include media('<desktop'){
+            width: 100%;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        img {
+            @include media('<desktop'){
+                width: 100%;
+            }
+        }
+    }
+
+    .block {
+        width: 49%;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+    }
+
+    .discription {
+        margin-bottom: 10px;
+
+        @include media('<phone'){
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+
+    .title-linedown {
+        letter-spacing: -0.3px;
+    }
+
+    .mob {
+        display: none;
+        text-align: center;
+
+        @include media('<desktop'){
+            display: block;
+        }
+    }
+
+    .desc {
+        margin-bottom: 34px;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .img {
+        @include media('<phone'){
+            padding-top: 14px;
+        }
+    }
+}
+    
+/* --------------------------------payments-text-section----------------- */
+
+.payments-text-section {
+    padding: 100px 0;
+    background: #FDFAF8;
+
+    @include media('<tablet'){
+        padding: 56px 0;
+    }
+
+    .description {
+        max-width: 826px;
+        margin-bottom: 24px;
+
+        @include media('<tablet'){
+            margin-bottom: 16px;
         }
     }
 }
