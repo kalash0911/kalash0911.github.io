@@ -429,6 +429,22 @@ body {
     --animate-duration: 3s;
 }
 
+.body_overflow{
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+}
+
 /* ---------------for video player */
 
 .video-wrap {

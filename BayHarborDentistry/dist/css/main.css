@@ -1004,6 +1004,19 @@ body {
 .animate__fadeIn {
   --animate-duration: 3s; }
 
+.body_overflow {
+  position: relative;
+  overflow: hidden; }
+  .body_overflow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2; }
+
 /* ---------------for video player */
 .video-wrap {
   position: relative;
@@ -3286,108 +3299,148 @@ body {
     .ready-section .description a:hover {
       text-decoration: none; }
 
-.body_overflow {
-  position: relative;
-  overflow: hidden; }
-  .body_overflow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2; }
-
-.servise_page {
-  background-color: #fff; }
-
-.emegrency_dental {
-  /* Только если меньше контейнера */
-  padding-top: 80px;
-  /* Только если меньше контейнера */
-  padding-bottom: 80px; }
-  @media (max-width: 1280px) {
-    .emegrency_dental {
-      padding-top: calc(40px + 40 * ((100vw - calc(375px)) / 905)); } }
-  @media (max-width: 1280px) {
-    .emegrency_dental {
-      padding-bottom: calc(40px + 40 * ((100vw - calc(375px)) / 905)); } }
-  .emegrency_dental .emegrency_dental_title {
-    border-top: 2px solid #EEB663;
-    position: relative;
-    padding-top: 15px;
-    max-width: 670px;
-    text-align: center;
-    margin: 0 auto;
+/* ---------------------------------video-text-section--------------------- */
+.video-text-section {
+  padding: 160px 0;
+  text-align: center; }
+  @media (max-width: 767px) {
+    .video-text-section {
+      padding: 88px 0; } }
+  .video-text-section .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 959px) {
+      .video-text-section .block {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .video-text-section .video-section {
+    width: 49%;
     /* Только если меньше контейнера */
-    margin-bottom: 25px; }
+    min-height: 480px;
+    margin: 0; }
     @media (max-width: 1280px) {
-      .emegrency_dental .emegrency_dental_title {
-        margin-bottom: calc(35px + -10 * ((100vw - calc(375px)) / 905)); } }
-  .emegrency_dental .emegrency_dental_description {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 162.5%;
-    max-width: 800px;
-    text-align: center;
-    margin: 0 auto;
-    /* Только если меньше контейнера */
-    margin-bottom: 50px; }
-    @media (max-width: 1280px) {
-      .emegrency_dental .emegrency_dental_description {
-        margin-bottom: calc(35px + 15 * ((100vw - calc(375px)) / 905)); } }
+      .video-text-section .video-section {
+        min-height: calc(260px + 220 * ((100vw - calc(375px)) / 905)); } }
+    @media (max-width: 959px) {
+      .video-text-section .video-section {
+        width: 100%;
+        margin-bottom: 36px; } }
+  .video-text-section .text {
+    width: 49%;
+    text-align: left; }
+    @media (max-width: 959px) {
+      .video-text-section .text {
+        width: 100%; } }
+  .video-text-section .title-text {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px; }
     @media (max-width: 479px) {
-      .emegrency_dental .emegrency_dental_description {
-        text-align: start; } }
-  .emegrency_dental .emegrency_dental_items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* Только если меньше контейнера */
-    row-gap: 50px;
-    /* Только если меньше контейнера */
-    -webkit-column-gap: 60px;
-    -moz-column-gap: 60px;
-    column-gap: 60px; }
-    @media (max-width: 1280px) {
-      .emegrency_dental .emegrency_dental_items {
-        row-gap: calc(25px + 25 * ((100vw - calc(375px)) / 905)); } }
-    @media (max-width: 1280px) {
-      .emegrency_dental .emegrency_dental_items {
-        -webkit-column-gap: calc(5px + 55 * ((100vw - calc(375px)) / 905));
-        -moz-column-gap: calc(5px + 55 * ((100vw - calc(375px)) / 905));
-        column-gap: calc(5px + 55 * ((100vw - calc(375px)) / 905)); } }
-    @media (max-width: 1023px) {
-      .emegrency_dental .emegrency_dental_items {
-        grid-template-columns: 1fr 1fr 1fr; } }
-    @media (max-width: 767px) {
-      .emegrency_dental .emegrency_dental_items {
-        grid-template-columns: 1fr 1fr; } }
+      .video-text-section .title-text {
+        font-size: 21px; } }
+  .video-text-section .sub-title {
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #4E5168;
+    text-transform: none;
+    margin-bottom: 16px; }
+    @media (max-width: 479px) {
+      .video-text-section .sub-title {
+        font-size: 18px; } }
+  .video-text-section .description {
+    margin-bottom: 30px; }
+    @media (max-width: 479px) {
+      .video-text-section .description {
+        font-size: 14px; } }
+
+/* -------------------------==----------list-section------=====------------ */
+.list-section {
+  padding: 160px 0;
+  text-align: center;
+  margin-bottom: -44px; }
+  @media (max-width: 767px) {
+    .list-section {
+      padding: 88px 0; } }
+  @media (max-width: 549px) {
+    .list-section {
+      margin-bottom: -24px; } }
+  .list-section .description {
+    max-width: 820px;
+    margin: 0 auto 48px auto; }
     @media (max-width: 549px) {
-      .emegrency_dental .emegrency_dental_items {
-        grid-template-columns: 1fr; } }
-  .emegrency_dental .item {
+      .list-section .description {
+        text-align: left;
+        margin: 0 auto 36px auto; } }
+  .list-section .list {
+    counter-reset: my-awesome-counter;
+    max-width: 966px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 auto;
+    /* Только если меньше контейнера */
+    margin-left: 200px;
+    padding: 0; }
+    @media (max-width: 1280px) {
+      .list-section .list {
+        margin-left: calc(-400px + 600 * ((100vw - calc(375px)) / 905)); } }
+    @media (max-width: 1023px) {
+      .list-section .list {
+        margin: 0 auto; } }
+  .list-section .item {
+    counter-increment: my-awesome-counter;
+    width: 22%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-align: start;
-    align-items: flex-start; }
-  .emegrency_dental .emegrency_dental_number {
-    /* Только если меньше контейнера */
-    font-size: 28px;
-    color: #EEB663;
-    margin-bottom: 10px; }
-    @media (max-width: 1280px) {
-      .emegrency_dental .emegrency_dental_number {
-        font-size: calc(22px + 6 * ((100vw - calc(375px)) / 905)); } }
-  .emegrency_dental .emegrency_dental_text {
-    color: #010B6C;
+    align-items: flex-start;
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    text-align: left;
     font-size: 16px;
-    letter-spacing: -0.5px;
     font-weight: 500;
-    line-height: 175%;
-    text-transform: uppercase; }
+    line-height: 2;
+    text-transform: uppercase;
+    color: #010B6C;
+    margin-bottom: 44px; }
+    @media (max-width: 1023px) {
+      .list-section .item {
+        width: 30%; } }
+    @media (max-width: 859px) {
+      .list-section .item {
+        width: 45%; } }
+    @media (max-width: 549px) {
+      .list-section .item {
+        width: 100%;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        font-size: 14px;
+        margin-bottom: 24px; } }
+    .list-section .item:before {
+      content: counter(my-awesome-counter);
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      color: #EEB663;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 10px; }
+      @media (max-width: 549px) {
+        .list-section .item:before {
+          font-size: 22px;
+          margin: 0 16px 0 0; } }
+    .list-section .item:nth-child(-n+9)::before {
+      content: "0" counter(my-awesome-counter); }
 
 .for_you {
   /* Только если меньше контейнера */
