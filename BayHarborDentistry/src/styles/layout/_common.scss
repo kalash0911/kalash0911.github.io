@@ -73,7 +73,6 @@ body {
     }
 }
 
-
 .main-btn.show {
     transform: translate(-50%) rotate(0deg);
 }
@@ -348,6 +347,13 @@ body {
         transform: translateY(100%);
         transition: all 1s ease .7s;
         z-index: 1;
+
+        br {
+
+            @include media('<phone'){
+                display: none;
+            }
+        }
     }
 }
 
@@ -368,7 +374,7 @@ body {
 
 .title-linedown-wrap {
     position: relative;
-    display: block;
+    display: inline-block;
     margin-bottom: 50px;
     overflow: hidden;
 
