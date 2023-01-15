@@ -1943,26 +1943,208 @@ body {
     .content {
         display: flex;
         justify-content: space-between;
+
+        @include media('<tablet_max'){
+           flex-direction: column-reverse;
+        }
     }
 
     .contacts {
         width: 49%;
+
+        @include media('<tablet_max'){
+            width: 100%;
+        }
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+
+        &:not(:last-child){
+            margin-bottom: 40px;
+
+            @include media('<phone'){
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    .link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        &:hover + .img-cont{
+            img {
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    .img-cont {
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #F6F4F0;
+
+        @include media('<phone'){
+            width: 36px;
+            min-width: 36px;
+            height: 36px;
+        }
+
+        img {
+            min-width: 24px;
+            transition: $all_03;
+
+            @include media('<phone'){
+                min-width: 10px;
+                width: 40%;
+            }
+        }
+    }
+
+    .text {
+        text-align: left;
+        margin-left: 32px;
+
+
+        @include media('<phone'){
+            margin-left: 16px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    .title-text {
+        font-family: $gilroy;
+        font-weight: 600;
+        font-size: 24px;
+        text-transform: none;
+        margin-bottom: 10px;
+
+        @include media('<phone'){
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .sub-title {
+        font-family: $gilroy;
+        color: $gray_2;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 8px;
+
+        @include media('<phone'){
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
     }
 
     .contact-form {
         width: 49%;
         max-width: 680px;
+        padding: 60px 32px;
         border: 1px solid $gold;
+
+        @include media('<desktop'){
+            padding: 30px 22px;
+        }
+
+        @include media('<tablet_max'){
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 36px;
+        }
     }
 
-    .item {
+    .title-form {
+        font-family: $gilroy;
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 24px;
+
+        @include media('<desktop'){
+            font-size: 22px;
+        }
+
+        @include media('<phone'){
+            font-size: 20px;
+        }
+    }
+
+    .block {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .input {
+        width: 49%;
+        padding: 16px 22px;
+        border: 1px solid #D6D7E3;
+        margin-bottom: 16px;
+        font-family: $gilroy;
+        color: #776C69;
+        font-size: 16px;
+        font-weight: 400;
+        outline: none;
+        transition: $all_03;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+
+        @include media('<phone'){
+            padding: 12px 22px;
+            font-size: 14px;
+        }
+
+        &:focus {
+            color: $blue;
+            border: 1px solid $gold;
+        }
+
+        &::placeholder {
+            font-family: $gilroy;
+            color: #776C69;
+            font-size: 16px;
+            font-weight: 400;
+
+            @include media('<phone'){
+                font-size: 14px;
+            }
+        }
+    }
+
+    .textarea {
+        width: 100%;
+        min-height: 120px;
+        margin-bottom: 32px;
+
+        @include media('<phone'){
+            min-height: 80px;
+        }
     }
 
     .blue-btn {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 auto;
 
         &:hover{
 
@@ -1980,5 +2162,15 @@ body {
             margin-left: 8px;
             transition: $all_03;
         }
+    }
+}
+
+/* -------------------------------------map-section---------------------- */
+
+.map-section {
+
+    iframe {
+        width: 100%;
+        @include adaptiv-vaule("min-height", 450, 260, 1);
     }
 }
