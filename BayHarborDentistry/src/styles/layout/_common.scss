@@ -2174,3 +2174,237 @@ body {
         @include adaptiv-vaule("min-height", 450, 260, 1);
     }
 }
+
+/* ------------------------------------timeline-section------------------ */
+
+.timeline-section {
+    position: relative;
+    background-color: $white;
+
+    .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0;
+
+        @include media('<desktop'){
+            flex-direction: column-reverse;
+        }
+
+        @include media('<phone'){
+            padding: 24px 0;
+        }
+        
+
+        &:first-child {
+            padding: 160px 0 50px 0;
+
+            @include media('<desktop'){
+                padding: 88px 0 50px 0;
+            }
+
+            @include media('<phone'){
+                padding: 88px 0 24px 0;
+            }
+
+            .line {       
+                
+                &::after {
+                    top: 25%;
+
+                    @include media('<desktop'){
+                        top: -9px;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            padding: 50px 0 160px 0;
+
+            @include media('<desktop'){
+                padding: 50px 0 88px 0;
+            }
+
+            @include media('<phone'){
+                padding: 24px 0 88px 0;
+            }
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media('<desktop'){
+                flex-direction: column-reverse;
+            }
+
+            .date-wrap {
+
+                @include media('<desktop'){
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+            }
+
+
+            .date {
+                padding: 0 0 0 30px;
+
+                @include media('<desktop'){
+                    padding: 0;
+                }
+            }
+
+            .line {
+        
+                @include media('<desktop'){
+                    right: -30px;
+                    left: auto;
+                }
+                
+                &::after {
+        
+                    @include media('<desktop'){
+                        top: -9px;
+                        left: 0;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .text {
+        width: 40%;
+
+        @include media('<desktop'){
+           width: 100%;
+        }
+    }
+
+    .title-text {
+        font-family: $gilroy;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 32px;
+        text-transform: none;
+
+        @include media('<desktop'){
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        @include media('<phone'){
+            font-size: 20px;
+        }
+    }
+
+    .name {
+        font-family: $gilroy;
+        color: $gray_2;
+        font-size: 18px;
+        font-weight: 500;
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
+    }
+
+    .video-section {
+        width: 42%;
+        @include adaptiv-vaule("min-height", 350, 260, 1);
+        margin: 0;
+
+        @include media('<desktop'){
+            width: 100%;
+            margin-bottom: 36px;
+        }
+    }
+
+    .date-wrap {
+
+        @include media('<desktop'){
+            position: relative;
+            width: 100%;
+            order: 1;
+            margin-bottom: 36px;
+        }
+    }
+
+    .date {
+        position: relative;
+        font-family: $boska;
+        color: $blue;
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 1;
+        background-color: $white;
+        writing-mode: tb-rl;
+        transform:rotate(180deg);
+        z-index: 1;
+        padding-right: 12px;
+
+        @include media('<desktop'){
+            max-width: max-content;
+            writing-mode: horizontal-tb;
+            transform:rotate(0deg);
+            padding: 0;
+            text-align: left;
+        }
+
+        @include media('<tablet'){
+            font-size: 32px;
+        }
+    }
+
+    .line {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 2px;
+        height: 0;
+        background-color: $blue;
+        opacity: 0.2;
+        transition: all 1.5s linear .5s;
+
+        @include media('<desktop'){
+            width: 0;
+            height: 2px;
+            left: -30px;
+            top: 55%;
+            transform: none;
+        }
+        
+        &::after {
+            content:'';
+            position: absolute;
+            top: 40px;
+            left: -9px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: $white;
+            border: 2px solid $blue;
+
+            @include media('<desktop'){
+                top: -9px;
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    .line.show {
+
+        @include media('>=desktop'){
+            height: 100%;
+        }
+
+        @include media('<desktop'){
+            width: 80%;
+        }
+    }
+}
