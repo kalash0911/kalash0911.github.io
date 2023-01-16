@@ -1441,3 +1441,122 @@
         padding-bottom: 0;
     }
 }
+
+/* -------------------------------------img-text-big-section---------------- */
+
+.img-text-big-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F9F4EF;
+
+    @include media('<desktop'){
+        flex-direction: column;
+    }
+
+    .img-wrap {
+        width: 50%;
+        @include adaptiv-vaule("min-height", 770, 300, 1);
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+    }
+
+    .block {
+        width: 50%;
+        padding: 30px 30px 30px 80px;
+
+        @include media('<laptop_min'){
+            padding: 30px;
+        }
+
+        @include media('<desktop'){
+            width: 100%;
+            padding: 36px 30px 56px 30px;
+        }
+    }
+
+    .text {
+        max-width: 560px;
+
+        @include media('<desktop'){
+            max-width: 100%;
+        }
+    }
+
+    .title-text {
+        @include adaptiv-vaule("font-size", 36, 21, 1);
+        margin-bottom: 16px;
+    }
+
+    span {
+        font-family: $boska;
+    }
+}
+
+/* -----------------------------------img-text-big-rev-section-------------- */
+
+.img-text-big-rev-section {
+    background: #FDFAF8;
+
+    @include media('<desktop'){
+        flex-direction: column-reverse;
+    }
+
+    .block {
+        display: flex;
+        justify-content: flex-end;
+
+        padding: 30px 80px 30px 30px;
+
+        @include media('<laptop_min'){
+            padding: 30px;
+        }
+
+        @include media('<desktop'){
+            width: 100%;
+            padding: 36px 30px 56px 30px;
+        }
+    }
+}
+
+/* ------------------------------------img-list-circle-section-------------- */
+
+.img-list-circle-section {
+    background: $white;
+    padding: 0 0 160px 0;
+
+    @include media('<tablet'){
+        padding: 0 0 88px 0;
+    }
+
+    .sec-title-wrap {
+        margin-bottom: 52px;
+
+        @include media('<desktop'){
+            margin-bottom: 36px;
+        }
+        
+        &::after{
+            right: 5%;
+        }
+    }
+
+    .block {
+        padding-left: 25px;
+
+        @include media('<desktop'){
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+    .description {
+        margin-bottom: 16px;
+    }
+
+    .list {
+        padding-left: 25px;
+    }
+}
