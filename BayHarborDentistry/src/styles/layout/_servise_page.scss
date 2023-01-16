@@ -1783,7 +1783,7 @@
 
 /* -----------------------------------------list-three-section--------------- */
 
-.list-three-section {
+.list-sm-section {
     padding: 160px 0;
     text-align: center;
     margin-bottom: -44px;
@@ -1932,5 +1932,320 @@
         @include media('<phone'){
             font-size: 14px;
         }
+    }
+}
+
+/* ------------------------------------------list-three-section-------------- */
+
+.list-three-section {
+
+
+    .list {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .item {
+        width: 30%;
+        color: $gray_2;
+        line-height: 1.6;
+        text-transform: none;
+        flex-wrap: wrap;
+
+        @include media('<tablet_max'){
+            width: 48%;
+        }
+
+        @include media('<phone_max'){
+            width: 100%;
+        }
+
+        span{
+            display: block;
+            width: 100%;
+            color: $blue;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* ---------------------------------------title-text-teeth-section----------- */
+
+.title-text-teeth-section {
+    padding: 160px 0;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .title-wrap {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-bottom: 52px;
+
+        @include media('<desktop_min'){
+            flex-direction: column;
+        }
+    }
+
+    .title {
+        width: 54%;
+        margin: 0;
+
+        @include media('<desktop_min'){
+            width: 100%;
+        }
+    }
+
+    .text {
+        width: 44%;
+        text-align: end;
+        transform: translateY(-130%);
+        transition: all 1s ease 1s;
+
+        @include media('<desktop_min'){
+            width: 100%;
+            text-align: center;
+            transform: translateY(-250%);
+        }
+
+        @include media('<phone'){
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    .show  {
+
+        .text{
+            transform: translateY(0);
+        }
+    }
+
+    .description {
+        margin: 24px 0;
+    }
+
+    .line-btn {
+
+        &:hover{
+            
+            .icon-arrow {
+                transform: translate(0);
+            }
+        } 
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+
+        @include media('<tablet'){
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    .item {
+        width: 49%;
+        @include adaptiv-vaule("height", 400, 260, 1);
+
+        @include media('<tablet'){
+            width: 100%;
+            max-width: 470px;
+            margin-bottom: 16px;
+        }
+
+        &:hover{
+            
+            .info {
+                opacity: 0;
+            }
+        }
+    }
+
+    .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        transition: $all_03;
+    }
+
+    .icon {
+        margin-bottom: 38px;
+
+        @include media('<tablet'){
+            width: 44px;
+            height: 44px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .info-title {
+        color: $white;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 16px;
+
+        @include media('<tablet'){
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+    }
+
+    .info-sub-title {
+        color: $white;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 40px;
+
+        @include media('<tablet'){
+            font-size: 12px;
+        }
+    }
+
+    .dec {
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .mob {
+        display: none;
+
+        @include media('<desktop'){
+            display: block;
+        }
+    }
+
+    .inscr {
+        position: absolute;
+        left: 50%;
+        bottom: 24px;
+        transform: translate(-50%);
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20.5px);
+        padding: 6px 16px;
+        font-family: $gilroy;
+        color: $white;
+        font-size: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        z-index: 2;
+
+        @include media('<tablet'){
+            font-size: 18px;
+        }
+    }
+}
+
+/* -----------------------------------------video-gallery-section------------ */
+
+.video-gallery-section {
+    padding: 160px 0;
+    margin-bottom: -50px;
+    text-align: center;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    @include media('<phone_max'){
+        margin-bottom: -24px;
+    }
+
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media('<phone_max'){
+            flex-direction: column;
+        }
+    }
+
+    .video-section {
+        width: 48%;
+        @include adaptiv-vaule(" min-height", 480, 260, 1);
+        margin-bottom: 50px;
+
+        @include media('<phone_max'){
+            width: 100%;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+/* ----------------------------------------title-video-text-section----------- */
+
+.title-video-text-section {
+    padding: 160px 0;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .title-linedown-wrap {
+        display: block;
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<desktop'){
+            flex-direction: column-reverse;
+        }
+    }
+
+    .video-section {
+        width: 49%;
+        @include adaptiv-vaule("min-height", 480, 260, 1);
+        margin: 0;
+
+        @include media('<desktop'){
+            width: 100%;
+            margin-bottom: 36px;
+        }
+    }
+
+    .text {
+        width: 48%;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    span {
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+}
+
+/* ----------------------------------------------tabs-section----------------- */
+
+.tabs-section {
+    padding: 160px 0;
+
+    @include media('<tablet'){
+        padding: 88px 0;
     }
 }
