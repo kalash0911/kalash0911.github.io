@@ -293,5 +293,26 @@ destroySlidersOnResize(".reviews-slider", 99999, {
     el: ".reviews-swiper-pagination",
     clickable: true
   }
+}); // For Accardion
+
+var accardionToggle = function accardionToggle(slideMenu) {
+  return function (e) {
+    slideMenu.forEach(function (links) {
+      var hidePanel = links.nextElementSibling;
+
+      if (links === e.currentTarget) {
+        e.currentTarget.classList.toggle('active');
+        hidePanel.classList.toggle('active-block');
+      } else {
+        links.classList.remove('active');
+        hidePanel.classList.remove('active-block');
+      }
+    });
+  };
+};
+
+var slideMenu = document.querySelectorAll('.accardion-link');
+slideMenu.forEach(function (links) {
+  links.addEventListener('click', accardionToggle(slideMenu));
 });
 //# sourceMappingURL=main.js.map
