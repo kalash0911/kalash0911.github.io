@@ -446,7 +446,8 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
         z-index: 2;
     }
 }
@@ -1985,22 +1986,22 @@ body {
             margin-bottom: 6px;
         }
     }
+}
 
-    .contact-form {
-        width: 49%;
-        max-width: 680px;
-        padding: 60px 32px;
-        border: 1px solid $gold;
+.contact-form {
+    width: 49%;
+    max-width: 680px;
+    padding: 60px 32px;
+    border: 1px solid $gold;
 
-        @include media('<desktop'){
-            padding: 30px 22px;
-        }
+    @include media('<desktop'){
+        padding: 30px 22px;
+    }
 
-        @include media('<tablet_max'){
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 36px;
-        }
+    @include media('<tablet_max'){
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 36px;
     }
 
     .title-form {
@@ -2008,26 +2009,27 @@ body {
         font-size: 32px;
         font-weight: 600;
         margin-bottom: 24px;
-
+    
         @include media('<desktop'){
             font-size: 22px;
         }
-
+    
         @include media('<phone'){
             font-size: 20px;
         }
     }
-
+    
     .block {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
+    
     .input {
         width: 49%;
         padding: 16px 22px;
         border: 1px solid #D6D7E3;
+        background-color: transparent;
         margin-bottom: 16px;
         font-family: $gilroy;
         color: #776C69;
@@ -2035,58 +2037,58 @@ body {
         font-weight: 400;
         outline: none;
         transition: $all_03;
-
+    
         @include media('<desktop'){
             width: 100%;
         }
-
+    
         @include media('<phone'){
             padding: 12px 22px;
             font-size: 14px;
         }
-
+    
         &:focus {
             color: $blue;
             border: 1px solid $gold;
         }
-
+    
         &::placeholder {
             font-family: $gilroy;
             color: #776C69;
             font-size: 16px;
             font-weight: 400;
-
+    
             @include media('<phone'){
                 font-size: 14px;
             }
         }
     }
-
+    
     .textarea {
         width: 100%;
         min-height: 120px;
         margin-bottom: 32px;
-
+    
         @include media('<phone'){
             min-height: 80px;
         }
     }
-
+    
     .blue-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto;
-
+    
         &:hover{
-
+    
             svg {
                 stroke: $blue;
                 fill: $white;
                 transform: translate(10px);
             }
         }
-
+    
         svg {
             width: 29px;
             height: 16px;
@@ -2337,6 +2339,126 @@ body {
 
         @include media('<desktop'){
             width: 80%;
+        }
+    }
+}
+
+/* --------------------------------------pop-up */
+
+.pop-up {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1040px;
+    background-color: $white;
+    z-index: 5;
+    padding: 40px 75px 70px 75px;
+    text-align: center;
+    overflow: auto;
+
+    @include media('<desktop'){
+        top: 80px;
+        transform: translate(-50%);
+        padding: 40px;
+    }
+
+    @include media('<phone'){
+        width: 95%;
+        padding: 40px 20px;
+    }
+
+    .pop-up-logo {
+        margin-bottom: 30px;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .title-form {
+        margin-bottom: 32px;
+        font-family: $queensila;
+        @include adaptiv-vaule("font-size", 80, 42, 1);
+        font-weight: 400;
+    }
+
+    form {
+        display: inline-block;
+        max-width: 670px;
+    }
+
+    .input {
+        @include media('<desktop'){
+            width: 49%;
+        }
+
+        @include media('<phone'){
+            width: 100%;
+        }
+    }
+
+    .textarea {
+        width: 100%;
+    }
+
+    .line {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .line1 {
+        top: 0;
+        left: 0;
+    }
+
+    .line2 {
+        top: 0;
+        right: 0;
+    }
+
+    .line3 {
+        bottom: 0;
+        left: 0;
+    }
+
+    .line4 {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+/* ------------------------------------request-block */
+
+.request-block {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    background-color: #E0EAF2;
+    overflow: hidden;
+    text-align: center;
+
+    li {
+        font-family: $queensila;
+        color: $blue;
+        font-size: 36px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin: 0 20px;
+
+        @include media('<tablet'){
+            font-size: 22px;
+            margin: 0 15px;
         }
     }
 }
