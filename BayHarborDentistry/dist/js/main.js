@@ -12,7 +12,35 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-new WOW().init(); // btn logic
+new WOW().init(); // header logic
+
+window.onload = function () {
+  document.addEventListener("click", documentActions);
+
+  function documentActions(e) {
+    var targetElement = e.target;
+
+    if (window.innerWidth < 1200) {
+      if (targetElement.classList.contains('arrows')) {
+        targetElement.closest('.item').classList.toggle('item_active');
+      }
+    }
+  }
+};
+
+var burger = document.querySelector(".burger");
+var menuBody = document.querySelector(".menu-wrap");
+var overflow = document.querySelector(".overflow");
+
+if (burger) {
+  burger.addEventListener("click", function (e) {
+    document.body.classList.toggle("body_lock");
+    document.body.classList.toggle("active");
+    overflow.classList.toggle("overflow_active");
+  });
+}
+
+; // btn logic
 
 var btns = document.querySelectorAll('.btn');
 

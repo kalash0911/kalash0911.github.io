@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="shortcut icon" href="./images/icons/favicon.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
@@ -15,19 +16,47 @@
 
 <body>
     <div id="wrapper">
+        <div class="overflow"></div>
         <header id="header">
             <div class="container">
-                <a href="index.html">home</a>
-                <a href="team_page.html">our team</a>
-                <a href="gallery_page.html">gallery</a>
-                <a href="reviews_page.html">reviews</a>
-                <a href="patients_page.html">patients</a>
-                <a href="payments_page.html">payments</a>
-                <a href="blog_page.html">blog</a>
-                <a href="contact_page.html">contact</a>      
-                <a href="vlog_page.html">vlog</a>      
-                <a href="servise_page.html">servises</a>      
+                <a href="index.html" class="logo">
+                    <img src="./images/icons/logo.svg" alt="logo">
+                </a>
+                <nav class="menu-wrap">
+                    <ul class="menu">
+                        <li class="item"><a class="link" href="team_page.html">our team</a></li>
+                        <li class="item">
+                            <button class="controls link">
+                                servises
+                                <span class="arrows"></span>
+                            </button>
+                            <ul class="sub-menu">
+                                <li class="sub-item"><a href="#"> Full-service digital marketing</a></li>
+                                <li class="sub-item"><a href="#"> Brand identity and communications</a></li>
+                                <li class="sub-item"><a href="#"> Website and mobile app development</a></li>
+                                <li class="sub-item"><a href="#"> Corporate training and speaking</a></li>
+                            </ul>
+                        </li>
+                        <li class="item"><a class="link" href="patients_page.html">New patients</a></li>
+                        <li class="item"><a class="link" href="payments_page.html">Financing</a></li>
+                        <li class="item"><a class="link" href="reviews_page.html">reviews</a></li>
+                        <li class="item"><a class="link" href="gallery_page.html">Smile Gallery</a></li>
+                        <li class="item"><a class="link" href="contact_page.html">Contact</a></li>
+                        <li class="item"><a class="link" href="blog_page.html">Blog</a></li>
+                        <li class="item"><a class="link" href="vlog_page.html">Vlog</a></li>
+                    </ul>
+                </nav>
+                <div class="tel-wrap">
+                    <a class="tel link" href="tel:3059024270">
+                        <img src="./images/icons/phone.svg" alt="icon-tel">
+                        305-902-4270
+                    </a>
+                </div>
+                <button class="burger"></button>
             </div>
+            <img class="line line1" src="./images/icons/blue-line-h.svg" alt="icon-line">
+            <img class="line line2" src="./images/icons/pink-line-h.svg" alt="icon-line">
+            <img class="line line3" src="./images/icons/yellow-curve-h.svg" alt="icon-line">
         </header>
         <main id="main">
             <section class="main-section">

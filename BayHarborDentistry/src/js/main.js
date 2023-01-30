@@ -1,5 +1,32 @@
 new WOW().init();
 
+// header logic
+
+window.onload = function () {
+  document.addEventListener("click", documentActions);
+
+  function documentActions(e) {
+      const targetElement = e.target;
+      if (window.innerWidth < 1200) {
+          if (targetElement.classList.contains('arrows')) {
+              targetElement.closest('.item').classList.toggle('item_active');
+          }
+      }
+  }
+};
+
+const burger = document.querySelector(".burger");
+const menuBody = document.querySelector(".menu-wrap");
+const overflow = document.querySelector(".overflow");
+
+if (burger) {
+  burger.addEventListener("click", function (e) {
+    document.body.classList.toggle("body_lock");
+    document.body.classList.toggle("active");
+    overflow.classList.toggle("overflow_active");
+  });
+};
+
 // btn logic
 
 const btns = document.querySelectorAll('.btn');

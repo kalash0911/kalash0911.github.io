@@ -2,6 +2,10 @@ body {
     background-color: #FDFAF8;
 }
 
+.body_lock{
+    overflow: hidden;
+}
+
 #wrapper{
     overflow: hidden;
 }
@@ -438,6 +442,7 @@ body {
 .body_overflow{
     position: relative;
     overflow: hidden;
+    transition: $all_03;
 
     &::before{
         content:'';
