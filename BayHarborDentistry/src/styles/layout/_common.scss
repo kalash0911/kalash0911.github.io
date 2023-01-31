@@ -2437,6 +2437,47 @@ body {
         bottom: 0;
         right: 0;
     }
+
+    .btn-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: 0;
+        border-radius: 50%;
+        padding: 0;
+        transition: $all_03;
+
+        &::before, &::after{
+            content:'';
+            position: absolute;
+            top: 15px;
+            left: 7px;
+            width: 15px;
+            height: 1px;
+            background-color: $blue;
+            transition: all .3s ease 0s;
+        }
+    
+        &::before{
+            transform: rotate(45deg);
+        }
+    
+        &::after{
+            transform: rotate(-45deg);
+        }
+
+        &:hover{
+            transform: rotate(180deg);
+            background-color: $gold;
+
+            &::before, &::after{ 
+                background-color: $white;
+            }
+        }
+    }
 }
 
 /* ------------------------------------request-block */

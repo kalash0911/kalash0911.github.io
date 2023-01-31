@@ -27,6 +27,20 @@ if (burger) {
   });
 };
 
+// for hover sub menu
+
+const header = document.querySelector("#header");
+const controls = document.querySelector(".item-drop");
+
+if (controls) {
+  controls.onmouseover = function(event) {
+    header.classList.add("hover");
+  };
+  controls.onmouseout = function(event) {
+    header.classList.remove("hover");
+  };
+};
+
 // btn logic
 
 const btns = document.querySelectorAll('.btn');
