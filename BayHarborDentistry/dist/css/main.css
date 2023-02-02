@@ -934,6 +934,10 @@ input[type='submit'] {
     -webkit-column-break-inside: avoid;
     -moz-column-break-inside: avoid;
     break-inside: avoid; }
+    .sub-item-active #header .sub-item {
+      display: none; }
+  #header .sub-item.active {
+    display: block; }
   #header .sub-block {
     padding: 0;
     margin: 0;
@@ -941,6 +945,8 @@ input[type='submit'] {
     @media (max-width: 1199px) {
       #header .sub-block {
         display: none; } }
+    .sub-item-active #header .sub-block {
+      display: block; }
   #header .sub-btn-wrap {
     display: -ms-flexbox;
     display: flex;
@@ -964,6 +970,14 @@ input[type='submit'] {
       #header .sub-btn-wrap .arrows::before, #header .sub-btn-wrap .arrows::after {
         background-color: #010B6C;
         top: 12px; }
+      .sub-item-active #header .sub-btn-wrap .arrows::before {
+        -webkit-transform: rotate(145deg) scale(1.5);
+        transform: rotate(145deg) scale(1.5);
+        background-color: #EEB663; }
+      .sub-item-active #header .sub-btn-wrap .arrows::after {
+        -webkit-transform: translate(7px) rotate(-145deg) scale(1.5);
+        transform: translate(7px) rotate(-145deg) scale(1.5);
+        background-color: #EEB663; }
   #header .sub-bolt-link {
     position: relative;
     display: inline-block;
@@ -983,6 +997,8 @@ input[type='submit'] {
       visibility: visible;
       z-index: 2;
       pointer-events: all; }
+    .sub-item-active #header .sub-bolt-link {
+      font-weight: 600; }
   #header .sub-link {
     position: relative;
     display: inline-block;
@@ -992,6 +1008,9 @@ input[type='submit'] {
     font-weight: 500;
     line-height: 1.7;
     margin-bottom: 12px; }
+    @media (max-width: 1199px) {
+      #header .sub-link {
+        width: 100%; } }
     #header .sub-link::after {
       content: '';
       position: absolute;
@@ -1003,6 +1022,9 @@ input[type='submit'] {
       transition: all 0.3s ease 0s; }
     #header .sub-link:hover::after {
       width: 100%; }
+    .sub-item-active #header .sub-link {
+      margin: 0;
+      padding: 12px 0; }
   #header .sub-img {
     position: absolute;
     top: 100%;

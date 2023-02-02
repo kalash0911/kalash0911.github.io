@@ -24,34 +24,48 @@ if (burger) {
     document.body.classList.toggle("active");
     overflow.classList.toggle("overflow_active");
     document.body.classList.remove("item-active");
+    document.body.classList.remove("sub-item-active");
+    subItem.classList.remove("sub-item-active");
   });
 } // for hover sub menu
 
 
 var header = document.querySelector("#header");
 var itemDrop = document.querySelector(".item-drop");
-
-if (window.innerWidth < 1200) {
+/* if (window.innerWidth > 1200) {
   if (itemDrop) {
-    itemDrop.onmouseover = function (event) {
+    itemDrop.onmouseover = function(event) {
       header.classList.add("hover");
     };
-
-    itemDrop.onmouseout = function (event) {
+    itemDrop.onmouseout = function(event) {
       header.classList.remove("hover");
     };
   }
-} // for active sub menu
+} */
+// for active sub menu
 
+var btnMob = document.querySelector(".btn-mob");
 
-var contMob = document.querySelector(".btn-mob");
-
-if (contMob) {
-  contMob.addEventListener("click", function (e) {
+if (btnMob) {
+  btnMob.addEventListener("click", function (e) {
     document.body.classList.toggle("item-active");
   });
-} // btn logic
+} // for active sub block
 
+
+var subBtnMob = document.querySelectorAll(".sub-btn-mob");
+var subItem = document.querySelector(".sub-item");
+
+if (subBtnMob.length) {
+  for (var i = 0; i < subBtnMob.length; ++i) {
+    subBtnMob[i].addEventListener("click", function (e) {
+      document.body.classList.toggle("sub-item-active");
+      subItem.classList.toggle("active");
+    });
+  }
+}
+
+; // btn logic
 
 var btns = document.querySelectorAll('.btn');
 

@@ -11,6 +11,8 @@ if (burger) {
     document.body.classList.toggle("active");
     overflow.classList.toggle("overflow_active");
     document.body.classList.remove("item-active");
+    document.body.classList.remove("sub-item-active");
+    subItem.classList.remove("sub-item-active");
   });
 }
 
@@ -19,7 +21,7 @@ if (burger) {
 const header = document.querySelector("#header");
 const itemDrop = document.querySelector(".item-drop");
 
-if (window.innerWidth < 1200) {
+/* if (window.innerWidth > 1200) {
   if (itemDrop) {
     itemDrop.onmouseover = function(event) {
       header.classList.add("hover");
@@ -28,17 +30,31 @@ if (window.innerWidth < 1200) {
       header.classList.remove("hover");
     };
   }
-}
+} */
 
 // for active sub menu
 
-const contMob = document.querySelector(".btn-mob");
+const btnMob = document.querySelector(".btn-mob");
 
-if (contMob) {
-  contMob.addEventListener("click", function (e) {
+if (btnMob) {
+  btnMob.addEventListener("click", function (e) {
     document.body.classList.toggle("item-active");
   });
 }
+
+// for active sub block
+
+const subBtnMob = document.querySelectorAll(".sub-btn-mob");
+const subItem = document.querySelector(".sub-item");
+
+if (subBtnMob.length) {
+  for(var i = 0; i < subBtnMob.length; ++i){
+    subBtnMob[i].addEventListener("click", function (e) {
+      document.body.classList.toggle("sub-item-active");
+      subItem.classList.toggle("active");
+    })
+  }
+};
 
 // btn logic
 
@@ -353,5 +369,5 @@ const accardionToggle = (slideMenu) => (e) => {
 const slideMenu = document.querySelectorAll('.accardion-link');
 
 slideMenu.forEach((links) => {
-  links.addEventListener('click', accardionToggle(slideMenu))
+  links.addEventListener('click', accardionToggle(slideMenu));
 });
