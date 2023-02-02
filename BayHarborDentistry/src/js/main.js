@@ -1,20 +1,6 @@
 new WOW().init();
 
 // header logic
-
-window.onload = function () {
-  document.addEventListener("click", documentActions);
-
-  function documentActions(e) {
-      const targetElement = e.target;
-      if (window.innerWidth < 1200) {
-          if (targetElement.classList.contains('arrows')) {
-              targetElement.closest('.item').classList.toggle('item_active');
-          }
-      }
-  }
-};
-
 const burger = document.querySelector(".burger");
 const menuBody = document.querySelector(".menu-wrap");
 const overflow = document.querySelector(".overflow");
@@ -24,22 +10,35 @@ if (burger) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
     overflow.classList.toggle("overflow_active");
+    document.body.classList.remove("item-active");
   });
-};
+}
 
 // for hover sub menu
 
 const header = document.querySelector("#header");
-const controls = document.querySelector(".item-drop");
+const itemDrop = document.querySelector(".item-drop");
 
-if (controls) {
-  controls.onmouseover = function(event) {
-    header.classList.add("hover");
-  };
-  controls.onmouseout = function(event) {
-    header.classList.remove("hover");
-  };
-};
+if (window.innerWidth < 1200) {
+  if (itemDrop) {
+    itemDrop.onmouseover = function(event) {
+      header.classList.add("hover");
+    };
+    itemDrop.onmouseout = function(event) {
+      header.classList.remove("hover");
+    };
+  }
+}
+
+// for active sub menu
+
+const contMob = document.querySelector(".btn-mob");
+
+if (contMob) {
+  contMob.addEventListener("click", function (e) {
+    document.body.classList.toggle("item-active");
+  });
+}
 
 // btn logic
 
@@ -53,7 +52,7 @@ if (btns !== null) {
                           
       btn.style.setProperty('--x', x + 'px');
       btn.style.setProperty('--y', y + 'px');
-    }
+    };
   }
 }
 

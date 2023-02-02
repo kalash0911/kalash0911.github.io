@@ -1,4 +1,4 @@
-.overflow{
+.overflow {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +18,7 @@
     opacity: 1;
 }
 
-#header{
+#header {
     position: absolute;
     width: 100%;
     max-height: 90px;
@@ -26,8 +26,53 @@
     left: 0;
     padding: 18px 0;
     z-index: 5;
+
+    @include media('<tablet'){
+        max-height: 70px;
+        padding: 5px 0;
+    }
+
+    &::after {
+        content:'';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        border-bottom: 1px solid #D6D7E3;
+        box-shadow: 0 0 10px #D6D7E3;
+        z-index: -1;
+        visibility: hidden;
+        transition: $all_07;
+
+        .active & {
+            top: 0;
+            z-index: 0;
+            visibility: visible;
+        }
+
+        .item-active & {
+            display: none;
+        }
+    }
+
+    .active & {
+
+        &::after {
+            top: 0;
+            z-index: 0;
+            visibility: visible;
+        }
+    }
+
+    .item-active & {
+        background-color: $white;
+        border-bottom: 1px solid #D6D7E3;
+        box-shadow: 0 0 10px #D6D7E3;
+    }
     
-    .container{
+    .container {
         max-width: 1400px;
         display: flex;
     }
@@ -35,14 +80,21 @@
     .logo {
         width: 235px;
         z-index: 2;
+        transition: $all_05;
 
-        @include media('<1400px'){
+        @include media('<1400px') {
             width: 170px;
         } 
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             width: 120px;
         } 
+
+        .item-active & {
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+        }
 
         img {
             width: 100%;
@@ -50,26 +102,49 @@
         }
     }
 
-    button{
+    button {
         border: none;
         background-color: transparent;
     }
 
-    .controls{
+    .controls {
         display: flex;
         align-items: center;
         padding: 0;
-        transition: $all_03;
+
+        @include media('<widescreen') {
+            justify-content: space-between;
+        }
+
+        .item-active & {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px 20px 24px 20px;
+            background-color: $white;
+            border-bottom: 1px solid #D6D7E3;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            font-size: 20px;
+
+            @include media('<tablet'){
+                padding: 14px 20px 15px 20px;
+            }
+        }
     }
     
-    .arrows{
+    .arrows {
         position: relative;
         width: 20px;
         height: 9px;
         margin-left: 5px;
         transition: $all_03;
+
+        @include media('<widescreen') {
+            transform: rotate(-90deg);
+        }
         
-        &::before, &::after{
+        &::before, &::after {
             content:'';
             position: absolute;
             top: 3px;
@@ -80,19 +155,28 @@
             transition: all .3s ease 0s;
         }
     
-        &::before{
+        &::before {
             transform:  rotate(35deg);
         }
     
-        &::after{
+        &::after {
             transform: translate(4px)  rotate(-35deg);
+        }
+
+        .item-active & {
+            transform: rotate(90deg) scale(1.5);
+            margin-right: 20px;
+
+            &::before, &::after {
+                background-color: $gold;
+            }
         }
     }
     
-    .menu-wrap{
+    .menu-wrap {
         padding: 13px 0;
 
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             position: fixed;
             width: 40%;
             height: 100vh;
@@ -104,21 +188,30 @@
             padding: 150px 30px 50px 30px;
         }
 
-        @include media('<tablet'){
-            width: 50%;
+        @include media('<tablet') {
+            width: 60%;
             padding: 100px 30px 50px 30px;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             width: 100%;
         }
 
         .active & {
             left: 0;
         }
+
+        .item-active & {
+            overflow: hidden;
+            padding: 90px 30px 50px 30px;
+
+            @include media('<tablet') {
+                padding: 70px 30px 50px 30px;
+            }
+        }
     }
         
-    .menu{
+    .menu {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -126,39 +219,53 @@
         padding: 0;
         margin: 0;
     
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             flex-direction: column;
             align-items: flex-start;
+            justify-content: flex-start;
         }
     }
     
-    .item{
+    .item {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin: 0 10px;
 
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             width: 100%;
             margin: 0;
             padding: 10px 0;
             border-bottom: 1px solid #D6D7E3;
         }
+
+        .item-active & {
+            display: none;
+            border-bottom: none;
+        }
     }
 
     .item-drop {
 
-        &:hover{
+        .item-active & {
+            display: block;
+            flex-direction: column;
+        }
+
+        &:hover {
 
             .sub-menu-wrap {
-                opacity: 1;
-                z-index: 0;
-                visibility: visible;
-                pointer-events: all;
+
+                @include media('>=widescreen') {
+                    opacity: 1;
+                    z-index: 0;
+                    visibility: visible;
+                    pointer-events: all;
+                }
             }
         }
     }
-        
+
     .link {
         position: relative;
         font-family: $gilroy;
@@ -167,16 +274,20 @@
         font-weight: 500;
         line-height: 2;
         text-transform: uppercase;
-        transition: $all_03;
         z-index: 1;
 
-        @include media('<1400px'){
+        @include media('<1400px') {
             font-size: 14px;
         }  
 
-        @include media('<widescreen'){
-            font-size: 16px;
+        @include media('>=widescreen') {
+            transition: $all_03;
+        }
+
+        @include media('<widescreen') {
             width: 100%;
+            font-size: 16px;
+            text-transform: none;
         }
 
         &:before {
@@ -190,12 +301,12 @@
             background-color: $gold;
             transition: $all_03;
 
-            @include media('<widescreen'){
+            @include media('<widescreen') {
                 display: none;
             }
         }
 
-        &:hover{
+        &:hover {
             text-shadow: $blue 0 0 .5px;
 
             &:before {
@@ -222,6 +333,15 @@
             padding: 80px 0 30px 0;
         } 
 
+        @include media('<widescreen') {
+            position: relative;
+            display: none;
+            opacity: 1;
+            z-index: 1;
+            visibility: visible;
+            padding: 0;
+        }
+
         &::after {
             content:'';
             position: absolute;
@@ -231,9 +351,18 @@
             height: 1px;
             background-color: #D6D7E3;
 
-            @include media('<1400px'){
+            @include media('<1400px') {
                 top: 80px;
             } 
+
+            @include media('<widescreen') {
+                display: none;
+            }
+        }
+
+        .item-active & {
+            display: block;
+            pointer-events: all;
         }
     }
 
@@ -248,6 +377,16 @@
         @include media('<1400px'){
             padding: 4px 30px 0 30px;
         }
+
+        @include media('<widescreen'){
+            columns: 1;
+            width: 100%;
+            padding: 0;
+        }
+
+        .item-active & {
+            overflow: auto;
+        }
     }
 
     .sub-item {
@@ -258,6 +397,37 @@
         padding: 0;
         margin: 0;
         list-style: none;
+
+        @include media('<widescreen'){
+            display: none;
+        }
+    }
+
+    .sub-btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<widescreen'){
+            width: 99%;
+            border-bottom: 1px solid #D6D7E3;
+        }
+        
+        .arrows {
+            display: none;
+            transform: rotate(270deg);
+            height: 25px;
+            margin-right: 0;
+
+            @include media('<widescreen'){
+                display: block;
+            }
+
+            &::before, &::after {
+                background-color: $blue;
+                top: 12px;
+            }
+        }
     }
 
     .sub-bolt-link {
@@ -269,6 +439,12 @@
         font-weight: 600;
         line-height: 1.7;
         margin: 16px 0;
+
+        @include media('<widescreen'){
+            font-weight: 500;
+            padding: 12px 0;
+            margin: 0;
+        }
 
         &:hover{
 
@@ -320,6 +496,10 @@
         z-index: -1;
         pointer-events: none;
         transition: $all_03;
+
+        @include media('<widescreen'){
+            display: none;
+        }
 
         img{
             position: absolute;

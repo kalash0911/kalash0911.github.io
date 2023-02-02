@@ -14,20 +14,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 new WOW().init(); // header logic
 
-window.onload = function () {
-  document.addEventListener("click", documentActions);
-
-  function documentActions(e) {
-    var targetElement = e.target;
-
-    if (window.innerWidth < 1200) {
-      if (targetElement.classList.contains('arrows')) {
-        targetElement.closest('.item').classList.toggle('item_active');
-      }
-    }
-  }
-};
-
 var burger = document.querySelector(".burger");
 var menuBody = document.querySelector(".menu-wrap");
 var overflow = document.querySelector(".overflow");
@@ -37,25 +23,35 @@ if (burger) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
     overflow.classList.toggle("overflow_active");
+    document.body.classList.remove("item-active");
   });
-}
+} // for hover sub menu
 
-; // for hover sub menu
 
 var header = document.querySelector("#header");
-var controls = document.querySelector(".item-drop");
+var itemDrop = document.querySelector(".item-drop");
 
-if (controls) {
-  controls.onmouseover = function (event) {
-    header.classList.add("hover");
-  };
+if (window.innerWidth < 1200) {
+  if (itemDrop) {
+    itemDrop.onmouseover = function (event) {
+      header.classList.add("hover");
+    };
 
-  controls.onmouseout = function (event) {
-    header.classList.remove("hover");
-  };
-}
+    itemDrop.onmouseout = function (event) {
+      header.classList.remove("hover");
+    };
+  }
+} // for active sub menu
 
-; // btn logic
+
+var contMob = document.querySelector(".btn-mob");
+
+if (contMob) {
+  contMob.addEventListener("click", function (e) {
+    document.body.classList.toggle("item-active");
+  });
+} // btn logic
+
 
 var btns = document.querySelectorAll('.btn');
 
