@@ -212,7 +212,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     const toggleInit = () => {
       const neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width
       if (neededWidth) {
-        if (!sliderSelector.classList.contains("swiper-initialized")) {
+        if (!sliderSelector?.classList.contains("swiper-initialized")) {
           swiper = new Swiper(selector, init);
         }
       } else if (sliderSelector.classList.contains("swiper-initialized")) {
