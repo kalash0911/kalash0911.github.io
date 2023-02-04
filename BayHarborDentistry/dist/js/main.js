@@ -32,17 +32,19 @@ if (burger) {
 
 var header = document.querySelector("#header");
 var itemDrop = document.querySelector(".item-drop");
-/* if (window.innerWidth > 1200) {
+
+if (window.innerWidth > 1200) {
   if (itemDrop) {
-    itemDrop.onmouseover = function(event) {
+    itemDrop.onmouseover = function (event) {
       header.classList.add("hover");
     };
-    itemDrop.onmouseout = function(event) {
+
+    itemDrop.onmouseout = function (event) {
       header.classList.remove("hover");
     };
   }
-} */
-// for active sub menu
+} // for active sub menu
+
 
 var btnMob = document.querySelector(".btn-mob");
 
@@ -234,7 +236,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
 
     if (neededWidth) {
-      if (!sliderSelector.classList.contains("swiper-initialized")) {
+      if (!(sliderSelector === null || sliderSelector === void 0 ? void 0 : sliderSelector.classList.contains("swiper-initialized"))) {
         swiper = new Swiper(selector, init);
       }
     } else if (sliderSelector.classList.contains("swiper-initialized")) {

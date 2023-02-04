@@ -21,7 +21,7 @@ if (burger) {
 const header = document.querySelector("#header");
 const itemDrop = document.querySelector(".item-drop");
 
-/* if (window.innerWidth > 1200) {
+if (window.innerWidth > 1200) {
   if (itemDrop) {
     itemDrop.onmouseover = function(event) {
       header.classList.add("hover");
@@ -30,7 +30,7 @@ const itemDrop = document.querySelector(".item-drop");
       header.classList.remove("hover");
     };
   }
-} */
+}
 
 // for active sub menu
 

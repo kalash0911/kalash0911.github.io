@@ -368,8 +368,8 @@
 
     .sub-menu{
         max-width: 1400px;
-        columns: 5;
-        column-gap: 30px;
+        display: flex;
+        justify-content: space-between;
         padding: 24px 30px 0 30px;
         margin: 0 auto;
         list-style: none;
@@ -379,8 +379,8 @@
         }
 
         @include media('<widescreen'){
-            columns: 1;
             width: 100%;
+            flex-direction: column;
             padding: 0;
         }
 
@@ -390,7 +390,6 @@
     }
 
     .sub-item {
-        break-inside: avoid;
 
         .sub-item-active & {
             display: none;
