@@ -42,9 +42,6 @@ function initHeaderBurger() {
       document.body.classList.toggle("body_lock");
       document.body.classList.toggle("active");
       overflow.classList.toggle("overflow_active");
-      document.body.classList.remove("item-active");
-      document.body.classList.remove("sub-item-active");
-      subItem.classList.remove("sub-item-active");
     });
   }
 }
@@ -75,26 +72,12 @@ function initHoverSubMenu() {
 
 // for active sub menu
 // TODO: Delete?
-const btnMob = document.querySelector(".btn-mob");
+const linkDrop = document.querySelector(".btn-mob");
 
-if (btnMob) {
-  btnMob.addEventListener("click", function (e) {
+if (linkDrop) {
+  linkDrop.addEventListener("click", function (e) {
     document.body.classList.toggle("item-active");
   });
-}
-
-// for active sub block
-// TODO: Delete?
-const subBtnMob = document.querySelectorAll(".sub-btn-mob");
-const subItem = document.querySelector(".sub-item");
-
-if (subBtnMob.length) {
-  for (var i = 0; i < subBtnMob.length; ++i) {
-    subBtnMob[i].addEventListener("click", function (e) {
-      document.body.classList.toggle("sub-item-active");
-      subItem.classList.toggle("active");
-    });
-  }
 }
 
 // btn logic
