@@ -12,7 +12,33 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-new WOW().init(); // header logic
+new WOW().init(); // const headerMenu = new Foundation.Drilldown($('.drilldown'));
+// $('.drilldown').foundation('_destroy').addClass('destroyed');
+
+destroyMenusOnResize($('.drilldown'), 1200);
+
+function destroyMenusOnResize(jQueryObj, width) {
+  var win = window;
+  var headerMenu = new Foundation.Drilldown(jQueryObj);
+
+  var toggleInit = function toggleInit() {
+    var neededWidth = win.innerWidth >= width;
+
+    if (neededWidth) {
+      if (!(jQueryObj === null || jQueryObj === void 0 ? void 0 : jQueryObj.hasClass("destroyed"))) {
+        jQueryObj.foundation('_destroy').addClass('destroyed');
+      }
+    } else if (jQueryObj.hasClass("destroyed")) {
+      headerMenu = new Foundation.Drilldown(jQueryObj);
+      jQueryObj.removeClass('destroyed');
+    }
+  };
+
+  ["load", "resize"].forEach(function (evt) {
+    return win.addEventListener(evt, toggleInit, false);
+  });
+} // header logic
+
 
 var burger = document.querySelector(".burger");
 var menuBody = document.querySelector(".menu-wrap");
@@ -28,6 +54,7 @@ if (burger) {
     subItem.classList.remove("sub-item-active");
   });
 } // for hover sub menu
+// TODO: resize event
 
 
 var header = document.querySelector("#header");

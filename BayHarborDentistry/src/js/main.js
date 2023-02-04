@@ -1,5 +1,31 @@
 new WOW().init();
 
+// const headerMenu = new Foundation.Drilldown($('.drilldown'));
+// $('.drilldown').foundation('_destroy').addClass('destroyed');
+
+destroyMenusOnResize($('.drilldown'), 1200)
+
+function destroyMenusOnResize(jQueryObj, width) {
+  const win = window;
+  let headerMenu = new Foundation.Drilldown(jQueryObj);
+
+  const toggleInit = () => {
+    const neededWidth = win.innerWidth >= width
+    if (neededWidth) {
+      if (!jQueryObj?.hasClass("destroyed")) {
+        jQueryObj.foundation('_destroy').addClass('destroyed');
+      }
+    } else if (jQueryObj.hasClass("destroyed")) {
+      headerMenu = new Foundation.Drilldown(jQueryObj);
+      jQueryObj.removeClass('destroyed');
+    }
+  };
+
+  ["load", "resize"].forEach((evt) =>
+    win.addEventListener(evt, toggleInit, false)
+  );
+}
+
 // header logic
 const burger = document.querySelector(".burger");
 const menuBody = document.querySelector(".menu-wrap");
@@ -17,7 +43,7 @@ if (burger) {
 }
 
 // for hover sub menu
-
+// TODO: resize event
 const header = document.querySelector("#header");
 const itemDrop = document.querySelector(".item-drop");
 
