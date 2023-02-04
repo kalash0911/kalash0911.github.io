@@ -71,7 +71,6 @@ function initHoverSubMenu() {
 }
 
 // for active sub menu
-// TODO: Delete?
 const linkDrop = document.querySelector(".btn-mob");
 
 if (linkDrop) {
