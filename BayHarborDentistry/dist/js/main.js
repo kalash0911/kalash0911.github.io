@@ -163,83 +163,85 @@ try {
   _iterator2.f();
 }
 
-var videoWrap = document.querySelector('.video-wrap');
-var videoPlayer = document.querySelector('.video-player');
-var video = document.querySelector('.video');
-var playButton = document.querySelector('.play-button');
-var muteButton = document.querySelector('.mute-button');
-var fullscreenButton = document.querySelector('.fullscreen-button');
-var volume = document.querySelector('.volume');
-var currentTimeElement = document.querySelector('.current');
-var durationTimeElement = document.querySelector('.duration');
-var progress = document.querySelector('.video-progress');
-var progressBar = document.querySelector('.video-progress-filled');
+initVideoPlayers();
 
-if (videoWrap !== null) {
-  var stopMedia = function stopMedia() {
-    video.pause();
-    video.currentTime = 0;
-    videoWrap.classList.remove('active');
-  };
+function initVideoPlayers() {
+  var videoWraps = document.querySelectorAll('.video-wrap');
+  videoWraps === null || videoWraps === void 0 ? void 0 : videoWraps.forEach(function (videoWrap) {
+    var video = videoWrap.querySelector('.video');
+    var playButton = videoWrap.querySelector('.play-button');
+    var muteButton = videoWrap.querySelector('.mute-button');
+    var fullscreenButton = videoWrap.querySelector('.fullscreen-button');
+    var volume = videoWrap.querySelector('.volume');
+    var currentTimeElement = videoWrap.querySelector('.current');
+    var durationTimeElement = videoWrap.querySelector('.duration');
+    var progress = videoWrap.querySelector('.video-progress');
+    var progressBar = videoWrap.querySelector('.video-progress-filled'); //Play and Pause button
 
-  //Play and Pause button
-  playButton.addEventListener('click', function (e) {
-    if (video.paused) {
-      video.play();
-      e.target.textContent = '| |';
-      videoWrap.classList.toggle('active');
-    } else {
+    playButton.addEventListener('click', function (e) {
+      if (video.paused) {
+        video.play();
+        e.target.textContent = '| |';
+        videoWrap.classList.toggle('active');
+      } else {
+        video.pause();
+        e.target.textContent = '►';
+        videoWrap.classList.toggle('active');
+      }
+    }); //Mute button
+
+    muteButton.addEventListener('click', function (e) {
+      if (video.muted) {
+        video.muted = false;
+        muteButton.classList.toggle('mute');
+      } else {
+        video.muted = true;
+        muteButton.classList.toggle('mute');
+      }
+    }); //Fullscreen button
+
+    fullscreenButton.addEventListener('click', function (e) {
+      if (video.requestFullScreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullScreen) {
+        video.webkitRequestFullScreen();
+      } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      }
+    }); //volume
+
+    volume.addEventListener('mousemove', function (e) {
+      video.volume = e.target.value;
+    }); //current time and duration
+
+    var currentTime = function currentTime() {
+      var currentMinutes = Math.floor(video.currentTime / 60);
+      var currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
+      var durationMinutes = Math.floor(video.duration / 60);
+      var durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+      currentTimeElement.innerHTML = "".concat(currentMinutes, ":").concat(currentSeconds < 10 ? '0' + currentSeconds : currentSeconds);
+      durationTimeElement.innerHTML = "".concat(durationMinutes, ":").concat(durationSeconds);
+    };
+
+    video.addEventListener('timeupdate', currentTime); //Progress bar
+
+    video.addEventListener('timeupdate', function () {
+      var percentage = video.currentTime / video.duration * 100;
+      progressBar.style.width = "".concat(percentage, "%");
+    }); //change progress bar on click
+
+    progress.addEventListener('click', function (e) {
+      var progressTime = e.offsetX / progress.offsetWidth * video.duration;
+      video.currentTime = progressTime;
+    });
+    video.addEventListener('ended', stopMedia);
+
+    function stopMedia() {
       video.pause();
-      e.target.textContent = '►';
-      videoWrap.classList.toggle('active');
+      video.currentTime = 0;
+      videoWrap.classList.remove('active');
     }
-  }); //Mute button
-
-  muteButton.addEventListener('click', function (e) {
-    if (video.muted) {
-      video.muted = false;
-      muteButton.classList.toggle('mute');
-    } else {
-      video.muted = true;
-      muteButton.classList.toggle('mute');
-    }
-  }); //Fullscreen button
-
-  fullscreenButton.addEventListener('click', function (e) {
-    if (video.requestFullScreen) {
-      video.requestFullscreen();
-    } else if (video.webkitRequestFullScreen) {
-      video.webkitRequestFullScreen();
-    } else if (video.mozRequestFullScreen) {
-      video.mozRequestFullScreen();
-    }
-  }); //volume
-
-  volume.addEventListener('mousemove', function (e) {
-    video.volume = e.target.value;
-  }); //current time and duration
-
-  var currentTime = function currentTime() {
-    var currentMinutes = Math.floor(video.currentTime / 60);
-    var currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
-    var durationMinutes = Math.floor(video.duration / 60);
-    var durationSeconds = Math.floor(video.duration - durationMinutes * 60);
-    currentTimeElement.innerHTML = "".concat(currentMinutes, ":").concat(currentSeconds < 10 ? '0' + currentSeconds : currentSeconds);
-    durationTimeElement.innerHTML = "".concat(durationMinutes, ":").concat(durationSeconds);
-  };
-
-  video.addEventListener('timeupdate', currentTime); //Progress bar
-
-  video.addEventListener('timeupdate', function () {
-    var percentage = video.currentTime / video.duration * 100;
-    progressBar.style.width = "".concat(percentage, "%");
-  }); //change progress bar on click
-
-  progress.addEventListener('click', function (e) {
-    var progressTime = e.offsetX / progress.offsetWidth * video.duration;
-    video.currentTime = progressTime;
   });
-  video.addEventListener('ended', stopMedia);
 } // for video pop-up
 
 

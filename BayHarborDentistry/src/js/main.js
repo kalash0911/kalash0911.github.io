@@ -119,92 +119,95 @@ for (let elm of elements) {
 
 // Video controls
 
-const videoWrap = document.querySelector('.video-wrap');
-const videoPlayer = document.querySelector('.video-player');
-const video = document.querySelector('.video');
-const playButton = document.querySelector('.play-button');
-const muteButton = document.querySelector('.mute-button');
-const fullscreenButton = document.querySelector('.fullscreen-button');
-const volume = document.querySelector('.volume');
-const currentTimeElement = document.querySelector('.current');
-const durationTimeElement = document.querySelector('.duration');
-const progress = document.querySelector('.video-progress');
-const progressBar = document.querySelector('.video-progress-filled');
+initVideoPlayers();
 
-if (videoWrap !== null) {
+function initVideoPlayers() {
+  const videoWraps = document.querySelectorAll('.video-wrap');
+  videoWraps?.forEach((videoWrap) => {
+    const video = videoWrap.querySelector('.video');
+    const playButton = videoWrap.querySelector('.play-button');
+    const muteButton = videoWrap.querySelector('.mute-button');
+    const fullscreenButton = videoWrap.querySelector('.fullscreen-button');
+    const volume = videoWrap.querySelector('.volume');
+    const currentTimeElement = videoWrap.querySelector('.current');
+    const durationTimeElement = videoWrap.querySelector('.duration');
+    const progress = videoWrap.querySelector('.video-progress');
+    const progressBar = videoWrap.querySelector('.video-progress-filled');
 
-  //Play and Pause button
-  playButton.addEventListener('click', (e) => {
-  if(video.paused){
-    video.play();
-    e.target.textContent = '| |';
-    videoWrap.classList.toggle('active');
-  } else {
-    video.pause();
-    e.target.textContent = '►';
-    videoWrap.classList.toggle('active');
-  }
-  });
-
-  //Mute button
-  muteButton.addEventListener('click', (e) => {
-    if(video.muted){
-      video.muted = false;
-      muteButton.classList.toggle('mute');
+    //Play and Pause button
+    playButton.addEventListener('click', (e) => {
+    if(video.paused){
+      video.play();
+      e.target.textContent = '| |';
+      videoWrap.classList.toggle('active');
     } else {
-      video.muted = true;
-      muteButton.classList.toggle('mute');
+      video.pause();
+      e.target.textContent = '►';
+      videoWrap.classList.toggle('active');
     }
-  });
-
-  //Fullscreen button
-  fullscreenButton.addEventListener('click', (e) => {
-    if(video.requestFullScreen){
-      video.requestFullscreen();
-    } else if(video.webkitRequestFullScreen) {
-      video.webkitRequestFullScreen();
-    }else if(video.mozRequestFullScreen) {
-      video.mozRequestFullScreen();
+    });
+  
+    //Mute button
+    muteButton.addEventListener('click', (e) => {
+      if(video.muted){
+        video.muted = false;
+        muteButton.classList.toggle('mute');
+      } else {
+        video.muted = true;
+        muteButton.classList.toggle('mute');
+      }
+    });
+  
+    //Fullscreen button
+    fullscreenButton.addEventListener('click', (e) => {
+      if(video.requestFullScreen){
+        video.requestFullscreen();
+      } else if(video.webkitRequestFullScreen) {
+        video.webkitRequestFullScreen();
+      }else if(video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      }
+    });
+  
+    //volume
+    volume.addEventListener('mousemove', (e)=> {
+      video.volume = e.target.value;
+    });
+  
+    //current time and duration
+    const currentTime = () => {
+      let currentMinutes = Math.floor(video.currentTime / 60);
+      let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
+      let durationMinutes = Math.floor(video.duration / 60);
+      let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+  
+      currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0'+currentSeconds : currentSeconds}`;
+      durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
+    };
+  
+    video.addEventListener('timeupdate', currentTime);
+  
+    //Progress bar
+    video.addEventListener('timeupdate', () =>{
+      const percentage = (video.currentTime / video.duration) * 100;
+      progressBar.style.width = `${percentage}%`;
+    });
+  
+    //change progress bar on click
+    progress.addEventListener('click', (e) =>{
+      const progressTime = (e.offsetX / progress.offsetWidth) * video.duration;
+      video.currentTime = progressTime;
+    });
+  
+    video.addEventListener('ended', stopMedia);
+    function stopMedia() {
+      video.pause();
+      video.currentTime = 0;
+      videoWrap.classList.remove('active');
     }
-  });
-
-  //volume
-  volume.addEventListener('mousemove', (e)=> {
-    video.volume = e.target.value;
-  });
-
-  //current time and duration
-  const currentTime = () => {
-    let currentMinutes = Math.floor(video.currentTime / 60);
-    let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
-    let durationMinutes = Math.floor(video.duration / 60);
-    let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
-
-    currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0'+currentSeconds : currentSeconds}`;
-    durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
-  };
-
-  video.addEventListener('timeupdate', currentTime);
-
-  //Progress bar
-  video.addEventListener('timeupdate', () =>{
-    const percentage = (video.currentTime / video.duration) * 100;
-    progressBar.style.width = `${percentage}%`;
-  });
-
-  //change progress bar on click
-  progress.addEventListener('click', (e) =>{
-    const progressTime = (e.offsetX / progress.offsetWidth) * video.duration;
-    video.currentTime = progressTime;
-  });
-
-  video.addEventListener('ended', stopMedia);
-  function stopMedia() {
-    video.pause();
-    video.currentTime = 0;
-    videoWrap.classList.remove('active');
-  }
+  })
 }
+
 
 // for video pop-up
 
