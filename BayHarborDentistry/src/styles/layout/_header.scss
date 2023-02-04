@@ -331,6 +331,14 @@
             padding: 10px 30px;
             border-bottom: 1px solid #D6D7E3;
         }
+
+        .arrow {
+            display: none;
+
+            @include media('<widescreen') {
+                display: block;
+            }
+        }
     }
 
     .two-link {
