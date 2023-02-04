@@ -1,3 +1,214 @@
 #footer {
-    min-height: 500px;
+    position: relative;
+    padding-top: 80px;
+
+    .container {
+        position: relative;
+        max-width: 1225px;
+        z-index: 1;
+    }
+
+    .top {
+        display: flex;
+    }
+
+    .logo-wrap {
+        display: flex;
+        flex-direction: column;
+        padding-right: 90px;
+    }
+
+    .logo {
+        margin-bottom: 36px;
+    }
+
+    .geo-link {
+        display: flex;
+        align-items: flex-start;
+        font-family: $gilroy;
+        color: $blue;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.75;
+        margin-bottom: 36px;
+
+        &:hover{
+
+            img {
+                transform: scale(1.2);
+            }
+        }
+
+        img {
+            margin-right: 16px;
+            transition: $all_03;
+        }
+    }
+
+    .socials {
+        justify-content: flex-start;
+        margin: 0 -10px 24px -10px;
+    }
+
+    .menu {
+        list-style: none;
+        border-left: 1px solid #F3F2ED;
+        border-right: 1px solid #F3F2ED;
+        padding: 0 64px;
+        margin: 0;
+    }
+
+    .item {
+        margin-bottom: 17px;
+    }
+
+    .link {
+        position: relative;
+        font-family: $gilroy;
+        color: $blue_2;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.1;
+        padding-bottom: 5px;
+        transition: $all_03;
+        
+        &:hover{
+            text-shadow: #010b6c 0 0 0.5px;
+        }
+    }
+
+    .sub-menu-wrap {
+        display: flex;
+    }
+
+    .sub-menu {
+        list-style: none;
+        padding-left: 60px;
+    }
+
+    .sub-item {
+        position: relative;
+        margin-bottom: 22px;
+        cursor: pointer;
+
+        &:hover{
+
+            .sub-bolt-link {
+                text-shadow: #010b6c 0 0 0.5px;
+            }
+
+            .arrows {
+                transform: rotate(90deg);
+            }
+
+            .sub-block {
+                opacity: 1;
+                z-index: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
+        }
+    }
+
+    .sub-btn-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .sub-bolt-link {
+        font-family: $gilroy;
+        color: $blue_2;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.14;
+        transition: $all_03;
+    }
+
+    .sub-block {
+        position: absolute;
+        top: -50px;
+        left: 100%;
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+        pointer-events: none;
+        transition: $all_03;
+        padding: 24px;
+        margin: 0 0 -10px 0;
+        list-style: none;
+        background-color: #FDFAF8;
+    }
+
+    .sub-link {
+        display: block;
+        font-family: $gilroy;
+        color: $blue_2;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 10px;
+        white-space: nowrap;
+    }
+
+    .arrows {
+        position: relative;
+        width: 20px;
+        height: 9px;
+        margin-left: 5px;
+        transition: $all_03;
+        border: none;
+        background-color: transparent;
+        transform: rotate(-90deg);
+        
+        &::before, &::after {
+            content:'';
+            position: absolute;
+            top: 3px;
+            left: 5px;
+            width: 6px;
+            height: 1px;
+            background-color: $blue;
+            transition: all .3s ease 0s;
+        }
+    
+        &::before {
+            transform:  rotate(35deg);
+        }
+    
+        &::after {
+            transform: translate(4px)  rotate(-35deg);
+        }
+    }
+
+    .bot {
+        border-top: 1px solid #F3F2ED;
+        padding: 24px 0;
+        text-align: center;
+    }
+
+    .text {
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .line {
+        position: absolute;
+        z-index: -1s;
+    }
+
+    .line1 {
+        top: 0;
+        left: 0;
+    }
+
+    .line2 {
+        bottom: 70px;
+        left: 70%;
+        transform: translate(-50%);
+    }
+
+    .line3 {
+        top: 50px;
+        right: 0;
+    }
 }
