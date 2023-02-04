@@ -49,9 +49,6 @@ if (burger) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
     overflow.classList.toggle("overflow_active");
-    document.body.classList.remove("item-active");
-    document.body.classList.remove("sub-item-active");
-    subItem.classList.remove("sub-item-active");
   });
 } // for hover sub menu
 // TODO: resize event
@@ -73,28 +70,14 @@ if (window.innerWidth > 1200) {
 } // for active sub menu
 
 
-var btnMob = document.querySelector(".btn-mob");
+var linkDrop = document.querySelector(".link-drop");
 
-if (btnMob) {
-  btnMob.addEventListener("click", function (e) {
+if (linkDrop) {
+  linkDrop.addEventListener("click", function (e) {
     document.body.classList.toggle("item-active");
   });
-} // for active sub block
+} // btn logic
 
-
-var subBtnMob = document.querySelectorAll(".sub-btn-mob");
-var subItem = document.querySelector(".sub-item");
-
-if (subBtnMob.length) {
-  for (var i = 0; i < subBtnMob.length; ++i) {
-    subBtnMob[i].addEventListener("click", function (e) {
-      document.body.classList.toggle("sub-item-active");
-      subItem.classList.toggle("active");
-    });
-  }
-}
-
-; // btn logic
 
 var btns = document.querySelectorAll('.btn');
 

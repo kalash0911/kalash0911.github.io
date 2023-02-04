@@ -32,113 +32,24 @@
         padding: 5px 0;
     }
 
-    &::after {
-        content:'';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $white;
-        border-bottom: 1px solid #D6D7E3;
-        box-shadow: 0 0 10px #D6D7E3;
-        z-index: -1;
-        visibility: hidden;
-        transition: $all_07;
-
-        .active & {
-            top: 0;
-            z-index: 0;
-            visibility: visible;
-        }
-
-        .item-active & {
-            display: none;
-        }
-    }
-
     .active & {
-
-        &::after {
-            top: 0;
-            z-index: 0;
-            visibility: visible;
-        }
-    }
-
-    .item-active & {
         background-color: $white;
-        border-bottom: 1px solid #D6D7E3;
-        box-shadow: 0 0 10px #D6D7E3;
+        box-shadow: 0 -5px 10px $gray_2;
     }
     
     .container {
         max-width: 1400px;
         display: flex;
     }
-    
-    .logo {
-        width: 235px;
-        z-index: 2;
-        transition: $all_05;
 
-        @include media('<1400px') {
-            width: 170px;
-        } 
-
-        @include media('<tablet') {
-            width: 120px;
-        } 
-
-        .item-active & {
-            opacity: 0;
-            z-index: -1;
-            visibility: hidden;
-        }
-
-        img {
-            width: 100%;
-            transition: $all_03;
-        }
-    }
-
-    button {
-        border: none;
-        background-color: transparent;
-    }
-
-    .controls {
-        display: flex;
-        align-items: center;
-        padding: 0;
-
-        @include media('<widescreen') {
-            justify-content: space-between;
-        }
-
-        .item-active & {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 25px 20px 24px 20px;
-            background-color: $white;
-            border-bottom: 1px solid #D6D7E3;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            font-size: 20px;
-
-            @include media('<tablet'){
-                padding: 14px 20px 15px 20px;
-            }
-        }
-    }
-    
-    .arrows {
+    .arrow {
         position: relative;
         width: 20px;
         height: 9px;
         margin-left: 5px;
         transition: $all_03;
+        border: none;
+        background-color: transparent;
 
         @include media('<widescreen') {
             transform: rotate(-90deg);
@@ -162,17 +73,94 @@
         &::after {
             transform: translate(4px)  rotate(-35deg);
         }
+    }
 
-        .item-active & {
-            transform: rotate(90deg) scale(1.5);
-            margin-right: 20px;
+    .mob {
+        display: none;
+
+        @include media('<widescreen') {
+            display: block;
+        }
+    }
+
+    .is-drilldown {
+        height: 100%;
+        max-width: 100% !important;
+    }
+
+    .js-drilldown-back {
+        position: relative;
+        padding: 30px 0 23px 25px;
+        box-shadow: 0 -5px 10px $gray_2;
+                
+        &::after{
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $gray;
+        }
+
+        a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-family: $gilroy;
+            color: $blue;
+            font-size: 16px;
+            font-weight: 500;
+            transition: $all_03;
+            text-shadow: #010b6c 0 0 0.5px;
+            padding-left: 30px;
 
             &::before, &::after {
+                content:'';
+                position: absolute;
+                top: 15px;
+                left: 5px;
+                width: 7px;
+                height: 1px;
                 background-color: $gold;
+                transition: all .3s ease 0s;
+                border: none;
+            }
+        
+            &::before {
+                transform: rotate(125deg);
+            }
+        
+            &::after {
+                top: 21px;
+                transform: rotate(-125deg);
             }
         }
     }
     
+    .logo {
+        width: 235px;
+        z-index: 2;
+        transition: $all_05;
+
+        @include media('<1400px') {
+            width: 170px;
+        } 
+
+        @include media('<tablet') {
+            width: 120px;
+        } 
+
+        img {
+            width: 100%;
+            transition: $all_03;
+        }
+
+        .item-active & {
+            transform: scale(0);
+        }
+    }
+        
     .menu-wrap {
         padding: 13px 0;
 
@@ -185,12 +173,12 @@
             left: -150%;
             background-color: $white;
             transition: $all_05;
-            padding: 150px 30px 50px 30px;
+            padding-top: 150px;
         }
 
         @include media('<tablet') {
             width: 60%;
-            padding: 100px 30px 50px 30px;
+            padding-top: 60px;
         }
 
         @include media('<phone') {
@@ -202,16 +190,12 @@
         }
 
         .item-active & {
-            overflow: hidden;
-            padding: 90px 30px 50px 30px;
-
-            @include media('<tablet') {
-                padding: 70px 30px 50px 30px;
-            }
+            padding-top: 0;
         }
     }
         
     .menu {
+        position: static;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -235,30 +219,20 @@
         @include media('<widescreen') {
             width: 100%;
             margin: 0;
-            padding: 10px 0;
+            padding: 10px 30px;
             border-bottom: 1px solid #D6D7E3;
-        }
-
-        .item-active & {
-            display: none;
-            border-bottom: none;
         }
     }
 
     .item-drop {
 
-        .item-active & {
-            display: block;
-            flex-direction: column;
-        }
-
-        &:hover {
-
-            .sub-menu-wrap {
+        &:hover{
+        
+            .two-menu {
 
                 @include media('>=widescreen') {
                     opacity: 1;
-                    z-index: 0;
+                    z-index: 1;
                     visibility: visible;
                     pointer-events: all;
                 }
@@ -268,36 +242,38 @@
 
     .link {
         position: relative;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        padding: 0;
         font-family: $gilroy;
         color: $blue;
         font-size: 16px;
         font-weight: 500;
         line-height: 2;
         text-transform: uppercase;
-        z-index: 1;
+        z-index: 2;
+        transition: $all_03;
 
         @include media('<1400px') {
             font-size: 14px;
         }  
 
-        @include media('>=widescreen') {
-            transition: $all_03;
-        }
-
         @include media('<widescreen') {
             width: 100%;
+            justify-content: space-between;
             font-size: 16px;
             text-transform: none;
         }
-
-        &:before {
+        
+        &::after{
             content:'';
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translate(-50%);
             width: 0;
-            height: 2px;
+            height: 1px;
             background-color: $gold;
             transition: $all_03;
 
@@ -306,155 +282,58 @@
             }
         }
 
-        &:hover {
-            text-shadow: $blue 0 0 .5px;
+        &:hover{
+            text-shadow: #010b6c 0 0 0.5px;
 
-            &:before {
-                width: 70%;
+            &::after{
+                width: 80%;
             }
         }
     }
 
-    .sub-menu-wrap {
+    .two-menu {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translate(-50%);
         width: 100%;
-        padding: 90px 0 30px 0;
+        columns: 5;
+        padding: 120px 45px 40px 45px;
+        margin: 0;
         list-style: none;
         background-color: $white;
-        opacity: 0;
-        z-index: -1;
-        visibility: hidden;
         transition: $all_03;
-        pointer-events: none;
 
         @include media('<1400px'){
-            padding: 80px 0 30px 0;
+            padding: 80px 30px 30px 30px;
         } 
 
-        @include media('<widescreen') {
-            position: relative;
-            display: none;
-            opacity: 1;
-            z-index: 1;
-            visibility: visible;
-            padding: 0;
-        }
-
-        &::after {
-            content:'';
-            position: absolute;
-            top: 90px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: #D6D7E3;
-
-            @include media('<1400px') {
-                top: 80px;
-            } 
-
-            @include media('<widescreen') {
-                display: none;
-            }
-        }
-
-        .item-active & {
-            display: block;
-            pointer-events: all;
-        }
-    }
-
-    .sub-menu{
-        max-width: 1400px;
-        display: flex;
-        justify-content: space-between;
-        padding: 24px 30px 0 30px;
-        margin: 0 auto;
-        list-style: none;
-
-        @include media('<1400px'){
-            padding: 4px 30px 0 30px;
+        @include media('>=widescreen') {
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+            pointer-events: none;
         }
 
         @include media('<widescreen'){
-            width: 100%;
+            display: flex;
             flex-direction: column;
             padding: 0;
         }
-
-        .item-active & {
-            overflow: auto;
-        }
     }
 
-    .sub-item {
+    .two-item {
+        break-inside: avoid;
 
-        .sub-item-active & {
-            display: none;
-        }
-    }
-
-    .sub-item.active {
-        display: block;
-    }
-
-    .sub-block {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-        @include media('<widescreen'){
-            display: none;
-        }
-
-        .sub-item-active & {
-            display: block;
-        }
-    }
-
-    .sub-btn-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @include media('<widescreen'){
-            width: 99%;
+        @include media('<widescreen') {
+            width: 100%;
+            margin: 0;
+            padding: 10px 30px;
             border-bottom: 1px solid #D6D7E3;
         }
-        
-        .arrows {
-            display: none;
-            transform: rotate(270deg);
-            height: 25px;
-            margin-right: 0;
-
-            @include media('<widescreen'){
-                display: block;
-            }
-
-            &::before, &::after {
-                background-color: $blue;
-                top: 12px;
-            }
-
-            .sub-item-active & {
-
-                &::before {
-                    transform:  rotate(145deg) scale(1.5);
-                    background-color: $gold;
-                }
-            
-                &::after {
-                    transform: translate(7px)  rotate(-145deg) scale(1.5);
-                    background-color: $gold;
-                }
-            }
-        }
     }
 
-    .sub-bolt-link {
+    .two-link {
         position: relative;
         display: inline-block;
         font-family: $gilroy;
@@ -462,30 +341,55 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 1.7;
+        padding: 0;
         margin: 16px 0;
+        transition: $all_03;
 
         @include media('<widescreen'){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             font-weight: 500;
-            padding: 12px 0;
             margin: 0;
+            width: 100%;
+        }
+        
+        &::after{
+            display: none;
         }
 
         &:hover{
 
-            .sub-img {
+            @include media('<widescreen'){
+                text-shadow: #010b6c 0 0 0.5px;
+            }
+
+            .menu-img {
                 opacity: 1;
+                z-index: 1;
                 visibility: visible;
-                z-index: 2;
                 pointer-events: all;
             }
         }
+    }
 
-        .sub-item-active & {
-            font-weight: 600;
+    .three-menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .three-item {
+
+        @include media('<widescreen') {
+            width: 100%;
+            margin: 0;
+            padding: 10px 30px;
+            border-bottom: 1px solid #D6D7E3;
         }
     }
 
-    .sub-link {
+    .three-link {
         position: relative;
         display: inline-block;
         font-family: $gilroy;
@@ -494,8 +398,12 @@
         font-weight: 500;
         line-height: 1.7;
         margin-bottom: 12px;
+        padding: 0;
+        transition: $all_03;
 
         @include media('<widescreen'){
+            font-size: 16px;
+            margin: 0;
             width: 100%;
         }
 
@@ -508,31 +416,35 @@
             height: 1px;
             background-color: $gold;
             transition: $all_03;
+
+            @include media('<widescreen'){
+                display: none;
+            }
         }
 
         &:hover{
+
+            @include media('<widescreen'){
+                text-shadow: #010b6c 0 0 0.5px;
+            }
 
             &::after {
                 width: 100%;
             }
         }
-
-        .sub-item-active & {
-            margin: 0;
-            padding: 12px 0;
-        }
     }
 
-    .sub-img {
+    .menu-img {
         position: absolute;
         top: 100%;
+        left: 50%;
         width: 180px;
         height: 240px;
         opacity: 0;
-        visibility: hidden;
         z-index: -1;
+        visibility: hidden;
         pointer-events: none;
-        transition: $all_03;
+        transition: opacity .3s ease 0s;
 
         @include media('<widescreen'){
             display: none;
@@ -651,40 +563,43 @@
     }
 }
 
-#header.hover {
+@include media('>=widescreen'){
 
-    .logo {
-
-        img {
-            width: 170px;
+    #header.hover {
     
-            @include media('<1400px'){
-                width: 120px;
-            } 
-        }
-    }
-
-    .controls {
-        text-shadow: $blue 0 0 .5px;
-
-        &:before {
-            width: 70%;
-        }
-    }
-
-    .arrows {
-
-        &::before, &::after{
-            height: 1.5px;
-            transition: $all_03;
-        }
-
-        &::before{
-            transform:  rotate(-35deg);
+        .logo {
+    
+            img {
+                width: 170px;
+        
+                @include media('<1400px'){
+                    width: 120px;
+                } 
+            }
         }
     
-        &::after{
-            transform: translate(4px)  rotate(35deg);
+        .item-drop {
+    
+            .link {
+                text-shadow: $blue 0 0 0.5px;
+                
+                &::after{
+                    width: 80%;
+                }
+    
+                .arrow {
+    
+                    &::before {
+                        background-color: $gold;
+                        transform:  rotate(-35deg);
+                    }
+                
+                    &::after {
+                        background-color: $gold;
+                        transform: translate(4px)  rotate(35deg);
+                    }
+                }
+            }
         }
     }
 }
