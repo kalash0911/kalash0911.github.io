@@ -12,9 +12,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-new WOW().init(); // const headerMenu = new Foundation.Drilldown($('.drilldown'));
-// $('.drilldown').foundation('_destroy').addClass('destroyed');
-
+new WOW().init();
 destroyMenusOnResize($('.drilldown'), 1200);
 
 function destroyMenusOnResize(jQueryObj, width) {
@@ -28,7 +26,7 @@ function destroyMenusOnResize(jQueryObj, width) {
       if (!(jQueryObj === null || jQueryObj === void 0 ? void 0 : jQueryObj.hasClass("destroyed"))) {
         jQueryObj.foundation('_destroy').addClass('destroyed');
       }
-    } else if (jQueryObj.hasClass("destroyed")) {
+    } else if (jQueryObj === null || jQueryObj === void 0 ? void 0 : jQueryObj.hasClass("destroyed")) {
       headerMenu = new Foundation.Drilldown(jQueryObj);
       jQueryObj.removeClass('destroyed');
     }
@@ -54,22 +52,33 @@ if (burger) {
     subItem.classList.remove("sub-item-active");
   });
 } // for hover sub menu
-// TODO: resize event
 
 
-var header = document.querySelector("#header");
-var itemDrop = document.querySelector(".item-drop");
+initHoverSubMenu();
 
-if (window.innerWidth > 1200) {
-  if (itemDrop) {
-    itemDrop.onmouseover = function (event) {
-      header.classList.add("hover");
-    };
+function initHoverSubMenu() {
+  var header = document.querySelector("#header");
+  var itemDrop = document.querySelector(".item-drop");
 
-    itemDrop.onmouseout = function (event) {
-      header.classList.remove("hover");
-    };
-  }
+  var addHoverCb = function addHoverCb() {
+    return header.classList.add("hover");
+  };
+
+  var removeHoverCb = function removeHoverCb() {
+    return header.classList.remove("hover");
+  };
+
+  ["load", "resize"].forEach(function (evt) {
+    return window.addEventListener(evt, function () {
+      if (window.innerWidth > 1200 && itemDrop) {
+        itemDrop.addEventListener('mouseover', addHoverCb);
+        itemDrop.addEventListener('mouseleave', removeHoverCb);
+      } else {
+        itemDrop.removeEventListener('mouseover', addHoverCb);
+        itemDrop.removeEventListener('mouseleave', removeHoverCb);
+      }
+    }, false);
+  });
 } // for active sub menu
 
 

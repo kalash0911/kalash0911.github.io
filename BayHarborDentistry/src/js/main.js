@@ -1,8 +1,5 @@
 new WOW().init();
 
-// const headerMenu = new Foundation.Drilldown($('.drilldown'));
-// $('.drilldown').foundation('_destroy').addClass('destroyed');
-
 destroyMenusOnResize($('.drilldown'), 1200)
 
 function destroyMenusOnResize(jQueryObj, width) {
@@ -15,7 +12,7 @@ function destroyMenusOnResize(jQueryObj, width) {
       if (!jQueryObj?.hasClass("destroyed")) {
         jQueryObj.foundation('_destroy').addClass('destroyed');
       }
-    } else if (jQueryObj.hasClass("destroyed")) {
+    } else if (jQueryObj?.hasClass("destroyed")) {
       headerMenu = new Foundation.Drilldown(jQueryObj);
       jQueryObj.removeClass('destroyed');
     }
@@ -43,19 +40,24 @@ if (burger) {
 }
 
 // for hover sub menu
-// TODO: resize event
-const header = document.querySelector("#header");
-const itemDrop = document.querySelector(".item-drop");
-
-if (window.innerWidth > 1200) {
-  if (itemDrop) {
-    itemDrop.onmouseover = function(event) {
-      header.classList.add("hover");
-    };
-    itemDrop.onmouseout = function(event) {
-      header.classList.remove("hover");
-    };
-  }
+initHoverSubMenu();
+function initHoverSubMenu() {
+  const header = document.querySelector("#header");
+  const itemDrop = document.querySelector(".item-drop");
+  const addHoverCb = () => header.classList.add("hover");
+  const removeHoverCb = () => header.classList.remove("hover");
+  
+  ["load", "resize"].forEach((evt) =>
+      window.addEventListener(evt, () => {
+        if (window.innerWidth > 1200 && itemDrop) {
+          itemDrop.addEventListener('mouseover', addHoverCb);
+          itemDrop.addEventListener('mouseleave', removeHoverCb);
+        } else {
+          itemDrop.removeEventListener('mouseover', addHoverCb);
+          itemDrop.removeEventListener('mouseleave', removeHoverCb);
+        }
+      }, false)
+    );
 }
 
 // for active sub menu
