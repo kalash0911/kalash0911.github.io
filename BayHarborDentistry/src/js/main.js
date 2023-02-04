@@ -417,3 +417,4 @@ function initAccordion() {
     links.addEventListener("click", accardionToggle(slideMenu));
   });
 }
+
