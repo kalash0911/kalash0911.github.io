@@ -731,10 +731,6 @@ body {
     background-color: rgba($white_2, 0.7);
     overflow: hidden;
 
-    @include media('<phone'){
-        min-height: calc(100vh - 55px);
-    }
-
     .ml {
         position: absolute;
         top: -50%;

@@ -1,5 +1,5 @@
 .overflow {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -13,7 +13,7 @@
 }
 
 .overflow_active {
-    z-index: 2;
+    z-index: 0;
     visibility: visible;
     opacity: 1;
 }
@@ -45,6 +45,10 @@
         .active & {
             top: 0;
             box-shadow: 0 -5px 10px $gray_2;
+
+            @include media('<phone') {
+                box-shadow: none;
+            }
         }
     }
     
@@ -65,10 +69,11 @@
         z-index: 2;
         
         .arrow {
-            margin: 0 5px 0 0;
+            margin: 0;
             transform: rotate(-270deg);
 
             &::before, &::after {
+                top: 10px;
                 left: 4px;
                 width: 7px;
                 background-color: $gold;
@@ -105,8 +110,12 @@
             left: 5px;
             width: 6px;
             height: 1px;
-            background-color: $blue;
+            background-color: $white;
             transition: all .3s ease 0s;
+
+            @include media('<widescreen') {
+                background-color: $blue;
+            }
         }
     
         &::before {
@@ -175,7 +184,7 @@
 
         @include media('<tablet') {
             width: 60%;
-            padding-top: 60px;
+            padding-top: 80px;
         }
 
         @include media('<phone') {
@@ -188,6 +197,10 @@
 
         .item-active & {
             padding-top: 90px;
+
+            @include media('<tablet') {
+                padding-top: 70px;
+            }
         }
     }
         
@@ -205,6 +218,10 @@
             align-items: flex-start;
             justify-content: flex-start;
         }
+    }
+
+    .two-menu {
+        z-index: 3;
     }
     
     .item {
@@ -244,7 +261,7 @@
         background: transparent;
         padding: 0;
         font-family: $gilroy;
-        color: $blue;
+        color: $white;
         font-size: 16px;
         font-weight: 500;
         line-height: 2;
@@ -257,13 +274,14 @@
         }  
 
         @include media('<widescreen') {
+            color: $blue;
             width: 100%;
             justify-content: space-between;
             font-size: 16px;
             text-transform: none;
         }
         
-        &::after{
+        &::after {
             content:'';
             position: absolute;
             bottom: 0;
@@ -279,37 +297,45 @@
             }
         }
 
-        &:hover{
-            text-shadow: #010b6c 0 0 0.5px;
+        &:hover {
+            text-shadow: $white 0 0 0.5px;
 
-            &::after{
+            &::after {
                 width: 80%;
             }
         }
+
+        .active & {
+
+            &:hover {
+                text-shadow: #010b6c 0 0 0.5px;
+            }
+        }
+
     }
 
     .two-menu {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%);
-        width: 100%;
         columns: 5;
         padding: 120px 45px 40px 45px;
         margin: 0;
         list-style: none;
         background-color: $white;
-        transition: $all_03;
 
         @include media('<1400px'){
             padding: 80px 30px 30px 30px;
         } 
 
         @include media('>=widescreen') {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 100%;
             opacity: 0;
             z-index: -1;
             visibility: hidden;
             pointer-events: none;
+            transition: $all_03;
         }
 
         @include media('<widescreen'){
@@ -407,6 +433,7 @@
         transition: $all_03;
 
         @include media('<widescreen'){
+            color: $blue;
             font-size: 16px;
             margin: 0;
             width: 100%;
@@ -476,10 +503,22 @@
         align-items: center;
         justify-content: flex-end;
         width: auto;
+        color: $white;
 
         @include media('<phone'){
             display: none;
         } 
+
+        &:hover{
+
+            .active & {
+                text-shadow: #010b6c 0 0 0.5px;
+            }
+        }
+
+        .active & {
+            color: $blue;
+        }
 
         img {
             margin-right: 15px;
@@ -490,6 +529,7 @@
         position: absolute;
         z-index: -1;
         transition: $all_03;
+        opacity: .6;
 
         .active & {
             opacity: 0;
@@ -582,10 +622,15 @@
                 } 
             }
         }
+
+        .link {
+            color: $blue;
+        }
     
         .item-drop {
     
             .link {
+                color: $blue;
                 text-shadow: $blue 0 0 0.5px;
                 
                 &::after{
@@ -595,16 +640,34 @@
                 .arrow {
     
                     &::before {
-                        background-color: $gold;
+                        background-color: $blue;
                         transform:  rotate(-35deg);
                     }
                 
                     &::after {
-                        background-color: $gold;
+                        background-color: $blue;
                         transform: translate(4px)  rotate(35deg);
                     }
                 }
             }
         }
+    }
+}
+
+#header.dark {
+
+    .link {
+        color: $blue;
+    }
+
+    .arrow {
+
+        &::before, &::after {
+            background-color: $blue;
+        }
+    }
+
+    .line {
+        opacity: 1;
     }
 }
