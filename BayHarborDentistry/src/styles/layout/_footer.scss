@@ -50,6 +50,36 @@
         margin: 0 -10px 24px -10px;
     }
 
+    .arrow {
+        position: relative;
+        width: 20px;
+        height: 9px;
+        margin-left: 5px;
+        transition: $all_03;
+        border: none;
+        background-color: transparent;
+        transform: rotate(-90deg);
+        
+        &::before, &::after {
+            content:'';
+            position: absolute;
+            top: 3px;
+            left: 5px;
+            width: 6px;
+            height: 1px;
+            background-color: $blue;
+            transition: all .3s ease 0s;
+        }
+    
+        &::before {
+            transform:  rotate(35deg);
+        }
+    
+        &::after {
+            transform: translate(4px)  rotate(-35deg);
+        }
+    }
+
     .menu {
         position: static;
         display: flex;
@@ -61,6 +91,14 @@
 
     .item {
         margin-bottom: 20px;
+    }
+
+    .item-drop {
+        margin: 0;
+
+        .link {
+            display: none;
+        }
     }
 
     .link {
@@ -86,20 +124,32 @@
     .two-menu {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10%;
         margin: 0;
         padding: 0;
         list-style: none;
         columns: 2;
+        column-gap: 40px;
     }
 
     .two-item {
         margin-bottom: 20px;
+        
+        &:hover{
+
+            .three-menu {
+                opacity: 1;
+                z-index: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
+        }
     }
 
     .two-link {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         font-family: $gilroy;
         color: $blue;
         font-size: 14px;
@@ -115,7 +165,36 @@
     }
 
     .three-menu {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        max-width: 210px;
+        background-color: #FDFAF8;
+        padding: 24px;
+        margin: 0;
+        list-style: none;
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .three-link {
+        position: relative;
+        display: inline-block;
+        font-family: $gilroy;
+        color: $gray_2;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 12px;
+        padding: 0;
+        transition: $all_03;
+
+        &:hover{
+            text-shadow: #010b6c 0 0 0.5px;
+        }
     }
 
     .bot {

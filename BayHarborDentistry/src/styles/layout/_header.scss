@@ -219,10 +219,6 @@
             justify-content: flex-start;
         }
     }
-
-    .two-menu {
-        z-index: 3;
-    }
     
     .item {
         display: flex;
@@ -311,15 +307,16 @@
                 text-shadow: #010b6c 0 0 0.5px;
             }
         }
-
     }
 
     .two-menu {
         columns: 5;
+        column-gap: 40px;
         padding: 120px 45px 40px 45px;
         margin: 0;
         list-style: none;
         background-color: $white;
+        z-index: 3;
 
         @include media('<1400px'){
             padding: 80px 30px 30px 30px;
