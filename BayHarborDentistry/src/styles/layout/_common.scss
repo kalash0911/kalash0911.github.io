@@ -2398,6 +2398,10 @@ body {
     text-align: center;
     overflow: auto;
 
+    &.show {
+        display: block;
+    }
+
     @include media('<desktop'){
         top: 80px;
         transform: translate(-50%);

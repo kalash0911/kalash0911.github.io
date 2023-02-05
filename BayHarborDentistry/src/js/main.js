@@ -9,6 +9,40 @@ initVideoPlayers();
 initVideoPopup();
 initAccordion();
 initActiveSubMenu();
+initContactFormPopup();
+
+
+// ContactForm popup
+function initContactFormPopup() {
+  const overflow = document.querySelector(".overflow");
+  const formPopup = document.querySelector(".pop-up");
+  const closePopupBtn = formPopup.querySelector(".btn-close");
+
+  const openPopup = () => formPopup.classList.add("show");
+  const hidePopup = () => formPopup.classList.remove("show");
+
+  document.addEventListener("click", (event) => {
+    const { target } = event;
+
+    if (target.closest(".openPopup")) {
+      document.body.classList.toggle("body_lock");
+      overflow.classList.toggle("overflow_active");
+      openPopup();
+    }
+
+    if (target.closest(".overflow") && formPopup.classList.contains('show')) {
+      document.body.classList.remove("body_lock");
+      overflow.classList.remove("overflow_active");
+      hidePopup();
+    }
+  });
+
+  closePopupBtn.addEventListener("click", () => {
+    document.body.classList.remove("body_lock");
+    overflow.classList.remove("overflow_active");
+    hidePopup();
+  });
+}
 
 // Foundation drilldown menu:
 function destroyMenusOnResize(jQueryObj, width) {
@@ -62,7 +96,9 @@ function initHeaderBurger() {
     ) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
+      document.body.classList.remove("item-active");
       overflow.classList.remove("overflow_active");
+      $('.drilldown').foundation('_hideAll');
       return;
     }
   });
