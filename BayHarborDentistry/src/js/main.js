@@ -8,11 +8,18 @@ initBlockInViewportAnimation();
 initVideoPlayers();
 initVideoPopup();
 initAccordion();
+initActiveSubMenu();
+
 
 // Foundation drilldown menu:
 function destroyMenusOnResize(jQueryObj, width) {
   const win = window;
   let headerMenu = new Foundation.Drilldown(jQueryObj);
+
+  jQueryObj.on('hide.zf.drilldown', () => {
+    if(jQueryObj.hasClass('invisible')) return;
+    document.body.classList.remove('item-active');
+  })
 
   const toggleInit = () => {
     const neededWidth = win.innerWidth >= width;
@@ -29,6 +36,11 @@ function destroyMenusOnResize(jQueryObj, width) {
   ["load", "resize"].forEach((evt) =>
     win.addEventListener(evt, toggleInit, false)
   );
+
+  $('.back-btn ').on('click', function(){
+    const activeSubMenus = $('#header').find('.submenu.is-active').last();
+    activeSubMenus.find('.js-drilldown-back > a')[0]?.click();
+  });
 }
 
 // header logic
@@ -71,12 +83,14 @@ function initHoverSubMenu() {
 }
 
 // for active sub menu
-const linkDrop = document.querySelector(".btn-mob");
-
-if (linkDrop) {
-  linkDrop.addEventListener("click", function (e) {
-    document.body.classList.toggle("item-active");
-  });
+function initActiveSubMenu() {
+  const linkDrop = document.querySelector(".link-drop");
+  
+  if (linkDrop) {
+    linkDrop.addEventListener("click", function (e) {
+      document.body.classList.toggle("item-active");
+    });
+  }
 }
 
 // btn logic
