@@ -20,11 +20,16 @@ initMainBtnAnimation();
 initBlockInViewportAnimation();
 initVideoPlayers();
 initVideoPopup();
-initAccordion(); // Foundation drilldown menu:
+initAccordion();
+initActiveSubMenu(); // Foundation drilldown menu:
 
 function destroyMenusOnResize(jQueryObj, width) {
   var win = window;
   var headerMenu = new Foundation.Drilldown(jQueryObj);
+  jQueryObj.on("hide.zf.drilldown", function () {
+    if (jQueryObj.hasClass("invisible")) return;
+    document.body.classList.remove("item-active");
+  });
 
   var toggleInit = function toggleInit() {
     var neededWidth = win.innerWidth >= width;
@@ -42,21 +47,35 @@ function destroyMenusOnResize(jQueryObj, width) {
   ["load", "resize"].forEach(function (evt) {
     return win.addEventListener(evt, toggleInit, false);
   });
+  $(".back-btn ").on("click", function () {
+    var _activeSubMenus$find$;
+
+    var activeSubMenus = $("#header").find(".submenu.is-active").last();
+    (_activeSubMenus$find$ = activeSubMenus.find(".js-drilldown-back > a")[0]) === null || _activeSubMenus$find$ === void 0 ? void 0 : _activeSubMenus$find$.click();
+  });
 } // header logic
 
 
 function initHeaderBurger() {
-  var burger = document.querySelector(".burger");
-  var menuBody = document.querySelector(".menu-wrap");
   var overflow = document.querySelector(".overflow");
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    if (target.closest(".menu-wrap") || target.closest(".back-btn")) return;
 
-  if (burger) {
-    burger.addEventListener("click", function (e) {
+    if (target.closest(".burger")) {
       document.body.classList.toggle("body_lock");
       document.body.classList.toggle("active");
       overflow.classList.toggle("overflow_active");
-    });
-  }
+      return;
+    }
+
+    if (target.closest('.overflow') && document.body.classList.contains("body_lock") && overflow.classList.contains("overflow_active")) {
+      document.body.classList.remove("body_lock");
+      document.body.classList.remove("active");
+      overflow.classList.remove("overflow_active");
+      return;
+    }
+  });
 } // for hover sub menu
 
 
@@ -84,15 +103,16 @@ function initHoverSubMenu() {
     }, false);
   });
 } // for active sub menu
-// TODO: Delete?
 
 
-var linkDrop = document.querySelector(".btn-mob");
+function initActiveSubMenu() {
+  var linkDrop = document.querySelector(".link-drop");
 
-if (linkDrop) {
-  linkDrop.addEventListener("click", function (e) {
-    document.body.classList.toggle("item-active");
-  });
+  if (linkDrop) {
+    linkDrop.addEventListener("click", function (e) {
+      document.body.classList.toggle("item-active");
+    });
+  }
 } // btn logic
 
 
