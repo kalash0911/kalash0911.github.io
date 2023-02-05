@@ -10,16 +10,15 @@ initVideoPopup();
 initAccordion();
 initActiveSubMenu();
 
-
 // Foundation drilldown menu:
 function destroyMenusOnResize(jQueryObj, width) {
   const win = window;
   let headerMenu = new Foundation.Drilldown(jQueryObj);
 
-  jQueryObj.on('hide.zf.drilldown', () => {
-    if(jQueryObj.hasClass('invisible')) return;
-    document.body.classList.remove('item-active');
-  })
+  jQueryObj.on("hide.zf.drilldown", () => {
+    if (jQueryObj.hasClass("invisible")) return;
+    document.body.classList.remove("item-active");
+  });
 
   const toggleInit = () => {
     const neededWidth = win.innerWidth >= width;
@@ -37,25 +36,36 @@ function destroyMenusOnResize(jQueryObj, width) {
     win.addEventListener(evt, toggleInit, false)
   );
 
-  $('.back-btn ').on('click', function(){
-    const activeSubMenus = $('#header').find('.submenu.is-active').last();
-    activeSubMenus.find('.js-drilldown-back > a')[0]?.click();
+  $(".back-btn ").on("click", function () {
+    const activeSubMenus = $("#header").find(".submenu.is-active").last();
+    activeSubMenus.find(".js-drilldown-back > a")[0]?.click();
   });
 }
 
 // header logic
 function initHeaderBurger() {
-  const burger = document.querySelector(".burger");
-  const menuBody = document.querySelector(".menu-wrap");
   const overflow = document.querySelector(".overflow");
 
-  if (burger) {
-    burger.addEventListener("click", function (e) {
+  document.addEventListener("click", (event) => {
+    const { target } = event;
+    if (target.closest(".menu-wrap") || target.closest(".back-btn")) return;
+    if (target.closest(".burger")) {
       document.body.classList.toggle("body_lock");
       document.body.classList.toggle("active");
       overflow.classList.toggle("overflow_active");
-    });
-  }
+      return;
+    }
+    if (
+      target.closest('.overflow') &&
+      document.body.classList.contains("body_lock") &&
+      overflow.classList.contains("overflow_active")
+    ) {
+      document.body.classList.remove("body_lock");
+      document.body.classList.remove("active");
+      overflow.classList.remove("overflow_active");
+      return;
+    }
+  });
 }
 
 // for hover sub menu
@@ -85,7 +95,7 @@ function initHoverSubMenu() {
 // for active sub menu
 function initActiveSubMenu() {
   const linkDrop = document.querySelector(".link-drop");
-  
+
   if (linkDrop) {
     linkDrop.addEventListener("click", function (e) {
       document.body.classList.toggle("item-active");
@@ -413,4 +423,3 @@ function initAccordion() {
     links.addEventListener("click", accardionToggle(slideMenu));
   });
 }
-
