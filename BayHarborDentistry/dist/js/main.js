@@ -21,7 +21,53 @@ initBlockInViewportAnimation();
 initVideoPlayers();
 initVideoPopup();
 initAccordion();
-initActiveSubMenu(); // Foundation drilldown menu:
+initActiveSubMenu();
+initContactFormPopup();
+initContactForm();
+initActiveSubMenuFooter();
+
+function initContactForm() {
+  Foundation.Abide.defaults.patterns['time'] = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
+  Foundation.Abide.defaults.patterns['tel'] = /^\d{10}$/;
+  new Foundation.Abide($('.contactForm'));
+} // ContactForm popup
+
+
+function initContactFormPopup() {
+  var overflow = document.querySelector(".overflow");
+  var formPopup = document.querySelector(".pop-up");
+  var closePopupBtn = formPopup.querySelector(".btn-close");
+
+  var openPopup = function openPopup() {
+    return formPopup.classList.add("show");
+  };
+
+  var hidePopup = function hidePopup() {
+    return formPopup.classList.remove("show");
+  };
+
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+
+    if (target.closest(".openPopup")) {
+      document.body.classList.toggle("body_lock");
+      overflow.classList.toggle("overflow_active");
+      openPopup();
+    }
+
+    if (target.closest(".overflow") && formPopup.classList.contains('show')) {
+      document.body.classList.remove("body_lock");
+      overflow.classList.remove("overflow_active");
+      hidePopup();
+    }
+  });
+  closePopupBtn.addEventListener("click", function () {
+    document.body.classList.remove("body_lock");
+    overflow.classList.remove("overflow_active");
+    hidePopup();
+  });
+} // Foundation drilldown menu:
+
 
 function destroyMenusOnResize(jQueryObj, width) {
   var win = window;
@@ -72,7 +118,9 @@ function initHeaderBurger() {
     if (target.closest('.overflow') && document.body.classList.contains("body_lock") && overflow.classList.contains("overflow_active")) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
+      document.body.classList.remove("item-active");
       overflow.classList.remove("overflow_active");
+      $('.drilldown').foundation('_hideAll');
       return;
     }
   });
@@ -424,5 +472,17 @@ function initAccordion() {
   slideMenu.forEach(function (links) {
     links.addEventListener("click", accardionToggle(slideMenu));
   });
+} // for active sub menu footer
+
+
+function initActiveSubMenuFooter() {
+  var linkDropFooter = document.querySelector(".item-drop-footer");
+
+  if (linkDropFooter) {
+    linkDropFooter.addEventListener("click", function (e) {
+      document.body.classList.toggle("item-footer-active");
+      e.preventDefault();
+    });
+  }
 }
 //# sourceMappingURL=main.js.map

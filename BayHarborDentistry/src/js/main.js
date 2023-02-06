@@ -11,6 +11,7 @@ initAccordion();
 initActiveSubMenu();
 initContactFormPopup();
 initContactForm();
+initActiveSubMenuFooter();
 
 function initContactForm() {
   Foundation.Abide.defaults.patterns['time'] = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
@@ -464,4 +465,16 @@ function initAccordion() {
   slideMenu.forEach((links) => {
     links.addEventListener("click", accardionToggle(slideMenu));
   });
+}
+
+// for active sub menu footer
+function initActiveSubMenuFooter() {
+  const linkDropFooter = document.querySelector(".item-drop-footer");
+
+  if (linkDropFooter) {
+    linkDropFooter.addEventListener("click", function (e) {
+      document.body.classList.toggle("item-footer-active");
+      e.preventDefault();
+    });
+  }
 }

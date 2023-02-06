@@ -2080,13 +2080,18 @@ body {
 
     .form-error {
         text-align: left;
+        font-family: $gilroy;
+        font-size: 12px;
+        font-weight: 400;
+        color: $red;
     }
     
     .input {
         width: 100%;
         height: auto;
+        min-height: 56px;
         line-height: 1;
-        padding: 16px 22px;
+        padding: 14px 22px;
         border: 1px solid #D6D7E3;
         background-color: transparent;
         margin-bottom: 16px;
@@ -2099,11 +2104,12 @@ body {
         
 
         &.is-invalid-input {
-            border-color: #cc4b37;
+            border-color: $red;
         }
 
         @include media('<phone'){
-            padding: 12px 22px;
+            min-height: 44px;
+            padding: 10px 22px;
             font-size: 14px;
         }
     
@@ -2408,9 +2414,9 @@ body {
 .pop-up {
     display: none;
     position: fixed;
-    top: 50%;
+    top: 80px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     width: 90%;
     max-width: 1040px;
     background-color: $white;
@@ -2418,6 +2424,8 @@ body {
     padding: 40px 75px 70px 75px;
     text-align: center;
     overflow: auto;
+    height: calc(100vh - 80px);
+    max-height: 920px;
 
     &.show {
         display: block;
@@ -2430,8 +2438,11 @@ body {
     }
 
     @include media('<phone'){
+        top: 0;
         width: 95%;
         padding: 40px 20px;
+        height: 100vh;
+        max-height: 100%;
     }
 
     .pop-up-logo {
@@ -2458,7 +2469,7 @@ body {
         max-width: 670px;
     }
 
-    .input {
+    .input-wrap {
         @include media('<desktop'){
             width: 49%;
         }
