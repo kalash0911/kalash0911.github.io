@@ -301,6 +301,10 @@
             margin-bottom: 20px;
             
             &:hover{
+
+                .arrow {
+                    transform: rotate(90deg);
+                }
     
                 .three-menu {
                     opacity: 1;
