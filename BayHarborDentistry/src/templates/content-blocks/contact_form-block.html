@@ -3,11 +3,11 @@
     <form class="contactForm" data-abide>
         <div class="block">
             <label class="input-wrap">
-                <input class="input" type="text" placeholder="Name" required pattern="name">
+                <input name="name" class="input" type="text" placeholder="Name" required pattern="name">
                 <span class="form-error">Please enter a valid value</span>
             </label>
             <label class="input-wrap">
-                <select class="input" required="required">
+                <select class="input" required="required" name="firstVisit">
                     <option value="">Is this your first visit?</option>
                     <option value="1">Yes</option>
                     <option value="2">No</option>
@@ -15,24 +15,24 @@
                 <span class="form-error" >Please enter a valid value</span>
             </label>
             <label class="input-wrap">
-                <input class="input" type="mail" placeholder="Email" required pattern="email">
+                <input class="input" name="email" type="mail" placeholder="Email" required pattern="email">
                 <span class="form-error" >Please enter a valid value</span>
             </label>
             <label class="input-wrap">
-                <input class="input" type="text" placeholder="Phone" required pattern="tel">
+                <input class="input" name="phone" type="text" placeholder="Phone" required pattern="tel">
                 <span class="form-error" >Please enter a valid value</span>
             </label>
             <label class="input-wrap">
-                <input class="input" type="date" id="start" name="trip-start" value="2018-07-22" required pattern="date">
+                <input class="input" name="date" type="date" id="start" name="trip-start" value="2018-07-22" required pattern="date">
                 <span class="form-error" >Please enter a valid value</span>
             </label>
             <label class="input-wrap">
-                <input class="input" type="time" required pattern="time">
+                <input class="input" name="time" type="time" required pattern="time">
                 <span class="form-error" >Please enter a valid value</span>
             </label>
-            <textarea class="input textarea" placeholder="How can we help you?"></textarea>
+            <textarea class="input textarea" name="message" placeholder="How can we help you?"></textarea>
         </div>
-        <button class="blue-btn" type="submit">
+        <button class="blue-btn"  type="submit">
             submit request
             <svg width="29" height="16" viewBox="0 0 29 16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.98297e-06 8.17073L29 8.17073M29 8.17073C24.0013 8.17073 19.6275 12.6098 18.0654 15M29 8.17073C24.0013 8.17073 19.6275 3.39024 18.0654 0.999998" stroke-width="1.5"/>

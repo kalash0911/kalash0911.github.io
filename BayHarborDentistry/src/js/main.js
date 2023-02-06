@@ -14,10 +14,26 @@ initContactForm();
 initActiveSubMenuFooter();
 
 function initContactForm() {
+  const contactForm = $('.contactForm');
   Foundation.Abide.defaults.patterns['time'] = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
   Foundation.Abide.defaults.patterns['tel'] = /^\d{10}$/;
   Foundation.Abide.defaults.patterns['name'] = /\D/;
-  new Foundation.Abide($('.contactForm'));
+  new Foundation.Abide(contactForm);
+  contactForm.on('submit', (e) => {
+    e.preventDefault();
+    if(e.result) {
+      const payload = contactForm.serializeArray().reduce(function(obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});;
+  
+      // Fake API
+      postData('https://jsonplaceholder.typicode.com/todos', payload)
+      .then((data) => {
+        console.log(data);
+      });
+    }
+  })
 }
 
 // ContactForm popup
@@ -27,7 +43,10 @@ function initContactFormPopup() {
   const closePopupBtn = formPopup.querySelector(".btn-close");
 
   const openPopup = () => formPopup.classList.add("show");
-  const hidePopup = () => formPopup.classList.remove("show");
+  const hidePopup = () => {
+    $('.contactForm').foundation('resetForm');
+    formPopup.classList.remove("show")
+  };
 
   document.addEventListener("click", (event) => {
     const { target } = event;
@@ -478,4 +497,23 @@ function initActiveSubMenuFooter() {
       e.preventDefault();
     });
   }
+}
+
+// Example POST method implementation:
+async function postData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
 }
