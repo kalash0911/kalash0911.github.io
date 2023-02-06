@@ -3,23 +3,46 @@
     padding-top: 80px;
 
     .container {
-        position: relative;
         max-width: 1225px;
         z-index: 1;
     }
 
     .top {
         display: flex;
+
+        @include media('<widescreen'){
+            justify-content: space-around;
+        }
+
+        @include media('<tablet'){
+            align-items: center;
+            flex-direction: column;
+        }
     }
 
     .logo-wrap {
         display: flex;
         flex-direction: column;
         padding-right: 90px;
+
+        @include media('<widescreen'){
+            padding-right: 30px;
+        }
+
+        @include media('<tablet'){
+            align-items: center;
+            padding: 0;
+            margin-bottom: 0;
+        }
     }
 
     .logo {
         margin-bottom: 36px;
+
+        @include media('<phone'){
+            width: 102px;
+            margin-bottom: 21px;
+        }
     }
 
     .geo-link {
@@ -32,6 +55,14 @@
         line-height: 1.75;
         margin-bottom: 36px;
 
+        @include media('<phone'){
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
         &:hover{
 
             img {
@@ -42,6 +73,10 @@
         img {
             margin-right: 16px;
             transition: $all_03;
+
+            @include media('<phone'){
+                margin: 0 0 10px 0;
+            }
         }
     }
 
@@ -80,6 +115,75 @@
         }
     }
 
+    .menu-wrap {
+
+        @include media('<tablet'){
+            width: 100%;
+        }
+
+        .item-drop-footer {
+            display: none;
+
+            @include media('<widescreen'){
+                display: block;
+            }
+
+            @include media('<tablet'){
+                margin-right: -20px;
+            }
+
+            .arrow {
+
+                .item-footer-active & {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .two-item {
+
+            .arrow {
+                transform: rotate(-90deg) !important;
+            }
+        }
+
+        .two-menu {
+            position: absolute;
+            top: 0;
+            left: -150%;
+            height: 100%;
+            width: 40%;
+            background-color: $white;
+            padding: 30px 0;
+            z-index: 3;
+            transition: $all_05;
+
+            @include media('<tablet'){
+                width: 60%;
+            }
+
+            @include media('<phone'){
+                width: 100%;
+            }
+
+            .item-footer-active & {
+                left: 0;
+            }
+        }
+
+        .two-link {
+
+            @include media('<widescreen'){
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        .three-menu {
+           display: none;
+        }
+    }
+
     .menu {
         position: static;
         display: flex;
@@ -87,18 +191,17 @@
         padding: 0 65px;
         border-left: 1px solid $white_2;
         border-right: 1px solid $white_2;
+
+        @include media('<tablet'){
+            padding: 22px 0 0 0;
+            border: none;
+            border-top: 1px solid $white_2;
+            align-items: center;
+        }
     }
 
     .item {
         margin-bottom: 20px;
-    }
-
-    .item-drop {
-        margin: 0;
-
-        .link {
-            display: none;
-        }
     }
 
     .link {
@@ -114,6 +217,7 @@
         line-height: 2;
         z-index: 2;
         transition: $all_03;
+        white-space: nowrap;
 
         &:hover {
             text-shadow: $blue 0 0 0.5px;
@@ -122,27 +226,19 @@
     }
 
     .two-menu {
-        position: absolute;
-        top: 0;
-        right: 10%;
         margin: 0;
         padding: 0;
         list-style: none;
-        columns: 2;
-        column-gap: 40px;
+        column-gap: 30px;
     }
-
+    
     .two-item {
-        margin-bottom: 20px;
-        
-        &:hover{
 
-            .three-menu {
-                opacity: 1;
-                z-index: 1;
-                visibility: visible;
-                pointer-events: all;
-            }
+        @include media('<widescreen') {
+            width: 100%;
+            margin: 0;
+            padding: 10px 30px;
+            border-bottom: 1px solid #D6D7E3;
         }
     }
 
@@ -165,19 +261,9 @@
     }
 
     .three-menu {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100%;
-        max-width: 210px;
-        background-color: #FDFAF8;
         padding: 24px;
         margin: 0;
         list-style: none;
-        opacity: 0;
-        z-index: -1;
-        visibility: hidden;
-        pointer-events: none;
     }
 
     .three-link {
@@ -197,6 +283,56 @@
         }
     }
 
+    .sec-menu {
+        padding-left: 80px;
+
+        @include media('<widescreen'){
+            display: none;
+        }
+
+        .two-menu {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .two-item {
+            position: relative;
+            width: 45%;
+            margin-bottom: 20px;
+            
+            &:hover{
+    
+                .three-menu {
+                    opacity: 1;
+                    z-index: 2;
+                    visibility: visible;
+                    pointer-events: all;
+                }
+            }
+        }
+
+        .three-menu {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            width: 100vw;
+            max-width: 210px;
+            background-color: #FDFAF8;
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+            pointer-events: none;
+
+            @include media('<1400px'){
+                left: -100%;
+            }
+
+            @include media('<widescreen'){
+                left: -80%;
+            }
+        }
+    }
+
     .bot {
         border-top: 1px solid #F3F2ED;
         padding: 24px 0;
@@ -210,7 +346,7 @@
 
     .line {
         position: absolute;
-        z-index: -1s;
+        z-index: -1;
     }
 
     .line1 {
