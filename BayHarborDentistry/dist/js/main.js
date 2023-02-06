@@ -1,17 +1,4 @@
-"use strict";
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 new WOW().init();
 destroyMenusOnResize($(".drilldown"), 1200);
 initHeaderBurger();
@@ -27,27 +14,45 @@ initContactForm();
 initActiveSubMenuFooter();
 
 function initContactForm() {
+  const contactForm = $('.contactForm');
   Foundation.Abide.defaults.patterns['time'] = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
   Foundation.Abide.defaults.patterns['tel'] = /^\d{10}$/;
-  new Foundation.Abide($('.contactForm'));
+  Foundation.Abide.defaults.patterns['name'] = /\D/;
+  new Foundation.Abide(contactForm);
+  contactForm.on('submit', e => {
+    e.preventDefault();
+
+    if (e.result) {
+      const payload = contactForm.serializeArray().reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+      ; // Fake API
+
+      postData('https://jsonplaceholder.typicode.com/todos', payload).then(data => {
+        console.log(data);
+      });
+    }
+  });
 } // ContactForm popup
 
 
 function initContactFormPopup() {
-  var overflow = document.querySelector(".overflow");
-  var formPopup = document.querySelector(".pop-up");
-  var closePopupBtn = formPopup.querySelector(".btn-close");
+  const overflow = document.querySelector(".overflow");
+  const formPopup = document.querySelector(".pop-up");
+  const closePopupBtn = formPopup.querySelector(".btn-close");
 
-  var openPopup = function openPopup() {
-    return formPopup.classList.add("show");
+  const openPopup = () => formPopup.classList.add("show");
+
+  const hidePopup = () => {
+    $('.contactForm').foundation('resetForm');
+    formPopup.classList.remove("show");
   };
 
-  var hidePopup = function hidePopup() {
-    return formPopup.classList.remove("show");
-  };
-
-  document.addEventListener("click", function (event) {
-    var target = event.target;
+  document.addEventListener("click", event => {
+    const {
+      target
+    } = event;
 
     if (target.closest(".openPopup")) {
       document.body.classList.toggle("body_lock");
@@ -61,7 +66,7 @@ function initContactFormPopup() {
       hidePopup();
     }
   });
-  closePopupBtn.addEventListener("click", function () {
+  closePopupBtn.addEventListener("click", () => {
     document.body.classList.remove("body_lock");
     overflow.classList.remove("overflow_active");
     hidePopup();
@@ -70,42 +75,40 @@ function initContactFormPopup() {
 
 
 function destroyMenusOnResize(jQueryObj, width) {
-  var win = window;
-  var headerMenu = new Foundation.Drilldown(jQueryObj);
-  jQueryObj.on("hide.zf.drilldown", function () {
+  const win = window;
+  let headerMenu = new Foundation.Drilldown(jQueryObj);
+  jQueryObj.on("hide.zf.drilldown", () => {
     if (jQueryObj.hasClass("invisible")) return;
     document.body.classList.remove("item-active");
   });
 
-  var toggleInit = function toggleInit() {
-    var neededWidth = win.innerWidth >= width;
+  const toggleInit = () => {
+    const neededWidth = win.innerWidth >= width;
 
     if (neededWidth) {
-      if (!(jQueryObj === null || jQueryObj === void 0 ? void 0 : jQueryObj.hasClass("destroyed"))) {
+      if (!jQueryObj?.hasClass("destroyed")) {
         jQueryObj.foundation("_destroy").addClass("destroyed");
       }
-    } else if (jQueryObj === null || jQueryObj === void 0 ? void 0 : jQueryObj.hasClass("destroyed")) {
+    } else if (jQueryObj?.hasClass("destroyed")) {
       headerMenu = new Foundation.Drilldown(jQueryObj);
       jQueryObj.removeClass("destroyed");
     }
   };
 
-  ["load", "resize"].forEach(function (evt) {
-    return win.addEventListener(evt, toggleInit, false);
-  });
+  ["load", "resize"].forEach(evt => win.addEventListener(evt, toggleInit, false));
   $(".back-btn ").on("click", function () {
-    var _activeSubMenus$find$;
-
-    var activeSubMenus = $("#header").find(".submenu.is-active").last();
-    (_activeSubMenus$find$ = activeSubMenus.find(".js-drilldown-back > a")[0]) === null || _activeSubMenus$find$ === void 0 ? void 0 : _activeSubMenus$find$.click();
+    const activeSubMenus = $("#header").find(".submenu.is-active").last();
+    activeSubMenus.find(".js-drilldown-back > a")[0]?.click();
   });
 } // header logic
 
 
 function initHeaderBurger() {
-  var overflow = document.querySelector(".overflow");
-  document.addEventListener("click", function (event) {
-    var target = event.target;
+  const overflow = document.querySelector(".overflow");
+  document.addEventListener("click", event => {
+    const {
+      target
+    } = event;
     if (target.closest(".menu-wrap") || target.closest(".back-btn")) return;
 
     if (target.closest(".burger")) {
@@ -128,33 +131,27 @@ function initHeaderBurger() {
 
 
 function initHoverSubMenu() {
-  var header = document.querySelector("#header");
-  var itemDrop = document.querySelector(".item-drop");
+  const header = document.querySelector("#header");
+  const itemDrop = document.querySelector(".item-drop");
 
-  var addHoverCb = function addHoverCb() {
-    return header.classList.add("hover");
-  };
+  const addHoverCb = () => header.classList.add("hover");
 
-  var removeHoverCb = function removeHoverCb() {
-    return header.classList.remove("hover");
-  };
+  const removeHoverCb = () => header.classList.remove("hover");
 
-  ["load", "resize"].forEach(function (evt) {
-    return window.addEventListener(evt, function () {
-      if (window.innerWidth > 1200 && itemDrop) {
-        itemDrop.addEventListener("mouseover", addHoverCb);
-        itemDrop.addEventListener("mouseleave", removeHoverCb);
-      } else {
-        itemDrop.removeEventListener("mouseover", addHoverCb);
-        itemDrop.removeEventListener("mouseleave", removeHoverCb);
-      }
-    }, false);
-  });
+  ["load", "resize"].forEach(evt => window.addEventListener(evt, () => {
+    if (window.innerWidth > 1200 && itemDrop) {
+      itemDrop.addEventListener("mouseover", addHoverCb);
+      itemDrop.addEventListener("mouseleave", removeHoverCb);
+    } else {
+      itemDrop.removeEventListener("mouseover", addHoverCb);
+      itemDrop.removeEventListener("mouseleave", removeHoverCb);
+    }
+  }, false));
 } // for active sub menu
 
 
 function initActiveSubMenu() {
-  var linkDrop = document.querySelector(".link-drop");
+  const linkDrop = document.querySelector(".link-drop");
 
   if (linkDrop) {
     linkDrop.addEventListener("click", function (e) {
@@ -165,31 +162,16 @@ function initActiveSubMenu() {
 
 
 function initMainBtnAnimation() {
-  var btns = document.querySelectorAll(".btn");
+  const btns = document.querySelectorAll(".btn");
 
   if (btns !== null) {
-    var _iterator = _createForOfIteratorHelper(btns),
-        _step;
-
-    try {
-      var _loop = function _loop() {
-        var btn = _step.value;
-
-        btn.onmousemove = function (e) {
-          var x = e.pageX - btn.offsetLeft;
-          var y = e.pageY - btn.getBoundingClientRect().top - window.scrollY;
-          btn.style.setProperty("--x", x + "px");
-          btn.style.setProperty("--y", y + "px");
-        };
+    for (let btn of btns) {
+      btn.onmousemove = function (e) {
+        const x = e.pageX - btn.offsetLeft;
+        const y = e.pageY - btn.getBoundingClientRect().top - window.scrollY;
+        btn.style.setProperty("--x", x + "px");
+        btn.style.setProperty("--y", y + "px");
       };
-
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        _loop();
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
     }
   }
 } // Animation
@@ -197,49 +179,39 @@ function initMainBtnAnimation() {
 
 function initBlockInViewportAnimation() {
   function onEntry(entry) {
-    entry.forEach(function (change) {
+    entry.forEach(change => {
       if (change.isIntersecting) {
         change.target.classList.add("show");
       }
     });
   }
 
-  var options = {
+  let options = {
     threshold: [0.5]
   };
-  var observer = new IntersectionObserver(onEntry, options);
-  var elements = document.querySelectorAll(".anim");
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll(".anim");
 
-  var _iterator2 = _createForOfIteratorHelper(elements),
-      _step2;
-
-  try {
-    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-      var elm = _step2.value;
-      observer.observe(elm);
-    }
-  } catch (err) {
-    _iterator2.e(err);
-  } finally {
-    _iterator2.f();
+  for (let elm of elements) {
+    observer.observe(elm);
   }
 } // Video controls
 
 
 function initVideoPlayers() {
-  var videoWraps = document.querySelectorAll(".video-wrap");
-  videoWraps === null || videoWraps === void 0 ? void 0 : videoWraps.forEach(function (videoWrap) {
-    var video = videoWrap.querySelector(".video");
-    var playButton = videoWrap.querySelector(".play-button");
-    var muteButton = videoWrap.querySelector(".mute-button");
-    var fullscreenButton = videoWrap.querySelector(".fullscreen-button");
-    var volume = videoWrap.querySelector(".volume");
-    var currentTimeElement = videoWrap.querySelector(".current");
-    var durationTimeElement = videoWrap.querySelector(".duration");
-    var progress = videoWrap.querySelector(".video-progress");
-    var progressBar = videoWrap.querySelector(".video-progress-filled"); //Play and Pause button
+  const videoWraps = document.querySelectorAll(".video-wrap");
+  videoWraps?.forEach(videoWrap => {
+    const video = videoWrap.querySelector(".video");
+    const playButton = videoWrap.querySelector(".play-button");
+    const muteButton = videoWrap.querySelector(".mute-button");
+    const fullscreenButton = videoWrap.querySelector(".fullscreen-button");
+    const volume = videoWrap.querySelector(".volume");
+    const currentTimeElement = videoWrap.querySelector(".current");
+    const durationTimeElement = videoWrap.querySelector(".duration");
+    const progress = videoWrap.querySelector(".video-progress");
+    const progressBar = videoWrap.querySelector(".video-progress-filled"); //Play and Pause button
 
-    playButton.addEventListener("click", function (e) {
+    playButton.addEventListener("click", e => {
       if (video.paused) {
         video.play();
         e.target.textContent = "| |";
@@ -251,7 +223,7 @@ function initVideoPlayers() {
       }
     }); //Mute button
 
-    muteButton.addEventListener("click", function (e) {
+    muteButton.addEventListener("click", e => {
       if (video.muted) {
         video.muted = false;
         muteButton.classList.toggle("mute");
@@ -261,7 +233,7 @@ function initVideoPlayers() {
       }
     }); //Fullscreen button
 
-    fullscreenButton.addEventListener("click", function (e) {
+    fullscreenButton.addEventListener("click", e => {
       if (video.requestFullScreen) {
         video.requestFullscreen();
       } else if (video.webkitRequestFullScreen) {
@@ -271,28 +243,28 @@ function initVideoPlayers() {
       }
     }); //volume
 
-    volume.addEventListener("mousemove", function (e) {
+    volume.addEventListener("mousemove", e => {
       video.volume = e.target.value;
     }); //current time and duration
 
-    var currentTime = function currentTime() {
-      var currentMinutes = Math.floor(video.currentTime / 60);
-      var currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
-      var durationMinutes = Math.floor(video.duration / 60);
-      var durationSeconds = Math.floor(video.duration - durationMinutes * 60);
-      currentTimeElement.innerHTML = "".concat(currentMinutes, ":").concat(currentSeconds < 10 ? "0" + currentSeconds : currentSeconds);
-      durationTimeElement.innerHTML = "".concat(durationMinutes, ":").concat(durationSeconds);
+    const currentTime = () => {
+      let currentMinutes = Math.floor(video.currentTime / 60);
+      let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
+      let durationMinutes = Math.floor(video.duration / 60);
+      let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+      currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds}`;
+      durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
     };
 
     video.addEventListener("timeupdate", currentTime); //Progress bar
 
-    video.addEventListener("timeupdate", function () {
-      var percentage = video.currentTime / video.duration * 100;
-      progressBar.style.width = "".concat(percentage, "%");
+    video.addEventListener("timeupdate", () => {
+      const percentage = video.currentTime / video.duration * 100;
+      progressBar.style.width = `${percentage}%`;
     }); //change progress bar on click
 
-    progress.addEventListener("click", function (e) {
-      var progressTime = e.offsetX / progress.offsetWidth * video.duration;
+    progress.addEventListener("click", e => {
+      const progressTime = e.offsetX / progress.offsetWidth * video.duration;
       video.currentTime = progressTime;
     });
     video.addEventListener("ended", stopMedia);
@@ -307,9 +279,9 @@ function initVideoPlayers() {
 
 
 function initVideoPopup() {
-  var openVideo = document.querySelector(".open-video");
-  var closeVideo = document.querySelector(".close-video");
-  var videoBlock = document.querySelector(".video-block");
+  const openVideo = document.querySelector(".open-video");
+  const closeVideo = document.querySelector(".close-video");
+  const videoBlock = document.querySelector(".video-block");
 
   if (videoBlock !== null) {
     openVideo.addEventListener("click", function (e) {
@@ -327,17 +299,17 @@ function initVideoPopup() {
 
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
-  var init = _objectSpread({}, obj);
+  const init = { ...obj
+  };
+  const win = window;
+  const sliderSelector = document.querySelector(selector);
+  let swiper = new Swiper(selector, init);
 
-  var win = window;
-  var sliderSelector = document.querySelector(selector);
-  var swiper = new Swiper(selector, init);
-
-  var toggleInit = function toggleInit() {
-    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+  const toggleInit = () => {
+    const neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
 
     if (neededWidth) {
-      if (!(sliderSelector === null || sliderSelector === void 0 ? void 0 : sliderSelector.classList.contains("swiper-initialized"))) {
+      if (!sliderSelector?.classList.contains("swiper-initialized")) {
         swiper = new Swiper(selector, init);
       }
     } else if (sliderSelector.classList.contains("swiper-initialized")) {
@@ -345,9 +317,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     }
   };
 
-  ["load", "resize"].forEach(function (evt) {
-    return win.addEventListener(evt, toggleInit, false);
-  });
+  ["load", "resize"].forEach(evt => win.addEventListener(evt, toggleInit, false));
 }
 
 destroySlidersOnResize(".main-slider", 99999, {
@@ -452,31 +422,29 @@ destroySlidersOnResize(".reviews-slider", 99999, {
 }); // For Accardion
 
 function initAccordion() {
-  var accardionToggle = function accardionToggle(slideMenu) {
-    return function (e) {
-      slideMenu.forEach(function (links) {
-        var hidePanel = links.nextElementSibling;
+  const accardionToggle = slideMenu => e => {
+    slideMenu.forEach(links => {
+      const hidePanel = links.nextElementSibling;
 
-        if (links === e.currentTarget) {
-          e.currentTarget.classList.toggle("active");
-          hidePanel.classList.toggle("active-block");
-        } else {
-          links.classList.remove("active");
-          hidePanel.classList.remove("active-block");
-        }
-      });
-    };
+      if (links === e.currentTarget) {
+        e.currentTarget.classList.toggle("active");
+        hidePanel.classList.toggle("active-block");
+      } else {
+        links.classList.remove("active");
+        hidePanel.classList.remove("active-block");
+      }
+    });
   };
 
-  var slideMenu = document.querySelectorAll(".accardion-link");
-  slideMenu.forEach(function (links) {
+  const slideMenu = document.querySelectorAll(".accardion-link");
+  slideMenu.forEach(links => {
     links.addEventListener("click", accardionToggle(slideMenu));
   });
 } // for active sub menu footer
 
 
 function initActiveSubMenuFooter() {
-  var linkDropFooter = document.querySelector(".item-drop-footer");
+  const linkDropFooter = document.querySelector(".item-drop-footer");
 
   if (linkDropFooter) {
     linkDropFooter.addEventListener("click", function (e) {
@@ -484,5 +452,32 @@ function initActiveSubMenuFooter() {
       e.preventDefault();
     });
   }
+} // Example POST method implementation:
+
+
+async function postData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST',
+    // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors',
+    // no-cors, *cors, same-origin
+    cache: 'no-cache',
+    // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin',
+    // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json' // 'Content-Type': 'application/x-www-form-urlencoded',
+
+    },
+    redirect: 'follow',
+    // manual, *follow, error
+    referrerPolicy: 'no-referrer',
+    // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
 }
-//# sourceMappingURL=main.js.map
+
+},{}]},{},[1]);
