@@ -55,6 +55,17 @@
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+
+        .is-invalid-label {
+            .form-error {
+                display: block;
+                text-align: left;
+                font-family: $gilroy;
+                font-size: 12px;
+                font-weight: 400;
+                color: $red;
+            }
+        }
     }
 
     .input {
@@ -68,6 +79,10 @@
         line-height: 1.5;
         transition: $all_03;
         background-color: transparent;
+
+        &.is-invalid-input {
+            border-color: $red;
+        }
 
         &::placeholder {
             font-family: $gilroy;

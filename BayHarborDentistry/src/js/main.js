@@ -32,23 +32,32 @@ class Spinner {
       </div>
     </div>`;
     this.init();
-    this.spinner = document.querySelector('.spinner');
+    this.spinner = document.querySelector(".spinner");
   }
   init() {
-    if(!this.isInit) {
-      document.body.insertAdjacentHTML('beforeend', this.spinnerEl);
+    if (!this.isInit) {
+      document.body.insertAdjacentHTML("beforeend", this.spinnerEl);
       this.isInit = true;
     }
-  };
+  }
   show() {
-    this.spinner.classList.add('visible')
+    this.spinner.classList.add("visible");
   }
   hide() {
-    this.spinner.classList.remove('visible')
+    this.spinner.classList.remove("visible");
   }
 }
 
 new WOW().init();
+
+// Links:
+// TODO: replace to relative api
+const API_PATH = 'https://jsonplaceholder.typicode.com/todos'
+
+// Regex:
+const TIME_REGEX = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
+const PHONE_REGEX = /^\d{10}$/;
+const NAME_REGEX = /\D/;
 
 destroyMenusOnResize($(".drilldown"), 1200);
 initHeaderBurger();
@@ -59,7 +68,8 @@ initVideoPlayers();
 initVideoPopup();
 initAccordion();
 initActiveSubMenu();
-initContactFormPopup();
+initRequestFormPopup();
+initContactUsForm();
 initRequestForm();
 initActiveSubMenuFooter();
 
@@ -67,13 +77,12 @@ const loader = new Spinner();
 
 function initRequestForm() {
   const requestForms = $(".contactForm");
-  Foundation.Abide.defaults.patterns["time"] =
-    /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
-  Foundation.Abide.defaults.patterns["tel"] = /^\d{10}$/;
-  Foundation.Abide.defaults.patterns["name"] = /\D/;
 
   requestForms.each(function () {
-    new Foundation.Abide($(this));
+    const form = new Foundation.Abide($(this));
+    form.options.patterns["time"] = TIME_REGEX;
+    form.options.patterns["tel"] = PHONE_REGEX;
+    form.options.patterns["name"] = NAME_REGEX;
     $(this)
       .on("formvalid.zf.abide", () => {
         const payload = $(this)
@@ -83,9 +92,39 @@ function initRequestForm() {
             return obj;
           }, {});
 
-        // Fake API
         loader.show();
-        postData("https://jsonplaceholder.typicode.com/todos", payload)
+        postData(API_PATH, payload)
+          .then((data) => {
+            console.log(data);
+          })
+          .finally(() => {
+            loader.hide();
+          });
+      })
+      .on("submit", (e) => {
+        e.preventDefault();
+      });
+  });
+}
+
+function initContactUsForm() {
+  const contactsForms = $(".contact-us-form");
+
+  contactsForms.each(function () {
+    const form = new Foundation.Abide($(this));
+    form.options.patterns["tel"] = PHONE_REGEX;
+    form.options.patterns["name"] = NAME_REGEX;
+    $(this)
+      .on("formvalid.zf.abide", (evt) => {
+        const payload = $(this)
+          .serializeArray()
+          .reduce((obj, item) => {
+            obj[item.name] = item.value;
+            return obj;
+          }, {});
+
+        loader.show();
+        postData(API_PATH, payload)
           .then((data) => {
             console.log(data);
           })
@@ -100,7 +139,7 @@ function initRequestForm() {
 }
 
 // ContactForm popup
-function initContactFormPopup() {
+function initRequestFormPopup() {
   const overflow = document.querySelector(".overflow");
   const formPopup = document.querySelector(".pop-up");
   const closePopupBtn = formPopup.querySelector(".btn-close");
@@ -580,4 +619,3 @@ async function postData(url = "", data = {}) {
   });
   return response.json(); // parses JSON response into native JavaScript objects
 }
-
