@@ -154,6 +154,7 @@ function initRequestFormPopup() {
     const { target } = event;
 
     if (target.closest(".openPopup")) {
+      event.preventDefault();
       document.body.classList.toggle("body_lock");
       backdrop.classList.toggle("visible");
       openPopup();
@@ -215,7 +216,9 @@ function initHeaderBurger() {
     if (target.closest(".burger")) {
       document.body.classList.toggle("body_lock");
       document.body.classList.toggle("active");
+      document.body.classList.remove("item-active");
       overflow.classList.toggle("overflow_active");
+      $(".drilldown").foundation("_hideAll");
       return;
     }
     if (
