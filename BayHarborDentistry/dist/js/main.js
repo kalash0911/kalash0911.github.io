@@ -73,7 +73,7 @@ initActiveSubMenu();
 initRequestFormPopup();
 initContactUsForm();
 initRequestForm();
-initActiveSubMenuFooter();
+initFooterDrilldownMenu();
 const loader = new Spinner();
 
 function initRequestForm() {
@@ -142,6 +142,7 @@ function initRequestFormPopup() {
     } = event;
 
     if (target.closest(".openPopup")) {
+      event.preventDefault();
       document.body.classList.toggle("body_lock");
       backdrop.classList.toggle("visible");
       openPopup();
@@ -160,6 +161,35 @@ function initRequestFormPopup() {
   });
 } // Foundation drilldown menu:
 
+
+function initFooterDrilldownMenu() {
+  new Foundation.Drilldown($('.footer-drilldown'));
+  const linkDropFooter = document.querySelector(".item-drop-footer");
+  const overflow = document.querySelector(".overflow");
+
+  const showFooterMenu = e => {
+    document.body.classList.add("item-footer-active");
+    overflow.classList.add("overflow_active");
+    e.preventDefault();
+  };
+
+  const hideFooterMenu = () => {
+    document.body.classList.remove("item-footer-active");
+    overflow.classList.remove("overflow_active");
+    $(".footer-drilldown").foundation("_hideAll");
+  };
+
+  if (linkDropFooter) {
+    linkDropFooter.addEventListener("click", showFooterMenu);
+    overflow.addEventListener('click', hideFooterMenu);
+    document.addEventListener('click', event => {
+      if (event.target.closest('.mobile-footer-menu .btn-close')) {
+        hideFooterMenu();
+        return;
+      }
+    });
+  }
+}
 
 function destroyMenusOnResize(jQueryObj, width) {
   const win = window;
@@ -201,7 +231,9 @@ function initHeaderBurger() {
     if (target.closest(".burger")) {
       document.body.classList.toggle("body_lock");
       document.body.classList.toggle("active");
+      document.body.classList.remove("item-active");
       overflow.classList.toggle("overflow_active");
+      $(".drilldown").foundation("_hideAll");
       return;
     }
 
@@ -527,20 +559,6 @@ function initAccordion() {
   slideMenu.forEach(links => {
     links.addEventListener("click", accardionToggle(slideMenu));
   });
-} // for active sub menu footer
-
-
-function initActiveSubMenuFooter() {
-  const linkDropFooter = document.querySelector(".item-drop-footer");
-  const overflow = document.querySelector(".overflow");
-
-  if (linkDropFooter) {
-    linkDropFooter.addEventListener("click", function (e) {
-      document.body.classList.toggle("item-footer-active");
-      overflow.classList.toggle("overflow_active");
-      e.preventDefault();
-    });
-  }
 } // Example POST method implementation:
 
 
