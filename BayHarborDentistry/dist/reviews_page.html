@@ -698,11 +698,20 @@
                         305-902-4270
                     </a>
                     <div class="wow animate__animated animate__fadeInUp">
-                        <form action="#">
-                            <input class="input" type="text" placeholder="Name">
-                            <input class="input" type="Email" placeholder="Email">
-                            <input class="input" type="tel" placeholder="Phone">
-                            <textarea class="input textarea" placeholder="How can we help you?"></textarea>
+                        <form class="contact-us-form" data-abide>
+                            <label>
+                                <input class="input" name="name" type="text" placeholder="Name" required pattern="name">
+                                <span class="form-error">Please enter a valid value</span>
+                            </label>
+                            <label>
+                                <input class="input" name="email" type="Email" placeholder="Email" required pattern="email">
+                                <span class="form-error">Please enter a valid value</span>
+                            </label>
+                            <label>
+                                <input class="input" name="phone" type="tel" placeholder="Phone" required pattern="tel">
+                                <span class="form-error">Please enter a valid value</span>
+                            </label>
+                            <textarea class="input textarea" name="message" placeholder="How can we help you?"></textarea>
                             <input id="form-btn" type="submit">
                         </form>
                     </div>

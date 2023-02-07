@@ -1,5 +1,66 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-new WOW().init();
+class Spinner {
+  constructor() {
+    this.spinnerEl = `
+      <div class="spinner loadingio-spinner-spin-nir07jtyl1o">
+      <div class="spinner-container">
+        <div class="ldio-5desmbk2c7">
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+          <div>
+              <div></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    this.init();
+    this.spinner = document.querySelector(".spinner");
+  }
+
+  init() {
+    if (!this.isInit) {
+      document.body.insertAdjacentHTML("beforeend", this.spinnerEl);
+      this.isInit = true;
+    }
+  }
+
+  show() {
+    this.spinner.classList.add("visible");
+  }
+
+  hide() {
+    this.spinner.classList.remove("visible");
+  }
+
+}
+
+new WOW().init(); // Links:
+// TODO: replace to relative api
+
+const API_PATH = 'https://jsonplaceholder.typicode.com/todos'; // Regex:
+
+const TIME_REGEX = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
+const PHONE_REGEX = /^\d{10}$/;
+const NAME_REGEX = /\D/;
 destroyMenusOnResize($(".drilldown"), 1200);
 initHeaderBurger();
 initHoverSubMenu();
@@ -9,35 +70,61 @@ initVideoPlayers();
 initVideoPopup();
 initAccordion();
 initActiveSubMenu();
-initContactFormPopup();
-initContactForm();
+initRequestFormPopup();
+initContactUsForm();
+initRequestForm();
 initActiveSubMenuFooter();
+const loader = new Spinner();
 
-function initContactForm() {
-  const contactForm = $('.contactForm');
-  Foundation.Abide.defaults.patterns['time'] = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
-  Foundation.Abide.defaults.patterns['tel'] = /^\d{10}$/;
-  Foundation.Abide.defaults.patterns['name'] = /\D/;
-  new Foundation.Abide(contactForm);
-  contactForm.on('submit', e => {
-    e.preventDefault();
-
-    if (e.result) {
-      const payload = contactForm.serializeArray().reduce(function (obj, item) {
+function initRequestForm() {
+  const requestForms = $(".contactForm");
+  requestForms.each(function () {
+    const form = new Foundation.Abide($(this));
+    form.options.patterns["time"] = TIME_REGEX;
+    form.options.patterns["tel"] = PHONE_REGEX;
+    form.options.patterns["name"] = NAME_REGEX;
+    $(this).on("formvalid.zf.abide", () => {
+      const payload = $(this).serializeArray().reduce((obj, item) => {
         obj[item.name] = item.value;
         return obj;
       }, {});
-      ; // Fake API
-
-      postData('https://jsonplaceholder.typicode.com/todos', payload).then(data => {
+      loader.show();
+      postData(API_PATH, payload).then(data => {
         console.log(data);
+      }).finally(() => {
+        loader.hide();
       });
-    }
+    }).on("submit", e => {
+      e.preventDefault();
+    });
+  });
+}
+
+function initContactUsForm() {
+  const contactsForms = $(".contact-us-form");
+  contactsForms.each(function () {
+    const form = new Foundation.Abide($(this));
+    form.options.patterns["tel"] = PHONE_REGEX;
+    form.options.patterns["name"] = NAME_REGEX;
+    $(this).on("formvalid.zf.abide", evt => {
+      const payload = $(this).serializeArray().reduce((obj, item) => {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+      loader.show();
+      postData(API_PATH, payload).then(data => {
+        console.log(data);
+      }).finally(() => {
+        loader.hide();
+      });
+    }).on("submit", e => {
+      e.preventDefault();
+    });
   });
 } // ContactForm popup
 
 
-function initContactFormPopup() {
+function initRequestFormPopup() {
   const overflow = document.querySelector(".overflow");
   const formPopup = document.querySelector(".pop-up");
   const closePopupBtn = formPopup.querySelector(".btn-close");
@@ -45,7 +132,7 @@ function initContactFormPopup() {
   const openPopup = () => formPopup.classList.add("show");
 
   const hidePopup = () => {
-    $('.contactForm').foundation('resetForm');
+    $(".contactForm").foundation("resetForm");
     formPopup.classList.remove("show");
   };
 
@@ -60,7 +147,7 @@ function initContactFormPopup() {
       openPopup();
     }
 
-    if (target.closest(".overflow") && formPopup.classList.contains('show')) {
+    if (target.closest(".overflow") && formPopup.classList.contains("show")) {
       document.body.classList.remove("body_lock");
       overflow.classList.remove("overflow_active");
       hidePopup();
@@ -118,12 +205,12 @@ function initHeaderBurger() {
       return;
     }
 
-    if (target.closest('.overflow') && document.body.classList.contains("body_lock") && overflow.classList.contains("overflow_active")) {
+    if (target.closest(".overflow") && document.body.classList.contains("body_lock") && overflow.classList.contains("overflow_active")) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
       document.body.classList.remove("item-active");
       overflow.classList.remove("overflow_active");
-      $('.drilldown').foundation('_hideAll');
+      $(".drilldown").foundation("_hideAll");
       return;
     }
   });
@@ -455,24 +542,24 @@ function initActiveSubMenuFooter() {
 } // Example POST method implementation:
 
 
-async function postData(url = '', data = {}) {
+async function postData(url = "", data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
-    method: 'POST',
+    method: "POST",
     // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors',
+    mode: "cors",
     // no-cors, *cors, same-origin
-    cache: 'no-cache',
+    cache: "no-cache",
     // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin',
+    credentials: "same-origin",
     // include, *same-origin, omit
     headers: {
-      'Content-Type': 'application/json' // 'Content-Type': 'application/x-www-form-urlencoded',
+      "Content-Type": "application/json" // 'Content-Type': 'application/x-www-form-urlencoded',
 
     },
-    redirect: 'follow',
+    redirect: "follow",
     // manual, *follow, error
-    referrerPolicy: 'no-referrer',
+    referrerPolicy: "no-referrer",
     // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     body: JSON.stringify(data) // body data type must match "Content-Type" header
 
