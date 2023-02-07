@@ -532,10 +532,12 @@ function initAccordion() {
 
 function initActiveSubMenuFooter() {
   const linkDropFooter = document.querySelector(".item-drop-footer");
+  const overflow = document.querySelector(".overflow");
 
   if (linkDropFooter) {
     linkDropFooter.addEventListener("click", function (e) {
       document.body.classList.toggle("item-footer-active");
+      overflow.classList.toggle("overflow_active");
       e.preventDefault();
     });
   }
