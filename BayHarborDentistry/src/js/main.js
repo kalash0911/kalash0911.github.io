@@ -140,7 +140,7 @@ function initContactUsForm() {
 
 // ContactForm popup
 function initRequestFormPopup() {
-  const overflow = document.querySelector(".overflow");
+  const backdrop = document.querySelector(".backdrop");
   const formPopup = document.querySelector(".pop-up");
   const closePopupBtn = formPopup.querySelector(".btn-close");
 
@@ -155,20 +155,20 @@ function initRequestFormPopup() {
 
     if (target.closest(".openPopup")) {
       document.body.classList.toggle("body_lock");
-      overflow.classList.toggle("overflow_active");
+      backdrop.classList.toggle("visible");
       openPopup();
     }
 
-    if (target.closest(".overflow") && formPopup.classList.contains("show")) {
+    if (target.closest(".backdrop") && formPopup.classList.contains("show")) {
       document.body.classList.remove("body_lock");
-      overflow.classList.remove("overflow_active");
+      backdrop.classList.remove("visible");
       hidePopup();
     }
   });
 
   closePopupBtn.addEventListener("click", () => {
     document.body.classList.remove("body_lock");
-    overflow.classList.remove("overflow_active");
+    backdrop.classList.remove("visible");
     hidePopup();
   });
 }
