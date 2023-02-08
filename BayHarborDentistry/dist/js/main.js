@@ -216,6 +216,7 @@ function initRequestFormPopup() {
   const hidePopup = () => {
     $(".contactForm").foundation("resetForm");
     formPopup.classList.remove("show");
+    $(".contactForm").find('.form-msg').removeClass('active');
   };
 
   document.addEventListener("click", event => {
