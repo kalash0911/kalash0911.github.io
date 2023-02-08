@@ -1,3 +1,5 @@
+
+// Classes
 class Spinner {
   constructor() {
     this.spinnerEl = `
@@ -48,17 +50,31 @@ class Spinner {
   }
 }
 
-new WOW().init();
-
 // Links:
 // TODO: replace to relative api
 const API_PATH = 'https://jsonplaceholder.typicode.com/todos'
 
+// Utils:
+const maskPhoneNumber = (value) => {
+  if (value.length > 6) {
+    return (value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(
+      6
+    )}`);
+  }
+  if (value.length > 3) {
+    return (value = `(${value.slice(0, 3)}) ${value.slice(3)}`);
+  }
+  return value;
+};
+
 // Regex:
 const TIME_REGEX = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
-const PHONE_REGEX = /^\d{10}$/;
+const PHONE_REGEX = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
 const NAME_REGEX = /\D/;
 
+
+// Functions initialization:
+new WOW().init();
 destroyMenusOnResize($(".drilldown"), 1200);
 initHeaderBurger();
 initHoverSubMenu();
@@ -72,8 +88,24 @@ initRequestFormPopup();
 initContactUsForm();
 initRequestForm();
 initFooterDrilldownMenu();
+initPhoneChangeValidation();
 
+
+// Website full js logic:
 const loader = new Spinner();
+
+// Mask phone inputs
+function initPhoneChangeValidation() {
+  const phones = document.querySelectorAll('input[name="phone"]');
+  phones.forEach((input) => {
+    input.setAttribute('maxLength', '14')
+    input.addEventListener('input', (event) => {
+      const value = event.target.value.replace(/[\)\( -]/gm, '');
+      const maskedPhoneNumber = maskPhoneNumber(value);
+      event.target.value = maskedPhoneNumber;
+    })
+  })
+}
 
 function initRequestForm() {
   const requestForms = $(".contactForm");
