@@ -481,9 +481,8 @@ function initVideoPlayers() {
       let durationMinutes = Math.floor(video.duration / 60);
       let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
 
-      currentTimeElement.innerHTML = `${currentMinutes}:${
-        currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
-      }`;
+      currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
+        }`;
       durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
     };
 
@@ -516,7 +515,7 @@ function initVideoPopup() {
   const closeVideo = document.querySelector(".btn-close");
   const videoBlock = document.querySelector(".video-block");
   const backdrop = document.querySelector(".backdrop");
-  const video = videoBlock.querySelector('video');
+  const video = videoBlock?.querySelector('video');
 
   if (videoBlock !== null) {
     openVideo.addEventListener("click", function (e) {
@@ -537,7 +536,7 @@ function initVideoPopup() {
       video.pause();
       video.currentTime = 0;
     });
-    
+
   }
 }
 
@@ -733,3 +732,11 @@ async function postData(url = "", data = {}) {
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
 }
+
+$(function () {
+  $('.marquee').marquee({
+    duration: 70000,
+    startVisible: true,
+    duplicated: true
+  });
+});

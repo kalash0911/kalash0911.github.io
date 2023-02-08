@@ -2566,7 +2566,13 @@ body {
     overflow: hidden;
     text-align: center;
 
-    li {
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        z-index: 3;
+    }
+
+    .text {
         font-family: $queensila;
         color: $blue;
         font-size: 36px;

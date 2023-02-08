@@ -3432,7 +3432,11 @@ body {
   background-color: #E0EAF2;
   overflow: hidden;
   text-align: center; }
-  .request-block li {
+  .request-block.fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 3; }
+  .request-block .text {
     font-family: "Queensila", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #010B6C;
     font-size: 36px;
@@ -3442,7 +3446,7 @@ body {
     white-space: nowrap;
     margin: 0 20px; }
     @media (max-width: 767px) {
-      .request-block li {
+      .request-block .text {
         font-size: 22px;
         margin: 0 15px; } }
 

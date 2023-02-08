@@ -485,7 +485,7 @@ function initVideoPopup() {
   const closeVideo = document.querySelector(".btn-close");
   const videoBlock = document.querySelector(".video-block");
   const backdrop = document.querySelector(".backdrop");
-  const video = videoBlock.querySelector('video');
+  const video = videoBlock?.querySelector('video');
 
   if (videoBlock !== null) {
     openVideo.addEventListener("click", function (e) {
@@ -676,5 +676,13 @@ async function postData(url = "", data = {}) {
 
   });
 }
+
+$(function () {
+  $('.marquee').marquee({
+    duration: 70000,
+    startVisible: true,
+    duplicated: true
+  });
+});
 
 },{}]},{},[1]);
