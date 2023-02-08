@@ -89,9 +89,26 @@ initRequestFormPopup();
 initContactUsForm();
 initRequestForm();
 initFooterDrilldownMenu();
-initPhoneChangeValidation(); // Website full js logic:
+initPhoneChangeValidation();
+initMarqueeFixed(); // Website full js logic:
 
-const loader = new Spinner(); // Mask phone inputs
+const loader = new Spinner();
+
+function initMarqueeFixed() {
+  const requestBlock = $('.request-block');
+  const height = requestBlock.outerHeight();
+  const footer = $('footer');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > requestBlock.position().top + height / 2) {
+      requestBlock.addClass('fixed');
+      footer.css('paddingBottom', `${height}px`);
+    } else {
+      requestBlock.removeClass('fixed');
+      footer.css('paddingBottom', `0px`);
+    }
+  });
+} // Mask phone inputs
+
 
 function initPhoneChangeValidation() {
   const phones = document.querySelectorAll('input[name="phone"]');
