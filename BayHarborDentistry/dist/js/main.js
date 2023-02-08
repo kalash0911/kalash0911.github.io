@@ -399,18 +399,19 @@ function initVideoPlayers() {
 
 function initVideoPopup() {
   const openVideo = document.querySelector(".open-video");
-  const closeVideo = document.querySelector(".close-video");
+  const closeVideo = document.querySelector(".btn-close");
   const videoBlock = document.querySelector(".video-block");
+  const backdrop = document.querySelector(".backdrop");
 
   if (videoBlock !== null) {
     openVideo.addEventListener("click", function (e) {
       videoBlock.classList.add("video-block_active");
-      document.body.classList.add("body_overflow");
+      backdrop.classList.add("visible");
       document.body.addEventListener("click", closeVideoEvent);
     });
     closeVideo.addEventListener("click", function (e) {
       videoBlock.classList.remove("video-block_active");
-      document.body.classList.remove("body_overflow");
+      backdrop.classList.remove("visible");
       document.body.removeEventListener("click", closeVideoEvent);
     });
   }

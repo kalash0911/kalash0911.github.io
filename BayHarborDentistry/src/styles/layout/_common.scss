@@ -480,24 +480,6 @@ body {
     --animate-duration: 3s;
 }
 
-.body_overflow{
-    position: relative;
-    overflow: hidden;
-    transition: $all_03;
-
-    &::before{
-        content:'';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(10px);
-        z-index: 2;
-    }
-}
-
 .socials {
     display: flex;
     justify-content: center;
@@ -2451,6 +2433,7 @@ body {
 }
 
 /* --------------------------------------pop-up */
+
 .backdrop {
     position: fixed;
     top: 0;

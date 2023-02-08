@@ -213,12 +213,12 @@
     
         &::before {
             top: 18px;
-            transform:  rotate(55deg);
+            transform:  rotate(125deg);
         }
     
         &::after {
             top: 23px;
-            transform: rotate(-55deg);
+            transform: rotate(-125deg);
         }
 
         a {

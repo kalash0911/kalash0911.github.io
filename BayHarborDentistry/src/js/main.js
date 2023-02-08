@@ -193,12 +193,12 @@ function initFooterDrilldownMenu() {
   }
 
   if (linkDropFooter) {
-    linkDropFooter.addEventListener("click",showFooterMenu);
+    linkDropFooter.addEventListener("click", showFooterMenu);
 
     overflow.addEventListener('click', hideFooterMenu)
 
     document.addEventListener('click', (event) => {
-      if(event.target.closest('.mobile-footer-menu .btn-close')) {
+      if (event.target.closest('.mobile-footer-menu .btn-close')) {
         hideFooterMenu();
         return;
       }
@@ -398,9 +398,8 @@ function initVideoPlayers() {
       let durationMinutes = Math.floor(video.duration / 60);
       let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
 
-      currentTimeElement.innerHTML = `${currentMinutes}:${
-        currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
-      }`;
+      currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
+        }`;
       durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
     };
 
@@ -430,19 +429,20 @@ function initVideoPlayers() {
 // for video pop-up
 function initVideoPopup() {
   const openVideo = document.querySelector(".open-video");
-  const closeVideo = document.querySelector(".close-video");
+  const closeVideo = document.querySelector(".btn-close");
   const videoBlock = document.querySelector(".video-block");
+  const backdrop = document.querySelector(".backdrop");
 
   if (videoBlock !== null) {
     openVideo.addEventListener("click", function (e) {
       videoBlock.classList.add("video-block_active");
-      document.body.classList.add("body_overflow");
+      backdrop.classList.add("visible");
       document.body.addEventListener("click", closeVideoEvent);
     });
 
     closeVideo.addEventListener("click", function (e) {
       videoBlock.classList.remove("video-block_active");
-      document.body.classList.remove("body_overflow");
+      backdrop.classList.remove("visible");
       document.body.removeEventListener("click", closeVideoEvent);
     });
   }

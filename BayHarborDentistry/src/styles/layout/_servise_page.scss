@@ -713,7 +713,7 @@
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
-        z-index: 10;
+        z-index: 11;
 
         @include media('<tablet'){
             width: 100%;
@@ -724,60 +724,15 @@
             height: auto;
         }
 
-        .close-video{
-            position: absolute;
-            top: -35px;
-            right: -35px;
-            width: 30px;
-            height: 30px;
-            background: transparent;
-            border: 2px solid $gold;
-            border-radius: 50%;
-            opacity: .6;
-            transition: all .3s ease;
-            z-index: 1;
+    }
 
-            @include media('<tablet'){
-                top: 10px;
-                right: 10px;
-            }
+    .btn-close{
+        top: -35px;
+        right: -35px;
 
-            &:hover{
-                opacity: 1;
-
-                &::before,
-                &::after{
-                    background: $gold;
-                }
-
-                &::before{
-                    transform: rotate(-45deg);
-                }
-    
-                &::after{
-                    transform: rotate(45deg);
-                }
-            }
-
-            &::before,
-            &::after{
-                content:'';
-                position: absolute;
-                top: 12px;
-                left: 6px;
-                width: 15px;
-                height: 2px;
-                background: $blue;
-                transition: $all_03;
-            }
-
-            &::before{
-                transform: rotate(45deg);
-            }
-
-            &::after{
-                transform: rotate(-45deg);
-            }
+        @include media('<tablet'){
+            top: 10px;
+            right: 10px;
         }
     }
 
