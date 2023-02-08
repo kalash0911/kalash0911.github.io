@@ -664,6 +664,16 @@
         }
     }
 
+    .back-btn {
+        
+        .arrow {
+
+            &::before, &::after {
+                background-color: $gold;
+            }
+        }
+    }
+
     .line {
         opacity: 1;
     }
