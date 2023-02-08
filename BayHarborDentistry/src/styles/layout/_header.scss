@@ -86,7 +86,10 @@
 
 
         .item-active & {
-            display: flex;
+
+            @include media('<widescreen') {
+                display: flex;
+            }
         }
     }
 
@@ -163,7 +166,10 @@
         }
 
         .item-active & {
-            width: 0;
+
+            @include media('<widescreen') {
+                width: 0;
+            }
         }
     }
         
@@ -196,7 +202,10 @@
         }
 
         .item-active & {
-            padding-top: 90px;
+
+            @include media('<widescreen') {
+                padding-top: 90px;
+            }
 
             @include media('<tablet') {
                 padding-top: 70px;

@@ -358,7 +358,7 @@ function initHoverSubMenu() {
   const removeHoverCb = () => header.classList.remove("hover");
 
   ["load", "resize"].forEach(evt => window.addEventListener(evt, () => {
-    if (window.innerWidth > 1200 && itemDrop) {
+    if (window.innerWidth > 1199 && itemDrop) {
       itemDrop.addEventListener("mouseover", addHoverCb);
       itemDrop.addEventListener("mouseleave", removeHoverCb);
     } else {

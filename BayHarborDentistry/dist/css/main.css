@@ -873,9 +873,10 @@ input[type='submit'] {
       #header .back-btn .arrow::after {
         -webkit-transform: translate(6px) rotate(-35deg);
         transform: translate(6px) rotate(-35deg); }
-    .item-active #header .back-btn {
-      display: -ms-flexbox;
-      display: flex; }
+    @media (max-width: 1199px) {
+      .item-active #header .back-btn {
+        display: -ms-flexbox;
+        display: flex; } }
   #header .arrow {
     position: relative;
     width: 20px;
@@ -929,8 +930,9 @@ input[type='submit'] {
     #header .logo img {
       width: 100%;
       transition: all 0.3s ease 0s; }
-    .item-active #header .logo {
-      width: 0; }
+    @media (max-width: 1199px) {
+      .item-active #header .logo {
+        width: 0; } }
   #header .menu-wrap {
     padding: 13px 0; }
     @media (max-width: 1199px) {
@@ -953,11 +955,12 @@ input[type='submit'] {
         width: 100%; } }
     .active #header .menu-wrap {
       left: 0; }
-    .item-active #header .menu-wrap {
-      padding-top: 90px; }
-      @media (max-width: 767px) {
-        .item-active #header .menu-wrap {
-          padding-top: 70px; } }
+    @media (max-width: 1199px) {
+      .item-active #header .menu-wrap {
+        padding-top: 90px; } }
+    @media (max-width: 767px) {
+      .item-active #header .menu-wrap {
+        padding-top: 70px; } }
   #header .menu {
     position: static;
     display: -ms-flexbox;

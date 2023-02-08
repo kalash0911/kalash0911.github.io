@@ -96,7 +96,7 @@ function initMarqueeFixed() {
   const requestBlock = $('.request-block')
   const height = requestBlock.outerHeight();
   const footer = $('footer');
-  $(window).scroll(function(){
+  $(window).scroll(function () {
     if ($(this).scrollTop() > requestBlock.position().top + (height / 2)) {
       requestBlock.addClass('fixed');
       footer.css('paddingBottom', `${height}px`);
@@ -377,7 +377,7 @@ function initHoverSubMenu() {
     window.addEventListener(
       evt,
       () => {
-        if (window.innerWidth > 1200 && itemDrop) {
+        if (window.innerWidth > 1199 && itemDrop) {
           itemDrop.addEventListener("mouseover", addHoverCb);
           itemDrop.addEventListener("mouseleave", removeHoverCb);
         } else {
