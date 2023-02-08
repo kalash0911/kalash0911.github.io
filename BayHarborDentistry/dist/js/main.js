@@ -56,7 +56,7 @@ class Spinner {
 // TODO: replace to relative api
 
 
-const API_PATH = 'https://jsonplaceholder.typicode.com/todos'; // Utils:
+const API_PATH = "https://jsonplaceholder.typicode.com/todos"; // Utils:
 
 const maskPhoneNumber = value => {
   if (value.length > 6) {
@@ -96,9 +96,9 @@ const loader = new Spinner(); // Mask phone inputs
 function initPhoneChangeValidation() {
   const phones = document.querySelectorAll('input[name="phone"]');
   phones.forEach(input => {
-    input.setAttribute('maxLength', '14');
-    input.addEventListener('input', event => {
-      const value = event.target.value.replace(/[\)\( -]/gm, '');
+    input.setAttribute("maxLength", "14");
+    input.addEventListener("input", event => {
+      const value = event.target.value.replace(/[\)\( -]/gm, "");
       const maskedPhoneNumber = maskPhoneNumber(value);
       event.target.value = maskedPhoneNumber;
     });
@@ -109,6 +109,27 @@ function initRequestForm() {
   const requestForms = $(".contactForm");
   requestForms.each(function () {
     const form = new Foundation.Abide($(this));
+    const msg = $(this).find(".form-msg");
+
+    const clearMsg = () => {
+      msg.text("");
+      msg.removeClass("success");
+      msg.removeClass("error");
+      msg.removeClass("active");
+    };
+
+    const showErrorMsg = () => {
+      msg.addClass("error");
+      msg.addClass("active");
+      msg.text("Something went wrong. Please try again later.");
+    };
+
+    const showSuccessMsg = () => {
+      msg.addClass("success");
+      msg.addClass("active");
+      msg.text("Thank you! The form was submitted successfully");
+    };
+
     form.options.patterns["time"] = TIME_REGEX;
     form.options.patterns["tel"] = PHONE_REGEX;
     form.options.patterns["name"] = NAME_REGEX;
@@ -119,12 +140,18 @@ function initRequestForm() {
       }, {});
       loader.show();
       postData(API_PATH, payload).then(data => {
-        console.log(data);
-      }).finally(() => {
+        if (!data.ok) {
+          showErrorMsg();
+          return;
+        }
+
+        showSuccessMsg();
+      }).catch(showErrorMsg).finally(() => {
         loader.hide();
       });
     }).on("submit", e => {
       e.preventDefault();
+      clearMsg();
     });
   });
 }
@@ -133,6 +160,27 @@ function initContactUsForm() {
   const contactsForms = $(".contact-us-form");
   contactsForms.each(function () {
     const form = new Foundation.Abide($(this));
+    const msg = $(this).find(".form-msg");
+
+    const clearMsg = () => {
+      msg.text("");
+      msg.removeClass("success");
+      msg.removeClass("error");
+      msg.removeClass("active");
+    };
+
+    const showErrorMsg = () => {
+      msg.addClass("error");
+      msg.addClass("active");
+      msg.text("Something went wrong. Please try again later.");
+    };
+
+    const showSuccessMsg = () => {
+      msg.addClass("success");
+      msg.addClass("active");
+      msg.text("Thank you! The form was submitted successfully");
+    };
+
     form.options.patterns["tel"] = PHONE_REGEX;
     form.options.patterns["name"] = NAME_REGEX;
     $(this).on("formvalid.zf.abide", evt => {
@@ -142,8 +190,13 @@ function initContactUsForm() {
       }, {});
       loader.show();
       postData(API_PATH, payload).then(data => {
-        console.log(data);
-      }).finally(() => {
+        if (!data.ok) {
+          showErrorMsg();
+          return;
+        }
+
+        showSuccessMsg();
+      }).catch(showErrorMsg).finally(() => {
         loader.hide();
       });
     }).on("submit", e => {
@@ -192,7 +245,7 @@ function initRequestFormPopup() {
 
 
 function initFooterDrilldownMenu() {
-  new Foundation.Drilldown($('.footer-drilldown'));
+  new Foundation.Drilldown($(".footer-drilldown"));
   const linkDropFooter = document.querySelector(".item-drop-footer");
   const overflow = document.querySelector(".overflow");
 
@@ -210,9 +263,9 @@ function initFooterDrilldownMenu() {
 
   if (linkDropFooter) {
     linkDropFooter.addEventListener("click", showFooterMenu);
-    overflow.addEventListener('click', hideFooterMenu);
-    document.addEventListener('click', event => {
-      if (event.target.closest('.mobile-footer-menu .btn-close')) {
+    overflow.addEventListener("click", hideFooterMenu);
+    document.addEventListener("click", event => {
+      if (event.target.closest(".mobile-footer-menu .btn-close")) {
         hideFooterMenu();
         return;
       }
@@ -594,7 +647,7 @@ function initAccordion() {
 
 async function postData(url = "", data = {}) {
   // Default options are marked with *
-  const response = await fetch(url, {
+  return fetch(url, {
     method: "POST",
     // *GET, POST, PUT, DELETE, etc.
     mode: "cors",
@@ -614,7 +667,6 @@ async function postData(url = "", data = {}) {
     body: JSON.stringify(data) // body data type must match "Content-Type" header
 
   });
-  return response.json(); // parses JSON response into native JavaScript objects
 }
 
 },{}]},{},[1]);
