@@ -94,6 +94,7 @@ const loader = new Spinner();
 
 function initMarqueeFixed() {
   const requestBlock = $('.request-block')
+  if(!requestBlock.length) return;
   const height = requestBlock.outerHeight();
   const footer = $('footer');
   $(window).scroll(function () {
@@ -750,6 +751,8 @@ async function postData(url = "", data = {}) {
 }
 
 $(function () {
+  const marquee = $('.marquee');
+  if(!marquee.length) return;
   $('.marquee').marquee({
     duration: 70000,
     startVisible: true,
