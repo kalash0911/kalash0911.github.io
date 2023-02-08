@@ -1,4 +1,3 @@
-
 // Classes
 class Spinner {
   constructor() {
@@ -52,7 +51,7 @@ class Spinner {
 
 // Links:
 // TODO: replace to relative api
-const API_PATH = 'https://jsonplaceholder.typicode.com/todos'
+const API_PATH = "https://jsonplaceholder.typicode.com/todos";
 
 // Utils:
 const maskPhoneNumber = (value) => {
@@ -72,7 +71,6 @@ const TIME_REGEX = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
 const PHONE_REGEX = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
 const NAME_REGEX = /\D/;
 
-
 // Functions initialization:
 new WOW().init();
 destroyMenusOnResize($(".drilldown"), 1200);
@@ -90,7 +88,6 @@ initRequestForm();
 initFooterDrilldownMenu();
 initPhoneChangeValidation();
 
-
 // Website full js logic:
 const loader = new Spinner();
 
@@ -98,13 +95,13 @@ const loader = new Spinner();
 function initPhoneChangeValidation() {
   const phones = document.querySelectorAll('input[name="phone"]');
   phones.forEach((input) => {
-    input.setAttribute('maxLength', '14')
-    input.addEventListener('input', (event) => {
-      const value = event.target.value.replace(/[\)\( -]/gm, '');
+    input.setAttribute("maxLength", "14");
+    input.addEventListener("input", (event) => {
+      const value = event.target.value.replace(/[\)\( -]/gm, "");
       const maskedPhoneNumber = maskPhoneNumber(value);
       event.target.value = maskedPhoneNumber;
-    })
-  })
+    });
+  });
 }
 
 function initRequestForm() {
@@ -112,9 +109,30 @@ function initRequestForm() {
 
   requestForms.each(function () {
     const form = new Foundation.Abide($(this));
+    const msg = $(this).find(".form-msg");
+    const clearMsg = () => {
+      msg.text("");
+      msg.removeClass("success");
+      msg.removeClass("error");
+      msg.removeClass("active");
+    };
+
+    const showErrorMsg = () => {
+      msg.addClass("error");
+      msg.addClass("active");
+      msg.text("Something went wrong. Please try again later.");
+    };
+
+    const showSuccessMsg = () => {
+      msg.addClass("success");
+      msg.addClass("active");
+      msg.text("Thank you! The form was submitted successfully");
+    };
+
     form.options.patterns["time"] = TIME_REGEX;
     form.options.patterns["tel"] = PHONE_REGEX;
     form.options.patterns["name"] = NAME_REGEX;
+
     $(this)
       .on("formvalid.zf.abide", () => {
         const payload = $(this)
@@ -127,14 +145,20 @@ function initRequestForm() {
         loader.show();
         postData(API_PATH, payload)
           .then((data) => {
-            console.log(data);
+            if (!data.ok) {
+              showErrorMsg();
+              return;
+            }
+            showSuccessMsg();
           })
+          .catch(showErrorMsg)
           .finally(() => {
             loader.hide();
           });
       })
       .on("submit", (e) => {
         e.preventDefault();
+        clearMsg();
       });
   });
 }
@@ -144,8 +168,29 @@ function initContactUsForm() {
 
   contactsForms.each(function () {
     const form = new Foundation.Abide($(this));
+    const msg = $(this).find(".form-msg");
+    const clearMsg = () => {
+      msg.text("");
+      msg.removeClass("success");
+      msg.removeClass("error");
+      msg.removeClass("active");
+    };
+
+    const showErrorMsg = () => {
+      msg.addClass("error");
+      msg.addClass("active");
+      msg.text("Something went wrong. Please try again later.");
+    };
+
+    const showSuccessMsg = () => {
+      msg.addClass("success");
+      msg.addClass("active");
+      msg.text("Thank you! The form was submitted successfully");
+    };
+
     form.options.patterns["tel"] = PHONE_REGEX;
     form.options.patterns["name"] = NAME_REGEX;
+
     $(this)
       .on("formvalid.zf.abide", (evt) => {
         const payload = $(this)
@@ -158,8 +203,13 @@ function initContactUsForm() {
         loader.show();
         postData(API_PATH, payload)
           .then((data) => {
-            console.log(data);
+            if (!data.ok) {
+              showErrorMsg();
+              return;
+            }
+            showSuccessMsg();
           })
+          .catch(showErrorMsg)
           .finally(() => {
             loader.hide();
           });
@@ -208,7 +258,7 @@ function initRequestFormPopup() {
 
 // Foundation drilldown menu:
 function initFooterDrilldownMenu() {
-  new Foundation.Drilldown($('.footer-drilldown'));
+  new Foundation.Drilldown($(".footer-drilldown"));
   const linkDropFooter = document.querySelector(".item-drop-footer");
   const overflow = document.querySelector(".overflow");
 
@@ -216,25 +266,25 @@ function initFooterDrilldownMenu() {
     document.body.classList.add("item-footer-active");
     overflow.classList.add("overflow_active");
     e.preventDefault();
-  }
+  };
 
   const hideFooterMenu = () => {
     document.body.classList.remove("item-footer-active");
     overflow.classList.remove("overflow_active");
     $(".footer-drilldown").foundation("_hideAll");
-  }
+  };
 
   if (linkDropFooter) {
     linkDropFooter.addEventListener("click", showFooterMenu);
 
-    overflow.addEventListener('click', hideFooterMenu)
+    overflow.addEventListener("click", hideFooterMenu);
 
-    document.addEventListener('click', (event) => {
-      if (event.target.closest('.mobile-footer-menu .btn-close')) {
+    document.addEventListener("click", (event) => {
+      if (event.target.closest(".mobile-footer-menu .btn-close")) {
         hideFooterMenu();
         return;
       }
-    })
+    });
   }
 }
 
@@ -430,8 +480,9 @@ function initVideoPlayers() {
       let durationMinutes = Math.floor(video.duration / 60);
       let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
 
-      currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
-        }`;
+      currentTimeElement.innerHTML = `${currentMinutes}:${
+        currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
+      }`;
       durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
     };
 
@@ -658,7 +709,7 @@ function initAccordion() {
 // Example POST method implementation:
 async function postData(url = "", data = {}) {
   // Default options are marked with *
-  const response = await fetch(url, {
+  return fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -671,5 +722,4 @@ async function postData(url = "", data = {}) {
     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
-  return response.json(); // parses JSON response into native JavaScript objects
 }

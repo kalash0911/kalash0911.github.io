@@ -59,3 +59,21 @@ input[type='submit'] {
        
     }
 }
+
+.form-msg {
+	margin: 0;
+	padding: 15px 0;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+	
+	&.success {
+		color: #689F38;
+	}
+
+	&.error {
+		color: $red;
+	}
+}
