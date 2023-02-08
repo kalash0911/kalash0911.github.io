@@ -516,19 +516,28 @@ function initVideoPopup() {
   const closeVideo = document.querySelector(".btn-close");
   const videoBlock = document.querySelector(".video-block");
   const backdrop = document.querySelector(".backdrop");
+  const video = videoBlock.querySelector('video');
 
   if (videoBlock !== null) {
     openVideo.addEventListener("click", function (e) {
       videoBlock.classList.add("video-block_active");
       backdrop.classList.add("visible");
-      document.body.addEventListener("click", closeVideoEvent);
     });
 
     closeVideo.addEventListener("click", function (e) {
       videoBlock.classList.remove("video-block_active");
       backdrop.classList.remove("visible");
-      document.body.removeEventListener("click", closeVideoEvent);
+      video.pause();
+      video.currentTime = 0;
     });
+
+    backdrop.addEventListener("click", function (e) {
+      videoBlock.classList.remove("video-block_active");
+      backdrop.classList.remove("visible");
+      video.pause();
+      video.currentTime = 0;
+    });
+    
   }
 }
 
