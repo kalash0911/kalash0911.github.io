@@ -5294,7 +5294,8 @@ body {
 
 #footer {
   position: relative;
-  padding-top: 80px; }
+  padding-top: 80px;
+  background: #FCFCFD; }
   #footer .container {
     max-width: 1225px;
     z-index: 1; }
@@ -5340,9 +5341,10 @@ body {
     font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #010B6C;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 1.75;
-    margin-bottom: 36px; }
+    margin-bottom: 36px;
+    transition: all 0.3s ease 0s; }
     @media (max-width: 479px) {
       #footer .geo-link {
         -ms-flex-align: center;
@@ -5352,9 +5354,11 @@ body {
         margin-bottom: 20px;
         text-align: center;
         font-size: 14px; } }
-    #footer .geo-link:hover img {
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2); }
+    #footer .geo-link:hover {
+      text-shadow: #010B6C 0 0 0.5px; }
+      #footer .geo-link:hover img {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2); }
     #footer .geo-link img {
       margin-right: 16px;
       transition: all 0.3s ease 0s; }
@@ -5587,7 +5591,7 @@ body {
     #footer .sec-menu .three-menu {
       position: absolute;
       top: -50px;
-      left: 50%;
+      left: 80%;
       width: 100vw;
       max-width: 210px;
       background-color: #FDFAF8;
@@ -5595,9 +5599,9 @@ body {
       z-index: -1;
       visibility: hidden;
       pointer-events: none; }
-      @media (max-width: 1399px) {
+      @media (max-width: 1499px) {
         #footer .sec-menu .three-menu {
-          left: -100%; } }
+          left: -112%; } }
       @media (max-width: 1199px) {
         #footer .sec-menu .three-menu {
           left: -80%; } }
