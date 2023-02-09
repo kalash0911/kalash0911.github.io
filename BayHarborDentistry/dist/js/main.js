@@ -532,6 +532,21 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   const win = window;
   const sliderSelector = document.querySelector(selector);
   let swiper = new Swiper(selector, init);
+  swiper.on("slideChange", function () {
+    setTimeout(function () {
+      swiper.params.mousewheel.releaseOnEdges = false;
+    }, 500);
+  });
+  swiper.on("reachEnd", function () {
+    setTimeout(function () {
+      swiper.params.mousewheel.releaseOnEdges = true;
+    }, 750);
+  });
+  swiper.on("reachBeginning", function () {
+    setTimeout(function () {
+      swiper.params.mousewheel.releaseOnEdges = true;
+    }, 750);
+  });
 
   const toggleInit = () => {
     const neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
