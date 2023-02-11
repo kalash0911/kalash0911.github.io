@@ -2332,3 +2332,66 @@
         }
     }
 }
+
+/* --------------------------------title-text-btn-img-section-------------------- */
+
+.title-text-btn-img-section {
+    padding: 160px 0;
+    background: $white;
+
+    @include media('<tablet'){
+        padding: 88px 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media('<desktop'){
+            flex-direction: column-reverse;
+        }
+    }
+
+    .title-linedown-wrap {
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .text,
+    .media  {
+        width: 49%;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+    }
+
+    .description {
+        margin-bottom: 24px;
+
+        p {
+            font-family: $gilroy;
+            color: $gray_2;
+            margin-bottom: 10px;
+        }
+    }
+
+    .img-wrap {
+        @include adaptiv-vaule("min-height", 480, 300, 1);
+
+        @include media('<desktop'){
+           margin-bottom: 24px;
+        }
+    }
+
+    .mob {
+        display: none;
+
+        @include media('<desktop'){
+            display: block;
+        }
+    }
+}
