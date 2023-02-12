@@ -265,7 +265,7 @@ function initRequestFormPopup() {
 
 function initFooterDrilldownMenu() {
   new Foundation.Drilldown($(".footer-drilldown"));
-  const linkDropFooter = document.querySelector(".item-drop-footer");
+  const linkDropFooter = document.querySelector(".item-drop-footer > a.link");
   const overflow = document.querySelector(".overflow");
 
   const showFooterMenu = e => {
