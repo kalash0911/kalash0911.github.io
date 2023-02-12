@@ -6,6 +6,14 @@
 }
 
 @font-face {
+    font-family: "QueensilaRegular";
+    src: url('../fonts/QueensilaRegular.woff2') format('woff2'),
+         url('../fonts/QueensilaRegular.woff') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
     font-family: "Boska";
     src: url("../fonts/Boska-Light.ttf");
     font-style: light;

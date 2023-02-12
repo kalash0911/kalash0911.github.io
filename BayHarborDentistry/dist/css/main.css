@@ -378,6 +378,12 @@ th {
   font-weight: 400; }
 
 @font-face {
+  font-family: "QueensilaRegular";
+  src: url("../fonts/QueensilaRegular.woff2") format("woff2"), url("../fonts/QueensilaRegular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
   font-family: "Boska";
   src: url("../fonts/Boska-Light.ttf");
   font-style: light;
@@ -1595,7 +1601,7 @@ body {
       .title-wrap .title br {
         display: none; } }
     .title-wrap .title span {
-      font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-family: "QueensilaRegular", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
       /* Только если меньше контейнера */
       font-size: 100px;
       font-weight: 300; }
@@ -2808,7 +2814,7 @@ body {
     align-items: flex-end;
     -ms-flex-pack: center;
     justify-content: center;
-    font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "QueensilaRegular", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #010B6C;
     font-size: 52px;
     font-weight: 500;
@@ -3260,7 +3266,7 @@ body {
       margin-bottom: 36px; } }
   .timeline-section .date {
     position: relative;
-    font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "QueensilaRegular", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #010B6C;
     font-size: 56px;
     font-weight: 400;
@@ -4411,7 +4417,7 @@ body {
       .offers-text-section .title-item {
         font-size: calc(32px + 16 * ((100vw - calc(375px)) / 905)); } }
     .offers-text-section .title-item span {
-      font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
+      font-family: "QueensilaRegular", "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
 
 /* -----------------------------------title-text-row-section--------------- */
 .title-text-row-section {
@@ -4517,7 +4523,7 @@ body {
         width: 100%; } }
   .img-text-list-section .number {
     display: block;
-    font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "QueensilaRegular", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #010B6C;
     font-size: 80px;
     font-weight: 300;
@@ -4606,7 +4612,7 @@ body {
       .img-text-big-section .title-text {
         font-size: calc(21px + 15 * ((100vw - calc(375px)) / 905)); } }
   .img-text-big-section span {
-    font-family: "Boska", "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
+    font-family: "QueensilaRegular", "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
 
 /* -----------------------------------img-text-big-rev-section------------- */
 .img-text-big-rev-section {
