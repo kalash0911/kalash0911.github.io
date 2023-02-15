@@ -2599,15 +2599,15 @@ body {
 
 .blog-pages {
     position: relative;
-    padding: 235px 0 160px;
+    padding: 235px 0 80px;
     background-color: $white;
 
     @include media('<tablet'){
-        padding: 180px 0 110px;
+        padding: 180px 0 60px;
     }
 
     @include media('<phone'){
-        padding: 151px 0 88px;
+        padding: 151px 0 44px;
     }
 
     &::after {
@@ -3127,11 +3127,11 @@ body {
 /* --------------------------other-articles-section-------------------- */
 
 .other-articles-section {
-    padding: 160px 0;
+    padding: 80px 0 160px 0;
     background-color: $white;
 
     @include media('<tablet'){
-        padding: 88px 0;
+        padding: 44px 0 88px 0;
     }
 
     .title-linedown-wrap {
@@ -3269,6 +3269,26 @@ body {
     
     .line-btn {
         padding: 0;
+    }
+}
+
+.blog-socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 47px 0 30px 0;
+    border-top: 1px solid #D6D7E3;
+
+    @include media('<phone'){
+        padding: 30px 0 25px 0;
+    }
+
+    .link {
+        transition: $all_03;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }
 
