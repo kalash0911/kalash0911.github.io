@@ -3461,6 +3461,359 @@ body {
         font-size: 22px;
         margin: 0 15px; } }
 
+/* -------------------------------blog-pages-------------------- */
+.blog-pages {
+  position: relative;
+  padding: 235px 0 160px;
+  background-color: #fff; }
+  @media (max-width: 767px) {
+    .blog-pages {
+      padding: 180px 0 110px; } }
+  @media (max-width: 479px) {
+    .blog-pages {
+      padding: 151px 0 88px; } }
+  .blog-pages::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-color: #FDFAF8; }
+    @media (max-width: 479px) {
+      .blog-pages::after {
+        height: 600px; } }
+  .blog-pages .container {
+    position: relative;
+    max-width: 1040px;
+    z-index: 1; }
+  .blog-pages .main-title {
+    text-align: center;
+    font-family: "Queensila", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    /* Только если меньше контейнера */
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 106%;
+    text-transform: uppercase;
+    margin-bottom: 16px; }
+    @media (max-width: 1280px) {
+      .blog-pages .main-title {
+        font-size: calc(64px + 16 * ((100vw - calc(375px)) / 905)); } }
+    @media (max-width: 479px) {
+      .blog-pages .main-title {
+        margin-bottom: 12px; } }
+  .blog-pages .data {
+    display: block;
+    text-align: center;
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #2C2E4C;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 162%;
+    margin-bottom: 52px; }
+    @media (max-width: 479px) {
+      .blog-pages .data {
+        font-size: 16px;
+        margin-bottom: 36px; } }
+  .blog-pages .img-wrap {
+    width: 100%;
+    /* Только если меньше контейнера */
+    min-height: 500px;
+    margin-bottom: 100px; }
+    @media (max-width: 1280px) {
+      .blog-pages .img-wrap {
+        min-height: calc(340px + 160 * ((100vw - calc(375px)) / 905)); } }
+    @media (max-width: 479px) {
+      .blog-pages .img-wrap {
+        margin-bottom: 56px; } }
+    .blog-pages .img-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .blog-pages h2 {
+    font-family: "Queensila", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    /* Только если меньше контейнера */
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 126%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 16px; }
+    @media (max-width: 1280px) {
+      .blog-pages h2 {
+        font-size: calc(21px + 15 * ((100vw - calc(375px)) / 905)); } }
+  .blog-pages h3 {
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #010B6C;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 126%;
+    text-transform: none;
+    margin-bottom: 20px; }
+    @media (max-width: 479px) {
+      .blog-pages h3 {
+        font-size: 16px;
+        margin-bottom: 15px; } }
+  .blog-pages p {
+    font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #4E5168;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 162%;
+    margin-bottom: 20px; }
+    @media (max-width: 479px) {
+      .blog-pages p {
+        font-size: 14px;
+        margin-bottom: 15px; } }
+    .blog-pages p a {
+      text-decoration: underline;
+      color: #4E5168; }
+      .blog-pages p a:hover {
+        text-decoration: none;
+        color: #010B6C; }
+  .blog-pages ul {
+    padding: 0 0 0 25px;
+    margin: 0 0 20px 0; }
+    @media (max-width: 479px) {
+      .blog-pages ul {
+        margin: 0 0 15px 0; } }
+    .blog-pages ul li {
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      color: #4E5168;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 162%; }
+      @media (max-width: 479px) {
+        .blog-pages ul li {
+          font-size: 14px; } }
+  .blog-pages .list-col1 {
+    padding: 60px 105px;
+    background: #FDFAF8;
+    counter-reset: my-awesome-counter;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    list-style: none;
+    gap: 40px;
+    margin: 0 0 40px 0; }
+    @media (max-width: 767px) {
+      .blog-pages .list-col1 {
+        padding: 50px;
+        gap: 30px; } }
+    @media (max-width: 479px) {
+      .blog-pages .list-col1 {
+        padding: 36px 28px;
+        gap: 24px; } }
+    .blog-pages .list-col1 .list-item {
+      counter-increment: my-awesome-counter;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: start;
+      align-items: flex-start; }
+      @media (max-width: 479px) {
+        .blog-pages .list-col1 .list-item {
+          -ms-flex-direction: row;
+          flex-direction: row; } }
+    .blog-pages .list-col1 .number:before {
+      content: counter(my-awesome-counter);
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      color: #EEB663;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.5px; }
+      @media (max-width: 549px) {
+        .blog-pages .list-col1 .number:before {
+          font-size: 22px;
+          margin: 0 16px 0 0; } }
+    .blog-pages .list-col1 .number:nth-child(-n+9)::before {
+      content: "0" counter(my-awesome-counter); }
+    .blog-pages .list-col1 .list-title {
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      color: #010B6C;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 162%; }
+      @media (max-width: 479px) {
+        .blog-pages .list-col1 .list-title {
+          font-size: 14px; } }
+    .blog-pages .list-col1 .list-text p {
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      color: #4E5168;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 162%;
+      margin: 0; }
+      @media (max-width: 479px) {
+        .blog-pages .list-col1 .list-text p {
+          font-size: 14px; } }
+  .blog-pages .textonimg {
+    position: relative;
+    padding: 55px;
+    text-align: center;
+    margin-bottom: 24px; }
+    @media (max-width: 479px) {
+      .blog-pages .textonimg {
+        padding: 36px 28px; } }
+    .blog-pages .textonimg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 40%;
+      z-index: -1; }
+    .blog-pages .textonimg img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      z-index: -1; }
+    .blog-pages .textonimg .textonimg-sm-title {
+      display: block;
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 162%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 21px; }
+      @media (max-width: 479px) {
+        .blog-pages .textonimg .textonimg-sm-title {
+          font-size: 14px;
+          margin-bottom: 16px; } }
+    .blog-pages .textonimg .textonimg-title {
+      max-width: 753px;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff; }
+      @media (max-width: 479px) {
+        .blog-pages .textonimg .textonimg-title {
+          font-size: 18px; } }
+  .blog-pages .textoncolor {
+    position: relative;
+    padding: 100px;
+    text-align: center;
+    margin-bottom: 24px;
+    background: #E0EAF2; }
+    @media (max-width: 479px) {
+      .blog-pages .textoncolor {
+        padding: 36px 28px; } }
+    .blog-pages .textoncolor .textoncolor-title {
+      max-width: 753px;
+      margin: 0 auto;
+      text-align: center; }
+      @media (max-width: 479px) {
+        .blog-pages .textoncolor .textoncolor-title {
+          font-size: 18px; } }
+  .blog-pages .imgtext {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px; }
+    @media (max-width: 767px) {
+      .blog-pages .imgtext {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    .blog-pages .imgtext .img-wrap {
+      position: relative;
+      min-width: 410px;
+      min-height: 350px;
+      margin: 0; }
+      @media (max-width: 959px) {
+        .blog-pages .imgtext .img-wrap {
+          min-width: 350px; } }
+      @media (max-width: 767px) {
+        .blog-pages .imgtext .img-wrap {
+          min-width: 0;
+          width: 100%; } }
+      .blog-pages .imgtext .img-wrap img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+    .blog-pages .imgtext p {
+      margin-bottom: 5px; }
+
+/* .item {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+
+    &:hover{
+
+        .img-wrap {
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        .icon-arrow {
+            transform: translate(10px);
+        }
+    }
+} */
+/* .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.img-wrap {
+    @include adaptiv-vaule("height", 380, 260, 1);
+    margin-bottom: 20px;
+}
+
+.title {
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+
+    @include media('<phone'){
+        margin-bottom: 10px;
+        font-size: 21px;
+    }
+}
+
+.description {
+    line-height: 1.5;
+    margin-bottom: 24px;
+
+    @include media('<phone'){
+        margin-bottom: 18px;
+        font-size: 14px;
+    }
+}
+
+.line-btn {
+    padding: 0;
+} */
 /* -----------------------------contact_form-section------------------- */
 .contact_form-section {
   position: relative;
