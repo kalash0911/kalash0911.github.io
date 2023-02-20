@@ -4,7 +4,7 @@ import { TestRules } from "./test-rules/test-rules.jsx";
 import { TestApp } from "./test-app/test-app.jsx";
 import { SuccessBlock } from "./success-block/success-block.jsx";
 import { TestDone } from "./test-done/test-done.jsx";
-import { setCookie, getCookie } from "../utils/cookie.js";
+import { setCookie, getCookie, saveToLocalStorage,getFromLocalStorage } from "../utils/cookie.js";
 import { TEST_END } from "../constants/cookie.js";
 import { PLANET_ENDPOINT } from "../constants/link.js";
 import { Spinner } from "./shared/spinner/spinner.jsx";
@@ -12,13 +12,27 @@ import { ERROR_API_KEY } from "../constants/errors.js";
 import { useTranslation } from "react-i18next";
 
 export const App = () => {
-  const [formValues, setFormValues] = useState(null);
-  const [startTest, setStartTest] = useState(false);
-  const [userAnswers, setUserAnswers] = useState(null);
-  const [testIsDone, setTestToDone] = useState(false);
+  const testEndCookie = getCookie(TEST_END);
+  const commonCache =  JSON.parse(getFromLocalStorage('commonCache'))
+
+  const [formValues, setFormValues] = useState(commonCache?.formValues || null);
+  const [startTest, setStartTest] = useState(commonCache?.startTest || false);
+  const [userAnswers, setUserAnswers] = useState(commonCache?.userAnswers || null);
+  const [testIsDone, setTestToDone] = useState(commonCache?.testIsDone || false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const { i18n } = useTranslation();
+  let retries = 0;
+
+  useEffect(() => {
+    const commonCache = {
+      formValues,
+      startTest,
+      userAnswers,
+      testIsDone,
+    }
+    saveToLocalStorage('commonCache', commonCache);
+  }, [formValues, startTest, userAnswers, testIsDone, loading, error])
 
   document.addEventListener('onChangeLanguage', (event) => {
     // Trigger react app localization from native js code
@@ -27,13 +41,13 @@ export const App = () => {
     }
   })
 
-  const testEndCookie = getCookie(TEST_END);
 
   if (formValues || testEndCookie) {
     document.querySelector(".heading-block").classList.add("d-none");
   }
 
   if (testEndCookie || testIsDone) {
+    localStorage.clear();
     return <TestDone />;
   }
 
@@ -43,6 +57,47 @@ export const App = () => {
     setUserAnswers(answers);
     setStartTest(false);
   };
+
+  const sendPostRequest = (payload) => {
+    fetch(PLANET_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (res.ok) {
+          setCookie(TEST_END, "true", 31);
+          setTestToDone(true);
+        } else {
+          if (retries < 2) {
+            retries++;
+            console.log(`Retrying POST request, attempt ${retries}...`);
+            sendPostRequest();
+          } else {
+            console.log('POST request failed after maximum retries.');
+            setError(ERROR_API_KEY);
+          }
+        }
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+        if (retries < 2) {
+          retries++;
+          console.log(`Retrying POST request, attempt ${retries}...`);
+          sendPostRequest();
+        } else {
+          console.log('POST request failed after maximum retries.');
+          setError(ERROR_API_KEY);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
 
   const submitForm = (comunicationMethod) => {
     setLoading(true);
@@ -81,31 +136,7 @@ export const App = () => {
       comunicationContacts: { ...comunicationMethod },
       userAnswers: onlyAnswers,
     };
-
-    fetch(PLANET_ENDPOINT, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      body: JSON.stringify(request),
-    })
-      .then((res) => {
-        if (res.ok) {
-          setCookie(TEST_END, "true", 31);
-          setTestToDone(true);
-        } else {
-          setError(ERROR_API_KEY);
-        }
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-        setError(ERROR_API_KEY);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    sendPostRequest(request)
   };
 
   const backToTest = () => {

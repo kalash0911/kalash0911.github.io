@@ -3,11 +3,13 @@ import testsJson from "../../json/tests.json";
 import { ANSWERS_LIST } from "../../constants/rules.js";
 import { ProgressBar } from "../shared/progress-bar/progress-bar.jsx";
 import { useTranslation } from "react-i18next";
+import { getFromLocalStorage, saveToLocalStorage } from "../../utils/cookie";
 
 export const TestApp = ({ setUserAnswers, questionInd }) => {
+  const cahcedQuestions = JSON.parse(getFromLocalStorage('questions'))
   const { t, i18n } = useTranslation();
-  const [questionList, setQuestionList] = useState(testsJson.tests);
-  const [currentQuestionIdx, setQuestionIdx] = useState(questionInd);
+  const [questionList, setQuestionList] = useState(cahcedQuestions?.questions || testsJson.tests);
+  const [currentQuestionIdx, setQuestionIdx] = useState(cahcedQuestions?.currentQuestionIdx || questionInd);
   const [answers, setAnswers] = useState(ANSWERS_LIST);
 
   const questionLength = questionList.length;
@@ -53,6 +55,7 @@ export const TestApp = ({ setUserAnswers, questionInd }) => {
       answer.active = false;
     });
     newQuestionList[currentQuestionIdx].answer = value;
+    saveToLocalStorage('questions', {questions: newQuestionList, currentQuestionIdx })
     setQuestionList(newQuestionList);
     setAnswers(newAnswers);
     handleNextQuestion();

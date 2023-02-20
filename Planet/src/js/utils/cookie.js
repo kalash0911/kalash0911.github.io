@@ -42,3 +42,11 @@ export const getCurrentLang = () => {
   setLangClasses(selectedLang);
   return selectedLang;
 }
+
+export const saveToLocalStorage = (name, data) => {
+  localStorage.setItem(name, JSON.stringify(data));
+}
+
+export const getFromLocalStorage = (name) => {
+  return localStorage.getItem(name)
+}
