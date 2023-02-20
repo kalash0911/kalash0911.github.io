@@ -25,6 +25,12 @@ export const App = () => {
   let retries = 0;
 
   useEffect(() => {
+    if(testIsDone || testEndCookie) {
+      console.log('testIsDone: ', testIsDone);
+      localStorage.clear();
+      return
+    }
+
     const commonCache = {
       formValues,
       startTest,
@@ -32,6 +38,8 @@ export const App = () => {
       testIsDone,
     }
     saveToLocalStorage('commonCache', commonCache);
+
+
   }, [formValues, startTest, userAnswers, testIsDone, loading, error])
 
   document.addEventListener('onChangeLanguage', (event) => {
@@ -47,7 +55,6 @@ export const App = () => {
   }
 
   if (testEndCookie || testIsDone) {
-    localStorage.clear();
     return <TestDone />;
   }
 
