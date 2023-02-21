@@ -287,9 +287,11 @@ function initFooterDrilldownMenu() {
   };
 
   const hideFooterMenu = () => {
-    document.body.classList.remove("item-footer-active");
-    overflow.classList.remove("overflow_active");
-    $(".footer-drilldown").foundation("_hideAll");
+    if(document.body.classList.contains("item-footer-active")) {
+      document.body.classList.remove("item-footer-active");
+      overflow.classList.remove("overflow_active");
+      $(".footer-drilldown").foundation("_hideAll");
+    }
   };
 
   if (linkDropFooter) {
