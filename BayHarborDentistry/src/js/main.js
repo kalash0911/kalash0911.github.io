@@ -54,6 +54,7 @@ loader.show();
 
 window.addEventListener('load', () => {
   loader.hide();
+  document.body.classList.add('loaded')
 })
 
 // Links:

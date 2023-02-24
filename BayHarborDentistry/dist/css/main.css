@@ -1966,15 +1966,17 @@ body {
   .main-section .ml1 {
     left: 50%;
     -webkit-transform: translate(-115%) rotate(35deg);
-    transform: translate(-115%) rotate(35deg);
-    -webkit-animation: ml1 3s;
-    animation: ml1 3s; }
+    transform: translate(-115%) rotate(35deg); }
+    .loaded .main-section .ml1 {
+      -webkit-animation: ml1 3s;
+      animation: ml1 3s; }
   .main-section .ml2 {
     right: 50%;
     -webkit-transform: translate(107%) rotate(35deg);
-    transform: translate(107%) rotate(35deg);
-    -webkit-animation: ml2 3s;
-    animation: ml2 3s; }
+    transform: translate(107%) rotate(35deg); }
+    .loaded .main-section .ml2 {
+      -webkit-animation: ml2 3s;
+      animation: ml2 3s; }
 
 @-webkit-keyframes ml1 {
   0% {

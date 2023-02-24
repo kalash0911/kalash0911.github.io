@@ -772,13 +772,18 @@ body {
     .ml1 {
         left: 50%;
         transform: translate(-115%) rotate(35deg);
-        animation: ml1 3s;
+
+        .loaded & {
+            animation: ml1 3s;
+        }
     }
 
     .ml2 {
         right: 50%;
         transform: translate(107%) rotate(35deg);
-        animation: ml2 3s;
+        .loaded & {
+            animation: ml2 3s;
+        }
     }
 
     @keyframes ml1 {
