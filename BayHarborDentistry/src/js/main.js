@@ -268,8 +268,8 @@ function initRequestFormPopup() {
       document.body.classList.toggle("body_lock");
       backdrop.classList.toggle("visible");
       openPopup();
-      const placeholderValue = openPopupBtn.dataset.placeholder || defaultPlaceholder;
-      textArea.setAttribute('placeholder', placeholderValue)
+      const value = openPopupBtn.dataset.placeholder || '';
+      textArea.value = value;
     }
 
     if (target.closest(".backdrop") && formPopup.classList.contains("show")) {
