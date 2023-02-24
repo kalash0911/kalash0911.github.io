@@ -225,8 +225,10 @@ function initContactUsForm() {
 
 
 function initRequestFormPopup() {
+  const defaultPlaceholder = 'How can we help you?';
   const backdrop = document.querySelector(".backdrop");
   const formPopup = document.querySelector(".pop-up");
+  const textArea = formPopup.querySelector('textarea');
   const closePopupBtn = formPopup.querySelector(".btn-close");
 
   const openPopup = () => formPopup.classList.add("show");
@@ -241,12 +243,15 @@ function initRequestFormPopup() {
     const {
       target
     } = event;
+    const openPopupBtn = target.closest(".openPopup");
 
-    if (target.closest(".openPopup")) {
+    if (openPopupBtn) {
       event.preventDefault();
       document.body.classList.toggle("body_lock");
       backdrop.classList.toggle("visible");
       openPopup();
+      const placeholderValue = openPopupBtn.dataset.placeholder || defaultPlaceholder;
+      textArea.setAttribute('placeholder', placeholderValue);
     }
 
     if (target.closest(".backdrop") && formPopup.classList.contains("show")) {
@@ -275,9 +280,11 @@ function initFooterDrilldownMenu() {
   };
 
   const hideFooterMenu = () => {
-    document.body.classList.remove("item-footer-active");
-    overflow.classList.remove("overflow_active");
-    $(".footer-drilldown").foundation("_hideAll");
+    if (document.body.classList.contains("item-footer-active")) {
+      document.body.classList.remove("item-footer-active");
+      overflow.classList.remove("overflow_active");
+      $(".footer-drilldown").foundation("_hideAll");
+    }
   };
 
   if (linkDropFooter) {

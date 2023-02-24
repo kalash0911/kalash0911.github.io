@@ -239,8 +239,10 @@ function initContactUsForm() {
 
 // ContactForm popup
 function initRequestFormPopup() {
+  const defaultPlaceholder = 'How can we help you?';
   const backdrop = document.querySelector(".backdrop");
   const formPopup = document.querySelector(".pop-up");
+  const textArea = formPopup.querySelector('textarea')
   const closePopupBtn = formPopup.querySelector(".btn-close");
 
   const openPopup = () => formPopup.classList.add("show");
@@ -252,12 +254,15 @@ function initRequestFormPopup() {
 
   document.addEventListener("click", (event) => {
     const { target } = event;
+    const openPopupBtn = target.closest(".openPopup");
 
-    if (target.closest(".openPopup")) {
+    if (openPopupBtn) {
       event.preventDefault();
       document.body.classList.toggle("body_lock");
       backdrop.classList.toggle("visible");
       openPopup();
+      const placeholderValue = openPopupBtn.dataset.placeholder || defaultPlaceholder;
+      textArea.setAttribute('placeholder', placeholderValue)
     }
 
     if (target.closest(".backdrop") && formPopup.classList.contains("show")) {
