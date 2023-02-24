@@ -55,9 +55,7 @@ class Spinner {
 }
 
 const loader = new Spinner();
-loader.show();
 window.addEventListener('load', () => {
-  loader.hide();
   document.body.classList.add('loaded');
 }); // Links:
 // TODO: replace to relative api
