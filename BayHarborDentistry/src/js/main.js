@@ -49,6 +49,13 @@ class Spinner {
   }
 }
 
+const loader = new Spinner();
+loader.show();
+
+window.addEventListener('load', () => {
+  loader.hide();
+})
+
 // Links:
 // TODO: replace to relative api
 const API_PATH = "https://jsonplaceholder.typicode.com/todos";
@@ -90,7 +97,6 @@ initPhoneChangeValidation();
 initMarqueeFixed();
 
 // Website full js logic:
-const loader = new Spinner();
 
 function initMarqueeFixed() {
   const requestBlock = $('.request-block')
