@@ -3297,3 +3297,34 @@ body {
     }
 }
 
+#ui-datepicker-div {
+    border: 1px solid #D6D7E3;
+    background-color: $white;
+
+    .ui-datepicker-header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding: 24px 22px;
+    }
+
+    .ui-datepicker-title {
+        width: 100%;
+    }
+
+    thead {
+        background: none;
+        border: none;
+
+        th {
+            font-family: $gilroy;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 1.2;
+            text-align: center;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #4E5168;
+        }
+    }
+}

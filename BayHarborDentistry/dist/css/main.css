@@ -4020,6 +4020,32 @@ body {
       -webkit-transform: scale(1.2);
       transform: scale(1.2); }
 
+#ui-datepicker-div {
+  border: 1px solid #D6D7E3;
+  background-color: #fff; }
+  #ui-datepicker-div .ui-datepicker-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    padding: 24px 22px; }
+  #ui-datepicker-div .ui-datepicker-title {
+    width: 100%; }
+  #ui-datepicker-div thead {
+    background: none;
+    border: none; }
+    #ui-datepicker-div thead th {
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 1.2;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #4E5168; }
+
 /* -----------------------------contact_form-section------------------- */
 .contact_form-section {
   position: relative;

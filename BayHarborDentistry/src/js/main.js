@@ -76,6 +76,7 @@ const maskPhoneNumber = (value) => {
 const TIME_REGEX = /^(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9])$/;
 const PHONE_REGEX = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/;
 const NAME_REGEX = /\D/;
+const DATE_REGEX = /(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})/;
 
 // Functions initialization:
 new WOW().init();
@@ -99,7 +100,7 @@ initMarqueeFixed();
 
 function initMarqueeFixed() {
   const requestBlock = $('.request-block')
-  if(!requestBlock.length) return;
+  if (!requestBlock.length) return;
   const height = requestBlock.outerHeight();
   const footer = $('footer');
   $(window).scroll(function () {
@@ -154,6 +155,7 @@ function initRequestForm() {
     form.options.patterns["time"] = TIME_REGEX;
     form.options.patterns["tel"] = PHONE_REGEX;
     form.options.patterns["name"] = NAME_REGEX;
+    form.options.patterns["date"] = DATE_REGEX;
 
     $(this)
       .on("formvalid.zf.abide", () => {
@@ -297,7 +299,7 @@ function initFooterDrilldownMenu() {
   };
 
   const hideFooterMenu = () => {
-    if(document.body.classList.contains("item-footer-active")) {
+    if (document.body.classList.contains("item-footer-active")) {
       document.body.classList.remove("item-footer-active");
       overflow.classList.remove("overflow_active");
       $(".footer-drilldown").foundation("_hideAll");
@@ -780,10 +782,14 @@ async function postData(url = "", data = {}) {
 
 $(function () {
   const marquee = $('.marquee');
-  if(!marquee.length) return;
+  if (!marquee.length) return;
   $('.marquee').marquee({
     duration: 70000,
     startVisible: true,
     duplicated: true
   });
+});
+
+$(function () {
+  $("#datepicker").datepicker();
 });
