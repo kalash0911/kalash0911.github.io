@@ -1945,17 +1945,27 @@ body {
     .content {
         display: flex;
         justify-content: space-between;
+        gap: 20px;
 
-        @include media('<tablet_max'){
+        @include media('<widescreen'){
            flex-direction: column-reverse;
+           align-items: center;
+           gap: 50px;
         }
+
+        @include media('<phone'){
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 36px;
+         }
     }
 
     .contacts {
         width: 49%;
 
-        @include media('<tablet_max'){
+        @include media('<widescreen'){
             width: 100%;
+            max-width: 680px;
         }
     }
 
@@ -2058,7 +2068,7 @@ body {
 }
 
 .contact-form {
-    width: 49%;
+    width: 100%;
     max-width: 680px;
     padding: 60px 32px;
     border: 1px solid $gold;
@@ -2070,7 +2080,6 @@ body {
     @include media('<tablet_max'){
         width: 100%;
         max-width: 100%;
-        margin-bottom: 36px;
     }
 
     .title-form {
@@ -2079,7 +2088,7 @@ body {
         font-weight: 600;
         margin-bottom: 24px;
     
-        @include media('<desktop'){
+        @include media('<tablet_max'){
             font-size: 22px;
         }
     
@@ -2103,7 +2112,7 @@ body {
             }
         }
 
-        @include media('<desktop'){
+        @include media('<tablet_max'){
             width: 100%;
         }
     }
@@ -3298,23 +3307,90 @@ body {
 }
 
 #ui-datepicker-div {
+    width: 100%;
+    max-width: 301px;
     border: 1px solid #D6D7E3;
     background-color: $white;
+    padding: 24px 22px;
+
+    @include media('<phone'){
+        max-width: 74%;
+        left: 50% !important;
+        transform: translate(-50%);
+    }
 
     .ui-datepicker-header {
         display: flex;
         justify-content: space-between;
-        flex-direction: row-reverse;
-        padding: 24px 22px;
+        padding-bottom: 21px;
     }
 
     .ui-datepicker-title {
+        order: 1;
         width: 100%;
+        font-family: 'Gilroy';
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.1;
+        color: #010B6C;
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        font-size: 0;
+        min-width: 16px;
+        min-height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $all_03;
+
+        &::before {
+            font-size: 10px;
+            color: #776C69;
+            line-height: 1;
+            transition: $all_03;
+            font-weight: 700;
+        }
+
+        &:hover {
+            background-color: $gold;
+
+            &::before {
+                color: $white;
+            }
+        }
+    }
+
+    .ui-datepicker-prev {
+        order: 2;
+        margin-right: 24px;
+
+
+        &::before {
+            content:' \276C';            
+        }
+    }
+
+    .ui-datepicker-next {
+        order: 3;
+
+        &::before {
+            content:' \276D';
+        }
     }
 
     thead {
+        display: block;
         background: none;
         border: none;
+        border-top: 0.8px solid #D6D7E3;
+        padding: 16px 5px;
+
+        tr {
+            display: flex;
+            justify-content: space-between;
+        }
 
         th {
             font-family: $gilroy;
@@ -3325,6 +3401,56 @@ body {
             letter-spacing: 0.02em;
             text-transform: uppercase;
             color: #4E5168;
+            padding: 0;
+        }
+    }
+
+    .ui-datepicker-calendar {
+        margin: 0;
+    }
+
+    tbody {
+        border: none;
+
+        tr {
+            display: flex;
+            justify-content: space-between;
+            background: none;
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        td {
+            padding: 0;
+            min-width: 24px;
+            min-height: 24px;
+            text-align: center;
+            font-family: $gilroy;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.7;
+            transition: $all_03;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $gold;
+
+                a{
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .ui-datepicker-current-day {
+        background-color: $gold;
+        
+        a {
+            transition: $all_03;
+            color: $white;
         }
     }
 }

@@ -2927,16 +2927,28 @@ body {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
-    @media (max-width: 859px) {
+    justify-content: space-between;
+    gap: 20px; }
+    @media (max-width: 1199px) {
       .contact-section .content {
         -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse; } }
+        flex-direction: column-reverse;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px; } }
+    @media (max-width: 479px) {
+      .contact-section .content {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 36px; } }
   .contact-section .contacts {
     width: 49%; }
-    @media (max-width: 859px) {
+    @media (max-width: 1199px) {
       .contact-section .contacts {
-        width: 100%; } }
+        width: 100%;
+        max-width: 680px; } }
   .contact-section .item {
     position: relative;
     display: -ms-flexbox;
@@ -3012,7 +3024,7 @@ body {
         margin-bottom: 6px; } }
 
 .contact-form {
-  width: 49%;
+  width: 100%;
   max-width: 680px;
   padding: 60px 32px;
   border: 1px solid #EEB663; }
@@ -3022,14 +3034,13 @@ body {
   @media (max-width: 859px) {
     .contact-form {
       width: 100%;
-      max-width: 100%;
-      margin-bottom: 36px; } }
+      max-width: 100%; } }
   .contact-form .title-form {
     font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 24px; }
-    @media (max-width: 1023px) {
+    @media (max-width: 859px) {
       .contact-form .title-form {
         font-size: 22px; } }
     @media (max-width: 479px) {
@@ -3046,7 +3057,7 @@ body {
     width: 49%; }
     .contact-form label.is-invalid-label .form-error {
       display: block; }
-    @media (max-width: 1023px) {
+    @media (max-width: 859px) {
       .contact-form label {
         width: 100%; } }
   .contact-form .form-error {
@@ -4021,21 +4032,79 @@ body {
       transform: scale(1.2); }
 
 #ui-datepicker-div {
+  width: 100%;
+  max-width: 301px;
   border: 1px solid #D6D7E3;
-  background-color: #fff; }
+  background-color: #fff;
+  padding: 24px 22px; }
+  @media (max-width: 479px) {
+    #ui-datepicker-div {
+      max-width: 74%;
+      left: 50% !important;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%); } }
   #ui-datepicker-div .ui-datepicker-header {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    padding: 24px 22px; }
+    padding-bottom: 21px; }
   #ui-datepicker-div .ui-datepicker-title {
-    width: 100%; }
+    -ms-flex-order: 1;
+    order: 1;
+    width: 100%;
+    font-family: 'Gilroy';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.1;
+    color: #010B6C; }
+  #ui-datepicker-div .ui-datepicker-prev,
+  #ui-datepicker-div .ui-datepicker-next {
+    font-size: 0;
+    min-width: 16px;
+    min-height: 16px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    transition: all 0.3s ease 0s; }
+    #ui-datepicker-div .ui-datepicker-prev::before,
+    #ui-datepicker-div .ui-datepicker-next::before {
+      font-size: 10px;
+      color: #776C69;
+      line-height: 1;
+      transition: all 0.3s ease 0s;
+      font-weight: 700; }
+    #ui-datepicker-div .ui-datepicker-prev:hover,
+    #ui-datepicker-div .ui-datepicker-next:hover {
+      background-color: #EEB663; }
+      #ui-datepicker-div .ui-datepicker-prev:hover::before,
+      #ui-datepicker-div .ui-datepicker-next:hover::before {
+        color: #fff; }
+  #ui-datepicker-div .ui-datepicker-prev {
+    -ms-flex-order: 2;
+    order: 2;
+    margin-right: 24px; }
+    #ui-datepicker-div .ui-datepicker-prev::before {
+      content: ' \276C'; }
+  #ui-datepicker-div .ui-datepicker-next {
+    -ms-flex-order: 3;
+    order: 3; }
+    #ui-datepicker-div .ui-datepicker-next::before {
+      content: ' \276D'; }
   #ui-datepicker-div thead {
+    display: block;
     background: none;
-    border: none; }
+    border: none;
+    border-top: 0.8px solid #D6D7E3;
+    padding: 16px 5px; }
+    #ui-datepicker-div thead tr {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
     #ui-datepicker-div thead th {
       font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
       font-weight: 600;
@@ -4044,7 +4113,41 @@ body {
       text-align: center;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: #4E5168; }
+      color: #4E5168;
+      padding: 0; }
+  #ui-datepicker-div .ui-datepicker-calendar {
+    margin: 0; }
+  #ui-datepicker-div tbody {
+    border: none; }
+    #ui-datepicker-div tbody tr {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      background: none;
+      margin-bottom: 16px; }
+      #ui-datepicker-div tbody tr:last-child {
+        margin-bottom: 0; }
+    #ui-datepicker-div tbody td {
+      padding: 0;
+      min-width: 24px;
+      min-height: 24px;
+      text-align: center;
+      font-family: "Gilroy", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.7;
+      transition: all 0.3s ease 0s;
+      cursor: pointer; }
+      #ui-datepicker-div tbody td:hover {
+        background-color: #EEB663; }
+        #ui-datepicker-div tbody td:hover a {
+          color: #fff; }
+  #ui-datepicker-div .ui-datepicker-current-day {
+    background-color: #EEB663; }
+    #ui-datepicker-div .ui-datepicker-current-day a {
+      transition: all 0.3s ease 0s;
+      color: #fff; }
 
 /* -----------------------------contact_form-section------------------- */
 .contact_form-section {
