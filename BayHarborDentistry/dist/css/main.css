@@ -1586,6 +1586,7 @@ body {
     background-color: #EEB663;
     transition: all 1s ease 0s; }
   .title-wrap .title {
+    font-family: "Queensila", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #010B6C;
     /* Только если меньше контейнера */
     font-size: 80px;
@@ -4370,9 +4371,15 @@ body {
     .sec-slider-section {
       padding: 44px 20px; } }
   .sec-slider-section .container {
-    padding: 0; }
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
   .sec-slider-section .title-wrap {
-    margin-bottom: 56px; }
+    margin-bottom: 28px; }
   .sec-slider-section .sec-slider {
     position: relative;
     max-width: 1320px;
@@ -4464,7 +4471,13 @@ body {
     .video-slider-section {
       padding: 88px 20px; } }
   .video-slider-section .container {
-    padding: 0; }
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
   .video-slider-section .video-slider {
     max-width: 1320px;
     margin: 0 auto;
@@ -4497,6 +4510,35 @@ body {
     border-radius: 0;
     cursor: -webkit-grab;
     cursor: grab; }
+  .video-slider-section .pagination-slider {
+    margin: 0 0 50px 40px; }
+
+.pagination-slider {
+  display: -ms-flexbox;
+  display: flex;
+  gap: 13px;
+  margin: 0 0 95px 40px; }
+  @media (max-width: 859px) {
+    .pagination-slider {
+      display: none; } }
+  .pagination-slider .prev,
+  .pagination-slider .next {
+    display: grid;
+    place-content: center;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border: 2px solid #EEB663;
+    transition: all 0.3s ease 0s;
+    cursor: pointer; }
+    .pagination-slider .prev:hover,
+    .pagination-slider .next:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+  .pagination-slider .prev img {
+    padding-right: 3px; }
+  .pagination-slider .next img {
+    padding-left: 3px; }
 
 /* -----------------------------reviews-slider-section-------------------- */
 .reviews-slider-section {

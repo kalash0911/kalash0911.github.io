@@ -639,6 +639,11 @@ destroySlidersOnResize(".sec-slider", 99999, {
   freeMode: true,
   speed: 700,
 
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
+
   scrollbar: {
     el: ".sec-swiper-scrollbar",
     draggable: true,
@@ -683,6 +688,11 @@ destroySlidersOnResize(".video-slider", 99999, {
   autoHeight: true,
   freeMode: true,
   speed: 700,
+
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
 
   scrollbar: {
     el: ".video-swiper-scrollbar",

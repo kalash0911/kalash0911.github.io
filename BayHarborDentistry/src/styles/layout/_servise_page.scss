@@ -269,10 +269,13 @@
 
     .container {
         padding: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
     }
 
     .title-wrap {
-        margin-bottom: 56px;
+        margin-bottom: 28px;
     }
     
     .sec-slider {
@@ -393,6 +396,9 @@
 
     .container {
         padding: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
     }
 
     .video-slider {
@@ -432,6 +438,51 @@
         background: $gold;
         border-radius: 0;
         cursor: grab;
+    }
+
+
+    .pagination-slider {
+        margin: 0 0 50px 40px;
+    }
+}
+
+.pagination-slider {
+    display: flex;
+    gap: 13px;
+    margin: 0 0 95px 40px;
+
+    @include media('<tablet_max'){
+        display: none;
+    }
+
+    .prev,
+    .next {
+        display: grid;
+        place-content: center;
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        border: 2px solid $gold;
+        transition: $all_03;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .prev {
+
+        img {
+            padding-right: 3px;
+        }
+    }
+
+    .next {
+
+        img {
+            padding-left: 3px;
+        }
     }
 }
 

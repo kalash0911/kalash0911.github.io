@@ -311,6 +311,7 @@ body {
     }
 
     .title {
+        font-family: $queensila;
         color: $blue;
         @include adaptiv-vaule("font-size", 80, 42, 1);
         font-weight: 400;
