@@ -59,9 +59,71 @@ body {
     font-size: 20px;
     line-height: 1.6;
     color: $black22;
+    margin: 0;
 
     @include media ('<phone') {
         font-size: 16px;
+    }
+}
+
+.img-text-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+
+    @include media ('<desktop_sm') {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .img-block {
+        position: relative;
+        width: clamp(300px, 50%, 586px);
+        
+        @include media ('<desktop_sm') {
+           width: 100%;
+        }
+    }
+    
+    .text-block {
+        width: clamp(300px, 50%, 630px);
+    
+        @include media ('<desktop_sm') {
+            width: 100%;
+        }
+    }
+
+    .text {
+        margin: 0;
+    }
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 50px;
+    column-gap: 15px;
+    margin-bottom: 30px;
+
+    @include media ('<600px') {
+        gap: 30px;
+    }
+
+    .list-item {
+        width: 32%;
+
+        @include media ('<desktop_sm') {
+            width: 48%;
+        }
+
+        @include media ('<600px') {
+            width: 100%;
+        }
     }
 }
 
@@ -168,35 +230,11 @@ body {
 
 /* --------------------------history-section */
 
-.history-section {
+.history-section { 
     padding: 160px 0 200px 0;
 
     @include media ('<phone') {
         padding: 80px 0 110px 0;
-    }
-
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 65px;
-
-        @include media ('<desktop_sm') {
-            flex-direction: column-reverse;
-        }
-
-        @include media ('<phone') {
-           gap: 40px;
-        } 
-    }
-
-    .img-block {
-        position: relative;
-        width: clamp(300px, 50%, 586px);
-        
-        @include media ('<desktop_sm') {
-           width: 100%;
-        }
     }
 
     .img {
@@ -242,14 +280,6 @@ body {
 
         @include media ('<phone') {
             font-size: 12px;
-        }
-    }
-
-    .block {
-        width: clamp(300px, 50%, 630px);
-
-        @include media ('<desktop_sm') {
-            width: 100%;
         }
     }
 
@@ -309,11 +339,127 @@ body {
         color: $whiteF7;
         font-size: 24px;
         font-weight: 500;
-        margin: 0;
 
         @include media ('<desktop_sm') {
            max-width: 100%;
         }
+
+        @include media ('<phone') {
+            font-size: 18px;
+        }
+    }
+}
+
+/* --------------------------advocacy-section */
+
+.advocacy-section {
+    padding: 160px 0;
+
+    @include media ('<phone') {
+        padding: 80px 0;
+    }
+
+    .img-text-block{
+        margin-bottom: 60px;
+
+        @include media ('<desktop_sm') {
+            flex-direction: column;
+        }
+    }
+    
+    .text {
+        font-size: 16px;
+
+        @include media ('<phone') {
+            font-size: 14px;
+        }
+    }
+
+    .img-block {
+
+        img{
+            @include media ('<desktop_sm') {
+               width: 100%;
+            }
+        }
+    }
+
+    .list-item {
+
+        .sticker {
+            font-size: 22px;
+            margin-bottom: 10px;
+
+            @include media ('<phone') {
+                font-size: 18px;
+            }
+
+            &::before {
+                width: 24px;
+            }
+        }
+
+        .title {
+            margin: 0;
+        }
+    }
+
+    .steps {
+        columns: 285px 3;
+        column-gap: 30px;
+        row-gap: 30px;
+        column-rule: 2px solid $green;
+
+        @include media ('<680px') {
+            columns: 1;
+        }
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 16px 0;
+
+        @include media ('<desktop_sm') {
+            &:last-child {
+                column-span: all;
+            }
+        }
+
+        @include media ('<680px') {
+            width: 100%;
+
+            &:nth-child(2) {
+                border-top: 2px solid $green;
+                border-bottom: 2px solid $green;
+            }
+        }
+
+        @include media ('<phone') {
+            justify-content: flex-start;
+        }
+
+    }
+
+    .step-icon {
+
+        @include media ('<widescreen_sm') {
+            width: 66px;
+        }
+
+        @include media ('<phone') {
+            width: 44px;
+        }
+    }
+
+    .step-text {
+        color: $green;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.1;
+        margin: 0;
 
         @include media ('<phone') {
             font-size: 18px;
