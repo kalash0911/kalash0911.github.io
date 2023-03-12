@@ -1619,4 +1619,49 @@ body {
       .consult-section .item-title {
         font-size: 22px; } }
 
+/* --------------------------partners-section */
+.partners-section {
+  padding: 160px 0; }
+  @media (max-width: 479px) {
+    .partners-section {
+      padding: 80px 0; } }
+  .partners-section .slider-wrap {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px; }
+  .partners-section .partners-slider {
+    max-width: 1100px;
+    margin: 0 auto; }
+  .partners-section .slide {
+    width: auto; }
+  .partners-section .arrow {
+    min-width: 40px;
+    cursor: pointer; }
+    @media (max-width: 767px) {
+      .partners-section .arrow {
+        display: none; } }
+    .partners-section .arrow:hover img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+    .partners-section .arrow img {
+      transition: all 0.3s ease 0s; }
+  .partners-section .prev {
+    left: 0; }
+  .partners-section .next {
+    right: 0; }
+  .partners-section .pagination {
+    display: none;
+    padding: 20px 0;
+    text-align: center; }
+    @media (max-width: 767px) {
+      .partners-section .pagination {
+        display: block; } }
+    .partners-section .pagination .swiper-pagination-bullet {
+      background: #2E4939; }
+
 /*# sourceMappingURL=main.css.map */

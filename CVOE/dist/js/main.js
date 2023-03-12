@@ -31,10 +31,17 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-destroySlidersOnResize(".me-slider", 960, {
-  spaceBetween: 20,
+destroySlidersOnResize(".partners-slider", 999999, {
+  slidesPerView: "auto",
+  spaceBetween: 32,
+  loop: true,
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev"
+  },
   pagination: {
-    el: ".swiper-pagination"
+    el: ".pagination",
+    clickable: true
   }
 });
 //# sourceMappingURL=main.js.map
