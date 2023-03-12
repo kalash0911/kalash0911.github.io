@@ -444,6 +444,7 @@ h6, .h6 {
   font-size: 15px; }
 
 p {
+  font-family: "Roboto", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   margin: 0 0 1em; }
 
 a {
@@ -531,8 +532,222 @@ input[type='submit'] {
   cursor: pointer;
   font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
 
-h1 {
-  font-family: "Roboto", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-  font-weight: 500; }
+html {
+  scroll-behavior: smooth; }
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 0 auto; }
+  @media (max-width: 959px) {
+    .container {
+      max-width: 800px; } }
+
+.sticker {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #DF5643;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 22px; }
+  @media (max-width: 479px) {
+    .sticker {
+      font-size: 14px; } }
+  .sticker::before {
+    content: '';
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    width: 30px;
+    height: 1px;
+    background-color: #DF5643;
+    margin-right: 14px; }
+
+.title {
+  color: #2E4939;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 12px; }
+  @media (max-width: 479px) {
+    .title {
+      font-size: 26px; } }
+
+.text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #222222; }
+  @media (max-width: 479px) {
+    .text {
+      font-size: 16px; } }
+
+/* --------------------------main-section */
+.main-section {
+  position: relative;
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 260px 0 170px 0;
+  background-color: #2E4939; }
+  .main-section::after {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 50%; }
+    @media (max-width: 1149px) {
+      .main-section::after {
+        display: block; } }
+  .main-section .container {
+    position: relative;
+    min-height: calc(100vh - 430px);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .main-section .main-title {
+    /* Только если меньше контейнера */
+    font-size: 110px;
+    line-height: 1.1;
+    color: #FBF8F0;
+    font-weight: 400;
+    margin-bottom: 112px;
+    z-index: 1; }
+    @media (max-width: 1320px) {
+      .main-section .main-title {
+        font-size: calc(54px + 56 * ((100vw - calc(360px)) / 960)); } }
+    @media (max-width: 479px) {
+      .main-section .main-title {
+        margin-bottom: 40px; } }
+    .main-section .main-title span {
+      color: #DC503C; }
+  .main-section .main-text {
+    position: relative;
+    /* Только если меньше контейнера */
+    left: 300px;
+    max-width: 306px;
+    color: #F2F2F2;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+    z-index: 1; }
+    @media (max-width: 1320px) {
+      .main-section .main-text {
+        left: calc(-1000px + 1300 * ((100vw - calc(360px)) / 960)); } }
+    @media (max-width: 1099px) {
+      .main-section .main-text {
+        left: 0; } }
+    .main-section .main-text::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 197px;
+      height: 2px;
+      background-color: #DC503C; }
+  .main-section .img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  .main-section .down {
+    position: absolute;
+    left: 20px;
+    bottom: -100px;
+    z-index: 1;
+    transition: all 0.3s ease 0s; }
+    @media (max-width: 479px) {
+      .main-section .down {
+        display: none; } }
+    .main-section .down:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+
+/* --------------------------history-section */
+.history-section {
+  padding: 160px 0; }
+  @media (max-width: 479px) {
+    .history-section {
+      padding: 80px 0; } }
+  .history-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 65px; }
+    @media (max-width: 959px) {
+      .history-section .container {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
+    @media (max-width: 479px) {
+      .history-section .container {
+        gap: 40px; } }
+  .history-section .img-block {
+    position: relative;
+    width: clamp(300px, 50%, 586px); }
+    @media (max-width: 959px) {
+      .history-section .img-block {
+        width: 100%; } }
+  @media (max-width: 959px) {
+    .history-section .img {
+      width: 90%; } }
+  .history-section .geo-block {
+    position: absolute;
+    right: -45px;
+    bottom: -40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 413px;
+    padding: 18px;
+    background-color: #2E4939;
+    border: 5px solid #fff; }
+    @media (max-width: 959px) {
+      .history-section .geo-block {
+        right: 0; } }
+    @media (max-width: 479px) {
+      .history-section .geo-block {
+        max-width: 300px; } }
+    @media (max-width: 479px) {
+      .history-section .geo-block img {
+        width: 14px; } }
+  .history-section .geo-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 0 0 14px; }
+    @media (max-width: 479px) {
+      .history-section .geo-text {
+        font-size: 12px; } }
+  .history-section .block {
+    width: clamp(300px, 50%, 630px); }
+    @media (max-width: 959px) {
+      .history-section .block {
+        width: 100%; } }
+  .history-section .text {
+    color: #454843; }
 
 /*# sourceMappingURL=main.css.map */
