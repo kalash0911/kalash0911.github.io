@@ -1806,4 +1806,83 @@ body {
     .partners-section .pagination .swiper-pagination-bullet {
       background: #2E4939; }
 
+.footer {
+  padding: 80px 0 0 0;
+  width: 100%; }
+  .footer .top {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 48px; }
+    @media (max-width: 767px) {
+      .footer .top {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 40px; } }
+  @media (max-width: 959px) {
+    .footer .logo {
+      width: 200px; } }
+  .footer .content {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 125px; }
+    @media (max-width: 959px) {
+      .footer .content {
+        gap: 40px; } }
+    @media (max-width: 479px) {
+      .footer .content {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 40px;
+        text-align: center; } }
+  .footer .title {
+    font-family: "Roboto", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.1;
+    margin-bottom: 30px; }
+  .footer .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 24px; }
+  .footer .link {
+    font-family: "Roboto", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.1;
+    color: #222222;
+    transition: all 0.3s ease 0s; }
+    .footer .link:hover {
+      color: #DC503C; }
+  .footer .contact {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 24px; }
+  .footer .bot {
+    border-top: 1px solid #2E4939;
+    padding: 22px 0; }
+  .footer .text {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    color: #666666; }
+    @media (max-width: 479px) {
+      .footer .text {
+        font-size: 14px; } }
+
 /*# sourceMappingURL=main.css.map */
