@@ -1809,6 +1809,9 @@ body {
 .footer {
   padding: 80px 0 0 0;
   width: 100%; }
+  @media (max-width: 479px) {
+    .footer {
+      padding: 40px 0 0 0; } }
   .footer .top {
     display: -ms-flexbox;
     display: flex;
