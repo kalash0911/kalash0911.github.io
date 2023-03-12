@@ -157,6 +157,10 @@ body {
     padding: 260px 0 170px 0;
     background-color: $green;
 
+    @include media ('<phone') {
+        padding: 180px 0 170px 0;
+    }
+
     &::after {
         content:'';
         display: none;
@@ -823,4 +827,75 @@ body {
             font-size: 24px;
         }
     }
+}
+
+/* --------------------------task-section */
+
+.task-section {
+    background-color: $whiteED;
+    padding: 160px 0;
+
+    @include media ('<phone') {
+        padding: 80px 0;
+    } 
+
+    .title-wrap {
+
+        .sticker {
+            margin-bottom: 14px;
+        }
+    
+        .title {
+            margin-bottom: 50px;
+    
+            @include media ('<phone') {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media ('<tablet') {
+            justify-content: center;
+            gap: 30px;
+        }
+    }
+
+    .item {
+        width: 32%;
+
+        @include media ('<tablet') {
+            width: 47%;
+        }
+
+        @include media ('<600px') {
+            width: 100%;
+        }
+    }
+
+    .img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .description {
+
+        .title {
+            font-size: 36px;
+            margin: 0;
+
+            @include media ('<phone') {
+                font-size: 24px;
+            }
+        }
+
+        .text {
+            font-size: 16px;
+        }
+    }
+
 }
