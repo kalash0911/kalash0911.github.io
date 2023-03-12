@@ -594,6 +594,15 @@ body {
     .text {
       font-size: 16px; } }
 
+.title-wrap .sticker {
+  margin-bottom: 14px; }
+
+.title-wrap .title {
+  margin-bottom: 50px; }
+  @media (max-width: 479px) {
+    .title-wrap .title {
+      margin-bottom: 25px; } }
+
 .img-text-block {
   display: -ms-flexbox;
   display: flex;
@@ -642,6 +651,8 @@ body {
   @media (max-width: 599px) {
     .list-num {
       gap: 30px; } }
+  .list-num .sticker::before {
+    width: 24px; }
   .list-num .list-item {
     width: 32%; }
     @media (max-width: 959px) {
@@ -1227,13 +1238,6 @@ body {
   @media (max-width: 479px) {
     .task-section {
       padding: 80px 0; } }
-  .task-section .title-wrap .sticker {
-    margin-bottom: 14px; }
-  .task-section .title-wrap .title {
-    margin-bottom: 50px; }
-    @media (max-width: 479px) {
-      .task-section .title-wrap .title {
-        margin-bottom: 25px; } }
   .task-section .block {
     display: -ms-flexbox;
     display: flex;
@@ -1420,8 +1424,6 @@ body {
       .education-section .container {
         -ms-flex-direction: column;
         flex-direction: column; } }
-  .education-section .sticker {
-    margin-bottom: 14px; }
   .education-section .title {
     color: #FDFBF7; }
   .education-section .block {
@@ -1463,5 +1465,34 @@ body {
         font-size: 14px; } }
     .education-section .text:last-child {
       margin: 0; }
+
+/* --------------------------rehabilitation-section */
+.rehabilitation-section {
+  padding: 160px 0; }
+  @media (max-width: 479px) {
+    .rehabilitation-section {
+      padding: 80px 0; } }
+  @media (max-width: 479px) {
+    .rehabilitation-section .list-num {
+      gap: 15px; } }
+  .rehabilitation-section .list-num .sticker {
+    margin: 0;
+    font-size: 22px; }
+    @media (max-width: 479px) {
+      .rehabilitation-section .list-num .sticker {
+        font-size: 16px; } }
+  .rehabilitation-section .list-num .list-item {
+    width: 23%; }
+    @media (max-width: 959px) {
+      .rehabilitation-section .list-num .list-item {
+        width: 46%; } }
+    @media (max-width: 479px) {
+      .rehabilitation-section .list-num .list-item {
+        width: 100%; } }
+  .rehabilitation-section .list-num .text {
+    font-size: 16px; }
+    @media (max-width: 479px) {
+      .rehabilitation-section .list-num .text {
+        font-size: 14px; } }
 
 /*# sourceMappingURL=main.css.map */

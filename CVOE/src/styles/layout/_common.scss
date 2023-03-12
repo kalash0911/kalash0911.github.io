@@ -70,6 +70,21 @@ body {
     }
 }
 
+.title-wrap {
+
+    .sticker {
+        margin-bottom: 14px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+
+        @include media ('<phone') {
+            margin-bottom: 25px;
+        }
+    }
+}
+
 .img-text-block {
     display: flex;
     align-items: center;
@@ -122,6 +137,13 @@ body {
 
     @include media ('<600px') {
         gap: 30px;
+    }
+
+    .sticker {
+
+        &::before {
+            width: 24px;
+        }
     }
 
     .list-item {
@@ -838,21 +860,6 @@ body {
         padding: 80px 0;
     } 
 
-    .title-wrap {
-
-        .sticker {
-            margin-bottom: 14px;
-        }
-    
-        .title {
-            margin-bottom: 50px;
-    
-            @include media ('<phone') {
-                margin-bottom: 25px;
-            }
-        }
-    }
-
     .block {
         display: flex;
         flex-wrap: wrap;
@@ -1099,10 +1106,6 @@ body {
         }
     }
 
-    .sticker {
-        margin-bottom: 14px;
-    }
-
     .title {
         color: $whiteF7;
     }
@@ -1152,4 +1155,51 @@ body {
             margin: 0;
         }
     }
+}
+
+/* --------------------------rehabilitation-section */
+
+.rehabilitation-section {
+    padding: 160px 0;
+
+    @include media ('<phone') {
+        padding: 80px 0;
+    }
+
+    .list-num {
+
+        @include media ('<phone') {
+            gap: 15px;
+        }
+
+        .sticker {
+            margin: 0;
+            font-size: 22px;
+
+            @include media ('<phone') {
+                font-size: 16px;
+            }
+        }
+        
+        .list-item {
+            width: 23%;
+
+            @include media ('<desktop_sm') {
+                width: 46%;
+            }
+
+            @include media ('<phone') {
+                width: 100%;
+            }
+        }
+
+        .text {
+            font-size: 16px;
+
+            @include media ('<phone') {
+                font-size: 14px;
+            }
+        }
+    }
+
 }
