@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: $whiteF7;
+}
+
 .container {
     width: 100%;
     max-width: 1320px;
@@ -212,7 +216,7 @@ html {
         max-width: 413px;
         padding: 18px;
         background-color: $green;
-        border: 5px solid $white;
+        border: 5px solid $whiteF7;
 
         @include media ('<desktop_sm') {
             right: 0;

@@ -535,6 +535,9 @@ input[type='submit'] {
 html {
   scroll-behavior: smooth; }
 
+body {
+  background-color: #FDFBF7; }
+
 .container {
   width: 100%;
   max-width: 1320px;
@@ -723,7 +726,7 @@ html {
     max-width: 413px;
     padding: 18px;
     background-color: #2E4939;
-    border: 5px solid #fff; }
+    border: 5px solid #FDFBF7; }
     @media (max-width: 959px) {
       .history-section .geo-block {
         right: 0; } }
