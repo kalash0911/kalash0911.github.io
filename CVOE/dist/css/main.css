@@ -1223,7 +1223,6 @@ body {
 
 /* --------------------------task-section */
 .task-section {
-  background-color: #F1F2ED;
   padding: 160px 0; }
   @media (max-width: 479px) {
     .task-section {
@@ -1266,5 +1265,142 @@ body {
         font-size: 24px; } }
   .task-section .description .text {
     font-size: 16px; }
+
+/* --------------------------ourtask-section */
+.ourtask-section {
+  background-color: #F1F2ED;
+  padding: 160px 0; }
+  @media (max-width: 479px) {
+    .ourtask-section {
+      padding: 80px 0; } }
+  .ourtask-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 959px) {
+      .ourtask-section .container {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .ourtask-section .block {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-width: 322px;
+    height: 322px;
+    border-radius: 50%;
+    background-color: #FDFBF7;
+    margin: 0 30px; }
+    @media (max-width: 1199px) {
+      .ourtask-section .block {
+        min-width: 222px;
+        height: 222px; } }
+    @media (max-width: 959px) {
+      .ourtask-section .block {
+        display: none; } }
+  .ourtask-section .arc1,
+  .ourtask-section .arc2 {
+    position: absolute;
+    top: 0; }
+    @media (max-width: 1199px) {
+      .ourtask-section .arc1,
+      .ourtask-section .arc2 {
+        width: 70px; } }
+  .ourtask-section .arc1 {
+    left: -25px; }
+  .ourtask-section .arc2 {
+    right: -25px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  .ourtask-section .title {
+    margin: 0; }
+    @media (max-width: 1199px) {
+      .ourtask-section .title {
+        font-size: 32px; } }
+  .ourtask-section .mob {
+    display: none; }
+    @media (max-width: 959px) {
+      .ourtask-section .mob {
+        display: block;
+        margin: 0 auto 30px auto;
+        text-align: center;
+        font-size: 44px; } }
+    @media (max-width: 479px) {
+      .ourtask-section .mob {
+        font-size: 34px; } }
+  .ourtask-section .list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 413px; }
+    @media (max-width: 959px) {
+      .ourtask-section .list {
+        max-width: 100%;
+        margin-bottom: 14px; } }
+  .ourtask-section .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 16px;
+    background-color: #FDFBF7;
+    padding: 9px 30px 9px 9px;
+    border-radius: 50px;
+    width: 100%; }
+    .ourtask-section .item:first-child, .ourtask-section .item:last-child {
+      margin-left: 45px; }
+      @media (max-width: 959px) {
+        .ourtask-section .item:first-child, .ourtask-section .item:last-child {
+          margin: 0; } }
+  .ourtask-section .icon-wrap {
+    display: grid;
+    place-items: center;
+    min-width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: #F1F2ED; }
+    @media (max-width: 1199px) {
+      .ourtask-section .icon-wrap {
+        min-width: 52px;
+        height: 52px; } }
+    @media (max-width: 1199px) {
+      .ourtask-section .icon-wrap img {
+        width: 32px; } }
+  .ourtask-section .sub-title {
+    color: #2E4939;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0; }
+    @media (max-width: 1199px) {
+      .ourtask-section .sub-title {
+        font-size: 16px; } }
+    @media (max-width: 479px) {
+      .ourtask-section .sub-title {
+        font-size: 14px; } }
+  .ourtask-section .revert {
+    margin: 0; }
+    .ourtask-section .revert .item {
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+      padding: 9px 9px 9px 30px;
+      width: 100%; }
+      @media (max-width: 959px) {
+        .ourtask-section .revert .item {
+          -ms-flex-direction: row;
+          flex-direction: row;
+          padding: 9px 30px 9px 9px; } }
+      .ourtask-section .revert .item:first-child, .ourtask-section .revert .item:last-child {
+        margin-left: -45px; }
+        @media (max-width: 959px) {
+          .ourtask-section .revert .item:first-child, .ourtask-section .revert .item:last-child {
+            margin: 0; } }
 
 /*# sourceMappingURL=main.css.map */

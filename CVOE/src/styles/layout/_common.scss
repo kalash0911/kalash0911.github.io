@@ -832,7 +832,6 @@ body {
 /* --------------------------task-section */
 
 .task-section {
-    background-color: $whiteED;
     padding: 160px 0;
 
     @include media ('<phone') {
@@ -895,6 +894,186 @@ body {
 
         .text {
             font-size: 16px;
+        }
+    }
+
+}
+
+/* --------------------------ourtask-section */
+
+.ourtask-section {
+    background-color: $whiteED;
+    padding: 160px 0;
+
+    @include media ('<phone') {
+        padding: 80px 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media ('<desktop_sm') {
+            flex-direction: column;
+        }
+    }
+
+    .block {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-width: 322px;
+        height: 322px;
+        border-radius: 50%;
+        background-color: $whiteF7;
+        margin: 0 30px;
+
+        @include media ('<widescreen') {
+            min-width: 222px;
+            height: 222px;
+        }
+
+        @include media ('<desktop_sm') {
+            display: none;
+        }
+    }
+
+    .arc1,
+    .arc2 {
+        position: absolute;
+        top: 0;
+
+        @include media ('<widescreen') {
+            width: 70px;
+        }
+    }
+
+    .arc1 {
+        left: -25px;
+    }
+
+    .arc2  {
+        right: -25px;
+        transform: rotate(180deg);
+    }
+
+    .title {
+        margin: 0;
+
+        @include media ('<widescreen') {
+            font-size: 32px;
+        }
+    }
+
+    .mob {
+        display: none;
+
+        @include media ('<desktop_sm') {
+            display: block;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            font-size: 44px;
+        }
+
+        @include media ('<phone') {
+            font-size: 34px;
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 413px;
+
+        @include media ('<desktop_sm') {
+           max-width: 100%;
+           margin-bottom: 14px;
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background-color: $whiteF7;
+        padding: 9px 30px 9px 9px;
+        border-radius: 50px;
+        width: 100%;
+
+        &:first-child,
+        &:last-child {  
+            margin-left: 45px;
+
+            @include media ('<desktop_sm') {
+                margin: 0;
+            }
+        }
+
+    }
+
+    .icon-wrap {
+        display: grid;
+        place-items: center;
+        min-width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background-color: $whiteED;
+
+        @include media ('<widescreen') {
+            min-width: 52px;
+            height: 52px;
+        }
+
+        img {
+
+            @include media ('<widescreen') {
+                width: 32px;
+            }
+        }
+    }
+
+    .sub-title {
+        color: $green;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+
+        @include media ('<widescreen') {
+            font-size: 16px;
+        }
+
+        @include media ('<phone') {
+            font-size: 14px;
+        }
+    }
+
+    .revert {
+        margin: 0;
+
+        .item {
+            flex-direction: row-reverse;
+            padding: 9px 9px 9px 30px;
+            width: 100%;
+
+            @include media ('<desktop_sm') {
+                flex-direction: row;
+                padding: 9px 30px 9px 9px;
+            }
+    
+            &:first-child,
+            &:last-child {  
+                margin-left: -45px;
+
+                @include media ('<desktop_sm') {
+                    margin: 0;
+                }
+            }
         }
     }
 
