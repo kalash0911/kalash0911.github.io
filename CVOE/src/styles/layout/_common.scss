@@ -84,6 +84,12 @@ body {
         @include media ('<desktop_sm') {
            width: 100%;
         }
+
+        .img{
+            @include media ('<desktop_sm') {
+                width: 100%;
+            }
+        }
     }
     
     .text-block {
@@ -99,7 +105,7 @@ body {
     }
 }
 
-.list {
+.list-num {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -237,9 +243,12 @@ body {
         padding: 80px 0 110px 0;
     }
 
-    .img {
-        @include media ('<desktop_sm') {
-            width: 90%;
+    .img-block {
+
+        .img{
+            @include media ('<desktop_sm') {
+                width: 90%;
+            }
         }
     }
 
@@ -375,15 +384,6 @@ body {
         }
     }
 
-    .img-block {
-
-        img{
-            @include media ('<desktop_sm') {
-               width: 100%;
-            }
-        }
-    }
-
     .list-item {
 
         .sticker {
@@ -464,5 +464,46 @@ body {
         @include media ('<phone') {
             font-size: 18px;
         }
+    }
+}
+
+/* --------------------------purpose-section */
+
+.purpose-section {
+    background-color: $whiteED;
+    padding: 160px 0;
+
+    @include media ('<phone') {
+        padding: 80px 0;
+    }
+
+    .sticker {
+        margin-bottom: 14px;
+    }
+
+    .list {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 15px;
+    }
+
+    .item {
+        position: relative;
+        margin-bottom: 12px;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 13px;
+            left: -15px;
+            width: 6px;
+            height: 6px;
+            background-color: $orange43;
+            transform: rotate(45deg);
+        }
+    }
+    
+    .text {
+        font-size: 16px;
     }
 }
