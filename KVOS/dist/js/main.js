@@ -55,4 +55,63 @@ destroySlidersOnResize(".partners-slider", 999999, {
     clickable: true
   }
 });
+/* for form */
+
+var yearSelect = document.getElementById("year");
+
+if (yearSelect) {
+  var currentYear = new Date().getFullYear();
+
+  for (var year = 1900; year <= currentYear; year++) {
+    var option = document.createElement("option");
+    option.setAttribute("value", year);
+    option.text = year;
+    yearSelect.appendChild(option);
+  }
+}
+
+var textarea = document.getElementById("myTextarea");
+var charCount = document.getElementById("charCount");
+
+if (textarea) {
+  textarea.addEventListener("input", function () {
+    var length = textarea.value.length;
+    charCount.innerText = length + " /300";
+  });
+}
+
+var fileDrop = document.getElementById('file-drop');
+var fileInput = document.getElementById('file-input');
+var fileName = document.getElementById('file-name');
+
+if (fileDrop && fileInput && fileName) {
+  fileDrop.addEventListener('dragenter', function (event) {
+    event.preventDefault();
+    fileDrop.classList.add('drag-over');
+  });
+  fileDrop.addEventListener('dragover', function (event) {
+    event.preventDefault();
+  });
+  fileDrop.addEventListener('drop', function (event) {
+    event.preventDefault();
+    fileDrop.classList.remove('drag-over');
+    var file = event.dataTransfer.files[0];
+
+    if (file) {
+      fileName.textContent = "".concat(file.name);
+      fileInput.files = event.dataTransfer.files;
+    } else {
+      fileName.textContent = 'Файл не обраний';
+    }
+  });
+  fileInput.addEventListener('change', function (event) {
+    var file = event.target.files[0];
+
+    if (file) {
+      fileName.textContent = "".concat(file.name);
+    } else {
+      fileName.textContent = 'Файл не обраний';
+    }
+  });
+}
 //# sourceMappingURL=main.js.map
