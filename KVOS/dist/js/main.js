@@ -29,7 +29,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
 
     if (neededWidth) {
-      if (!sliderSelector.classList.contains("swiper-initialized")) {
+      if (!(sliderSelector === null || sliderSelector === void 0 ? void 0 : sliderSelector.classList.contains("swiper-initialized"))) {
         swiper = new Swiper(selector, init);
       }
     } else if (sliderSelector.classList.contains("swiper-initialized")) {

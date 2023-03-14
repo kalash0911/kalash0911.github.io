@@ -2000,7 +2000,31 @@ body {
     z-index: 1; }
   .form-section .item-img {
     margin-bottom: 12px; }
+  .form-section .icon {
+    cursor: pointer; }
+    .form-section .icon:hover + .clue {
+      opacity: 1;
+      z-index: 1; }
+  .form-section .clue {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(253, 251, 247, 0.7);
+    color: #222222;
+    padding: 5px;
+    font-family: "Roboto", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s ease 0s; }
   .form-section .item-title {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
     color: #FDFBF7;
     font-size: 26px;
     font-weight: 400;
@@ -2010,6 +2034,28 @@ body {
         font-size: 22px; } }
   .form-section .bg {
     z-index: 0; }
+
+/* --------------------------project-section */
+.project-section {
+  position: relative;
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 260px 0 140px 0; }
+  @media (max-width: 479px) {
+    .project-section {
+      padding: 180px 0 170px 0; } }
+  .project-section .container {
+    position: relative;
+    min-height: calc(100vh - 400px);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center; }
 
 .footer {
   padding: 80px 0 0 0;
