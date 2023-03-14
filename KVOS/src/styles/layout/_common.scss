@@ -1933,3 +1933,92 @@ body {
         }
     }
 }
+
+/* --------------------------culture-section */
+
+.culture-section {
+    position: relative;
+    padding: 160px 0;
+
+    @include media ('<phone') {
+        padding: 80px 0;
+    }
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 650px;
+        z-index: -1;
+        background-color: #F1F2ED;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include media ('<tablet') {
+            flex-direction: column;
+        }
+
+        @include media ('<phone') {
+            gap: 15px;
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            @include media ('<tablet') {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .img-block {
+        width: clamp(0px, 50%, 580px);
+
+        @include media ('<tablet') {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .text-block {
+        width: clamp(0px, 50%, 520px);
+
+        @include media ('<tablet') {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 36px;
+            margin: 0;
+
+            @include media ('<phone') {
+                font-size: 22px;
+            }
+        }
+    
+        .text {
+            font-size: 16px;
+            color: $black22;
+
+            @include media ('<phone') {
+                font-size: 14px;
+            }
+        }
+    }
+}

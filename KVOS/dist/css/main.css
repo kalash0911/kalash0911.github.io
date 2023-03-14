@@ -2215,6 +2215,75 @@ body {
       .green-section .title br {
         display: none; } }
 
+/* --------------------------culture-section */
+.culture-section {
+  position: relative;
+  padding: 160px 0; }
+  @media (max-width: 479px) {
+    .culture-section {
+      padding: 80px 0; } }
+  .culture-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 650px;
+    z-index: -1;
+    background-color: #F1F2ED; }
+  .culture-section .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 50px; }
+  .culture-section .item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px; }
+    @media (max-width: 767px) {
+      .culture-section .item {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    @media (max-width: 479px) {
+      .culture-section .item {
+        gap: 15px; } }
+    .culture-section .item:nth-child(even) {
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse; }
+      @media (max-width: 767px) {
+        .culture-section .item:nth-child(even) {
+          -ms-flex-direction: column;
+          flex-direction: column; } }
+  .culture-section .img-block {
+    width: clamp(0px, 50%, 580px); }
+    @media (max-width: 767px) {
+      .culture-section .img-block {
+        width: 100%; } }
+    .culture-section .img-block img {
+      width: 100%; }
+  .culture-section .text-block {
+    width: clamp(0px, 50%, 520px); }
+    @media (max-width: 767px) {
+      .culture-section .text-block {
+        width: 100%; } }
+    .culture-section .text-block .title {
+      font-size: 36px;
+      margin: 0; }
+      @media (max-width: 479px) {
+        .culture-section .text-block .title {
+          font-size: 22px; } }
+    .culture-section .text-block .text {
+      font-size: 16px;
+      color: #222222; }
+      @media (max-width: 479px) {
+        .culture-section .text-block .text {
+          font-size: 14px; } }
+
 .footer {
   padding: 80px 0 0 0;
   width: 100%; }
