@@ -1909,3 +1909,27 @@ body {
         }
     }
 }
+
+/* --------------------------green-section */
+
+.green-section {
+    background-color: $green;
+    padding: 114px 0;
+
+    @include media ('<tablet') {
+        padding: 55px 0;
+    }
+
+    .title {
+        @include adaptiv-vaule("font-size", 64, 36, 1);
+        text-align: center;
+        color: $whiteF7;
+        line-height: 130%;
+
+        @include media ('<tablet') {
+            br {
+                display: none;
+            }
+        }
+    }
+}
