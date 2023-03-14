@@ -95,4 +95,11 @@
             font-size: 14px;
         }
     }
+
+    .desc {
+
+        @include media ('<phone') {
+            display: none;
+        }
+    }
 }

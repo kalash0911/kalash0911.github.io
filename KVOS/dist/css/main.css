@@ -2423,5 +2423,8 @@ body {
     @media (max-width: 479px) {
       .footer .text {
         font-size: 14px; } }
+  @media (max-width: 479px) {
+    .footer .desc {
+      display: none; } }
 
 /*# sourceMappingURL=main.css.map */
