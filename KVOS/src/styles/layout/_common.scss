@@ -197,6 +197,15 @@ body {
     z-index: -1;
 }
 
+.main-title {
+    @include adaptiv-vaule("font-size", 110, 54, 1);
+    line-height: 1.1;
+    color: $whiteF7;
+    font-weight: 400;
+    margin-bottom: 47px;
+    z-index: 1;
+}
+
 /* --------------------------main-section */
 
 .main-section {
@@ -236,12 +245,7 @@ body {
     }
 
     .main-title {
-        @include adaptiv-vaule("font-size", 110, 54, 1);
-        line-height: 1.1;
         color: $whiteF0;
-        font-weight: 400;
-        margin-bottom: 112px;
-        z-index: 1;
 
         @include media ('<phone') {
             margin-bottom: 40px;
@@ -1773,12 +1777,6 @@ body {
     }
 
     .main-title {
-        @include adaptiv-vaule("font-size", 110, 54, 1);
-        line-height: 1.1;
-        color: $whiteF7;
-        font-weight: 400;
-        margin-bottom: 47px;
-        z-index: 1;
         text-align: center;
     }
 
@@ -2019,6 +2017,84 @@ body {
             @include media ('<phone') {
                 font-size: 14px;
             }
+        }
+    }
+}
+
+/* --------------------------contacts-section */
+
+.contacts-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: $green;
+    padding: 160px 0 140px 0;
+
+    @include media ('<tablet') {
+        padding: 200px 0 140px 0;
+    }
+
+    .container {
+        max-width: 1320px;
+        position: relative;
+        min-height: calc(100vh - 300px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .main-title {
+        color: rgba($whiteF0, .8);
+    }
+
+    .img-block {
+
+        @include media ('<900px') {
+            display: none;
+        }
+    }
+
+    .item-wrap {
+        columns: 2;
+
+        @include media ('<phone') {
+            columns: 1;
+        }
+    }
+
+    .full {
+        column-span: all;
+        padding-top: 22px;
+
+        @include media ('<phone') {
+            padding: 0;
+        }
+    }
+
+    .item-title {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.1;
+        color: #DADCD3;
+        margin-bottom: 28px;
+
+        @include media ('<phone') {
+            margin-bottom: 15px;
+        }
+    }
+
+    .link {
+        display: block;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.1;
+        color: rgba(218, 220, 211, 0.8);
+        margin-bottom: 24px;
+
+        &:hover {
+            color: $white;
         }
     }
 }
