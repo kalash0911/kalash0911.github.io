@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const TestDone = () => {
+export const TestDone = ({ resetTest }) => {
   const { t } = useTranslation();
   return (
     <div className="test-done-wrap">
@@ -40,14 +40,23 @@ export const TestDone = () => {
         </svg>
       </div>
       <h2 className="main-title">{t("testSuccess")}</h2>
-      <button
-        className="btn"
-        onClick={() => {
-          window.location.href = "/";
-        }}
-      >
-        {t("redirectToMain")}
-      </button>
+      <ul className="btns-wrap">
+        <li>
+          <button
+            className="btn"
+            onClick={() => {
+              window.location.href = "/";
+            }}
+          >
+            {t("redirectToMain")}
+          </button>
+        </li>
+        <li>
+          <button className="btn btn-secondary" onClick={resetTest}>
+            {t("passAgain")}
+          </button>
+        </li>
+      </ul>
     </div>
   );
 };

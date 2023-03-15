@@ -418,5 +418,6 @@
     "skypeErr": "Enter your skype login",
     "zoomErr": "Enter your zoom",
     "testSuccess": "You have successfully taken the test!",
-    "redirectToMain": "Main page"
+    "redirectToMain": "Main page",
+    "passAgain": "Pass again"
 }

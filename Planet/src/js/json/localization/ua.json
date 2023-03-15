@@ -29,7 +29,7 @@
     "formNameTitle": "Им'я*",
     "formSubNameTitle": "Прізвище*",
     "formPhoneTitle": "Телефон*",
-    "formEmailTitle": "Електронна пошта",
+    "formEmailTitle": "Електронна пошта*",
     "formMessTitle": "Ваше повідомлення",
     "formMessPlace": "Напишіть повідомлення",
     "formErrorName": "Введіть Ваше ім'я",
@@ -417,5 +417,6 @@
     "skypeErr": "Введіть Ваш логін skype",
     "zoomErr": "Введіть ваш zoom",
     "testSuccess": "Ви успішно пройшли тест!",
-    "redirectToMain": "Головна сторінка"
+    "redirectToMain": "Головна сторінка",
+    "passAgain": "Пройти ще раз"
 }

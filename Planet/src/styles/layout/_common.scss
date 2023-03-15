@@ -1475,8 +1475,29 @@ input, textarea{
         text-align: center;
         width: 100%;
 
-        .btn{
+        .btns-wrap {
+            @extend %listreset;
+            display: flex;
+            flex-direction: column;
+
+            > li {
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .btn {
             border: none;
+        }
+
+        .btn-secondary {
+            background-color: $white;
+            color: #2D2D2D;
+
+            &:hover {
+                opacity: .85;
+            }
         }
     }
 }

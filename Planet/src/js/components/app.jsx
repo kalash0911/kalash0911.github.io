@@ -26,7 +26,6 @@ export const App = () => {
 
   useEffect(() => {
     if(testIsDone || testEndCookie) {
-      console.log('testIsDone: ', testIsDone);
       localStorage.clear();
       return
     }
@@ -49,13 +48,21 @@ export const App = () => {
     }
   })
 
+  const resetTest = () => {
+    localStorage.clear();
+    setCookie(TEST_END, '');
+    setFormValues(null);
+    setStartTest(false);
+    setUserAnswers(null);
+    setTestToDone(false);
+  }
 
   if (formValues || testEndCookie) {
     document.querySelector(".heading-block").classList.add("d-none");
   }
 
   if (testEndCookie || testIsDone) {
-    return <TestDone />;
+    return <TestDone resetTest={resetTest}/>;
   }
 
   const questionId = userAnswers?.length - 1 || 0;
