@@ -90,7 +90,7 @@ export const App = () => {
           if (retries < 2) {
             retries++;
             console.log(`Retrying POST request, attempt ${retries}...`);
-            sendPostRequest();
+            sendPostRequest(payload);
           } else {
             console.log('POST request failed after maximum retries.');
             setError(ERROR_API_KEY);
@@ -102,7 +102,7 @@ export const App = () => {
         if (retries < 2) {
           retries++;
           console.log(`Retrying POST request, attempt ${retries}...`);
-          sendPostRequest();
+          sendPostRequest(payload);
         } else {
           console.log('POST request failed after maximum retries.');
           setError(ERROR_API_KEY);
