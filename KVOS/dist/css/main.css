@@ -2306,23 +2306,28 @@ body {
   @media (max-width: 899px) {
     .contacts-section .img-block {
       display: none; } }
+  .contacts-section .block-text {
+    width: 60%; }
+    @media (max-width: 899px) {
+      .contacts-section .block-text {
+        width: 100%; } }
   .contacts-section .item-wrap {
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    columns: 2; }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; }
     @media (max-width: 479px) {
       .contacts-section .item-wrap {
-        -webkit-columns: 1;
-        -moz-columns: 1;
-        columns: 1; } }
+        grid-template-columns: 1fr; } }
+  .contacts-section .soc {
+    grid-row: span 2; }
+    @media (max-width: 479px) {
+      .contacts-section .soc {
+        grid-row: span 1; } }
   .contacts-section .full {
-    -webkit-column-span: all;
-    -moz-column-span: all;
-    column-span: all;
-    padding-top: 22px; }
+    grid-column: span 2; }
     @media (max-width: 479px) {
       .contacts-section .full {
-        padding: 0; } }
+        grid-column: span 1; } }
   .contacts-section .item-title {
     font-weight: 400;
     font-size: 26px;
@@ -2333,12 +2338,11 @@ body {
       .contacts-section .item-title {
         margin-bottom: 15px; } }
   .contacts-section .link {
-    display: block;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.1;
     color: rgba(218, 220, 211, 0.8);
-    margin-bottom: 24px; }
+    margin: 0; }
     .contacts-section .link:hover {
       color: #fff; }
 

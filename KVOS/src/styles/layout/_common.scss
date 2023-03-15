@@ -2056,20 +2056,37 @@ body {
         }
     }
 
+    .block-text {
+        width: 60%;
+
+        @include media ('<900px') {
+            width: 100%;
+        }
+    }
+
     .item-wrap {
-        columns: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
 
         @include media ('<phone') {
-            columns: 1;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .soc {
+        grid-row: span 2;
+
+        @include media ('<phone') {
+            grid-row: span 1;
         }
     }
 
     .full {
-        column-span: all;
-        padding-top: 22px;
+        grid-column: span 2;
 
         @include media ('<phone') {
-            padding: 0;
+            grid-column: span 1;
         }
     }
 
@@ -2086,12 +2103,11 @@ body {
     }
 
     .link {
-        display: block;
         font-weight: 400;
         font-size: 20px;
         line-height: 1.1;
         color: rgba(218, 220, 211, 0.8);
-        margin-bottom: 24px;
+        margin: 0;
 
         &:hover {
             color: $white;
