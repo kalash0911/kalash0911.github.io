@@ -1,0 +1,67 @@
+// Typography
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+	font-family: $clashDisplay;
+	font-weight: 500;
+	margin-bottom: 16px;
+	color: $blueFF;
+	letter-spacing: 0.04em;
+	line-height: 1.2;
+
+	@include media('<phone'){
+        margin-bottom: 12px;
+    }
+}
+
+h1, .h1 {
+	@include adaptiv-vaule("font-size", 60, 34, 1);
+}
+
+h2, .h2 {
+	@include adaptiv-vaule("font-size", 60, 34, 1);
+}
+
+h3, .h3 {
+	font-size: $h3-font-size;
+}
+
+h4, .h4 {
+	font-size: $h4-font-size;
+}
+
+h5, .h5 {
+	font-size: $h5-font-size;
+}
+
+h6, .h6 {
+	font-size: $h6-font-size;
+}
+
+p {
+	font-family: $mulish;
+	margin: 0 0 0 10px;
+	color: $black36;
+	font-size: 16px;
+	line-height: 1.7;
+
+	@include media('<phone'){
+        font-size: 14px;
+    }
+}
+
+a {
+	color: $base-link-color;
+	text-decoration: none;
+	transition: color .3s ease 0s;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
