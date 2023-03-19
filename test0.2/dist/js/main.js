@@ -1,22 +1,18 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 // Swiper:
-function destroySlidersOnResize(selector, width, obj, moreThan) {
-  var init = _objectSpread({}, obj);
 
-  var win = window;
-  var sliderSelector = document.querySelector(selector);
-  var swiper = new Swiper(selector, init);
+/* function destroySlidersOnResize(selector, width, obj, moreThan) {
+  const init = {
+    ...obj,
+  };
 
-  var toggleInit = function toggleInit() {
-    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+  const win = window;
+  const sliderSelector = document.querySelector(selector);
+  let swiper = new Swiper(selector, init);
 
+  const toggleInit = () => {
+    const neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width
     if (neededWidth) {
       if (!sliderSelector.classList.contains("swiper-initialized")) {
         swiper = new Swiper(selector, init);
@@ -26,16 +22,22 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     }
   };
 
-  ["load", "resize"].forEach(function (evt) {
-    return win.addEventListener(evt, toggleInit, false);
-  });
+  ["load", "resize"].forEach((evt) =>
+    win.addEventListener(evt, toggleInit, false)
+  );
 }
 
 destroySlidersOnResize(".me-slider", 960, {
   spaceBetween: 20,
+
   pagination: {
-    el: ".swiper-pagination"
-  }
+    el: ".swiper-pagination",
+  },
+}); */
+var dot = document.getElementById('dot');
+window.addEventListener('scroll', function () {
+  var scrollPosition = window.scrollX;
+  dot.style.left = scrollPosition + 'px';
 });
 /* header logick */
 
@@ -223,23 +225,6 @@ if (langName) {
 }
 
 ;
-/* ///// */
-
-/* Плавный скрол на ссылку якоря на jQuery */
-
-$('.scrollto a').on('click', function () {
-  /* добавить класс scrollto в тег nav */
-  var href = $(this).attr('href');
-  $('html, body').animate({
-    scrollTop: $(href).offset().top
-  }, {
-    duration: 370,
-    // по умолчанию «400» 
-    easing: "linear" // по умолчанию «swing» 
-
-  });
-  return false;
-});
 /* ///// */
 
 /* Анимация при скролле */
