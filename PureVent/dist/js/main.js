@@ -77,35 +77,20 @@ menuItems.forEach(function (menuItem) {
   if (menuItemLink.href === currentUrl) {
     menuItem.classList.add('active-link');
   }
-});
-
-function checkZipCode(input) {
-  if (input.value.length > 1) {
-    input.value = input.value.slice(0, 1);
-  }
-
-  var zipInputs = document.getElementsByClassName("zip");
-  var zipCode = "";
-
-  for (var i = 0; i < zipInputs.length; i++) {
-    zipCode += zipInputs[i].value;
-  }
-
-  var disableInput = document.getElementsByClassName("disable")[0];
-  disableInput.value = zipCode;
-} // Swiper:
-
+}); // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
+
+  var win = window;
+  var sliderSelector = document.querySelector(selector);
+  var swiper = new Swiper(selector, init);
 
   var toggleInit = function toggleInit() {
     var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
 
     if (neededWidth) {
-      var _sliderSelector;
-
-      if (!((_sliderSelector = sliderSelector) === null || _sliderSelector === void 0 ? void 0 : _sliderSelector.classList.contains("swiper-initialized"))) {
+      if (!(sliderSelector === null || sliderSelector === void 0 ? void 0 : sliderSelector.classList.contains("swiper-initialized"))) {
         swiper = new Swiper(selector, init);
       }
     } else if (sliderSelector.classList.contains("swiper-initialized")) {
@@ -118,10 +103,14 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-destroySlidersOnResize(".me-slider", 960, {
-  spaceBetween: 20,
+var menuVent = ['Clean guarantee', 'Price matching', 'Locally Licensed'];
+destroySlidersOnResize(".vent-slider", 99999, {
   pagination: {
-    el: ".swiper-pagination"
+    el: ".vent-pag",
+    clickable: true,
+    renderBullet: function renderBullet(index, className) {
+      return '<span class="' + className + '">' + menuVent[index] + "</span>";
+    }
   }
 });
 //# sourceMappingURL=main.js.map

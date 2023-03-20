@@ -66,30 +66,16 @@ menuItems.forEach(function (menuItem) {
   }
 });
 
-
-
-function checkZipCode(input) {
-  if (input.value.length > 1) {
-    input.value = input.value.slice(0, 1);
-  }
-
-  var zipInputs = document.getElementsByClassName("zip");
-  var zipCode = "";
-
-  for (var i = 0; i < zipInputs.length; i++) {
-    zipCode += zipInputs[i].value;
-  }
-
-  var disableInput = document.getElementsByClassName("disable")[0];
-  disableInput.value = zipCode;
-}
-
 // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   const init = {
     ...obj,
   };
+
+  const win = window;
+  const sliderSelector = document.querySelector(selector);
+  let swiper = new Swiper(selector, init);
 
   const toggleInit = () => {
     const neededWidth = moreThan
@@ -109,10 +95,15 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   );
 }
 
-destroySlidersOnResize(".me-slider", 960, {
-  spaceBetween: 20,
+let menuVent = ['Clean guarantee', 'Price matching', 'Locally Licensed']
+
+destroySlidersOnResize(".vent-slider", 99999, {
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".vent-pag",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (menuVent[index]) + "</span>";
+    },
   },
 });

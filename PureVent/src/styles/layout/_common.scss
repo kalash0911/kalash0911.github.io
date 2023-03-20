@@ -116,7 +116,8 @@ body {
         z-index: 1;
     }
 
-    span {
+    span,
+    input {
         font-family: $mulish;
         font-size: 18px;
         font-weight: 800;
@@ -129,20 +130,17 @@ body {
 }
 
 .form-btn {
-    min-width: 238px;
-    max-height: 54px;
-    border-radius: 30px;
-    padding: 14px 20px;
-    background: linear-gradient(276.87deg, #0426A9 -38.13%, #65AFFF 96.25%);
-    border: none;
-    text-align: center;
-    font-family: $mulish;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.6;
-    text-transform: uppercase;
-    color: $white;
-    transition: $all_03;
+    padding: 0;
+
+    input {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        padding: 13px 20px;
+        border: none;
+    }
 }
 
 .sub-title {
@@ -156,6 +154,63 @@ body {
     @include media('<phone'){
         font-size: 18px;
         margin-bottom: 8px;
+    }
+}
+
+.text-block {
+    text-align: center;
+    .sub-title-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 16px;
+    
+        @include media('<phone'){
+            margin-bottom: 12px;
+        }
+    }
+
+    .sub-title {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        @include media('<tablet'){
+            font-size: 12px;
+        }
+    }
+
+    .text {
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+
+        @include media('<phone'){
+            margin: 0 auto 36px auto;
+        }
+    }
+}
+
+.img-wrap {
+    position: relative;
+    
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section {
+    padding: 140px 0;
+
+    @include media('<tablet'){
+        padding: 80px 0;
     }
 }
 
@@ -497,10 +552,258 @@ body {
         }
     }
 
-    .form-btn {
+    .main-btn {
 
         @include media('<phone'){
             width: 100%;
         }
+    }
+}
+
+/* -------------------------------vent-section */
+
+.vent-section {
+
+    .vent-slider {
+        box-shadow: 0px 18px 50px rgba(92, 170, 255, 0.1);
+        border-radius: 40px;
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        background: none;
+    }
+
+    .slide {
+        height: auto;
+        display: flex;
+        background: $white;
+
+        @include media('<tablet_sm'){
+            justify-content: flex-end;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .slide-text {
+        width: 50%;
+        padding: 80px 66px;
+        text-align: left;
+
+        @include media('<desktop'){
+            padding: 36px;
+        }
+
+        @include media('<tablet_sm'){
+            width: auto;
+        }
+
+        @include media('<phone'){
+            padding: 36px 24px;
+        }
+    }
+
+    .title-three {
+        margin-bottom: 16px;
+    }
+
+    .des {
+        max-width: 430px;
+        margin: 0;
+
+        @include media('<tablet_sm'){
+            max-width: 100%;
+        }
+    }
+
+    .img-wrap {
+        width: 50%;
+
+        @include media('<tablet_sm'){
+            width: 100%;
+        }
+
+        img {
+            @include media('<tablet_sm'){
+                position: relative;
+            }
+        }
+    }
+
+    .block-pag {
+        max-width: max-content;
+        margin: 0 auto 36px auto;
+
+        @include media('<tablet'){
+            margin: 0 auto 28px auto;
+        }
+    }
+
+    .line {
+        position: relative;
+        width: 100%;
+        height: 10px;
+        background: rgba(#5CAAFF, .25);
+        border-radius: 6px;
+
+        @include media('<tablet'){
+            height: 8px;
+        }
+    }
+
+    .pag-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 10px;
+        background: linear-gradient(276.87deg, #0426A9 -38.13%, #65AFFF 96.25%);
+        border-radius: 6px;
+
+        @include media('<tablet'){
+            max-width: 100px;
+            height: 8px;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: auto;
+        min-width: 220px;
+        height: auto;
+        background: none;
+        margin: 0;
+        color: $blueCA;
+        font-family: $mulish;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 1.6;
+        text-transform: uppercase;
+        opacity: 1;
+
+        @include media('<tablet'){
+            width: 100%;
+            min-width: 0;
+            max-width: 100px;
+            font-size: 14px;
+        }
+    }
+}
+
+/* -------------------------------introduce-section */
+
+.introduce-section {
+    background: linear-gradient(66.21deg, rgba(255, 255, 255, 0.63) 28.31%, rgba(255, 255, 255, 0) 100.72%), url(../images/introduce-bg.png), #FFFFFF;
+    border-radius: 80px;
+
+    @include media('<phone'){
+        border-radius: 30px;
+    }
+
+    .text {
+        max-width: 727px;
+    }
+
+    .intr-title {
+        text-align: center;
+        margin-bottom: 42px;
+        line-height: 1.7;
+
+        @include media('<phone'){
+            margin-bottom: 38px;
+        }
+    }
+
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        row-gap: 58px;
+        padding-right: 50px;
+
+        @include media('<desktop'){
+            justify-content: space-around;
+            padding: 0;
+        }
+    }
+
+    .item {
+        position: relative;
+        text-align: center;
+
+        @include media('<desktop'){
+            width: 30%;
+        }
+
+        @include media('<tablet'){
+            width: 45%;
+        }
+
+        @include media('<phone'){
+            width: 100%;
+        }
+
+        &::before {
+            content:'';
+            display: none;
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 140px;
+            height: 2px;
+            background-color: #D9E9FF;
+
+            @include media('<phone'){
+                display: block;
+            }
+        }
+
+        &:last-child {
+            
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    .icon-wrap {
+        position: relative;
+        margin: 0 auto 26px auto;
+        width: 132px;
+    }
+
+    .stick {
+        position: absolute;
+        top: -10px;
+        right: -45px;
+        padding: 6px 12px;
+        border-radius: 16px;
+        background: rgba(92, 170, 255, 0.15);
+        font-family: $mulish;
+        color: $blueFF;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+    }
+
+    .block-title {
+        font-size: 24px;
+        margin-bottom: 6px;
+
+        @include media('<phone'){
+            
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .block-text {
+        font-size: 16px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        color: $blueCA;
     }
 }
