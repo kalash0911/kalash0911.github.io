@@ -829,6 +829,11 @@ body {
 
 .pricing-section {
     position: relative;
+    padding: 140px 0 70px 0;
+
+    @include media('<tablet'){
+        padding: 70px 0 40px 0;
+    }
 
     .slide {
         display: flex;
@@ -1014,3 +1019,91 @@ body {
         z-index: -1;
     }
 }
+
+/* -------------------------------derty-section */
+
+.derty-section {
+    position: relative;
+    padding: 70px 0 140px 0;
+
+    @include media('<tablet'){
+        padding: 40px 0 80px 0;
+    }
+
+    .text {
+        max-width: 800px;
+    }
+
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        width: 48%;
+
+        @include media('<tablet'){
+            width: 100%;
+        }
+
+        &::after {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            height: 100%;
+            width: 4px;
+            background-color: $white;
+
+            @include media('<tablet'){
+                width: 2px;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .stick {
+        position: absolute;
+        top: 24px;
+        padding: 6px 12px;
+        background-color: $blueCA;
+        border-radius: 16px;
+        font-family: $mulish;
+        color: $white;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+
+        @include media('<tablet'){
+            font-size: 12px;
+            top: 20px;
+        }
+    }
+
+    .bef {
+        left: 24px;
+
+        @include media('<tablet'){
+            left: 20px;
+        }
+    }
+
+    .aft {
+        left: 55%;
+
+        @include media('<tablet'){
+            left: 57%;
+        }
+    }
+}
+
