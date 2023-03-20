@@ -153,4 +153,35 @@ destroySlidersOnResize(".pricing-slider", 99999, {
     }
   }
 });
+destroySlidersOnResize(".sec-slider", 99999, {
+  spaceBetween: 20,
+  freeMode: true,
+  speed: 700,
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev"
+  },
+  scrollbar: {
+    el: ".sec-swiper-scrollbar",
+    draggable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.1,
+      spaceBetween: 16
+    },
+    640: {
+      slidesPerView: 1.5
+    },
+    800: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 2.5
+    },
+    1200: {
+      slidesPerView: 3
+    }
+  }
+});
 //# sourceMappingURL=main.js.map

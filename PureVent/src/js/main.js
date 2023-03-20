@@ -136,7 +136,6 @@ destroySlidersOnResize(".vent-slider", 99999, {
   },
 });
 
-
 let menuPricing = ['duct cleaning', 'air CC']
 
 destroySlidersOnResize(".pricing-slider", 99999, {
@@ -147,6 +146,46 @@ destroySlidersOnResize(".pricing-slider", 99999, {
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (menuPricing[index]) + "</span>";
+    },
+  },
+});
+
+
+destroySlidersOnResize(".sec-slider", 99999, {
+  spaceBetween: 20,
+  freeMode: true,
+  speed: 700,
+
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
+
+  scrollbar: {
+    el: ".sec-swiper-scrollbar",
+    draggable: true,
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+    },
+
+    640: {
+      slidesPerView: 1.5,
+    },
+
+    800: {
+      slidesPerView: 2,
+    },
+
+    1024: {
+      slidesPerView: 2.5,
+    },
+
+    1200: {
+      slidesPerView: 3,
     },
   },
 });
