@@ -66,6 +66,34 @@ menuItems.forEach(function (menuItem) {
   }
 });
 
+// For Accardion
+
+initAccordion();
+
+function initAccordion() {
+  const accardionToggle = (slideMenu) => (e) => {
+    slideMenu.forEach((links) => {
+      const hidePanel = links.nextElementSibling;
+      const item = links.closest(".item");
+      if (links === e.currentTarget) {
+        hidePanel.classList.toggle("active-block");
+        item.classList.toggle("active");
+      } else {
+        links.classList.remove("active");
+        hidePanel.classList.remove("active-block");
+        item.classList.remove("active");
+      }
+    });
+  };
+
+  const slideMenu = document.querySelectorAll(".accardion-link");
+
+  slideMenu.forEach((links) => {
+    links.addEventListener("click", accardionToggle(slideMenu));
+  });
+}
+
+
 // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
