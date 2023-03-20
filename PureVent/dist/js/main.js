@@ -113,4 +113,16 @@ destroySlidersOnResize(".vent-slider", 99999, {
     }
   }
 });
+var menuPricing = ['duct cleaning', 'air CC'];
+destroySlidersOnResize(".pricing-slider", 99999, {
+  spaceBetween: 20,
+  autoHeight: true,
+  pagination: {
+    el: ".pricing-pag",
+    clickable: true,
+    renderBullet: function renderBullet(index, className) {
+      return '<span class="' + className + '">' + menuPricing[index] + "</span>";
+    }
+  }
+});
 //# sourceMappingURL=main.js.map

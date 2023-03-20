@@ -107,3 +107,18 @@ destroySlidersOnResize(".vent-slider", 99999, {
     },
   },
 });
+
+
+let menuPricing = ['duct cleaning', 'air CC']
+
+destroySlidersOnResize(".pricing-slider", 99999, {
+  spaceBetween: 20,
+  autoHeight: true,
+  pagination: {
+    el: ".pricing-pag",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (menuPricing[index]) + "</span>";
+    },
+  },
+});
