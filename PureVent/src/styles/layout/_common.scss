@@ -1107,3 +1107,36 @@ body {
     }
 }
 
+/* -------------------------------clean-section */
+
+.clean-section {
+    background: url(../images/clean-bg.png) 100% 100% no-repeat, #FFFFFF;
+    border-radius: 80px;
+
+    @include media('<phone'){
+        border-radius: 40px;
+    }
+
+    .clean-sub-title {
+        text-align: center;
+        margin-bottom: 36px;
+    }
+
+    .btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        @include media('<tablet'){
+            flex-direction: column;
+        }
+    }
+
+    .main-btn {
+
+        @include media('<phone'){
+            width: 100%;
+        }
+    }
+}

@@ -1724,4 +1724,30 @@ body {
       .derty-section .aft {
         left: 57%; } }
 
+/* -------------------------------clean-section */
+.clean-section {
+  background: url(../images/clean-bg.png) 100% 100% no-repeat, #FFFFFF;
+  border-radius: 80px; }
+  @media (max-width: 479px) {
+    .clean-section {
+      border-radius: 40px; } }
+  .clean-section .clean-sub-title {
+    text-align: center;
+    margin-bottom: 36px; }
+  .clean-section .btn-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 20px; }
+    @media (max-width: 767px) {
+      .clean-section .btn-wrap {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  @media (max-width: 479px) {
+    .clean-section .main-btn {
+      width: 100%; } }
+
 /*# sourceMappingURL=main.css.map */
