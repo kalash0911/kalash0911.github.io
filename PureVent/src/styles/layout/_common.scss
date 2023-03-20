@@ -143,11 +143,6 @@ body {
     text-transform: uppercase;
     color: $white;
     transition: $all_03;
-
-    &:hover {
-        box-shadow:  18px 18px 36px #a1a1a1,
-             -18px -18px 36px #d9d9d9;
-    }
 }
 
 .sub-title {

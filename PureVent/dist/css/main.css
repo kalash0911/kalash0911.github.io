@@ -971,8 +971,6 @@ body {
   text-transform: uppercase;
   color: #fff;
   transition: all 0.3s ease 0s; }
-  .form-btn:hover {
-    box-shadow: 18px 18px 36px #a1a1a1, -18px -18px 36px #d9d9d9; }
 
 .sub-title {
   color: #295ACA;
