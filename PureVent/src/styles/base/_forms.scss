@@ -48,8 +48,8 @@ textarea {
 button,
 input[type='button'],
 input[type='reset'],
-input[type='file'],
-input[type='submit'] {
+input[type='file']
+/* input[type='submit'] */ {
 	-webkit-appearance: none;
 	-webkit-border-radius: 0;
 	cursor: pointer;

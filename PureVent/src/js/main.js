@@ -66,6 +66,24 @@ menuItems.forEach(function (menuItem) {
   }
 });
 
+
+
+function checkZipCode(input) {
+  if (input.value.length > 1) {
+    input.value = input.value.slice(0, 1);
+  }
+
+  var zipInputs = document.getElementsByClassName("zip");
+  var zipCode = "";
+
+  for (var i = 0; i < zipInputs.length; i++) {
+    zipCode += zipInputs[i].value;
+  }
+
+  var disableInput = document.getElementsByClassName("disable")[0];
+  disableInput.value = zipCode;
+}
+
 // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
