@@ -1496,11 +1496,13 @@ body {
           display: block; } }
     .introduce-section .item:last-child::before {
       display: none; }
-  .introduce-section .icon-wrap {
+  .introduce-section .progress-circle {
     position: relative;
-    margin: 0 auto 26px auto;
-    width: 132px; }
-  .introduce-section .stick {
+    display: inline-block;
+    width: 132px;
+    height: 132px;
+    font-size: 24px; }
+  .introduce-section .progress-text {
     position: absolute;
     top: -10px;
     right: -45px;
@@ -1513,6 +1515,30 @@ body {
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.04em; }
+  .introduce-section .progress {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); }
+  .introduce-section .progress-meter {
+    fill: none;
+    stroke: #F3F6FA;
+    stroke-width: 10; }
+  .introduce-section .progress-value {
+    fill: none;
+    stroke: #1f8aff;
+    stroke-width: 10;
+    stroke-dasharray: 0 314;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    border-radius: 20px;
+    stroke-linecap: round; }
+  .introduce-section .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
   .introduce-section .block-title {
     font-size: 24px;
     margin-bottom: 6px; }

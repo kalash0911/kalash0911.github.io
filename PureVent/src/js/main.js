@@ -189,3 +189,60 @@ destroySlidersOnResize(".sec-slider", 99999, {
     },
   },
 });
+
+// For progress-circle nimate
+
+function animateProgressCircle(circle, speed, updateSpeed) {
+  var offset = circle.getBoundingClientRect().top - window.innerHeight;
+  if (offset < 0 && !circle.classList.contains('animated')) {
+    var percent = parseInt(circle.querySelector('.progress-text').textContent);
+    var circumference = 2 * Math.PI * 50;
+    var strokeDasharrayValue = (percent / 100) * circumference + ' ' + (1 - percent / 100) * circumference;
+    circle.querySelector('.progress-value').style.strokeDasharray = strokeDasharrayValue;
+    circle.querySelector('.progress-text').textContent = '0%';
+    circle.classList.add('animated');
+    var duration = 1000 / speed;
+    var startTime = performance.now();
+    requestAnimationFrame(function animate(currentTime) {
+      var elapsedTime = currentTime - startTime;
+      var progress = elapsedTime / duration;
+      if (progress > 1) {
+        progress = 1;
+      }
+      var currentPercent = Math.round(progress * percent);
+      var currentStrokeDasharrayValue = (currentPercent / 100) * circumference + ' ' + (1 - currentPercent / 100) * circumference;
+      circle.querySelector('.progress-value').style.strokeDasharray = currentStrokeDasharrayValue;
+      circle.querySelector('.progress-text').textContent = currentPercent + '%';
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    });
+
+    var updateInterval = setInterval(function () {
+      var currentPercent = parseInt(circle.querySelector('.progress-text').textContent);
+      if (currentPercent < percent) {
+        circle.querySelector('.progress-text').textContent = currentPercent + 1 + '%';
+      } else {
+        clearInterval(updateInterval);
+      }
+    }, updateSpeed);
+  }
+}
+
+function handleScroll() {
+  var circles = document.querySelectorAll('.progress-circle');
+  if (circles.length > 0) {
+    circles.forEach(function (circle) {
+      animateProgressCircle(circle, 1, 1);
+    });
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
+
+
+
+
+

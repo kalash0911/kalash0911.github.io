@@ -790,13 +790,15 @@ body {
         }
     }
 
-    .icon-wrap {
+    .progress-circle {
         position: relative;
-        margin: 0 auto 26px auto;
+        display: inline-block;
         width: 132px;
+        height: 132px;
+        font-size: 24px;
     }
 
-    .stick {
+    .progress-text {
         position: absolute;
         top: -10px;
         right: -45px;
@@ -809,6 +811,34 @@ body {
         font-weight: 600;
         line-height: 1.2;
         letter-spacing: 0.04em;
+    }
+        
+    .progress {
+        transform: scaleX(-1);
+    }
+    
+    .progress-meter {
+        fill: none;
+        stroke: #F3F6FA;
+        stroke-width: 10;
+    }
+    
+    .progress-value {
+        fill: none;
+        stroke: #1f8aff;
+        stroke-width: 10;
+        stroke-dasharray: 0 314;
+        transform: rotate(-90deg);
+        transform-origin: center;
+        border-radius: 20px; 
+        stroke-linecap: round;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
     }
 
     .block-title {
