@@ -6,7 +6,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// for header
+new WOW().init(); // for header
+
 var burger = document.querySelector(".burger");
 var menuBody = document.querySelector(".menu-wrap");
 var linkClose = document.querySelectorAll(".link-close");
@@ -183,7 +184,7 @@ destroySlidersOnResize(".sec-slider", 99999, {
       slidesPerView: 3
     }
   }
-}); // For progress-circle nimate
+}); // For progress-circle animate
 
 function animateProgressCircle(circle, speed, updateSpeed) {
   var offset = circle.getBoundingClientRect().top - window.innerHeight;
@@ -237,4 +238,50 @@ function handleScroll() {
 }
 
 window.addEventListener('scroll', handleScroll);
+
+function isScrolledIntoView(elem) {
+  var docViewTop = window.pageYOffset;
+  var docViewBottom = docViewTop + window.innerHeight;
+  var elemTop = elem.offsetTop;
+  var elemBottom = elemTop + elem.offsetHeight;
+  return elemTop <= docViewBottom;
+} // For counter animate
+// проверяем наличие элементов с классом "count-progress" на странице
+
+
+if (document.querySelectorAll('.count-progress').length) {
+  // создаем экземпляр Intersection Observer
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      // если элемент стал видимым и его анимация еще не проигрывалась, запускаем анимацию
+      if (entry.isIntersecting && entry.target.getAttribute('data-animated') === 'false') {
+        var element = entry.target;
+        var count = parseInt(element.innerText);
+        var currentCount = 0;
+        var speed = parseInt(element.getAttribute('data-speed')) || 10; // считываем значение атрибута "data-speed" или устанавливаем значение по умолчанию
+
+        var step = parseInt(element.getAttribute('data-step')) || 1; // считываем значение атрибута "data-step" или устанавливаем значение по умолчанию
+
+        var interval = setInterval(function () {
+          if (currentCount < count) {
+            currentCount += step;
+
+            if (currentCount > count) {
+              currentCount = count;
+            }
+
+            element.innerText = currentCount;
+          } else {
+            clearInterval(interval);
+            element.setAttribute('data-animated', 'true'); // устанавливаем атрибут "data-animated" в значение "true"
+          }
+        }, speed);
+      }
+    });
+  }); // добавляем каждый элемент с классом "count-progress" в Observer
+
+  document.querySelectorAll('.count-progress').forEach(function (element) {
+    observer.observe(element);
+  });
+}
 //# sourceMappingURL=main.js.map

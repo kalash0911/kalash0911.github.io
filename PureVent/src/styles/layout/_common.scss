@@ -420,27 +420,22 @@ body {
         }
     }
 
-    .number {
-        font-family: $clashDisplay;
-        color: $blueFF;
-        font-size: 48px;
-        font-weight: 500;
-        line-height: 1.2;
-        letter-spacing: 0.04em;
-        margin: 0;
-    
+    .number-wrap {
+        display: flex;
+        min-width: 120px;
+
         @include media('<widescreen'){
-            font-size: 38px;
+            min-width: 100px;
         }
-    
-        @include media('<tablet'){
-            font-size: 28px;
-        }
-    
+
         span {
             display: inline-block;
-            transform: translateY(-18px);
+            font-family: $clashDisplay;
+            color: $blueFF;
             font-size: 24px;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: 0.04em;
     
             @include media('<widescreen'){
                 font-size: 18px;
@@ -450,6 +445,26 @@ body {
                 font-size: 14px;
                 transform: translateY(-12px);
             }
+        }
+    }
+
+    .number,
+    i {
+        font-family: $clashDisplay;
+        color: $blueFF;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+        margin: 0;
+        font-style: normal;
+    
+        @include media('<widescreen'){
+            font-size: 38px;
+        }
+    
+        @include media('<tablet'){
+            font-size: 28px;
         }
     }
 }
