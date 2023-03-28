@@ -36,15 +36,20 @@ body {
     font-weight: 400;
     font-size: 18px;
     transition: $all_03;
+    text-align: center;
 
     &:hover {
         color: $orange3C;
         background-color: transparent;
     }
 
-    @include media ('<phone') {
+    @include media ('<desktop_sm') {
         font-size: 16px;
+        min-width: 150px;
         padding: 10px 14px;
+    }
+
+    @include media ('<phone') {
         min-width: 0;
     }
 }
@@ -2111,6 +2116,307 @@ body {
 
         &:hover {
             color: $white;
+        }
+    }
+}
+
+/* --------------------------news-section */
+
+.news-section {
+    position: relative;
+    min-height: calc(100vh - 365px);
+    display: flex;
+    align-items: center;
+    padding: 270px 0 80px 0;
+    background: #F1F2ED;
+
+    @include media ('<tablet') {
+        padding: 200px 0 40px 0;
+    }
+
+    .bg {
+        max-height: 760px;
+        z-index: 1;
+
+        @include media ('<tablet') {
+            max-height: 360px;
+        }
+    }
+
+    .container {
+        z-index: 2;
+    }
+
+    .main-title {
+        text-align: center;
+        margin-bottom: 80px;
+
+        @include media ('<tablet') {
+            margin-bottom: 40px;
+        }
+    }
+
+    .block {
+        padding: 24px 48px 50px 48px;
+        background-color: $white;
+        max-width: 1064px;
+        margin: 0 auto;
+
+        @include media ('<phone') {
+            padding: 0 20px 20px 20px;
+            margin: 0 -20px;
+        }
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 0;
+        border-top: 2px solid #2E4939;
+
+        @include media ('<tablet') {
+            flex-direction: column;
+        }
+
+
+        &:first-child {
+            border-top: none;
+        }
+
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
+
+            .more {
+                
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .img-wrap {
+        position: relative;
+        width: clamp(350px, 100%, 413px);
+        height: 240px;
+        overflow: hidden;
+
+        @include media ('<tablet') {
+            width: 100%;
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: $all_03;
+        }
+    }
+
+    .text-block {
+        width: clamp(0px, 100%, 535px);
+
+        @include media ('<tablet') {
+            width: 100%;
+        }
+    }
+
+    .title-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 10px;
+    }
+
+    .item-title {
+        font-family: $bebas;
+        color: $green;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.3;     
+        
+        @include media ('<phone') {
+            font-size: 20px;
+        }
+    }
+
+    .post-date {
+        font-family: $roboto;
+        color: #666666;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.7;
+
+        @include media ('<phone') {
+            font-size: 12px;
+            line-height: 2.2;
+        }
+    }
+
+    .description {
+
+        p {
+            font-family: $roboto;
+            color: $black22;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin: 0;
+
+            @include media ('<phone') {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .more {
+        position: relative;
+        display: inline;
+        font-family: $roboto;
+        color: $orange43;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.6;
+
+        @include media ('<phone') {
+            font-size: 14px;
+        }
+        
+        &::after {
+            content:'';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background-color: $orange43;
+            transition: $all_03;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a, .nav-links .current {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 32px;
+        height: 32px;
+        border: 1px solid $orange43;
+        color: $orange43 !important;
+        transition: all .3s ease 0s;
+        padding: 0 3px;
+    }
+
+    .nav-links a:hover {
+        background-color: $orange43;
+        color: #fff !important;
+    }
+
+    .nav-links .current {
+        background-color: $orange43;
+        color: #fff !important;
+        cursor: no-drop;
+    }
+    
+}
+
+/* --------------------------post-section */
+
+.post-section {
+    position: relative;
+    min-height: calc(100vh - 365px);
+    padding: 200px 0 80px 0;
+    background: #F1F2ED;
+
+    @include media ('<tablet') {
+        padding: 150px 0 40px 0;
+    }
+
+    .container {
+        max-width: 1104;
+    }
+
+    .main-title {
+        @include adaptiv-vaule("font-size", 64, 32, 1);
+        text-align: center;
+        color: $green;
+    }
+
+    .img-block{
+        margin-bottom: 48px;
+
+        @include media ('<phone') {
+            margin-bottom: 24px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .block {
+        max-width: 846px;
+        margin: 0 auto;
+
+        h2 {
+            font-family: $bebas;
+            color: $green;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 130%;
+
+            @include media ('<phone') {
+                font-size: 24px;
+            }
+        }
+
+        h3 {
+            font-family: $bebas;
+            color: $green;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 130%;
+
+            @include media ('<phone') {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-family: $roboto;
+            color: $black22;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 10px;
+
+            @include media ('<phone') {
+                font-size: 14px;
+            }
         }
     }
 }

@@ -12,6 +12,18 @@
         gap: 30px;
     }
 
+    .logo {
+
+        svg {
+            width: 92px;
+            fill: #F1F2ED;
+
+            @include media ('<desktop_sm') {
+                width: 60px;
+            }
+        }
+    }
+
     .menu {
 
         @include media('<tablet'){
@@ -56,6 +68,10 @@
         font-size: 18px;
         line-height: 1.1;
         color: $whiteDC;
+
+        @include media ('<desktop_sm') {
+            font-size: 16px;
+        }
 
         @include media('<tablet'){
             color: $green;
@@ -143,6 +159,51 @@
                 transform: rotate(-45deg);
                 bottom: 9px;
             }
+        }
+    }
+}
+
+.dark {
+
+    .header {
+
+        .logo {
+
+            svg {
+                fill: $green;
+            }
+        }
+
+        .link {
+            color: $green;
+        }
+
+        .main-btn {
+            color: $whiteED;
+
+            &:hover {
+                color: $orange3C;
+            }
+        }
+    }
+
+    .burger{
+        display: none;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 5;
+        background: none;
+        border: none;
+    
+        @include media('<tablet'){
+            display: block;
+        }
+        
+        span,
+        &::before,
+        &::after{
+            background-color: $orange3C;
         }
     }
 }
