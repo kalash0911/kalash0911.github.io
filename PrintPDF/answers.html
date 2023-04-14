@@ -85,7 +85,7 @@
                     <li class="item">
                         <p class="question-title">Have any Payments Been Made Towards Satisfaction of this Judgment Award?</p>
                         <p id="solution" class="answer-text">Yes</p>
-                        <ul class="listul">
+                        <ul class="listul listdate">
                             <li class="itemul">
                                 <div class="itemul-block">
                                     <p class="question-text">Date:</p>
@@ -286,6 +286,7 @@
 
         .container {
             padding: 0 32px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
@@ -300,7 +301,7 @@
         .header {
             position: relative;
             border-bottom: 2px solid #031C77;
-            padding: 22px 0;
+            padding: 15px 0 11px 0;
         }
 
         .header .container {
@@ -327,7 +328,7 @@
         }
 
         .main {
-            padding: 16px 0 22px 0;
+            padding: 12px 0 10px 0;
         }
 
         .list {
@@ -344,9 +345,9 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 13px;
+            gap: 10px;
             counter-increment: my-awesome-counter;
-            padding: 13px 0 16px 24px;
+            padding: 14px 0 14px 24px;
             border-top: 1px solid #D5DDFE;
         }
 
@@ -360,7 +361,7 @@
 
         .item::before {
             position: absolute;
-            top: 11px;
+            top: 13px;
             left: 0;
             content: counter(my-awesome-counter);
             color: #031C77;
@@ -375,12 +376,14 @@
         .question-title {
             font-weight: 600;
             font-size: 12px;
+            line-height: 1.3;
             color: #1D1C21;
         }
 
         .answer-text {
             font-weight: 600;
             font-size: 10px;
+            line-height: 1.3;
             color: #3D3E45;
         }
 
@@ -390,13 +393,17 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 4px;
         }
 
         .itemul {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
+        }
+
+        .listdate {
+            gap: 10px;
         }
 
         .itemul-block {
