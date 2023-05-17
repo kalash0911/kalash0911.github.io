@@ -1,0 +1,23 @@
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 90px 0;
+    z-index: 5;
+
+    @include media('<tablet'){
+        padding: 60px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        @include media('<tablet'){
+            width: 135px;
+        }
+    }
+}
