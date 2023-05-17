@@ -567,6 +567,20 @@ body {
   font-family: "TTFirsNeue", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   background: #0C0B0A; }
 
+body::-webkit-scrollbar {
+  width: 10px;
+  /* ширина всей полосы прокрутки */ }
+
+body::-webkit-scrollbar-track {
+  background: #0C0B0A;
+  /* цвет зоны отслеживания */ }
+
+body::-webkit-scrollbar-thumb {
+  background-color: #e4bc6d;
+  /* цвет бегунка */
+  border-radius: 20px;
+  /* округлось бегунка */ }
+
 #wrapper {
   overflow: hidden; }
 
@@ -617,7 +631,8 @@ body {
   display: none !important; }
   @media (max-width: 479px) {
     .mob {
-      display: block !important; } }
+      display: -ms-flexbox !important;
+      display: flex !important; } }
 
 /* -----------------------main-section-------------------- */
 .main-section {

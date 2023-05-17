@@ -3,6 +3,19 @@ body {
     background: $black0A;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;               /* ширина всей полосы прокрутки */
+}
+  
+body::-webkit-scrollbar-track {
+    background: $black0A;        /* цвет зоны отслеживания */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $gold6D;    /* цвет бегунка */
+    border-radius: 20px;       /* округлось бегунка */
+}
+
 #wrapper {
     overflow: hidden;
 }
@@ -60,7 +73,7 @@ body {
     display: none !important;
 
     @include media('<phone'){
-        display: block !important;
+        display: flex !important;
     }
 }
 
