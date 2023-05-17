@@ -613,6 +613,12 @@ body {
   .btn:hover::before {
     opacity: 1; }
 
+.mob {
+  display: none !important; }
+  @media (max-width: 479px) {
+    .mob {
+      display: block !important; } }
+
 /* -----------------------main-section-------------------- */
 .main-section {
   position: relative;

@@ -56,6 +56,14 @@ body {
     }
 }
 
+.mob {
+    display: none !important;
+
+    @include media('<phone'){
+        display: block !important;
+    }
+}
+
 /* -----------------------main-section-------------------- */
 
 .main-section {
