@@ -1,0 +1,261 @@
+.body_lock{
+    overflow: hidden;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    z-index: 5;
+    
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 13px 0;
+    }
+
+    button{
+        border: none;
+        background-color: transparent;
+    }
+    
+    .menu-wrap{
+    
+        @include media('<tablet'){
+            position: fixed;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+            top: -110%;
+            left: 0;
+            background-color: $black;
+            transition: all .7s ease 0s;
+            z-index: 2;
+            padding: 120px 20px 100px 20px;
+        }
+        
+        @include media('<phone'){
+            align-items: flex-start;
+        }
+
+        .active &{
+    
+            @include media('<tablet'){
+                top: 0;
+            }
+        }
+    }
+    
+    .menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    
+        @include media('<tablet'){
+            flex-direction: column;
+        }
+
+        @include media('<phone'){
+            align-items: flex-start;
+        }
+    }
+
+    .link{
+        color: $white; 
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.2;
+        transition: all .3s ease 0s;
+
+        @include media('<desktop'){
+            font-size: 18px;
+        }
+    
+        @include media('<tablet'){
+            font-size: 26px;
+        }
+
+        &:hover {
+            color: $gold13;
+        }
+    }
+}
+
+
+/* ---------------burger */
+
+.burger{
+    display: none;
+    position: relative;
+    width: 35px;
+    height: 25px;
+    z-index: 5;
+    
+    @include media('<tablet'){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    span{
+        position: absolute;
+        right: 0;
+        height: 3px;
+        width: 100%;
+        
+        &::before{
+            content:'';
+            display: block;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+            border-radius: 10px;
+            transition: background-color .5s ease 0s;
+        }
+
+        &:nth-child(1){
+            top:0;
+
+        }
+
+        &:nth-child(2){
+            top: 11px;
+            transition: width .5s ease 0s;
+        }
+
+        &:nth-child(3){
+            bottom: 0;
+        }
+    }
+}
+
+$toggle-size: 55px;
+$toggle-line-size: $toggle-size/10;
+$toggle-line-angle: 405deg;
+$toggle-anim-speed: .8s;
+
+.burger_active{
+
+    span{
+
+        &:nth-child(1){
+            animation: jump-1 $toggle-anim-speed forwards ease;
+
+            &::before{
+                animation: line-1 $toggle-anim-speed forwards ease;
+            }
+        }
+
+        &:nth-child(2){
+            animation: jump-2 $toggle-anim-speed forwards ease;
+
+            &::before{
+                animation: line-2 $toggle-anim-speed forwards ease;
+            }
+        }
+
+        &:nth-child(3){
+            animation: jump-3 $toggle-anim-speed forwards ease;
+        }
+    }
+}
+
+.burger_finish{
+
+    span{
+
+        &:nth-child(1){
+            animation: jump-1-end $toggle-anim-speed reverse ease;
+
+            &::before{
+                animation: line-1-end $toggle-anim-speed reverse ease;
+            }
+        }
+
+        &:nth-child(2){
+            animation: jump-2-end $toggle-anim-speed reverse ease;
+
+            &::before{
+                animation: line-2-end $toggle-anim-speed reverse ease;
+            }
+        }
+
+        &:nth-child(3){
+            animation: jump-3-end $toggle-anim-speed ease;
+        }
+    }
+}
+
+@keyframes line-1 {
+    10% { transform: translateZ(0) rotate(0) }
+    80% { transform: translateZ(0) rotate($toggle-line-angle - 10) }
+    90%, 100% { transform: translateZ(0) rotate($toggle-line-angle) }
+}
+  
+@keyframes line-2 {
+    10% { transform: translateZ(0) rotate(0) }
+    20% { transform: translateZ(0) rotate(10deg) }
+    90%, 100% { transform: translateZ(0) rotate(-$toggle-line-angle) }
+}
+  
+@keyframes jump-1 {
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    90%, 100% { transform: translateY(-$toggle-line-size * 0) }
+}
+  
+@keyframes jump-2 {
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    85%, 100% { transform: translateY(-$toggle-line-size * 2) }
+}
+  
+@keyframes jump-3 {
+    10% { transform: translateY(-$toggle-line-size*1) rotate(15deg) }
+    30% { transform: translateY(-$toggle-line-size*4) rotate(-10deg) }
+    50% { transform: translateY($toggle-line-size) rotate(5deg) }
+    80% { transform: translateY(0) }
+}
+
+@keyframes line-1-end {
+    10% { transform: translateZ(0) rotate(0) }
+    80% { transform: translateZ(0) rotate($toggle-line-angle - 10) }
+    90%, 100% { transform: translateZ(0) rotate($toggle-line-angle) }
+}
+  
+@keyframes line-2-end {
+    10% { transform: translateZ(0) rotate(0) }
+    20% { transform: translateZ(0) rotate(10deg) }
+    90%, 100% { transform: translateZ(0) rotate(-$toggle-line-angle) }
+}
+  
+@keyframes jump-1-end{
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    90%, 100% { transform: translateY(-$toggle-line-size * 0) }
+}
+  
+@keyframes jump-2-end {
+    10% { transform: translateY(0) }
+    50% { transform: translateY(-$toggle-line-size * 5) }
+    85%, 100% { transform: translateY(-$toggle-line-size * 2) }
+}
+
+@keyframes jump-3-end {
+    10% { transform: translateY(-$toggle-line-size*1) rotate(15deg) }
+    30% { transform: translateY(-$toggle-line-size*1) rotate(-10deg) }
+    50% { transform: translateY($toggle-line-size) rotate(5deg) }
+    80% { transform: translateY(0) }
+}
