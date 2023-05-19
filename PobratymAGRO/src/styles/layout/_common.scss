@@ -119,6 +119,92 @@ section {
     }
 }
 
+/* ----------------about-section------------------- */
+
+.about-section {
+
+    .block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .img-wrap {
+        width: 47%;
+        min-height: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .text-wrap {
+        width: 47.5%;
+
+        .title {
+            color: $white;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+    }
+
+    .text-box {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 50px;
+    }
+
+    .text {
+        position: relative;
+        color: $white;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: -4px;
+            left: -10px;
+            width: 120px;
+            height: 2px;
+            background-color: #5F7327;
+            opacity: .4;
+        }
+
+        i {
+            color: $gold13;
+        }
+    }
+
+    .stiker {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+
+        &:hover {
+            .hov {
+                opacity: 1;
+            }
+        }
+    }
+
+    .title-stiker {
+        margin: 0;
+        color: $gold13;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    .hov {
+        opacity: 0;
+        transition: all .3s ease 0s;
+    }
+}
+
 /* ---------------slider-section------------------- */
 
 .slider-section {
