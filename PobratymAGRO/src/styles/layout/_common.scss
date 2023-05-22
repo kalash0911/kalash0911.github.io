@@ -16,6 +16,10 @@ body {
 
 section {
     padding: 50px 0;
+
+    @include media('<tablet'){
+        padding: 40px 0;
+    }
 }
 
 .title-box {
@@ -23,6 +27,10 @@ section {
     width: 100%;
     text-align: center;
     margin-bottom: 50px;
+
+    @include media('<phone'){
+        margin-bottom: 30px;
+    }
 
     &::before {
         content:'';
@@ -46,6 +54,11 @@ section {
         margin: 0;
         padding: 0 30px;
         background-color: $green18;
+
+        @include media('<phone'){
+            font-size: 24px;
+            padding: 0 10px;
+        }
     }
 }
 
@@ -62,17 +75,44 @@ section {
     }
 }
 
+.btn {
+    display: block;
+    background: $gold13;
+    border-radius: 5px;
+    border: 2px solid $gold13;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #202610;
+    padding: 20px 20px 19px 20px;
+    transition: all .3s ease 0s;
+
+    &:hover {
+        background: transparent;
+        color: $white;
+    }
+}
+
 /* ----------------main-section----------------- */
 
 .main-section {
 
+    @include media('<tablet'){
+        padding: 30px 0 40px 0;
+    }
+
     .main-title {
         text-align: center;
-        font-size: 54px;
         color: $white;
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 5px;
+        @include adaptiv-vaule("font-size", 54, 26, 1);
+
+        @include media('<tablet'){
+            margin: 0 -10px 5px -10px;
+        }
 
         span {
             color: $gold13;
@@ -81,12 +121,17 @@ section {
 
     .sub-title {
         max-width: 590px;
-        margin: 0 auto 211px auto; 
+        margin: 0 auto 0 auto;
+        @include adaptiv-vaule("margin-bottom", 211, 50, 1); 
         text-align: center;
         font-size: 18px;
         color: $whiteE3;
         font-weight: 400;
         line-height: 1.4;
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
     }
 
     .img-box {
@@ -95,13 +140,15 @@ section {
 
     .logo {
         position: absolute;
-        top: -30%;
         left: 50%;
         transform: translate(-50%);
+        z-index: 1;
+        @include adaptiv-vaule("width", 267, 80, 1); 
+        @include adaptiv-vaule("top", -150, -40, 1); 
     }
 
-    .bg {
-        width: 100%;
+    .img-wrap {
+        @include adaptiv-vaule("min-height", 520, 235, 1); 
     }
 }
 
@@ -109,15 +156,22 @@ section {
 
 .galery-section {
 
-    .block {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
+    .swiper-wrapper {
+
+        @include media('>800px'){
+           gap: 20px;
+        }
+    }
+
+    .slide {
+        
+        @include media('>800px'){
+            flex-shrink: 1;
+        }
     }
 
     .img-wrap {
-        width: 33%;
-        @include adaptiv-vaule("min-height", 440, 200, 1);
+        @include adaptiv-vaule("min-height", 440, 330, 1);
         border-radius: 10px;
         overflow: hidden;
     }
@@ -130,6 +184,11 @@ section {
     .block {
         display: flex;
         justify-content: space-between;
+        gap: 12px;
+
+        @include media('<960px'){
+            flex-direction: column;
+        }
     }
 
     .img-wrap {
@@ -137,17 +196,31 @@ section {
         min-height: 100%;
         border-radius: 5px;
         overflow: hidden;
+
+        @include media('<960px'){
+            width: 100%;
+            min-height: 386px;
+        }
     }
 
     .text-wrap {
         width: 47.5%;
 
+        @include media('<960px'){
+            width: 100%;
+        }
+
         .title {
+            text-align: justify;
             color: $white;
             font-size: 20px;
             font-weight: 500;
             line-height: 1.4;
             margin-bottom: 24px;
+
+            @include media('<phone'){
+                font-size: 18px;
+            }
         }
     }
 
@@ -156,15 +229,24 @@ section {
         flex-direction: column;
         gap: 16px;
         margin-bottom: 50px;
+
+        @include media('<phone'){
+            gap: 12px;
+        }
     }
 
     .text {
         position: relative;
+        text-align: justify;
         color: $white;
         font-size: 18px;
         font-weight: 400;
         line-height: 1.6;
         margin: 0;
+
+        @include media('<phone'){
+            font-size: 16px;
+        }
 
         &::before {
             content:'';
@@ -185,6 +267,7 @@ section {
     .stiker {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 16px;
         cursor: pointer;
 
@@ -201,6 +284,10 @@ section {
         font-size: 22px;
         font-weight: 600;
         line-height: 1.6;
+
+        @include media('<phone'){
+            font-size: 20px;
+        }
     }
 
     .hov {
@@ -213,6 +300,10 @@ section {
 
 .slider-section {
 
+    @include media('<tablet'){
+        padding: 0 0 70px 0;
+    }
+
     .title-box {
         display: flex;
         align-items: center;
@@ -220,6 +311,14 @@ section {
 
         &::before {
             display: none;
+        }
+
+        .title {
+            padding: 0;
+
+            @include media('<phone'){
+                font-size: 24px;
+            }
         }
     }
 
@@ -347,6 +446,10 @@ section {
         font-weight: 600;
         line-height: 1.4;
         margin-bottom: 16px;
+
+        @include media('<phone'){
+            font-size: 14px;
+        }
     }
 
     .title {
@@ -356,6 +459,10 @@ section {
         font-weight: 600;
         line-height: 1.4;
         margin-bottom: 40px;
+
+        @include media('<tablet'){
+            font-size: 22px;
+        }
     }
 
     .main-img {
@@ -373,12 +480,20 @@ section {
         padding: 50px 0;
         margin: 0 auto;
 
+        @include media('<phone'){
+            padding: 30px 0;
+        }
+
         p {
             color: $white;
-            font-size:18px;
+            font-size: 18px;
             font-weight: 400;
             line-height: 1.4;
             margin-bottom: 25px;
+
+            @include media('<phone'){
+                font-size: 16px;
+            }
         }
 
         ul {

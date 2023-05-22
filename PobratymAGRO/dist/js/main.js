@@ -65,6 +65,26 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
+destroySlidersOnResize(".galerySlider", 800, {
+  watchOverflow: true,
+  spaceBetween: 20,
+  breakpoints: {
+    100: {
+      slidesPerView: 1.1,
+      spaceBetween: 6
+    },
+    500: {
+      slidesPerView: 1.5,
+      spaceBetween: 20
+    },
+    600: {
+      slidesPerView: 2.2
+    },
+    700: {
+      slidesPerView: 2.5
+    }
+  }
+});
 destroySlidersOnResize(".blogSlider", 9999999, {
   spaceBetween: 20,
   slidesPerView: 4,
@@ -72,6 +92,29 @@ destroySlidersOnResize(".blogSlider", 9999999, {
   navigation: {
     prevEl: ".prev",
     nextEl: ".next"
+  },
+  breakpoints: {
+    100: {
+      slidesPerView: 1.1,
+      spaceBetween: 4
+    },
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    800: {
+      slidesPerView: 2.5,
+      spaceBetween: 20
+    },
+    900: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 3.5
+    },
+    1300: {
+      slidesPerView: 4
+    }
   }
 });
 //# sourceMappingURL=main.js.map

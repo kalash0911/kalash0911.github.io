@@ -14,7 +14,6 @@ input[type='password'],
 // input[type='date'],
 textarea {
 	-webkit-appearance: none;
-	-webkit-border-radius: 0;
 	outline: none;
 	box-sizing: border-box;
 	border: 1px solid $form-element-border-color;
@@ -51,7 +50,6 @@ input[type='reset'],
 input[type='file'],
 input[type='submit'] {
 	-webkit-appearance: none;
-	-webkit-border-radius: 0;
 	cursor: pointer;
 	font-family: $base-font-sans-serif;
 	
