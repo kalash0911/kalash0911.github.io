@@ -20,8 +20,9 @@ export const App = () => {
   const [userAnswers, setUserAnswers] = useState(commonCache?.userAnswers || null);
   const [testIsDone, setTestToDone] = useState(commonCache?.testIsDone || false);
   const [loading, setLoading] = useState(false);
+  const [loadingText, setLoadingText] = useState('');
   const [error, setError] = useState('');
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   let retries = 0;
 
   useEffect(() => {
@@ -110,11 +111,13 @@ export const App = () => {
       })
       .finally(() => {
         setLoading(false);
+        setLoadingText('');
       });
   }
 
   const submitForm = (comunicationMethod) => {
     setLoading(true);
+    setLoadingText(t('loadingText'));
     setError("");
 
     const onlyAnswers = userAnswers?.map(({ id, answer }) => ({
@@ -159,7 +162,7 @@ export const App = () => {
 
   return (
     <>
-      {loading && <Spinner />}
+      {loading && <Spinner loadingText={loadingText}/>}
       {!formValues && <Form setFormValues={setFormValues} />}
       {!!formValues && !userAnswers && !startTest && (
         <TestRules setStartTest={setStartTest} />

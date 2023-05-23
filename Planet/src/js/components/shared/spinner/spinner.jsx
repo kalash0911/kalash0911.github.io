@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Spinner = () => {
+export const Spinner = ({loadingText}) => {
   return (
     <div className="spinnerWrap">
         <div className="loadingio-spinner-spin-d3mtgzoxi6">
@@ -31,6 +31,7 @@ export const Spinner = () => {
             </div>
         </div>
         </div>
+        {loadingText && <p className="subtitle" style={{textAlign: 'center'}}>{loadingText}</p>}
     </div>
   );
 };

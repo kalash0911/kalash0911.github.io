@@ -222,7 +222,7 @@ export const SuccessBlock = ({ backToTest, submitForm, phone, apiError }) => {
           onClick={onSubmit}
           disabled={!isSubmitBtnEnabled}
         >
-          {t("proceed")}
+          {t("send")}
         </button>
       </div>
       {apiError && <div className="api-error">{t(apiError)}</div>}

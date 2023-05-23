@@ -419,5 +419,6 @@
     "zoomErr": "Enter your zoom",
     "testSuccess": "You have successfully taken the test!",
     "redirectToMain": "Main page",
-    "passAgain": "Pass again"
+    "passAgain": "Pass again",
+    "loadingText": "The test is being submitted. Please do not leave the page until the download is complete."
 }
