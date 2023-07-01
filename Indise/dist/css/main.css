@@ -857,8 +857,8 @@ body {
   margin: 0 auto; }
 
 .btn {
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
@@ -974,5 +974,33 @@ body {
       margin: 0 !important; }
     .slider-section .slider-pag .swiper-pagination-bullet-active {
       background-color: #d8a88b; }
+
+.transform-section {
+  padding: 120px 0;
+  background: linear-gradient(180deg, rgba(23, 21, 22, 0.8) 4.29%, rgba(89, 82, 77, 0.8) 100%); }
+  @media (max-width: 767px) {
+    .transform-section {
+      padding: 80px 0; } }
+  .transform-section .container {
+    text-align: center; }
+  .transform-section .title {
+    max-width: 960px;
+    margin: 0 auto 26px auto;
+    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    /* Только если меньше контейнера */
+    font-size: 60px; }
+    @media (max-width: 1162px) {
+      .transform-section .title {
+        font-size: calc(36px + 24 * ((100vw - calc(375px)) / 787)); } }
+  .transform-section .text {
+    padding: 20px 0;
+    margin: 0;
+    font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase; }
 
 /*# sourceMappingURL=main.css.map */
