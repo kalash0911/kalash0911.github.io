@@ -1003,4 +1003,106 @@ body {
     font-size: 12px;
     text-transform: uppercase; }
 
+.form-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden; }
+  @media (max-width: 767px) {
+    .form-section {
+      padding: 80px 0; } }
+  .form-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px; }
+    @media (max-width: 767px) {
+      .form-section .container {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .form-section .title {
+    max-width: 640px;
+    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    /* Только если меньше контейнера */
+    font-size: 60px; }
+    @media (max-width: 1162px) {
+      .form-section .title {
+        font-size: calc(36px + 24 * ((100vw - calc(375px)) / 787)); } }
+    .form-section .title span {
+      color: #d8a88b; }
+  .form-section .form-wrap {
+    width: 100%;
+    max-width: 343px; }
+    @media (max-width: 767px) {
+      .form-section .form-wrap {
+        max-width: 100%; } }
+    .form-section .form-wrap form {
+      width: 100%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 16px; }
+    .form-section .form-wrap label {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 4px;
+      font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #fff;
+      text-transform: uppercase; }
+    .form-section .form-wrap .input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 20px;
+      background-color: #252324;
+      border: 1px solid #5D5D5D;
+      font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #fff; }
+      .form-section .form-wrap .input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-section .form-wrap .input::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-section .form-wrap .input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-section .form-wrap .input::-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      .form-section .form-wrap .input::placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+    .form-section .form-wrap textarea {
+      height: 111px; }
+    .form-section .form-wrap .btn-form {
+      margin-top: 13px;
+      border-radius: 24px;
+      background-color: #d8a88b;
+      color: #151919;
+      padding: 13px;
+      font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 600;
+      line-height: 1.1;
+      border: 1px solid #d8a88b;
+      transition: all .3s ease 0s; }
+      .form-section .form-wrap .btn-form:hover {
+        background-color: #fff; }
+  .form-section .lines {
+    position: absolute;
+    z-index: -1; }
+    @media (min-width: 769px) {
+      .form-section .lines {
+        left: 0;
+        bottom: -70px; } }
+    @media (max-width: 767px) {
+      .form-section .lines {
+        top: -20%;
+        right: -50%; } }
+
 /*# sourceMappingURL=main.css.map */
