@@ -1,0 +1,106 @@
+body {
+    font-family: $LotaAlt1;
+    background-color: $black16;
+}
+
+.body_lock{
+    overflow: hidden;
+}
+
+#wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1162px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 19px;
+    border: 2px solid $beige;
+    border-radius: 24px;
+    text-align: center;
+    font-family: $LotaAlt1;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 0;
+    color: $beige;
+    text-transform: uppercase;
+    transition: all .3s ease 0s;
+
+    svg {
+        fill: $beige;
+        transition: all .3s ease 0s;
+    }
+
+    &:hover {
+        color: $whitef4;
+        border: 2px solid $whitef4;
+
+        svg {
+            fill: $whitef4;
+        }
+    }
+}
+
+.main-section {
+    padding: 60px 0 80px 0;
+
+    @include media('<tablet'){
+        padding: 80px 0;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .main-title {
+        margin-bottom: 12px;
+        font-family: $Recoleta;
+        font-weight: 400;
+        @include adaptiv-vaule("font-size", 272, 120, 1);
+    }
+
+    .main-sub-title {
+        max-width: 720px;
+        margin: 0 auto 42px auto;
+        line-height: 1.5;
+        @include adaptiv-vaule("font-size", 24, 18, 1);
+
+        @include media('<tablet'){
+            margin: 0 auto 36px auto;
+        }
+    }
+}
+
+.video-section {
+    position: relative;
+    @include adaptiv-vaule("min-height", 706, 653, 1);
+
+    &::before {
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 130px;
+        background: rgb(23,21,22);
+        background: linear-gradient(0deg, rgba(23,21,22,0) 0%, rgba(23,21,22,1) 100%);
+        z-index: 1;
+    }
+
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
