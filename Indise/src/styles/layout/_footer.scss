@@ -1,0 +1,123 @@
+#footer {
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 0 30px 0;
+        border-top: 1px solid #2E2C2C;
+        border-bottom: 1px solid #2E2C2C;
+
+        @include media('<tablet'){
+           flex-direction: column;
+           gap: 30px;
+        }
+
+        @include media('<phone'){
+            border-top: none;
+        }
+    }
+
+    .logo {
+        font-family: $Recoleta;
+        font-size: 44px;
+        font-weight: 400;
+        color: $beige;
+
+    }
+
+    .menu-wrap {
+
+        @include media('<phone'){
+            padding: 36px 0;
+            border-top: 1px solid #2E2C2C;
+            border-bottom: 1px solid #2E2C2C;
+            width: 100%;
+        }
+    }
+
+    .menu {
+        display: flex;
+        gap: 52px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        @include media('<desktop'){
+            gap: 35px;
+        }
+
+        @include media('<phone'){
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .link-close {
+        font-family: $LotaAlt1;
+        font-weight: 400;
+        color: $whitef4;
+        transition: all .3s ease 0s;
+
+        &:hover {
+            color: $beige;
+        }
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+
+        a {
+
+            svg {
+                fill: #D8A88B;
+                transition: all .3s ease 0s;
+            }
+
+            &:hover {
+                
+                svg {
+                    fill: $whitef4;
+                }
+            }
+        }
+
+        .insta {
+
+            svg {
+                fill: none;
+                stroke: #D8A88B;
+            }
+
+            &:hover {
+
+                svg {
+                    fill: none;
+                    stroke: $whitef4;
+                }
+            }
+        }
+    }
+
+    .bot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 0;
+
+        @include media('<tablet'){
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+    }
+
+    .text {
+        font-family: $LotaAlt1;
+        font-weight: 400;
+        color: #5A5755;
+        margin: 0;
+        font-size: 14px;
+    }
+}
