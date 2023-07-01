@@ -937,4 +937,42 @@ body {
     -o-object-fit: cover;
     object-fit: cover; }
 
+.slider-section {
+  padding: 130px 0; }
+  .slider-section .slide {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 50px; }
+  .slider-section .text-box {
+    max-width: 325px; }
+  .slider-section .title {
+    margin-bottom: 11px;
+    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    /* Только если меньше контейнера */
+    font-size: 46px; }
+    @media (max-width: 1162px) {
+      .slider-section .title {
+        font-size: calc(30px + 16 * ((100vw - calc(375px)) / 787)); } }
+  .slider-section .text {
+    font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400;
+    line-height: 1.6; }
+  .slider-section .slider-pag {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px; }
+    .slider-section .slider-pag .swiper-pagination-bullet {
+      width: 36px;
+      height: 2px;
+      border-radius: 0;
+      background-color: #fefbf4;
+      margin: 0 !important; }
+    .slider-section .slider-pag .swiper-pagination-bullet-active {
+      background-color: #d8a88b; }
+
 /*# sourceMappingURL=main.css.map */

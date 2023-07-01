@@ -58,6 +58,10 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     ...obj,
   };
 
+  const win = window;
+  const sliderSelector = document.querySelector(selector);
+  let swiper = new Swiper(selector, init);
+
   const toggleInit = () => {
     const neededWidth = moreThan
       ? win.innerWidth >= width
@@ -76,10 +80,10 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   );
 }
 
-destroySlidersOnResize(".me-slider", 960, {
+destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".slider-pag",
   },
 });
