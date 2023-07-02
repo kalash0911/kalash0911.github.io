@@ -146,9 +146,16 @@ destroySlidersOnResize(".stepSlider", 9999999, {
   },
 
   on: {
-      autoplayTimeLeft(s, time, progress) {
-        progressCircle.style.setProperty("--progress", 1 - progress);
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    autoplayTimeLeft(swiper, time, progress) {
+      const current = swiper.activeIndex + 1;
+      const max = swiper.slides.length;
+      const currentPercents = (current / max) + (-progress / max);
+
+        const progressCircle = document.querySelector(".autoplay-progress svg");
+        const progressContent = document.querySelector(".autoplay-progress span");
+        
+        progressCircle.style.setProperty("--progress", currentPercents);
+        // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
       }
     }
 });
