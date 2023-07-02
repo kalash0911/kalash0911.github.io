@@ -107,25 +107,25 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-var menuSteps = ['duct cleaning', 'air CC'];
+var menuSteps = ['Write a detailed description of the design you would like to create', 'Select your desired square footage', 'Choose one interior design style from our catalog.', 'As needed, you can upload a reference image directly from your iPhone gallery', 'Just 60 seconds of patience…', '4 results are ready. Edit them or upscale for higher resolution.', "Here's your interior design, delivered in under 90 seconds."];
 destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
   speed: 1200,
-
-  /*   autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    }, */
-  mousewheel: {
-    invert: false,
-    releaseOnEdges: true
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
   },
+
+  /*   mousewheel: {
+      invert: false,
+      releaseOnEdges: true,
+    }, */
   pagination: {
     el: ".slider-nav",
     clickable: true,
     renderBullet: function renderBullet(index, className) {
-      return '<h2 class="' + className + '">' + menuSteps[index] + "</h2>";
+      return '<li class="' + className + '">' + "<h2>" + menuSteps[index] + "</h2>" + "</li>";
     }
   }
   /*   on: {

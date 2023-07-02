@@ -1002,6 +1002,89 @@ body {
   @media (max-width: 767px) {
     .slider-section {
       padding: 100px 0; } }
+  .slider-section .swiper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .slider-section .slider-nav {
+    position: relative;
+    width: 30% !important;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px 0 0 0;
+    margin: 0;
+    list-style: none;
+    counter-reset: my-awesome-counter; }
+  .slider-section .swiper-pagination-bullet {
+    position: relative;
+    width: 100%;
+    max-width: 308px;
+    height: auto !important;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 !important;
+    counter-increment: my-awesome-counter;
+    background: none;
+    transition: margin-bottom 1.2s ease 0s; }
+    .slider-section .swiper-pagination-bullet::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: #c8c4c2;
+      transition: all 1.2s ease 0s; }
+    .slider-section .swiper-pagination-bullet::after {
+      content: "Step " counter(my-awesome-counter);
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #c8c4c2;
+      transition: all 1.2s ease 0s; }
+    .slider-section .swiper-pagination-bullet h2 {
+      font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 400;
+      line-height: 1.2;
+      color: #fefbf4;
+      font-size: 0;
+      margin: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease 0s;
+      padding-top: 30px; }
+  .slider-section .swiper-pagination-bullet-active {
+    margin-bottom: 150px !important; }
+    .slider-section .swiper-pagination-bullet-active h2 {
+      /* Только если меньше контейнера */
+      font-size: 38px;
+      opacity: 1; }
+      @media (max-width: 1162px) {
+        .slider-section .swiper-pagination-bullet-active h2 {
+          font-size: calc(30px + 8 * ((100vw - calc(375px)) / 787)); } }
+    .slider-section .swiper-pagination-bullet-active::before {
+      top: 8px;
+      left: 12px;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      background-color: #d8a88b; }
+    .slider-section .swiper-pagination-bullet-active::after {
+      top: 8px;
+      left: 40px;
+      color: #d8a88b; }
+  .slider-section .swiper-wrapper {
+    width: 30%; }
+  .slider-section .clock {
+    width: 30%; }
   .slider-section .slide {
     opacity: 0 !important;
     z-index: -1 !important; }
@@ -1012,17 +1095,6 @@ body {
     display: -ms-flexbox;
     display: flex;
     gap: 70px; }
-  .slider-section .swiper-pagination-bullet {
-    max-width: 308px;
-    margin: 0;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-    font-weight: 400;
-    line-height: 1.2;
-    /* Только если меньше контейнера */
-    font-size: 38px; }
-    @media (max-width: 1162px) {
-      .slider-section .swiper-pagination-bullet {
-        font-size: calc(30px + 8 * ((100vw - calc(375px)) / 787)); } }
   .slider-section .text {
     font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;

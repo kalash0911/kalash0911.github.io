@@ -193,6 +193,102 @@ body {
         padding: 100px 0;
     }
 
+    .swiper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slider-nav {
+        position: relative;
+        width: 30% !important;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 10px 0 0 0;
+        margin: 0;
+        list-style: none;
+        counter-reset: my-awesome-counter;
+    }
+
+    .swiper-pagination-bullet{
+        position: relative;
+        width: 100%;
+        max-width: 308px;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        margin: 0 !important;
+        counter-increment: my-awesome-counter;
+        background: none;
+        transition: margin-bottom 1.2s ease 0s;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 24px;
+            border-radius: 12px;
+            background-color: rgba(200, 196, 194, 1);
+            transition: all 1.2s ease 0s;
+        }
+
+        &::after {
+            content: "Step " counter(my-awesome-counter);
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            font-family: $LotaAlt1;
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(200, 196, 194, 1);
+            transition: all 1.2s ease 0s;
+        }
+
+        h2 {
+            font-family: $Recoleta;
+            font-weight: 400;
+            line-height: 1.2;
+            color: $whitef4;
+            font-size: 0;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease 0s;
+            padding-top: 30px;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        margin-bottom: 150px !important;
+
+        h2 {
+            @include adaptiv-vaule("font-size", 38, 30, 1);
+            opacity: 1;
+        }
+
+        &::before {
+            top: 8px;
+            left: 12px;
+            transform: rotate(90deg);
+            background-color: $beige;
+        }
+
+        &::after {
+            top: 8px;
+            left: 40px;
+            color: $beige;
+        }
+    }
+    
+    .swiper-wrapper  {
+        width: 30%;
+    }
+
+    .clock {
+        width: 30%;
+    }
+
     .slide {
         opacity: 0 !important;
         z-index: -1 !important;
@@ -206,15 +302,6 @@ body {
     .contant {
         display: flex; 
         gap: 70px;
-    }
-
-    .swiper-pagination-bullet{
-        max-width: 308px;
-        margin: 0;
-        font-family: $Recoleta;
-        font-weight: 400;
-        line-height: 1.2;
-        @include adaptiv-vaule("font-size", 38, 30, 1);
     }
 
     .text {
