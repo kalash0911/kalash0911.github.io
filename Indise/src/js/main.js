@@ -147,13 +147,15 @@ destroySlidersOnResize(".stepSlider", 9999999, {
 
   on: {
     autoplayTimeLeft(swiper, time, progress) {
-      const current = swiper.activeIndex + 1;
-      const max = swiper.slides.length;
-      const currentPercents = (current / max) + (-progress / max);
+        const current = swiper.activeIndex + 1;
+        const max = swiper.slides.length;
+        const currentPercents = (current / max) + (-progress / max);
+        const clockArrowDeg = currentPercents * 360;
 
+        const arrowEl = document.querySelector('.clock-arrow');
         const progressCircle = document.querySelector(".autoplay-progress svg");
-        const progressContent = document.querySelector(".autoplay-progress span");
         
+        arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
         progressCircle.style.setProperty("--progress", currentPercents);
         // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
       }
