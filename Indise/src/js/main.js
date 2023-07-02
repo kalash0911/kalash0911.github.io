@@ -3,6 +3,24 @@ const menuBody = document.querySelector(".menu-wrap");
 const linkClose = document.querySelectorAll(".link-close");
 const overflow = document.querySelector(".overflow");
 
+const winTriggersMethods = ["resize", "load"];
+
+winTriggersMethods.forEach((method) => {
+  window.addEventListener(method, () => {
+      // worst case to refresh animation?
+      if (method === "load") {
+        phoneAnimation();
+      }
+      if (method === "resize" && prevWidth !== window.innerWidth) {
+          ScrollTrigger?.killAll();
+          prevWidth = window.innerWidth;
+          phoneAnimation();
+          return;
+      }
+  });
+});
+
+
 if (burger) {
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
@@ -111,11 +129,12 @@ destroySlidersOnResize(".stepSlider", 9999999, {
   effect: "fade",
   speed: 1200,
 
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
-  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false
+  // },
 
+  autoplay: false,
   /*   mousewheel: {
       invert: false,
       releaseOnEdges: true,
@@ -136,3 +155,50 @@ destroySlidersOnResize(".stepSlider", 9999999, {
       }
     } */
 });
+
+
+function phoneAnimation() {
+
+  const secondSection = document.querySelector('.sec-section');
+  const phone = document.querySelector(".phone-anim");
+
+  // if(window.innerWidth < 768) {
+  //   phone.classList.add('d-none')
+  //   return;
+  // };
+
+  if(!secondSection || !phone) return;
+
+
+
+  const sectionRect = secondSection.getBoundingClientRect();
+  const fromY = sectionRect.top + 230;
+
+  const firstSlide = document.querySelectorAll(".swiper-slide img")[0];
+  firstSlide.classList.add('hidden')
+
+  gsap.fromTo(
+    phone,
+    {
+        x: 0,
+        y: -fromY,
+        rotation: 5,
+    },
+    {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scrollTrigger: {
+            trigger: secondSection,
+            start: `0`,
+            end: `bottom`,
+            scrub: 1,
+            // markers: true,
+            onLeave: () => {
+              phone.classList.add('d-none');
+              firstSlide.classList.remove('hidden')
+            }
+        },
+    }
+);
+}

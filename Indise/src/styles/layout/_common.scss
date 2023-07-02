@@ -2,6 +2,22 @@ html {
     scroll-behavior: smooth;
 }
 
+.phone-anim {
+    position: absolute;
+    z-index: 5;
+    top: calc(50% + 25px);
+    left: calc(50% + 13px);
+    transform: translate(-50%, -50%);
+}
+
+.d-none {
+    display: none !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
 body {
     font-family: $LotaAlt1;
     background-color: $black16;
@@ -299,9 +315,10 @@ body {
         z-index: 1 !important;
     }
 
-    .contant {
-        display: flex; 
-        gap: 70px;
+    .content {
+        img {
+            width: 368px;
+        }
     }
 
     .text {
