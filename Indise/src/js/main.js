@@ -4,6 +4,7 @@ const linkClose = document.querySelectorAll(".link-close");
 const overflow = document.querySelector(".overflow");
 
 const winTriggersMethods = ["resize", "load"];
+let prevWidth = window.innerWidth;
 
 winTriggersMethods.forEach((method) => {
   window.addEventListener(method, () => {
@@ -129,16 +130,12 @@ destroySlidersOnResize(".stepSlider", 9999999, {
   effect: "fade",
   speed: 1200,
 
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
 
-  autoplay: false,
-  /*   mousewheel: {
-      invert: false,
-      releaseOnEdges: true,
-    }, */
+  // autoplay: false,
 
   pagination: {
     el: ".slider-nav",
@@ -148,12 +145,12 @@ destroySlidersOnResize(".stepSlider", 9999999, {
     },
   },
 
-  /*   on: {
+  on: {
       autoplayTimeLeft(s, time, progress) {
         progressCircle.style.setProperty("--progress", 1 - progress);
         progressContent.textContent = `${Math.ceil(time / 1000)}s`;
       }
-    } */
+    }
 });
 
 
