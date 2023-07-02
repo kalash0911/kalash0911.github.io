@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="shortcut icon" href="./images/Icons/favicon.png" type="image/x-icon">
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -61,6 +63,9 @@
                 <div class="grad"></div>              
             </section>
             <section class="slider-section" id="how">
+                <div class="phone-anim">
+                    <img src="./images/phone.png" alt="phone">
+                </div>
                 <div class="container">                   
                     <div class="swiper stepSlider"> 
                         <ol class="slider-nav">
@@ -71,7 +76,7 @@
                                 <div class="content">
                                     <img src="./files/1.gif" alt="gif"></img>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="swiper-slide slide">
                                 <div class="content">
                                     <img src="./files/2.gif" alt="gif"></img>
@@ -103,7 +108,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="clock"></div>
+                        <div class="clock">
+                            <div class="autoplay-progress">
+                                <svg viewBox="0 0 48 48">
+                                  <circle cx="24" cy="24" r="20"></circle>
+                                </svg>
+                                <span></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

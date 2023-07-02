@@ -843,6 +843,20 @@ input[type='submit'] {
 html {
   scroll-behavior: smooth; }
 
+.phone-anim {
+  position: absolute;
+  z-index: 5;
+  top: calc(50% + 25px);
+  left: calc(50% + 13px);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.d-none {
+  display: none !important; }
+
+.hidden {
+  visibility: hidden !important; }
+
 body {
   font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   background-color: #171516; }
@@ -1091,10 +1105,8 @@ body {
   .slider-section .swiper-slide-active {
     opacity: 1 !important;
     z-index: 1 !important; }
-  .slider-section .contant {
-    display: -ms-flexbox;
-    display: flex;
-    gap: 70px; }
+  .slider-section .content img {
+    width: 368px; }
   .slider-section .text {
     font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;

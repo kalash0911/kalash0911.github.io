@@ -10,6 +10,25 @@ var burger = document.querySelector(".burger");
 var menuBody = document.querySelector(".menu-wrap");
 var linkClose = document.querySelectorAll(".link-close");
 var overflow = document.querySelector(".overflow");
+var winTriggersMethods = ["resize", "load"];
+var prevWidth = window.innerWidth;
+winTriggersMethods.forEach(function (method) {
+  window.addEventListener(method, function () {
+    // worst case to refresh animation?
+    if (method === "load") {
+      phoneAnimation();
+    }
+
+    if (method === "resize" && prevWidth !== window.innerWidth) {
+      var _ScrollTrigger;
+
+      (_ScrollTrigger = ScrollTrigger) === null || _ScrollTrigger === void 0 ? void 0 : _ScrollTrigger.killAll();
+      prevWidth = window.innerWidth;
+      phoneAnimation();
+      return;
+    }
+  });
+});
 
 if (burger) {
   burger.addEventListener("click", function (e) {
@@ -116,24 +135,57 @@ destroySlidersOnResize(".stepSlider", 9999999, {
     delay: 3000,
     disableOnInteraction: false
   },
-
-  /*   mousewheel: {
-      invert: false,
-      releaseOnEdges: true,
-    }, */
+  // autoplay: false,
   pagination: {
     el: ".slider-nav",
     clickable: true,
     renderBullet: function renderBullet(index, className) {
       return '<li class="' + className + '">' + "<h2>" + menuSteps[index] + "</h2>" + "</li>";
     }
+  },
+  on: {
+    autoplayTimeLeft: function autoplayTimeLeft(swiper, time, progress) {
+      var current = swiper.activeIndex + 1;
+      var max = swiper.slides.length;
+      var currentPercents = current / max + -progress / max;
+      var progressCircle = document.querySelector(".autoplay-progress svg");
+      var progressContent = document.querySelector(".autoplay-progress span");
+      progressCircle.style.setProperty("--progress", currentPercents); // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    }
   }
-  /*   on: {
-      autoplayTimeLeft(s, time, progress) {
-        progressCircle.style.setProperty("--progress", 1 - progress);
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-      }
-    } */
-
 });
+
+function phoneAnimation() {
+  var secondSection = document.querySelector('.sec-section');
+  var phone = document.querySelector(".phone-anim"); // if(window.innerWidth < 768) {
+  //   phone.classList.add('d-none')
+  //   return;
+  // };
+
+  if (!secondSection || !phone) return;
+  var sectionRect = secondSection.getBoundingClientRect();
+  var fromY = sectionRect.top + 230;
+  var firstSlide = document.querySelectorAll(".swiper-slide img")[0];
+  firstSlide.classList.add('hidden');
+  gsap.fromTo(phone, {
+    x: 0,
+    y: -fromY,
+    rotation: 5
+  }, {
+    x: 0,
+    y: 0,
+    rotation: 0,
+    scrollTrigger: {
+      trigger: secondSection,
+      start: "0",
+      end: "bottom",
+      scrub: 1,
+      // markers: true,
+      onLeave: function onLeave() {
+        phone.classList.add('d-none');
+        firstSlide.classList.remove('hidden');
+      }
+    }
+  });
+}
 //# sourceMappingURL=main.js.map
