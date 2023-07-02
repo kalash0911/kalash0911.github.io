@@ -75,7 +75,8 @@
             height: 100vh;
             min-height: 100vh;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 50px;
             padding: 140px 20px 100px 20px;
             transition: all .5s ease 0s;
             background-color: $black16;

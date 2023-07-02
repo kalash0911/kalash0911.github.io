@@ -62,6 +62,22 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   const sliderSelector = document.querySelector(selector);
   let swiper = new Swiper(selector, init);
 
+  swiper.on("slideChange", function () {
+    setTimeout(function () {
+      swiper.params.mousewheel.releaseOnEdges = false;
+    }, 500);
+  });
+  swiper.on("reachEnd", function () {
+    setTimeout(function () {
+      swiper.params.mousewheel.releaseOnEdges = true;
+    }, 750);
+  });
+  swiper.on("reachBeginning", function () {
+    setTimeout(function () {
+      swiper.params.mousewheel.releaseOnEdges = true;
+    }, 750);
+  });
+
   const toggleInit = () => {
     const neededWidth = moreThan
       ? win.innerWidth >= width
@@ -80,10 +96,35 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   );
 }
 
+let menuSteps = ['duct cleaning', 'air CC']
+
 destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
+  effect: "fade",
+  speed: 1200,
+
+  /*   autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    }, */
+
+  mousewheel: {
+    invert: false,
+    releaseOnEdges: true,
+  },
 
   pagination: {
-    el: ".slider-pag",
+    el: ".slider-nav",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<h2 class="' + className + '">' + (menuSteps[index]) + "</h2>";
+    },
   },
+
+  /*   on: {
+      autoplayTimeLeft(s, time, progress) {
+        progressCircle.style.setProperty("--progress", 1 - progress);
+        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+      }
+    } */
 });
