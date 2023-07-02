@@ -10,7 +10,7 @@
 
         @include media('<tablet'){
            flex-direction: column;
-           gap: 30px;
+           gap: 35px;
         }
 
         @include media('<phone'){
@@ -23,6 +23,10 @@
         font-size: 44px;
         font-weight: 400;
         color: $beige;
+
+        @include media('<phone'){
+            font-size: 37px;
+        }
 
     }
 
@@ -53,7 +57,7 @@
         }
     }
 
-    .link-close {
+    .link {
         font-family: $LotaAlt1;
         font-weight: 400;
         color: $whitef4;
@@ -67,7 +71,7 @@
     .socials {
         display: flex;
         align-items: center;
-        gap: 27px;
+        gap: 32px;
 
         a {
 
@@ -105,7 +109,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 28px 0;
+        padding: 24px 0;
 
         @include media('<tablet'){
             flex-direction: column-reverse;
