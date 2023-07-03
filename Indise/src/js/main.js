@@ -3,6 +3,8 @@ const menuBody = document.querySelector(".menu-wrap");
 const linkClose = document.querySelectorAll(".link-close");
 const overflow = document.querySelector(".overflow");
 
+let gifs = Gifffer();
+
 const winTriggersMethods = ["resize", "load"];
 let prevWidth = window.innerWidth;
 
@@ -113,6 +115,8 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   ["load", "resize"].forEach((evt) =>
     win.addEventListener(evt, toggleInit, false)
   );
+
+  return swiper;
 }
 
 let menuSteps = [
@@ -125,7 +129,8 @@ let menuSteps = [
   "Here's your interior design, delivered in under 90 seconds"
 ]
 
-destroySlidersOnResize(".stepSlider", 9999999, {
+let prevTime = 3000;
+const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
   speed: 1200,
@@ -155,14 +160,29 @@ destroySlidersOnResize(".stepSlider", 9999999, {
 
       const arrowEl = document.querySelector('.clock-arrow');
       const progressCircle = document.querySelector(".autoplay-progress svg");
+      if(prevTime - time > 313) {
+        arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+        progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+        prevTime = time;
+      } else if(time < 100) {
+        arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+        progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+      }
+      if(time === 3000) prevTime = time;
+    },
+    afterInit: (swiper) => {
+      const currentGif = swiper.visibleSlides[0].querySelector('.gif');
+      currentGif.click();
+    },
+    activeIndexChange: (swiper) => {
+      const currentGif = swiper.visibleSlides[0].querySelector('.gif');
+      currentGif.click();
 
-      arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-      progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
-      // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+      swiper.slides[swiper.previousIndex].querySelector('.gif').click();
     }
   }
 });
-
+animPhoneSlider.autoplay.stop();
 
 function phoneAnimation() {
 
@@ -181,7 +201,8 @@ function phoneAnimation() {
   const sectionRect = secondSection.getBoundingClientRect();
   const fromY = sectionRect.top + 230;
 
-  const firstSlide = document.querySelectorAll(".swiper-slide img")[0];
+  const firstSlide = document.querySelectorAll(".swiper-slide .gif")[0];
+  console.log('firstSlide: ', firstSlide);
   firstSlide.classList.add('hidden')
 
   gsap.fromTo(
@@ -203,7 +224,9 @@ function phoneAnimation() {
         // markers: true,
         onLeave: () => {
           phone.classList.add('d-none');
-          firstSlide.classList.remove('hidden')
+          firstSlide.classList.remove('hidden');
+          animPhoneSlider.destroy();
+          window.dispatchEvent(new Event('resize'));
         }
       },
     }
