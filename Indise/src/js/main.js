@@ -128,8 +128,6 @@ let menuSteps = [
 ];
 
 let prevTime = 3000;
-let isReachEnd = false;
-let isLastGiftStopped = false;
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
