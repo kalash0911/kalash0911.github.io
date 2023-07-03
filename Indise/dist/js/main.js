@@ -144,7 +144,6 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   },
   on: {
     autoplayTimeLeft: function autoplayTimeLeft(swiper, time, progress) {
-      console.log("time: ", time);
       var current = swiper.activeIndex + 1;
       var max = swiper.slides.length;
       var currentPercents = current / max + -progress / max;
@@ -173,6 +172,12 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
       var currentGif = swiper.visibleSlides[0].querySelector(".gif");
       currentGif.click();
       swiper.slides[swiper.previousIndex].querySelector(".gif").click();
+
+      if (swiper.activeIndex + 1 === swiper.slides.length) {
+        setTimeout(function () {
+          currentGif.click();
+        }, 3000);
+      }
     }
   }
 });
@@ -189,7 +194,6 @@ function phoneAnimation() {
   var sectionRect = secondSection.getBoundingClientRect();
   var fromY = sectionRect.top + 230;
   var firstSlide = document.querySelectorAll(".swiper-slide .gif")[0];
-  console.log("firstSlide: ", firstSlide);
   firstSlide.classList.add("hidden");
   gsap.fromTo(phone, {
     x: 0,
