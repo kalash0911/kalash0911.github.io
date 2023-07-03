@@ -424,25 +424,6 @@ body {
         }
     }
 
-    .clock-wrap {
-        width: 30%;
-
-        @include media('<desktop'){
-            display: none;
-        }
-    }
-
-    .clock-arrow {
-        position: absolute;
-        height: 220px;
-        z-index: 1;
-    }
-
-    .clock {
-        position: relative;
-        z-index: -1;
-    }
-
     .slide {
         opacity: 0 !important;
         z-index: -1 !important;
@@ -569,6 +550,72 @@ body {
         }
     }
 
+    /* clock styles */
+
+    .clock-wrap {
+        width: 30%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .clock-cont {
+        position: relative;
+        min-height: 210px;
+        min-width: 210px;
+    }
+    
+    .clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .clock-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 220px;
+    }
+    
+    .raz {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 182px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: conic-gradient(rgba(153, 101, 71, 1), rgba(233, 202, 188, 1) var(--pie-p, 0%), #171516 0);
+        --pie-b: 10px;
+        mask: radial-gradient(farthest-side,#0000 calc(99% - var(--pie-b)),#000 calc(100% - var(--pie-b)));
+    }
+
+    /* .clock-wrap {
+        width: 30%;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .clock-arrow {
+        position: absolute;
+        height: 220px;
+        z-index: 1;
+    }
+
+    .clock {
+        position: relative;
+        z-index: -1;
+    } 
+
     .autoplay-progress {
         position: absolute;
         right: 16px;
@@ -599,7 +646,9 @@ body {
         transform: translate(-50%, -50%) rotate(-90deg);
         z-index: -1;
         stroke-linecap: round;
-    }
+    } */
+
+    /* clock styles end */
 }
 
 .transform-section {
