@@ -133,7 +133,7 @@ destroySlidersOnResize(".stepSlider", 9999999, {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
-    stopOnLastSlide: true,
+    /* stopOnLastSlide: true, */
   },
 
   // autoplay: false,
