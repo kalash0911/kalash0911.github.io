@@ -10,7 +10,6 @@ var burger = document.querySelector(".burger");
 var menuBody = document.querySelector(".menu-wrap");
 var linkClose = document.querySelectorAll(".link-close");
 var overflow = document.querySelector(".overflow");
-var gifs = Gifffer();
 var winTriggersMethods = ["resize", "load"];
 var prevWidth = window.innerWidth;
 winTriggersMethods.forEach(function (method) {
@@ -80,6 +79,135 @@ if (linkClose.length) {
       overflow.classList.remove("overflow_active");
     });
   }
+} // JSON ANIMATION + SWIPER
+
+
+var menuSteps = ["Write a detailed description of the design you would like to create", "Select your desired square footage", "Choose one interior design style from our catalog", "As needed, you can upload a reference image directly from your iPhone gallery", "Just 60 seconds of patience…", "4 results are ready. Edit them or upscale for higher resolution", "Here's your interior design, delivered in under 90 seconds"];
+var prevTime = 3000;
+var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
+  spaceBetween: 20,
+  effect: "fade",
+  speed: 1200,
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  //   stopOnLastSlide: true,
+  // },
+  autoplay: false,
+  pagination: {
+    el: ".slider-nav",
+    clickable: true,
+    renderBullet: function renderBullet(index, className) {
+      return '<li class="' + className + '">' + "<h2>" + menuSteps[index] + "</h2>" + "</li>";
+    }
+  },
+  on: {
+    // autoplayTimeLeft(swiper, time, progress) {
+    //   const current = swiper.activeIndex + 1;
+    //   const max = swiper.slides.length;
+    //   const currentPercents = current / max + -progress / max;
+    //   const clockArrowDeg = currentPercents * 360;
+    //   const arrowEl = document.querySelector(".clock-arrow");
+    //   const progressCircle = document.querySelector(".autoplay-progress svg");
+    //   if (time > 0) {
+    //     if (prevTime - time > 313) {
+    //       arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+    //       progressCircle.style.setProperty(
+    //         "--progress",
+    //         currentPercents - 1 / 170
+    //       );
+    //       prevTime = time;
+    //     } else if (time < 100) {
+    //       arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+    //       progressCircle.style.setProperty(
+    //         "--progress",
+    //         currentPercents - 1 / 170
+    //       );
+    //     }
+    //     if (time === 3000) prevTime = time;
+    //   }
+    // },
+    afterInit: function afterInit(swiper) {},
+    activeIndexChange: function activeIndexChange(swiper) {
+      jsonPhoneAnimations[swiper.activeIndex].play();
+      jsonPhoneAnimations[swiper.previousIndex].stop();
+    }
+  }
+});
+var loadCounter = 0;
+var totalDuration = 0;
+var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function (step, ind, arr) {
+  var anim;
+
+  if (ind + 1 === 5) {
+    anim = bodymovin.loadAnimation({
+      container: document.getElementById("".concat(step, "_").concat(ind + 1)),
+      path: "./files/step_".concat(ind, "/data.json"),
+      render: "svg",
+      loop: false,
+      autoplay: false
+    });
+  } else {
+    anim = bodymovin.loadAnimation({
+      container: document.getElementById("".concat(step, "_").concat(ind + 1)),
+      path: "./files/step_".concat(ind + 1, "/data.json"),
+      render: "svg",
+      loop: false,
+      autoplay: false
+    });
+  }
+
+  anim.addEventListener("DOMLoaded", function () {
+    loadCounter += 1; // TODO:
+
+    if (loadCounter === arr.length - 1) {
+      // console.log('loaded all');
+      totalDuration = jsonPhoneAnimations.reduce(function (prev, cur) {
+        cur.onComplete = function () {
+          animPhoneSlider.slideNext();
+        };
+
+        return prev += cur.getDuration();
+      }, 0);
+    }
+  });
+  return anim;
+}); // Scroll Trigger phoneAnimation
+
+function phoneAnimation() {
+  var secondSection = document.querySelector(".sec-section");
+  var phone = document.querySelector(".phone-anim"); // if(window.innerWidth < 768) {
+  //   phone.classList.add('d-none')
+  //   return;
+  // };
+
+  if (!secondSection || !phone) return;
+  var sectionRect = secondSection.getBoundingClientRect();
+  var fromY = sectionRect.top + 230;
+  var firstSlide = document.querySelectorAll(".swiper-slide .json-anim")[0];
+  firstSlide.classList.add("hidden");
+  gsap.fromTo(phone, {
+    x: 0,
+    y: -fromY,
+    rotation: 5
+  }, {
+    x: 0,
+    y: 0,
+    rotation: 0,
+    scrollTrigger: {
+      trigger: secondSection,
+      start: "0",
+      end: "bottom",
+      scrub: 1,
+      // markers: true,
+      onLeave: function onLeave() {
+        phone.classList.add("d-none");
+        firstSlide.classList.remove("hidden");
+        jsonPhoneAnimations[0].play(); // animPhoneSlider.destroy();
+        // window.dispatchEvent(new Event("resize"));
+      }
+    }
+  });
 } // Swiper:
 
 
@@ -121,123 +249,5 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
     return win.addEventListener(evt, toggleInit, false);
   });
   return swiper;
-}
-
-var menuSteps = ["Write a detailed description of the design you would like to create", "Select your desired square footage", "Choose one interior design style from our catalog", "As needed, you can upload a reference image directly from your iPhone gallery", "Just 60 seconds of patience…", "4 results are ready. Edit them or upscale for higher resolution", "Here's your interior design, delivered in under 90 seconds"];
-var prevTime = 3000;
-var isLastGiftStopped = false;
-var timeoutId;
-var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
-  spaceBetween: 20,
-  effect: "fade",
-  speed: 1200,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-    stopOnLastSlide: true
-  },
-  // autoplay: false,
-  pagination: {
-    el: ".slider-nav",
-    clickable: true,
-    renderBullet: function renderBullet(index, className) {
-      return '<li class="' + className + '">' + "<h2>" + menuSteps[index] + "</h2>" + "</li>";
-    }
-  },
-  on: {
-    autoplayTimeLeft: function autoplayTimeLeft(swiper, time, progress) {
-      var current = swiper.activeIndex + 1;
-      var max = swiper.slides.length;
-      var currentPercents = current / max + -progress / max;
-      var clockArrowDeg = currentPercents * 360;
-      var arrowEl = document.querySelector(".clock-arrow");
-      var progressCircle = document.querySelector(".autoplay-progress svg");
-
-      if (time > 0) {
-        if (prevTime - time > 313) {
-          arrowEl.style.transform = "rotate(".concat(clockArrowDeg, "deg)");
-          progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
-          prevTime = time;
-        } else if (time < 100) {
-          arrowEl.style.transform = "rotate(".concat(clockArrowDeg, "deg)");
-          progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
-        }
-
-        if (time === 3000) prevTime = time;
-      }
-    },
-    afterInit: function afterInit(swiper) {
-      var currentGif = swiper.visibleSlides[0].querySelector(".gif");
-      currentGif.click();
-    },
-    activeIndexChange: function activeIndexChange(swiper) {
-      if (timeoutId && !isLastGiftStopped) {
-        clearTimeout(timeoutId);
-      }
-
-      var lastFrame = document.getElementById('lastFrame');
-
-      if (lastFrame) {
-        lastFrame.remove();
-      }
-
-      var currentGif = swiper.visibleSlides[0].querySelector(".gif");
-      currentGif.click();
-      swiper.slides[swiper.previousIndex].querySelector(".gif").click();
-
-      if (swiper.activeIndex + 1 === swiper.slides.length) {
-        timeoutId = setTimeout(function () {
-          // currentGif.click();
-          // const img = swiper.slides[swiper.slides.length - 1].querySelector(".gif img");
-          var gif = swiper.slides[swiper.slides.length - 1].querySelector(".gif");
-          var img = document.createElement('IMG');
-          img.setAttribute('id', 'lastFrame');
-          img.src = './images/last-step.png';
-          gif.appendChild(img);
-          isLastGiftStopped = true;
-        }, 3000);
-      }
-
-      if (isLastGiftStopped && swiper.previousIndex + 1 === swiper.slides.length) {// swiper.slides[swiper.previousIndex].querySelector(".gif").click();
-      }
-    }
-  }
-});
-animPhoneSlider.autoplay.stop();
-
-function phoneAnimation() {
-  var secondSection = document.querySelector(".sec-section");
-  var phone = document.querySelector(".phone-anim"); // if(window.innerWidth < 768) {
-  //   phone.classList.add('d-none')
-  //   return;
-  // };
-
-  if (!secondSection || !phone) return;
-  var sectionRect = secondSection.getBoundingClientRect();
-  var fromY = sectionRect.top + 230;
-  var firstSlide = document.querySelectorAll(".swiper-slide .gif")[0];
-  firstSlide.classList.add("hidden");
-  gsap.fromTo(phone, {
-    x: 0,
-    y: -fromY,
-    rotation: 5
-  }, {
-    x: 0,
-    y: 0,
-    rotation: 0,
-    scrollTrigger: {
-      trigger: secondSection,
-      start: "0",
-      end: "bottom",
-      scrub: 1,
-      // markers: true,
-      onLeave: function onLeave() {
-        phone.classList.add("d-none");
-        firstSlide.classList.remove("hidden");
-        animPhoneSlider.destroy();
-        window.dispatchEvent(new Event("resize"));
-      }
-    }
-  });
 }
 //# sourceMappingURL=main.js.map

@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+#test {
+    max-width: 500px;
+}
+
 .phone-anim {
     position: absolute;
     z-index: 5;
@@ -27,6 +31,10 @@ html {
         right: 1px;
         top: 0px;
     }
+}
+
+.json-anim {
+    max-width: 380px;
 }
 
 .d-none {

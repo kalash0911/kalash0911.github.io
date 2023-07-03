@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="shortcut icon" href="./images/Icons/favicon.png" type="image/x-icon">
-    <script src="./js/gifffer.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
@@ -53,13 +53,13 @@
             <section class="sec-section">
                 <img class="img-bg" src="./images/img-bg.jpg" alt="img-bg">
                 <div class="grad"></div> 
-                <img class="tablet-pnone" src="./images/phone.png" alt="phone">           
+                <img class="tablet-pnone" src="./images/phone.png" alt="phone">
             </section>
             <section class="slider-section" id="how">
                 <div class="phone-anim">
                     <img src="./images/phone.png" alt="phone">
                 </div>
-                <div class="container">                   
+                <div class="container">
                     <div class="swiper stepSlider"> 
                         <ol class="slider-nav">
                             <div class="sec-swiper-scrollbar" id="scrollbar"></div>
@@ -69,7 +69,7 @@
                                 <div class="content">
                                     <h2 class="title">Write a detailed description of the design you would like to create</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/1.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_1"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
@@ -78,7 +78,7 @@
                                 <div class="content">
                                     <h2 class="title">Select your desired square footage</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/2.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_2"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
@@ -87,7 +87,7 @@
                                 <div class="content">
                                     <h2 class="title">Choose one interior design style from our catalog</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/3.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_3"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
@@ -96,7 +96,7 @@
                                 <div class="content">
                                     <h2 class="title">As needed, you can upload a reference image directly from your iPhone gallery</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/4.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_4"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
@@ -105,7 +105,7 @@
                                 <div class="content">
                                     <h2 class="title">Just 60 seconds of patience…</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/5.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_5"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
@@ -114,7 +114,7 @@
                                 <div class="content">
                                     <h2 class="title">4 results are ready. Edit them or upscale for higher resolution</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/6.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_6"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
@@ -123,7 +123,7 @@
                                 <div class="content">
                                     <h2 class="title">Here's your interior design, delivered in under 90 seconds</h2>
                                     <div class="gif-wrap">
-                                        <img class="gif" data-gifffer="./files/7.gif" data-gifffer-alt="gif">
+                                        <div class="json-anim" id="step_7"></div>
                                     </div>
                                     <img class="gif-bg" src="./images/gif-bg1.svg" alt="gif-bg">
                                 </div>
