@@ -83,7 +83,9 @@ if (linkClose.length) {
 
 
 var menuSteps = ["Write a detailed description of the design you would like to create", "Select your desired square footage", "Choose one interior design style from our catalog", "As needed, you can upload a reference image directly from your iPhone gallery", "Just 60 seconds of patience…", "4 results are ready. Edit them or upscale for higher resolution", "Here's your interior design, delivered in under 90 seconds"];
-var prevTime = 3000;
+var loadCounter = 0;
+var totalDuration = 0;
+var timerIntervalId;
 var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
@@ -102,40 +104,13 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
     }
   },
   on: {
-    // autoplayTimeLeft(swiper, time, progress) {
-    //   const current = swiper.activeIndex + 1;
-    //   const max = swiper.slides.length;
-    //   const currentPercents = current / max + -progress / max;
-    //   const clockArrowDeg = currentPercents * 360;
-    //   const arrowEl = document.querySelector(".clock-arrow");
-    //   const progressCircle = document.querySelector(".autoplay-progress svg");
-    //   if (time > 0) {
-    //     if (prevTime - time > 313) {
-    //       arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-    //       progressCircle.style.setProperty(
-    //         "--progress",
-    //         currentPercents - 1 / 170
-    //       );
-    //       prevTime = time;
-    //     } else if (time < 100) {
-    //       arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-    //       progressCircle.style.setProperty(
-    //         "--progress",
-    //         currentPercents - 1 / 170
-    //       );
-    //     }
-    //     if (time === 3000) prevTime = time;
-    //   }
-    // },
     afterInit: function afterInit(swiper) {},
     activeIndexChange: function activeIndexChange(swiper) {
       jsonPhoneAnimations[swiper.activeIndex].play();
-      jsonPhoneAnimations[swiper.previousIndex].stop();
+      jsonPhoneAnimations[swiper.previousIndex].stop(); // startProgressTimer(swiper.activeIndex, true)
     }
   }
 });
-var loadCounter = 0;
-var totalDuration = 0;
 var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function (step, ind, arr) {
   var anim;
 
@@ -165,7 +140,11 @@ var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function 
       totalDuration = jsonPhoneAnimations.reduce(function (prev, cur) {
         cur.onComplete = function () {
           animPhoneSlider.slideNext();
-        };
+        }; // cur.onEnterFrame = () => {
+        //   console.log('cur: ', cur);
+        //   console.log('onEnterFrame: ');
+        // }
+
 
         return prev += cur.getDuration();
       }, 0);
@@ -203,11 +182,49 @@ function phoneAnimation() {
       onLeave: function onLeave() {
         phone.classList.add("d-none");
         firstSlide.classList.remove("hidden");
-        jsonPhoneAnimations[0].play(); // animPhoneSlider.destroy();
+        jsonPhoneAnimations[0].play();
+
+        if (!timerIntervalId) {
+          startProgressTimer();
+        } // animPhoneSlider.destroy();
         // window.dispatchEvent(new Event("resize"));
+
       }
     }
   });
+}
+
+function checktimer(progress, total, intervalId) {
+  if (progress > total) clearInterval(intervalId);
+}
+
+function startProgressTimer() {
+  var currentSlideIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var reset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  if (reset) {
+    clearInterval(timerIntervalId);
+    timerIntervalId = null;
+  }
+
+  var totalSlides = 7;
+  var fps = 15;
+  var durationMS = totalDuration * 1000;
+  var intervalTimer = durationMS / (totalSlides * fps);
+  var progressCircle = document.querySelector('.raz');
+  var clockArrow = document.querySelector('.clock-arrow');
+  var progress = durationMS / totalSlides * currentSlideIndex;
+
+  if (!timerIntervalId) {
+    timerIntervalId = setInterval(function () {
+      progress += intervalTimer;
+      var percent = progress / durationMS * 100;
+      var clockArrowDeg = progress / durationMS * 360;
+      progressCircle.style.setProperty("--pie-p", "".concat(percent, "%"));
+      clockArrow.style.transform = "translate(-50%, -50%) rotate(".concat(clockArrowDeg, "deg)");
+      checktimer(progress, totalDuration * 1000, timerIntervalId);
+    }, intervalTimer);
+  }
 } // Swiper:
 
 

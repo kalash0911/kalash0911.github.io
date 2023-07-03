@@ -79,7 +79,11 @@ let menuSteps = [
   "Here's your interior design, delivered in under 90 seconds",
 ];
 
-let prevTime = 3000;
+
+let loadCounter = 0;
+let totalDuration = 0;
+let timerIntervalId;
+
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
@@ -110,42 +114,15 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   },
 
   on: {
-    // autoplayTimeLeft(swiper, time, progress) {
-    //   const current = swiper.activeIndex + 1;
-    //   const max = swiper.slides.length;
-    //   const currentPercents = current / max + -progress / max;
-    //   const clockArrowDeg = currentPercents * 360;
-
-    //   const arrowEl = document.querySelector(".clock-arrow");
-    //   const progressCircle = document.querySelector(".autoplay-progress svg");
-    //   if (time > 0) {
-    //     if (prevTime - time > 313) {
-    //       arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-    //       progressCircle.style.setProperty(
-    //         "--progress",
-    //         currentPercents - 1 / 170
-    //       );
-    //       prevTime = time;
-    //     } else if (time < 100) {
-    //       arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-    //       progressCircle.style.setProperty(
-    //         "--progress",
-    //         currentPercents - 1 / 170
-    //       );
-    //     }
-    //     if (time === 3000) prevTime = time;
-    //   }
-    // },
     afterInit: (swiper) => {},
     activeIndexChange: (swiper) => {
       jsonPhoneAnimations[swiper.activeIndex].play();
       jsonPhoneAnimations[swiper.previousIndex].stop();
+      // startProgressTimer(swiper.activeIndex, true)
     },
   },
 });
 
-let loadCounter = 0;
-let totalDuration = 0;
 const jsonPhoneAnimations = new Array(menuSteps.length)
   .fill("step")
   .map((step, ind, arr) => {
@@ -176,6 +153,10 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
           cur.onComplete = () => {
             animPhoneSlider.slideNext();
           };
+          // cur.onEnterFrame = () => {
+          //   console.log('cur: ', cur);
+          //   console.log('onEnterFrame: ');
+          // }
           return (prev += cur.getDuration());
         }, 0);
       }
@@ -223,12 +204,52 @@ function phoneAnimation() {
           phone.classList.add("d-none");
           firstSlide.classList.remove("hidden");
           jsonPhoneAnimations[0].play();
+
+          if(!timerIntervalId) {
+            startProgressTimer();
+          }
+
           // animPhoneSlider.destroy();
           // window.dispatchEvent(new Event("resize"));
         },
       },
     }
   );
+}
+
+function checktimer(progress, total, intervalId) {
+  if(progress > total) clearInterval(intervalId);
+}
+
+function startProgressTimer(currentSlideIndex = 0, reset = false) {
+  if(reset) {
+    clearInterval(timerIntervalId);
+    timerIntervalId = null;
+  }
+
+  const totalSlides = 7;
+  const fps = 15;
+  const durationMS = totalDuration * 1000;
+  
+  const intervalTimer = (durationMS / (totalSlides * fps));
+  const progressCircle = document.querySelector('.raz');
+  const clockArrow = document.querySelector('.clock-arrow');
+  let progress = durationMS / totalSlides * currentSlideIndex;
+
+
+  if(!timerIntervalId) {
+    timerIntervalId = setInterval(() => {
+      progress += intervalTimer;
+      const percent = progress / durationMS * 100;
+      const clockArrowDeg = progress / durationMS * 360;
+      progressCircle.style.setProperty(
+      "--pie-p",
+      `${percent}%`
+      );
+      clockArrow.style.transform = `translate(-50%, -50%) rotate(${clockArrowDeg}deg)`;
+      checktimer(progress, totalDuration * 1000, timerIntervalId)
+    }, intervalTimer);
+  }
 }
 
 // Swiper:
