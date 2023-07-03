@@ -1261,6 +1261,8 @@ body {
     @media (max-width: 479px) {
       .slider-section .gif-bg {
         left: 0; } }
+  .slider-section .gifffer-play-button {
+    display: none; }
   .slider-section .text {
     font-family: "Lota Grotesque Alt 1", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 400;
