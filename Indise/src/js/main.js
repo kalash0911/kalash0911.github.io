@@ -128,6 +128,8 @@ let menuSteps = [
 ];
 
 let prevTime = 3000;
+let isReachEnd = false;
+let isLastGiftStopped = false;
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
@@ -159,7 +161,6 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
 
   on: {
     autoplayTimeLeft(swiper, time, progress) {
-      console.log("time: ", time);
       const current = swiper.activeIndex + 1;
       const max = swiper.slides.length;
       const currentPercents = current / max + -progress / max;
@@ -194,7 +195,12 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
       currentGif.click();
 
       swiper.slides[swiper.previousIndex].querySelector(".gif").click();
-    },
+      if(swiper.activeIndex + 1 === swiper.slides.length) {
+        setTimeout(() => {
+          currentGif.click();
+        }, 3000)
+      }
+    }
   },
 });
 animPhoneSlider.autoplay.stop();
@@ -214,7 +220,6 @@ function phoneAnimation() {
   const fromY = sectionRect.top + 230;
 
   const firstSlide = document.querySelectorAll(".swiper-slide .gif")[0];
-  console.log("firstSlide: ", firstSlide);
   firstSlide.classList.add("hidden");
 
   gsap.fromTo(
