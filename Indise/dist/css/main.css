@@ -1073,7 +1073,59 @@ body {
         display: none; } }
 
 .slider-section {
-  padding: 130px 0; }
+  padding: 130px 0;
+  /* clock styles */
+  /* .clock-wrap {
+        width: 30%;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .clock-arrow {
+        position: absolute;
+        height: 220px;
+        z-index: 1;
+    }
+
+    .clock {
+        position: relative;
+        z-index: -1;
+    } 
+
+    .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 210px;
+        height: 210px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: $beige;
+    }
+
+    .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 10;
+        width:205px;
+        height:205px;
+        stroke-width: 2px;
+        stroke: $beige;
+        fill: none;
+        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        z-index: -1;
+        stroke-linecap: round;
+    } */
+  /* clock styles end */ }
   @media (max-width: 767px) {
     .slider-section {
       padding: 100px 0; } }
@@ -1211,18 +1263,6 @@ body {
     @media (max-width: 1023px) {
       .slider-section .swiper-wrapper {
         width: 50%; } }
-  .slider-section .clock-wrap {
-    width: 30%; }
-    @media (max-width: 1023px) {
-      .slider-section .clock-wrap {
-        display: none; } }
-  .slider-section .clock-arrow {
-    position: absolute;
-    height: 220px;
-    z-index: 1; }
-  .slider-section .clock {
-    position: relative;
-    z-index: -1; }
   .slider-section .slide {
     opacity: 0 !important;
     z-index: -1 !important; }
@@ -1299,38 +1339,47 @@ body {
       margin: 0 !important; }
     .slider-section .slider-pag .swiper-pagination-bullet-active {
       background-color: #d8a88b; }
-  .slider-section .autoplay-progress {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 210px;
-    height: 210px;
+  .slider-section .clock-wrap {
+    width: 30%;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #d8a88b; }
-  .slider-section .autoplay-progress svg {
-    --progress: 0;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    @media (max-width: 1023px) {
+      .slider-section .clock-wrap {
+        display: none; } }
+  .slider-section .clock-cont {
+    position: relative;
+    min-height: 210px;
+    min-width: 210px; }
+  .slider-section .clock {
     position: absolute;
-    left: 50%;
     top: 50%;
-    z-index: 10;
-    width: 205px;
-    height: 205px;
-    stroke-width: 2px;
-    stroke: #d8a88b;
-    fill: none;
-    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    -webkit-transform: translate(-50%, -50%) rotate(-90deg);
-    transform: translate(-50%, -50%) rotate(-90deg);
-    z-index: -1;
-    stroke-linecap: round; }
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .slider-section .clock-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-height: 220px; }
+  .slider-section .raz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 182px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(#996547, #e9cabc var(--pie-p, 0%), #171516 0);
+    --pie-b: 10px;
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--pie-b)), #000 calc(100% - var(--pie-b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--pie-b)), #000 calc(100% - var(--pie-b))); }
 
 .transform-section {
   padding: 100px 0;

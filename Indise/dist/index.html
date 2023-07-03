@@ -129,7 +129,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="clock-wrap">
+                        <!-- <div class="clock-wrap">
                             <div class="autoplay-progress">
                                 <div class="clock-arrow">
                                     <img src="./images/Icons/clock-arrow.svg" alt="clock-arrow">
@@ -139,6 +139,15 @@
                                     <circle cx="24" cy="24" r="20"></circle>
                                 </svg>
                                 <span></span>
+                            </div>
+                        </div> -->
+                        <div class="clock-wrap">
+                            <div class="clock-cont">
+                                <div class="raz" style="--pie-p:30%;"></div>
+                                <div class="clock-arrow">
+                                    <img src="./images/Icons/clock-arrow.svg" alt="clock-arrow">
+                                </div>
+                                <img class="clock" src="./images/Icons/clock.png" alt="clock">
                             </div>
                         </div>
                     </div>
@@ -182,7 +191,7 @@
                         <img class="dashed mob" src="./images/Icons/dashed-mob.png" alt="dashed">
                     </div>
                 </div>
-            </section>
+            </section>          
         </main>
         <footer id="footer">
             <div class="container">
@@ -237,6 +246,12 @@
             </div>
         </footer>
     </div>
+    <script>
+        document.querySelector('#raz').addEventListener('input', progress);
+        function progress(e) {
+            e.currentTarget.previousElementSibling.style.setProperty('--pie-p', e.currentTarget.value + '%')
+        }
+    </script>
 </body>
 
 </html>
