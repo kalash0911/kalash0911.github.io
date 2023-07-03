@@ -138,7 +138,7 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
-    /* stopOnLastSlide: true, */
+    stopOnLastSlide: true,
   },
 
   // autoplay: false,
@@ -153,6 +153,7 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
 
   on: {
     autoplayTimeLeft(swiper, time, progress) {
+      console.log('time: ', time);
       const current = swiper.activeIndex + 1;
       const max = swiper.slides.length;
       const currentPercents = (current / max) + (-progress / max);
@@ -160,15 +161,17 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
 
       const arrowEl = document.querySelector('.clock-arrow');
       const progressCircle = document.querySelector(".autoplay-progress svg");
-      if(prevTime - time > 313) {
-        arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-        progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
-        prevTime = time;
-      } else if(time < 100) {
-        arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-        progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+      if(time > 0) {
+        if(prevTime - time > 313) {
+          arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+          progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+          prevTime = time;
+        } else if(time < 100) {
+          arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+          progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+        }
+        if(time === 3000) prevTime = time;
       }
-      if(time === 3000) prevTime = time;
     },
     afterInit: (swiper) => {
       const currentGif = swiper.visibleSlides[0].querySelector('.gif');
