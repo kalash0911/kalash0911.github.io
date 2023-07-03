@@ -128,6 +128,8 @@ let menuSteps = [
 ];
 
 let prevTime = 3000;
+let isLastGiftStopped = false;
+let timeoutId;
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
@@ -189,14 +191,20 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
       currentGif.click();
     },
     activeIndexChange: (swiper) => {
+      if(timeoutId && !isLastGiftStopped) {
+        clearTimeout(timeoutId);
+      }
       const currentGif = swiper.visibleSlides[0].querySelector(".gif");
       currentGif.click();
-
       swiper.slides[swiper.previousIndex].querySelector(".gif").click();
       if(swiper.activeIndex + 1 === swiper.slides.length) {
-        setTimeout(() => {
+        timeoutId = setTimeout(() => {
           currentGif.click();
-        }, 3000)
+          isLastGiftStopped = true;
+        }, 3000);
+      }
+      if(isLastGiftStopped && swiper.previousIndex + 1 === swiper.slides.length) {
+        swiper.slides[swiper.previousIndex].querySelector(".gif").click();
       }
     }
   },
