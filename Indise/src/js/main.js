@@ -194,17 +194,27 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
       if(timeoutId && !isLastGiftStopped) {
         clearTimeout(timeoutId);
       }
+      const lastFrame = document.getElementById('lastFrame');
+      if(lastFrame) {
+        lastFrame.remove();
+      }
       const currentGif = swiper.visibleSlides[0].querySelector(".gif");
       currentGif.click();
       swiper.slides[swiper.previousIndex].querySelector(".gif").click();
       if(swiper.activeIndex + 1 === swiper.slides.length) {
         timeoutId = setTimeout(() => {
-          currentGif.click();
+          // currentGif.click();
+          // const img = swiper.slides[swiper.slides.length - 1].querySelector(".gif img");
+          const gif = swiper.slides[swiper.slides.length - 1].querySelector(".gif");
+          const img = document.createElement('IMG');
+          img.setAttribute('id', 'lastFrame');
+          img.src = './images/last-step.png';
+          gif.appendChild(img);
           isLastGiftStopped = true;
         }, 3000);
       }
       if(isLastGiftStopped && swiper.previousIndex + 1 === swiper.slides.length) {
-        swiper.slides[swiper.previousIndex].querySelector(".gif").click();
+        // swiper.slides[swiper.previousIndex].querySelector(".gif").click();
       }
     }
   },

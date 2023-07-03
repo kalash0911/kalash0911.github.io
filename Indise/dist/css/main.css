@@ -856,6 +856,13 @@ html {
     .phone-anim {
       display: none; } }
 
+#lastFrame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
 .d-none {
   display: none !important; }
 
