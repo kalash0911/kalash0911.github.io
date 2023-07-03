@@ -48,10 +48,6 @@ body {
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     padding: 5px 19px;
     border: 2px solid $beige;
     border-radius: 24px;
@@ -59,7 +55,6 @@ body {
     font-family: $LotaAlt1;
     font-size: 16px;
     font-weight: 600;
-    line-height: 0;
     color: $beige;
     text-transform: uppercase;
     transition: all .3s ease 0s;
@@ -100,6 +95,22 @@ body {
         &::after {
             transform: scale(1.1);
         }
+    }
+}
+
+.qr {
+        
+    @include media('<phone'){
+        display: none;
+    }
+
+    p {
+        max-width: 113px;
+        margin: 12px auto 0 auto;
+        font-family: $LotaAlt1;
+        font-weight: 400;
+        font-size: 12px;
+        color: #c8c4c2;
     }
 }
 
@@ -145,12 +156,6 @@ body {
 
         @include media('<tablet'){
             margin: 0 auto 36px auto;
-        }
-    }
-
-    .qr {
-        @include media('<phone'){
-            display: none;
         }
     }
 
@@ -636,13 +641,6 @@ body {
         font-weight: 600;
         font-size: 12px;
         text-transform: uppercase;
-
-        @include media('<phone'){
-            display: none;
-        }
-    }
-
-    .qr {
 
         @include media('<phone'){
             display: none;
