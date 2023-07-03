@@ -23,40 +23,39 @@ winTriggersMethods.forEach((method) => {
   });
 });
 
-
 if (burger) {
   burger.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
-    if (burger.classList.contains('burger_active')) {
-      burger.classList.add('burger_finish');
-      burger.classList.remove('burger_active');
+    if (burger.classList.contains("burger_active")) {
+      burger.classList.add("burger_finish");
+      burger.classList.remove("burger_active");
       overflow.classList.toggle("overflow_active");
     } else {
-      burger.classList.add('burger_active');
-      burger.classList.remove('burger_finish');
+      burger.classList.add("burger_active");
+      burger.classList.remove("burger_finish");
       overflow.classList.toggle("overflow_active");
     }
     menuBody.classList.toggle("menu_active");
   });
-};
+}
 
 if (overflow) {
   overflow.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
-    if (burger.classList.contains('burger_active')) {
-      burger.classList.add('burger_finish');
-      burger.classList.remove('burger_active');
+    if (burger.classList.contains("burger_active")) {
+      burger.classList.add("burger_finish");
+      burger.classList.remove("burger_active");
       overflow.classList.toggle("overflow_active");
     } else {
-      burger.classList.add('burger_active');
-      burger.classList.remove('burger_finish');
+      burger.classList.add("burger_active");
+      burger.classList.remove("burger_finish");
       overflow.classList.toggle("overflow_active");
     }
     menuBody.classList.toggle("menu_active");
   });
-};
+}
 
 if (linkClose.length) {
   for (var i = 0; i < linkClose.length; ++i) {
@@ -64,13 +63,12 @@ if (linkClose.length) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
       burger.classList.remove("burger_active");
-      burger.classList.add('burger_finish');
+      burger.classList.add("burger_finish");
       menuBody.classList.remove("menu_active");
       overflow.classList.remove("overflow_active");
-    })
+    });
   }
-};
-
+}
 
 // Swiper:
 
@@ -120,14 +118,14 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 }
 
 let menuSteps = [
-  'Write a detailed description of the design you would like to create',
-  'Select your desired square footage',
-  'Choose one interior design style from our catalog',
-  'As needed, you can upload a reference image directly from your iPhone gallery',
-  'Just 60 seconds of patience…',
-  '4 results are ready. Edit them or upscale for higher resolution',
-  "Here's your interior design, delivered in under 90 seconds"
-]
+  "Write a detailed description of the design you would like to create",
+  "Select your desired square footage",
+  "Choose one interior design style from our catalog",
+  "As needed, you can upload a reference image directly from your iPhone gallery",
+  "Just 60 seconds of patience…",
+  "4 results are ready. Edit them or upscale for higher resolution",
+  "Here's your interior design, delivered in under 90 seconds",
+];
 
 let prevTime = 3000;
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
@@ -147,49 +145,62 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
     el: ".slider-nav",
     clickable: true,
     renderBullet: function (index, className) {
-      return '<li class="' + className + '">' + "<h2>" + (menuSteps[index]) + "</h2>" + "</li>";
+      return (
+        '<li class="' +
+        className +
+        '">' +
+        "<h2>" +
+        menuSteps[index] +
+        "</h2>" +
+        "</li>"
+      );
     },
   },
 
   on: {
     autoplayTimeLeft(swiper, time, progress) {
-      console.log('time: ', time);
+      console.log("time: ", time);
       const current = swiper.activeIndex + 1;
       const max = swiper.slides.length;
-      const currentPercents = (current / max) + (-progress / max);
+      const currentPercents = current / max + -progress / max;
       const clockArrowDeg = currentPercents * 360;
 
-      const arrowEl = document.querySelector('.clock-arrow');
+      const arrowEl = document.querySelector(".clock-arrow");
       const progressCircle = document.querySelector(".autoplay-progress svg");
-      if(time > 0) {
-        if(prevTime - time > 313) {
+      if (time > 0) {
+        if (prevTime - time > 313) {
           arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-          progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+          progressCircle.style.setProperty(
+            "--progress",
+            currentPercents - 1 / 170
+          );
           prevTime = time;
-        } else if(time < 100) {
+        } else if (time < 100) {
           arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-          progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+          progressCircle.style.setProperty(
+            "--progress",
+            currentPercents - 1 / 170
+          );
         }
-        if(time === 3000) prevTime = time;
+        if (time === 3000) prevTime = time;
       }
     },
     afterInit: (swiper) => {
-      const currentGif = swiper.visibleSlides[0].querySelector('.gif');
+      const currentGif = swiper.visibleSlides[0].querySelector(".gif");
       currentGif.click();
     },
     activeIndexChange: (swiper) => {
-      const currentGif = swiper.visibleSlides[0].querySelector('.gif');
+      const currentGif = swiper.visibleSlides[0].querySelector(".gif");
       currentGif.click();
 
-      swiper.slides[swiper.previousIndex].querySelector('.gif').click();
-    }
-  }
+      swiper.slides[swiper.previousIndex].querySelector(".gif").click();
+    },
+  },
 });
 animPhoneSlider.autoplay.stop();
 
 function phoneAnimation() {
-
-  const secondSection = document.querySelector('.sec-section');
+  const secondSection = document.querySelector(".sec-section");
   const phone = document.querySelector(".phone-anim");
 
   // if(window.innerWidth < 768) {
@@ -199,14 +210,12 @@ function phoneAnimation() {
 
   if (!secondSection || !phone) return;
 
-
-
   const sectionRect = secondSection.getBoundingClientRect();
   const fromY = sectionRect.top + 230;
 
   const firstSlide = document.querySelectorAll(".swiper-slide .gif")[0];
-  console.log('firstSlide: ', firstSlide);
-  firstSlide.classList.add('hidden')
+  console.log("firstSlide: ", firstSlide);
+  firstSlide.classList.add("hidden");
 
   gsap.fromTo(
     phone,
@@ -226,11 +235,11 @@ function phoneAnimation() {
         scrub: 1,
         // markers: true,
         onLeave: () => {
-          phone.classList.add('d-none');
-          firstSlide.classList.remove('hidden');
+          phone.classList.add("d-none");
+          firstSlide.classList.remove("hidden");
           animPhoneSlider.destroy();
-          window.dispatchEvent(new Event('resize'));
-        }
+          window.dispatchEvent(new Event("resize"));
+        },
       },
     }
   );
