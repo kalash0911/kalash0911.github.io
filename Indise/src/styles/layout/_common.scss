@@ -8,6 +8,10 @@ html {
     top: calc(50% + 25px);
     left: calc(50% + 13px);
     transform: translate(-50%, -50%);
+
+    @include media('<desktop'){
+        display: none;
+    }
 }
 
 .d-none {
@@ -15,7 +19,11 @@ html {
 }
 
 .hidden {
-  visibility: hidden !important;
+    visibility: hidden !important;
+
+    @include media('<desktop'){
+        visibility: visible !important;
+    }
 }
 
 body {
@@ -104,6 +112,17 @@ body {
 
     .container {
         text-align: center;
+        opacity: 0;
+        animation: opacity 4s ease-in forwards;
+
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
     }
 
     .main-title {
@@ -149,7 +168,7 @@ body {
     margin: 80px 0 230px 0;
     @include adaptiv-vaule("min-height", 706, 289, 1);
 
-    @include media('<phone'){
+    @include media('<desktop'){
         margin: 0;
     }
 
@@ -200,6 +219,23 @@ body {
         height: 100%;
         object-fit: cover;
     }
+
+    .tablet-pnone {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        @include adaptiv-vaule("width", 330, 100, 1);
+        transform: translate(-50%) rotate(5deg);
+
+        @include media('<desktop'){
+            display: block;
+        }
+
+        @include media('<tablet'){
+            display: none;
+        }
+    }
 }
 
 .slider-section {
@@ -212,6 +248,11 @@ body {
     .swiper {
         display: flex;
         justify-content: space-between;
+
+        @include media('<tablet'){
+            flex-direction: row-reverse;
+            align-items: flex-end;
+        }
     }
 
     .slider-nav {
@@ -224,6 +265,15 @@ body {
         margin: 0;
         list-style: none;
         counter-reset: my-awesome-counter;
+        z-index: 2;
+
+        @include media('<desktop'){
+            width: 50% !important;
+        }
+
+        @include media('<tablet'){
+            width: 40px !important;
+        }
     }
 
     .swiper-pagination-bullet{
@@ -238,6 +288,10 @@ body {
         background: none;
         transition: margin-bottom 1.2s ease 0s;
 
+        @include media('<tablet'){
+            margin-bottom: 40px !important;
+        }
+
         &::before {
             content:'';
             position: absolute;
@@ -248,6 +302,12 @@ body {
             border-radius: 12px;
             background-color: rgba(200, 196, 194, 1);
             transition: all 1.2s ease 0s;
+
+            @include media('<tablet'){
+                height: 36px;
+                left: auto;
+                right: 0;
+            }
         }
 
         &::after {
@@ -260,6 +320,12 @@ body {
             font-size: 16px;
             color: rgba(200, 196, 194, 1);
             transition: all 1.2s ease 0s;
+
+            @include media('<tablet'){
+                top: 0;
+                left: -4px;
+                text-align: left;
+            }
         }
 
         h2 {
@@ -272,11 +338,38 @@ body {
             opacity: 0;
             transition: opacity 1.2s ease 0s;
             padding-top: 30px;
+
+            @include media('<tablet'){
+                display: none;
+            }
+        }
+    }
+
+    .title {
+        min-height: 120px;
+        text-align: center;
+        font-family: $Recoleta;
+        font-weight: 400;
+        line-height: 1.2;
+        color: $whitef4;
+        font-size: 28px;
+        margin: 0;
+        display: none;
+
+        @include media('<tablet'){
+            display: block;
+        }
+
+        @include media('<phone'){
+           text-align: left;
         }
     }
 
     .swiper-pagination-bullet-active {
-        margin-bottom: 150px !important;
+
+        @include media('>tablet'){
+            margin-bottom: 150px !important;
+        }
 
         h2 {
             @include adaptiv-vaule("font-size", 38, 30, 1);
@@ -284,30 +377,117 @@ body {
         }
 
         &::before {
-            top: 8px;
-            left: 12px;
-            transform: rotate(90deg);
             background-color: $beige;
+
+            @include media('>tablet'){
+                top: 8px;
+                left: 12px;
+                transform: rotate(90deg);
+            }
         }
 
         &::after {
-            top: 8px;
-            left: 40px;
             color: $beige;
+
+            @include media('>tablet'){
+                top: 8px;
+                left: 40px;
+            }
         }
     }
     
     .swiper-wrapper  {
         width: 30%;
+
+        @include media('<desktop'){
+            width: 50%;
+        }
+    }
+
+    .clock-wrap {
+        width: 30%;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .clock-arrow {
+        position: absolute;
+        height: 220px;
+        z-index: 1;
     }
 
     .clock {
-        width: 30%;
+        position: relative;
+        z-index: -1;
     }
 
     .slide {
         opacity: 0 !important;
         z-index: -1 !important;
+
+        &:nth-child(2) {
+
+            .gif-bg {
+                transform: rotate(-30deg);
+            }
+        }
+
+        &:nth-child(3) {
+
+            .gif-bg {
+                transform: rotate(-90deg);
+            }
+        }
+
+        &:nth-child(4) {
+
+            .gif-bg {
+                transform: rotate(-120deg);
+            }
+        }
+
+        &:nth-child(5) {
+
+            .gif-bg {
+                transform: rotate(-150deg);
+            }
+        }
+
+        &:nth-child(6) {
+
+            .gif-bg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:nth-child(7) {
+
+            .gif-bg {
+                transform: rotate(60deg);
+            }
+        }
+    }
+
+    .gif-wrap {
+        position: relative;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(180deg, #171516 0%, rgba(23, 21, 22, 0) 100%);
+            z-index: 1;
+            display: none;
+
+            @include media('<tablet'){
+                display: block;
+            }
+        }
     }
 
     .swiper-slide-active {
@@ -315,9 +495,28 @@ body {
         z-index: 1 !important;
     }
 
-    .content {
-        img {
-            width: 368px;
+    .gif {
+        display: block;
+        width: 368px;
+
+        @include media('<tablet'){
+            width: 249px;
+            margin: 0 auto;
+        }
+
+        @include media('<phone'){
+            margin: 0;
+        }
+    }
+
+    .gif-bg {
+        position: absolute;
+        left: -15%;
+        bottom: -10%;
+        z-index: -1;
+
+        @include media('<phone'){
+           left: 0;
         }
     }
 
@@ -350,30 +549,32 @@ body {
         right: 16px;
         bottom: 16px;
         z-index: 10;
-        width: 48px;
-        height: 48px;
+        width: 210px;
+        height: 210px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        color: var(--swiper-theme-color);
-      }
-  
-      .autoplay-progress svg {
+        color: $beige;
+    }
+
+    .autoplay-progress svg {
         --progress: 0;
         position: absolute;
-        left: 0;
-        top: 0px;
+        left: 50%;
+        top: 50%;
         z-index: 10;
-        width: 100%;
-        height: 100%;
-        stroke-width: 4px;
-        stroke: var(--swiper-theme-color);
+        width:205px;
+        height:205px;
+        stroke-width: 2px;
+        stroke: $beige;
         fill: none;
         stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
         stroke-dasharray: 125.6;
-        transform: rotate(-90deg);
-      }
+        transform: translate(-50%, -50%) rotate(-90deg);
+        z-index: -1;
+        stroke-linecap: round;
+    }
 }
 
 .transform-section {

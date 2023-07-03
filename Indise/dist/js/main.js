@@ -148,9 +148,11 @@ destroySlidersOnResize(".stepSlider", 9999999, {
       var current = swiper.activeIndex + 1;
       var max = swiper.slides.length;
       var currentPercents = current / max + -progress / max;
+      var clockArrowDeg = currentPercents * 360;
+      var arrowEl = document.querySelector('.clock-arrow');
       var progressCircle = document.querySelector(".autoplay-progress svg");
-      var progressContent = document.querySelector(".autoplay-progress span");
-      progressCircle.style.setProperty("--progress", currentPercents); // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+      arrowEl.style.transform = "rotate(".concat(clockArrowDeg, "deg)");
+      progressCircle.style.setProperty("--progress", currentPercents - 1 / 170); // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
     }
   }
 });

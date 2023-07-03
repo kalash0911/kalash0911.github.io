@@ -8,16 +8,16 @@ let prevWidth = window.innerWidth;
 
 winTriggersMethods.forEach((method) => {
   window.addEventListener(method, () => {
-      // worst case to refresh animation?
-      if (method === "load") {
-        phoneAnimation();
-      }
-      if (method === "resize" && prevWidth !== window.innerWidth) {
-          ScrollTrigger?.killAll();
-          prevWidth = window.innerWidth;
-          phoneAnimation();
-          return;
-      }
+    // worst case to refresh animation?
+    if (method === "load") {
+      phoneAnimation();
+    }
+    if (method === "resize" && prevWidth !== window.innerWidth) {
+      ScrollTrigger?.killAll();
+      prevWidth = window.innerWidth;
+      phoneAnimation();
+      return;
+    }
   });
 });
 
@@ -147,19 +147,19 @@ destroySlidersOnResize(".stepSlider", 9999999, {
 
   on: {
     autoplayTimeLeft(swiper, time, progress) {
-        const current = swiper.activeIndex + 1;
-        const max = swiper.slides.length;
-        const currentPercents = (current / max) + (-progress / max);
-        const clockArrowDeg = currentPercents * 360;
+      const current = swiper.activeIndex + 1;
+      const max = swiper.slides.length;
+      const currentPercents = (current / max) + (-progress / max);
+      const clockArrowDeg = currentPercents * 360;
 
-        const arrowEl = document.querySelector('.clock-arrow');
-        const progressCircle = document.querySelector(".autoplay-progress svg");
-        
-        arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
-        progressCircle.style.setProperty("--progress", currentPercents);
-        // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-      }
+      const arrowEl = document.querySelector('.clock-arrow');
+      const progressCircle = document.querySelector(".autoplay-progress svg");
+
+      arrowEl.style.transform = `rotate(${clockArrowDeg}deg)`;
+      progressCircle.style.setProperty("--progress", currentPercents - 1 / 170);
+      // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
     }
+  }
 });
 
 
@@ -173,7 +173,7 @@ function phoneAnimation() {
   //   return;
   // };
 
-  if(!secondSection || !phone) return;
+  if (!secondSection || !phone) return;
 
 
 
@@ -186,25 +186,25 @@ function phoneAnimation() {
   gsap.fromTo(
     phone,
     {
-        x: 0,
-        y: -fromY,
-        rotation: 5,
+      x: 0,
+      y: -fromY,
+      rotation: 5,
     },
     {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        scrollTrigger: {
-            trigger: secondSection,
-            start: `0`,
-            end: `bottom`,
-            scrub: 1,
-            // markers: true,
-            onLeave: () => {
-              phone.classList.add('d-none');
-              firstSlide.classList.remove('hidden')
-            }
-        },
+      x: 0,
+      y: 0,
+      rotation: 0,
+      scrollTrigger: {
+        trigger: secondSection,
+        start: `0`,
+        end: `bottom`,
+        scrub: 1,
+        // markers: true,
+        onLeave: () => {
+          phone.classList.add('d-none');
+          firstSlide.classList.remove('hidden')
+        }
+      },
     }
-);
+  );
 }
