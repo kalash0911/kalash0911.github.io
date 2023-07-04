@@ -5,9 +5,13 @@ html {
 .phone-anim {
     position: absolute;
     z-index: 5;
-    top: calc(50% + 25px);
-    left: calc(50% + 13px);
+    top: calc(50% + 31px);
+    left: calc(50% - 8px);
     transform: translate(-50%, -50%);
+
+    @include media('<=1100px'){
+        top: 50%;
+    }
 
     @include media('<desktop'){
         display: none;
@@ -27,10 +31,6 @@ html {
         right: 1px;
         top: 0px;
     }
-}
-
-.json-anim {
-    max-width: 380px;
 }
 
 .d-none {
@@ -121,6 +121,10 @@ body {
         
     @include media('<phone'){
         display: none;
+    }
+
+    img {
+        width: 200px;
     }
 
     p {
@@ -422,55 +426,19 @@ body {
     
     .swiper-wrapper  {
         width: 30%;
+        min-width: 370px;
 
         @include media('<desktop'){
             width: 50%;
         }
+
+        @include media('<phone'){
+            min-width: 0;
+        }
     }
 
-    .slide {
-
-        &:nth-child(2) {
-
-            .gif-bg {
-                transform: rotate(-30deg);
-            }
-        }
-
-        &:nth-child(3) {
-
-            .gif-bg {
-                transform: rotate(-90deg);
-            }
-        }
-
-        &:nth-child(4) {
-
-            .gif-bg {
-                transform: rotate(-120deg);
-            }
-        }
-
-        &:nth-child(5) {
-
-            .gif-bg {
-                transform: rotate(-150deg);
-            }
-        }
-
-        &:nth-child(6) {
-
-            .gif-bg {
-                transform: rotate(180deg);
-            }
-        }
-
-        &:nth-child(7) {
-
-            .gif-bg {
-                transform: rotate(60deg);
-            }
-        }
+    .content {
+        padding: 10px 0;
     }
 
     .gif-wrap {
@@ -493,9 +461,9 @@ body {
         }
     }
 
-    .gif {
+    .json-anim {
         display: block;
-        width: 368px;
+        max-width: 358px;
 
         @include media('<tablet'){
             width: 249px;
@@ -515,8 +483,13 @@ body {
         z-index: -1;
         animation: rotate 50s linear infinite;
 
+        @include media('<tablet'){
+            width: 75%;
+            top: 70%;
+        }
+
         @include media('<phone'){
-           left: 0;
+            width: 100%;
         }
 
         @keyframes rotate {
