@@ -118,30 +118,17 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   }
 });
 var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function (step, ind, arr) {
-  var anim; // TODO: check new jsons 5 and 7 steps
-
-  if (ind + 1 === 5) {
-    anim = bodymovin.loadAnimation({
-      container: document.getElementById("".concat(step, "_").concat(ind + 1)),
-      path: "./files/step_".concat(ind, "/data.json"),
-      render: "svg",
-      loop: false,
-      autoplay: false
-    });
-  } else {
-    anim = bodymovin.loadAnimation({
-      container: document.getElementById("".concat(step, "_").concat(ind + 1)),
-      path: "./files/step_".concat(ind + 1, "/data.json"),
-      render: "svg",
-      loop: false,
-      autoplay: false
-    });
-  }
-
+  var anim = bodymovin.loadAnimation({
+    container: document.getElementById("".concat(step, "_").concat(ind + 1)),
+    path: "./files/step_".concat(ind + 1, "/data.json"),
+    render: "svg",
+    loop: false,
+    autoplay: false
+  });
   anim.addEventListener("DOMLoaded", function () {
-    loadCounter += 1; // TODO: check new jsons 5 and 7 steps
+    loadCounter += 1;
 
-    if (loadCounter === arr.length - 1) {
+    if (loadCounter === arr.length) {
       totalDuration = jsonPhoneAnimations.reduce(function (prev, cur) {
         cur.onComplete = function () {
           animPhoneSlider.slideNext();
