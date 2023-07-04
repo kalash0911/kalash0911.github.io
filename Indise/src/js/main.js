@@ -88,13 +88,6 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
   speed: 1200,
-
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  //   stopOnLastSlide: true,
-  // },
-
   autoplay: false,
 
   pagination: {
@@ -114,11 +107,17 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   },
 
   on: {
-    afterInit: (swiper) => {},
+    afterInit: () => {
+      const paginationBtns = document.querySelectorAll('.swiper-pagination-bullet');
+      paginationBtns.forEach((btn, ind) => {
+        btn.addEventListener('click', () => {
+          startProgressTimer(ind, true);
+        })
+      })
+    },
     activeIndexChange: (swiper) => {
       jsonPhoneAnimations[swiper.activeIndex].play();
       jsonPhoneAnimations[swiper.previousIndex].stop();
-      // startProgressTimer(swiper.activeIndex, true)
     },
   },
 });
@@ -127,6 +126,7 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
   .fill("step")
   .map((step, ind, arr) => {
     let anim;
+    // TODO: check new jsons 5 and 7 steps
     if (ind + 1 === 5) {
       anim = bodymovin.loadAnimation({
         container: document.getElementById(`${step}_${ind + 1}`),
@@ -146,17 +146,12 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
     }
     anim.addEventListener("DOMLoaded", () => {
       loadCounter += 1;
-      // TODO:
+      // TODO: check new jsons 5 and 7 steps
       if (loadCounter === arr.length - 1) {
-        // console.log('loaded all');
         totalDuration = jsonPhoneAnimations.reduce((prev, cur) => {
           cur.onComplete = () => {
             animPhoneSlider.slideNext();
           };
-          // cur.onEnterFrame = () => {
-          //   console.log('cur: ', cur);
-          //   console.log('onEnterFrame: ');
-          // }
           return (prev += cur.getDuration());
         }, 0);
       }
@@ -208,9 +203,6 @@ function phoneAnimation() {
           if(!timerIntervalId) {
             startProgressTimer();
           }
-
-          // animPhoneSlider.destroy();
-          // window.dispatchEvent(new Event("resize"));
         },
       },
     }
@@ -218,7 +210,7 @@ function phoneAnimation() {
 }
 
 function checktimer(progress, total, intervalId) {
-  if(progress > total) clearInterval(intervalId);
+  if(progress >= total) clearInterval(intervalId);
 }
 
 function startProgressTimer(currentSlideIndex = 0, reset = false) {
@@ -228,13 +220,14 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
   }
 
   const totalSlides = 7;
-  const fps = 15;
+  const fps = 16;
   const durationMS = totalDuration * 1000;
-  
-  const intervalTimer = (durationMS / (totalSlides * fps));
+  const msPerSlide = durationMS / totalSlides;
+
+  const intervalTimer = msPerSlide / fps;
   const progressCircle = document.querySelector('.raz');
   const clockArrow = document.querySelector('.clock-arrow');
-  let progress = durationMS / totalSlides * currentSlideIndex;
+  let progress = msPerSlide * (currentSlideIndex + 1) - msPerSlide;
 
 
   if(!timerIntervalId) {
@@ -247,7 +240,7 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
       `${percent}%`
       );
       clockArrow.style.transform = `translate(-50%, -50%) rotate(${clockArrowDeg}deg)`;
-      checktimer(progress, totalDuration * 1000, timerIntervalId)
+      checktimer(progress, durationMS, timerIntervalId)
     }, intervalTimer);
   }
 }

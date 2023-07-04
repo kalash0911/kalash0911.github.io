@@ -90,11 +90,6 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
   effect: "fade",
   speed: 1200,
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  //   stopOnLastSlide: true,
-  // },
   autoplay: false,
   pagination: {
     el: ".slider-nav",
@@ -104,15 +99,22 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
     }
   },
   on: {
-    afterInit: function afterInit(swiper) {},
+    afterInit: function afterInit() {
+      var paginationBtns = document.querySelectorAll('.swiper-pagination-bullet');
+      paginationBtns.forEach(function (btn, ind) {
+        btn.addEventListener('click', function () {
+          startProgressTimer(ind, true);
+        });
+      });
+    },
     activeIndexChange: function activeIndexChange(swiper) {
       jsonPhoneAnimations[swiper.activeIndex].play();
-      jsonPhoneAnimations[swiper.previousIndex].stop(); // startProgressTimer(swiper.activeIndex, true)
+      jsonPhoneAnimations[swiper.previousIndex].stop();
     }
   }
 });
 var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function (step, ind, arr) {
-  var anim;
+  var anim; // TODO: check new jsons 5 and 7 steps
 
   if (ind + 1 === 5) {
     anim = bodymovin.loadAnimation({
@@ -133,18 +135,13 @@ var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function 
   }
 
   anim.addEventListener("DOMLoaded", function () {
-    loadCounter += 1; // TODO:
+    loadCounter += 1; // TODO: check new jsons 5 and 7 steps
 
     if (loadCounter === arr.length - 1) {
-      // console.log('loaded all');
       totalDuration = jsonPhoneAnimations.reduce(function (prev, cur) {
         cur.onComplete = function () {
           animPhoneSlider.slideNext();
-        }; // cur.onEnterFrame = () => {
-        //   console.log('cur: ', cur);
-        //   console.log('onEnterFrame: ');
-        // }
-
+        };
 
         return prev += cur.getDuration();
       }, 0);
@@ -186,16 +183,14 @@ function phoneAnimation() {
 
         if (!timerIntervalId) {
           startProgressTimer();
-        } // animPhoneSlider.destroy();
-        // window.dispatchEvent(new Event("resize"));
-
+        }
       }
     }
   });
 }
 
 function checktimer(progress, total, intervalId) {
-  if (progress > total) clearInterval(intervalId);
+  if (progress >= total) clearInterval(intervalId);
 }
 
 function startProgressTimer() {
@@ -208,12 +203,13 @@ function startProgressTimer() {
   }
 
   var totalSlides = 7;
-  var fps = 15;
+  var fps = 16;
   var durationMS = totalDuration * 1000;
-  var intervalTimer = durationMS / (totalSlides * fps);
+  var msPerSlide = durationMS / totalSlides;
+  var intervalTimer = msPerSlide / fps;
   var progressCircle = document.querySelector('.raz');
   var clockArrow = document.querySelector('.clock-arrow');
-  var progress = durationMS / totalSlides * currentSlideIndex;
+  var progress = msPerSlide * (currentSlideIndex + 1) - msPerSlide;
 
   if (!timerIntervalId) {
     timerIntervalId = setInterval(function () {
@@ -222,7 +218,7 @@ function startProgressTimer() {
       var clockArrowDeg = progress / durationMS * 360;
       progressCircle.style.setProperty("--pie-p", "".concat(percent, "%"));
       clockArrow.style.transform = "translate(-50%, -50%) rotate(".concat(clockArrowDeg, "deg)");
-      checktimer(progress, totalDuration * 1000, timerIntervalId);
+      checktimer(progress, durationMS, timerIntervalId);
     }, intervalTimer);
   }
 } // Swiper:
