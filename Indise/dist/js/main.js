@@ -88,8 +88,12 @@ var totalDuration = 0;
 var timerIntervalId;
 var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
-  effect: "fade",
-  speed: 1200,
+  speed: 0,
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  //   stopOnLastSlide: true,
+  // },
   autoplay: false,
   pagination: {
     el: ".slider-nav",

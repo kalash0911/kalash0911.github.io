@@ -86,8 +86,14 @@ let timerIntervalId;
 
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
-  effect: "fade",
-  speed: 1200,
+  speed: 0,
+
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  //   stopOnLastSlide: true,
+  // },
+
   autoplay: false,
 
   pagination: {
@@ -200,7 +206,7 @@ function phoneAnimation() {
           firstSlide.classList.remove("hidden");
           jsonPhoneAnimations[0].play();
 
-          if(!timerIntervalId) {
+          if (!timerIntervalId) {
             startProgressTimer();
           }
         },
@@ -214,7 +220,7 @@ function checktimer(progress, total, intervalId) {
 }
 
 function startProgressTimer(currentSlideIndex = 0, reset = false) {
-  if(reset) {
+  if (reset) {
     clearInterval(timerIntervalId);
     timerIntervalId = null;
   }
@@ -230,14 +236,14 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
   let progress = msPerSlide * (currentSlideIndex + 1) - msPerSlide;
 
 
-  if(!timerIntervalId) {
+  if (!timerIntervalId) {
     timerIntervalId = setInterval(() => {
       progress += intervalTimer;
       const percent = progress / durationMS * 100;
       const clockArrowDeg = progress / durationMS * 360;
       progressCircle.style.setProperty(
-      "--pie-p",
-      `${percent}%`
+        "--pie-p",
+        `${percent}%`
       );
       clockArrow.style.transform = `translate(-50%, -50%) rotate(${clockArrowDeg}deg)`;
       checktimer(progress, durationMS, timerIntervalId)

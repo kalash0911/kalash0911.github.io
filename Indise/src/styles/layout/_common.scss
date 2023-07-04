@@ -429,8 +429,6 @@ body {
     }
 
     .slide {
-        opacity: 0 !important;
-        z-index: -1 !important;
 
         &:nth-child(2) {
 
@@ -495,11 +493,6 @@ body {
         }
     }
 
-    .swiper-slide-active {
-        opacity: 1 !important;
-        z-index: 1 !important;
-    }
-
     .gif {
         display: block;
         width: 368px;
@@ -516,16 +509,26 @@ body {
 
     .gif-bg {
         position: absolute;
-        left: -15%;
-        bottom: -10%;
+        top: 50%;
+        left:  50%;
+        transform: translate(-50%, -50%);
         z-index: -1;
+        animation: rotate 50s linear infinite;
 
         @include media('<phone'){
            left: 0;
         }
+
+        @keyframes rotate {
+            0% {
+                transform: translate(-50%, -50%) rotate(0);
+            }
+            100%{
+                transform: translate(-50%, -50%) rotate(360deg)
+            }
+        }
     }
 
-    
     .gifffer-play-button {
         display: none;
     }
@@ -600,57 +603,6 @@ body {
         --pie-b: 10px;
         mask: radial-gradient(farthest-side,#0000 calc(99% - var(--pie-b)),#000 calc(100% - var(--pie-b)));
     }
-
-    /* .clock-wrap {
-        width: 30%;
-
-        @include media('<desktop'){
-            display: none;
-        }
-    }
-
-    .clock-arrow {
-        position: absolute;
-        height: 220px;
-        z-index: 1;
-    }
-
-    .clock {
-        position: relative;
-        z-index: -1;
-    } 
-
-    .autoplay-progress {
-        position: absolute;
-        right: 16px;
-        bottom: 16px;
-        z-index: 10;
-        width: 210px;
-        height: 210px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: $beige;
-    }
-
-    .autoplay-progress svg {
-        --progress: 0;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 10;
-        width:205px;
-        height:205px;
-        stroke-width: 2px;
-        stroke: $beige;
-        fill: none;
-        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-        stroke-dasharray: 125.6;
-        transform: translate(-50%, -50%) rotate(-90deg);
-        z-index: -1;
-        stroke-linecap: round;
-    } */
 
     /* clock styles end */
 }
