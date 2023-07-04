@@ -86,8 +86,7 @@ let timerIntervalId;
 
 const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   spaceBetween: 20,
-  effect: "fade",
-  speed: 1200,
+  speed: 0,
 
   // autoplay: {
   //   delay: 3000,
@@ -114,7 +113,7 @@ const animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   },
 
   on: {
-    afterInit: (swiper) => {},
+    afterInit: (swiper) => { },
     activeIndexChange: (swiper) => {
       jsonPhoneAnimations[swiper.activeIndex].play();
       jsonPhoneAnimations[swiper.previousIndex].stop();
@@ -205,7 +204,7 @@ function phoneAnimation() {
           firstSlide.classList.remove("hidden");
           jsonPhoneAnimations[0].play();
 
-          if(!timerIntervalId) {
+          if (!timerIntervalId) {
             startProgressTimer();
           }
 
@@ -218,11 +217,11 @@ function phoneAnimation() {
 }
 
 function checktimer(progress, total, intervalId) {
-  if(progress > total) clearInterval(intervalId);
+  if (progress > total) clearInterval(intervalId);
 }
 
 function startProgressTimer(currentSlideIndex = 0, reset = false) {
-  if(reset) {
+  if (reset) {
     clearInterval(timerIntervalId);
     timerIntervalId = null;
   }
@@ -230,21 +229,21 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
   const totalSlides = 7;
   const fps = 15;
   const durationMS = totalDuration * 1000;
-  
+
   const intervalTimer = (durationMS / (totalSlides * fps));
   const progressCircle = document.querySelector('.raz');
   const clockArrow = document.querySelector('.clock-arrow');
   let progress = durationMS / totalSlides * currentSlideIndex;
 
 
-  if(!timerIntervalId) {
+  if (!timerIntervalId) {
     timerIntervalId = setInterval(() => {
       progress += intervalTimer;
       const percent = progress / durationMS * 100;
       const clockArrowDeg = progress / durationMS * 360;
       progressCircle.style.setProperty(
-      "--pie-p",
-      `${percent}%`
+        "--pie-p",
+        `${percent}%`
       );
       clockArrow.style.transform = `translate(-50%, -50%) rotate(${clockArrowDeg}deg)`;
       checktimer(progress, totalDuration * 1000, timerIntervalId)

@@ -1072,56 +1072,6 @@ body {
 .slider-section {
   padding: 130px 0;
   /* clock styles */
-  /* .clock-wrap {
-        width: 30%;
-
-        @include media('<desktop'){
-            display: none;
-        }
-    }
-
-    .clock-arrow {
-        position: absolute;
-        height: 220px;
-        z-index: 1;
-    }
-
-    .clock {
-        position: relative;
-        z-index: -1;
-    } 
-
-    .autoplay-progress {
-        position: absolute;
-        right: 16px;
-        bottom: 16px;
-        z-index: 10;
-        width: 210px;
-        height: 210px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: $beige;
-    }
-
-    .autoplay-progress svg {
-        --progress: 0;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 10;
-        width:205px;
-        height:205px;
-        stroke-width: 2px;
-        stroke: $beige;
-        fill: none;
-        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-        stroke-dasharray: 125.6;
-        transform: translate(-50%, -50%) rotate(-90deg);
-        z-index: -1;
-        stroke-linecap: round;
-    } */
   /* clock styles end */ }
   @media (max-width: 767px) {
     .slider-section {
@@ -1260,27 +1210,24 @@ body {
     @media (max-width: 1023px) {
       .slider-section .swiper-wrapper {
         width: 50%; } }
-  .slider-section .slide {
-    opacity: 0 !important;
-    z-index: -1 !important; }
-    .slider-section .slide:nth-child(2) .gif-bg {
-      -webkit-transform: rotate(-30deg);
-      transform: rotate(-30deg); }
-    .slider-section .slide:nth-child(3) .gif-bg {
-      -webkit-transform: rotate(-90deg);
-      transform: rotate(-90deg); }
-    .slider-section .slide:nth-child(4) .gif-bg {
-      -webkit-transform: rotate(-120deg);
-      transform: rotate(-120deg); }
-    .slider-section .slide:nth-child(5) .gif-bg {
-      -webkit-transform: rotate(-150deg);
-      transform: rotate(-150deg); }
-    .slider-section .slide:nth-child(6) .gif-bg {
-      -webkit-transform: rotate(180deg);
-      transform: rotate(180deg); }
-    .slider-section .slide:nth-child(7) .gif-bg {
-      -webkit-transform: rotate(60deg);
-      transform: rotate(60deg); }
+  .slider-section .slide:nth-child(2) .gif-bg {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg); }
+  .slider-section .slide:nth-child(3) .gif-bg {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .slider-section .slide:nth-child(4) .gif-bg {
+    -webkit-transform: rotate(-120deg);
+    transform: rotate(-120deg); }
+  .slider-section .slide:nth-child(5) .gif-bg {
+    -webkit-transform: rotate(-150deg);
+    transform: rotate(-150deg); }
+  .slider-section .slide:nth-child(6) .gif-bg {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  .slider-section .slide:nth-child(7) .gif-bg {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg); }
   .slider-section .gif-wrap {
     position: relative; }
     .slider-section .gif-wrap::before {
@@ -1296,9 +1243,6 @@ body {
       @media (max-width: 767px) {
         .slider-section .gif-wrap::before {
           display: block; } }
-  .slider-section .swiper-slide-active {
-    opacity: 1 !important;
-    z-index: 1 !important; }
   .slider-section .gif {
     display: block;
     width: 368px; }
@@ -1311,12 +1255,32 @@ body {
         margin: 0; } }
   .slider-section .gif-bg {
     position: absolute;
-    left: -15%;
-    bottom: -10%;
-    z-index: -1; }
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    -webkit-animation: rotate 50s linear infinite;
+    animation: rotate 50s linear infinite; }
     @media (max-width: 479px) {
       .slider-section .gif-bg {
         left: 0; } }
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0); }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg); } }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0); }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg); } }
   .slider-section .gifffer-play-button {
     display: none; }
   .slider-section .text {
