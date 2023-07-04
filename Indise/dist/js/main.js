@@ -179,7 +179,8 @@ function phoneAnimation() {
       start: "-25",
       end: "bottom",
       scrub: 1,
-      markers: true,
+
+      /* markers: true, */
       onLeave: function onLeave() {
         phone.classList.add("d-none");
         firstSlide.classList.remove("hidden");
