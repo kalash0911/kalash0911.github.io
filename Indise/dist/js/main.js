@@ -163,7 +163,7 @@ function phoneAnimation() {
 
   if (!secondSection || !phone) return;
   var sectionRect = secondSection.getBoundingClientRect();
-  var fromY = sectionRect.top + 230;
+  var fromY = sectionRect.top + 110;
   var firstSlide = document.querySelectorAll(".swiper-slide .json-anim")[0];
   firstSlide.classList.add("hidden");
   gsap.fromTo(phone, {
@@ -176,10 +176,10 @@ function phoneAnimation() {
     rotation: 0,
     scrollTrigger: {
       trigger: secondSection,
-      start: "0",
+      start: "-25",
       end: "bottom",
       scrub: 1,
-      // markers: true,
+      markers: true,
       onLeave: function onLeave() {
         phone.classList.add("d-none");
         firstSlide.classList.remove("hidden");

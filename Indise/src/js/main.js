@@ -179,7 +179,7 @@ function phoneAnimation() {
   if (!secondSection || !phone) return;
 
   const sectionRect = secondSection.getBoundingClientRect();
-  const fromY = sectionRect.top + 230;
+  const fromY = sectionRect.top + 110;
 
   const firstSlide = document.querySelectorAll(".swiper-slide .json-anim")[0];
   firstSlide.classList.add("hidden");
@@ -197,10 +197,10 @@ function phoneAnimation() {
       rotation: 0,
       scrollTrigger: {
         trigger: secondSection,
-        start: `0`,
+        start: `-25`,
         end: `bottom`,
         scrub: 1,
-        // markers: true,
+        markers: true,
         onLeave: () => {
           phone.classList.add("d-none");
           firstSlide.classList.remove("hidden");
@@ -216,7 +216,7 @@ function phoneAnimation() {
 }
 
 function checktimer(progress, total, intervalId) {
-  if(progress >= total) clearInterval(intervalId);
+  if (progress >= total) clearInterval(intervalId);
 }
 
 function startProgressTimer(currentSlideIndex = 0, reset = false) {
