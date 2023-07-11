@@ -13,22 +13,26 @@ import { useTranslation } from "react-i18next";
 
 export const App = () => {
   const testEndCookie = getCookie(TEST_END);
-  const commonCache =  JSON.parse(getFromLocalStorage('commonCache'))
+  const commonCache = JSON.parse(getFromLocalStorage("commonCache"));
 
   const [formValues, setFormValues] = useState(commonCache?.formValues || null);
   const [startTest, setStartTest] = useState(commonCache?.startTest || false);
-  const [userAnswers, setUserAnswers] = useState(commonCache?.userAnswers || null);
-  const [testIsDone, setTestToDone] = useState(commonCache?.testIsDone || false);
+  const [userAnswers, setUserAnswers] = useState(
+    commonCache?.userAnswers || null
+  );
+  const [testIsDone, setTestToDone] = useState(
+    commonCache?.testIsDone || false
+  );
   const [loading, setLoading] = useState(false);
-  const [loadingText, setLoadingText] = useState('');
-  const [error, setError] = useState('');
+  const [loadingText, setLoadingText] = useState("");
+  const [error, setError] = useState("");
   const { i18n, t } = useTranslation();
   let retries = 0;
 
   useEffect(() => {
-    if(testIsDone || testEndCookie) {
+    if (testIsDone || testEndCookie) {
       localStorage.clear();
-      return
+      return;
     }
 
     const commonCache = {
@@ -36,37 +40,35 @@ export const App = () => {
       startTest,
       userAnswers,
       testIsDone,
-    }
-    saveToLocalStorage('commonCache', commonCache);
+    };
+    saveToLocalStorage("commonCache", commonCache);
+  }, [formValues, startTest, userAnswers, testIsDone, loading, error]);
 
-
-  }, [formValues, startTest, userAnswers, testIsDone, loading, error])
-
-  document.addEventListener('onChangeLanguage', (event) => {
+  document.addEventListener("onChangeLanguage", (event) => {
     // Trigger react app localization from native js code
-    if(event.target.dataset.lang) {
-      i18n.changeLanguage(event.target.dataset.lang)
+    if (event.target.dataset.lang) {
+      i18n.changeLanguage(event.target.dataset.lang);
     }
-  })
+  });
 
   const resetTest = () => {
     localStorage.clear();
-    setCookie(TEST_END, '');
+    setCookie(TEST_END, "");
     setFormValues(null);
     setStartTest(false);
     setUserAnswers(null);
     setTestToDone(false);
-  }
+  };
 
   if (formValues || testEndCookie) {
     document.querySelector(".heading-block").classList.add("d-none");
   }
 
   if (testEndCookie || testIsDone) {
-    return <TestDone resetTest={resetTest}/>;
+    return <TestDone resetTest={resetTest} />;
   }
 
-  const questionId = userAnswers?.length - 1 || 0;
+  const questionId =  userAnswers?.length - 1 || 0;
 
   const handleUserAnswer = (answers) => {
     setUserAnswers(answers);
@@ -85,7 +87,7 @@ export const App = () => {
     })
       .then((res) => {
         if (res.ok) {
-          setCookie(TEST_END, "true", 31);
+          setCookie(TEST_END, "true", 1);
           setTestToDone(true);
         } else {
           if (retries < 2) {
@@ -93,7 +95,7 @@ export const App = () => {
             console.log(`Retrying POST request, attempt ${retries}...`);
             sendPostRequest(payload);
           } else {
-            console.log('POST request failed after maximum retries.');
+            console.log("POST request failed after maximum retries.");
             setError(ERROR_API_KEY);
           }
         }
@@ -105,19 +107,19 @@ export const App = () => {
           console.log(`Retrying POST request, attempt ${retries}...`);
           sendPostRequest(payload);
         } else {
-          console.log('POST request failed after maximum retries.');
+          console.log("POST request failed after maximum retries.");
           setError(ERROR_API_KEY);
         }
       })
       .finally(() => {
         setLoading(false);
-        setLoadingText('');
+        setLoadingText("");
       });
-  }
+  };
 
   const submitForm = (comunicationMethod) => {
     setLoading(true);
-    setLoadingText(t('loadingText'));
+    setLoadingText(t("loadingText"));
     setError("");
 
     const onlyAnswers = userAnswers?.map(({ id, answer }) => ({
@@ -153,7 +155,7 @@ export const App = () => {
       comunicationContacts: { ...comunicationMethod },
       userAnswers: onlyAnswers,
     };
-    sendPostRequest(request)
+    sendPostRequest(request);
   };
 
   const backToTest = () => {
@@ -162,13 +164,16 @@ export const App = () => {
 
   return (
     <>
-      {loading && <Spinner loadingText={loadingText}/>}
+      {loading && <Spinner loadingText={loadingText} />}
       {!formValues && <Form setFormValues={setFormValues} />}
       {!!formValues && !userAnswers && !startTest && (
         <TestRules setStartTest={setStartTest} />
       )}
       {startTest && (
-        <TestApp setUserAnswers={handleUserAnswer} questionInd={questionId} />
+        <TestApp
+          setUserAnswers={handleUserAnswer}
+          questionInd={questionId}
+        />
       )}
       {userAnswers && !startTest && (
         <SuccessBlock

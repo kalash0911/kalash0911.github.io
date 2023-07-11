@@ -1500,6 +1500,24 @@ input, textarea{
             }
         }
     }
+
+    .pagination-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+
+        .form-title {
+            margin: 0;
+        }
+
+        .refresh-btn {
+            border: 0;
+            background: transparent;
+            img {
+                width: 18px;
+            }
+        }
+    }
 }
 
 /* _________________________#test-info */
