@@ -195,8 +195,11 @@ body {
 
         &.first {
 
-            @include media('<laptop'){
-                align-items: flex-start;
+            .text-wrap {
+        
+                @include media('<laptop'){
+                    transform: translateX(30%);
+                }         
             }
         }
 
@@ -381,4 +384,104 @@ body {
         text-align: left;
     }
     
+}
+
+/* ---------------------------form-section------------------- */
+
+.form-section {
+    padding: 115px 0;
+
+    .title-sc {
+        margin-bottom: 20px;
+    }
+
+    .text {
+        max-width: 550px;
+        margin: 0 auto 55px auto;
+        color: $whiteF8;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 126%;
+        letter-spacing: -0.52px;
+        opacity: .8;
+    }
+
+    form {
+        width: 100%;
+        max-width: 517px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 40px;
+        column-gap: 25px;
+        margin: 0 auto;
+    }
+
+    .label {
+        width: 100%;
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+
+        &.l50 {
+            width: 47%;
+
+            @include media('<tablet'){
+                width: 100%;
+            }
+        }
+    }
+
+    .input {
+        width: 100%;
+        background-color: transparent;
+        padding: 0 0 10px 0;
+        margin: 12px 0 0 0;
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.16px;
+        border: none;
+        border-bottom: 1px solid rgba($white, .4);
+        transition: $animation-speed;
+        outline: none;
+
+        &::placeholder {
+            color: $gray76;
+        }
+
+        &:focus {
+            border-bottom: 1px solid $pink;
+        }
+    }
+
+    option {
+        background-color: $black01;
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.16px;
+        border: none;
+    }
+
+    .form-btn {
+        width: 100%;
+        background-color: $pink;
+        border: 1px solid $pink;
+        padding: 20px;
+        text-align: center;
+        color: $black01;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: $animation-speed;
+
+        &:hover {
+            color: $pink;
+            background-color: transparent;
+        }
+    }
 }

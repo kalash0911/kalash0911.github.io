@@ -707,9 +707,9 @@ body {
       bottom: 7%;
       right: -4%; }
     @media (max-width: 1499px) {
-      .circle-section .item.first {
-        -ms-flex-align: start;
-        align-items: flex-start; } }
+      .circle-section .item.first .text-wrap {
+        -webkit-transform: translateX(30%);
+        transform: translateX(30%); } }
     .circle-section .item.mid {
       position: absolute;
       top: 0;
@@ -847,5 +847,93 @@ body {
   .application-section .title-sc {
     max-width: 655px;
     text-align: left; }
+
+/* ---------------------------form-section------------------- */
+.form-section {
+  padding: 115px 0; }
+  .form-section .title-sc {
+    margin-bottom: 20px; }
+  .form-section .text {
+    max-width: 550px;
+    margin: 0 auto 55px auto;
+    color: #F9F8F8;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 126%;
+    letter-spacing: -0.52px;
+    opacity: .8; }
+  .form-section form {
+    width: 100%;
+    max-width: 517px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    row-gap: 40px;
+    -webkit-column-gap: 25px;
+    -moz-column-gap: 25px;
+    column-gap: 25px;
+    margin: 0 auto; }
+  .form-section .label {
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    text-transform: uppercase; }
+    .form-section .label.l50 {
+      width: 47%; }
+      @media (max-width: 767px) {
+        .form-section .label.l50 {
+          width: 100%; } }
+  .form-section .input {
+    width: 100%;
+    background-color: transparent;
+    padding: 0 0 10px 0;
+    margin: 12px 0 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.16px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease 0s;
+    outline: none; }
+    .form-section .input::-webkit-input-placeholder {
+      color: #767676; }
+    .form-section .input::-moz-placeholder {
+      color: #767676; }
+    .form-section .input:-ms-input-placeholder {
+      color: #767676; }
+    .form-section .input::-ms-input-placeholder {
+      color: #767676; }
+    .form-section .input::placeholder {
+      color: #767676; }
+    .form-section .input:focus {
+      border-bottom: 1px solid #FF3DB2; }
+  .form-section option {
+    background-color: #010101;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.16px;
+    border: none; }
+  .form-section .form-btn {
+    width: 100%;
+    background-color: #FF3DB2;
+    border: 1px solid #FF3DB2;
+    padding: 20px;
+    text-align: center;
+    color: #010101;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s; }
+    .form-section .form-btn:hover {
+      color: #FF3DB2;
+      background-color: transparent; }
 
 /*# sourceMappingURL=main.css.map */
