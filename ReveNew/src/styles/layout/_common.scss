@@ -335,7 +335,7 @@ body {
 
 .mission-section {
     position: relative;
-    margin: 100px 0 0 0;
+    padding: 100px 0 0 0;
     min-height: 915px;
 
     &::after {
@@ -352,6 +352,7 @@ body {
     .bg {
         top: auto;
         bottom: 0;
+        height: 80%;
     }
 
     .title-sc {
