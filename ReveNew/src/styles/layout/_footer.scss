@@ -1,0 +1,124 @@
+#footer {
+    position: relative;
+    padding: 76px 0;
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 50%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .logo-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .logo {
+        width: 223px;
+    }
+
+    .title {
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 108%;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .link {
+        color: $grayB9;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 112%;
+        text-transform: capitalize;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    .icons-box {
+        display: flex;
+        gap: 20px;
+    }
+
+    .soc-icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        border: 1px solid $pink;
+        transition: $animation-speed;
+
+        svg {
+            fill: $pink;
+            transition: $animation-speed;
+        }
+
+        &.insta {
+
+            svg {
+                fill: none;
+                stroke: $pink;
+            }
+        }
+
+        &:hover {
+            border: 1px solid $white;
+
+            svg {
+                fill: $white;
+            }
+    
+            &.insta {
+    
+                svg {
+                    fill: none;
+                    stroke: $white;
+                }
+            }
+        }
+    }
+
+    .cont-box {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .cont-link {
+        color: #E1D4D4;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 154%;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

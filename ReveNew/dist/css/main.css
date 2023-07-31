@@ -1228,4 +1228,97 @@ body {
       color: #FF3DB2;
       background-color: transparent; }
 
+#footer {
+  position: relative;
+  padding: 76px 0; }
+  #footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFF 50%, rgba(255, 255, 255, 0) 100%); }
+  #footer .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 25px; }
+  #footer .logo-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px; }
+  #footer .logo {
+    width: 223px; }
+  #footer .title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 108%;
+    text-transform: uppercase;
+    margin-bottom: 25px; }
+  #footer .menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 22px;
+    padding: 0;
+    margin: 0; }
+  #footer .link {
+    color: #B9B9B9;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 112%;
+    text-transform: capitalize; }
+    #footer .link:hover {
+      color: #fff; }
+  #footer .icons-box {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px; }
+  #footer .soc-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid #FF3DB2;
+    transition: all 0.3s ease 0s; }
+    #footer .soc-icon svg {
+      fill: #FF3DB2;
+      transition: all 0.3s ease 0s; }
+    #footer .soc-icon.insta svg {
+      fill: none;
+      stroke: #FF3DB2; }
+    #footer .soc-icon:hover {
+      border: 1px solid #fff; }
+      #footer .soc-icon:hover svg {
+        fill: #fff; }
+      #footer .soc-icon:hover.insta svg {
+        fill: none;
+        stroke: #fff; }
+  #footer .cont-box {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 16px; }
+  #footer .cont-link {
+    color: #E1D4D4;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 154%; }
+    #footer .cont-link:hover {
+      color: #fff; }
+
 /*# sourceMappingURL=main.css.map */
