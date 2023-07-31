@@ -1,0 +1,268 @@
+.overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .7s ease 0s;
+}
+
+.overflow_active {
+    z-index: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 36px 0;
+    z-index: 5;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .menu-block {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        @include media('<widescreen'){
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 50%;
+            height: 100vh;
+            min-height: 100vh;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 200px 20px 100px 20px;
+            transition: all .7s ease 0s;
+            background-color: $black01;
+            overflow: auto;
+        }
+
+        @include media('<tablet'){
+            width: 80%;
+        }
+
+        @include media('<phone'){
+            width: 100%;
+        }
+
+        .active & {
+            right: 0;
+        }
+    }
+
+    .menu-wrap {
+        z-index: 1;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include media('<widescreen'){
+            flex-direction: column;
+        }
+    }
+
+    .menu-item {
+
+        @include media('<widescreen'){
+            text-align: center;
+        }
+    }
+        
+    .link {
+        color: $white;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 112%;
+        text-transform: uppercase;
+        transition: $animation-speed;
+
+        @include media('<widescreen'){
+            font-size: 22px;
+        }
+
+        &:hover {
+            color: $pink;
+        }
+    }
+
+    .btn-wrap {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+/* ---------------burger */
+
+.burger{
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 15px;
+    z-index: 1;
+    border: none;
+    outline: none;
+    background: none;
+
+    @include media('<widescreen'){
+        display: block;
+    }
+
+    span{
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        border-radius: 10px;
+        transition: all .7s ease 0s;
+    }
+    
+    &::before, &::after{
+        content:'';
+        position: absolute;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $white;
+        border-radius: 10px;
+        transition: $animation-speed;
+    }
+
+    &::before{
+        top: 0;
+    }
+
+    &::after{
+        bottom: 0;
+    }
+}
+
+.burger_active{
+
+    span{
+        opacity: 0;
+    }
+    
+    &::before, &::after{
+        background-color: $pink;
+        animation-duration: .7s;
+        animation-fill-mode: forwards;
+    }
+    
+    &::before{
+        animation-name: burger1;
+    }
+
+    &::after{
+        animation-name: burger2;
+    }
+
+   @keyframes burger1 {
+        0%{
+            top: 0px;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            top: 6px;
+        }
+
+        100%{
+            transform: rotate(45deg);
+            top: 6px;
+        }
+    }
+    
+    @keyframes burger2 {
+        0%{
+            bottom: 0;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            bottom: 7px;
+            width: 100%;
+        }
+
+        100%{
+            transform: rotate(-45deg);
+            bottom: 7px;
+            width: 100%;
+        }
+    }
+}
+
+.burger_finish{
+
+    &::before, &::after{
+        animation-duration: .7s;
+        animation-fill-mode: forwards;
+    }
+
+    &::before{
+        animation-name: burger3;
+    }
+
+    &::after{
+        animation-name: burger4;
+    }
+
+    @keyframes burger3 {
+        0%{
+            transform: rotate(45deg);
+            top: 6px;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            top: 6px;
+        }
+
+        100%{
+            top: 0;
+        }
+    }
+    
+    @keyframes burger4 {
+        0%{
+            transform: rotate(-45deg);
+            bottom: 6px;
+            width: 100%;
+        }
+
+        40%{
+            transform: rotate(0deg);
+            bottom: 6px;
+            width: 100%;
+        }
+
+        100%{
+            bottom: 0;
+        }
+    }
+}
