@@ -54,7 +54,7 @@ if (linkClose.length) {
 
 // For Zoom
 
-const zoomImage = document.querySelector('.zoom');
+/* const zoomImage = document.querySelector('.zoom');
 const missionSection = document.getElementById('mission');
 const missionSectionHeight = missionSection.offsetHeight;
 
@@ -70,7 +70,7 @@ function handleScroll() {
   }
 }
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', handleScroll); */
 
 
 // Swiper:

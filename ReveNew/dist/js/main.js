@@ -69,22 +69,24 @@ if (linkClose.length) {
 
 ; // For Zoom
 
-var zoomImage = document.querySelector('.zoom');
-var missionSection = document.getElementById('mission');
-var missionSectionHeight = missionSection.offsetHeight;
+/* const zoomImage = document.querySelector('.zoom');
+const missionSection = document.getElementById('mission');
+const missionSectionHeight = missionSection.offsetHeight;
 
 function handleScroll() {
-  var scrollTop = window.scrollY;
-  var windowHeight = window.innerHeight;
-  var distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
 
   if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
-    var scaleFactor = 2.5 - distanceFromBottom / windowHeight * 1;
-    zoomImage.style.transform = "scale(".concat(scaleFactor, ")");
+    const scaleFactor = 2.5 - (distanceFromBottom / windowHeight) * 1;
+
+    zoomImage.style.transform = `scale(${scaleFactor})`;
   }
 }
 
-window.addEventListener('scroll', handleScroll); // Swiper:
+window.addEventListener('scroll', handleScroll); */
+// Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
