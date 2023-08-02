@@ -1455,16 +1455,6 @@ body {
     line-height: 110%;
     letter-spacing: -0.28px;
     text-transform: lowercase; }
-  .circle-section.circle2 {
-    padding: 240px 0 200px 0; }
-    @media (max-width: 1499px) {
-      .circle-section.circle2 .first .text-wrap {
-        -webkit-transform: translateX(30%);
-        transform: translateX(30%); } }
-    @media (max-width: 1499px) {
-      .circle-section.circle2 .last .text-wrap {
-        -webkit-transform: translateX(20%);
-        transform: translateX(20%); } }
 
 /* -------------------------total-section-------------------- */
 .total-section .container {
@@ -1974,6 +1964,112 @@ body {
     @media (max-width: 479px) {
       .rules-section .text {
         font-size: 14px; } }
+
+/* -------------------------two-circle-section-------------- */
+.two-circle-section {
+  padding: 135px 0; }
+  .two-circle-section .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 50px; }
+  .two-circle-section .item {
+    position: relative;
+    /* Только если меньше контейнера */
+    width: 360px;
+    /* Только если меньше контейнера */
+    height: 360px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #010101;
+    padding: 20px; }
+    @media (max-width: 1560px) {
+      .two-circle-section .item {
+        width: calc(178px + 182 * ((100vw - calc(320px)) / 1240)); } }
+    @media (max-width: 1560px) {
+      .two-circle-section .item {
+        height: calc(178px + 182 * ((100vw - calc(320px)) / 1240)); } }
+    .two-circle-section .item.big {
+      /* Только если меньше контейнера */
+      width: 580px;
+      /* Только если меньше контейнера */
+      height: 580px; }
+      @media (max-width: 1560px) {
+        .two-circle-section .item.big {
+          width: calc(320px + 260 * ((100vw - calc(320px)) / 1240)); } }
+      @media (max-width: 1560px) {
+        .two-circle-section .item.big {
+          height: calc(320px + 260 * ((100vw - calc(320px)) / 1240)); } }
+  .two-circle-section .pink-title {
+    color: #FF3DB2;
+    /* Только если меньше контейнера */
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.52px;
+    text-transform: uppercase;
+    margin-bottom: 12px; }
+    @media (max-width: 1560px) {
+      .two-circle-section .pink-title {
+        font-size: calc(16px + 10 * ((100vw - calc(320px)) / 1240)); } }
+  .two-circle-section .text-box {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 30px; }
+  .two-circle-section .text {
+    color: #fff;
+    /* Только если меньше контейнера */
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.4px;
+    margin: 0; }
+    @media (max-width: 1560px) {
+      .two-circle-section .text {
+        font-size: calc(22px + 18 * ((100vw - calc(320px)) / 1240)); } }
+    .two-circle-section .text span {
+      color: #B9B9B9;
+      /* Только если меньше контейнера */
+      font-size: 26px;
+      text-transform: lowercase; }
+      @media (max-width: 1560px) {
+        .two-circle-section .text span {
+          font-size: calc(16px + 10 * ((100vw - calc(320px)) / 1240)); } }
+    .two-circle-section .text i {
+      display: inline-block;
+      -webkit-transform: translate(-5px, -15px);
+      transform: translate(-5px, -15px);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 133%;
+      letter-spacing: -0.24px; }
+  .two-circle-section .text-pink {
+    color: #FF3DB2;
+    /* Только если меньше контейнера */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+    margin: 0; }
+    @media (max-width: 1560px) {
+      .two-circle-section .text-pink {
+        font-size: calc(14px + 6 * ((100vw - calc(320px)) / 1240)); } }
 
 /* -----------------------application-section---------------- */
 .application-section {
