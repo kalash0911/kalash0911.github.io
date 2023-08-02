@@ -124,6 +124,8 @@ destroySlidersOnResize(".slider-vip", 99999, {
 
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
 
+const notFullAnimData = ["1", "3", "4", "6", "7", "9", "10", "11", "12"];
+
 const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   thumbs: {
     swiper: {
@@ -154,10 +156,10 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
       // jsonPhoneAnimations[swiper.previousIndex].stop();
       // TODO: Replace when will be full list of animation
       const { activeIndex, previousIndex } = swiper;
-      const ind = ["1", "3", "4", "6", "7", "9", "10", "11", "12"].indexOf(
+      const ind = notFullAnimData.indexOf(
         `${activeIndex + 1}`
       );
-      const prevInd = ["1", "3", "4", "6", "7", "9", "10", "11", "12"].indexOf(
+      const prevInd = notFullAnimData.indexOf(
         `${previousIndex + 1}`
       );
       jsonPhoneAnimations[ind]?.play();
@@ -175,17 +177,7 @@ let animLoadCounter = 0;
 let totalDuration = 0;
 // TODO: Replace when will be full list of animation
 // new Array(planSliders.length).fill('step')
-const jsonPhoneAnimations = [
-  "1",
-  "3",
-  "4",
-  "6",
-  "7",
-  "9",
-  "10",
-  "11",
-  "12",
-].map((step, ind, arr) => {
+const jsonPhoneAnimations = notFullAnimData.map((step, ind, arr) => {
   const anim = bodymovin.loadAnimation({
     // container: document.getElementById(`${step}_${ind + 1}`),
     // path: `./files/plan_anim/data-${ind + 1}.json`,
