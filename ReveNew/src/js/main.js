@@ -52,6 +52,27 @@ if (linkClose.length) {
   }
 };
 
+// For Zoom
+
+const zoomImage = document.querySelector('.zoom');
+const missionSection = document.getElementById('mission');
+const missionSectionHeight = missionSection.offsetHeight;
+
+function handleScroll() {
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
+
+  if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
+    const scaleFactor = 1.5 - (distanceFromBottom / windowHeight) * 0.3;
+
+    zoomImage.style.transform = `scale(${scaleFactor})`;
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
 // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {

@@ -67,7 +67,24 @@ if (linkClose.length) {
   }
 }
 
-; // Swiper:
+; // For Zoom
+
+var zoomImage = document.querySelector('.zoom');
+var missionSection = document.getElementById('mission');
+var missionSectionHeight = missionSection.offsetHeight;
+
+function handleScroll() {
+  var scrollTop = window.scrollY;
+  var windowHeight = window.innerHeight;
+  var distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
+
+  if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
+    var scaleFactor = 1.5 - distanceFromBottom / windowHeight * 0.3;
+    zoomImage.style.transform = "scale(".concat(scaleFactor, ")");
+  }
+}
+
+window.addEventListener('scroll', handleScroll); // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);

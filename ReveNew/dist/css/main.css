@@ -910,8 +910,20 @@ body {
     color: #FF3DB2; }
   .title-sc.t64 {
     font-size: 64px; }
+    @media (max-width: 1023px) {
+      .title-sc.t64 {
+        font-size: 42px; } }
+    @media (max-width: 767px) {
+      .title-sc.t64 {
+        font-size: 32px; } }
   .title-sc.t42 {
     font-size: 42px; }
+    @media (max-width: 1023px) {
+      .title-sc.t42 {
+        font-size: 32px; } }
+    @media (max-width: 767px) {
+      .title-sc.t42 {
+        font-size: 22px; } }
 
 .stiker {
   display: block;
@@ -921,6 +933,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 20px; }
+  @media (max-width: 767px) {
+    .stiker {
+      font-size: 14px; } }
 
 /* -------------------------main-section-------------------- */
 .main-section {
@@ -1069,8 +1084,8 @@ body {
       animation-name: fillColor;
       -webkit-animation-duration: .5s;
       animation-duration: .5s;
-      -webkit-animation-delay: 3s;
-      animation-delay: 3s;
+      -webkit-animation-delay: 3.5s;
+      animation-delay: 3.5s;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards; }
   .main-section .l2 {
@@ -1090,8 +1105,8 @@ body {
       animation-name: fillColor;
       -webkit-animation-duration: .5s;
       animation-duration: .5s;
-      -webkit-animation-delay: 3s;
-      animation-delay: 3s;
+      -webkit-animation-delay: 3.5s;
+      animation-delay: 3.5s;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards; }
   .main-section .l6 {
@@ -1158,7 +1173,12 @@ body {
 .mission-section {
   position: relative;
   padding: 100px 0 0 0;
-  min-height: 915px; }
+  min-height: 915px;
+  overflow: hidden; }
+  @media (max-width: 767px) {
+    .mission-section {
+      padding: 80px 0 0 0;
+      min-height: 800px; } }
   .mission-section::after {
     content: '';
     position: absolute;
@@ -1171,7 +1191,9 @@ body {
   .mission-section .bg {
     top: auto;
     bottom: 0;
-    height: 80%; }
+    height: 80%;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); }
   .mission-section .title-sc {
     max-width: 880px;
     margin: 0 auto 50px auto; }
@@ -1184,6 +1206,9 @@ body {
     line-height: 110%;
     letter-spacing: -1.6px;
     margin-bottom: 100px; }
+    @media (max-width: 1023px) {
+      .mission-section .sub-title {
+        font-size: 52px; } }
 
 /* -------------------------circle-section------------------- */
 .circle-section {
