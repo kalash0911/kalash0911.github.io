@@ -64,7 +64,7 @@ function handleScroll() {
   const distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
 
   if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
-    const scaleFactor = 1.5 - (distanceFromBottom / windowHeight) * 0.3;
+    const scaleFactor = 2.5 - (distanceFromBottom / windowHeight) * 1;
 
     zoomImage.style.transform = `scale(${scaleFactor})`;
   }

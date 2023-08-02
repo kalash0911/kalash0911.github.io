@@ -1195,9 +1195,13 @@ body {
   .mission-section .bg {
     top: auto;
     bottom: 0;
-    height: 80%;
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5); }
+    height: 80%; }
+  .mission-section .zoom {
+    -webkit-transform: scale(2.5);
+    transform: scale(2.5);
+    transition: -webkit-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear; }
   .mission-section .title-sc {
     max-width: 880px;
     margin: 0 auto 50px auto; }

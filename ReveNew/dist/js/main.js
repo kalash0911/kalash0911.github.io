@@ -79,7 +79,7 @@ function handleScroll() {
   var distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
 
   if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
-    var scaleFactor = 1.5 - distanceFromBottom / windowHeight * 0.3;
+    var scaleFactor = 2.5 - distanceFromBottom / windowHeight * 1;
     zoomImage.style.transform = "scale(".concat(scaleFactor, ")");
   }
 }

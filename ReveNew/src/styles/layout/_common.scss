@@ -383,7 +383,11 @@ body {
         top: auto;
         bottom: 0;
         height: 80%;
-        transform: scale(1.5);
+    }
+
+    .zoom {
+        transform: scale(2.5);
+        transition: transform 0.3s linear;
     }
 
     .title-sc {
