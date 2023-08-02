@@ -139,6 +139,20 @@ body {
         text-align: center;
     }
 
+    @keyframes opacityZoom {
+        0%{
+            transform: scale(1);
+            opacity: 1;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: scale(1.2);
+        }
+    }
+
     @keyframes opacity {
         0%{
             opacity: 100%;
@@ -169,16 +183,15 @@ body {
     }
 
     .bg1 {
-        animation-name: opacity;
-        animation-duration: 2s;
-        animation-delay: 2s;
+        animation-name: opacityZoom;
+        animation-duration: 4s;
         animation-fill-mode: forwards;
+        transform: scale(1);
     }
 
     .bg2 {
-        animation-name: opacity;
-        animation-duration: 2s;
-        animation-delay: 2s;
+        animation-name: opacityZoom;
+        animation-duration: 4s;
         animation-fill-mode: forwards;
         animation-direction: reverse;
         opacity: 0;
@@ -197,7 +210,7 @@ body {
 
     .letter {
         animation-name: opacity;
-        animation-duration: 1s;
+        animation-duration: .5s;
         animation-fill-mode: forwards;
         animation-direction: reverse;
         opacity: 0;
@@ -208,45 +221,45 @@ body {
     }
 
     .l1 {
-        animation-delay: 4.4s;
+        animation-delay: 2.4s;
 
         svg {
             animation-name: fillColor;
-            animation-duration: 1s;
-            animation-delay: 6s;
+            animation-duration: .5s;
+            animation-delay: 3s;
             animation-fill-mode: forwards;
         }
     }
 
     .l2 {
-        animation-delay: 4s;
+        animation-delay: 2s;
     }
 
     .l3 {
-        animation-delay: 4.8s;
+        animation-delay: 2.8s;
     }
 
     .l4 {
-        animation-delay: 5.2s;
+        animation-delay: 3.2s;
     }
 
     .l5 {
-        animation-delay: 4.2s;
+        animation-delay: 2.2s;
 
         svg {
             animation-name: fillColor;
-            animation-duration: 1s;
-            animation-delay: 6s;
+            animation-duration: .5s;
+            animation-delay: 3s;
             animation-fill-mode: forwards;
         }
     }
 
     .l6 {
-        animation-delay: 5s;
+        animation-delay: 3s;
     }
 
     .l7 {
-        animation-delay: 4.6s;
+        animation-delay: 2.6s;
     }
 
     .text {
@@ -260,8 +273,8 @@ body {
         opacity: 0;
 
         animation-name: transformOpacity;
-        animation-duration: 1s;
-        animation-delay: 6.5s;
+        animation-duration: .5s;
+        animation-delay: 3.5s;
         animation-fill-mode: forwards;
 
         @include media('<tablet'){
@@ -313,6 +326,47 @@ body {
         left: 50%;
         transform: translate(-50%);
         transition: $animation-speed;
+    }
+}
+
+/* -------------------------mission-section------------------ */
+
+.mission-section {
+    position: relative;
+    padding: 100px 0 0 0;
+    min-height: 915px;
+
+    &::after {
+        content:'';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 500px;
+        background: rgb(1,1,1);
+        background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
+    }
+
+    .bg {
+        top: auto;
+        bottom: 0;
+        height: 80%;
+    }
+
+    .title-sc {
+        max-width: 880px;
+        margin: 0 auto 50px auto;
+    }
+
+    .sub-title {
+        position: relative;
+        color: $white;
+        text-align: center;
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 110%;
+        letter-spacing: -1.6px;
+        margin-bottom: 100px;
     }
 }
 
@@ -483,58 +537,6 @@ body {
                 }
                 
             }
-        }
-    }
-}
-
-/* -------------------------mission-section------------------ */
-
-.mission-section {
-    position: relative;
-    padding: 100px 0 0 0;
-    min-height: 915px;
-
-    &::after {
-        content:'';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 500px;
-        background: rgb(1,1,1);
-        background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
-    }
-
-    .bg {
-        top: auto;
-        bottom: 0;
-        height: 80%;
-    }
-
-    .title-sc {
-        max-width: 880px;
-        margin: 0 auto 50px auto;
-    }
-
-    .sub-title {
-        position: relative;
-        color: $white;
-        text-align: center;
-        font-size: 80px;
-        font-weight: 700;
-        line-height: 110%;
-        letter-spacing: -1.6px;
-        margin-bottom: 100px;
-
-        &::before {
-            content:'';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%);
-            width: 100%;
-            height: 70%;
-            background: linear-gradient(180deg, rgba(1, 1, 1, 0.00) 0%, #010101 100%);
         }
     }
 }
