@@ -1716,6 +1716,143 @@ body {
   -o-object-fit: cover;
   object-fit: cover; }
 
+/* ---------------------------plan-section------------------- */
+.plan-section {
+  padding: 100px 0; }
+  @media (max-width: 767px) {
+    .plan-section {
+      padding: 80px 0 40px 0; } }
+  .plan-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 25px; }
+    @media (max-width: 767px) {
+      .plan-section .container {
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
+  .plan-section .title-sc {
+    text-align: left;
+    max-width: 440px;
+    margin-bottom: 64px; }
+    @media (max-width: 767px) {
+      .plan-section .title-sc {
+        display: none; } }
+    .plan-section .title-sc.mob {
+      display: none; }
+      @media (max-width: 767px) {
+        .plan-section .title-sc.mob {
+          display: block; } }
+  .plan-section .img-block {
+    width: 50%;
+    max-width: 635px; }
+    @media (max-width: 767px) {
+      .plan-section .img-block {
+        width: 100%;
+        max-width: 100%; } }
+  .plan-section .text-block {
+    width: 50%;
+    max-width: 760px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    @media (max-width: 767px) {
+      .plan-section .text-block {
+        width: 100%;
+        max-width: 100%; } }
+  .plan-section .slider-plan-nav {
+    width: 100%;
+    height: 100%; }
+    .plan-section .slider-plan-nav::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      background: #010101;
+      background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 100%);
+      z-index: 2; }
+    .plan-section .slider-plan-nav::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 20%;
+      background: #010101;
+      background: linear-gradient(0deg, #010101 0%, rgba(1, 1, 1, 0) 100%);
+      z-index: 2; }
+    .plan-section .slider-plan-nav .swiper-wrapper {
+      height: 600px; }
+      @media (max-width: 1023px) {
+        .plan-section .slider-plan-nav .swiper-wrapper {
+          height: 500px; } }
+      @media (max-width: 767px) {
+        .plan-section .slider-plan-nav .swiper-wrapper {
+          height: 300px; } }
+      @media (max-width: 479px) {
+        .plan-section .slider-plan-nav .swiper-wrapper {
+          height: 200px; } }
+    .plan-section .slider-plan-nav .swiper-slide {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      cursor: pointer; }
+      .plan-section .slider-plan-nav .swiper-slide::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: white;
+        background: linear-gradient(90deg, white 40%, rgba(255, 255, 255, 0) 100%);
+        opacity: .4; }
+    .plan-section .slider-plan-nav .swiper-slide-thumb-active .text {
+      color: #FF3DB2; }
+  .plan-section .arrow {
+    cursor: pointer; }
+    .plan-section .arrow:hover svg {
+      fill: #FF3DB2; }
+    .plan-section .arrow svg {
+      fill: #fff;
+      transition: all 0.3s ease 0s; }
+      @media (max-width: 479px) {
+        .plan-section .arrow svg {
+          width: 36px;
+          height: 36px; } }
+  .plan-section .prev:hover svg {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); }
+  .plan-section .next:hover svg {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); }
+  .plan-section .text {
+    width: 100%;
+    color: #F9F8F8;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.52px;
+    text-transform: uppercase;
+    margin: 0;
+    transition: all 0.3s ease 0s; }
+    @media (max-width: 1023px) {
+      .plan-section .text {
+        font-size: 22px; } }
+    @media (max-width: 479px) {
+      .plan-section .text {
+        font-size: 16px; } }
+
 /* -----------------------application-section---------------- */
 .application-section {
   position: relative;

@@ -79,7 +79,7 @@ var scrollInProgress = function scrollInProgress() {
 var raf = function raf() {
   if (didScroll) {
     paralaxTitles.forEach(function (element, index) {
-      element.style.transform = "translateY(" + window.scrollY / 25 + "%)";
+      element.style.transform = "translateY(" + window.scrollY / 20 + "%)";
     });
     didScroll = false;
   }
@@ -126,4 +126,30 @@ destroySlidersOnResize(".slider-vip", 99999, {
   }
 });
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
+destroySlidersOnResize(".slider-plan", 99999, {
+  autoplay: {
+    delay: 2000
+  },
+  thumbs: {
+    swiper: {
+      el: '.slider-plan-nav',
+      direction: "vertical",
+      slidesPerView: 8,
+      loop: true,
+      navigation: {
+        nextEl: ".next",
+        prevEl: ".prev"
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 8
+        },
+        320: {
+          slidesPerView: 4
+        }
+      }
+    }
+  }
+});
+destroySlidersOnResize(".slider-plan-nav", 99999, {});
 //# sourceMappingURL=main.js.map
