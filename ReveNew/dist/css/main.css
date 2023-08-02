@@ -893,6 +893,13 @@ body {
   font-weight: 500;
   line-height: 110%;
   letter-spacing: -1.28px; }
+  @media (max-width: 1023px) {
+    .titlePink {
+      font-size: 42px;
+      margin-bottom: 56px; } }
+  @media (max-width: 767px) {
+    .titlePink {
+      font-size: 32px; } }
   .titlePink span {
     color: #FF3DB2; }
 
@@ -941,11 +948,8 @@ body {
 .main-section {
   position: relative;
   min-height: 100vh;
-  padding: 220px 0 250px 0;
+  padding: 150px 0 250px 0;
   overflow: hidden; }
-  @media (max-width: 767px) {
-    .main-section {
-      padding: 160px 0; } }
   .main-section::before {
     content: '';
     position: absolute;
@@ -1213,12 +1217,21 @@ body {
 /* -------------------------circle-section------------------- */
 .circle-section {
   padding: 135px 0; }
+  @media (max-width: 767px) {
+    .circle-section {
+      padding: 80px 0; } }
   .circle-section .block {
     position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .circle-section .block {
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
   .circle-section .item {
     position: relative;
     /* Только если меньше контейнера */
@@ -1244,6 +1257,18 @@ body {
     @media (max-width: 1560px) {
       .circle-section .item {
         height: calc(96px + 484 * ((100vw - calc(320px)) / 1240)); } }
+    @media (max-width: 1023px) {
+      .circle-section .item {
+        /* Только если меньше контейнера */
+        width: 580px;
+        /* Только если меньше контейнера */
+        height: 580px; } }
+  @media (max-width: 1023px) and (max-width: 1560px) {
+    .circle-section .item {
+      width: calc(280px + 300 * ((100vw - calc(320px)) / 1240)); } }
+  @media (max-width: 1023px) and (max-width: 1560px) {
+    .circle-section .item {
+      height: calc(280px + 300 * ((100vw - calc(320px)) / 1240)); } }
     .circle-section .item .cir {
       position: absolute;
       width: 149px;
@@ -1251,22 +1276,61 @@ body {
       background: #010101;
       background: radial-gradient(circle, #010101 0%, rgba(1, 1, 1, 0) 100%);
       z-index: 1; }
+      @media (max-width: 1023px) {
+        .circle-section .item .cir {
+          width: 100px;
+          height: 100px; } }
     .circle-section .item .cir1 {
       top: 7%;
       left: -2%; }
+      @media (max-width: 1023px) {
+        .circle-section .item .cir1 {
+          top: 0;
+          left: 7%; } }
+      @media (max-width: 479px) {
+        .circle-section .item .cir1 {
+          top: -8%; } }
     .circle-section .item .cir2 {
       bottom: 7%;
       left: -2%; }
+      @media (max-width: 1023px) {
+        .circle-section .item .cir2 {
+          bottom: 0;
+          left: 7%; } }
+      @media (max-width: 479px) {
+        .circle-section .item .cir2 {
+          bottom: -8%; } }
     .circle-section .item .cir3 {
       top: 7%;
       right: -4%; }
+      @media (max-width: 1023px) {
+        .circle-section .item .cir3 {
+          top: 0;
+          right: 7%; } }
+      @media (max-width: 479px) {
+        .circle-section .item .cir3 {
+          top: -8%; } }
     .circle-section .item .cir4 {
       bottom: 7%;
       right: -4%; }
-    @media (max-width: 1499px) {
-      .circle-section .item.first .text-wrap {
-        -webkit-transform: translateX(30%);
-        transform: translateX(30%); } }
+      @media (max-width: 1023px) {
+        .circle-section .item .cir4 {
+          bottom: 0;
+          right: 7%; } }
+      @media (max-width: 479px) {
+        .circle-section .item .cir4 {
+          bottom: -8%; } }
+    .circle-section .item.first .text-wrap {
+      -webkit-transform: translateX(-15%);
+      transform: translateX(-15%); }
+      @media (max-width: 1399px) {
+        .circle-section .item.first .text-wrap {
+          -webkit-transform: translateX(-10%);
+          transform: translateX(-10%); } }
+      @media (max-width: 1023px) {
+        .circle-section .item.first .text-wrap {
+          -webkit-transform: translateX(0);
+          transform: translateX(0); } }
     .circle-section .item.mid {
       position: absolute;
       top: 0;
@@ -1276,8 +1340,31 @@ body {
       z-index: 1;
       -ms-flex-pack: center;
       justify-content: center; }
+      @media (max-width: 1023px) {
+        .circle-section .item.mid {
+          position: relative;
+          top: auto;
+          left: auto;
+          -webkit-transform: translate(0);
+          transform: translate(0);
+          margin: -100px 0; } }
+      @media (max-width: 479px) {
+        .circle-section .item.mid {
+          margin: -50px 0; } }
+    .circle-section .item.last .text-wrap {
+      -webkit-transform: translateX(15%);
+      transform: translateX(15%); }
+      @media (max-width: 1399px) {
+        .circle-section .item.last .text-wrap {
+          -webkit-transform: translateX(10%);
+          transform: translateX(10%); } }
+      @media (max-width: 1023px) {
+        .circle-section .item.last .text-wrap {
+          -webkit-transform: translateX(0);
+          transform: translateX(0); } }
   .circle-section .sub-title {
     position: relative;
+    /* Только если меньше контейнера */
     max-width: 374px;
     -webkit-transform: translateY(20%);
     transform: translateY(20%);
@@ -1291,7 +1378,24 @@ body {
     margin: 0; }
     @media (max-width: 1560px) {
       .circle-section .sub-title {
-        font-size: calc(16px + 10 * ((100vw - calc(320px)) / 1240)); } }
+        max-width: calc(0px + 374 * ((100vw - calc(320px)) / 1240)); } }
+    @media (max-width: 1560px) {
+      .circle-section .sub-title {
+        font-size: calc(5px + 21 * ((100vw - calc(320px)) / 1240)); } }
+    @media (max-width: 1023px) {
+      .circle-section .sub-title {
+        /* Только если меньше контейнера */
+        max-width: 374px;
+        /* Только если меньше контейнера */
+        font-size: 26px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0); } }
+  @media (max-width: 1023px) and (max-width: 1560px) {
+    .circle-section .sub-title {
+      max-width: calc(260px + 114 * ((100vw - calc(320px)) / 1240)); } }
+  @media (max-width: 1023px) and (max-width: 1560px) {
+    .circle-section .sub-title {
+      font-size: calc(16px + 10 * ((100vw - calc(320px)) / 1240)); } }
     .circle-section .sub-title::before {
       content: '';
       position: absolute;

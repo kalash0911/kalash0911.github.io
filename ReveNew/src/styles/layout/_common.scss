@@ -58,6 +58,15 @@ body {
     line-height: 110%;
     letter-spacing: -1.28px;
 
+    @include media('<desktop'){
+        font-size: 42px;
+        margin-bottom: 56px;
+    } 
+
+    @include media('<tablet'){
+        font-size: 32px;
+    } 
+
     span {
         color: $pink;
     }
@@ -124,12 +133,8 @@ body {
 .main-section {
     position: relative;
     min-height: 100vh;
-    padding: 220px 0 250px 0;
+    padding: 150px 0 250px 0;
     overflow: hidden;
-
-    @include media('<tablet'){
-        padding: 160px 0;
-    } 
 
     &::before {
         content:'';
@@ -407,10 +412,19 @@ body {
 .circle-section {
     padding: 135px 0;
 
+    @include media('<tablet'){
+        padding: 80px 0;
+    }
+
     .block {
         position: relative;
         display: flex;
         justify-content: space-between;
+
+        @include media('<desktop'){
+            align-items: center;
+            flex-direction: column;
+        } 
     }
 
     .item {
@@ -427,6 +441,11 @@ body {
         background-color: $black01;
         padding: 20px;
 
+        @include media('<desktop'){
+            @include adaptiv-vaule("width", 580, 280, 1);
+            @include adaptiv-vaule("height", 580, 280, 1);
+        } 
+
         .cir {
             position: absolute;
             width: 149px;
@@ -434,38 +453,83 @@ body {
             background: rgb(1,1,1);
             background: radial-gradient(circle, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
             z-index: 1;
+
+            @include media('<desktop'){
+                width: 100px;
+                height: 100px;
+            }
         }
 
         .cir1 {
             top: 7%;
             left: -2%;
+
+            @include media('<desktop'){
+                top: 0;
+                left: 7%;
+            }
+
+            @include media('<phone'){
+                top: -8%;
+            }
         }
 
         .cir2{
             bottom: 7%;
             left: -2%;
+
+            @include media('<desktop'){
+                bottom: 0;
+                left: 7%;
+            }
+
+            @include media('<phone'){
+                bottom: -8%;
+            }
         }
 
         .cir3 {
             top: 7%;
             right: -4%;
+
+            @include media('<desktop'){
+                top: 0;
+                right: 7%;
+            }
+
+            @include media('<phone'){
+                top: -8%;
+            }
         }
 
         .cir4{
             bottom: 7%;
             right: -4%;
+
+            @include media('<desktop'){
+                bottom: 0;
+                right: 7%;
+            }
+
+            @include media('<phone'){
+                bottom: -8%;
+            }
         }
 
         &.first {
 
             .text-wrap {
-        
-                @include media('<laptop'){
-                    transform: translateX(30%);
-                }         
+                transform: translateX(-15%);   
+                
+                @include media('<laptop_s'){
+                    transform: translateX(-10%);  
+                } 
+
+                @include media('<desktop'){
+                    transform: translateX(0);  
+                }
             }
         }
-
 
         &.mid {
             position: absolute;
@@ -474,21 +538,54 @@ body {
             transform: translate(-50%);
             z-index: 1;
             justify-content: center;
+
+            @include media('<desktop'){
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: translate(0);
+                margin: -100px 0;
+            }
+
+            @include media('<phone'){
+                margin: -50px 0;
+            }
+        }
+
+        &.last {
+
+            .text-wrap {
+                transform: translateX(15%);   
+                
+                @include media('<laptop_s'){
+                    transform: translateX(10%);  
+                }
+
+                @include media('<desktop'){
+                    transform: translateX(0);  
+                }
+            }
         }
     }
 
 
     .sub-title {
         position: relative;
-        max-width: 374px;
+        @include adaptiv-vaule("max-width", 374, 0, 1);
         transform: translateY(20%);
         color: $whiteF8;
-        @include adaptiv-vaule("font-size", 26, 16, 1);
+        @include adaptiv-vaule("font-size", 26, 5, 1);
         font-weight: 400;
         line-height: 110%;
         letter-spacing: -0.52px;
         text-transform: uppercase;
         margin: 0;
+
+        @include media('<desktop'){
+            @include adaptiv-vaule("max-width", 374, 260, 1);
+            @include adaptiv-vaule("font-size", 26, 16, 1);
+            transform: translateY(0);
+        }
 
         &::before {
             content:'';
