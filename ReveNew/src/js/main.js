@@ -192,7 +192,6 @@ const jsonPhoneAnimations = notFullAnimData.map((step, ind, arr) => {
     if (animLoadCounter === arr.length) {
       totalDuration = jsonPhoneAnimations.reduce((prev, cur) => {
         cur.onComplete = () => {
-          console.log("cur: ", cur);
           planSlider.slideNext();
         };
         return (prev += cur.getDuration());
