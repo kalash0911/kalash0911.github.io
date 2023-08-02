@@ -2220,6 +2220,9 @@ body {
 #footer {
   position: relative;
   padding: 76px 0; }
+  @media (max-width: 979px) {
+    #footer {
+      padding: 56px 0 116px 0; } }
   #footer::before {
     content: '';
     position: absolute;
@@ -2235,7 +2238,15 @@ body {
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 25px; }
+    @media (max-width: 479px) {
+      #footer .container {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+        gap: 40px; } }
   #footer .logo-wrap {
     display: -ms-flexbox;
     display: flex;
@@ -2244,8 +2255,19 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 30px; }
+    @media (max-width: 479px) {
+      #footer .logo-wrap {
+        -ms-flex-align: center;
+        align-items: center; } }
   #footer .logo {
     width: 223px; }
+  @media (max-width: 979px) {
+    #footer .site-link {
+      position: absolute;
+      bottom: 56px;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%); } }
   #footer .title {
     color: #fff;
     font-size: 18px;
@@ -2270,10 +2292,17 @@ body {
     text-transform: capitalize; }
     #footer .link:hover {
       color: #fff; }
+  @media (max-width: 859px) {
+    #footer .socials-wrap {
+      width: 100%; } }
   #footer .icons-box {
     display: -ms-flexbox;
     display: flex;
     gap: 20px; }
+    @media (max-width: 479px) {
+      #footer .icons-box {
+        -ms-flex-pack: center;
+        justify-content: center; } }
   #footer .soc-icon {
     width: 52px;
     height: 52px;

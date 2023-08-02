@@ -2,6 +2,10 @@
     position: relative;
     padding: 76px 0;
 
+    @include media('<980px'){
+        padding: 56px 0 116px 0;
+    }
+
     &::before {
         content:'';
         position: absolute;
@@ -16,7 +20,14 @@
     .container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 25px;
+        
+        @include media('<phone'){
+            flex-direction: column;
+            text-align: center;
+            gap: 40px;
+        }
     }
 
     .logo-wrap {
@@ -24,10 +35,24 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 30px;
+
+        @include media('<phone'){
+            align-items: center;
+        }
     }
 
     .logo {
         width: 223px;
+    }
+
+    .site-link {
+
+        @include media('<980px'){
+            position: absolute;
+            bottom: 56px;
+            left: 50%;
+            transform: translate(-50%);
+        }
     }
 
     .title {
@@ -60,9 +85,20 @@
         }
     }
 
+    .socials-wrap {
+
+        @include media('<860px'){
+            width: 100%;
+        }
+    }
+
     .icons-box {
         display: flex;
         gap: 20px;
+
+        @include media('<phone'){
+           justify-content: center;
+        }
     }
 
     .soc-icon {
