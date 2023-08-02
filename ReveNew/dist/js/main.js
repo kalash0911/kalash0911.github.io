@@ -127,6 +127,7 @@ destroySlidersOnResize(".slider-vip", 99999, {
   }
 });
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
+var notFullAnimData = ["1", "3", "4", "6", "7", "9", "10", "11", "12"];
 var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   thumbs: {
     swiper: {
@@ -157,8 +158,8 @@ var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
       // TODO: Replace when will be full list of animation
       var activeIndex = swiper.activeIndex,
           previousIndex = swiper.previousIndex;
-      var ind = ["1", "3", "4", "6", "7", "9", "10", "11", "12"].indexOf("".concat(activeIndex + 1));
-      var prevInd = ["1", "3", "4", "6", "7", "9", "10", "11", "12"].indexOf("".concat(previousIndex + 1));
+      var ind = notFullAnimData.indexOf("".concat(activeIndex + 1));
+      var prevInd = notFullAnimData.indexOf("".concat(previousIndex + 1));
       (_jsonPhoneAnimations$ = jsonPhoneAnimations[ind]) === null || _jsonPhoneAnimations$ === void 0 ? void 0 : _jsonPhoneAnimations$.play();
       (_jsonPhoneAnimations$2 = jsonPhoneAnimations[prevInd]) === null || _jsonPhoneAnimations$2 === void 0 ? void 0 : _jsonPhoneAnimations$2.stop();
     }
@@ -170,9 +171,10 @@ var animLoadCounter = 0;
 var totalDuration = 0; // TODO: Replace when will be full list of animation
 // new Array(planSliders.length).fill('step')
 
-var jsonPhoneAnimations = ["1", "3", "4", "6", "7", "9", "10", "11", "12"].map(function (step, ind, arr) {
+var jsonPhoneAnimations = notFullAnimData.map(function (step, ind, arr) {
   var anim = bodymovin.loadAnimation({
     // container: document.getElementById(`${step}_${ind + 1}`),
+    // path: `./files/plan_anim/data-${ind + 1}.json`,
     container: document.getElementById("step_".concat(step)),
     path: "./files/plan_anim/data-".concat(step, ".json"),
     render: "svg",
@@ -185,7 +187,6 @@ var jsonPhoneAnimations = ["1", "3", "4", "6", "7", "9", "10", "11", "12"].map(f
     if (animLoadCounter === arr.length) {
       totalDuration = jsonPhoneAnimations.reduce(function (prev, cur) {
         cur.onComplete = function () {
-          console.log("cur: ", cur);
           planSlider.slideNext();
         };
 
