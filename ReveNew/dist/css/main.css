@@ -958,7 +958,7 @@ body {
     width: 100%;
     height: 50%;
     background: #010101;
-    background: linear-gradient(180deg, #010101 48.44%, rgba(1, 1, 1, 0) 100%); }
+    background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 100%); }
   .main-section::after {
     content: '';
     position: absolute;
@@ -982,8 +982,8 @@ body {
     opacity: 1; }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); } }
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
 
 @keyframes opacityZoom {
   0% {
@@ -994,8 +994,8 @@ body {
     opacity: 1; }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); } }
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
 
 @-webkit-keyframes opacity {
   0% {
@@ -1176,17 +1176,12 @@ body {
 /* -------------------------mission-section------------------ */
 .mission-section {
   position: relative;
-  padding: 200px 0 0 0;
-  min-height: 700px;
-  overflow: hidden;
-  background: url(../images/mission-bg.jpg) center center/cover no-repeat fixed;
-  /* .zoom {
-        transform: scale(2.5);
-        transition: transform 0.3s linear;
-    } */ }
+  padding: 70px 0 0 0;
+  min-height: 900px;
+  overflow: hidden; }
   @media (max-width: 767px) {
     .mission-section {
-      padding: 80px 0 0 0; } }
+      min-height: 800px; } }
   .mission-section::after {
     content: '';
     position: absolute;
@@ -1195,31 +1190,19 @@ body {
     width: 100%;
     height: 500px;
     background: #010101;
-    background: linear-gradient(0deg, #010101 0%, rgba(1, 1, 1, 0) 100%); }
-  .mission-section::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 500px;
-    background: #010101;
-    background: linear-gradient(180deg, #010101 0%, rgba(1, 1, 1, 0) 100%); }
-  .mission-section .opacity {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: .3; }
-  .mission-section .container {
+    background: linear-gradient(0deg, #010101 0%, rgba(1, 1, 1, 0) 100%);
+    z-index: 2; }
+  .mission-section .contaner {
     position: relative;
     z-index: 1; }
-  .mission-section .bg {
-    top: auto;
+  .mission-section .planet {
+    position: absolute;
+    left: 0;
     bottom: 0;
-    height: 80%; }
+    width: 100%;
+    height: 450px;
+    z-index: 2;
+    background: url("../images/palenet.png") center 0/cover no-repeat; }
   .mission-section .title-sc {
     max-width: 880px;
     margin: 0 auto 50px auto; }

@@ -52,25 +52,28 @@ if (linkClose.length) {
   }
 };
 
-// For Zoom
+// For Paralax
 
-/* const zoomImage = document.querySelector('.zoom');
-const missionSection = document.getElementById('mission');
-const missionSectionHeight = missionSection.offsetHeight;
+let didScroll = false;
+let paralaxTitles = document.querySelectorAll('.paralax');
 
-function handleScroll() {
-  const scrollTop = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
-
-  if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
-    const scaleFactor = 2.5 - (distanceFromBottom / windowHeight) * 1;
-
-    zoomImage.style.transform = `scale(${scaleFactor})`;
-  }
+const scrollInProgress = () => {
+  didScroll = true
 }
 
-window.addEventListener('scroll', handleScroll); */
+const raf = () => {
+  if (didScroll) {
+    paralaxTitles.forEach((element, index) => {
+      element.style.transform = "translateY(" + window.scrollY / 25 + "%)"
+    })
+    didScroll = false;
+  }
+  requestAnimationFrame(raf);
+}
+
+
+requestAnimationFrame(raf);
+window.addEventListener('scroll', scrollInProgress)
 
 
 // Swiper:

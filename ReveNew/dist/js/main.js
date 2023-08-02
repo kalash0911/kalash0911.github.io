@@ -67,26 +67,28 @@ if (linkClose.length) {
   }
 }
 
-; // For Zoom
+; // For Paralax
 
-/* const zoomImage = document.querySelector('.zoom');
-const missionSection = document.getElementById('mission');
-const missionSectionHeight = missionSection.offsetHeight;
+var didScroll = false;
+var paralaxTitles = document.querySelectorAll('.paralax');
 
-function handleScroll() {
-  const scrollTop = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const distanceFromBottom = scrollTop + windowHeight - missionSection.offsetTop;
+var scrollInProgress = function scrollInProgress() {
+  didScroll = true;
+};
 
-  if (distanceFromBottom >= 0 && distanceFromBottom <= windowHeight) {
-    const scaleFactor = 2.5 - (distanceFromBottom / windowHeight) * 1;
-
-    zoomImage.style.transform = `scale(${scaleFactor})`;
+var raf = function raf() {
+  if (didScroll) {
+    paralaxTitles.forEach(function (element, index) {
+      element.style.transform = "translateY(" + window.scrollY / 25 + "%)";
+    });
+    didScroll = false;
   }
-}
 
-window.addEventListener('scroll', handleScroll); */
-// Swiper:
+  requestAnimationFrame(raf);
+};
+
+requestAnimationFrame(raf);
+window.addEventListener('scroll', scrollInProgress); // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
