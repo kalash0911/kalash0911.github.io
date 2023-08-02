@@ -17,6 +17,10 @@ body {
     max-width: 1600px;
     padding: 0 40px;
     margin: 0 auto;
+
+    @include media('<tablet'){
+       padding: 0 16px;
+    }
 }
 
 .main-btn {

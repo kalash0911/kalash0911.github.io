@@ -33,6 +33,15 @@
         gap: 30px;
     }
 
+    .logo {
+        display: none;
+        width: 116px;
+
+        @include media('<widescreen'){
+            display: block;
+        }
+    }
+
     .menu-block {
         width: 100%;
         display: flex;
@@ -80,6 +89,10 @@
         margin: 0;
         padding: 0;
 
+        @include media('<widescreen_x'){
+            gap: 20px;
+        }
+
         @include media('<widescreen'){
             flex-direction: column;
         }
@@ -100,6 +113,10 @@
         text-transform: uppercase;
         transition: $animation-speed;
 
+        @include media('<widescreen_x'){
+            font-size: 14px;
+        }
+
         @include media('<widescreen'){
             font-size: 22px;
         }
@@ -112,6 +129,19 @@
     .btn-wrap {
         display: flex;
         gap: 20px;
+    }
+    
+    .lang-wrap {
+        min-width: 120px;
+        padding: 7px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1.5px solid $white;
+
+        p {
+            margin: 0;
+        }
     }
 }
 
