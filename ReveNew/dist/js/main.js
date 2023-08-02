@@ -79,7 +79,7 @@ var scrollInProgress = function scrollInProgress() {
 var raf = function raf() {
   if (didScroll) {
     paralaxTitles.forEach(function (element, index) {
-      element.style.transform = "translateY(" + window.scrollY / 20 + "%)";
+      element.style.transform = "translateY(" + window.scrollY / 25 + "%)";
     });
     didScroll = false;
   }

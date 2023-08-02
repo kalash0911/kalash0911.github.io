@@ -64,7 +64,7 @@ const scrollInProgress = () => {
 const raf = () => {
   if (didScroll) {
     paralaxTitles.forEach((element, index) => {
-      element.style.transform = "translateY(" + window.scrollY / 20 + "%)"
+      element.style.transform = "translateY(" + window.scrollY / 25 + "%)"
     })
     didScroll = false;
   }
