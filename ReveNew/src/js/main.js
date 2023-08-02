@@ -102,10 +102,19 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   );
 }
 
-destroySlidersOnResize(".me-slider", 960, {
-  spaceBetween: 20,
+destroySlidersOnResize(".slider-vip", 99999, {
 
-  pagination: {
-    el: ".swiper-pagination",
+  autoplay: {
+    delay: 2000,
   },
+
+  thumbs: {
+    swiper: {
+      el: '.slider-vip-nav',
+      slidesPerView: 5,
+    },
+  },
+
 });
+
+destroySlidersOnResize(".slider-vip-nav", 99999, {});

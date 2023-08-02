@@ -110,10 +110,16 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-destroySlidersOnResize(".me-slider", 960, {
-  spaceBetween: 20,
-  pagination: {
-    el: ".swiper-pagination"
+destroySlidersOnResize(".slider-vip", 99999, {
+  autoplay: {
+    delay: 2000
+  },
+  thumbs: {
+    swiper: {
+      el: '.slider-vip-nav',
+      slidesPerView: 5
+    }
   }
 });
+destroySlidersOnResize(".slider-vip-nav", 99999, {});
 //# sourceMappingURL=main.js.map
