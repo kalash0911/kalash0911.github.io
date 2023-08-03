@@ -139,7 +139,7 @@ destroySlidersOnResize(".slider-vip", 99999, {
   }
 });
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
-var notFullAnimData = ["1", "3", "4", "6", "7", "9", "10", "11", "12"];
+var notFullAnimData = ["1", "2", "3", "4", "6", "7", "9", "10", "11", "12"];
 var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   navigation: {
     nextEl: ".next",

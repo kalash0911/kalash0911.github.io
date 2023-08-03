@@ -849,6 +849,9 @@ body {
   font-family: "HelveticaNeue", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   background-color: #010101; }
 
+.body_lock {
+  overflow: hidden; }
+
 #wrapper {
   position: relative;
   overflow: hidden; }

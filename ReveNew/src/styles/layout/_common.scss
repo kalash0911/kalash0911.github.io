@@ -7,6 +7,10 @@ body {
     background-color: $black01;
 }
 
+.body_lock {
+    overflow: hidden;
+}
+
 #wrapper {
     position: relative;
     overflow: hidden;
