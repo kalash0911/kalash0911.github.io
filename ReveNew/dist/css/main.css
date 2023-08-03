@@ -1874,6 +1874,7 @@ body {
 
 /* ---------------------------plan-section------------------- */
 .plan-section {
+  position: relative;
   padding: 100px 0 0 0; }
   @media (max-width: 767px) {
     .plan-section {
@@ -1980,25 +1981,45 @@ body {
     transition: all 0.3s ease 0s; }
     @media (max-width: 767px) {
       .plan-section .arrow {
-        display: none; } }
+        position: absolute;
+        top: 60%;
+        z-index: 2; } }
     .plan-section .arrow:hover svg {
       fill: #FF3DB2; }
     .plan-section .arrow svg {
       fill: #fff;
       transition: all 0.3s ease 0s; }
-      @media (max-width: 479px) {
+      @media (max-width: 767px) {
         .plan-section .arrow svg {
-          width: 36px;
-          height: 36px; } }
+          width: 56px;
+          height: 56px; } }
   .plan-section .swiper-button-disabled {
     opacity: 0;
     visibility: hidden; }
+  @media (max-width: 767px) {
+    .plan-section .prev {
+      left: 16px;
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg); } }
   .plan-section .prev:hover svg {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px); }
+    @media (max-width: 767px) {
+      .plan-section .prev:hover svg {
+        -webkit-transform: translateY(0);
+        transform: translateY(0); } }
+  @media (max-width: 767px) {
+    .plan-section .next {
+      right: 16px;
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg); } }
   .plan-section .next:hover svg {
     -webkit-transform: translateY(10px);
     transform: translateY(10px); }
+    @media (max-width: 767px) {
+      .plan-section .next:hover svg {
+        -webkit-transform: translateY(0);
+        transform: translateY(0); } }
   .plan-section .text {
     width: 100%;
     color: #F9F8F8;
@@ -2014,7 +2035,8 @@ body {
         font-size: 22px; } }
     @media (max-width: 767px) {
       .plan-section .text {
-        text-align: center; } }
+        text-align: center;
+        color: #FF3DB2; } }
     @media (max-width: 479px) {
       .plan-section .text {
         font-size: 16px; } }

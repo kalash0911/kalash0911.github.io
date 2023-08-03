@@ -1157,6 +1157,7 @@ body {
 /* ---------------------------plan-section------------------- */
 
 .plan-section {
+    position: relative;
     padding: 100px 0 0 0;
 
     @include media('<tablet'){
@@ -1291,7 +1292,9 @@ body {
         transition: $animation-speed;
 
         @include media('<tablet'){
-            display: none;
+            position: absolute;
+            top: 60%;
+            z-index: 2;
         }
 
         &:hover {
@@ -1305,9 +1308,9 @@ body {
             fill: $white;
             transition: $animation-speed;
 
-            @include media('<phone'){
-                width: 36px;
-                height: 36px;
+            @include media('<tablet'){
+                width: 56px;
+                height: 56px; 
             }
         }
     }
@@ -1319,20 +1322,38 @@ body {
 
     .prev {
 
+        @include media('<tablet'){
+            left: 16px;
+            transform: rotate(-90deg);
+        }
+
         &:hover {
             
             svg {
                 transform: translateY(-10px);
+
+                @include media('<tablet'){
+                    transform: translateY(0);
+                }
             }
         }
     }
 
     .next {
 
+        @include media('<tablet'){
+            right: 16px;
+            transform: rotate(-90deg);
+        }
+
         &:hover {
             
             svg {
                 transform: translateY(10px);
+
+                @include media('<tablet'){
+                    transform: translateY(0);
+                }
             }
         }
     }
@@ -1354,6 +1375,7 @@ body {
 
         @include media('<tablet'){
             text-align: center;
+            color: $pink;
         }
 
         @include media('<phone'){

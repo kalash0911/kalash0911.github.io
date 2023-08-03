@@ -139,29 +139,18 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   },
 
   thumbs: {
-    swiper: {
-      el: ".slider-plan-nav",
-      direction: "vertical",
-      slidesPerView: 8,
-      mousewheel: true,
-      freeMode: true,
+    swiper: ".slider-plan-nav",
+  },
 
-      navigation: {
-        nextEl: ".next",
-        prevEl: ".prev",
+  breakpoints: {
+    768: {
+      thumbs: {
+        swiper: ".slider-plan-nav",
       },
+    },
 
-      breakpoints: {
-        768: {
-          slidesPerView: 8,
-        },
-
-        320: {
-          direction: "horizontal",
-          freeMode: false,
-          slidesPerView: 1,
-        },
-      },
+    320: {
+      thumbs: false,
     },
   },
   on: {
@@ -181,7 +170,44 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   },
 });
 
-destroySlidersOnResize(".slider-plan-nav", 99999, {});
+const planSliderNav = destroySlidersOnResize(".slider-plan-nav", 99999, {
+
+  direction: "vertical",
+  slidesPerView: 8,
+  mousewheel: true,
+  freeMode: true,
+
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 8,
+    },
+
+    320: {
+      direction: "horizontal",
+      freeMode: false,
+      slidesPerView: 1,
+    },
+  },
+
+});
+
+function handleScreenSizeChange() {
+  if (window.innerWidth <= 768) {
+    planSlider.controller.control = planSliderNav;
+    planSliderNav.controller.control = planSlider;
+  } else {
+  }
+}
+
+handleScreenSizeChange();
+
+window.addEventListener('resize', handleScreenSizeChange);
+
 
 const planSliders = document.querySelectorAll(
   ".plan-section .slider-plan .swiper-slide"
