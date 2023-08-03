@@ -163,7 +163,7 @@ body {
 
     @include media('<phone'){
         align-items: flex-start;
-        padding: 120px 0 250px 0;
+        padding: 60px 0 200px 0;
     }
 
     &::before {
@@ -1663,7 +1663,6 @@ body {
 
 .application-section {
     position: relative;
-    min-height: 100vh;
     padding: 120px 0;
 
     @include media('<tablet'){
@@ -1678,6 +1677,7 @@ body {
         left: 0;
         background: rgb(255,255,255);
         background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        z-index: 1;
     }
 
     .gra-bot {
@@ -1688,6 +1688,7 @@ body {
         bottom: 0;
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        z-index: 1;
     }
 
     &::before {
@@ -1699,6 +1700,7 @@ body {
         left: 0;
         background: rgb(255,255,255);
         background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        z-index: 1;
     }
 
     &::after {
@@ -1710,20 +1712,51 @@ body {
         right: 0;
         background: rgb(255,255,255);
         background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
-    }
-
-    .container {
-        position: relative;
         z-index: 1;
     }
 
+    .container {
+        display: flex;
+
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+    }
+
     .title-sc {
+        position: relative;
+        z-index: 2;
         max-width: 655px;
         text-align: left;
         margin: 0;
+        width: 40%;
 
-        @include media('<tablet'){
+        @include media('<laptop'){
+            font-size: 32px;
+        }
+
+        @include media('<desktop'){
             text-align: center;
+            width: 100%;
+            margin: 0 auto 40px auto;
+        }
+
+        @include media('<phone'){
+           font-size: 22px;
+        }
+    }
+
+    .phone {
+        width: 70%;
+        transform: translate(-10%);
+
+        @include media('<desktop'){
+            width: 100%;
+            transform: translate(0);
+        }
+
+        @include media('<phone'){
+            display: none;
         }
     }
     
