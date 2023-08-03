@@ -175,13 +175,13 @@ var planSliderNav = destroySlidersOnResize(".slider-plan-nav", 99999, {
   slidesPerView: 8,
   mousewheel: true,
   freeMode: true,
-  navigation: {
-    nextEl: ".next",
-    prevEl: ".prev"
-  },
   breakpoints: {
     768: {
-      slidesPerView: 8
+      slidesPerView: 8,
+      navigation: {
+        nextEl: ".next",
+        prevEl: ".prev"
+      }
     },
     320: {
       direction: "horizontal",
