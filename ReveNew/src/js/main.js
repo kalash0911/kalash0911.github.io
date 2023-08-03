@@ -121,7 +121,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   return swiper;
 }
 
-destroySlidersOnResize(".slider-vip", 99999, {
+const vipSlider = destroySlidersOnResize(".slider-vip", 99999, {
 
   autoplay: {
     delay: 5000,
@@ -135,6 +135,7 @@ destroySlidersOnResize(".slider-vip", 99999, {
   },
 
 });
+vipSlider.autoplay.stop();
 
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
 
@@ -217,8 +218,49 @@ const jsonPhoneAnimations = notFullAnimData.map((step, ind, arr) => {
         };
         return (prev += cur.getDuration());
       }, 0);
-      jsonPhoneAnimations[0].play();
     }
   });
   return anim;
 });
+
+let isPlanSectionViewed = false;
+let isVipSectionViewed = false;
+
+const startSlider = ({ target }) => {
+  const sectionClassName = target.className;
+  switch (sectionClassName) {
+    case "plan-section":
+      if (isPlanSectionViewed) return;
+      jsonPhoneAnimations[0].play();
+      isPlanSectionViewed = true;
+      break;
+    case "vip-section":
+      if (isVipSectionViewed) return;
+      vipSlider.autoplay.start();
+      isVipSectionViewed = true;
+      break;
+    default:
+      break;
+  }
+};
+
+const planIntersectionObs = document.querySelector(".plan-section");
+const vipIntersectionObs = document.querySelector(".vip-section");
+function callback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      startSlider(entry);
+    }
+  });
+}
+function createObserver(target, callback) {
+  const options = {
+    root: null,
+    threshold: 0,
+  };
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+}
+
+createObserver(planIntersectionObs, callback);
+createObserver(vipIntersectionObs, callback);
