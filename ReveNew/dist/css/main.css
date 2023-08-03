@@ -2010,6 +2010,10 @@ body {
     @media (max-width: 479px) {
       .plan-section .text {
         font-size: 16px; } }
+  .plan-section .gif-wrap {
+    overflow: hidden; }
+    .plan-section .gif-wrap .json-anim {
+      margin: -5px; }
 
 /* ---------------------------rules-section------------------ */
 .rules-section {

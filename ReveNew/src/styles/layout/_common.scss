@@ -1351,6 +1351,14 @@ body {
             font-size: 16px;
         }
     }
+
+    .gif-wrap {
+        overflow: hidden;
+
+        .json-anim {
+            margin: -5px;
+        }
+    }
 }
 
 /* ---------------------------rules-section------------------ */
