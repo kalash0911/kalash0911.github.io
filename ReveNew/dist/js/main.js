@@ -120,7 +120,7 @@ var vipSlider = destroySlidersOnResize(".slider-vip", 99999, {
 });
 vipSlider.autoplay.stop();
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
-var notFullAnimData = ["1", "2", "3", "4", "6", "7", "9", "10", "11", "12"];
+var notFullAnimData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"];
 var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   navigation: {
     nextEl: ".next",
