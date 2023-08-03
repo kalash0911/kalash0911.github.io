@@ -1663,6 +1663,7 @@ body {
 
 .application-section {
     position: relative;
+    min-height: 800px;
     padding: 120px 0;
 
     @include media('<tablet'){
@@ -1747,12 +1748,19 @@ body {
     }
 
     .phone {
-        width: 70%;
-        transform: translate(-10%);
+        position: absolute;
+        top: 55%;
+        left: 55%;
+        transform: translate(-55%, -55%);
+        width: 50%;
+        max-width: 800px;
 
         @include media('<desktop'){
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
             width: 100%;
-            transform: translate(0);
         }
 
         @include media('<phone'){

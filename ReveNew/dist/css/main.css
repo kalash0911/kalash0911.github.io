@@ -2311,6 +2311,7 @@ body {
 /* -----------------------application-section---------------- */
 .application-section {
   position: relative;
+  min-height: 800px;
   padding: 120px 0; }
   @media (max-width: 767px) {
     .application-section {
@@ -2379,14 +2380,21 @@ body {
       .application-section .title-sc {
         font-size: 22px; } }
   .application-section .phone {
-    width: 70%;
-    -webkit-transform: translate(-10%);
-    transform: translate(-10%); }
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    -webkit-transform: translate(-55%, -55%);
+    transform: translate(-55%, -55%);
+    width: 50%;
+    max-width: 800px; }
     @media (max-width: 1023px) {
       .application-section .phone {
-        width: 100%;
-        -webkit-transform: translate(0);
-        transform: translate(0); } }
+        position: relative;
+        top: auto;
+        left: auto;
+        -webkit-transform: none;
+        transform: none;
+        width: 100%; } }
     @media (max-width: 479px) {
       .application-section .phone {
         display: none; } }
