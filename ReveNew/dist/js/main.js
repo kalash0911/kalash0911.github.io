@@ -67,7 +67,19 @@ if (linkClose.length) {
   }
 }
 
-; // For Paralax
+; // For Scroll
+
+function handleScroll() {
+  var body = document.querySelector('body');
+
+  if (window.scrollY > 0) {
+    body.classList.add('scroll');
+  } else {
+    body.classList.remove('scroll');
+  }
+}
+
+window.addEventListener('scroll', handleScroll); // For Paralax
 
 var didScroll = false;
 var paralaxTitles = document.querySelectorAll('.paralax');

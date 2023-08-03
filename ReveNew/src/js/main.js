@@ -52,6 +52,20 @@ if (linkClose.length) {
   }
 };
 
+// For Scroll
+
+function handleScroll() {
+  const body = document.querySelector('body');
+
+  if (window.scrollY > 0) {
+    body.classList.add('scroll');
+  } else {
+    body.classList.remove('scroll');
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
 // For Paralax
 
 let didScroll = false;

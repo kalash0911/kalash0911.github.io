@@ -1165,12 +1165,15 @@ body {
     height: 294px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.7);
-    z-index: 1; }
+    z-index: 1;
+    transition: all .7s ease 0s; }
     @media (max-width: 767px) {
       .main-section .down-btn {
         width: 194px;
         height: 194px;
         bottom: -97px; } }
+    .scroll .main-section .down-btn {
+      opacity: .4; }
     .main-section .down-btn:hover .arrow {
       top: 70px; }
       @media (max-width: 767px) {
@@ -1217,7 +1220,7 @@ body {
     background: #010101;
     background: linear-gradient(0deg, #010101 0%, rgba(1, 1, 1, 0) 100%);
     z-index: 2; }
-  .mission-section .contaner {
+  .mission-section .container {
     position: relative;
     z-index: 1; }
   .mission-section .planet {
@@ -1225,7 +1228,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 450px;
+    height: 400px;
     z-index: 2;
     background: url("../images/palenet.png") center 0/cover no-repeat; }
   .mission-section .title-sc {
