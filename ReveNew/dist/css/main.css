@@ -877,6 +877,9 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   transition: all 0.3s ease 0s; }
+  @media (max-width: 1399px) {
+    .main-btn {
+      font-size: 14px; } }
   .main-btn:hover {
     color: #010101;
     background-color: #FF3DB2; }
