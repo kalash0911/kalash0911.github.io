@@ -1283,6 +1283,7 @@ body {
 
     .arrow {
         cursor: pointer;
+        transition: $animation-speed;
 
         &:hover {
             
@@ -1300,6 +1301,11 @@ body {
                 height: 36px;
             }
         }
+    }
+
+    .swiper-button-disabled {
+        opacity: 0;
+        visibility: hidden;
     }
 
     .prev {

@@ -1971,7 +1971,8 @@ body {
     .plan-section .slider-plan-nav .swiper-slide-thumb-active .text {
       color: #FF3DB2; }
   .plan-section .arrow {
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all 0.3s ease 0s; }
     .plan-section .arrow:hover svg {
       fill: #FF3DB2; }
     .plan-section .arrow svg {
@@ -1981,6 +1982,9 @@ body {
         .plan-section .arrow svg {
           width: 36px;
           height: 36px; } }
+  .plan-section .swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden; }
   .plan-section .prev:hover svg {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px); }
