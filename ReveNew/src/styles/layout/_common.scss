@@ -41,38 +41,6 @@ body {
         color: $black01;
         background-color: $pink;
     }
-
-    &.mob {
-        display: none;
-
-        @include media('<widescreen'){
-            display: block;
-        }
-    }
-
-    &.fixed-btn {
-        position: fixed;
-        top: 20px;
-        right: 40px;
-        z-index: 10;
-
-        @include media('<laptop_s'){
-            font-size: 14px;
-        }
-
-        @include media('<widescreen'){
-            display: none;
-        }
-
-        .scroll & {
-            background-color: $black01;
-
-            &:hover {
-                color: $black01;
-                background-color: $pink;
-            }
-        }
-    }
 }
 
 .bg {
