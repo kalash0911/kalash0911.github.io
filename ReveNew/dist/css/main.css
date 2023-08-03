@@ -1456,6 +1456,123 @@ body {
     letter-spacing: -0.28px;
     text-transform: lowercase; }
 
+/* ------------------------access-section-------------------- */
+.access-section {
+  padding: 135px 0; }
+  @media (max-width: 767px) {
+    .access-section {
+      padding: 80px 0 110px 0; } }
+  .access-section .title-sc {
+    max-width: 915px;
+    margin: 0 auto 140px auto; }
+  .access-section .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    @media (max-width: 767px) {
+      .access-section .block {
+        padding-left: 40px; } }
+  .access-section .item {
+    position: relative;
+    width: 25%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    @media (max-width: 1023px) {
+      .access-section .item {
+        width: 50%; } }
+    @media (max-width: 767px) {
+      .access-section .item {
+        width: 100%;
+        padding-left: 35px; } }
+  .access-section .text-wrap {
+    padding: 20px 20px 36px 20px; }
+    @media (max-width: 767px) {
+      .access-section .text-wrap {
+        padding: 30px 0; } }
+  .access-section .title {
+    color: #F9F8F8;
+    /* Только если меньше контейнера */
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.52px;
+    text-transform: uppercase;
+    margin-bottom: 20px; }
+    @media (max-width: 1560px) {
+      .access-section .title {
+        font-size: calc(16px + 10 * ((100vw - calc(320px)) / 1240)); } }
+    .access-section .title i {
+      /* Только если меньше контейнера */
+      font-size: 56px;
+      font-style: normal;
+      letter-spacing: -1.12px; }
+      @media (max-width: 1560px) {
+        .access-section .title i {
+          font-size: calc(44px + 12 * ((100vw - calc(320px)) / 1240)); } }
+    .access-section .title span {
+      color: #FF3DB2; }
+  .access-section .text {
+    color: #B9B9B9;
+    /* Только если меньше контейнера */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 126%;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 330px; }
+    @media (max-width: 1560px) {
+      .access-section .text {
+        font-size: calc(14px + 6 * ((100vw - calc(320px)) / 1240)); } }
+    @media (max-width: 767px) {
+      .access-section .text {
+        max-width: 100%; } }
+  .access-section .line {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4); }
+    @media (max-width: 767px) {
+      .access-section .line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%; } }
+    .access-section .line::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      z-index: 1; }
+      @media (max-width: 767px) {
+        .access-section .line::before {
+          left: -5px;
+          top: 0; } }
+    .access-section .line::after {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: -15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #010101; }
+      @media (max-width: 767px) {
+        .access-section .line::after {
+          left: -15px;
+          top: -10px; } }
+
 /* -------------------------total-section-------------------- */
 .total-section .container {
   display: -ms-flexbox;
