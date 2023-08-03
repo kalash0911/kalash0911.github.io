@@ -629,9 +629,12 @@ input[type='submit'] {
     list-style: none;
     margin: 0;
     padding: 0; }
-    @media (max-width: 1299px) {
+    @media (max-width: 1499px) {
       #header .menu {
         gap: 20px; } }
+    @media (max-width: 1399px) {
+      #header .menu {
+        gap: 15px; } }
     @media (max-width: 1199px) {
       #header .menu {
         -ms-flex-direction: column;
@@ -646,7 +649,7 @@ input[type='submit'] {
     line-height: 112%;
     text-transform: uppercase;
     transition: all 0.3s ease 0s; }
-    @media (max-width: 1299px) {
+    @media (max-width: 1399px) {
       #header .link {
         font-size: 14px; } }
     @media (max-width: 1199px) {
@@ -877,6 +880,27 @@ body {
   .main-btn:hover {
     color: #010101;
     background-color: #FF3DB2; }
+  .main-btn.mob {
+    display: none; }
+    @media (max-width: 1199px) {
+      .main-btn.mob {
+        display: block; } }
+  .main-btn.fixed-btn {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    z-index: 10; }
+    @media (max-width: 1399px) {
+      .main-btn.fixed-btn {
+        font-size: 14px; } }
+    @media (max-width: 1199px) {
+      .main-btn.fixed-btn {
+        display: none; } }
+    .scroll .main-btn.fixed-btn {
+      background-color: #010101; }
+      .scroll .main-btn.fixed-btn:hover {
+        color: #010101;
+        background-color: #FF3DB2; }
 
 .bg {
   position: absolute;

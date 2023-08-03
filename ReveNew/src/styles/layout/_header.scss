@@ -89,8 +89,12 @@
         margin: 0;
         padding: 0;
 
-        @include media('<widescreen_x'){
+        @include media('<laptop'){
             gap: 20px;
+        }
+
+        @include media('<laptop_s'){
+            gap: 15px;
         }
 
         @include media('<widescreen'){
@@ -113,7 +117,7 @@
         text-transform: uppercase;
         transition: $animation-speed;
 
-        @include media('<widescreen_x'){
+        @include media('<laptop_s'){
             font-size: 14px;
         }
 
