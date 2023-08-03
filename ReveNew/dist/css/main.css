@@ -1934,17 +1934,18 @@ body {
           height: 500px; } }
       @media (max-width: 767px) {
         .plan-section .slider-plan-nav .swiper-wrapper {
-          height: 300px; } }
-      @media (max-width: 479px) {
-        .plan-section .slider-plan-nav .swiper-wrapper {
-          height: 200px; } }
+          height: auto; } }
     .plan-section .slider-plan-nav .swiper-slide {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
       align-items: center;
-      width: 100%;
+      width: 100% !important;
       cursor: pointer; }
+      @media (max-width: 767px) {
+        .plan-section .slider-plan-nav .swiper-slide {
+          width: 100% !important;
+          padding: 16px 0; } }
       .plan-section .slider-plan-nav .swiper-slide::after {
         content: '';
         position: absolute;
@@ -1958,11 +1959,28 @@ body {
         @media (max-width: 767px) {
           .plan-section .slider-plan-nav .swiper-slide::after {
             background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 50%, rgba(255, 255, 255, 0) 100%); } }
+      .plan-section .slider-plan-nav .swiper-slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: white;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 50%, rgba(255, 255, 255, 0) 100%);
+        opacity: .4;
+        display: none; }
+        @media (max-width: 767px) {
+          .plan-section .slider-plan-nav .swiper-slide::before {
+            display: block; } }
     .plan-section .slider-plan-nav .swiper-slide-thumb-active .text {
       color: #FF3DB2; }
   .plan-section .arrow {
     cursor: pointer;
     transition: all 0.3s ease 0s; }
+    @media (max-width: 767px) {
+      .plan-section .arrow {
+        display: none; } }
     .plan-section .arrow:hover svg {
       fill: #FF3DB2; }
     .plan-section .arrow svg {

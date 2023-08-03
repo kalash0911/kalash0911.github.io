@@ -157,7 +157,9 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
         },
 
         320: {
-          slidesPerView: 4,
+          direction: "horizontal",
+          freeMode: false,
+          slidesPerView: 1,
         },
       },
     },

@@ -19,15 +19,22 @@
 
     .container {
         display: flex;
-        justify-content: space-between;
+       /*  justify-content: space-between; */
+       justify-content: space-around;
         flex-wrap: wrap;
         gap: 25px;
-        
-        @include media('<phone'){
+
+        @include media('<tablet'){
             flex-direction: column;
             text-align: center;
             gap: 40px;
         }
+        
+        /* @include media('<phone'){
+            flex-direction: column;
+            text-align: center;
+            gap: 40px;
+        } */
     }
 
     .logo-wrap {
@@ -36,9 +43,13 @@
         justify-content: space-between;
         gap: 30px;
 
-        @include media('<phone'){
+        @include media('<tablet'){
             align-items: center;
         }
+
+        /* @include media('<phone'){
+            align-items: center;
+        } */
     }
 
     .logo {
@@ -47,7 +58,14 @@
 
     .site-link {
 
-        @include media('<980px'){
+        /* @include media('<980px'){
+            position: absolute;
+            bottom: 56px;
+            left: 50%;
+            transform: translate(-50%);
+        } */
+
+        @include media('<tablet'){
             position: absolute;
             bottom: 56px;
             left: 50%;
@@ -65,11 +83,24 @@
     }
 
     .menu {
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; */
+        column-count: 2;
         gap: 22px;
         padding: 0;
         margin: 0;
+
+        @include media('<tablet'){
+            column-count: 1;
+        }
+    }
+
+    .menu-item {
+        padding: 10px 0;
+
+        @include media('<tablet'){
+            padding: 5px 0;
+        }
     }
 
     .link {
