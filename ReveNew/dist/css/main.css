@@ -2222,15 +2222,6 @@ body {
   @media (max-width: 767px) {
     .application-section {
       min-height: 800px; } }
-  .application-section::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: #010101;
-    background: linear-gradient(0deg, #010101 0%, rgba(1, 1, 1, 0) 100%); }
   .application-section .title-sc {
     max-width: 655px;
     text-align: left;
