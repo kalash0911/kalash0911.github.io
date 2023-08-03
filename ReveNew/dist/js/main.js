@@ -69,38 +69,18 @@ if (linkClose.length) {
 
 ; // For Scroll
 
-function handleScroll() {
-  var body = document.querySelector('body');
+window.addEventListener('scroll', function () {
+  var section = document.getElementById('mission');
+  var paralax = document.querySelector('.paralax');
+  var windowHeight = window.innerHeight;
+  var sectionTop = section.getBoundingClientRect().top;
+  var sectionBottom = section.getBoundingClientRect().bottom;
 
-  if (window.scrollY > 0) {
-    body.classList.add('scroll');
-  } else {
-    body.classList.remove('scroll');
+  if (sectionBottom <= windowHeight && sectionBottom >= 0) {
+    var translateY = Math.max(0, (sectionBottom - windowHeight) / -windowHeight * 300);
+    paralax.style.transform = "translateY(".concat(translateY, "%)");
   }
-}
-
-window.addEventListener('scroll', handleScroll); // For Paralax
-
-var didScroll = false;
-var paralaxTitles = document.querySelectorAll('.paralax');
-
-var scrollInProgress = function scrollInProgress() {
-  didScroll = true;
-};
-
-var raf = function raf() {
-  if (didScroll) {
-    paralaxTitles.forEach(function (element, index) {
-      element.style.transform = "translateY(" + window.scrollY / 25 + "%)";
-    });
-    didScroll = false;
-  }
-
-  requestAnimationFrame(raf);
-};
-
-requestAnimationFrame(raf);
-window.addEventListener('scroll', scrollInProgress); // Swiper:
+}); // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);

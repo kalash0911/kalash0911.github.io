@@ -54,40 +54,18 @@ if (linkClose.length) {
 
 // For Scroll
 
-function handleScroll() {
-  const body = document.querySelector('body');
+window.addEventListener('scroll', function () {
+  const section = document.getElementById('mission');
+  const paralax = document.querySelector('.paralax');
+  const windowHeight = window.innerHeight;
+  const sectionTop = section.getBoundingClientRect().top;
+  const sectionBottom = section.getBoundingClientRect().bottom;
 
-  if (window.scrollY > 0) {
-    body.classList.add('scroll');
-  } else {
-    body.classList.remove('scroll');
+  if (sectionBottom <= windowHeight && sectionBottom >= 0) {
+    const translateY = Math.max(0, (sectionBottom - windowHeight) / -windowHeight * 300);
+    paralax.style.transform = `translateY(${translateY}%)`;
   }
-}
-
-window.addEventListener('scroll', handleScroll);
-
-// For Paralax
-
-let didScroll = false;
-let paralaxTitles = document.querySelectorAll('.paralax');
-
-const scrollInProgress = () => {
-  didScroll = true
-}
-
-const raf = () => {
-  if (didScroll) {
-    paralaxTitles.forEach((element, index) => {
-      element.style.transform = "translateY(" + window.scrollY / 25 + "%)"
-    })
-    didScroll = false;
-  }
-  requestAnimationFrame(raf);
-}
-
-
-requestAnimationFrame(raf);
-window.addEventListener('scroll', scrollInProgress)
+});
 
 
 // Swiper:
