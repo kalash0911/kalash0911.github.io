@@ -1937,6 +1937,9 @@ body {
       background: #010101;
       background: linear-gradient(0deg, #010101 0%, rgba(1, 1, 1, 0) 100%);
       z-index: 2; }
+    @media (max-width: 767px) {
+      .plan-section .slider-plan-nav::before, .plan-section .slider-plan-nav::after {
+        display: none; } }
     .plan-section .slider-plan-nav .swiper-wrapper {
       height: 600px; }
       @media (max-width: 1023px) {

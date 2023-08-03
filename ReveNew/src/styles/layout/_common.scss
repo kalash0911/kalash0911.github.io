@@ -1234,6 +1234,15 @@ body {
             z-index: 2;
         }
 
+        &::before,
+        &::after {
+            
+            @include media('<tablet'){
+                display: none;
+            }
+        }
+
+
         .swiper-wrapper {
             height: 600px;
 
