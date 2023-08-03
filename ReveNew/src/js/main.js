@@ -110,7 +110,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 destroySlidersOnResize(".slider-vip", 99999, {
 
   autoplay: {
-    delay: 2000,
+    delay: 5000,
   },
 
   thumbs: {
@@ -138,7 +138,8 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
       el: ".slider-plan-nav",
       direction: "vertical",
       slidesPerView: 8,
-      loop: true,
+      mousewheel: true,
+      freeMode: true,
 
       navigation: {
         nextEl: ".next",
