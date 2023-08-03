@@ -69,6 +69,18 @@ if (linkClose.length) {
 
 ; // For Scroll
 
+function handleScroll() {
+  var body = document.querySelector('body');
+
+  if (window.scrollY > 0) {
+    body.classList.add('scroll');
+  } else {
+    body.classList.remove('scroll');
+  }
+}
+
+window.addEventListener('scroll', handleScroll); // For Paralax
+
 window.addEventListener('scroll', function () {
   var section = document.getElementById('mission');
   var paralax = document.querySelector('.paralax');
@@ -120,7 +132,6 @@ var vipSlider = destroySlidersOnResize(".slider-vip", 99999, {
 });
 vipSlider.autoplay.stop();
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
-var notFullAnimData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"];
 var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   navigation: {
     nextEl: ".next",
@@ -149,32 +160,31 @@ var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   },
   on: {
     activeIndexChange: function activeIndexChange(swiper) {
-      var _jsonPhoneAnimations$, _jsonPhoneAnimations$2;
-
-      // jsonPhoneAnimations[swiper.activeIndex].play();
-      // jsonPhoneAnimations[swiper.previousIndex].stop();
-      // TODO: Replace when will be full list of animation
-      var activeIndex = swiper.activeIndex,
-          previousIndex = swiper.previousIndex;
-      var ind = notFullAnimData.indexOf("".concat(activeIndex + 1));
-      var prevInd = notFullAnimData.indexOf("".concat(previousIndex + 1));
-      (_jsonPhoneAnimations$ = jsonPhoneAnimations[ind]) === null || _jsonPhoneAnimations$ === void 0 ? void 0 : _jsonPhoneAnimations$.play();
-      (_jsonPhoneAnimations$2 = jsonPhoneAnimations[prevInd]) === null || _jsonPhoneAnimations$2 === void 0 ? void 0 : _jsonPhoneAnimations$2.stop();
+      jsonPhoneAnimations[swiper.activeIndex].play();
+      jsonPhoneAnimations[swiper.previousIndex].stop();
+      /* const { activeIndex, previousIndex } = swiper;
+      const ind = notFullAnimData.indexOf(
+        `${activeIndex + 1}`
+      );
+      const prevInd = notFullAnimData.indexOf(
+        `${previousIndex + 1}`
+      );
+      jsonPhoneAnimations[ind]?.play();
+      jsonPhoneAnimations[prevInd]?.stop(); */
     }
   }
 });
 destroySlidersOnResize(".slider-plan-nav", 99999, {});
 var planSliders = document.querySelectorAll(".plan-section .slider-plan .swiper-slide");
 var animLoadCounter = 0;
-var totalDuration = 0; // TODO: Replace when will be full list of animation
-// new Array(planSliders.length).fill('step')
-
-var jsonPhoneAnimations = notFullAnimData.map(function (step, ind, arr) {
+var totalDuration = 0;
+var jsonPhoneAnimations = new Array(planSliders.length).fill('step').map(function (step, ind, arr) {
   var anim = bodymovin.loadAnimation({
-    // container: document.getElementById(`${step}_${ind + 1}`),
-    // path: `./files/plan_anim/data-${ind + 1}.json`,
-    container: document.getElementById("step_".concat(step)),
-    path: "./files/plan_anim/data-".concat(step, ".json"),
+    container: document.getElementById("".concat(step, "_").concat(ind + 1)),
+    path: "./files/plan_anim/data-".concat(ind + 1, ".json"),
+
+    /* container: document.getElementById(`step_${step}`),
+    path: `./files/plan_anim/data-${step}.json`, */
     render: "svg",
     loop: false,
     autoplay: false

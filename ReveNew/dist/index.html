@@ -44,8 +44,14 @@
          </header>
         <main id="main">
             <section class="main-section">
-                <img class="bg bg1" src="./images/main-bg1.png" alt="bg">
-                <img class="bg bg2" src="./images/main-bg2.png" alt="bg">
+                <picture>
+					<source media="(max-width: 480px)" srcset="./images/main-bg1-mob.jpg">   
+					<img class="bg bg1" src="./images/main-bg1.png" alt="bg">
+				</picture>
+                <picture>
+					<source media="(max-width: 480px)" srcset="./images/main-bg2-mob.jpg">   
+					<img class="bg bg2" src="./images/main-bg2.png" alt="bg">
+				</picture>
                 <div class="container">
                     <h1 class="main-logo">
                         <span class="letter l1">

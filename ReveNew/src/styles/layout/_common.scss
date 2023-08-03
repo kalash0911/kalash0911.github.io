@@ -161,6 +161,11 @@ body {
     padding: 150px 0 250px 0;
     overflow: hidden;
 
+    @include media('<phone'){
+        align-items: flex-start;
+        padding: 120px 0 250px 0;
+    }
+
     &::before {
         content:'';
         position: absolute;
@@ -188,6 +193,10 @@ body {
         text-align: center;
         z-index: 1;
         margin-top: 100px;
+
+        @include media('<phone'){
+            margin-top: 0;
+        }
     }
 
     @keyframes opacityZoom {
@@ -1209,39 +1218,6 @@ body {
     .slider-plan-nav {
         width: 100%;
         height: 100%;
-
-        &::before {
-            content:'';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 20%;
-            background: rgb(1,1,1);
-            background: linear-gradient(180deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
-            z-index: 2;
-        }
-    
-        &::after {
-            content:'';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 20%;
-            background: rgb(1,1,1);
-            background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
-            z-index: 2;
-        }
-
-        &::before,
-        &::after {
-            
-            @include media('<tablet'){
-                display: none;
-            }
-        }
-
 
         .swiper-wrapper {
             height: 600px;

@@ -54,6 +54,20 @@ if (linkClose.length) {
 
 // For Scroll
 
+function handleScroll() {
+  const body = document.querySelector('body');
+
+  if (window.scrollY > 0) {
+    body.classList.add('scroll');
+  } else {
+    body.classList.remove('scroll');
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+// For Paralax
+
 window.addEventListener('scroll', function () {
   const section = document.getElementById('mission');
   const paralax = document.querySelector('.paralax');
@@ -117,8 +131,6 @@ vipSlider.autoplay.stop();
 
 destroySlidersOnResize(".slider-vip-nav", 99999, {});
 
-const notFullAnimData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"];
-
 const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
 
   navigation: {
@@ -152,10 +164,9 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   },
   on: {
     activeIndexChange: (swiper) => {
-      // jsonPhoneAnimations[swiper.activeIndex].play();
-      // jsonPhoneAnimations[swiper.previousIndex].stop();
-      // TODO: Replace when will be full list of animation
-      const { activeIndex, previousIndex } = swiper;
+      jsonPhoneAnimations[swiper.activeIndex].play();
+      jsonPhoneAnimations[swiper.previousIndex].stop();
+      /* const { activeIndex, previousIndex } = swiper;
       const ind = notFullAnimData.indexOf(
         `${activeIndex + 1}`
       );
@@ -163,7 +174,7 @@ const planSlider = destroySlidersOnResize(".slider-plan", 99999, {
         `${previousIndex + 1}`
       );
       jsonPhoneAnimations[ind]?.play();
-      jsonPhoneAnimations[prevInd]?.stop();
+      jsonPhoneAnimations[prevInd]?.stop(); */
     },
   },
 });
@@ -175,14 +186,13 @@ const planSliders = document.querySelectorAll(
 );
 let animLoadCounter = 0;
 let totalDuration = 0;
-// TODO: Replace when will be full list of animation
-// new Array(planSliders.length).fill('step')
-const jsonPhoneAnimations = notFullAnimData.map((step, ind, arr) => {
+
+const jsonPhoneAnimations = new Array(planSliders.length).fill('step').map((step, ind, arr) => {
   const anim = bodymovin.loadAnimation({
-    // container: document.getElementById(`${step}_${ind + 1}`),
-    // path: `./files/plan_anim/data-${ind + 1}.json`,
-    container: document.getElementById(`step_${step}`),
-    path: `./files/plan_anim/data-${step}.json`,
+    container: document.getElementById(`${step}_${ind + 1}`),
+    path: `./files/plan_anim/data-${ind + 1}.json`,
+    /* container: document.getElementById(`step_${step}`),
+    path: `./files/plan_anim/data-${step}.json`, */
     render: "svg",
     loop: false,
     autoplay: false,
