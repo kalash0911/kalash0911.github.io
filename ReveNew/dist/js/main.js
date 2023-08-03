@@ -140,6 +140,10 @@ var planSlider = destroySlidersOnResize(".slider-plan", 99999, {
   thumbs: {
     swiper: ".slider-plan-nav"
   },
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true
+  },
   breakpoints: {
     768: {
       thumbs: {
