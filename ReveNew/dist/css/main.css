@@ -1893,10 +1893,12 @@ body {
   .plan-section .title-sc {
     text-align: left;
     max-width: 440px;
-    margin-bottom: 64px; }
+    margin-bottom: 0; }
     @media (max-width: 767px) {
       .plan-section .title-sc {
-        display: none; } }
+        display: none;
+        text-align: center;
+        margin-bottom: 56px; } }
     .plan-section .title-sc.mob {
       display: none; }
       @media (max-width: 767px) {

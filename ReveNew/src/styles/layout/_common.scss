@@ -1177,10 +1177,12 @@ body {
     .title-sc {
         text-align: left;
         max-width: 440px;
-        margin-bottom: 64px;
+        margin-bottom: 0;
 
         @include media('<tablet'){
             display: none;
+            text-align: center;
+            margin-bottom: 56px;
         }
 
         &.mob {
