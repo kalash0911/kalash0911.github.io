@@ -219,6 +219,7 @@ const planSliders = document.querySelectorAll(
 );
 let animLoadCounter = 0;
 let totalDuration = 0;
+let accessAnimLoadCounter = 0;
 
 const jsonPhoneAnimations = new Array(planSliders.length).fill('step').map((step, ind, arr) => {
   const anim = bodymovin.loadAnimation({
@@ -246,6 +247,7 @@ const jsonPhoneAnimations = new Array(planSliders.length).fill('step').map((step
 
 let isPlanSectionViewed = false;
 let isVipSectionViewed = false;
+let isAccessSectionViewed = false;
 
 const startSlider = ({ target }) => {
   const sectionClassName = target.className;
@@ -260,13 +262,56 @@ const startSlider = ({ target }) => {
       vipSlider.autoplay.start();
       isVipSectionViewed = true;
       break;
+    case "access-section":
+      if (isAccessSectionViewed) return;
+      jsonAccessAnimations[0].play();
+      isVipSectionViewed = true;
+      break;
     default:
       break;
   }
 };
 
+
+const jsonAccessAnimations = new Array(4).fill('anim').map((step, ind, arr) => {
+  const anim = bodymovin.loadAnimation({
+    container: document.getElementById(`${step}_${ind + 1}`),
+    path: `./files/plan_anim/data-${ind + 1}.json`,
+    /* container: document.getElementById(`step_${step}`),
+    path: `./files/plan_anim/data-${step}.json`, */
+    render: "svg",
+    loop: false,
+    autoplay: false,
+  });
+  anim.addEventListener("DOMLoaded", () => {
+    accessAnimLoadCounter += 1;
+    if (accessAnimLoadCounter === arr.length) {
+      totalDuration = jsonAccessAnimations.reduce((prev, cur, ind) => {
+        const animWrapper = jsonAccessAnimations[ind].wrapper.closest('.item');
+        cur.onComplete = () => {
+          if(jsonAccessAnimations[ind + 1]) {
+            jsonAccessAnimations[ind + 1].play();
+          }
+          if(animWrapper) {
+            animWrapper.classList.add('anim-done')
+          }
+        };
+        cur.onEnterFrame = () => {
+          if(animWrapper) {
+            animWrapper.classList.add('active')
+          }
+        }
+        return (prev += cur.getDuration());
+      }, 0);
+    }
+  });
+  return anim;
+});
+
+
 const planIntersectionObs = document.querySelector(".plan-section");
 const vipIntersectionObs = document.querySelector(".vip-section");
+const accessSection = document.querySelector('.access-section')
 function callback(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -285,3 +330,4 @@ function createObserver(target, callback) {
 
 createObserver(planIntersectionObs, callback);
 createObserver(vipIntersectionObs, callback);
+createObserver(accessSection, callback)

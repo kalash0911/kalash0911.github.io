@@ -203,6 +203,7 @@ window.addEventListener('resize', handleScreenSizeChange);
 var planSliders = document.querySelectorAll(".plan-section .slider-plan .swiper-slide");
 var animLoadCounter = 0;
 var totalDuration = 0;
+var accessAnimLoadCounter = 0;
 var jsonPhoneAnimations = new Array(planSliders.length).fill('step').map(function (step, ind, arr) {
   var anim = bodymovin.loadAnimation({
     container: document.getElementById("".concat(step, "_").concat(ind + 1)),
@@ -231,6 +232,7 @@ var jsonPhoneAnimations = new Array(planSliders.length).fill('step').map(functio
 });
 var isPlanSectionViewed = false;
 var isVipSectionViewed = false;
+var isAccessSectionViewed = false;
 
 var startSlider = function startSlider(_ref) {
   var target = _ref.target;
@@ -249,13 +251,60 @@ var startSlider = function startSlider(_ref) {
       isVipSectionViewed = true;
       break;
 
+    case "access-section":
+      if (isAccessSectionViewed) return;
+      jsonAccessAnimations[0].play();
+      isVipSectionViewed = true;
+      break;
+
     default:
       break;
   }
 };
 
+var jsonAccessAnimations = new Array(4).fill('anim').map(function (step, ind, arr) {
+  var anim = bodymovin.loadAnimation({
+    container: document.getElementById("".concat(step, "_").concat(ind + 1)),
+    path: "./files/plan_anim/data-".concat(ind + 1, ".json"),
+
+    /* container: document.getElementById(`step_${step}`),
+    path: `./files/plan_anim/data-${step}.json`, */
+    render: "svg",
+    loop: false,
+    autoplay: false
+  });
+  anim.addEventListener("DOMLoaded", function () {
+    accessAnimLoadCounter += 1;
+
+    if (accessAnimLoadCounter === arr.length) {
+      totalDuration = jsonAccessAnimations.reduce(function (prev, cur, ind) {
+        var animWrapper = jsonAccessAnimations[ind].wrapper.closest('.item');
+
+        cur.onComplete = function () {
+          if (jsonAccessAnimations[ind + 1]) {
+            jsonAccessAnimations[ind + 1].play();
+          }
+
+          if (animWrapper) {
+            animWrapper.classList.add('anim-done');
+          }
+        };
+
+        cur.onEnterFrame = function () {
+          if (animWrapper) {
+            animWrapper.classList.add('active');
+          }
+        };
+
+        return prev += cur.getDuration();
+      }, 0);
+    }
+  });
+  return anim;
+});
 var planIntersectionObs = document.querySelector(".plan-section");
 var vipIntersectionObs = document.querySelector(".vip-section");
+var accessSection = document.querySelector('.access-section');
 
 function callback(entries, observer) {
   entries.forEach(function (entry) {
@@ -276,4 +325,5 @@ function createObserver(target, callback) {
 
 createObserver(planIntersectionObs, callback);
 createObserver(vipIntersectionObs, callback);
+createObserver(accessSection, callback);
 //# sourceMappingURL=main.js.map
