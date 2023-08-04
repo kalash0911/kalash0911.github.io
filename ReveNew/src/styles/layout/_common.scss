@@ -22,8 +22,8 @@ body {
     padding: 0 40px;
     margin: 0 auto;
 
-    @include media('<tablet'){
-       padding: 0 16px;
+    @include media('<tablet') {
+        padding: 0 16px;
     }
 }
 
@@ -36,8 +36,8 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     transition: $animation-speed;
-    
-    @include media('<laptop_s'){
+
+    @include media('<laptop_s') {
         font-size: 14px;
     }
 
@@ -66,14 +66,14 @@ body {
     line-height: 110%;
     letter-spacing: -1.28px;
 
-    @include media('<desktop'){
+    @include media('<desktop') {
         font-size: 42px;
         margin-bottom: 56px;
-    } 
+    }
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         font-size: 32px;
-    } 
+    }
 
     span {
         color: $pink;
@@ -100,25 +100,25 @@ body {
     &.t64 {
         font-size: 64px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             font-size: 42px;
-        } 
+        }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             font-size: 32px;
-        } 
+        }
     }
 
     &.t42 {
         font-size: 42px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             font-size: 32px;
-        } 
+        }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             font-size: 22px;
-        } 
+        }
     }
 }
 
@@ -131,9 +131,9 @@ body {
     text-align: center;
     margin-bottom: 20px;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         font-size: 14px;
-    } 
+    }
 }
 
 * {
@@ -165,31 +165,31 @@ body {
     padding: 150px 0 250px 0;
     overflow: hidden;
 
-    @include media('<phone'){
+    @include media('<phone') {
         align-items: flex-start;
         padding: 60px 0 200px 0;
     }
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 50%;
-        background: rgb(1,1,1);
-        background: linear-gradient(180deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
+        background: rgb(1, 1, 1);
+        background: linear-gradient(180deg, rgba(1, 1, 1, 1) 0%, rgba(1, 1, 1, 0) 100%);
     }
 
     &::after {
-        content:'';
+        content: '';
         position: absolute;
         left: 0;
         bottom: 0;
         width: 100%;
         height: 20%;
-        background: rgb(1,1,1);
-        background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
+        background: rgb(1, 1, 1);
+        background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(1, 1, 1, 0) 100%);
     }
 
     .container {
@@ -198,49 +198,54 @@ body {
         z-index: 1;
         margin-top: 100px;
 
-        @include media('<phone'){
+        @include media('<phone') {
             margin-top: 0;
         }
     }
 
     @keyframes opacityZoom {
-        0%{
+        0% {
             transform: scale(1);
             opacity: 1;
         }
-        50%{
+
+        50% {
             opacity: 1;
         }
-        100%{
+
+        100% {
             opacity: 0;
             transform: scale(1.1);
         }
     }
 
     @keyframes opacity {
-        0%{
+        0% {
             opacity: 100%;
         }
-        100%{
+
+        100% {
             opacity: 0;
         }
     }
 
     @keyframes fillColor {
-        0%{
+        0% {
             fill: $white;
         }
-        100%{
+
+        100% {
             fill: $pink;
         }
     }
 
     @keyframes transformOpacity {
-        0%{
+        0% {
             transform: translateY(-10px);
             opacity: 0;
         }
-        100%{
+
+        100% {
             transform: translateY(0px);
             opacity: 100%;
         }
@@ -266,8 +271,8 @@ body {
         justify-content: center;
         gap: 3px;
         margin: 0;
-   
-        @include media('<tablet'){
+
+        @include media('<tablet') {
             transform: scale(.6);
         }
     }
@@ -278,7 +283,7 @@ body {
         animation-fill-mode: forwards;
         animation-direction: reverse;
         opacity: 0;
-        
+
         svg {
             fill: $white;
         }
@@ -341,7 +346,7 @@ body {
         animation-delay: 3.5s;
         animation-fill-mode: forwards;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             font-size: 16px;
         }
     }
@@ -358,22 +363,22 @@ body {
         z-index: 1;
         transition: all .7s ease 0s;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             width: 194px;
             height: 194px;
             bottom: -97px;
-        } 
+        }
 
         .scroll & {
             opacity: .4;
         }
 
         &:hover {
-            
+
             .arrow {
                 top: 70px;
 
-                @include media('<tablet'){
+                @include media('<tablet') {
                     top: 45px;
                 }
             }
@@ -382,7 +387,7 @@ body {
 
         .arrow {
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 top: 35px;
                 height: 30px;
             }
@@ -406,35 +411,35 @@ body {
     min-height: 900px;
     overflow: hidden;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         min-height: 800px;
-    } 
+    }
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 30%;
-        background: rgb(1,1,1);
-        background: linear-gradient(180deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
+        background: rgb(1, 1, 1);
+        background: linear-gradient(180deg, rgba(1, 1, 1, 1) 0%, rgba(1, 1, 1, 0) 100%);
         z-index: 1;
     }
 
     &::after {
-        content:'';
+        content: '';
         position: absolute;
         left: 0;
         bottom: 0;
         width: 100%;
         height: 50%;
-        background: rgb(1,1,1);
-        background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
+        background: rgb(1, 1, 1);
+        background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(1, 1, 1, 0) 100%);
         z-index: 2;
     }
 
-    .container  {
+    .container {
         position: relative;
         z-index: 1;
     }
@@ -463,11 +468,11 @@ body {
         line-height: 110%;
         letter-spacing: -1.6px;
         margin-bottom: 100px;
-        
 
-        @include media('<desktop'){
+
+        @include media('<desktop') {
             font-size: 52px;
-        } 
+        }
     }
 }
 
@@ -476,7 +481,7 @@ body {
 .circle-section {
     padding: 135px 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         padding: 80px 0;
     }
 
@@ -485,10 +490,10 @@ body {
         display: flex;
         justify-content: space-between;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             align-items: center;
             flex-direction: column;
-        } 
+        }
     }
 
     .item {
@@ -505,20 +510,20 @@ body {
         background-color: $black01;
         padding: 20px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             @include adaptiv-vaule("width", 580, 280, 1);
             @include adaptiv-vaule("height", 580, 280, 1);
-        } 
+        }
 
         .cir {
             position: absolute;
             width: 149px;
             height: 149px;
-            background: rgb(1,1,1);
-            background: radial-gradient(circle, rgba(1,1,1,1) 0%, rgba(1,1,1,0) 100%);
+            background: rgb(1, 1, 1);
+            background: radial-gradient(circle, rgba(1, 1, 1, 1) 0%, rgba(1, 1, 1, 0) 100%);
             z-index: 1;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 width: 100px;
                 height: 100px;
             }
@@ -528,26 +533,26 @@ body {
             top: 7%;
             left: -2%;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 top: 0;
                 left: 7%;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 top: -8%;
             }
         }
 
-        .cir2{
+        .cir2 {
             bottom: 7%;
             left: -2%;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 bottom: 0;
                 left: 7%;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 bottom: -8%;
             }
         }
@@ -556,26 +561,26 @@ body {
             top: 7%;
             right: -4%;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 top: 0;
                 right: 7%;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 top: -8%;
             }
         }
 
-        .cir4{
+        .cir4 {
             bottom: 7%;
             right: -4%;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 bottom: 0;
                 right: 7%;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 bottom: -8%;
             }
         }
@@ -583,14 +588,14 @@ body {
         &.first {
 
             .text-wrap {
-                transform: translateX(-15%);   
-                
-                @include media('<laptop_s'){
-                    transform: translateX(-10%);  
-                } 
+                transform: translateX(-15%);
 
-                @include media('<desktop'){
-                    transform: translateX(0);  
+                @include media('<laptop_s') {
+                    transform: translateX(-10%);
+                }
+
+                @include media('<desktop') {
+                    transform: translateX(0);
                 }
             }
         }
@@ -603,7 +608,7 @@ body {
             z-index: 1;
             justify-content: center;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 position: relative;
                 top: auto;
                 left: auto;
@@ -611,7 +616,7 @@ body {
                 margin: -100px 0;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 margin: -50px 0;
             }
         }
@@ -619,14 +624,14 @@ body {
         &.last {
 
             .text-wrap {
-                transform: translateX(15%);   
-                
-                @include media('<laptop_s'){
-                    transform: translateX(10%);  
+                transform: translateX(15%);
+
+                @include media('<laptop_s') {
+                    transform: translateX(10%);
                 }
 
-                @include media('<desktop'){
-                    transform: translateX(0);  
+                @include media('<desktop') {
+                    transform: translateX(0);
                 }
             }
         }
@@ -645,14 +650,14 @@ body {
         text-transform: uppercase;
         margin: 0;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             @include adaptiv-vaule("max-width", 374, 260, 1);
             @include adaptiv-vaule("font-size", 26, 16, 1);
             transform: translateY(0);
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             top: 0;
             left: 50%;
@@ -713,7 +718,7 @@ body {
 .access-section {
     padding: 135px 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         padding: 80px 0 110px 0;
     }
 
@@ -726,7 +731,7 @@ body {
         display: flex;
         flex-wrap: wrap;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             padding-left: 40px;
         }
     }
@@ -738,20 +743,36 @@ body {
         flex-direction: column;
         justify-content: space-between;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             width: 50%;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             width: 100%;
             padding-left: 35px;
+        }
+    }
+
+    .active {
+
+        .line {
+
+            &::before {
+                background-color: $pink;
+            }
+        }
+    }
+
+    .anim-done {
+        .line {
+            background-color: $pink;
         }
     }
 
     .text-wrap {
         padding: 20px 20px 36px 20px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             padding: 30px 0;
         }
     }
@@ -786,9 +807,13 @@ body {
         margin: 0;
         max-width: 330px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             max-width: 100%;
         }
+    }
+
+    .gif-wrap{
+        height: 520px;
     }
 
     .line {
@@ -798,7 +823,7 @@ body {
         height: 1px;
         background-color: rgba(255, 255, 255, 0.40);
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             position: absolute;
             left: 0;
             top: 0;
@@ -807,7 +832,7 @@ body {
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             top: -5px;
@@ -817,14 +842,14 @@ body {
             background-color: $white;
             z-index: 1;
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 left: -5px;
                 top: 0;
             }
         }
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             left: -10px;
             top: -15px;
@@ -833,7 +858,7 @@ body {
             border-radius: 50%;
             background-color: $black01;
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 left: -15px;
                 top: -10px;
             }
@@ -852,7 +877,7 @@ body {
         padding: 0;
         min-height: 100vh;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             flex-direction: column;
             min-height: 0;
         }
@@ -864,7 +889,7 @@ body {
         max-width: 800px;
         padding: 100px 40px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             max-width: 100%;
             padding: 36px 16px;
             min-height: 260px;
@@ -879,11 +904,11 @@ body {
         letter-spacing: -1.28px;
         margin: 0;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             font-size: 42px;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             font-size: 32px;
         }
     }
@@ -898,39 +923,39 @@ body {
         min-width: 650px;
         max-width: 650px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             min-width: 0;
             max-width: 100%;
             margin: 56px 0;
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             top: 0;
             left: 52%;
             transform: translate(-52%);
             height: 100%;
             width: 2px;
-            background: rgb(1,1,1);
-            background: linear-gradient(180deg, rgba(1,1,1,1) 0%, rgba(255,255,255,1) 50%, rgba(1,1,1,1) 100%);
+            background: rgb(1, 1, 1);
+            background: linear-gradient(180deg, rgba(1, 1, 1, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(1, 1, 1, 1) 100%);
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 left: 50%;
                 transform: translate(-50%);
             }
         }
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
             height: 2px;
             width: 100%;
-            background: rgb(1,1,1);
-            background: linear-gradient(90deg, rgba(1,1,1,1) 0%, rgba(255,255,255,1) 50%, rgba(1,1,1,1) 100%);
+            background: rgb(1, 1, 1);
+            background: linear-gradient(90deg, rgba(1, 1, 1, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(1, 1, 1, 1) 100%);
         }
     }
 
@@ -940,13 +965,13 @@ body {
         align-items: flex-end;
         padding: 32px 32px 32px 60px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             width: 50%;
             padding: 26px 16px;
             justify-content: center;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             min-height: 200px;
         }
     }
@@ -956,7 +981,7 @@ body {
         align-items: center;
         gap: 13px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             gap: 6px;
         }
     }
@@ -970,7 +995,7 @@ body {
         text-transform: uppercase;
         margin: 0;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             font-size: 13px;
         }
     }
@@ -983,7 +1008,7 @@ body {
         letter-spacing: -1.4px;
         text-transform: uppercase;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             font-size: 46px;
         }
     }
@@ -999,7 +1024,7 @@ body {
         padding: 0 0 0 40px;
         min-height: 100vh;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             flex-direction: column;
             padding: 0 16px;
             min-height: 0;
@@ -1013,7 +1038,7 @@ body {
         justify-content: space-between;
         padding: 100px 0 66px 0;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             width: 100%;
             padding: 80px 0 0 0;
         }
@@ -1023,7 +1048,7 @@ body {
         text-align: left;
         max-width: 600px;
 
-        @include media('<phone'){
+        @include media('<phone') {
             margin-bottom: 55px;
         }
     }
@@ -1031,7 +1056,7 @@ body {
     .img-block {
         width: 50%;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             width: 100%;
         }
     }
@@ -1046,21 +1071,21 @@ body {
         }
 
         .nav-slide {
-     
+
             &::after {
-                content:'';
+                content: '';
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 100%;
                 height: 1px;
-                background: rgb(255,255,255);
-                background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+                background: rgb(255, 255, 255);
+                background: linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 100%);
                 opacity: .4;
             }
 
             &:last-child {
-                
+
                 &::after {
                     display: none;
                 }
@@ -1073,7 +1098,7 @@ body {
                 color: $pink;
                 padding-left: 24px;
 
-                @include media('<phone'){
+                @include media('<phone') {
                     padding-left: 20px;
                 }
 
@@ -1096,17 +1121,17 @@ body {
         text-transform: uppercase;
         transition: $animation-speed;
 
-        @include media('<widescreen'){
+        @include media('<widescreen') {
             font-size: 18px;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             font-size: 16px;
             margin: 16px 0;
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             top: 9px;
@@ -1117,11 +1142,11 @@ body {
             opacity: 0;
             transition: $animation-speed;
 
-            @include media('<widescreen'){
+            @include media('<widescreen') {
                 top: 4px;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 min-width: 8px;
                 height: 8px;
             }
@@ -1136,16 +1161,16 @@ body {
             width: 100%;
             height: 100%;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 min-height: 500px;
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 min-height: 300px;
             }
         }
-            
-        .img{
+
+        .img {
             position: absolute;
             top: 0;
             left: 0;
@@ -1153,7 +1178,7 @@ body {
             height: 100%;
             object-fit: cover;
         }
-        
+
     }
 
 }
@@ -1164,7 +1189,7 @@ body {
     position: relative;
     padding: 100px 0 0 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         padding: 80px 0 0 0;
     }
 
@@ -1174,7 +1199,7 @@ body {
         justify-content: space-between;
         gap: 25px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             flex-direction: column-reverse;
         }
     }
@@ -1184,7 +1209,7 @@ body {
         max-width: 440px;
         margin-bottom: 0;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             display: none;
             text-align: center;
             margin-bottom: 56px;
@@ -1193,7 +1218,7 @@ body {
         &.mob {
             display: none;
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 display: block;
             }
         }
@@ -1203,7 +1228,7 @@ body {
         width: 50%;
         max-width: 635px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             width: 100%;
             max-width: 100%;
         }
@@ -1216,7 +1241,7 @@ body {
         align-items: center;
         flex-direction: column;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             width: 100%;
             max-width: 100%;
         }
@@ -1226,8 +1251,8 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
-        
-        @include media('<tablet'){
+
+        @include media('<tablet') {
             position: relative;
             width: 100%;
         }
@@ -1240,11 +1265,11 @@ body {
         .swiper-wrapper {
             height: 600px;
 
-            @include media('<desktop'){
+            @include media('<desktop') {
                 height: 500px;
             }
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 height: auto;
             }
         }
@@ -1255,40 +1280,40 @@ body {
             width: 100% !important;
             cursor: pointer;
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 width: 100% !important;
                 padding: 16px 0;
             }
 
             &::after {
-                content:'';
+                content: '';
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 100%;
                 height: 1px;
-                background: rgb(255,255,255);
-                background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+                background: rgb(255, 255, 255);
+                background: linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 100%);
                 opacity: .4;
 
-                @include media('<tablet'){
-                    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+                @include media('<tablet') {
+                    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
                 }
             }
 
             &::before {
-                content:'';
+                content: '';
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 1px;
-                background: rgb(255,255,255);
-                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+                background: rgb(255, 255, 255);
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
                 opacity: .4;
                 display: none;
 
-                @include media('<tablet'){
+                @include media('<tablet') {
                     display: block;
                 }
             }
@@ -1306,18 +1331,18 @@ body {
         cursor: pointer;
         transition: $animation-speed;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             position: absolute;
             top: 8px;
             z-index: 2;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             top: 3px;
         }
 
         &:hover {
-            
+
             svg {
                 fill: $pink;
             }
@@ -1327,9 +1352,9 @@ body {
             fill: $white;
             transition: $animation-speed;
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 width: 36px;
-                height: 36px; 
+                height: 36px;
             }
         }
     }
@@ -1341,17 +1366,17 @@ body {
 
     .prev {
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             left: 0;
             transform: rotate(-90deg);
         }
 
         &:hover {
-            
+
             svg {
                 transform: translateY(-10px);
 
-                @include media('<tablet'){
+                @include media('<tablet') {
                     transform: translateY(0);
                 }
             }
@@ -1360,17 +1385,17 @@ body {
 
     .next {
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             right: 0;
             transform: rotate(-90deg);
         }
 
         &:hover {
-            
+
             svg {
                 transform: translateY(10px);
 
-                @include media('<tablet'){
+                @include media('<tablet') {
                     transform: translateY(0);
                 }
             }
@@ -1388,16 +1413,16 @@ body {
         margin: 0;
         transition: $animation-speed;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             font-size: 22px;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             text-align: center;
             color: $pink;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             font-size: 14px;
         }
     }
@@ -1415,7 +1440,7 @@ body {
         position: absolute;
         bottom: 40px !important;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             display: block;
         }
     }
@@ -1435,7 +1460,7 @@ body {
 .rules-section {
     padding: 0 0 100px 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         padding: 0 0 80px 0;
     }
 
@@ -1443,11 +1468,11 @@ body {
         max-width: 1230px;
         margin: 0 auto 100px auto;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             margin: 0 auto 56px auto;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             font-size: 22px;
         }
     }
@@ -1459,30 +1484,30 @@ body {
         column-gap: 25px;
         row-gap: 100px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             flex-direction: column;
             padding: 70px 0;
         }
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             top: 101px;
             height: 2px;
             width: 100%;
-            background: rgb(1,1,1);
-            background: linear-gradient(90deg, rgba(1,1,1,1) 0%, rgba(255,255,255,1) 50%, rgba(1,1,1,1) 100%);
+            background: rgb(1, 1, 1);
+            background: linear-gradient(90deg, rgba(1, 1, 1, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(1, 1, 1, 1) 100%);
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 top: 0;
                 left: 100px;
                 height: 100%;
                 width: 2px;
-                background: linear-gradient(0deg, rgba(1,1,1,1) 0%, rgba(255,255,255,1) 50%, rgba(1,1,1,1) 100%);
+                background: linear-gradient(0deg, rgba(1, 1, 1, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(1, 1, 1, 1) 100%);
             }
 
-            @include media('<phone'){
+            @include media('<phone') {
                 left: 88px;
             }
         }
@@ -1495,7 +1520,7 @@ body {
         flex-direction: column;
         gap: 30px;
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             flex-direction: row;
         }
     }
@@ -1509,7 +1534,7 @@ body {
         letter-spacing: -1.12px;
         text-transform: uppercase;
 
-        @include media('<phone'){
+        @include media('<phone') {
             font-size: 46px;
         }
     }
@@ -1523,7 +1548,7 @@ body {
         background-color: $black01;
 
         &::after {
-            content:'';
+            content: '';
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -1542,16 +1567,16 @@ body {
         max-width: 400px;
         margin: 0;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             font-size: 16px;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             max-width: 100%;
             text-align: left;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             font-size: 14px;
         }
     }
@@ -1562,7 +1587,7 @@ body {
 .two-circle-section {
     padding: 135px 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         padding: 80px 0;
     }
 
@@ -1572,11 +1597,11 @@ body {
         justify-content: center;
         gap: 50px;
 
-        @include media('<widescreen_x'){
+        @include media('<widescreen_x') {
             gap: 20px;
         }
 
-        @include media('<tablet'){
+        @include media('<tablet') {
             flex-direction: column;
             align-items: center;
         }
@@ -1655,7 +1680,7 @@ body {
             align-self: center;
             transform: translateY(70px);
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 align-self: inherit;
                 transform: translateY(0);
             }
@@ -1670,7 +1695,7 @@ body {
     min-height: 800px;
     padding: 120px 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         min-height: 800px;
     }
 
@@ -1680,8 +1705,8 @@ body {
         height: 20%;
         top: 0;
         left: 0;
-        background: rgb(255,255,255);
-        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        background: rgb(255, 255, 255);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(1, 1, 1, 1) 100%);
         z-index: 1;
     }
 
@@ -1691,39 +1716,39 @@ body {
         height: 20%;
         left: 0;
         bottom: 0;
-        background: rgb(255,255,255);
-        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(1, 1, 1, 1) 100%);
         z-index: 1;
     }
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         width: 20%;
         height: 100%;
         top: 0;
         left: 0;
-        background: rgb(255,255,255);
-        background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        background: rgb(255, 255, 255);
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(1, 1, 1, 1) 100%);
         z-index: 1;
     }
 
     &::after {
-        content:'';
+        content: '';
         position: absolute;
         width: 20%;
         height: 100%;
         top: 0;
         right: 0;
-        background: rgb(255,255,255);
-        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(1,1,1,1) 100%);
+        background: rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(1, 1, 1, 1) 100%);
         z-index: 1;
     }
 
     .container {
         display: flex;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             flex-direction: column;
         }
     }
@@ -1736,18 +1761,18 @@ body {
         margin: 0;
         width: 40%;
 
-        @include media('<laptop'){
+        @include media('<laptop') {
             font-size: 32px;
         }
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             text-align: center;
             width: 100%;
             margin: 0 auto 40px auto;
         }
 
-        @include media('<phone'){
-           font-size: 22px;
+        @include media('<phone') {
+            font-size: 22px;
         }
     }
 
@@ -1759,7 +1784,7 @@ body {
         width: 50%;
         max-width: 800px;
 
-        @include media('<desktop'){
+        @include media('<desktop') {
             position: relative;
             top: auto;
             left: auto;
@@ -1767,11 +1792,11 @@ body {
             width: 100%;
         }
 
-        @include media('<phone'){
+        @include media('<phone') {
             display: none;
         }
     }
-    
+
 }
 
 /* ---------------------------form-section------------------- */
@@ -1779,7 +1804,7 @@ body {
 .form-section {
     padding: 115px 0;
 
-    @include media('<tablet'){
+    @include media('<tablet') {
         padding: 80px 0;
     }
 
@@ -1819,14 +1844,14 @@ body {
         letter-spacing: -0.14px;
         text-transform: uppercase;
 
-        @include media('<phone'){
+        @include media('<phone') {
             font-size: 12px;
         }
 
         &.l50 {
             width: 47%;
 
-            @include media('<tablet'){
+            @include media('<tablet') {
                 width: 100%;
             }
         }

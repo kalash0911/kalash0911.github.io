@@ -265,7 +265,7 @@ var startSlider = function startSlider(_ref) {
 var jsonAccessAnimations = new Array(4).fill('anim').map(function (step, ind, arr) {
   var anim = bodymovin.loadAnimation({
     container: document.getElementById("".concat(step, "_").concat(ind + 1)),
-    path: "./files/plan_anim/data-".concat(ind + 1, ".json"),
+    path: "./files/access_anim/anim_".concat(ind + 1, ".json"),
 
     /* container: document.getElementById(`step_${step}`),
     path: `./files/plan_anim/data-${step}.json`, */

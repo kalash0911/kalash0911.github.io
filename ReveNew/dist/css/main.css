@@ -1529,6 +1529,10 @@ body {
       .access-section .item {
         width: 100%;
         padding-left: 35px; } }
+  .access-section .active .line::before {
+    background-color: #FF3DB2; }
+  .access-section .anim-done .line {
+    background-color: #FF3DB2; }
   .access-section .text-wrap {
     padding: 20px 20px 36px 20px; }
     @media (max-width: 767px) {
@@ -1572,6 +1576,8 @@ body {
     @media (max-width: 767px) {
       .access-section .text {
         max-width: 100%; } }
+  .access-section .gif-wrap {
+    height: 520px; }
   .access-section .line {
     position: relative;
     display: block;
