@@ -52,8 +52,6 @@ function initStickyPhone() {
   const sectionRect = startSection.getBoundingClientRect();
   phoneImgs.forEach((img, ind) => img.style.zIndex = `${ind}`)
 
-  if(!phonesWrapper || !startSection || !steps) return;
-
   const phoneWrapDesctination = sectionRect.height - stepsReact[steps.length - 1].height - 50;
 
   // Phone wrapper scroll anim

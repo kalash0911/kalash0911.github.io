@@ -68,7 +68,6 @@ function initStickyPhone() {
   phoneImgs.forEach(function (img, ind) {
     return img.style.zIndex = "".concat(ind);
   });
-  if (!phonesWrapper || !startSection || !steps) return;
   var phoneWrapDesctination = sectionRect.height - stepsReact[steps.length - 1].height - 50; // Phone wrapper scroll anim
 
   gsap.fromTo(phonesWrapper, {
