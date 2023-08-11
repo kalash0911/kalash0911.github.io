@@ -94,6 +94,32 @@ body {
     }
 }
 
+/* ------------------- card-section ----------------*/
+
+.card-section {
+    position: relative;
+    padding-bottom: 140px;
+    overflow: hidden;
+
+    .circle {
+        position: absolute;
+        bottom: -2300px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        min-width: 4000px;
+        height: 2500px;
+        background-color: $yellowD0;
+        border-radius: 50%;
+        z-index: 2;
+        border: 1px dashed #CF7C58;
+    }
+
+    .block {
+        display: flex;
+    }
+}
+
 /* ------------------- phone-section ----------------*/
 
 .phone-section {

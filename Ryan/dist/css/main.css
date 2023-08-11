@@ -654,6 +654,28 @@ body {
       .main-section .text {
         font-size: 14px; } }
 
+/* ------------------- card-section ----------------*/
+.card-section {
+  position: relative;
+  padding-bottom: 140px;
+  overflow: hidden; }
+  .card-section .circle {
+    position: absolute;
+    bottom: -2300px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 4000px;
+    height: 2500px;
+    background-color: #F6E9D0;
+    border-radius: 50%;
+    z-index: 2;
+    border: 1px dashed #CF7C58; }
+  .card-section .block {
+    display: -ms-flexbox;
+    display: flex; }
+
 /* ------------------- phone-section ----------------*/
 .phone-section {
   padding: 180px 0 115px 0;
