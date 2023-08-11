@@ -582,6 +582,9 @@ body {
   font-family: "Poppins", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   background: #F6E9D0; }
 
+#wrapper {
+  overflow: hidden; }
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -1098,5 +1101,86 @@ body {
     font-weight: 500;
     line-height: 124%;
     margin-bottom: 14px; }
+
+#footer {
+  background: #2A2827;
+  padding: 32px 0; }
+  #footer .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 20px; }
+    @media (max-width: 767px) {
+      #footer .container {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+  #footer .top {
+    padding: 14px 0;
+    border-radius: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  #footer .logo {
+    color: #fff;
+    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0; }
+  #footer .menu {
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;
+    row-gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+    @media (max-width: 479px) {
+      #footer .menu {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center; } }
+  #footer .link {
+    color: #fff;
+    font-family: "Poppins", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    transition: all 0.3s ease 0s; }
+    #footer .link:hover {
+      color: #CF7C58; }
+  #footer .socials {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  #footer .icon {
+    display: grid;
+    place-items: center;
+    transition: all 0.3s ease 0s; }
+    #footer .icon:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
+  #footer .bot {
+    padding-top: 24px; }
+  #footer .text {
+    color: #FEFBF4;
+    font-family: "Poppins", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0; }
+  #footer .icon-site {
+    transition: all 0.3s ease 0s; }
+    #footer .icon-site:hover {
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05); }
 
 /*# sourceMappingURL=main.css.map */
