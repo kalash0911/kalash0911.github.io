@@ -659,25 +659,7 @@ body {
   position: relative;
   padding-bottom: 140px;
   overflow: hidden;
-  min-height: 520px;
-  /*&:before {
-        position: absolute;
-        content: "";
-        width: $cardCarouselWidth + px;
-        height: $cardCarouselHeight + px;
-        display: block;
-        z-index: 111;
-        top: 100%;
-        left: 50%;
-        border-radius: 50%;
-        background: $whiteEA;
-        -webkit-transform: translate(-50%, 0);
-        transform: translate(-50%, -100px);
-
-        @include media('<phone') {
-            transform: translate(-50%, -140px);
-        }
-    }*/ }
+  min-height: 520px; }
   @media (max-width: 479px) {
     .card-section {
       min-height: 360px; } }
