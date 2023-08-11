@@ -97,20 +97,58 @@ body {
 }
 
 /* ------------------- card-section ----------------*/
+@mixin on-circle($item-count, $circle-size, $item-size, $angle) {
+    position: absolute;
+    width:  $circle-size + px;
+    height: $circle-size + px;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+
+    > * {
+        display: block;
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        width:  $item-size + px;
+        height: $item-size + px;
+        margin: -($item-size / 2) + px;
+
+        $rot: -90;
+        $itemTranslate: $circle-size / 2 - ($item-size / 2);
+
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                transform:
+                        rotate($rot * 1deg)
+                        translate($itemTranslate + px);
+            }
+            $rot: $rot + $angle;
+        }
+    }
+}
 
 .card-section {
+    $cardCarouselWidth: 4000;
+    $cardCarouselHeight: 4000;
+
     position: relative;
     padding-bottom: 140px;
     overflow: hidden;
+    min-height: 520px;
+
+    @include media('<phone') {
+        min-height: 360px;
+    }
 
     .circle {
         position: absolute;
-        bottom: -2300px;
+        bottom: -3790px;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        min-width: 4000px;
-        height: 2500px;
+        min-width: $cardCarouselWidth + px;
+        height: $cardCarouselHeight + px;
         background-color: $yellowD0;
         border-radius: 50%;
         z-index: 2;
@@ -120,6 +158,57 @@ body {
     .block {
         display: flex;
     }
+
+    /*&:before {
+        position: absolute;
+        content: "";
+        width: $cardCarouselWidth + px;
+        height: $cardCarouselHeight + px;
+        display: block;
+        z-index: 111;
+        top: 100%;
+        left: 50%;
+        border-radius: 50%;
+        background: $whiteEA;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, -100px);
+
+        @include media('<phone') {
+            transform: translate(-50%, -140px);
+        }
+    }*/
+
+    .card-holder {
+        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 11);
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        @include media('<phone') {
+            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 4);
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            transition: .15s;
+
+            img {
+                //$tanA: 4000 / (2 * (1690));
+                //$atan: atan(pi / 2);
+                //transform: rotate(atan($tanA));
+                //transform: rotate($atan);
+
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.card-section {
 }
 
 /* ------------------- phone-section ----------------*/
@@ -337,99 +426,6 @@ body {
 
         &:hover {
             background-color: transparent;
-        }
-    }
-}
-
-
-/* ------------------- card-section ----------------*/
-@mixin on-circle($item-count, $circle-size, $item-size, $angle) {
-    position: absolute;
-    width:  $circle-size + px;
-    height: $circle-size + px;
-    padding: 0;
-    border-radius: 50%;
-    list-style: none;
-
-    > * {
-        display: block;
-        position: absolute;
-        top:  50%;
-        left: 50%;
-        width:  $item-size + px;
-        height: $item-size + px;
-        margin: -($item-size / 2) + px;
-
-        $rot: -90;
-        $itemTranslate: $circle-size / 2 - ($item-size / 2);
-
-        @for $i from 1 through $item-count {
-            &:nth-of-type(#{$i}) {
-                transform:
-                        rotate($rot * 1deg)
-                        translate($itemTranslate + px);
-            }
-            $rot: $rot + $angle;
-        }
-    }
-}
-.card-section {
-    $cardCarouselWidth: 4000;
-    $cardCarouselHeight: 4000;
-
-    position: relative;
-    min-height: 410px;
-    overflow: hidden;
-
-    @include media('<phone') {
-        min-height: 290px;
-    }
-
-    &:before {
-        position: absolute;
-        content: "";
-        width: $cardCarouselWidth + px;
-        height: $cardCarouselHeight + px;
-        display: block;
-        z-index: 111;
-        top: 100%;
-        left: 50%;
-        border-radius: 50%;
-        background: $whiteEA;
-        -webkit-transform: translate(-50%, 0);
-        transform: translate(-50%, -100px);
-
-        @include media('<phone') {
-            transform: translate(-50%, -140px);
-        }
-    }
-
-    .card-holder {
-        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 11, $initRot: -90);
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
-
-        @include media('<phone') {
-            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 4, $initRot: -90);
-        }
-
-        .item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 100%;
-            transition: .15s;
-
-            img {
-                //$tanA: 4000 / (2 * (1690));
-                //$atan: atan(pi / 2);
-                //transform: rotate(atan($tanA));
-                //transform: rotate($atan);
-
-                transform: rotate(90deg);
-            }
         }
     }
 }

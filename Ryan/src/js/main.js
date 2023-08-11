@@ -94,11 +94,26 @@ const calcRightAngledTriangleDegree = (a, b) => {
 };
 
 const calcInitRotation = (rightAngledTriangleBDeg, isoscelesTriangleBDeg) => {
-  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg;
+  // hardcoded fix for mobile
+  let correction = 0;
+  if (window.innerWidth <= 1024) {
+    correction = 6;
+  }
+  if (window.innerWidth <= 480) {
+    correction = 3;
+  }
+  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg - correction;
 };
 
 const calcFinalRotation = (rightAngledTriangleBDeg, isoscelesTriangleBDeg, cellsLength) => {
-  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2
+  let correction = 0;
+  if (window.innerWidth <= 1024) {
+    correction = -3;
+  }
+  if (window.innerWidth <= 480) {
+    correction = -1;
+  }
+  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2 - correction;
 };
 
 /* ------------------- card section initialization ----------------*/
@@ -127,7 +142,7 @@ function circleImageAnimation() {
         pin: '#main',
         end: `bottom`,
         scrub: 0.5,
-        markers: true,
+        // markers: true,
       },
     }
   );

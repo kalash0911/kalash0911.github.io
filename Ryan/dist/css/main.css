@@ -658,16 +658,38 @@ body {
 .card-section {
   position: relative;
   padding-bottom: 140px;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 520px;
+  /*&:before {
+        position: absolute;
+        content: "";
+        width: $cardCarouselWidth + px;
+        height: $cardCarouselHeight + px;
+        display: block;
+        z-index: 111;
+        top: 100%;
+        left: 50%;
+        border-radius: 50%;
+        background: $whiteEA;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, -100px);
+
+        @include media('<phone') {
+            transform: translate(-50%, -140px);
+        }
+    }*/ }
+  @media (max-width: 479px) {
+    .card-section {
+      min-height: 360px; } }
   .card-section .circle {
     position: absolute;
-    bottom: -2300px;
+    bottom: -3790px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100%;
     min-width: 4000px;
-    height: 2500px;
+    height: 4000px;
     background-color: #F6E9D0;
     border-radius: 50%;
     z-index: 2;
@@ -675,6 +697,174 @@ body {
   .card-section .block {
     display: -ms-flexbox;
     display: flex; }
+  .card-section .card-holder {
+    position: absolute;
+    width: 4000px;
+    height: 4000px;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); }
+    .card-section .card-holder > * {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      margin: -160px; }
+      .card-section .card-holder > *:nth-of-type(1) {
+        -webkit-transform: rotate(-90deg) translate(1840px);
+        transform: rotate(-90deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(2) {
+        -webkit-transform: rotate(-79deg) translate(1840px);
+        transform: rotate(-79deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(3) {
+        -webkit-transform: rotate(-68deg) translate(1840px);
+        transform: rotate(-68deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(4) {
+        -webkit-transform: rotate(-57deg) translate(1840px);
+        transform: rotate(-57deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(5) {
+        -webkit-transform: rotate(-46deg) translate(1840px);
+        transform: rotate(-46deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(6) {
+        -webkit-transform: rotate(-35deg) translate(1840px);
+        transform: rotate(-35deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(7) {
+        -webkit-transform: rotate(-24deg) translate(1840px);
+        transform: rotate(-24deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(8) {
+        -webkit-transform: rotate(-13deg) translate(1840px);
+        transform: rotate(-13deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(9) {
+        -webkit-transform: rotate(-2deg) translate(1840px);
+        transform: rotate(-2deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(10) {
+        -webkit-transform: rotate(9deg) translate(1840px);
+        transform: rotate(9deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(11) {
+        -webkit-transform: rotate(20deg) translate(1840px);
+        transform: rotate(20deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(12) {
+        -webkit-transform: rotate(31deg) translate(1840px);
+        transform: rotate(31deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(13) {
+        -webkit-transform: rotate(42deg) translate(1840px);
+        transform: rotate(42deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(14) {
+        -webkit-transform: rotate(53deg) translate(1840px);
+        transform: rotate(53deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(15) {
+        -webkit-transform: rotate(64deg) translate(1840px);
+        transform: rotate(64deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(16) {
+        -webkit-transform: rotate(75deg) translate(1840px);
+        transform: rotate(75deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(17) {
+        -webkit-transform: rotate(86deg) translate(1840px);
+        transform: rotate(86deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(18) {
+        -webkit-transform: rotate(97deg) translate(1840px);
+        transform: rotate(97deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(19) {
+        -webkit-transform: rotate(108deg) translate(1840px);
+        transform: rotate(108deg) translate(1840px); }
+      .card-section .card-holder > *:nth-of-type(20) {
+        -webkit-transform: rotate(119deg) translate(1840px);
+        transform: rotate(119deg) translate(1840px); }
+    @media (max-width: 479px) {
+      .card-section .card-holder {
+        position: absolute;
+        width: 4000px;
+        height: 4000px;
+        padding: 0;
+        border-radius: 50%;
+        list-style: none; }
+        .card-section .card-holder > * {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 135px;
+          height: 135px;
+          margin: -67.5px; }
+          .card-section .card-holder > *:nth-of-type(1) {
+            -webkit-transform: rotate(-90deg) translate(1932.5px);
+            transform: rotate(-90deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(2) {
+            -webkit-transform: rotate(-86deg) translate(1932.5px);
+            transform: rotate(-86deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(3) {
+            -webkit-transform: rotate(-82deg) translate(1932.5px);
+            transform: rotate(-82deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(4) {
+            -webkit-transform: rotate(-78deg) translate(1932.5px);
+            transform: rotate(-78deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(5) {
+            -webkit-transform: rotate(-74deg) translate(1932.5px);
+            transform: rotate(-74deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(6) {
+            -webkit-transform: rotate(-70deg) translate(1932.5px);
+            transform: rotate(-70deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(7) {
+            -webkit-transform: rotate(-66deg) translate(1932.5px);
+            transform: rotate(-66deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(8) {
+            -webkit-transform: rotate(-62deg) translate(1932.5px);
+            transform: rotate(-62deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(9) {
+            -webkit-transform: rotate(-58deg) translate(1932.5px);
+            transform: rotate(-58deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(10) {
+            -webkit-transform: rotate(-54deg) translate(1932.5px);
+            transform: rotate(-54deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(11) {
+            -webkit-transform: rotate(-50deg) translate(1932.5px);
+            transform: rotate(-50deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(12) {
+            -webkit-transform: rotate(-46deg) translate(1932.5px);
+            transform: rotate(-46deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(13) {
+            -webkit-transform: rotate(-42deg) translate(1932.5px);
+            transform: rotate(-42deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(14) {
+            -webkit-transform: rotate(-38deg) translate(1932.5px);
+            transform: rotate(-38deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(15) {
+            -webkit-transform: rotate(-34deg) translate(1932.5px);
+            transform: rotate(-34deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(16) {
+            -webkit-transform: rotate(-30deg) translate(1932.5px);
+            transform: rotate(-30deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(17) {
+            -webkit-transform: rotate(-26deg) translate(1932.5px);
+            transform: rotate(-26deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(18) {
+            -webkit-transform: rotate(-22deg) translate(1932.5px);
+            transform: rotate(-22deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(19) {
+            -webkit-transform: rotate(-18deg) translate(1932.5px);
+            transform: rotate(-18deg) translate(1932.5px); }
+          .card-section .card-holder > *:nth-of-type(20) {
+            -webkit-transform: rotate(-14deg) translate(1932.5px);
+            transform: rotate(-14deg) translate(1932.5px); } }
+    .card-section .card-holder .item {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      max-width: 100%;
+      transition: .15s; }
+      .card-section .card-holder .item img {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg); }
 
 /* ------------------- phone-section ----------------*/
 .phone-section {

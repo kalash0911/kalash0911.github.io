@@ -109,11 +109,32 @@ var calcRightAngledTriangleDegree = function calcRightAngledTriangleDegree(a, b)
 };
 
 var calcInitRotation = function calcInitRotation(rightAngledTriangleBDeg, isoscelesTriangleBDeg) {
-  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg;
+  // hardcoded fix for mobile
+  var correction = 0;
+
+  if (window.innerWidth <= 1024) {
+    correction = 6;
+  }
+
+  if (window.innerWidth <= 480) {
+    correction = 3;
+  }
+
+  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg - correction;
 };
 
 var calcFinalRotation = function calcFinalRotation(rightAngledTriangleBDeg, isoscelesTriangleBDeg, cellsLength) {
-  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2;
+  var correction = 0;
+
+  if (window.innerWidth <= 1024) {
+    correction = -3;
+  }
+
+  if (window.innerWidth <= 480) {
+    correction = -1;
+  }
+
+  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2 - correction;
 };
 /* ------------------- card section initialization ----------------*/
 
@@ -141,8 +162,8 @@ function circleImageAnimation() {
       start: '30% 50%',
       pin: '#main',
       end: "bottom",
-      scrub: 0.5,
-      markers: true
+      scrub: 0.5 // markers: true,
+
     }
   });
 }
