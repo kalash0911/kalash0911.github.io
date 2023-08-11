@@ -77,4 +77,75 @@ function initStickyPhone() {
     }
   });
 }
+/* ------------------- card section carousel ----------------*/
+
+/* ------------------- triangle degrees helpers ----------------*/
+
+
+var radToDegree = function radToDegree(radians) {
+  return radians * (180 / Math.PI);
+};
+
+var calcIsoscelesTriangleDegree = function calcIsoscelesTriangleDegree(a, b) {
+  var cosA = b / (2 * a);
+  var aDeg = radToDegree(Math.acos(cosA));
+  var bDeg = 180 - aDeg * 2;
+  return {
+    cosA: cosA,
+    aDeg: aDeg,
+    bDeg: bDeg
+  };
+};
+
+var calcRightAngledTriangleDegree = function calcRightAngledTriangleDegree(a, b) {
+  var tanA = a / b;
+  var aDeg = radToDegree(Math.atan(tanA));
+  var bDeg = 180 - 90 - aDeg;
+  return {
+    tanA: tanA,
+    aDeg: aDeg,
+    bDeg: bDeg
+  };
+};
+
+var calcInitRotation = function calcInitRotation(rightAngledTriangleBDeg, isoscelesTriangleBDeg) {
+  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg;
+};
+
+var calcFinalRotation = function calcFinalRotation(rightAngledTriangleBDeg, isoscelesTriangleBDeg, cellsLength) {
+  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2;
+};
+/* ------------------- card section initialization ----------------*/
+
+
+function circleImageAnimation() {
+  var wrapper = document.querySelector(".card-section");
+  var cardHolder = document.querySelector(".card-holder");
+  var cells = document.querySelectorAll(".card-holder .item");
+  if (!wrapper || !cardHolder || !cells) return;
+
+  var _calcIsoscelesTriangl = calcIsoscelesTriangleDegree(cardHolder.offsetWidth / 2 - cells[0].offsetHeight, cells[0].offsetWidth),
+      IsoscelesTriangleBDeg = _calcIsoscelesTriangl.bDeg;
+
+  var _calcRightAngledTrian = calcRightAngledTriangleDegree(wrapper.offsetWidth / 2, cardHolder.offsetWidth / 2),
+      RightAngledTriangleBDeg = _calcRightAngledTrian.aDeg;
+
+  gsap.fromTo(cardHolder, {
+    x: 0,
+    rotation: -calcInitRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg)
+  }, {
+    x: 0,
+    rotation: calcFinalRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg, cells.length) > 0 ? 0 : calcFinalRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg, cells.length),
+    scrollTrigger: {
+      trigger: wrapper,
+      start: '30% 50%',
+      pin: '#main',
+      end: "bottom",
+      scrub: 0.5,
+      markers: true
+    }
+  });
+}
+
+circleImageAnimation();
 //# sourceMappingURL=main.js.map
