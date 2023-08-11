@@ -569,11 +569,26 @@ input[type='submit'] {
     padding: 0;
     list-style: none; }
   #header .link {
+    position: relative;
     color: #000;
     font-family: "Poppins", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 150%; }
+    #header .link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      -webkit-transform: translate(-50%);
+      transform: translate(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s; }
+    #header .link:hover::after {
+      width: 100%; }
 
 html {
   scroll-behavior: smooth; }
@@ -944,7 +959,8 @@ body {
         display: none; } }
   .phone-section .sticky-phones-content {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    border-radius: 48px; }
   .phone-section .img-step {
     width: 100%; }
     .phone-section .img-step:not(:first-of-type) {

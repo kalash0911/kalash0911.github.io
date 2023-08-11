@@ -300,7 +300,6 @@ body {
         }
     }
 
-
     .sticky-phones-wrapper {
         position: absolute;
         width: 285px;
@@ -315,10 +314,12 @@ body {
     .sticky-phones-content {
         position: relative;
         overflow: hidden;
+        border-radius: 48px;
     }
 
     .img-step {
         width: 100%;
+
         &:not(:first-of-type) {
             position: absolute;
             left: 0;

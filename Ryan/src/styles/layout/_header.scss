@@ -28,10 +28,31 @@
     }
 
     .link {
+        position: relative;
         color: $black;
         font-family: $Poppins;
         font-size: 16px;
         font-weight: 500;
         line-height: 150%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 0;
+            height: 2px;
+            background-color: $black;
+            transition: all 0.3s ease 0s;
+            transition: $animation-speed;
+        }
+
+        &:hover {
+
+            &::after {
+                width: 100%;
+            }
+        }
     }
 }
