@@ -579,7 +579,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  font-family: "Poppins", "Arial", "Helvetica Neue", "Helvetica", sans-serif; }
+  font-family: "Poppins", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  background: #F6E9D0; }
 
 .container {
   width: 100%;

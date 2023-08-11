@@ -1,6 +1,3 @@
-
-initStickyPhone();
-
 function initStickyPhone() {
   const startSection = document.querySelector(".phone-section");
   const phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
@@ -139,7 +136,7 @@ function circleImageAnimation() {
       scrollTrigger: {
         trigger: wrapper,
         start: '30% 50%',
-        pin: '#main',
+        pin: ".carousel-wrap",
         end: `bottom`,
         scrub: 0.5,
         // markers: true,
@@ -149,3 +146,4 @@ function circleImageAnimation() {
 }
 
 circleImageAnimation();
+initStickyPhone();

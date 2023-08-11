@@ -12,8 +12,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-initStickyPhone();
-
 function initStickyPhone() {
   var startSection = document.querySelector(".phone-section");
   var phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
@@ -160,7 +158,7 @@ function circleImageAnimation() {
     scrollTrigger: {
       trigger: wrapper,
       start: '30% 50%',
-      pin: '#main',
+      pin: ".carousel-wrap",
       end: "bottom",
       scrub: 0.5 // markers: true,
 
@@ -169,4 +167,5 @@ function circleImageAnimation() {
 }
 
 circleImageAnimation();
+initStickyPhone();
 //# sourceMappingURL=main.js.map
