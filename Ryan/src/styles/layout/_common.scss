@@ -1,3 +1,5 @@
+@import "src/styles/base/variables";
+
 body {
     font-family: $Poppins;
 }
@@ -118,6 +120,103 @@ body {
             position: absolute;
             left: 0;
             top: 0;
+        }
+    }
+}
+
+
+/* ------------------- card-section ----------------*/
+@mixin on-circle($item-count, $circle-size, $item-size, $angle, $initRot) {
+    position: absolute;
+    width:  $circle-size + px;
+    height: $circle-size + px;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+
+    > * {
+        display: block;
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        width:  $item-size + px;
+        height: $item-size + px;
+        margin: -($item-size / 2) + px;
+
+        $tanA: 4000 / (2 * (1690));
+        $atan: atan($tanA);
+        //$degA: atan(pi / 2) * (180 / 3.14);
+        //transform: rotate(atan($tanA));
+
+        $rot: $initRot;
+
+        $itemTranslate: $circle-size / 2 - ($item-size / 2);
+
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                transform:
+                        rotate($rot * 1deg)
+                        translate($itemTranslate + px);
+            }
+
+            $rot: $rot + $angle;
+        }
+    }
+}
+.card-section {
+    position: relative;
+    min-height: 410px;
+    overflow: hidden;
+
+    @include media('<phone') {
+        min-height: 290px;
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 4000px;
+        height: 4000px;
+        display: block;
+        z-index: 111;
+        background: $whiteEA;
+        top: 100%;
+        border-radius: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, -100px);
+
+        @include media('<phone') {
+            transform: translate(-50%, -140px);
+        }
+    }
+
+    .card-holder {
+        @include on-circle($item-count: 5, $circle-size: 4000, $item-size: 320, $angle: 11, $initRot: -110);
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        @include media('<phone') {
+            @include on-circle($item-count: 5, $circle-size: 4000, $item-size: 135, $angle: 4.5, $initRot: -94.2);
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            transition: .15s;
+
+            img {
+                //$tanA: 4000 / (2 * (1690));
+                //$atan: atan(pi / 2);
+                //transform: rotate(atan($tanA));
+                //transform: rotate($atan);
+
+                transform: rotate(90deg);
+            }
         }
     }
 }

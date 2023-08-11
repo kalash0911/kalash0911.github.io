@@ -116,4 +116,47 @@ function initStickyPhone() {
     }
   });
 }
+
+var radToDegree = function radToDegree(radians) {
+  return radians * (180 / Math.PI);
+};
+
+var calcDegree = function calcDegree(a, b) {
+  var cosA = b / (2 * a);
+  var aDeg = radToDegree(Math.acos(cosA));
+  var bDeg = 180 - aDeg * 2;
+  return {
+    cosA: cosA,
+    aDeg: aDeg,
+    bDeg: bDeg
+  };
+};
+
+function circleImageAnimation() {
+  var wrapper = document.querySelector(".card-section");
+  var cardHolder = document.querySelector(".card-holder");
+  var cells = document.querySelectorAll(".card-holder .item");
+  if (!wrapper || !cardHolder) return;
+
+  var _calcDegree = calcDegree(cardHolder.offsetWidth - cells[0].offsetHeight, cells[0].offsetWidth),
+      bDeg = _calcDegree.bDeg;
+
+  gsap.fromTo(cardHolder, {
+    x: 0,
+    rotation: 0
+  }, {
+    x: 0,
+    rotation: -bDeg * cells.length,
+    scrollTrigger: {
+      trigger: wrapper,
+      start: 'bottom bottom',
+      pin: true,
+      end: "bottom",
+      scrub: 0.5,
+      markers: true
+    }
+  });
+}
+
+circleImageAnimation();
 //# sourceMappingURL=main.js.map

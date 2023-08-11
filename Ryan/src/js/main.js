@@ -112,3 +112,46 @@ function initStickyPhone() {
     }
   })
 }
+
+const radToDegree = (radians) => {
+  return radians * (180 / Math.PI);
+};
+
+const calcDegree = (a, b) => {
+  const cosA = b / (2*a);
+  const aDeg = radToDegree(Math.acos(cosA));
+  const bDeg = 180 - aDeg * 2;
+  return { cosA, aDeg, bDeg }
+};
+
+function circleImageAnimation() {
+  const wrapper = document.querySelector(".card-section");
+  const cardHolder = document.querySelector(".card-holder");
+  const cells = document.querySelectorAll(".card-holder .item");
+
+  if (!wrapper || !cardHolder) return;
+
+  const { bDeg } = calcDegree(cardHolder.offsetWidth - cells[0].offsetHeight, cells[0].offsetWidth);
+
+  gsap.fromTo(
+    cardHolder,
+    {
+      x: 0,
+      rotation: 0,
+    },
+    {
+      x: 0,
+      rotation: - bDeg * cells.length,
+      scrollTrigger: {
+        trigger: wrapper,
+        start: 'bottom bottom',
+        pin: true,
+        end: `bottom`,
+        scrub: 0.5,
+        markers: true,
+      },
+    }
+  );
+}
+
+circleImageAnimation();
