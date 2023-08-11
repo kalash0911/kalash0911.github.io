@@ -1,43 +1,6 @@
 
 initStickyPhone();
 
-// Swiper:
-
-function destroySlidersOnResize(selector, width, obj, moreThan) {
-  const init = {
-    ...obj,
-  };
-
-  const win = window;
-  const sliderSelector = document.querySelector(selector);
-  let swiper = new Swiper(selector, init);
-
-  const toggleInit = () => {
-    const neededWidth = moreThan
-      ? win.innerWidth >= width
-      : win.innerWidth <= width;
-    if (neededWidth) {
-      if (!sliderSelector?.classList.contains("swiper-initialized")) {
-        swiper = new Swiper(selector, init);
-      }
-    } else if (sliderSelector.classList.contains("swiper-initialized")) {
-      swiper.destroy();
-    }
-  };
-
-  ["load", "resize"].forEach((evt) =>
-    win.addEventListener(evt, toggleInit, false)
-  );
-}
-
-destroySlidersOnResize(".me-slider", 960, {
-  spaceBetween: 20,
-
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
-
 function initStickyPhone() {
   const startSection = document.querySelector(".phone-section");
   const phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
@@ -82,7 +45,7 @@ function initStickyPhone() {
 
   // Content images scroll anim
   phoneImgs.forEach((img, ind) => {
-    if(ind > 0) {
+    if (ind > 0) {
       gsap.fromTo(
         img,
         {
@@ -102,7 +65,7 @@ function initStickyPhone() {
             // markers: true,
             onUpdate: (self) => {
               const filterValue = self.progress.toFixed(3) * 20;
-              phoneImgs[ind-1].style.filter = `blur(${filterValue}px)`;
+              phoneImgs[ind - 1].style.filter = `blur(${filterValue}px)`;
             }
           },
         }
