@@ -125,6 +125,8 @@ body {
 .phone-section {
     padding: 180px 0 115px 0;
     background-color: $yellowD0;
+    position: relative;
+    z-index: 2;
 
     @include media('<tablet') {
         padding: 30px 0;

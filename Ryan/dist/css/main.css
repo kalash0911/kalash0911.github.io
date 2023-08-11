@@ -679,7 +679,9 @@ body {
 /* ------------------- phone-section ----------------*/
 .phone-section {
   padding: 180px 0 115px 0;
-  background-color: #F6E9D0; }
+  background-color: #F6E9D0;
+  position: relative;
+  z-index: 2; }
   @media (max-width: 767px) {
     .phone-section {
       padding: 30px 0; } }
