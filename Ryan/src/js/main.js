@@ -15,28 +15,27 @@ function initStickyPhone() {
   const sectionRect = startSection.getBoundingClientRect();
   phoneImgs.forEach((img, ind) => img.style.zIndex = `${ind}`)
 
-  const phoneWrapDesctination = sectionRect.height - stepsReact[steps.length - 1].height - 50;
+  const phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280;
 
   // Phone wrapper scroll anim
   gsap.fromTo(
     phonesWrapper,
     {
       x: 5,
-      y: -stepsReact[0].height / 2,
       rotation: 3,
       skewX: -2,
     },
     {
       x: -5,
-      y: phoneWrapDesctination,
       rotation: -3,
       skewX: 2,
       scrollTrigger: {
-        trigger: startSection,
-        start: `top 40%`,
-        end: `bottom`,
+        trigger: phonesWrapper,
+        start: `${stepsReact[0].height}-=250px center`,
+        end: `${phoneWrapDesctination} center`,
         scrub: 0.5,
         // markers: true,
+        pin: phonesWrapper,
       },
     }
   );
@@ -59,8 +58,8 @@ function initStickyPhone() {
           rotation: 0,
           scrollTrigger: {
             trigger: steps[ind],
-            start: `20% 80%-${phoneContentHeight}`,
-            end: `bottom-=100px 85%`,
+            start: `75% 80%-${phoneContentHeight}`,
+            end: `bottom+=10% 85%`,
             scrub: 1,
             // markers: true,
             onUpdate: (self) => {
