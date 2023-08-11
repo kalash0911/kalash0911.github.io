@@ -126,7 +126,7 @@ body {
 
 
 /* ------------------- card-section ----------------*/
-@mixin on-circle($item-count, $circle-size, $item-size, $angle, $initRot) {
+@mixin on-circle($item-count, $circle-size, $item-size, $angle) {
     position: absolute;
     width:  $circle-size + px;
     height: $circle-size + px;
@@ -143,13 +143,7 @@ body {
         height: $item-size + px;
         margin: -($item-size / 2) + px;
 
-        $tanA: 4000 / (2 * (1690));
-        $atan: atan($tanA);
-        //$degA: atan(pi / 2) * (180 / 3.14);
-        //transform: rotate(atan($tanA));
-
-        $rot: $initRot;
-
+        $rot: -90;
         $itemTranslate: $circle-size / 2 - ($item-size / 2);
 
         @for $i from 1 through $item-count {
@@ -158,12 +152,14 @@ body {
                         rotate($rot * 1deg)
                         translate($itemTranslate + px);
             }
-
             $rot: $rot + $angle;
         }
     }
 }
 .card-section {
+    $cardCarouselWidth: 4000;
+    $cardCarouselHeight: 4000;
+
     position: relative;
     min-height: 410px;
     overflow: hidden;
@@ -175,14 +171,14 @@ body {
     &:before {
         position: absolute;
         content: "";
-        width: 4000px;
-        height: 4000px;
+        width: $cardCarouselWidth + px;
+        height: $cardCarouselHeight + px;
         display: block;
         z-index: 111;
-        background: $whiteEA;
         top: 100%;
-        border-radius: 50%;
         left: 50%;
+        border-radius: 50%;
+        background: $whiteEA;
         -webkit-transform: translate(-50%, 0);
         transform: translate(-50%, -100px);
 
@@ -192,14 +188,14 @@ body {
     }
 
     .card-holder {
-        @include on-circle($item-count: 5, $circle-size: 4000, $item-size: 320, $angle: 11, $initRot: -110);
+        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 11, $initRot: -90);
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translate(-50%, 0);
 
         @include media('<phone') {
-            @include on-circle($item-count: 5, $circle-size: 4000, $item-size: 135, $angle: 4.5, $initRot: -94.2);
+            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 4, $initRot: -90);
         }
 
         .item {

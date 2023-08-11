@@ -113,39 +113,58 @@ function initStickyPhone() {
   })
 }
 
+/* ------------------- card section carousel ----------------*/
+/* ------------------- triangle degrees helpers ----------------*/
 const radToDegree = (radians) => {
   return radians * (180 / Math.PI);
 };
 
-const calcDegree = (a, b) => {
-  const cosA = b / (2*a);
+const calcIsoscelesTriangleDegree = (a, b) => {
+  const cosA = b / (2 * a);
   const aDeg = radToDegree(Math.acos(cosA));
   const bDeg = 180 - aDeg * 2;
   return { cosA, aDeg, bDeg }
 };
 
+const calcRightAngledTriangleDegree = (a, b) => {
+  const tanA = a/ b;
+  const aDeg = radToDegree(Math.atan(tanA));
+  const bDeg = 180 - 90 - aDeg;
+  return { tanA, aDeg, bDeg }
+};
+
+const calcInitRotation = (rightAngledTriangleBDeg, isoscelesTriangleBDeg) => {
+  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg;
+};
+
+const calcFinalRotation = (rightAngledTriangleBDeg, isoscelesTriangleBDeg, cellsLength) => {
+  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2
+};
+
+/* ------------------- card section initialization ----------------*/
 function circleImageAnimation() {
   const wrapper = document.querySelector(".card-section");
   const cardHolder = document.querySelector(".card-holder");
   const cells = document.querySelectorAll(".card-holder .item");
 
-  if (!wrapper || !cardHolder) return;
+  if (!wrapper || !cardHolder || !cells) return;
 
-  const { bDeg } = calcDegree(cardHolder.offsetWidth - cells[0].offsetHeight, cells[0].offsetWidth);
+  const { bDeg: IsoscelesTriangleBDeg } = calcIsoscelesTriangleDegree(cardHolder.offsetWidth / 2 - cells[0].offsetHeight, cells[0].offsetWidth);
+  const { aDeg: RightAngledTriangleBDeg } = calcRightAngledTriangleDegree(wrapper.offsetWidth / 2, cardHolder.offsetWidth / 2);
 
   gsap.fromTo(
     cardHolder,
     {
       x: 0,
-      rotation: 0,
+      rotation: - calcInitRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg),
     },
     {
       x: 0,
-      rotation: - bDeg * cells.length,
+      rotation: calcFinalRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg, cells.length) > 0 ? 0 : calcFinalRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg, cells.length),
       scrollTrigger: {
         trigger: wrapper,
-        start: 'bottom bottom',
-        pin: true,
+        start: '30% 50%',
+        pin: '#main',
         end: `bottom`,
         scrub: 0.5,
         markers: true,
