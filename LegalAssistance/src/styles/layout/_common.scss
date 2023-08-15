@@ -11,6 +11,7 @@ body {
 }
 
 #wrapper {
+    position: relative;
     overflow: hidden;
 }
 
@@ -24,10 +25,62 @@ body {
 /* -------------------------main-section------------------ */
 
 .main-section {
+    position: relative;
     min-height: 100vh;
     display: grid;
     place-items: center;
     padding: 200px 0;
+    overflow: hidden;
+
+    @include media('<tablet'){
+        padding: 100px 0 ;
+    }
+
+    &::after,
+    &::before {
+        content:'';
+        position: absolute;
+        bottom: -1100px;
+        width: 1408px;
+        height: 1400px;
+        border-radius: 50%;
+        z-index: -1;
+        filter: blur(100px);
+
+        @include media('<tablet'){
+            width: 708px;
+            height: 700px;
+            bottom: -500px;
+        }
+    }
+
+    &::after {       
+        right: -40%;
+        background: rgb(255,229,0);
+        background: radial-gradient(circle, rgba(255, 230, 0, 0.5) 0%, rgba(0,212,255,0) 100%);
+
+        @include media('<desktop'){
+            right: -80%;
+        }
+
+        @include media('<phone'){
+            right: -100%;
+        }
+    }
+
+    &::before {
+        left: -40%;
+        background: rgb(15,110,254);
+        background: radial-gradient(circle, rgba(15,110,254,0.500437675070028) 0%, rgba(0,212,255,0) 100%);
+
+        @include media('<desktop'){
+            left: -80%;
+        }
+
+        @include media('<phone'){
+            left: -100%;
+        }
+    }
 
     .container {
         text-align: center;
@@ -40,10 +93,10 @@ body {
     .main-title {
         color: $black1B;
         font-family: $Arimo;
-        font-size: 54px;
         font-weight: 600;
         line-height: 108%;
         margin-bottom: 24px;
+        @include adaptiv-vaule("font-size", 54, 26, 1);
     }
 
     .text {
@@ -54,5 +107,103 @@ body {
         font-family: $Montserrat;
         font-size: 22px;
         font-weight: 400;
+
+        @include media('<tablet'){
+            font-size: 18px;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -1400px;
+        width: 2884px;
+        height: 1559px;
+        border-radius: 50%;
+        background-color: $white;
+
+        @include media('<tablet'){
+            bottom: -700px;
+            width: 1484px;
+            height: 759px;
+        }
+    }
+}
+
+/* ------------------------about-section------------------ */
+
+.about-section {
+    padding: 120px 0;
+    margin-top: 50px;
+    background-color: $whiteF6;
+    border-radius: 52px;
+
+    @include media('<tablet'){
+        padding: 60px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 28px;
+
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+    }
+
+    .block {
+        padding: 40px 20px;
+        background-color: $white;
+        border-radius: 24px;
+
+        @include media('<tablet'){
+            padding: 20px;
+        }
+    }
+
+    .title {
+        color: $black1B;
+        font-family: $Arimo;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 140%;
+        margin-bottom: 12px;
+        @include adaptiv-vaule("font-size", 40, 24, 1);
+    }
+
+    .text {
+        color: $gray57;
+        font-family: $Montserrat;
+        font-weight: 500;
+        line-height: 140%;
+        margin-bottom: 40px;
+        @include adaptiv-vaule("font-size", 22, 16, 1);
+    }
+
+    .img-wrap {
+        position: relative;
+        width: 100%;
+        min-height: 340px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        @include media('<desktop'){
+            min-height: 440px;
+        }
+
+        @include media('<phone'){
+            min-height: 240px;
+        }
+        
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
