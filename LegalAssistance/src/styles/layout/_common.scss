@@ -22,6 +22,27 @@ body {
     margin: 0 auto;
 }
 
+.main-btn {
+    border-radius: 40px;
+    background: $blueFE;
+    padding: 19px 25px;
+    text-align: center;
+    color: $white;
+    font-family: $Arimo;
+    font-size: 22px;
+    font-weight: 400;
+    transition: $all_03;
+
+    @include media('<phone'){
+        font-size: 16px;
+    }
+
+    &:hover {
+        background-color: $yellow;
+        color: $blueFE;
+    }
+}
+
 /* -------------------------main-section------------------ */
 
 .main-section {
@@ -332,5 +353,71 @@ body {
         font-family: $Arimo;
         font-weight: 600;
         @include adaptiv-vaule("font-size", 28, 18, 1);
+    }
+}
+
+/* ----------------------consultants-section-------------- */
+
+.consultants-section {
+    padding: 120px 0;
+
+    @include media('<tablet'){
+        padding: 60px 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+    }
+
+    .text-box {
+        width: 50%;
+
+        @include media('<desktop'){
+            width: 100%;
+        }
+    }
+
+    .text {
+        color: $gray57;
+        font-family: $Montserrat;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 40px;
+
+        @include media('<tablet'){
+            font-size: 16px;
+        }
+
+        &.t5 {
+            font-weight: 500;
+        }
+    }
+
+    .icon {
+        margin-bottom: 24px;
+    }
+
+    .booking-box {
+        position: relative;
+    }
+
+    .main-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 360px;
+        z-index: 1;
+
+        @include media('<phone'){
+            min-width: max-content;
+        }
     }
 }

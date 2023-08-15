@@ -845,6 +845,23 @@ body {
   padding: 0 20px;
   margin: 0 auto; }
 
+.main-btn {
+  border-radius: 40px;
+  background: #5799FE;
+  padding: 19px 25px;
+  text-align: center;
+  color: #fff;
+  font-family: "Arimo", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  transition: all 0.3s ease 0s; }
+  @media (max-width: 479px) {
+    .main-btn {
+      font-size: 16px; } }
+  .main-btn:hover {
+    background-color: #FFE500;
+    color: #5799FE; }
+
 /* -------------------------main-section------------------ */
 .main-section {
   position: relative;
@@ -1108,5 +1125,57 @@ body {
     @media (max-width: 1320px) {
       .help-section .sec-title {
         font-size: calc(18px + 10 * ((100vw - calc(375px)) / 945)); } }
+
+/* ----------------------consultants-section-------------- */
+.consultants-section {
+  padding: 120px 0; }
+  @media (max-width: 767px) {
+    .consultants-section {
+      padding: 60px 0; } }
+  .consultants-section .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 25px; }
+    @media (max-width: 1023px) {
+      .consultants-section .container {
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  .consultants-section .text-box {
+    width: 50%; }
+    @media (max-width: 1023px) {
+      .consultants-section .text-box {
+        width: 100%; } }
+  .consultants-section .text {
+    color: #525457;
+    font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 40px; }
+    @media (max-width: 767px) {
+      .consultants-section .text {
+        font-size: 16px; } }
+    .consultants-section .text.t5 {
+      font-weight: 500; }
+  .consultants-section .icon {
+    margin-bottom: 24px; }
+  .consultants-section .booking-box {
+    position: relative; }
+  .consultants-section .main-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-width: 360px;
+    z-index: 1; }
+    @media (max-width: 479px) {
+      .consultants-section .main-btn {
+        min-width: -webkit-max-content;
+        min-width: -moz-max-content;
+        min-width: max-content; } }
 
 /*# sourceMappingURL=main.css.map */
