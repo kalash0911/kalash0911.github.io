@@ -1178,4 +1178,32 @@ body {
         min-width: -moz-max-content;
         min-width: max-content; } }
 
+/* ------------------------partners-section--------------- */
+.partners-section {
+  padding: 120px 0; }
+  @media (max-width: 767px) {
+    .partners-section {
+      padding: 60px 0; } }
+  .partners-section .title {
+    color: #1D1D1B;
+    font-family: "Arimo", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 600;
+    line-height: 140%;
+    /* Только если меньше контейнера */
+    font-size: 54px;
+    margin-bottom: 40px; }
+    @media (max-width: 1320px) {
+      .partners-section .title {
+        font-size: calc(28px + 26 * ((100vw - calc(375px)) / 945)); } }
+  .partners-section .block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    gap: 30px; }
+
 /*# sourceMappingURL=main.css.map */

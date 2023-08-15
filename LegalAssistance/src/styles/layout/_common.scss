@@ -421,3 +421,30 @@ body {
         }
     }
 }
+
+/* ------------------------partners-section--------------- */
+
+.partners-section {
+    padding: 120px 0;
+
+    @include media('<tablet'){
+        padding: 60px 0;
+    }
+
+    .title {
+        color: $black1B;
+        font-family: $Arimo;
+        font-weight: 600;
+        line-height: 140%;
+        @include adaptiv-vaule("font-size", 54, 28, 1);
+        margin-bottom: 40px;
+    }
+
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        gap: 30px;
+    }
+}
