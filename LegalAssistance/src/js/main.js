@@ -54,7 +54,7 @@ if (linkClose.length) {
 
 // Swiper:
 
-function destroySlidersOnResize(selector, width, obj, moreThan) {
+/* function destroySlidersOnResize(selector, width, obj, moreThan) {
   const init = {
     ...obj,
   };
@@ -87,4 +87,4 @@ destroySlidersOnResize(".me-slider", 960, {
   pagination: {
     el: ".swiper-pagination",
   },
-});
+}); */
