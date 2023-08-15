@@ -62,9 +62,10 @@
             width: 40%;
             height: 100vh;
             min-height: 100vh;
+            display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 140px 20px 100px 20px;
+            justify-content: center;
+            padding: 100px 20px;
             transition: all .5s ease-in-out 0s;
             background-color: $whiteF6;
             overflow: auto;
