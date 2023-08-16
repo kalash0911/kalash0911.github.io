@@ -1,5 +1,6 @@
 #header {
     padding: 14px 0;
+    background-color: $whiteEA;
 
     @include media('<tablet') {
         display: none;
