@@ -101,7 +101,7 @@ function initStickyPhone() {
               } else {
                 if(kidsAnimation[ind].isPaused) {
                   kidsAnimation[ind].play();
-                }
+                } 
               }
             },
             onLeave: (self) => {
