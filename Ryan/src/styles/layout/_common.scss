@@ -275,8 +275,10 @@ body {
     }
 
     .item {
-        width: 50%;
-        max-width: 460px;
+        // width: 50%;
+        // max-width: 460px;
+        display: flex;
+        justify-content: space-between;
         padding: 200px 0;
         margin: 0;
         list-style: none;
@@ -288,6 +290,16 @@ body {
             padding: 30px 0;
         }
     }
+
+    .description {
+        width: 50%;
+        max-width: 460px;
+    }
+
+    [id*="kids_anim"] {
+        max-width: 450px;
+    }
+
 
     .stiker {
         display: inline-flex;
@@ -379,26 +391,26 @@ body {
         border-radius: 48px;
     }
 
-    .sticky-kids-wrapper {
-        position: absolute;
-        width: 467px;
-        top: 100px;
-        right: 5%;
-    }
+    // .sticky-kids-wrapper {
+    //     position: absolute;
+    //     width: 467px;
+    //     top: 100px;
+    //     right: 5%;
+    // }
 
-    .sticky-kids-content {
-        position: relative;
-        overflow: hidden;
-    }
+    // .sticky-kids-content {
+    //     position: relative;
+    //     overflow: hidden;
+    // }
 
-    [id*="kids_anim"] {
-        &:not(:first-of-type) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            margin: -1px;
-        }
-    }
+    // [id*="kids_anim"] {
+    //     &:not(:first-of-type) {
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         margin: -1px;
+    //     }
+    // }
 
     .img-step {
         width: 100%;
