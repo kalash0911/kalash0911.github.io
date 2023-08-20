@@ -1,8 +1,16 @@
+window.addEventListener("load", (event) => {
+  circleImageAnimation();
+  initStickyPhone();
+});
+
 function initStickyPhone() {
   const startSection = document.querySelector(".phone-section");
   const phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
-  const phoneContent = phonesWrapper.querySelector('.sticky-phones-content')
+  const phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
+  const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  const kidsContent = startSection.querySelector('.sticky-kids-content');
   const phoneImgs = phoneContent.querySelectorAll('img');
+  const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
   const steps = document.querySelectorAll('.steps li');
   const stepsReact = [...steps].reduce((prev, cur, ind) => {
     const stepRect = cur.getBoundingClientRect();
@@ -10,9 +18,13 @@ function initStickyPhone() {
     return prev;
   }, {})
   const sectionRect = startSection.getBoundingClientRect();
-  phoneImgs.forEach((img, ind) => img.style.zIndex = `${ind}`)
+  phoneImgs.forEach((img, ind) => img.style.zIndex = `${ind}`);
+  kidsElements.forEach((el, ind) => el.style.zIndex = `${ind}`);
+
 
   const phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280;
+  const phoneContentHeight = phoneContent.getBoundingClientRect().height;
+  const kidsContentHeight =  kidsContent.getBoundingClientRect().height;
 
   // Phone wrapper scroll anim
   gsap.fromTo(
@@ -37,7 +49,27 @@ function initStickyPhone() {
     }
   );
 
-  const phoneContentHeight = phoneContent.getBoundingClientRect().height;
+  //Kids wrapper scroll anim
+  gsap.fromTo(
+    kidsWrapper,
+    {
+      x: 0,
+    },
+    {
+      x: 0,
+      scrollTrigger: {
+        trigger: phonesWrapper,
+        start: `${stepsReact[0].height}-=250px center`,
+        end: `${phoneWrapDesctination} center`,
+        scrub: 0.5,
+        // markers: true,
+        pin: kidsWrapper,
+        onEnter: () => {
+          kidsAnimation[0].play()
+        }
+      },
+    }
+  );
 
   // Content images scroll anim
   phoneImgs.forEach((img, ind) => {
@@ -62,12 +94,49 @@ function initStickyPhone() {
             onUpdate: (self) => {
               const filterValue = self.progress.toFixed(3) * 20;
               phoneImgs[ind - 1].style.filter = `blur(${filterValue}px)`;
-            }
+            },
           },
         }
       )
     }
-  })
+  });
+
+   // Kids anim scroll sticky
+   kidsElements.forEach((el, ind) => {
+    if (ind > 0) {
+      gsap.fromTo(
+        el,
+        {
+          x: 0,
+          y: -500,
+          rotation: 0,
+        },
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scrollTrigger: {
+            trigger: steps[ind],
+            start: `75% 80%-${500}`,
+            end: `bottom+=10% 85%`,
+            scrub: 1,
+            // markers: true,
+            onUpdate: (self) => {
+              const filterValue = self.progress.toFixed(3) * 20;
+              kidsElements[ind - 1].style.filter = `blur(${filterValue}px)`;
+              kidsElements[ind - 1].style.opacity = `${1 - self.progress}`;
+              if(self.progress !== 1) {
+                kidsAnimation[ind].pause();
+              }
+            },
+            onLeave: (self) => {
+              kidsAnimation[ind].play();
+            },
+          },
+        }
+      )
+    }
+  });
 }
 
 /* ------------------- card section carousel ----------------*/
@@ -145,5 +214,27 @@ function circleImageAnimation() {
   );
 }
 
-circleImageAnimation();
-initStickyPhone();
+const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
+  let animLoadCounter = 0;
+  let totalDuration = 0;
+  const anim = bodymovin.loadAnimation({
+    container: document.getElementById(`${elem}_${ind + 1}`),
+    path: `./files/anim_${ind + 1}.json`,
+    render: "svg",
+    loop: true,
+    autoplay: false,
+  });
+  anim.addEventListener("DOMLoaded", () => {
+    animLoadCounter += 1;
+    anim.stop();
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
+        cur.onComplete = () => {
+          // anim complete cb
+        };
+        return (prev += cur.getDuration());
+      }, 0);
+    }
+  });
+  return anim;
+});

@@ -12,11 +12,19 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+window.addEventListener("load", function (event) {
+  circleImageAnimation();
+  initStickyPhone();
+});
+
 function initStickyPhone() {
   var startSection = document.querySelector(".phone-section");
   var phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
   var phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
+  var kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  var kidsContent = startSection.querySelector('.sticky-kids-content');
   var phoneImgs = phoneContent.querySelectorAll('img');
+  var kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
   var steps = document.querySelectorAll('.steps li');
 
   var stepsReact = _toConsumableArray(steps).reduce(function (prev, cur, ind) {
@@ -29,7 +37,12 @@ function initStickyPhone() {
   phoneImgs.forEach(function (img, ind) {
     return img.style.zIndex = "".concat(ind);
   });
-  var phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280; // Phone wrapper scroll anim
+  kidsElements.forEach(function (el, ind) {
+    return el.style.zIndex = "".concat(ind);
+  });
+  var phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280;
+  var phoneContentHeight = phoneContent.getBoundingClientRect().height;
+  var kidsContentHeight = kidsContent.getBoundingClientRect().height; // Phone wrapper scroll anim
 
   gsap.fromTo(phonesWrapper, {
     x: 5,
@@ -47,8 +60,24 @@ function initStickyPhone() {
       // markers: true,
       pin: phonesWrapper
     }
-  });
-  var phoneContentHeight = phoneContent.getBoundingClientRect().height; // Content images scroll anim
+  }); //Kids wrapper scroll anim
+
+  gsap.fromTo(kidsWrapper, {
+    x: 0
+  }, {
+    x: 0,
+    scrollTrigger: {
+      trigger: phonesWrapper,
+      start: "".concat(stepsReact[0].height, "-=250px center"),
+      end: "".concat(phoneWrapDesctination, " center"),
+      scrub: 0.5,
+      // markers: true,
+      pin: kidsWrapper,
+      onEnter: function onEnter() {
+        kidsAnimation[0].play();
+      }
+    }
+  }); // Content images scroll anim
 
   phoneImgs.forEach(function (img, ind) {
     if (ind > 0) {
@@ -69,6 +98,39 @@ function initStickyPhone() {
           onUpdate: function onUpdate(self) {
             var filterValue = self.progress.toFixed(3) * 20;
             phoneImgs[ind - 1].style.filter = "blur(".concat(filterValue, "px)");
+          }
+        }
+      });
+    }
+  }); // Kids anim scroll sticky
+
+  kidsElements.forEach(function (el, ind) {
+    if (ind > 0) {
+      gsap.fromTo(el, {
+        x: 0,
+        y: -500,
+        rotation: 0
+      }, {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scrollTrigger: {
+          trigger: steps[ind],
+          start: "75% 80%-".concat(500),
+          end: "bottom+=10% 85%",
+          scrub: 1,
+          // markers: true,
+          onUpdate: function onUpdate(self) {
+            var filterValue = self.progress.toFixed(3) * 20;
+            kidsElements[ind - 1].style.filter = "blur(".concat(filterValue, "px)");
+            kidsElements[ind - 1].style.opacity = "".concat(1 - self.progress);
+
+            if (self.progress !== 1) {
+              kidsAnimation[ind].pause();
+            }
+          },
+          onLeave: function onLeave(self) {
+            kidsAnimation[ind].play();
           }
         }
       });
@@ -166,6 +228,29 @@ function circleImageAnimation() {
   });
 }
 
-circleImageAnimation();
-initStickyPhone();
+var kidsAnimation = new Array(5).fill('kids_anim').map(function (elem, ind, arr) {
+  var animLoadCounter = 0;
+  var totalDuration = 0;
+  var anim = bodymovin.loadAnimation({
+    container: document.getElementById("".concat(elem, "_").concat(ind + 1)),
+    path: "./files/anim_".concat(ind + 1, ".json"),
+    render: "svg",
+    loop: true,
+    autoplay: false
+  });
+  anim.addEventListener("DOMLoaded", function () {
+    animLoadCounter += 1;
+    anim.stop();
+
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
+        cur.onComplete = function () {// anim complete cb
+        };
+
+        return prev += cur.getDuration();
+      }, 0);
+    }
+  });
+  return anim;
+});
 //# sourceMappingURL=main.js.map

@@ -1005,7 +1005,8 @@ body {
     position: absolute;
     width: 285px;
     top: 0;
-    right: 10%; }
+    right: calc(5% + 467px);
+    z-index: 5; }
     @media (max-width: 767px) {
       .phone-section .sticky-phones-wrapper {
         display: none; } }
@@ -1013,6 +1014,19 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 48px; }
+  .phone-section .sticky-kids-wrapper {
+    position: absolute;
+    width: 467px;
+    top: 100px;
+    right: 5%; }
+  .phone-section .sticky-kids-content {
+    position: relative;
+    overflow: hidden; }
+  .phone-section [id*="kids_anim"]:not(:first-of-type) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: -1px; }
   .phone-section .img-step {
     width: 100%; }
     .phone-section .img-step:not(:first-of-type) {
