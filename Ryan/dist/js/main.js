@@ -39,7 +39,8 @@ function initStickyPhone() {
   }); // kidsElements.forEach((el, ind) => el.style.zIndex = `${ind}`);
 
   var phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280;
-  var phoneContentHeight = phoneContent.getBoundingClientRect().height; // Phone wrapper scroll anim
+  var phoneContentHeight = phonesWrapper.getBoundingClientRect().height; // phoneContent.style.height = `${phoneContentHeight - 10}px`;
+  // Phone wrapper scroll anim
 
   gsap.fromTo(phonesWrapper, {
     x: 5,

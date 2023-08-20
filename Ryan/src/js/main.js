@@ -23,7 +23,8 @@ function initStickyPhone() {
 
 
   const phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280;
-  const phoneContentHeight = phoneContent.getBoundingClientRect().height;
+  const phoneContentHeight = phonesWrapper.getBoundingClientRect().height;
+  // phoneContent.style.height = `${phoneContentHeight - 10}px`;
 
   // Phone wrapper scroll anim
   gsap.fromTo(

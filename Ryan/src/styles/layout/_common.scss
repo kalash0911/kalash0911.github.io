@@ -385,8 +385,17 @@ body {
         }
     }
 
-    .sticky-phones-content {
+    .iphone_mockup {
         position: relative;
+        z-index: 100;
+    }
+
+    .sticky-phones-content {
+        position: absolute;
+        top: 11px;
+        left: 11px;
+        right: 11px;
+        bottom: 13px;
         overflow: hidden;
         border-radius: 48px;
     }
@@ -414,12 +423,10 @@ body {
 
     .img-step {
         width: 100%;
-
-        &:not(:first-of-type) {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 265px;
     }
 }
 
