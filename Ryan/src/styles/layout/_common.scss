@@ -191,9 +191,18 @@ body {
     }
 }
 
+@keyframes rotating {
+    from {
+        transform: rotate(360deg) translate(-50%, 0);
+    }
+    to {
+        transform: rotate(0deg) translate(-50%, 0);
+    }
+}
+
 .card-section {
-    $cardCarouselWidth: 4000;
-    $cardCarouselHeight: 4000;
+    $cardCarouselWidth: 2200;
+    $cardCarouselHeight: 2200;
 
     position: relative;
     padding-bottom: 140px;
@@ -202,21 +211,27 @@ body {
     background-color: $whiteEA;
 
     @include media('<phone') {
-        min-height: 360px;
+        min-height: 320px;
+        padding-bottom: 100px;
     }
 
     .circle {
         position: absolute;
-        bottom: -3790px;
+        bottom: -3000px;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        min-width: $cardCarouselWidth + px;
-        height: $cardCarouselHeight + px;
+        width: 3200px;
+        height: 3200px;
         background-color: $yellowD0;
         border-radius: 50%;
         z-index: 2;
         border: 1px dashed #CF7C58;
+
+        @include media('<phone') {
+            bottom: -820px;
+            width: 1000px;
+            height: 1000px;
+        }
     }
 
     .block {
@@ -224,14 +239,19 @@ body {
     }
 
     .card-holder {
-        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 11);
+        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 24);
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translate(-50%, 0);
+        transform-origin: 0 $cardCarouselWidth / 2 + px;
+        animation: rotating 30s linear infinite;
 
         @include media('<phone') {
-            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 4);
+            $cardCarouselWidth: 900;
+            $cardCarouselHeight: 900;
+            transform-origin: 0 $cardCarouselWidth / 2 + px;
+            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 24);
         }
 
         .item {
@@ -242,11 +262,6 @@ body {
             transition: .15s;
 
             img {
-                //$tanA: 4000 / (2 * (1690));
-                //$atan: atan(pi / 2);
-                //transform: rotate(atan($tanA));
-                //transform: rotate($atan);
-
                 transform: rotate(90deg);
             }
         }
