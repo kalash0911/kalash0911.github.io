@@ -1048,12 +1048,12 @@ body {
     z-index: 100; }
   .phone-section .sticky-phones-content {
     position: absolute;
-    top: 11px;
+    top: 9px;
     left: 11px;
     right: 11px;
-    bottom: 13px;
+    bottom: 3px;
     overflow: hidden;
-    border-radius: 48px; }
+    border-radius: 38px; }
   .phone-section .img-step {
     width: 100%;
     position: absolute;

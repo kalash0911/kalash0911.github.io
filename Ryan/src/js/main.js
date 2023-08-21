@@ -31,12 +31,12 @@ function initStickyPhone() {
     {
       x: 5,
       rotation: 3,
-      skewX: -2,
+      // skewX: -2,
     },
     {
       x: -5,
       rotation: -3,
-      skewX: 2,
+      // skewX: 2,
       scrollTrigger: {
         trigger: steps[0].querySelector('.title'),
         start: `50% center`,
