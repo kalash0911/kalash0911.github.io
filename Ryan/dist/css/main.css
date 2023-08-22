@@ -752,7 +752,7 @@ body {
       padding-bottom: 100px; } }
   .card-section .circle {
     position: absolute;
-    bottom: -3000px;
+    bottom: -2950px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -764,7 +764,7 @@ body {
     border: 1px dashed #CF7C58; }
     @media (max-width: 479px) {
       .card-section .circle {
-        bottom: -820px;
+        bottom: -800px;
         width: 1000px;
         height: 1000px; } }
   .card-section .block {
@@ -784,8 +784,8 @@ body {
     transform: translate(-50%, 0);
     -webkit-transform-origin: 0 1100px;
     transform-origin: 0 1100px;
-    -webkit-animation: rotating 30s linear infinite;
-    animation: rotating 30s linear infinite; }
+    -webkit-animation: rotating 150s linear infinite;
+    animation: rotating 150s linear infinite; }
     .card-section .card-holder > * {
       display: block;
       position: absolute;
@@ -951,9 +951,9 @@ body {
   background-color: #F6E9D0;
   position: relative;
   z-index: 2; }
-  @media (max-width: 767px) {
+  @media (max-width: 1199px) {
     .phone-section {
-      padding: 30px 0; } }
+      padding: 30px 0 70px 0; } }
   .phone-section .container {
     position: relative; }
   .phone-section .steps {
@@ -967,15 +967,24 @@ body {
     padding: 200px 0;
     margin: 0;
     list-style: none; }
-    @media (max-width: 767px) {
+    @media (max-width: 1199px) {
       .phone-section .item {
-        width: 100%;
-        max-width: 100%;
+        position: relative;
+        -ms-flex-direction: column;
+        flex-direction: column;
         text-align: center;
-        padding: 30px 0; } }
+        padding: 30px 0 160px 0; } }
   .phone-section .description {
     width: 50%;
     max-width: 460px; }
+    @media (max-width: 1399px) {
+      .phone-section .description {
+        width: 30%; } }
+    @media (max-width: 1199px) {
+      .phone-section .description {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 24px; } }
   .phone-section [id*="kids_anim"] {
     max-width: 450px; }
   .phone-section .stiker {
@@ -1020,27 +1029,59 @@ body {
     font-weight: 400;
     line-height: 155%;
     margin: 0; }
-    @media (max-width: 767px) {
-      .phone-section .text {
-        font-size: 14px;
-        margin-bottom: 50px; } }
     @media (max-width: 479px) {
       .phone-section .text {
-        font-size: 14px;
-        margin-bottom: 50px; } }
-  .phone-section .img-step-mob {
+        font-size: 14px; } }
+  .phone-section .mob-anim {
+    position: relative;
     display: none;
-    margin: 0 auto; }
-    @media (max-width: 767px) {
-      .phone-section .img-step-mob {
+    margin: 0 auto;
+    width: 228px;
+    z-index: 1; }
+    @media (max-width: 1199px) {
+      .phone-section .mob-anim {
         display: block; } }
+    @media (max-width: 479px) {
+      .phone-section .mob-anim {
+        margin: 0; } }
+    .phone-section .mob-anim::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 185px;
+      background: linear-gradient(0deg, #F4E7D0 15.1%, rgba(244, 231, 208, 0) 100%);
+      z-index: 2; }
+    .phone-section .mob-anim .iphone_mockup {
+      position: relative;
+      z-index: 1; }
+    .phone-section .mob-anim .img-step {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 210px;
+      border-radius: 25px; }
+  .phone-section .kids {
+    width: 460px; }
+    @media (max-width: 1199px) {
+      .phone-section .kids {
+        position: absolute;
+        left: 60%;
+        bottom: 0px;
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+        width: 270px;
+        z-index: 5; } }
   .phone-section .sticky-phones-wrapper {
     position: absolute;
     width: 285px;
     top: 0;
     right: calc(5% + 467px);
-    z-index: 5; }
-    @media (max-width: 767px) {
+    z-index: 2; }
+    @media (max-width: 1199px) {
       .phone-section .sticky-phones-wrapper {
         display: none; } }
   .phone-section .iphone_mockup {

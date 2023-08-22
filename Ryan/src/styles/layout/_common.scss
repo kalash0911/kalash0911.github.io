@@ -217,7 +217,7 @@ body {
 
     .circle {
         position: absolute;
-        bottom: -3000px;
+        bottom: -2950px;
         left: 50%;
         transform: translateX(-50%);
         width: 3200px;
@@ -228,7 +228,7 @@ body {
         border: 1px dashed #CF7C58;
 
         @include media('<phone') {
-            bottom: -820px;
+            bottom: -800px;
             width: 1000px;
             height: 1000px;
         }
@@ -245,7 +245,7 @@ body {
         left: 50%;
         transform: translate(-50%, 0);
         transform-origin: 0 $cardCarouselWidth / 2 + px;
-        animation: rotating 30s linear infinite;
+        animation: rotating 150s linear infinite;
 
         @include media('<phone') {
             $cardCarouselWidth: 900;
@@ -276,8 +276,8 @@ body {
     position: relative;
     z-index: 2;
 
-    @include media('<tablet') {
-        padding: 30px 0;
+    @include media('<widescreen') {
+        padding: 30px 0 70px 0;
     }
 
     .container {
@@ -290,25 +290,33 @@ body {
     }
 
     .item {
-        // width: 50%;
-        // max-width: 460px;
         display: flex;
         justify-content: space-between;
         padding: 200px 0;
         margin: 0;
         list-style: none;
 
-        @include media('<tablet') {
-            width: 100%;
-            max-width: 100%;
+        @include media('<widescreen') {
+            position: relative;
+            flex-direction: column;
             text-align: center;
-            padding: 30px 0;
+            padding: 30px 0 160px 0;
         }
     }
 
     .description {
         width: 50%;
         max-width: 460px;
+
+        @include media('<1400px') {
+            width: 30%;
+        }
+
+        @include media('<widescreen') {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 24px;
+        }
     }
 
     [id*="kids_anim"] {
@@ -368,23 +376,62 @@ body {
         line-height: 155%;
         margin: 0;
 
-        @include media('<tablet') {
-            font-size: 14px;
-            margin-bottom: 50px;
-        }
-
         @include media('<phone') {
             font-size: 14px;
-            margin-bottom: 50px;
         }
     }
 
-    .img-step-mob {
+    .mob-anim {
+        position: relative;
         display: none;
         margin: 0 auto;
+        width: 228px;
+        z-index: 1;
 
-        @include media('<tablet') {
+        @include media('<widescreen') {
             display: block;
+        }
+
+        @include media('<phone') {
+            margin: 0;
+        }
+
+        &::after {
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 185px;
+            background: linear-gradient(0deg, #F4E7D0 15.10%, rgba(244, 231, 208, 0.00) 100%);
+            z-index: 2;
+        }
+
+        .iphone_mockup {
+            position: relative;
+            z-index: 1;
+        }
+
+        .img-step {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 210px;
+            border-radius: 25px;
+        }
+    }
+
+    .kids {
+        width: 460px;
+        
+        @include media('<widescreen') {
+            position: absolute;
+            left: 60%;
+            bottom: 0px;
+            transform: translate(-50%);
+            width: 270px;
+            z-index: 5;
         }
     }
 
@@ -393,9 +440,9 @@ body {
         width: 285px;
         top: 0;
         right: calc(5% + 467px);
-        z-index: 5;
+        z-index: 2;
 
-        @include media('<tablet') {
+        @include media('<widescreen') {
             display: none;
         }
     }
