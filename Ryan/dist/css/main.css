@@ -725,6 +725,21 @@ body {
       display: block; }
 
 /* ------------------- card-section ----------------*/
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(360deg) translate(-50%, 0);
+    transform: rotate(360deg) translate(-50%, 0); }
+  to {
+    -webkit-transform: rotate(0deg) translate(-50%, 0);
+    transform: rotate(0deg) translate(-50%, 0); } }
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(360deg) translate(-50%, 0);
+    transform: rotate(360deg) translate(-50%, 0); }
+  to {
+    -webkit-transform: rotate(0deg) translate(-50%, 0);
+    transform: rotate(0deg) translate(-50%, 0); } }
+
 .card-section {
   position: relative;
   padding-bottom: 140px;
@@ -733,27 +748,32 @@ body {
   background-color: #FAF5EA; }
   @media (max-width: 479px) {
     .card-section {
-      min-height: 360px; } }
+      min-height: 320px;
+      padding-bottom: 100px; } }
   .card-section .circle {
     position: absolute;
-    bottom: -3790px;
+    bottom: -3000px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    width: 100%;
-    min-width: 4000px;
-    height: 4000px;
+    width: 3200px;
+    height: 3200px;
     background-color: #F6E9D0;
     border-radius: 50%;
     z-index: 2;
     border: 1px dashed #CF7C58; }
+    @media (max-width: 479px) {
+      .card-section .circle {
+        bottom: -820px;
+        width: 1000px;
+        height: 1000px; } }
   .card-section .block {
     display: -ms-flexbox;
     display: flex; }
   .card-section .card-holder {
     position: absolute;
-    width: 4000px;
-    height: 4000px;
+    width: 2200px;
+    height: 2200px;
     padding: 0;
     border-radius: 50%;
     list-style: none;
@@ -761,7 +781,11 @@ body {
     top: 20px;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
+    transform: translate(-50%, 0);
+    -webkit-transform-origin: 0 1100px;
+    transform-origin: 0 1100px;
+    -webkit-animation: rotating 30s linear infinite;
+    animation: rotating 30s linear infinite; }
     .card-section .card-holder > * {
       display: block;
       position: absolute;
@@ -771,70 +795,72 @@ body {
       height: 320px;
       margin: -160px; }
       .card-section .card-holder > *:nth-of-type(1) {
-        -webkit-transform: rotate(-90deg) translate(1840px);
-        transform: rotate(-90deg) translate(1840px); }
+        -webkit-transform: rotate(-90deg) translate(940px);
+        transform: rotate(-90deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(2) {
-        -webkit-transform: rotate(-79deg) translate(1840px);
-        transform: rotate(-79deg) translate(1840px); }
+        -webkit-transform: rotate(-66deg) translate(940px);
+        transform: rotate(-66deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(3) {
-        -webkit-transform: rotate(-68deg) translate(1840px);
-        transform: rotate(-68deg) translate(1840px); }
+        -webkit-transform: rotate(-42deg) translate(940px);
+        transform: rotate(-42deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(4) {
-        -webkit-transform: rotate(-57deg) translate(1840px);
-        transform: rotate(-57deg) translate(1840px); }
+        -webkit-transform: rotate(-18deg) translate(940px);
+        transform: rotate(-18deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(5) {
-        -webkit-transform: rotate(-46deg) translate(1840px);
-        transform: rotate(-46deg) translate(1840px); }
+        -webkit-transform: rotate(6deg) translate(940px);
+        transform: rotate(6deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(6) {
-        -webkit-transform: rotate(-35deg) translate(1840px);
-        transform: rotate(-35deg) translate(1840px); }
+        -webkit-transform: rotate(30deg) translate(940px);
+        transform: rotate(30deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(7) {
-        -webkit-transform: rotate(-24deg) translate(1840px);
-        transform: rotate(-24deg) translate(1840px); }
+        -webkit-transform: rotate(54deg) translate(940px);
+        transform: rotate(54deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(8) {
-        -webkit-transform: rotate(-13deg) translate(1840px);
-        transform: rotate(-13deg) translate(1840px); }
+        -webkit-transform: rotate(78deg) translate(940px);
+        transform: rotate(78deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(9) {
-        -webkit-transform: rotate(-2deg) translate(1840px);
-        transform: rotate(-2deg) translate(1840px); }
+        -webkit-transform: rotate(102deg) translate(940px);
+        transform: rotate(102deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(10) {
-        -webkit-transform: rotate(9deg) translate(1840px);
-        transform: rotate(9deg) translate(1840px); }
+        -webkit-transform: rotate(126deg) translate(940px);
+        transform: rotate(126deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(11) {
-        -webkit-transform: rotate(20deg) translate(1840px);
-        transform: rotate(20deg) translate(1840px); }
+        -webkit-transform: rotate(150deg) translate(940px);
+        transform: rotate(150deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(12) {
-        -webkit-transform: rotate(31deg) translate(1840px);
-        transform: rotate(31deg) translate(1840px); }
+        -webkit-transform: rotate(174deg) translate(940px);
+        transform: rotate(174deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(13) {
-        -webkit-transform: rotate(42deg) translate(1840px);
-        transform: rotate(42deg) translate(1840px); }
+        -webkit-transform: rotate(198deg) translate(940px);
+        transform: rotate(198deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(14) {
-        -webkit-transform: rotate(53deg) translate(1840px);
-        transform: rotate(53deg) translate(1840px); }
+        -webkit-transform: rotate(222deg) translate(940px);
+        transform: rotate(222deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(15) {
-        -webkit-transform: rotate(64deg) translate(1840px);
-        transform: rotate(64deg) translate(1840px); }
+        -webkit-transform: rotate(246deg) translate(940px);
+        transform: rotate(246deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(16) {
-        -webkit-transform: rotate(75deg) translate(1840px);
-        transform: rotate(75deg) translate(1840px); }
+        -webkit-transform: rotate(270deg) translate(940px);
+        transform: rotate(270deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(17) {
-        -webkit-transform: rotate(86deg) translate(1840px);
-        transform: rotate(86deg) translate(1840px); }
+        -webkit-transform: rotate(294deg) translate(940px);
+        transform: rotate(294deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(18) {
-        -webkit-transform: rotate(97deg) translate(1840px);
-        transform: rotate(97deg) translate(1840px); }
+        -webkit-transform: rotate(318deg) translate(940px);
+        transform: rotate(318deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(19) {
-        -webkit-transform: rotate(108deg) translate(1840px);
-        transform: rotate(108deg) translate(1840px); }
+        -webkit-transform: rotate(342deg) translate(940px);
+        transform: rotate(342deg) translate(940px); }
       .card-section .card-holder > *:nth-of-type(20) {
-        -webkit-transform: rotate(119deg) translate(1840px);
-        transform: rotate(119deg) translate(1840px); }
+        -webkit-transform: rotate(366deg) translate(940px);
+        transform: rotate(366deg) translate(940px); }
     @media (max-width: 479px) {
       .card-section .card-holder {
+        -webkit-transform-origin: 0 450px;
+        transform-origin: 0 450px;
         position: absolute;
-        width: 4000px;
-        height: 4000px;
+        width: 900px;
+        height: 900px;
         padding: 0;
         border-radius: 50%;
         list-style: none; }
@@ -847,65 +873,65 @@ body {
           height: 135px;
           margin: -67.5px; }
           .card-section .card-holder > *:nth-of-type(1) {
-            -webkit-transform: rotate(-90deg) translate(1932.5px);
-            transform: rotate(-90deg) translate(1932.5px); }
+            -webkit-transform: rotate(-90deg) translate(382.5px);
+            transform: rotate(-90deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(2) {
-            -webkit-transform: rotate(-86deg) translate(1932.5px);
-            transform: rotate(-86deg) translate(1932.5px); }
+            -webkit-transform: rotate(-66deg) translate(382.5px);
+            transform: rotate(-66deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(3) {
-            -webkit-transform: rotate(-82deg) translate(1932.5px);
-            transform: rotate(-82deg) translate(1932.5px); }
+            -webkit-transform: rotate(-42deg) translate(382.5px);
+            transform: rotate(-42deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(4) {
-            -webkit-transform: rotate(-78deg) translate(1932.5px);
-            transform: rotate(-78deg) translate(1932.5px); }
+            -webkit-transform: rotate(-18deg) translate(382.5px);
+            transform: rotate(-18deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(5) {
-            -webkit-transform: rotate(-74deg) translate(1932.5px);
-            transform: rotate(-74deg) translate(1932.5px); }
+            -webkit-transform: rotate(6deg) translate(382.5px);
+            transform: rotate(6deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(6) {
-            -webkit-transform: rotate(-70deg) translate(1932.5px);
-            transform: rotate(-70deg) translate(1932.5px); }
+            -webkit-transform: rotate(30deg) translate(382.5px);
+            transform: rotate(30deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(7) {
-            -webkit-transform: rotate(-66deg) translate(1932.5px);
-            transform: rotate(-66deg) translate(1932.5px); }
+            -webkit-transform: rotate(54deg) translate(382.5px);
+            transform: rotate(54deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(8) {
-            -webkit-transform: rotate(-62deg) translate(1932.5px);
-            transform: rotate(-62deg) translate(1932.5px); }
+            -webkit-transform: rotate(78deg) translate(382.5px);
+            transform: rotate(78deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(9) {
-            -webkit-transform: rotate(-58deg) translate(1932.5px);
-            transform: rotate(-58deg) translate(1932.5px); }
+            -webkit-transform: rotate(102deg) translate(382.5px);
+            transform: rotate(102deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(10) {
-            -webkit-transform: rotate(-54deg) translate(1932.5px);
-            transform: rotate(-54deg) translate(1932.5px); }
+            -webkit-transform: rotate(126deg) translate(382.5px);
+            transform: rotate(126deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(11) {
-            -webkit-transform: rotate(-50deg) translate(1932.5px);
-            transform: rotate(-50deg) translate(1932.5px); }
+            -webkit-transform: rotate(150deg) translate(382.5px);
+            transform: rotate(150deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(12) {
-            -webkit-transform: rotate(-46deg) translate(1932.5px);
-            transform: rotate(-46deg) translate(1932.5px); }
+            -webkit-transform: rotate(174deg) translate(382.5px);
+            transform: rotate(174deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(13) {
-            -webkit-transform: rotate(-42deg) translate(1932.5px);
-            transform: rotate(-42deg) translate(1932.5px); }
+            -webkit-transform: rotate(198deg) translate(382.5px);
+            transform: rotate(198deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(14) {
-            -webkit-transform: rotate(-38deg) translate(1932.5px);
-            transform: rotate(-38deg) translate(1932.5px); }
+            -webkit-transform: rotate(222deg) translate(382.5px);
+            transform: rotate(222deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(15) {
-            -webkit-transform: rotate(-34deg) translate(1932.5px);
-            transform: rotate(-34deg) translate(1932.5px); }
+            -webkit-transform: rotate(246deg) translate(382.5px);
+            transform: rotate(246deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(16) {
-            -webkit-transform: rotate(-30deg) translate(1932.5px);
-            transform: rotate(-30deg) translate(1932.5px); }
+            -webkit-transform: rotate(270deg) translate(382.5px);
+            transform: rotate(270deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(17) {
-            -webkit-transform: rotate(-26deg) translate(1932.5px);
-            transform: rotate(-26deg) translate(1932.5px); }
+            -webkit-transform: rotate(294deg) translate(382.5px);
+            transform: rotate(294deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(18) {
-            -webkit-transform: rotate(-22deg) translate(1932.5px);
-            transform: rotate(-22deg) translate(1932.5px); }
+            -webkit-transform: rotate(318deg) translate(382.5px);
+            transform: rotate(318deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(19) {
-            -webkit-transform: rotate(-18deg) translate(1932.5px);
-            transform: rotate(-18deg) translate(1932.5px); }
+            -webkit-transform: rotate(342deg) translate(382.5px);
+            transform: rotate(342deg) translate(382.5px); }
           .card-section .card-holder > *:nth-of-type(20) {
-            -webkit-transform: rotate(-14deg) translate(1932.5px);
-            transform: rotate(-14deg) translate(1932.5px); } }
+            -webkit-transform: rotate(366deg) translate(382.5px);
+            transform: rotate(366deg) translate(382.5px); } }
     .card-section .card-holder .item {
       display: -ms-flexbox;
       display: flex;
@@ -934,8 +960,10 @@ body {
     padding: 0;
     margin: 0; }
   .phone-section .item {
-    width: 50%;
-    max-width: 460px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     padding: 200px 0;
     margin: 0;
     list-style: none; }
@@ -945,6 +973,11 @@ body {
         max-width: 100%;
         text-align: center;
         padding: 30px 0; } }
+  .phone-section .description {
+    width: 50%;
+    max-width: 460px; }
+  .phone-section [id*="kids_anim"] {
+    max-width: 450px; }
   .phone-section .stiker {
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -1005,20 +1038,28 @@ body {
     position: absolute;
     width: 285px;
     top: 0;
-    right: 10%; }
+    right: calc(5% + 467px);
+    z-index: 5; }
     @media (max-width: 767px) {
       .phone-section .sticky-phones-wrapper {
         display: none; } }
-  .phone-section .sticky-phones-content {
+  .phone-section .iphone_mockup {
     position: relative;
+    z-index: 100; }
+  .phone-section .sticky-phones-content {
+    position: absolute;
+    top: 9px;
+    left: 11px;
+    right: 11px;
+    bottom: 3px;
     overflow: hidden;
-    border-radius: 48px; }
+    border-radius: 38px; }
   .phone-section .img-step {
-    width: 100%; }
-    .phone-section .img-step:not(:first-of-type) {
-      position: absolute;
-      left: 0;
-      top: 0; }
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 265px; }
 
 /* ------------------- form-section ----------------*/
 .form-section {
@@ -1045,7 +1086,7 @@ body {
         margin-bottom: 20px; } }
   .form-section form {
     width: 100%;
-    max-width: 615px;
+    max-width: 833px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;

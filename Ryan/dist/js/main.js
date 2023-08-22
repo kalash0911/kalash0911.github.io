@@ -12,11 +12,18 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+window.addEventListener("load", function (event) {
+  initStickyPhone();
+});
+
 function initStickyPhone() {
   var startSection = document.querySelector(".phone-section");
   var phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
-  var phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
-  var phoneImgs = phoneContent.querySelectorAll('img');
+  var phoneContent = phonesWrapper.querySelector('.sticky-phones-content'); // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  // const kidsContent = startSection.querySelector('.sticky-kids-content');
+
+  var phoneImgs = phoneContent.querySelectorAll('img'); // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
+
   var steps = document.querySelectorAll('.steps li');
 
   var stepsReact = _toConsumableArray(steps).reduce(function (prev, cur, ind) {
@@ -28,27 +35,52 @@ function initStickyPhone() {
   var sectionRect = startSection.getBoundingClientRect();
   phoneImgs.forEach(function (img, ind) {
     return img.style.zIndex = "".concat(ind);
-  });
-  var phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280; // Phone wrapper scroll anim
+  }); // kidsElements.forEach((el, ind) => el.style.zIndex = `${ind}`);
+
+  var phoneWrapDesctination = sectionRect.height - stepsReact[0].height + 280;
+  var phoneContentHeight = phonesWrapper.getBoundingClientRect().height; // phoneContent.style.height = `${phoneContentHeight - 10}px`;
+  // Phone wrapper scroll anim
 
   gsap.fromTo(phonesWrapper, {
     x: 5,
-    rotation: 3,
-    skewX: -2
+    rotation: 3 // skewX: -2,
+
   }, {
     x: -5,
     rotation: -3,
-    skewX: 2,
+    // skewX: 2,
     scrollTrigger: {
-      trigger: phonesWrapper,
-      start: "".concat(stepsReact[0].height, "-=250px center"),
+      trigger: steps[0].querySelector('.title'),
+      start: "50% center",
       end: "".concat(phoneWrapDesctination, " center"),
       scrub: 0.5,
       // markers: true,
-      pin: phonesWrapper
+      pin: phonesWrapper,
+      onEnter: function onEnter() {// kidsAnimation[0].play();
+      }
     }
-  });
-  var phoneContentHeight = phoneContent.getBoundingClientRect().height; // Content images scroll anim
+  }); //Kids wrapper scroll anim
+  // gsap.fromTo(
+  //   kidsWrapper,
+  //   {
+  //     x: 0,
+  //   },
+  //   {
+  //     x: 0,
+  //     scrollTrigger: {
+  //       trigger: phonesWrapper,
+  //       start: `${stepsReact[0].height}-=250px center`,
+  //       end: `${phoneWrapDesctination} center`,
+  //       scrub: 0.5,
+  //       // markers: true,
+  //       pin: kidsWrapper,
+  //       onEnter: () => {
+  //         kidsAnimation[0].play()
+  //       }
+  //     },
+  //   }
+  // );
+  // Content images scroll anim
 
   phoneImgs.forEach(function (img, ind) {
     if (ind > 0) {
@@ -62,110 +94,112 @@ function initStickyPhone() {
         rotation: 0,
         scrollTrigger: {
           trigger: steps[ind],
-          start: "75% 80%-".concat(phoneContentHeight),
-          end: "bottom+=10% 85%",
+          start: "65% 80%-".concat(phoneContentHeight),
+          end: "bottom+=20% 85%",
           scrub: 1,
           // markers: true,
           onUpdate: function onUpdate(self) {
             var filterValue = self.progress.toFixed(3) * 20;
             phoneImgs[ind - 1].style.filter = "blur(".concat(filterValue, "px)");
+
+            if (self.progress < 0.1) {
+              kidsAnimation[ind].pause();
+            } else {
+              if (kidsAnimation[ind].isPaused) {
+                kidsAnimation[ind].play();
+              }
+            }
+          },
+          onLeave: function onLeave(self) {
+            kidsAnimation[ind].play();
+            kidsAnimation[ind - 1].pause();
+          },
+          onEnterBack: function onEnterBack() {
+            kidsAnimation[ind - 1].play();
           }
         }
       });
     }
-  });
+  }); // Kids anim scroll sticky
+  //  kidsElements.forEach((el, ind) => {
+  //   if (ind > 0) {
+  //     gsap.fromTo(
+  //       el,
+  //       {
+  //         x: 0,
+  //         y: -500,
+  //         rotation: 0,
+  //       },
+  //       {
+  //         x: 0,
+  //         y: 0,
+  //         rotation: 0,
+  //         scrollTrigger: {
+  //           trigger: steps[ind],
+  //           start: `75% 80%-${500}`,
+  //           end: `bottom+=10% 85%`,
+  //           scrub: 1,
+  //           // markers: true,
+  //           onUpdate: (self) => {
+  //             const filterValue = self.progress.toFixed(3) * 20;
+  //             kidsElements[ind - 1].style.filter = `blur(${filterValue}px)`;
+  //             kidsElements[ind - 1].style.opacity = `${1 - self.progress}`;
+  //             if(self.progress !== 1) {
+  //               kidsAnimation[ind].pause();
+  //             }
+  //           },
+  //           onLeave: (self) => {
+  //             kidsAnimation[ind].play();
+  //           },
+  //         },
+  //       }
+  //     )
+  //   }
+  // });
 }
-/* ------------------- card section carousel ----------------*/
 
-/* ------------------- triangle degrees helpers ----------------*/
+var kidsAnimation = new Array(5).fill('kids_anim').map(function (elem, ind, arr) {
+  var animLoadCounter = 0;
+  var totalDuration = 0;
+  var anim = bodymovin.loadAnimation({
+    container: document.getElementById("".concat(elem, "_").concat(ind + 1)),
+    path: "./files/anim_".concat(ind + 1, ".json"),
+    render: "svg",
+    loop: true,
+    autoplay: false
+  });
+  anim.addEventListener("DOMLoaded", function () {
+    animLoadCounter += 1;
+    anim.stop();
 
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
+        cur.onComplete = function () {// anim complete cb
+        };
 
-var radToDegree = function radToDegree(radians) {
-  return radians * (180 / Math.PI);
-};
+        return prev += cur.getDuration();
+      }, 0);
+    }
+  });
+  return anim;
+});
 
-var calcIsoscelesTriangleDegree = function calcIsoscelesTriangleDegree(a, b) {
-  var cosA = b / (2 * a);
-  var aDeg = radToDegree(Math.acos(cosA));
-  var bDeg = 180 - aDeg * 2;
-  return {
-    cosA: cosA,
-    aDeg: aDeg,
-    bDeg: bDeg
-  };
-};
-
-var calcRightAngledTriangleDegree = function calcRightAngledTriangleDegree(a, b) {
-  var tanA = a / b;
-  var aDeg = radToDegree(Math.atan(tanA));
-  var bDeg = 180 - 90 - aDeg;
-  return {
-    tanA: tanA,
-    aDeg: aDeg,
-    bDeg: bDeg
-  };
-};
-
-var calcInitRotation = function calcInitRotation(rightAngledTriangleBDeg, isoscelesTriangleBDeg) {
-  // hardcoded fix for mobile
-  var correction = 0;
-
-  if (window.innerWidth <= 1024) {
-    correction = 6;
-  }
-
-  if (window.innerWidth <= 480) {
-    correction = 3;
-  }
-
-  return rightAngledTriangleBDeg / 2 + isoscelesTriangleBDeg - correction;
-};
-
-var calcFinalRotation = function calcFinalRotation(rightAngledTriangleBDeg, isoscelesTriangleBDeg, cellsLength) {
-  var correction = 0;
-
-  if (window.innerWidth <= 1024) {
-    correction = -3;
-  }
-
-  if (window.innerWidth <= 480) {
-    correction = -1;
-  }
-
-  return -(isoscelesTriangleBDeg * cellsLength - rightAngledTriangleBDeg * 2) - rightAngledTriangleBDeg / 2 - correction;
-};
-/* ------------------- card section initialization ----------------*/
-
-
-function circleImageAnimation() {
-  var wrapper = document.querySelector(".card-section");
-  var cardHolder = document.querySelector(".card-holder");
-  var cells = document.querySelectorAll(".card-holder .item");
-  if (!wrapper || !cardHolder || !cells) return;
-
-  var _calcIsoscelesTriangl = calcIsoscelesTriangleDegree(cardHolder.offsetWidth / 2 - cells[0].offsetHeight, cells[0].offsetWidth),
-      IsoscelesTriangleBDeg = _calcIsoscelesTriangl.bDeg;
-
-  var _calcRightAngledTrian = calcRightAngledTriangleDegree(wrapper.offsetWidth / 2, cardHolder.offsetWidth / 2),
-      RightAngledTriangleBDeg = _calcRightAngledTrian.aDeg;
-
-  gsap.fromTo(cardHolder, {
-    x: 0,
-    rotation: -calcInitRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg)
-  }, {
-    x: 0,
-    rotation: calcFinalRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg, cells.length) > 0 ? 0 : calcFinalRotation(RightAngledTriangleBDeg, IsoscelesTriangleBDeg, cells.length),
-    scrollTrigger: {
-      trigger: wrapper,
-      start: '30% 50%',
-      pin: ".carousel-wrap",
-      end: "bottom",
-      scrub: 0.5 // markers: true,
-
+function callback(entries, observer) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      kidsAnimation[0].play();
     }
   });
 }
 
-circleImageAnimation();
-initStickyPhone();
+function createObserver(target, callback) {
+  var options = {
+    root: null,
+    threshold: 0
+  };
+  var observer = new IntersectionObserver(callback, options);
+  observer.observe(target);
+}
+
+createObserver(document.querySelector('#kids_anim_1'), callback);
 //# sourceMappingURL=main.js.map

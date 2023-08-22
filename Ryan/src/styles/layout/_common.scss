@@ -191,9 +191,18 @@ body {
     }
 }
 
+@keyframes rotating {
+    from {
+        transform: rotate(360deg) translate(-50%, 0);
+    }
+    to {
+        transform: rotate(0deg) translate(-50%, 0);
+    }
+}
+
 .card-section {
-    $cardCarouselWidth: 4000;
-    $cardCarouselHeight: 4000;
+    $cardCarouselWidth: 2200;
+    $cardCarouselHeight: 2200;
 
     position: relative;
     padding-bottom: 140px;
@@ -202,21 +211,27 @@ body {
     background-color: $whiteEA;
 
     @include media('<phone') {
-        min-height: 360px;
+        min-height: 320px;
+        padding-bottom: 100px;
     }
 
     .circle {
         position: absolute;
-        bottom: -3790px;
+        bottom: -3000px;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        min-width: $cardCarouselWidth + px;
-        height: $cardCarouselHeight + px;
+        width: 3200px;
+        height: 3200px;
         background-color: $yellowD0;
         border-radius: 50%;
         z-index: 2;
         border: 1px dashed #CF7C58;
+
+        @include media('<phone') {
+            bottom: -820px;
+            width: 1000px;
+            height: 1000px;
+        }
     }
 
     .block {
@@ -224,14 +239,19 @@ body {
     }
 
     .card-holder {
-        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 11);
+        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 24);
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translate(-50%, 0);
+        transform-origin: 0 $cardCarouselWidth / 2 + px;
+        animation: rotating 30s linear infinite;
 
         @include media('<phone') {
-            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 4);
+            $cardCarouselWidth: 900;
+            $cardCarouselHeight: 900;
+            transform-origin: 0 $cardCarouselWidth / 2 + px;
+            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 24);
         }
 
         .item {
@@ -242,11 +262,6 @@ body {
             transition: .15s;
 
             img {
-                //$tanA: 4000 / (2 * (1690));
-                //$atan: atan(pi / 2);
-                //transform: rotate(atan($tanA));
-                //transform: rotate($atan);
-
                 transform: rotate(90deg);
             }
         }
@@ -275,8 +290,10 @@ body {
     }
 
     .item {
-        width: 50%;
-        max-width: 460px;
+        // width: 50%;
+        // max-width: 460px;
+        display: flex;
+        justify-content: space-between;
         padding: 200px 0;
         margin: 0;
         list-style: none;
@@ -288,6 +305,16 @@ body {
             padding: 30px 0;
         }
     }
+
+    .description {
+        width: 50%;
+        max-width: 460px;
+    }
+
+    [id*="kids_anim"] {
+        max-width: 450px;
+    }
+
 
     .stiker {
         display: inline-flex;
@@ -365,27 +392,56 @@ body {
         position: absolute;
         width: 285px;
         top: 0;
-        right: 10%;
+        right: calc(5% + 467px);
+        z-index: 5;
 
         @include media('<tablet') {
             display: none;
         }
     }
 
-    .sticky-phones-content {
+    .iphone_mockup {
         position: relative;
-        overflow: hidden;
-        border-radius: 48px;
+        z-index: 100;
     }
+
+    .sticky-phones-content {
+        position: absolute;
+        top: 9px;
+        left: 11px;
+        right: 11px;
+        bottom: 3px;
+        overflow: hidden;
+        border-radius: 38px;
+    }
+
+    // .sticky-kids-wrapper {
+    //     position: absolute;
+    //     width: 467px;
+    //     top: 100px;
+    //     right: 5%;
+    // }
+
+    // .sticky-kids-content {
+    //     position: relative;
+    //     overflow: hidden;
+    // }
+
+    // [id*="kids_anim"] {
+    //     &:not(:first-of-type) {
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         margin: -1px;
+    //     }
+    // }
 
     .img-step {
         width: 100%;
-
-        &:not(:first-of-type) {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 265px;
     }
 }
 
@@ -416,7 +472,7 @@ body {
 
     form {
         width: 100%;
-        max-width: 615px;
+        max-width: 833px;
         display: flex;
         flex-direction: column;
         gap: 16px;
