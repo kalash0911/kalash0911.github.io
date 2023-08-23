@@ -386,8 +386,14 @@ body {
         position: relative;
         display: none;
         margin: 0 auto;
-        width: 228px;
+        width: 100%;
         z-index: 1;
+        max-width: 305px;
+        overflow: hidden;
+
+        [id*="mob_phone"] {
+            margin-top: -1px;
+        }
 
         @include media('<widescreen') {
             display: block;

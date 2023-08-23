@@ -1038,8 +1038,12 @@ body {
     position: relative;
     display: none;
     margin: 0 auto;
-    width: 228px;
-    z-index: 1; }
+    width: 100%;
+    z-index: 1;
+    max-width: 305px;
+    overflow: hidden; }
+    .phone-section .mob-anim [id*="mob_phone"] {
+      margin-top: -1px; }
     @media (max-width: 1199px) {
       .phone-section .mob-anim {
         display: block; } }
