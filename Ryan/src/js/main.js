@@ -96,21 +96,21 @@ function initStickyPhone() {
             onUpdate: (self) => {
               const filterValue = self.progress.toFixed(3) * 20;
               phoneImgs[ind - 1].style.filter = `blur(${filterValue}px)`;
-              if(self.progress < 0.1) {
-                kidsAnimation[ind].pause();
-              } else {
-                if(kidsAnimation[ind].isPaused) {
-                  kidsAnimation[ind].play();
-                } 
-              }
+              // if(self.progress < 0.1) {
+              //   kidsAnimation[ind].pause();
+              // } else {
+              //   if(kidsAnimation[ind].isPaused) {
+              //     kidsAnimation[ind].play();
+              //   } 
+              // }
             },
-            onLeave: (self) => {
-              kidsAnimation[ind].play();
-              kidsAnimation[ind-1].pause();
-            },
-            onEnterBack: () => {
-              kidsAnimation[ind-1].play();
-            }
+            // onLeave: (self) => {
+            //   kidsAnimation[ind].play();
+            //   kidsAnimation[ind-1].pause();
+            // },
+            // onEnterBack: () => {
+            //   kidsAnimation[ind-1].play();
+            // }
           },
         }
       )
@@ -163,11 +163,38 @@ const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
     path: `./files/anim_${ind + 1}.json`,
     render: "svg",
     loop: true,
-    autoplay: false,
+    autoplay: true,
   });
   anim.addEventListener("DOMLoaded", () => {
     animLoadCounter += 1;
-    anim.stop();
+    if(ind === 0) {
+      anim.stop();
+    }
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
+        cur.onComplete = () => {
+          // anim complete cb
+        };
+        return (prev += cur.getDuration());
+      }, 0);
+    }
+  });
+  return anim;
+});
+
+const mobilePhoneAnimation = new Array(1).fill('mob_phone').map((elem, ind, arr) => {
+  let animLoadCounter = 0;
+  let totalDuration = 0;
+  const anim = bodymovin.loadAnimation({
+    container: document.getElementById(`${elem}_${ind + 1}`),
+    path: `./files/mob_phone_${ind + 1}.json`,
+    render: "svg",
+    loop: true,
+    autoplay: true,
+  });
+  anim.addEventListener("DOMLoaded", () => {
+    animLoadCounter += 1;
+    // anim.stop();
     if (animLoadCounter === arr.length) {
       totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
         cur.onComplete = () => {
