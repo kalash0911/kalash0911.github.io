@@ -6,8 +6,8 @@ function initStickyPhone() {
   const startSection = document.querySelector(".phone-section");
   const phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
   const phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
-  // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
-  // const kidsContent = startSection.querySelector('.sticky-kids-content');
+  const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  const kidsContent = startSection.querySelector('.sticky-kids-content');
   const phoneImgs = phoneContent.querySelectorAll('img');
   // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
   const steps = document.querySelectorAll('.steps li');
@@ -52,26 +52,26 @@ function initStickyPhone() {
   );
 
   //Kids wrapper scroll anim
-  // gsap.fromTo(
-  //   kidsWrapper,
-  //   {
-  //     x: 0,
-  //   },
-  //   {
-  //     x: 0,
-  //     scrollTrigger: {
-  //       trigger: phonesWrapper,
-  //       start: `${stepsReact[0].height}-=250px center`,
-  //       end: `${phoneWrapDesctination} center`,
-  //       scrub: 0.5,
-  //       // markers: true,
-  //       pin: kidsWrapper,
-  //       onEnter: () => {
-  //         kidsAnimation[0].play()
-  //       }
-  //     },
-  //   }
-  // );
+  gsap.fromTo(
+    kidsWrapper,
+    {
+      x: 0,
+    },
+    {
+      x: 0,
+      scrollTrigger: {
+        trigger: phonesWrapper,
+        start: `${stepsReact[0].height}-=250px center`,
+        end: `${phoneWrapDesctination} center`,
+        scrub: 0.5,
+        // markers: true,
+        pin: kidsWrapper,
+        onEnter: () => {
+          kidsAnimation[0].play()
+        }
+      },
+    }
+  );
 
   // Content images scroll anim
   phoneImgs.forEach((img, ind) => {
@@ -96,21 +96,21 @@ function initStickyPhone() {
             onUpdate: (self) => {
               const filterValue = self.progress.toFixed(3) * 20;
               phoneImgs[ind - 1].style.filter = `blur(${filterValue}px)`;
-              // if(self.progress < 0.1) {
-              //   kidsAnimation[ind].pause();
-              // } else {
-              //   if(kidsAnimation[ind].isPaused) {
-              //     kidsAnimation[ind].play();
-              //   } 
-              // }
+              if(self.progress < 0.1) {
+                kidsAnimation[ind].pause();
+              } else {
+                if(kidsAnimation[ind].isPaused) {
+                  kidsAnimation[ind].play();
+                } 
+              }
             },
-            // onLeave: (self) => {
-            //   kidsAnimation[ind].play();
-            //   kidsAnimation[ind-1].pause();
-            // },
-            // onEnterBack: () => {
-            //   kidsAnimation[ind-1].play();
-            // }
+            onLeave: (self) => {
+              kidsAnimation[ind].play();
+              kidsAnimation[ind-1].pause();
+            },
+            onEnterBack: () => {
+              kidsAnimation[ind-1].play();
+            }
           },
         }
       )
@@ -155,30 +155,30 @@ function initStickyPhone() {
   // });
 }
 
-// const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
-//   let animLoadCounter = 0;
-//   let totalDuration = 0;
-//   const anim = bodymovin.loadAnimation({
-//     container: document.getElementById(`${elem}_${ind + 1}`),
-//     path: `./files/anim_${ind + 1}.json`,
-//     render: "svg",
-//     loop: true,
-//     autoplay: false,
-//   });
-//   anim.addEventListener("DOMLoaded", () => {
-//     animLoadCounter += 1;
-//     anim.stop();
-//     if (animLoadCounter === arr.length) {
-//       totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
-//         cur.onComplete = () => {
-//           // anim complete cb
-//         };
-//         return (prev += cur.getDuration());
-//       }, 0);
-//     }
-//   });
-//   return anim;
-// });
+const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
+  let animLoadCounter = 0;
+  let totalDuration = 0;
+  const anim = bodymovin.loadAnimation({
+    container: document.getElementById(`${elem}_${ind + 1}`),
+    path: `./files/anim_${ind + 1}.json`,
+    render: "svg",
+    loop: true,
+    autoplay: false,
+  });
+  anim.addEventListener("DOMLoaded", () => {
+    animLoadCounter += 1;
+    anim.stop();
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
+        cur.onComplete = () => {
+          // anim complete cb
+        };
+        return (prev += cur.getDuration());
+      }, 0);
+    }
+  });
+  return anim;
+});
 
 function callback(entries, observer) {
   entries.forEach((entry) => {
@@ -196,4 +196,4 @@ function createObserver(target, callback) {
   observer.observe(target);
 }
 
-// createObserver(document.querySelector('#kids_anim_1'), callback);
+createObserver(document.querySelector('#kids_anim_1'), callback);

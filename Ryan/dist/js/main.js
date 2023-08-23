@@ -19,9 +19,9 @@ window.addEventListener("load", function (event) {
 function initStickyPhone() {
   var startSection = document.querySelector(".phone-section");
   var phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
-  var phoneContent = phonesWrapper.querySelector('.sticky-phones-content'); // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
-  // const kidsContent = startSection.querySelector('.sticky-kids-content');
-
+  var phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
+  var kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  var kidsContent = startSection.querySelector('.sticky-kids-content');
   var phoneImgs = phoneContent.querySelectorAll('img'); // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
 
   var steps = document.querySelectorAll('.steps li');
@@ -60,27 +60,23 @@ function initStickyPhone() {
       }
     }
   }); //Kids wrapper scroll anim
-  // gsap.fromTo(
-  //   kidsWrapper,
-  //   {
-  //     x: 0,
-  //   },
-  //   {
-  //     x: 0,
-  //     scrollTrigger: {
-  //       trigger: phonesWrapper,
-  //       start: `${stepsReact[0].height}-=250px center`,
-  //       end: `${phoneWrapDesctination} center`,
-  //       scrub: 0.5,
-  //       // markers: true,
-  //       pin: kidsWrapper,
-  //       onEnter: () => {
-  //         kidsAnimation[0].play()
-  //       }
-  //     },
-  //   }
-  // );
-  // Content images scroll anim
+
+  gsap.fromTo(kidsWrapper, {
+    x: 0
+  }, {
+    x: 0,
+    scrollTrigger: {
+      trigger: phonesWrapper,
+      start: "".concat(stepsReact[0].height, "-=250px center"),
+      end: "".concat(phoneWrapDesctination, " center"),
+      scrub: 0.5,
+      // markers: true,
+      pin: kidsWrapper,
+      onEnter: function onEnter() {
+        kidsAnimation[0].play();
+      }
+    }
+  }); // Content images scroll anim
 
   phoneImgs.forEach(function (img, ind) {
     if (ind > 0) {
@@ -100,21 +96,23 @@ function initStickyPhone() {
           // markers: true,
           onUpdate: function onUpdate(self) {
             var filterValue = self.progress.toFixed(3) * 20;
-            phoneImgs[ind - 1].style.filter = "blur(".concat(filterValue, "px)"); // if(self.progress < 0.1) {
-            //   kidsAnimation[ind].pause();
-            // } else {
-            //   if(kidsAnimation[ind].isPaused) {
-            //     kidsAnimation[ind].play();
-            //   } 
-            // }
-          } // onLeave: (self) => {
-          //   kidsAnimation[ind].play();
-          //   kidsAnimation[ind-1].pause();
-          // },
-          // onEnterBack: () => {
-          //   kidsAnimation[ind-1].play();
-          // }
+            phoneImgs[ind - 1].style.filter = "blur(".concat(filterValue, "px)");
 
+            if (self.progress < 0.1) {
+              kidsAnimation[ind].pause();
+            } else {
+              if (kidsAnimation[ind].isPaused) {
+                kidsAnimation[ind].play();
+              }
+            }
+          },
+          onLeave: function onLeave(self) {
+            kidsAnimation[ind].play();
+            kidsAnimation[ind - 1].pause();
+          },
+          onEnterBack: function onEnterBack() {
+            kidsAnimation[ind - 1].play();
+          }
         }
       });
     }
@@ -154,31 +152,33 @@ function initStickyPhone() {
   //     )
   //   }
   // });
-} // const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
-//   let animLoadCounter = 0;
-//   let totalDuration = 0;
-//   const anim = bodymovin.loadAnimation({
-//     container: document.getElementById(`${elem}_${ind + 1}`),
-//     path: `./files/anim_${ind + 1}.json`,
-//     render: "svg",
-//     loop: true,
-//     autoplay: false,
-//   });
-//   anim.addEventListener("DOMLoaded", () => {
-//     animLoadCounter += 1;
-//     anim.stop();
-//     if (animLoadCounter === arr.length) {
-//       totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
-//         cur.onComplete = () => {
-//           // anim complete cb
-//         };
-//         return (prev += cur.getDuration());
-//       }, 0);
-//     }
-//   });
-//   return anim;
-// });
+}
 
+var kidsAnimation = new Array(5).fill('kids_anim').map(function (elem, ind, arr) {
+  var animLoadCounter = 0;
+  var totalDuration = 0;
+  var anim = bodymovin.loadAnimation({
+    container: document.getElementById("".concat(elem, "_").concat(ind + 1)),
+    path: "./files/anim_".concat(ind + 1, ".json"),
+    render: "svg",
+    loop: true,
+    autoplay: false
+  });
+  anim.addEventListener("DOMLoaded", function () {
+    animLoadCounter += 1;
+    anim.stop();
+
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
+        cur.onComplete = function () {// anim complete cb
+        };
+
+        return prev += cur.getDuration();
+      }, 0);
+    }
+  });
+  return anim;
+});
 
 function callback(entries, observer) {
   entries.forEach(function (entry) {
@@ -195,5 +195,7 @@ function createObserver(target, callback) {
   };
   var observer = new IntersectionObserver(callback, options);
   observer.observe(target);
-} // createObserver(document.querySelector('#kids_anim_1'), callback);
+}
+
+createObserver(document.querySelector('#kids_anim_1'), callback);
 //# sourceMappingURL=main.js.map
