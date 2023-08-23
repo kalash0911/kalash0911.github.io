@@ -117,7 +117,7 @@ function initStickyPhone() {
     }
   });
 
-   // Kids anim scroll sticky
+  // Kids anim scroll sticky
   //  kidsElements.forEach((el, ind) => {
   //   if (ind > 0) {
   //     gsap.fromTo(

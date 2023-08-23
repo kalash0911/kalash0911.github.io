@@ -561,7 +561,8 @@ input[type='submit'] {
     color: #212121;
     font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 36px;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-right: 95px; }
   #header .menu {
     display: -ms-flexbox;
     display: flex;
@@ -675,6 +676,7 @@ body {
     .main-section {
       padding: 85px 0 40px 0; } }
   .main-section .qr-img {
+    width: 200px;
     margin-bottom: 20px; }
   .main-section .qr-text {
     max-width: 130px;
@@ -1238,9 +1240,14 @@ body {
     font-weight: 500;
     line-height: 124%;
     margin-bottom: 14px; }
-  @media (max-width: 479px) {
-    .now-section .qr-code {
-      display: none; } }
+    @media (max-width: 479px) {
+      .now-section .or {
+        display: none; } }
+  .now-section .qr-code {
+    width: 200px; }
+    @media (max-width: 479px) {
+      .now-section .qr-code {
+        display: none; } }
 
 #footer {
   background: #2A2827;

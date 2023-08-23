@@ -99,6 +99,7 @@ body {
     }
 
     .qr-img {
+        width: 200px;
         margin-bottom: 20px;
     }
 
@@ -644,9 +645,15 @@ body {
         font-weight: 500;
         line-height: 124%;
         margin-bottom: 14px;
+
+        @include media('<phone') {
+            display: none;
+        }
     }
 
     .qr-code {
+        width: 200px;
+
         @include media('<phone') {
             display: none;
         }
