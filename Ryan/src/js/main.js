@@ -182,7 +182,7 @@ const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
   return anim;
 });
 
-const mobilePhoneAnimation = new Array(1).fill('mob_phone').map((elem, ind, arr) => {
+const mobilePhoneAnimation = new Array(5).fill('mob_phone').map((elem, ind, arr) => {
   let animLoadCounter = 0;
   let totalDuration = 0;
   const anim = bodymovin.loadAnimation({

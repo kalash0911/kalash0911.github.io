@@ -96,23 +96,21 @@ function initStickyPhone() {
           // markers: true,
           onUpdate: function onUpdate(self) {
             var filterValue = self.progress.toFixed(3) * 20;
-            phoneImgs[ind - 1].style.filter = "blur(".concat(filterValue, "px)");
+            phoneImgs[ind - 1].style.filter = "blur(".concat(filterValue, "px)"); // if(self.progress < 0.1) {
+            //   kidsAnimation[ind].pause();
+            // } else {
+            //   if(kidsAnimation[ind].isPaused) {
+            //     kidsAnimation[ind].play();
+            //   } 
+            // }
+          } // onLeave: (self) => {
+          //   kidsAnimation[ind].play();
+          //   kidsAnimation[ind-1].pause();
+          // },
+          // onEnterBack: () => {
+          //   kidsAnimation[ind-1].play();
+          // }
 
-            if (self.progress < 0.1) {
-              kidsAnimation[ind].pause();
-            } else {
-              if (kidsAnimation[ind].isPaused) {
-                kidsAnimation[ind].play();
-              }
-            }
-          },
-          onLeave: function onLeave(self) {
-            kidsAnimation[ind].play();
-            kidsAnimation[ind - 1].pause();
-          },
-          onEnterBack: function onEnterBack() {
-            kidsAnimation[ind - 1].play();
-          }
         }
       });
     }
@@ -162,11 +160,38 @@ var kidsAnimation = new Array(5).fill('kids_anim').map(function (elem, ind, arr)
     path: "./files/anim_".concat(ind + 1, ".json"),
     render: "svg",
     loop: true,
-    autoplay: false
+    autoplay: true
   });
   anim.addEventListener("DOMLoaded", function () {
     animLoadCounter += 1;
-    anim.stop();
+
+    if (ind === 0) {
+      anim.stop();
+    }
+
+    if (animLoadCounter === arr.length) {
+      totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
+        cur.onComplete = function () {// anim complete cb
+        };
+
+        return prev += cur.getDuration();
+      }, 0);
+    }
+  });
+  return anim;
+});
+var mobilePhoneAnimation = new Array(5).fill('mob_phone').map(function (elem, ind, arr) {
+  var animLoadCounter = 0;
+  var totalDuration = 0;
+  var anim = bodymovin.loadAnimation({
+    container: document.getElementById("".concat(elem, "_").concat(ind + 1)),
+    path: "./files/mob_phone_".concat(ind + 1, ".json"),
+    render: "svg",
+    loop: true,
+    autoplay: true
+  });
+  anim.addEventListener("DOMLoaded", function () {
+    animLoadCounter += 1; // anim.stop();
 
     if (animLoadCounter === arr.length) {
       totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
