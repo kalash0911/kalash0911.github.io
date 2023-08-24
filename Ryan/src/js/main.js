@@ -1,13 +1,15 @@
 window.addEventListener("load", (event) => {
-  initStickyPhone();
+  if(window.innerWidth >= 1200) {
+    initStickyPhone();
+  }
 });
 
 function initStickyPhone() {
   const startSection = document.querySelector(".phone-section");
   const phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
   const phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
-  const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
-  const kidsContent = startSection.querySelector('.sticky-kids-content');
+  // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  // const kidsContent = startSection.querySelector('.sticky-kids-content');
   const phoneImgs = phoneContent.querySelectorAll('img');
   // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
   const steps = document.querySelectorAll('.steps li');
@@ -52,26 +54,26 @@ function initStickyPhone() {
   );
 
   //Kids wrapper scroll anim
-  gsap.fromTo(
-    kidsWrapper,
-    {
-      x: 0,
-    },
-    {
-      x: 0,
-      scrollTrigger: {
-        trigger: phonesWrapper,
-        start: `${stepsReact[0].height}-=250px center`,
-        end: `${phoneWrapDesctination} center`,
-        scrub: 0.5,
-        // markers: true,
-        pin: kidsWrapper,
-        onEnter: () => {
-          kidsAnimation[0].play()
-        }
-      },
-    }
-  );
+  // gsap.fromTo(
+  //   kidsWrapper,
+  //   {
+  //     x: 0,
+  //   },
+  //   {
+  //     x: 0,
+  //     scrollTrigger: {
+  //       trigger: phonesWrapper,
+  //       start: `${stepsReact[0].height}-=250px center`,
+  //       end: `${phoneWrapDesctination} center`,
+  //       scrub: 0.5,
+  //       // markers: true,
+  //       pin: kidsWrapper,
+  //       onEnter: () => {
+  //         kidsAnimation[0].play()
+  //       }
+  //     },
+  //   }
+  // );
 
   // Content images scroll anim
   phoneImgs.forEach((img, ind) => {
@@ -155,65 +157,68 @@ function initStickyPhone() {
   // });
 }
 
+let kidsAnimLoadCounter = 0;
+let kidsTotalDuration = 0;
 const kidsAnimation = new Array(5).fill('kids_anim').map((elem, ind, arr) => {
-  let animLoadCounter = 0;
-  let totalDuration = 0;
   const anim = bodymovin.loadAnimation({
     container: document.getElementById(`${elem}_${ind + 1}`),
     path: `./files/anim_${ind + 1}.json`,
     render: "svg",
     loop: true,
-    autoplay: true,
+    autoplay: false,
   });
   anim.addEventListener("DOMLoaded", () => {
-    animLoadCounter += 1;
-    if(ind === 0) {
-      anim.stop();
-    }
-    if (animLoadCounter === arr.length) {
-      totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
+    kidsAnimLoadCounter += 1;
+    if (kidsAnimLoadCounter === arr.length) {
+      kidsTotalDuration = kidsAnimation.reduce((prev, cur, ind) => {
         cur.onComplete = () => {
           // anim complete cb
         };
         return (prev += cur.getDuration());
       }, 0);
+      intersectionCallback(kidsAnimation);
     }
   });
   return anim;
 });
 
+let mPhoneAnimLoadCounter = 0;
+let mPhoneTotalDuration = 0;
 const mobilePhoneAnimation = new Array(5).fill('mob_phone').map((elem, ind, arr) => {
-  let animLoadCounter = 0;
-  let totalDuration = 0;
   const anim = bodymovin.loadAnimation({
     container: document.getElementById(`${elem}_${ind + 1}`),
     path: `./files/mob_phone_${ind + 1}.json`,
     render: "svg",
     loop: true,
-    autoplay: true,
+    autoplay: false,
   });
   anim.addEventListener("DOMLoaded", () => {
-    animLoadCounter += 1;
-    // anim.stop();
-    if (animLoadCounter === arr.length) {
-      totalDuration = kidsAnimation.reduce((prev, cur, ind) => {
+    mPhoneAnimLoadCounter += 1;
+    if (mPhoneAnimLoadCounter === arr.length) {
+      mPhoneTotalDuration = mobilePhoneAnimation.reduce((prev, cur, ind) => {
         cur.onComplete = () => {
           // anim complete cb
         };
         return (prev += cur.getDuration());
       }, 0);
+      intersectionCallback(mobilePhoneAnimation);
     }
   });
   return anim;
 });
 
-function callback(entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      kidsAnimation[0].play();
-    }
+function intersectionCallback(animArr) {
+  document.querySelectorAll('.steps .item')?.forEach((el, ind) => {
+    createObserver(el, (entries) => {
+      if(entries[0].isIntersecting) {
+        animArr[ind]?.play();
+      } else {
+        animArr[ind]?.pause();
+      }
+    });
   });
 }
+
 function createObserver(target, callback) {
   const options = {
     root: null,
@@ -223,4 +228,10 @@ function createObserver(target, callback) {
   observer.observe(target);
 }
 
-createObserver(document.querySelector('#kids_anim_1'), callback);
+createObserver(document.querySelector('#kids_anim_1'), (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      kidsAnimation[0].play();
+    }
+  });
+});

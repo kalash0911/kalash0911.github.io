@@ -13,15 +13,17 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 window.addEventListener("load", function (event) {
-  initStickyPhone();
+  if (window.innerWidth >= 1200) {
+    initStickyPhone();
+  }
 });
 
 function initStickyPhone() {
   var startSection = document.querySelector(".phone-section");
   var phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
-  var phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
-  var kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
-  var kidsContent = startSection.querySelector('.sticky-kids-content');
+  var phoneContent = phonesWrapper.querySelector('.sticky-phones-content'); // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
+  // const kidsContent = startSection.querySelector('.sticky-kids-content');
+
   var phoneImgs = phoneContent.querySelectorAll('img'); // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
 
   var steps = document.querySelectorAll('.steps li');
@@ -60,23 +62,27 @@ function initStickyPhone() {
       }
     }
   }); //Kids wrapper scroll anim
-
-  gsap.fromTo(kidsWrapper, {
-    x: 0
-  }, {
-    x: 0,
-    scrollTrigger: {
-      trigger: phonesWrapper,
-      start: "".concat(stepsReact[0].height, "-=250px center"),
-      end: "".concat(phoneWrapDesctination, " center"),
-      scrub: 0.5,
-      // markers: true,
-      pin: kidsWrapper,
-      onEnter: function onEnter() {
-        kidsAnimation[0].play();
-      }
-    }
-  }); // Content images scroll anim
+  // gsap.fromTo(
+  //   kidsWrapper,
+  //   {
+  //     x: 0,
+  //   },
+  //   {
+  //     x: 0,
+  //     scrollTrigger: {
+  //       trigger: phonesWrapper,
+  //       start: `${stepsReact[0].height}-=250px center`,
+  //       end: `${phoneWrapDesctination} center`,
+  //       scrub: 0.5,
+  //       // markers: true,
+  //       pin: kidsWrapper,
+  //       onEnter: () => {
+  //         kidsAnimation[0].play()
+  //       }
+  //     },
+  //   }
+  // );
+  // Content images scroll anim
 
   phoneImgs.forEach(function (img, ind) {
     if (ind > 0) {
@@ -152,64 +158,72 @@ function initStickyPhone() {
   // });
 }
 
+var kidsAnimLoadCounter = 0;
+var kidsTotalDuration = 0;
 var kidsAnimation = new Array(5).fill('kids_anim').map(function (elem, ind, arr) {
-  var animLoadCounter = 0;
-  var totalDuration = 0;
   var anim = bodymovin.loadAnimation({
     container: document.getElementById("".concat(elem, "_").concat(ind + 1)),
     path: "./files/anim_".concat(ind + 1, ".json"),
     render: "svg",
     loop: true,
-    autoplay: true
+    autoplay: false
   });
   anim.addEventListener("DOMLoaded", function () {
-    animLoadCounter += 1;
+    kidsAnimLoadCounter += 1;
 
-    if (ind === 0) {
-      anim.stop();
-    }
-
-    if (animLoadCounter === arr.length) {
-      totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
+    if (kidsAnimLoadCounter === arr.length) {
+      kidsTotalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
         cur.onComplete = function () {// anim complete cb
         };
 
         return prev += cur.getDuration();
       }, 0);
+      intersectionCallback(kidsAnimation);
     }
   });
   return anim;
 });
+var mPhoneAnimLoadCounter = 0;
+var mPhoneTotalDuration = 0;
 var mobilePhoneAnimation = new Array(5).fill('mob_phone').map(function (elem, ind, arr) {
-  var animLoadCounter = 0;
-  var totalDuration = 0;
   var anim = bodymovin.loadAnimation({
     container: document.getElementById("".concat(elem, "_").concat(ind + 1)),
     path: "./files/mob_phone_".concat(ind + 1, ".json"),
     render: "svg",
     loop: true,
-    autoplay: true
+    autoplay: false
   });
   anim.addEventListener("DOMLoaded", function () {
-    animLoadCounter += 1; // anim.stop();
+    mPhoneAnimLoadCounter += 1;
 
-    if (animLoadCounter === arr.length) {
-      totalDuration = kidsAnimation.reduce(function (prev, cur, ind) {
+    if (mPhoneAnimLoadCounter === arr.length) {
+      mPhoneTotalDuration = mobilePhoneAnimation.reduce(function (prev, cur, ind) {
         cur.onComplete = function () {// anim complete cb
         };
 
         return prev += cur.getDuration();
       }, 0);
+      intersectionCallback(mobilePhoneAnimation);
     }
   });
   return anim;
 });
 
-function callback(entries, observer) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      kidsAnimation[0].play();
-    }
+function intersectionCallback(animArr) {
+  var _document$querySelect;
+
+  (_document$querySelect = document.querySelectorAll('.steps .item')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.forEach(function (el, ind) {
+    createObserver(el, function (entries) {
+      if (entries[0].isIntersecting) {
+        var _animArr$ind;
+
+        (_animArr$ind = animArr[ind]) === null || _animArr$ind === void 0 ? void 0 : _animArr$ind.play();
+      } else {
+        var _animArr$ind2;
+
+        (_animArr$ind2 = animArr[ind]) === null || _animArr$ind2 === void 0 ? void 0 : _animArr$ind2.pause();
+      }
+    });
   });
 }
 
@@ -222,5 +236,11 @@ function createObserver(target, callback) {
   observer.observe(target);
 }
 
-createObserver(document.querySelector('#kids_anim_1'), callback);
+createObserver(document.querySelector('#kids_anim_1'), function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      kidsAnimation[0].play();
+    }
+  });
+});
 //# sourceMappingURL=main.js.map
