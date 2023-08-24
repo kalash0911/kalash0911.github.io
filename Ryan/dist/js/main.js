@@ -235,12 +235,4 @@ function createObserver(target, callback) {
   var observer = new IntersectionObserver(callback, options);
   observer.observe(target);
 }
-
-createObserver(document.querySelector('#kids_anim_1'), function (entries) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      kidsAnimation[0].play();
-    }
-  });
-});
 //# sourceMappingURL=main.js.map

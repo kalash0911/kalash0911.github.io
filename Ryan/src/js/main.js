@@ -227,11 +227,3 @@ function createObserver(target, callback) {
   const observer = new IntersectionObserver(callback, options);
   observer.observe(target);
 }
-
-createObserver(document.querySelector('#kids_anim_1'), (entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      kidsAnimation[0].play();
-    }
-  });
-});
