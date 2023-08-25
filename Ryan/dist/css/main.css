@@ -559,7 +559,7 @@ input[type='submit'] {
     gap: 30px; }
   #header .logo {
     color: #212121;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 36px;
     font-weight: 600;
     margin-right: 95px; }
@@ -689,7 +689,7 @@ body {
   .main-section .main-title {
     margin-bottom: 16px;
     color: #2A2827;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     /* Только если меньше контейнера */
     font-size: 78px;
     font-weight: 600;
@@ -1011,7 +1011,7 @@ body {
         font-size: 14px; } }
   .phone-section .title {
     color: #161613;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 52px;
     font-weight: 700;
     line-height: 113%;
@@ -1118,7 +1118,7 @@ body {
   .form-section .title {
     color: #fff;
     text-align: center;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     line-height: 140%;
     text-transform: capitalize;
@@ -1142,7 +1142,7 @@ body {
     margin: 0 auto; }
   .form-section .label {
     color: #fff;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 125%; }
@@ -1177,7 +1177,7 @@ body {
     border-radius: 100px;
     border: 1px dashed #FAF5EA;
     background-color: #CF7C58;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -1214,7 +1214,7 @@ body {
     z-index: 1; }
   .now-section .title {
     color: #2A2827;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     /* Только если меньше контейнера */
     font-size: 56px;
     font-weight: 600;
@@ -1278,7 +1278,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
   #footer .logo {
     color: #fff;
-    font-family: "Recoleta", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 36px;
     font-weight: 600;
     margin: 0; }
