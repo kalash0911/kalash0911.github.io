@@ -429,8 +429,13 @@ body {
         }
     }
 
+    .kids-wrap {
+        overflow: hidden;
+    }
+
     .kids {
         width: 460px;
+        margin: -5px;
         
         @include media('<widescreen') {
             position: absolute;

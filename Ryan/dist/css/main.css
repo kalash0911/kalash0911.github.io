@@ -1070,8 +1070,11 @@ body {
       transform: translate(-50%, -50%);
       width: 210px;
       border-radius: 25px; }
+  .phone-section .kids-wrap {
+    overflow: hidden; }
   .phone-section .kids {
-    width: 460px; }
+    width: 460px;
+    margin: -5px; }
     @media (max-width: 1199px) {
       .phone-section .kids {
         position: absolute;
