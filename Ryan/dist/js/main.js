@@ -24,7 +24,7 @@ function initStickyPhone() {
   var phoneContent = phonesWrapper.querySelector('.sticky-phones-content'); // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
   // const kidsContent = startSection.querySelector('.sticky-kids-content');
 
-  var phoneImgs = phoneContent.querySelectorAll('img'); // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
+  var phoneImgs = phoneContent.querySelectorAll('.img-step'); // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
 
   var steps = document.querySelectorAll('.steps li');
 

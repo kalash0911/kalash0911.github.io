@@ -301,7 +301,7 @@ body {
             position: relative;
             flex-direction: column;
             text-align: center;
-            padding: 30px 0 235px 0;
+            padding: 30px 0;
         }
     }
 
@@ -401,6 +401,7 @@ body {
 
         @include media('<phone') {
             margin: 0;
+            width: 234px;
         }
 
         &::after {
@@ -423,27 +424,42 @@ body {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 210px;
+            transform: translate(-50%, -50%);        
+            min-width: 274px;
             border-radius: 25px;
+
+            @include media('<phone') {
+                left: 12px;
+                transform: translateY(-50%);
+                width: 210px;
+                min-width: 0;
+            }
         }
     }
 
     .kids-wrap {
         overflow: hidden;
+        width: 460px;
+
+        @include media('<widescreen') {
+            width: 270px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        @include media('<phone') {
+            justify-content: flex-end;
+            width: 100%;
+        }
     }
 
     .kids {
-        width: 460px;
-        margin: -5px;
-        
+        width: 100%;
+        margin: -10px;
+
         @include media('<widescreen') {
-            position: absolute;
-            left: 60%;
-            bottom: 0px;
-            transform: translate(-50%);
-            width: 270px;
-            z-index: 5;
+            width: 280px;
         }
     }
 

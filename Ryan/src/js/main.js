@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-  if(window.innerWidth >= 1200) {
+  if (window.innerWidth >= 1200) {
     initStickyPhone();
   }
 });
@@ -10,7 +10,7 @@ function initStickyPhone() {
   const phoneContent = phonesWrapper.querySelector('.sticky-phones-content');
   // const kidsWrapper = startSection.querySelector('.sticky-kids-wrapper');
   // const kidsContent = startSection.querySelector('.sticky-kids-content');
-  const phoneImgs = phoneContent.querySelectorAll('img');
+  const phoneImgs = phoneContent.querySelectorAll('.img-step');
   // const kidsElements = kidsContent.querySelectorAll('[id*=kids_anim]');
   const steps = document.querySelectorAll('.steps li');
   const stepsReact = [...steps].reduce((prev, cur, ind) => {
@@ -210,7 +210,7 @@ let mPhoneTotalDuration = 0;
 function intersectionCallback(animArr) {
   document.querySelectorAll('.steps .item')?.forEach((el, ind) => {
     createObserver(el, (entries) => {
-      if(entries[0].isIntersecting) {
+      if (entries[0].isIntersecting) {
         animArr[ind]?.play();
       } else {
         animArr[ind]?.pause();
