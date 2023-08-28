@@ -303,6 +303,13 @@ body {
             text-align: center;
             padding: 30px 0;
         }
+
+        &:last-child {
+
+            .kids {
+                margin: 0;
+            }
+        }
     }
 
     .description {
