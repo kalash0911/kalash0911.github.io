@@ -386,22 +386,13 @@ body {
         position: relative;
         display: none;
         margin: 0 auto;
-        width: 100%;
-        z-index: 1;
-        max-width: 305px;
-        overflow: hidden;
-
-        [id*="mob_phone"] {
-            margin-top: -1px;
-        }
 
         @include media('<widescreen') {
-            display: block;
+            display: flex;
         }
 
         @include media('<phone') {
             margin: 0;
-            width: 234px;
         }
 
         &::after {
@@ -414,26 +405,13 @@ body {
             background: linear-gradient(0deg, #F4E7D0 15.10%, rgba(244, 231, 208, 0.00) 100%);
             z-index: 2;
         }
+    }
 
-        .iphone_mockup {
-            position: relative;
-            z-index: 1;
-        }
+    .img-step-mob {
+        width: 400px;
 
-        .img-step {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);        
-            min-width: 274px;
-            border-radius: 25px;
-
-            @include media('<phone') {
-                left: 12px;
-                transform: translateY(-50%);
-                width: 210px;
-                min-width: 0;
-            }
+        @include media('<tablet') {
+            width: 290px;
         }
     }
 
