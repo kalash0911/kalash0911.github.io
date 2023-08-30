@@ -693,10 +693,10 @@ body {
     /* Только если меньше контейнера */
     font-size: 78px;
     font-weight: 600;
-    line-height: 92%; }
+    line-height: 130%; }
     @media (max-width: 1320px) {
       .main-section .main-title {
-        font-size: calc(28px + 50 * ((100vw - calc(320px)) / 1000)); } }
+        font-size: calc(26px + 52 * ((100vw - calc(320px)) / 1000)); } }
   .main-section .text {
     max-width: 600px;
     margin: 0 auto;
