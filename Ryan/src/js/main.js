@@ -1,8 +1,8 @@
-window.addEventListener("load", (event) => {
-  if (window.innerWidth >= 1200) {
-    initStickyPhone();
-  }
-});
+// window.addEventListener("load", (event) => {
+//   if (window.innerWidth >= 1200) {
+//     initStickyPhone();
+//   }
+// });
 
 function initStickyPhone() {
   const startSection = document.querySelector(".phone-section");

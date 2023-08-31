@@ -12,12 +12,11 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-window.addEventListener("load", function (event) {
-  if (window.innerWidth >= 1200) {
-    initStickyPhone();
-  }
-});
-
+// window.addEventListener("load", (event) => {
+//   if (window.innerWidth >= 1200) {
+//     initStickyPhone();
+//   }
+// });
 function initStickyPhone() {
   var startSection = document.querySelector(".phone-section");
   var phonesWrapper = startSection.querySelector('.sticky-phones-wrapper');
