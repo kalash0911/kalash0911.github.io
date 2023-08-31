@@ -1039,7 +1039,8 @@ body {
   .phone-section .mob-anim {
     position: relative;
     display: none;
-    margin: 0 auto; }
+    margin: 0 auto;
+    overflow: hidden; }
     @media (max-width: 1199px) {
       .phone-section .mob-anim {
         display: -ms-flexbox;
@@ -1060,13 +1061,14 @@ body {
     width: 400px; }
     @media (max-width: 767px) {
       .phone-section .img-step-mob {
-        width: 290px; } }
+        width: 290px;
+        margin-bottom: -10px; } }
   .phone-section .kids-wrap {
     overflow: hidden;
     width: 460px; }
     @media (max-width: 1199px) {
       .phone-section .kids-wrap {
-        width: 270px;
+        width: 265px;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: center;
@@ -1076,10 +1078,10 @@ body {
       .phone-section .kids-wrap {
         -ms-flex-pack: end;
         justify-content: flex-end;
-        width: 100%; } }
+        margin: 0 0 0 auto; } }
   .phone-section .kids {
     width: 100%;
-    margin: -12px; }
+    margin: -10px; }
     @media (max-width: 1199px) {
       .phone-section .kids {
         width: 280px; } }

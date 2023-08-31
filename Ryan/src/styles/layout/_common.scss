@@ -393,6 +393,7 @@ body {
         position: relative;
         display: none;
         margin: 0 auto;
+        overflow: hidden;
 
         @include media('<widescreen') {
             display: flex;
@@ -419,6 +420,7 @@ body {
 
         @include media('<tablet') {
             width: 290px;
+            margin-bottom: -10px;
         }
     }
 
@@ -427,7 +429,7 @@ body {
         width: 460px;
 
         @include media('<widescreen') {
-            width: 270px;
+            width: 265px;
             display: flex;
             justify-content: center;
             margin: 0 auto;
@@ -435,13 +437,13 @@ body {
 
         @include media('<phone') {
             justify-content: flex-end;
-            width: 100%;
+            margin: 0 0 0 auto;
         }
     }
 
     .kids {
         width: 100%;
-        margin: -12px;
+        margin: -10px;
 
         @include media('<widescreen') {
             width: 280px;
