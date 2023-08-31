@@ -964,11 +964,14 @@ body {
   .phone-section .item {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 200px 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    gap: 20px; }
     @media (max-width: 1199px) {
       .phone-section .item {
         position: relative;
@@ -976,6 +979,10 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 30px 0; } }
+    @media (max-width: 479px) {
+      .phone-section .item {
+        -ms-flex-align: start;
+        align-items: flex-start; } }
     .phone-section .item:last-child .kids {
       margin: 0; }
   .phone-section .description {
@@ -989,8 +996,6 @@ body {
         width: 100%;
         max-width: 100%;
         margin-bottom: 24px; } }
-  .phone-section [id*="kids_anim"] {
-    max-width: 450px; }
   .phone-section .stiker {
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -1036,6 +1041,25 @@ body {
     @media (max-width: 479px) {
       .phone-section .text {
         font-size: 14px; } }
+  .phone-section .anim {
+    position: relative;
+    width: 290px;
+    overflow: hidden;
+    border-radius: 60px; }
+    @media (max-width: 1199px) {
+      .phone-section .anim {
+        display: none; } }
+  .phone-section .iphone_mockup {
+    position: relative;
+    z-index: 1; }
+  .phone-section .img-step {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 265px; }
   .phone-section .mob-anim {
     position: relative;
     display: none;
@@ -1085,32 +1109,6 @@ body {
     @media (max-width: 1199px) {
       .phone-section .kids {
         width: 280px; } }
-  .phone-section .sticky-phones-wrapper {
-    position: absolute;
-    width: 285px;
-    top: 0;
-    right: calc(5% + 467px);
-    z-index: 2; }
-    @media (max-width: 1199px) {
-      .phone-section .sticky-phones-wrapper {
-        display: none; } }
-  .phone-section .iphone_mockup {
-    position: relative;
-    z-index: 100; }
-  .phone-section .sticky-phones-content {
-    position: absolute;
-    top: 9px;
-    left: 11px;
-    right: 11px;
-    bottom: 3px;
-    overflow: hidden;
-    border-radius: 38px; }
-  .phone-section .img-step {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    max-width: 265px; }
 
 /* ------------------- form-section ----------------*/
 .form-section {
