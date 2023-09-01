@@ -1867,7 +1867,7 @@ body {
     align-items: flex-start;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-  .privileges_page .tabs {
+  .privileges_page .tabsNav {
     width: 35%; }
   .privileges_page .tab_title {
     color: #1D1D1B;

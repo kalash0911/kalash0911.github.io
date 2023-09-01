@@ -173,7 +173,7 @@ function findHref() {
 
 
 ScrollTrigger.create({
-    trigger: ".tabs",
+    trigger: ".tabsNav",
     toggleClass: "active_scrollMenu",
     start: "top top+=20px",
     endTrigger: "#footer",
