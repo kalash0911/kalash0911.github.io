@@ -693,10 +693,10 @@ body {
     /* Только если меньше контейнера */
     font-size: 78px;
     font-weight: 600;
-    line-height: 92%; }
+    line-height: 130%; }
     @media (max-width: 1320px) {
       .main-section .main-title {
-        font-size: calc(28px + 50 * ((100vw - calc(320px)) / 1000)); } }
+        font-size: calc(26px + 52 * ((100vw - calc(320px)) / 1000)); } }
   .main-section .text {
     max-width: 600px;
     margin: 0 auto;
@@ -964,11 +964,14 @@ body {
   .phone-section .item {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 200px 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    gap: 20px; }
     @media (max-width: 1199px) {
       .phone-section .item {
         position: relative;
@@ -976,6 +979,12 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 30px 0; } }
+    @media (max-width: 479px) {
+      .phone-section .item {
+        -ms-flex-align: start;
+        align-items: flex-start; } }
+    .phone-section .item:last-child .kids {
+      margin: 0; }
   .phone-section .description {
     width: 50%;
     max-width: 460px; }
@@ -987,8 +996,6 @@ body {
         width: 100%;
         max-width: 100%;
         margin-bottom: 24px; } }
-  .phone-section [id*="kids_anim"] {
-    max-width: 450px; }
   .phone-section .stiker {
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -1034,23 +1041,37 @@ body {
     @media (max-width: 479px) {
       .phone-section .text {
         font-size: 14px; } }
+  .phone-section .anim {
+    position: relative;
+    width: 290px;
+    overflow: hidden;
+    border-radius: 60px; }
+    @media (max-width: 1199px) {
+      .phone-section .anim {
+        display: none; } }
+  .phone-section .iphone_mockup {
+    position: relative;
+    z-index: 1; }
+  .phone-section .img-step {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 265px; }
   .phone-section .mob-anim {
     position: relative;
     display: none;
     margin: 0 auto;
-    width: 100%;
-    z-index: 1;
-    max-width: 305px;
     overflow: hidden; }
-    .phone-section .mob-anim [id*="mob_phone"] {
-      margin-top: -1px; }
     @media (max-width: 1199px) {
       .phone-section .mob-anim {
-        display: block; } }
+        display: -ms-flexbox;
+        display: flex; } }
     @media (max-width: 479px) {
       .phone-section .mob-anim {
-        margin: 0;
-        width: 234px; } }
+        margin: 0; } }
     .phone-section .mob-anim::after {
       content: '';
       position: absolute;
@@ -1058,32 +1079,20 @@ body {
       left: 0;
       width: 100%;
       height: 185px;
-      background: linear-gradient(0deg, #F4E7D0 15.1%, rgba(244, 231, 208, 0) 100%);
+      background: linear-gradient(0deg, #F6E9D0 15.1%, rgba(246, 233, 208, 0) 100%);
       z-index: 2; }
-    .phone-section .mob-anim .iphone_mockup {
-      position: relative;
-      z-index: 1; }
-    .phone-section .mob-anim .img-step {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      min-width: 274px;
-      border-radius: 25px; }
-      @media (max-width: 479px) {
-        .phone-section .mob-anim .img-step {
-          left: 12px;
-          -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-          width: 210px;
-          min-width: 0; } }
+  .phone-section .img-step-mob {
+    width: 400px; }
+    @media (max-width: 767px) {
+      .phone-section .img-step-mob {
+        width: 290px;
+        margin-bottom: -10px; } }
   .phone-section .kids-wrap {
     overflow: hidden;
     width: 460px; }
     @media (max-width: 1199px) {
       .phone-section .kids-wrap {
-        width: 270px;
+        width: 265px;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: center;
@@ -1093,39 +1102,13 @@ body {
       .phone-section .kids-wrap {
         -ms-flex-pack: end;
         justify-content: flex-end;
-        width: 100%; } }
+        margin: 0 0 0 auto; } }
   .phone-section .kids {
     width: 100%;
     margin: -10px; }
     @media (max-width: 1199px) {
       .phone-section .kids {
         width: 280px; } }
-  .phone-section .sticky-phones-wrapper {
-    position: absolute;
-    width: 285px;
-    top: 0;
-    right: calc(5% + 467px);
-    z-index: 2; }
-    @media (max-width: 1199px) {
-      .phone-section .sticky-phones-wrapper {
-        display: none; } }
-  .phone-section .iphone_mockup {
-    position: relative;
-    z-index: 100; }
-  .phone-section .sticky-phones-content {
-    position: absolute;
-    top: 9px;
-    left: 11px;
-    right: 11px;
-    bottom: 3px;
-    overflow: hidden;
-    border-radius: 38px; }
-  .phone-section .img-step {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    max-width: 265px; }
 
 /* ------------------- form-section ----------------*/
 .form-section {

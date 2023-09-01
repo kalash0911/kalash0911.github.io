@@ -117,9 +117,9 @@ body {
         margin-bottom: 16px;
         color: $black27;
         font-family: $Recoleta;
-        @include adaptiv-vaule("font-size", 78, 28, 1);
+        @include adaptiv-vaule("font-size", 78, 26, 1);
         font-weight: 600;
-        line-height: 92%;
+        line-height: 130%;
     }
 
     .text {
@@ -292,16 +292,29 @@ body {
 
     .item {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         padding: 200px 0;
         margin: 0;
         list-style: none;
+        gap: 20px;
 
         @include media('<widescreen') {
             position: relative;
             flex-direction: column;
             text-align: center;
             padding: 30px 0;
+        }
+
+        @include media('<phone') {
+            align-items: flex-start;
+        }
+
+        &:last-child {
+
+            .kids {
+                margin: 0;
+            }
         }
     }
 
@@ -319,11 +332,6 @@ body {
             margin-bottom: 24px;
         }
     }
-
-    [id*="kids_anim"] {
-        max-width: 450px;
-    }
-
 
     .stiker {
         display: inline-flex;
@@ -382,26 +390,43 @@ body {
         }
     }
 
+    .anim {
+        position: relative;
+        width: 290px;
+        overflow: hidden;
+        border-radius: 60px;
+
+        @include media('<widescreen') {
+            display: none;
+        }
+    }
+
+    .iphone_mockup {
+        position: relative;
+        z-index: 1;
+    }
+
+    .img-step {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 265px;
+    }
+
     .mob-anim {
         position: relative;
         display: none;
         margin: 0 auto;
-        width: 100%;
-        z-index: 1;
-        max-width: 305px;
         overflow: hidden;
 
-        [id*="mob_phone"] {
-            margin-top: -1px;
-        }
-
         @include media('<widescreen') {
-            display: block;
+            display: flex;
         }
 
         @include media('<phone') {
             margin: 0;
-            width: 234px;
         }
 
         &::after {
@@ -411,29 +436,17 @@ body {
             left: 0;
             width: 100%;
             height: 185px;
-            background: linear-gradient(0deg, #F4E7D0 15.10%, rgba(244, 231, 208, 0.00) 100%);
+            background: linear-gradient(0deg, #F6E9D0 15.10%, rgba(246, 233, 208, 0.00) 100%);
             z-index: 2;
         }
+    }
 
-        .iphone_mockup {
-            position: relative;
-            z-index: 1;
-        }
+    .img-step-mob {
+        width: 400px;
 
-        .img-step {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);        
-            min-width: 274px;
-            border-radius: 25px;
-
-            @include media('<phone') {
-                left: 12px;
-                transform: translateY(-50%);
-                width: 210px;
-                min-width: 0;
-            }
+        @include media('<tablet') {
+            width: 290px;
+            margin-bottom: -10px;
         }
     }
 
@@ -442,7 +455,7 @@ body {
         width: 460px;
 
         @include media('<widescreen') {
-            width: 270px;
+            width: 265px;
             display: flex;
             justify-content: center;
             margin: 0 auto;
@@ -450,7 +463,7 @@ body {
 
         @include media('<phone') {
             justify-content: flex-end;
-            width: 100%;
+            margin: 0 0 0 auto;
         }
     }
 
@@ -461,62 +474,6 @@ body {
         @include media('<widescreen') {
             width: 280px;
         }
-    }
-
-    .sticky-phones-wrapper {
-        position: absolute;
-        width: 285px;
-        top: 0;
-        right: calc(5% + 467px);
-        z-index: 2;
-
-        @include media('<widescreen') {
-            display: none;
-        }
-    }
-
-    .iphone_mockup {
-        position: relative;
-        z-index: 100;
-    }
-
-    .sticky-phones-content {
-        position: absolute;
-        top: 9px;
-        left: 11px;
-        right: 11px;
-        bottom: 3px;
-        overflow: hidden;
-        border-radius: 38px;
-    }
-
-    // .sticky-kids-wrapper {
-    //     position: absolute;
-    //     width: 467px;
-    //     top: 100px;
-    //     right: 5%;
-    // }
-
-    // .sticky-kids-content {
-    //     position: relative;
-    //     overflow: hidden;
-    // }
-
-    // [id*="kids_anim"] {
-    //     &:not(:first-of-type) {
-    //         position: absolute;
-    //         left: 0;
-    //         top: 0;
-    //         margin: -1px;
-    //     }
-    // }
-
-    .img-step {
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        max-width: 265px;
     }
 }
 
