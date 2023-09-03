@@ -99,6 +99,7 @@ html {
     }
 
     i {
+        text-transform: uppercase;
         font-style: normal;
         @include text-grad($black20, $gold6D);
     }
@@ -108,6 +109,14 @@ html {
     position: absolute;
     top: 0;
     right: 0;
+
+    @include media ("<widescreen_b") {
+        display: none;
+    }
+
+    @include media ("<tablet_b") {
+        display: block;
+    }
 }
 
 .socials {
@@ -145,11 +154,23 @@ html {
     
 }
 
+.mob {
+    display: none !important;
+
+    @include media ("<tablet_b") {
+        display: block !important;
+    }
+}
+
 /* -------------------main-section----------------- */
 
 .main-section {
     position: relative;
     padding: 160px 0 200px 0;
+
+    @include media ("<tablet_b") {
+        padding: 70px 0 40px 0;
+    }
 
     &::before {
         content:'';
@@ -183,6 +204,22 @@ html {
         word-spacing: 120px;
         @include text-grad($black21, $whiteEF);
 
+        @include media ("<widescreen_b") {
+            max-width: 70%;
+            font-size: 80px;
+            margin-bottom: 20px;
+            word-spacing: normal;
+            letter-spacing: -2.28px;
+        }
+
+        @include media ("<tablet_b") {
+            max-width: 100%;
+        }
+
+        @include media ("<tablet_b") {
+            font-size: 50px;
+        }
+
         span {
             display: block;
             transform: translateY(-30%);
@@ -190,25 +227,59 @@ html {
             letter-spacing: -1.8px;
             word-spacing: normal;
             @include text-grad($black20, $gold6D);
+
+            @include media ("<widescreen_b") {
+                transform: none;
+                font-size: 80px;
+            }
+
+            @include media ("<tablet_b") {
+                font-size: 44px;
+            }
         }
     }
 
-    .text {
+    .des {
         position: relative;
         max-width: 533px;
         margin-bottom: 40px;
         z-index: 1;
+
+        @include media ("<tablet_b") {
+            max-width: 100%;
+        }
+    }
+
+    .text {
+        margin-bottom: 8px;
+
+        @include media ("<phone") {
+            font-size: 16px;
+        }
     }
 
     .main-btn {
         position: relative;
         z-index: 1;
+
+        @include media ("<tablet_b") {
+            display: none;
+        }
     }
 
     .main-img {
         position: absolute;
         top: -25px;
         right: 27%;
+
+        @include media ("<widescreen") {
+            right: 0;
+        }
+
+        @include media ("<tablet_b") {
+            position: relative;
+            top: -90px;
+        }
 
         &::after {
             content:'';
@@ -218,6 +289,23 @@ html {
             width: 100%;
             height: 261px;
             background: linear-gradient(180deg, rgba(23, 25, 33, 0) 0%, #171921 100%);
+
+            @include media ("<tablet_b") {
+                width: 120%;
+                left: -20px;
+            }
+        }
+
+        img {
+
+            @include media ("<tablet_b") {
+                display: block;
+                margin: 0 0 0 auto;
+            }
+
+            @include media ("<phone") {
+                width: 180px;
+            }
         }
     }
 
@@ -233,6 +321,24 @@ html {
         background: linear-gradient(147deg, rgba(13, 14, 18, 0.44) 2.15%, rgba(17, 21, 32, 0.44) 93.55%);
         backdrop-filter: blur(5px);
 
+        @include media ("<widescreen") {
+            right: 20px;
+        }
+
+        @include media ("<tablet_b") {
+            right: auto;
+            left: 0;
+            top: 40%;
+            transform: translateY(-50%);
+            max-height: max-content;
+        }
+
+        @include media ("<phone") {
+            min-height: min-content;
+            max-width: 170px;
+            padding: 16px 19px 16px 24px;
+        }
+
         &::after {
             content:'';
             position: absolute;
@@ -241,6 +347,12 @@ html {
             width: 148px;
             height: 220px;
             background: radial-gradient(50% 50% at 50% 50%, #040705 0%, rgba(4, 7, 5, 0.00) 100%);
+
+            @include media ("<tablet_b") {
+                left: auto;
+                right: -25%;
+                top: 0;
+            }
         }
     }
 
@@ -253,6 +365,10 @@ html {
         letter-spacing: -0.56px;
         margin-bottom: 8px;
         z-index: 1;
+
+        @include media ("<phone") {
+            font-size: 18px;
+        }
 
         span {
             display: block;
@@ -275,6 +391,10 @@ html {
         left: -45%;
         top: 50%;
         transform: rotate(180deg);
+
+        @include media ("<tablet_b") {
+           z-index: -1;
+        }
     }
 
     .socials {
@@ -284,6 +404,10 @@ html {
         flex-direction: column;
         z-index: 2;
         gap: 90px;
+
+        @include media ("<widescreen") {
+            display: none;
+        }
     }
 
     .icon {
@@ -292,6 +416,8 @@ html {
     }
 }
 
-.sec {
+/* -------------------main-section----------------- */
+
+.find-section {
     min-height: 200vh;
 }
