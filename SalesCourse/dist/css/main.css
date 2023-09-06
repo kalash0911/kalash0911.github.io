@@ -650,10 +650,24 @@ html {
     background-clip: text;
     -webkit-text-fill-color: transparent; }
 
+.title {
+  font-family: "SF Pro Display", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 107%;
+  letter-spacing: -1.12px;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(180deg, #171921 -200%, #F2F1EF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .house-bg {
   position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  z-index: 1; }
   @media (max-width: 1299px) {
     .house-bg {
       display: none; } }
@@ -905,6 +919,35 @@ html {
 
 /* -------------------main-section----------------- */
 .find-section {
-  min-height: 200vh; }
+  position: relative;
+  padding: 100px 0 0 0; }
+  .find-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(180deg, rgba(23, 25, 33, 0) 0%, #171921 100%); }
+  .find-section .container {
+    max-width: 1332px; }
+  .find-section .mount-bg {
+    display: block;
+    margin: 0 auto; }
+  .find-section .cloud-bg {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    z-index: -1; }
+  .find-section .title {
+    text-align: left; }
+  .find-section .item-title {
+    font-family: "SF Pro Display", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 110%; }
+    .find-section .item-title span {
+      font-size: 36px; }
 
 /*# sourceMappingURL=main.css.map */
