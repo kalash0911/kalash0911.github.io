@@ -79,6 +79,37 @@ body {
     }
 }
 
+.btn-orange {
+    min-width: 216px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px;
+    border-radius: 100px;
+    background-color: $orange;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: $animation-speed;
+    border: 2px solid transparent;
+
+    &:hover {
+        color: $orange;
+        border: 2px solid $orange;
+        background-color: transparent;
+
+        svg {
+            fill: $orange;
+        }
+    }
+
+    svg {
+        fill: $white;
+        transition: $animation-speed;
+    }
+}
+
 .mob {
     display: none;
 
@@ -641,5 +672,188 @@ body {
         @include media('<phone') {
             display: none;
         }
+    }
+}
+
+/* ------------------- recent-section ----------------*/
+
+.recent-section {
+    background: $whiteEA;
+
+    &::before {
+
+        @include media('<phone') {
+            display: none;
+        }
+    }
+
+    .title {
+        margin-bottom: 60px;
+
+        @include media('<phone') {
+            margin-bottom: 32px;
+        }
+
+        span {
+            color: $orange;
+        }
+    }
+
+    .block {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 40px;
+        column-gap: 25px;
+
+        @include media('<tablet_x') {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .item {
+        width: 100%;
+        max-width: 386px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &.active {
+
+            @include media('<tablet_x') {
+
+                .box {
+                    max-height: 800px;          
+                }
+
+                .play {
+                    opacity: 0;
+                }
+    
+                .stop {
+                   opacity: 1;
+                }
+            }
+        }
+    }
+
+    .box {
+        position: relative;
+        padding: 36px 20px 60px 20px;
+        border-radius: 50px;
+        overflow: hidden;
+        margin-bottom: 24px;
+        transition: all .7s linear;
+
+        @include media('<tablet_x') {
+            max-height: 480px;
+        }
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 300px;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(33, 228, 253, 0.00) 0%, #003439 100%);
+            z-index: -1;
+        }
+
+        &::after {
+            content:'';
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(33, 228, 253, 0.00) 0%, #003439 100%);
+
+            @include media('<tablet_x') {
+                display: block;
+            }
+            
+        }
+    }
+
+    .item-title {
+        color: $whiteEA;
+        text-align: center;
+        font-family: $Recoleta;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 140%;
+        margin-bottom: 36px;
+
+        @include media('<desktop') {
+            font-size: 26px;
+        }
+    }
+
+    .img {
+        @include media('<tablet_x') {
+            display: none;
+        }
+    }
+
+    .img-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    .btn-orange {
+        position: relative;
+        min-height: 56px;
+        margin: 0 auto;
+    }
+
+    .play,
+    .stop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .stop {
+        opacity: 0;
+    }
+
+    .anim {
+        display: none;
+        position: relative;
+        width: 280px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 55px;
+
+        @include media('<tablet_x') {
+            display: block;
+            min-height: 480px;
+        }
+    }
+
+    .iphone_mockup {
+        position: relative;
+        z-index: 1;
+    }
+
+    .img-step {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 255px;
     }
 }
