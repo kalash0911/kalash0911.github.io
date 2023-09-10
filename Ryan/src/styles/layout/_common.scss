@@ -111,10 +111,25 @@ body {
     }
 
     &.mobile {
-
+        position: relative;
+        
         svg {
             fill: none;
         } 
+        
+        &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 120%;
+            width: 100%;
+            border-radius: 100px;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: all .4s;
+            box-shadow: 0 0 30px 10px #CF7C58;
+            animation: moveInBottom 5s ease-out infinite;
+        }
 
         &:hover {
             color: $white;
@@ -125,6 +140,28 @@ body {
                 fill: none;
             }
         }
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    40% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
     }
 }
 
