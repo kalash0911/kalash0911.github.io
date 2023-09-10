@@ -734,6 +734,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
         flex: 1;
+        cursor: pointer;
 
         @include media('<tablet_x') {
             max-height: 480px;
@@ -768,14 +769,14 @@ body {
 
         &:hover {
 
-            .link {
+            .over {
                 opacity: .3;
                 z-index: 1;
             }
         }
     }
 
-    .link {
+    .over {
         position: absolute;
         top: 0;
         left: 0;
@@ -795,13 +796,13 @@ body {
         color: $whiteEA;
         text-align: center;
         font-family: $Recoleta;
-        font-size: 26px;
+        font-size: 32px;
         font-weight: 700;
         line-height: 140%;
         margin-bottom: 36px;
 
         @include media('<desktop') {
-            font-size: 20px;
+            font-size: 26px;
         }
     }
 
@@ -892,7 +893,7 @@ body {
     display: none;
     justify-content: center;
     overflow-y: auto;
-    padding: 100px 0 50px 0;
+    padding: 50px 0;
 
     @include media('<tablet_x') {
         display: none;
