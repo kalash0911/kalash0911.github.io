@@ -425,6 +425,21 @@ body {
 
     .btn-orange {
 
+        &.mobile {
+            display: none;
+            @include media('<phone') {
+                display: none;
+                position: fixed;
+                bottom: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 500;
+                &.active {
+                    display: inline-flex;
+                }
+            }
+        }
+
         @include media('<phone') {
             display: none;
         }

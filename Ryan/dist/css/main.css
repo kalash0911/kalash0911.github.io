@@ -1070,6 +1070,20 @@ body {
       .phone-section .text {
         font-size: 14px;
         margin-bottom: 0; } }
+  .phone-section .btn-orange.mobile {
+    display: none; }
+    @media (max-width: 479px) {
+      .phone-section .btn-orange.mobile {
+        display: none;
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: 500; }
+        .phone-section .btn-orange.mobile.active {
+          display: -ms-inline-flexbox;
+          display: inline-flex; } }
   @media (max-width: 479px) {
     .phone-section .btn-orange {
       display: none; } }

@@ -256,4 +256,31 @@ function modal() {
     }
   }));
 }
+
+fixedDownloadBtn();
+
+function fixedDownloadBtn() {
+  const startPosEl = document.querySelector(".steps .item");
+  const endPosEl = document.querySelector(".now-section");
+  const btn = document.querySelector(".btn-orange.mobile");
+  const startPos = startPosEl.getBoundingClientRect().top + document.documentElement.scrollTop;
+  const endPos = endPosEl.getBoundingClientRect().top + document.documentElement.scrollTop;
+  document.addEventListener("scroll", e => {
+    if (window.scrollY + document.documentElement.clientHeight > startPos + startPos / 2) {
+      if (!btn.classList.contains("active")) {
+        btn.classList.add("active");
+      }
+    } else {
+      if (btn.classList.contains("active")) {
+        btn.classList.remove("active");
+      }
+    }
+
+    if (window.scrollY + document.documentElement.clientHeight > endPos + endPos / 2) {
+      if (btn.classList.contains("active")) {
+        btn.classList.remove("active");
+      }
+    }
+  });
+}
 //# sourceMappingURL=main.js.map
