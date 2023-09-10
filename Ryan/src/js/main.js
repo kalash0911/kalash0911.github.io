@@ -1,3 +1,129 @@
+class VideoPlayer {
+  constructor(query) {
+    this.videoPlayer = document.querySelector(query);
+    this.video = this.videoPlayer.querySelector(".video");
+    this.playButton = this.videoPlayer.querySelector(".play-button");
+    this.muteButton = this.videoPlayer.querySelector(".mute-button");
+    this.volume = this.videoPlayer.querySelector(".volume");
+    this.currentTimeElement = this.videoPlayer.querySelector(".current");
+    this.durationTimeElement = this.videoPlayer.querySelector(".duration");
+    this.progress = this.videoPlayer.querySelector(".video-progress");
+    this.progressBar = this.videoPlayer.querySelector(".video-progress-filled");
+
+    this.initListenPlayerBtns();
+    this.initMuteListenBtns();
+    this.initVolumeListener();
+    this.initTimeUpdateListener();
+    this.initProgressBarListener();
+    this.initProgressBarActionsListener();
+    this.initStopListener();
+  }
+
+  stop() {
+    this.video.pause();
+    this.video.currentTime = 0;
+    this.currentTimeUpdate();
+    this.progressBarUpdate();
+    this.videoPlayer.classList.remove("active");
+  }
+
+  destroy() {
+    this.playButton.removeEventListener("click", this.playBtnListener);
+    this.muteButton.removeEventListener("click", this.muteBtnsListener);
+    this.volume.removeEventListener("mousemove", this.volumeListener);
+    this.video.removeEventListener("timeupdate", this.currentTimeListener);
+    this.video.removeEventListener("timeupdate", this.progressBarListener);
+    this.progress.removeEventListener("click", this.progressBarAcrionsListener);
+    this.video.removeEventListener("ended", this.stopMediaListener);
+    this.videoPlayer = null;
+    this.video = null;
+    this.playButton = null;
+    this.muteButton = null;
+    this.volume = null;
+    this.currentTimeElement = null;
+    this.durationTimeElement = null;
+    this.progress = null;
+    this.progressBar = null;
+  }
+
+  // Init listeners
+  initListenPlayerBtns() {
+    //Play and Pause button
+    this.playButton.addEventListener("click", this.playBtnListener);
+  }
+  initMuteListenBtns() {
+    //Mute button
+    this.muteButton.addEventListener("click", this.muteBtnsListener);
+  }
+  initVolumeListener() {
+    this.volume.addEventListener("mousemove", this.volumeListener);
+  }
+  initTimeUpdateListener() {
+    this.video.addEventListener("timeupdate", this.currentTimeUpdate);
+  }
+  initProgressBarListener() {
+    this.video.addEventListener("timeupdate", this.progressBarUpdate);
+  }
+  initProgressBarActionsListener() {
+    this.progress.addEventListener("click", this.progressBarAcrionsListener);
+  }
+  initStopListener() {
+    this.video.addEventListener("ended", this.stopMediaListener);
+  }
+
+  // Event listeners
+  playBtnListener = () => {
+    if (this.video.paused) {
+      this.video.play();
+      this.videoPlayer.classList.toggle("active");
+    } else {
+      this.video.pause();
+      this.videoPlayer.classList.toggle("active");
+    }
+  };
+  muteBtnsListener = () => {
+    if (this.video.muted) {
+      this.video.muted = false;
+      this.muteButton.classList.toggle("mute");
+    } else {
+      this.video.muted = true;
+      this.muteButton.classList.toggle("mute");
+    }
+  };
+  volumeListener = (e) => {
+    this.video.volume = e.target.value;
+  };
+  currentTimeUpdate = () => {
+    let currentMinutes = Math.floor(this.video.currentTime / 60);
+    let currentSeconds = Math.floor(
+      this.video.currentTime - currentMinutes * 60
+    );
+    let durationMinutes = Math.floor(this.video.duration / 60);
+    let durationSeconds = Math.floor(
+      this.video.duration - durationMinutes * 60
+    );
+
+    this.currentTimeElement.innerHTML = `${currentMinutes}:${
+      currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
+    }`;
+    this.durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
+  };
+  progressBarUpdate = () => {
+    const percentage = (this.video.currentTime / this.video.duration) * 100;
+    this.progressBar.style.width = `${percentage}%`;
+  };
+  progressBarAcrionsListener = (e) => {
+    const progressTime =
+      (e.offsetX / this.progress.offsetWidth) * this.video.duration;
+    this.video.currentTime = progressTime;
+  };
+  stopMediaListener = () => {
+    this.video.pause();
+    this.video.currentTime = 0;
+    this.videoPlayer.classList.remove("active");
+  };
+}
+
 const videoThresholdScreenSize = 860;
 
 function supportsHEVCAlpha() {
@@ -40,16 +166,25 @@ playerStepMob.forEach((video, ind) => {
 
 // Video controls
 initVideoPlayers();
-
 function initVideoPlayers() {
   const videoWraps = document.querySelectorAll(".video-wrap");
-  videoWraps?.forEach((videoWrap) => {
+  videoWraps?.forEach((videoWrap, index) => {
     const video = videoWrap.querySelector(".video");
     const playButton = videoWrap.querySelector(".play-button");
 
     //Play and Pause button
     playButton.addEventListener("click", (e) => {
       if (window.innerWidth <= videoThresholdScreenSize) {
+        // Pause all other videos
+        videoWraps.forEach((vwrap, ind) => {
+          if (index !== ind) {
+            const video = vwrap.querySelector(".video");
+            video.pause();
+            vwrap.classList.remove("active");
+          }
+        });
+
+        // Play current video
         if (video.paused) {
           video.play();
           videoWrap.classList.toggle("active");
@@ -62,107 +197,38 @@ function initVideoPlayers() {
   });
 }
 
-// Video controls pop-up
-initVideoPlayersPopUp();
-
-function initVideoPlayersPopUp() {
-  const videoWraps = document.querySelectorAll(".video-wrap-pop-up");
-  videoWraps?.forEach((videoWrap) => {
-    const video = videoWrap.querySelector(".video");
-    const playButton = videoWrap.querySelector(".play-button");
-    const muteButton = videoWrap.querySelector(".mute-button");
-    const volume = videoWrap.querySelector(".volume");
-    const currentTimeElement = videoWrap.querySelector(".current");
-    const durationTimeElement = videoWrap.querySelector(".duration");
-    const progress = videoWrap.querySelector(".video-progress");
-    const progressBar = videoWrap.querySelector(".video-progress-filled");
-
-    //Play and Pause button
-    playButton.addEventListener("click", (e) => {
-      if (video.paused) {
-        video.play();
-        videoWrap.classList.toggle("active");
-      } else {
-        video.pause();
-        videoWrap.classList.toggle("active");
-      }
-    });
-
-    //Mute button
-    muteButton.addEventListener("click", (e) => {
-      if (video.muted) {
-        video.muted = false;
-        muteButton.classList.toggle("mute");
-      } else {
-        video.muted = true;
-        muteButton.classList.toggle("mute");
-      }
-    });
-
-    //volume
-    volume.addEventListener("mousemove", (e) => {
-      video.volume = e.target.value;
-    });
-
-    //current time and duration
-    const currentTime = () => {
-      let currentMinutes = Math.floor(video.currentTime / 60);
-      let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
-      let durationMinutes = Math.floor(video.duration / 60);
-      let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
-
-      currentTimeElement.innerHTML = `${currentMinutes}:${
-        currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
-      }`;
-      durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
-    };
-
-    video.addEventListener("timeupdate", currentTime);
-
-    //Progress bar
-    video.addEventListener("timeupdate", () => {
-      const percentage = (video.currentTime / video.duration) * 100;
-      progressBar.style.width = `${percentage}%`;
-    });
-
-    //change progress bar on click
-    progress.addEventListener("click", (e) => {
-      const progressTime = (e.offsetX / progress.offsetWidth) * video.duration;
-      video.currentTime = progressTime;
-    });
-
-    video.addEventListener("ended", stopMedia);
-    function stopMedia() {
-      video.pause();
-      video.currentTime = 0;
-      videoWrap.classList.remove("active");
-    }
-  });
-}
-
 /* Modal popUp img */
 modal();
 function modal() {
   const modalPopup = document.querySelector(".modal-pop-up");
   const titleModal = modalPopup.querySelector(".pop-up-title");
   const bgModal = modalPopup.querySelector(".pop-up-bg");
-  const videoModal = modalPopup.querySelector(".video");
+  let videoModal = modalPopup.querySelector(".video");
+  let videoPlayer;
 
   const openModal = () => (modalPopup.style.display = "flex");
   const closeModal = () => {
     modalPopup.style.display = "none";
-    videoModal.pause();
-    videoModal.currentTime = 0;
-    document.querySelector(".video-wrap-pop-up").classList.remove("active");
+    videoPlayer.stop();
+    videoPlayer.destroy();
+    videoModal.remove();
   };
   const setModalContent = ({ title, img, bg, video }) => {
+    videoModal.remove();
+    const videoWrap = modalPopup.querySelector(".recent-anim");
+    const videoEl = document.createElement("video");
+    videoEl.classList.add("video");
+    videoModal = videoEl;
+    [...video.querySelectorAll("source")].map((source) => {
+      const src = document.createElement("source");
+      src.setAttribute("src", source.src);
+      src.setAttribute("type", source.getAttribute("type"));
+      videoEl.appendChild(src);
+    });
+    videoWrap.appendChild(videoEl);
     titleModal.textContent = title.textContent;
     bgModal.setAttribute("src", bg.src);
-    videoModal
-      .querySelectorAll("source")
-      .forEach((el, i) =>
-        el.setAttribute("src", video.querySelectorAll("source")[i].src)
-      );
+    videoPlayer = new VideoPlayer(".video-wrap-pop-up");
   };
 
   document.addEventListener("click", (event) => {
