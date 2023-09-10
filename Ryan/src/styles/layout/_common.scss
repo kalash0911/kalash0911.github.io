@@ -109,6 +109,23 @@ body {
         fill: $white;
         transition: $animation-speed;
     }
+
+    &.mobile {
+
+        svg {
+            fill: none;
+        } 
+
+        &:hover {
+            color: $white;
+            border: 2px solid transparent;
+            background-color: $orange;
+    
+            svg {
+                fill: none;
+            }
+        }
+    }
 }
 
 .mob {

@@ -688,6 +688,14 @@ body {
   .btn-orange svg {
     fill: #fff;
     transition: all 0.3s ease 0s; }
+  .btn-orange.mobile svg {
+    fill: none; }
+  .btn-orange.mobile:hover {
+    color: #fff;
+    border: 2px solid transparent;
+    background-color: #CF7C58; }
+    .btn-orange.mobile:hover svg {
+      fill: none; }
 
 .mob {
   display: none; }
