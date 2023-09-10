@@ -258,15 +258,18 @@ function modal() {
   );
 }
 
-fixedDownloadBtn();
+["DOMContentLoaded", "load", "resize"].forEach((event) => {
+  window.addEventListener(event, () => {
+    fixedDownloadBtn();
+  });
+});
 function fixedDownloadBtn() {
   const startPosEl = document.querySelector(".steps .item");
-  const endPosEl = document.querySelector(".now-section");
+  const endPosEl = document.querySelector("#now");
   const btn = document.querySelector(".btn-orange.mobile");
   const startPos =
     startPosEl.getBoundingClientRect().top + document.documentElement.scrollTop;
-  const endPos =
-    endPosEl.getBoundingClientRect().top + document.documentElement.scrollTop;
+  const endPos = endPosEl.offsetTop;
   document.addEventListener("scroll", (e) => {
     if (
       window.scrollY + document.documentElement.clientHeight >
@@ -281,10 +284,7 @@ function fixedDownloadBtn() {
       }
     }
 
-    if (
-      window.scrollY + document.documentElement.clientHeight >
-      endPos + endPos / 2
-    ) {
+    if (window.scrollY + document.documentElement.clientHeight > endPos) {
       if (btn.classList.contains("active")) {
         btn.classList.remove("active");
       }
