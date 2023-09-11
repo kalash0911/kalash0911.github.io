@@ -874,13 +874,33 @@ body {
             font-size: 26px;
         }
     }
-
-    .img {
-        width: 260px;
+    
+    .img-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 260px;
         margin: 0 auto;
+        overflow: hidden;
 
         @include media('<tablet_x') {
             display: none;
+        }
+
+        .iphone_mockup {
+            position: relative;
+            display: block;
+            z-index: 1;
+        }
+
+        .img {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 240px;
+            max-width: 92%;
+            border-radius: 40px;
+            z-index: -1;
         }
     }
 
