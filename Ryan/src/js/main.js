@@ -269,7 +269,7 @@ function modal() {
 });
 function fixedDownloadBtn() {
   const startPosEl = document.querySelector(".steps .item");
-  const endPosEl = document.querySelector("#now");
+  const endPosEl = document.querySelector("#recent");
   const btn = document.querySelector(".btn-orange.mobile");
   const startPos =
     startPosEl.getBoundingClientRect().top + document.documentElement.scrollTop;
