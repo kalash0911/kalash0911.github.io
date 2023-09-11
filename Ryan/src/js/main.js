@@ -194,6 +194,10 @@ function initVideoPlayers() {
         }
       }
     });
+
+    video.addEventListener('pause', (e) => {
+      videoWrap.classList.remove("active");
+    })
   });
 }
 

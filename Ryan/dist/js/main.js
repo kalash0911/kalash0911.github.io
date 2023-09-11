@@ -2,7 +2,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 class VideoPlayer {
   constructor(query) {
-    // Event listeners
     _defineProperty(this, "playBtnListener", () => {
       if (this.video.paused) {
         this.video.play();
@@ -126,7 +125,8 @@ class VideoPlayer {
 
   initStopListener() {
     this.video.addEventListener("ended", this.stopMediaListener);
-  }
+  } // Event listeners
+
 
 }
 
@@ -181,6 +181,9 @@ function initVideoPlayers() {
           videoWrap.classList.toggle("active");
         }
       }
+    });
+    video.addEventListener('pause', e => {
+      videoWrap.classList.remove("active");
     });
   });
 }
