@@ -120,7 +120,7 @@ html {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: -1;
 
     @include media ("<widescreen_b") {
         display: none;
@@ -181,7 +181,7 @@ html {
     padding: 160px 0 200px 0;
 
     @include media ("<tablet_b") {
-        padding: 70px 0 40px 0;
+        padding: 70px 0 0 0;
     }
 
     &::before {
@@ -434,6 +434,10 @@ html {
     position: relative;
     padding: 100px 0 0 0;
 
+    @include media ("<tablet") {
+        padding: 0;
+    }
+
     &::after {
         content:'';
         position: absolute;
@@ -442,15 +446,40 @@ html {
         width: 100%;
         height: 45%;
         background: linear-gradient(180deg, rgba(23, 25, 33, 0.00) 0%, #171921 100%);
+        
+        @include media ("<widescreen") {
+            z-index: 4;
+        }
+
+        @include media ("<desktop") {
+            height: 100px;
+        }
     }
 
     .container {
+        position: relative;
         max-width: 1332px;  
+
+        @include media ("<desktop") {
+            min-height: 770px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @include media ("<tablet") {
+            min-height: 600px;
+        }
     }
 
     .mount-bg {
         display: block;
         margin: 0 auto;
+
+        @include media ("<widescreen") {
+            position: relative;
+            z-index: 3;
+        }
     }
 
     .cloud-bg {
@@ -459,10 +488,185 @@ html {
         left: 0;
         width: 100%;
         z-index: -1;
+
+        @include media ("<desktop") {
+            top: auto;
+            bottom: 0;
+        }
     }
     
     .title {
         text-align: left;
+
+        @include media ("<tablet") {
+            font-size: 38px;
+        }
+    }
+
+    .item1 {
+        left: 20%;
+        transform: translateX(-50%);
+        bottom: 37%;
+
+        @include media ("<tablet") {
+            left: 16px;
+        }
+
+        .line {
+            height: 205px;
+
+            @include media ("<widescreen") {
+                height: 420px;
+            }
+        }
+    }
+
+    .item2 {
+        left: 44%;
+        transform: translateX(-50%);
+        bottom: 35%;
+
+        @include media ("<tablet") {
+            left: 16px;
+            z-index: 2;
+        }
+
+        .line {
+            height: 122px;
+
+            @include media ("<widescreen") {
+                height: 280px;
+            }
+
+            @include media ("<tablet") {
+                height: 230px;
+            }
+        }
+    }
+
+    .item3 {
+        left: 67%;
+        transform: translateX(-50%);
+        bottom: 24%;
+
+        @include media ("<tablet") {
+            left: auto;
+            right: 16px;
+        }
+
+        .line {
+            height: 150px;
+
+            @include media ("<widescreen") {
+                height: 420px;
+            }
+
+            @include media ("<tablet") {
+                height: 332px;
+            }
+        }
+    }
+
+    .item4 {
+        left: 81%;
+        transform: translateX(-50%);
+        bottom: 16%;
+        min-width: max-content;
+
+        @include media ("<tablet") {
+            left: auto;
+            right: 16px;
+        }
+
+        .line {
+            height: 365px;
+
+            @include media ("<widescreen") {
+                height: 200px;
+            }
+
+            @include media ("<tablet") {
+                height: 100px;
+            }
+        }
+
+        .line-wrap {
+
+            @include media ("<tablet") {
+                align-self: flex-end;
+                transform: translateX(-50px);
+            }
+        }
+    }
+
+    .line-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media ("<widescreen") {
+            flex-direction: column-reverse;
+            margin-top: -15px;
+            z-index: 1;
+        }
+
+        @include media ("<desktop") {
+            margin-top: -8px;
+        }
+
+        @include media ("<tablet") {
+            align-self: flex-start;
+            transform: translateX(50px);
+        }
+
+        svg {
+
+            @include media ("<desktop") {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    .item {
+        position: absolute;      
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        
+        @include media ("<widescreen") {
+            bottom: 0;
+        }
+
+        @include media ("<tablet") {
+            transform: none;
+        }
+
+        .line {
+            width: 1px;
+            background: linear-gradient(180deg, #191A22 -22.63%, #DAAE6C 112.37%);
+    
+            @include media ("<widescreen") {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .item2 {
+
+        @include media ("<tablet") {
+            z-index: 2;
+        }
+    }
+
+    .text-wrap {
+        display: inline-block;
+        padding: 12px 22px;
+        border-radius: 8px;
+        border: 1px solid $gold6D;
+        background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+        backdrop-filter: blur(17px);
     }
 
     .item-title {
@@ -470,9 +674,32 @@ html {
         font-size: 24px;
         font-weight: 700;
         line-height: 110%;
+        margin: 0;
+        @include text-grad($black20, $gold6D);
+
+        @include media ("<desktop") {
+           font-size: 16px;
+        }
 
         span {
             font-size: 36px; 
+
+            @include media ("<desktop") {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .text {
+        color: $gray95;
+        font-family: $SF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        margin: 0;
+
+        @include media ("<desktop") {
+            font-size: 14px;
         }
     }
 }
