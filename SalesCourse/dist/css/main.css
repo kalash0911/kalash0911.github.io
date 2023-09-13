@@ -947,6 +947,9 @@ html {
   .find-section .container {
     position: relative;
     max-width: 1332px; }
+    @media (max-width: 1199px) {
+      .find-section .container {
+        padding: 0; } }
     @media (max-width: 1023px) {
       .find-section .container {
         min-height: 770px;
@@ -959,6 +962,26 @@ html {
     @media (max-width: 767px) {
       .find-section .container {
         min-height: 600px; } }
+  .find-section .mount-bg-wrap {
+    position: relative; }
+  .find-section .grad-left,
+  .find-section .grad-right {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 300px;
+    z-index: 4; }
+    @media (max-width: 1199px) {
+      .find-section .grad-left,
+      .find-section .grad-right {
+        display: none; } }
+  .find-section .grad-left {
+    left: 0;
+    background: linear-gradient(270deg, rgba(23, 25, 33, 0) 0%, #171921 100%); }
+  .find-section .grad-right {
+    right: 0;
+    background: linear-gradient(90deg, rgba(23, 25, 33, 0) 0%, #171921 100%); }
   .find-section .mount-bg {
     display: block;
     margin: 0 auto; }
@@ -980,6 +1003,9 @@ html {
         bottom: 0; } }
   .find-section .title {
     text-align: left; }
+    @media (max-width: 1199px) {
+      .find-section .title {
+        padding: 0 16px; } }
     @media (max-width: 767px) {
       .find-section .title {
         font-size: 38px; } }
@@ -1261,11 +1287,11 @@ html {
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: -1; }
+    z-index: -1;
+    height: 210px; }
     @media (max-width: 767px) {
       .all-course-section .item-img {
-        position: relative;
-        height: 210px; } }
+        position: relative; } }
   .all-course-section .circle {
     display: block;
     position: absolute;

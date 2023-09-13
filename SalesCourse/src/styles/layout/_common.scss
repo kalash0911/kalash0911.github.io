@@ -465,6 +465,10 @@ html {
         position: relative;
         max-width: 1332px;  
 
+        @include media ("<widescreen") {
+            padding: 0;
+        }
+
         @include media ("<desktop") {
             min-height: 770px;
             display: flex;
@@ -475,6 +479,34 @@ html {
         @include media ("<tablet") {
             min-height: 600px;
         }
+    }
+
+    .mount-bg-wrap {
+        position: relative;
+    }
+
+    .grad-left,
+    .grad-right {
+        content:'';
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        height: 300px;
+        z-index: 4;
+
+        @include media ("<widescreen") {
+            display: none;
+        }
+    }
+
+    .grad-left {
+        left: 0; 
+        background: linear-gradient(270deg, rgba(23, 25, 33, 0.00) 0%, #171921 100%);
+    }
+
+    .grad-right {
+        right: 0;
+        background: linear-gradient(90deg, rgba(23, 25, 33, 0.00) 0%, #171921 100%);
     }
 
     .mount-bg {
@@ -504,6 +536,10 @@ html {
     
     .title {
         text-align: left;
+
+        @include media ("<widescreen") {
+            padding: 0 16px;
+        }
 
         @include media ("<tablet") {
             font-size: 38px;
@@ -863,10 +899,10 @@ html {
         right: 0;
         bottom: 0;
         z-index: -1;
+        height: 210px;
 
         @include media ("<tablet") {
             position: relative;
-            height: 210px;
         }
     }
 
