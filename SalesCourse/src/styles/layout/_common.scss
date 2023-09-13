@@ -82,6 +82,7 @@ html {
     strong {
         font-style: italic;
         font-weight: 600;
+        text-transform: uppercase;
     }
 
     span {
@@ -114,6 +115,10 @@ html {
     text-transform: uppercase;
     text-align: center;
     @include text-grad($black21, $whiteEF);
+
+    span {
+        @include text-grad($black20, $gold6D);
+    }
 }
 
 .house-bg {
@@ -484,10 +489,12 @@ html {
 
     .cloud-bg {
         position: absolute;
-        top: 30%;
         left: 0;
+        bottom: 0;
         width: 100%;
+        object-fit: cover;
         z-index: -1;
+        
 
         @include media ("<desktop") {
             top: auto;
@@ -700,6 +707,249 @@ html {
 
         @include media ("<desktop") {
             font-size: 14px;
+        }
+    }
+}
+
+/* ----------------all-course-section--------------- */
+
+.all-course-section {
+    position: relative;
+    padding-bottom: 100px;
+
+    @include media ("<phone") {
+        padding-bottom: 20px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(0deg, rgba(23, 25, 33, 0) 0%, #171921 100%);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .title {
+        margin-bottom: 16px;
+
+        @include media ("<tablet") {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+    }
+
+    .text {
+        text-align: center;
+        max-width: 665px;
+        margin: 0 auto 60px auto;
+
+        @include media ("<tablet") {
+            font-size: 16px;
+
+            margin: 0 auto 18px auto;
+        }
+    }
+
+    .block {
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+
+        @include media ("<tablet_b") {
+            gap: 40px;
+        }
+
+        @include media ("<tablet") {
+            align-items: center;
+            flex-direction: column;
+            gap: 70px;
+        }
+    }
+
+    .item {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        min-height: 340px;
+        border-radius: 18px;
+        padding: 42px;
+        backdrop-filter: blur(17px);
+
+        @include media ("<tablet_b") {
+            padding: 28px;
+        }
+
+        @include media ("<tablet") {
+            max-width: 350px;
+            min-height: 214px;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        &.gold {
+            border: 2px solid #DDB06D;
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.05) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+            z-index: 1;
+
+            .circle {
+                border: 1px solid $gold6D;
+
+                &::before {
+                    background-color: $gold6D;
+                }
+            }
+        }
+
+        &.silver{
+            border: 2px solid #CDCECE;
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.05) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+
+            .circle {
+                border: 1px solid #CDCECE;
+
+                &::before {
+                    background-color: #CDCECE;
+                }
+            }
+        }
+
+        &.bronze {
+            border: 2px solid #B78F78;
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.05) -22.42%, rgba(217, 217, 217, 0.00) 100%);    
+
+            .circle {
+                border: 1px solid #B78F78;
+
+                &::before {
+                    background-color: #B78F78;
+                }
+            }
+        }
+    }
+
+    .item-title {
+        font-family: $SF;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 110%;
+        text-transform: uppercase;
+        margin: 0;
+        @include text-grad($black21, $whiteEF);
+
+        @include media ("<widescreen") {
+            font-size: 28px;
+        }
+
+        @include media ("<desktop") {
+            font-size: 22px;
+        }
+
+        @include media ("<tablet") {
+            padding: 28px 0 0 28px;
+            font-size: 28px;
+        }
+    }
+
+    .item-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+        @include media ("<tablet") {
+            position: relative;
+            height: 210px;
+        }
+    }
+
+    .circle {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $black21;
+        z-index: 1;
+
+        @include media ("<tablet") {
+            transform: translate(-50%);
+        }
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        &.left {
+            left: -16px;
+
+            @include media ("<tablet") {
+                top: -16px;
+                left: 50%;
+            }
+        }
+
+        &.right {
+            right: -16px;
+
+            @include media ("<tablet") {
+                top: auto;
+                bottom: -16px;
+                right: auto;
+                left: 50%;
+            }
+        }
+    }
+
+    .line {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px;
+        height: 1px;
+        z-index: -1;    
+        
+        @include media ("<tablet") {
+            transform: translate(-50%) rotate(90deg);
+            width: 43px;
+        }
+
+        &.left {
+            left: -68px;
+            background: linear-gradient(90deg, #554F45 8.02%, #97989C 112.37%);
+
+            @include media ("<tablet") {
+                left: 50%;
+                top: -37px;
+            }
+        }
+
+        &.right {
+            right: -68px;
+            background: linear-gradient(90deg, #52535A 9.26%, #B79079 112.37%);
+
+            @include media ("<tablet") {
+                left: 50%;
+                right: auto;
+                top: auto;
+                bottom: -37px;
+            }
         }
     }
 }
