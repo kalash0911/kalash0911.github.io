@@ -72,6 +72,46 @@ html {
     }
 }
 
+.sec-btn {
+    position: relative;
+    display: inline-block;
+    min-width: 309px;
+    padding: 19px;
+    color: #FCFCFD;
+    text-align: center;
+    font-family: $SF;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 100px;
+    transition: $anim_03;
+    background: transparent;
+    border: 2px solid $gold6D;
+    overflow: hidden;
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(280deg, #111520 -80.16%, #DDB06D 70.75%);
+        transition: $anim_03;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &:hover {
+        color: $black21;
+        border: 2px solid transparent;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
 .text {
     color: $grayA9;
     font-family: $SF;
@@ -96,7 +136,7 @@ html {
             bottom: -6px;
             width: 100%;
             height: 6px;
-            background: url(../images/icons/line.svg) no-repeat;
+            background: url(../images/icons/line.svg) center  no-repeat;
         }
     }
 
@@ -177,6 +217,31 @@ html {
 
     @include media ("<tablet_b") {
         display: block !important;
+    }
+}
+
+.circle {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $black21;
+    z-index: 1;
+
+    @include media ("<tablet") {
+        transform: translate(-50%);
+    }
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
     }
 }
 
@@ -932,29 +997,11 @@ html {
     }
 
     .circle {
-        display: block;
-        position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: $black21;
-        z-index: 1;
 
         @include media ("<tablet") {
             transform: translate(-50%);
-        }
-
-        &::before {
-            content:'';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
         }
 
         &.left {
@@ -1010,6 +1057,443 @@ html {
                 right: auto;
                 top: auto;
                 bottom: -37px;
+            }
+        }
+    }
+}
+
+/* -------------------course-section---------------- */
+
+.course-section {
+    padding: 100px 0;
+
+    @include media ("<phone") {
+        padding: 50px 0;
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+        max-width: 1240px;
+    }
+
+    .cloud-bg {
+        position: absolute;
+        top: -250px;
+        right: -250px;
+        z-index: -1;
+        transform: rotate(220deg);
+    }
+
+    .title {
+        position: relative;
+        margin-bottom: 24px;
+        z-index: 2;
+
+        @include media ("<tablet_b") {
+            font-size: 37px;
+        }
+    }
+
+    .stiker {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 22px;
+        border-radius: 8px;
+        backdrop-filter: blur(17px);
+        margin-bottom: 45px;
+        z-index: 2;
+
+        @include media ("<phone") {
+            margin-bottom: 24px;
+        }
+    }
+
+    .stiker-title {
+        margin: 0;
+        font-size: 18px;
+
+        @include media ("<phone") {
+            font-size: 16px;
+        }
+    }
+
+    .block {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include media ("<tablet_b") {
+            flex-direction: column;
+        }
+    }
+
+    .list {
+        width: 30%;
+        max-width: 370px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        z-index: 2;
+
+        @include media ("<widescreen") {
+            width: 20%;
+        }
+
+        @include media ("<desktop") {
+            width: 40%;
+        }
+
+        @include media ("<tablet_b") {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        &.left {
+            text-align: left;
+        }
+
+        &.right {
+            text-align: right;
+        }
+    }
+
+    .li {
+        position: relative;
+        list-style: none;
+
+        @include media ("<tablet_b") {
+            padding-left: 23px;
+        }
+
+        &::before,
+        &::after {
+            content:'';
+            position: absolute;
+            border-radius: 50%; 
+            display: none;
+
+            @include media ("<tablet_b") {
+                display: block;
+            }
+        }
+
+        &::before  {
+            top: 2px;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border: 1px solid $gold6D;    
+        }
+
+        &::after {
+            top: 6px;
+            left: 4px;
+            width: 7px;
+            height: 7px;
+            background-color: $gold6D;
+        }
+    }
+
+    .text {
+
+        @include media ("<widescreen") {
+            font-size: 18px;
+        }
+
+        @include media ("<desktop") {
+            font-size: 16px;
+        }
+
+        @include media ("<tablet_b") {
+            text-align: left;
+
+            br {
+                display: none;
+            }
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    .circle-box {
+        position: relative;
+        height: 552px;
+        min-width: 30%;
+
+        @include media ("<desktop") {
+            height: 342px;
+        }
+
+        @include media ("<tablet_b") {
+            order: -1;
+        }
+    }
+
+    .circle-wrap {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        min-width: 552px;
+        height: 552px;
+        border-radius: 50%;
+        border: 1px solid #DDB06D;
+
+        @include media ("<desktop") {
+            min-width: 342px;
+            height: 342px;
+        }
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            width: 500px;
+            height: 300px;
+            transform: translate(-50%);
+            background: rgb(23,25,33);
+            background: radial-gradient(circle, rgba(23,25,33,1) 25%, rgba(23,25,33,0) 100%);
+        }
+
+        &::after {
+            content:'';
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            width: 500px;
+            height: 300px;
+            transform: translate(-50%);
+            background: rgb(23,25,33);
+            background: radial-gradient(circle, rgba(23,25,33,1) 25%, rgba(23,25,33,0) 100%);
+            z-index: -1;
+        }
+    }
+
+    .circle {
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include media ("<desktop") {
+            width: 15px;
+            height: 15px;
+        }
+
+        @include media ("<tablet_b") {
+            display: none;
+        }
+
+        &::before {
+
+            @include media ("<desktop") {
+                width: 5px;
+                height: 5px;
+            }
+        }
+
+        &.left {
+            left: -15px;
+
+            @include media ("<desktop") {
+                left: -8px;
+            }
+        }
+
+        &.right {
+            right: -15px;
+
+            @include media ("<desktop") {
+                right: -8px;
+            }
+        }
+
+        &.top.left {
+            top: 9%;
+            left: 18%;
+        }
+
+        &.bot.left {
+            top: auto;
+            bottom: 4%;
+            left: 18%;
+        }
+
+        &.top.right {
+            top: 9%;
+            right: 18%;
+        }
+
+        &.bot.right {
+            top: auto;
+            bottom: 4%;
+            right: 18%;
+        }
+    }
+
+    .video-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 510px;
+        height: 510px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @include media ("<desktop") {
+            width: 308px;
+            height: 308px;
+        }
+
+        &.active {
+
+            .play-btn {
+                
+                &::before {
+                    opacity: 0;
+                }
+            }
+
+            .btn-content {
+                display: none;
+            }
+        }
+    }
+
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 102%;
+        object-fit: cover;
+    }
+
+    .play-btn {
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 100%;
+        height: 102%;
+        z-index: 1;
+        background: transparent;
+        
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: $black21;
+            opacity: .2;
+        }
+    }
+
+    .btn-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 140px;
+        min-height: 140px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 50%;
+        backdrop-filter: blur(10px);
+        padding: 5px;
+        font-family: $SF;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 112%;
+        letter-spacing: -0.16px;
+        z-index: 1;
+
+        @include media ("<desktop") {
+            min-width: 100px;
+            min-height: 100px;
+            font-size: 11px;
+        }
+
+        svg {
+            @include media ("<desktop") {
+                width: 17px;
+            }
+        }
+    }
+
+    .btn-wrap {
+        position: absolute;
+        bottom: -145px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include media ("<tablet_b") {
+            position: relative;
+            left: auto;
+            bottom: auto;
+            transform: none;
+            margin: 0 auto;
+        }
+
+        @include media ("<phone") {
+            margin: 0;
+        }
+    }
+
+    .des {
+        color: $grayA9;
+        text-align: center;
+        font-family: $SF;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &.gold-sc {
+
+        .stiker {
+            border: 1px solid $gold6D;
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+    
+            svg {
+                fill: url(#paint0_linear_1383_27395);
+            }
+        }
+    
+        .stiker-title {
+            @include text-grad($black20, $gold6D);
+        }
+
+        .circle {
+            border: 1px solid $gold6D;
+
+            &::before {
+                background-color: $gold6D;                
+            }
+        }
+
+        .btn-content {
+            border: 1px solid $gold6D;
+            color: $gold6D;
+
+            svg {
+                fill: $gold6D;
             }
         }
     }
