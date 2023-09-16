@@ -1065,9 +1065,9 @@ html {
 /* -------------------course-section---------------- */
 
 .course-section {
-    padding: 100px 0;
+    padding: 150px 0;
 
-    @include media ("<phone") {
+    @include media ("<tablet_b") {
         padding: 50px 0;
     }
 
@@ -1081,14 +1081,36 @@ html {
         position: absolute;
         top: -250px;
         right: -250px;
-        z-index: -1;
+        z-index: 1;
         transform: rotate(220deg);
+
+        @include media ("<phone") {
+            top: -100px;
+            right: -100px;
+        }
+    }
+
+    .grad-bg {
+        position: absolute;
+        right: -250px;
+        bottom: -150px;
+        width: 761px;
+        height: 185px;
+        z-index: 1;
+        border-radius: 761px;
+        background: rgba(237, 229, 218, 0.10);
+        filter: blur(187px);
+
+        @include media ("<phone") {
+            bottom: 100px;
+        }
     }
 
     .title {
         position: relative;
         margin-bottom: 24px;
         z-index: 2;
+        text-transform: none;
 
         @include media ("<tablet_b") {
             font-size: 37px;
@@ -1105,6 +1127,7 @@ html {
         backdrop-filter: blur(17px);
         margin-bottom: 45px;
         z-index: 2;
+        background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
 
         @include media ("<phone") {
             margin-bottom: 24px;
@@ -1246,7 +1269,6 @@ html {
         min-width: 552px;
         height: 552px;
         border-radius: 50%;
-        border: 1px solid #DDB06D;
 
         @include media ("<desktop") {
             min-width: 342px;
@@ -1381,8 +1403,8 @@ html {
     .play-btn {
         position: absolute;
         top: -5px;
-        left: 0;
-        width: 100%;
+        left: -5px;
+        width: 102%;
         height: 102%;
         z-index: 1;
         background: transparent;
@@ -1421,6 +1443,7 @@ html {
         line-height: 112%;
         letter-spacing: -0.16px;
         z-index: 1;
+        transition: $anim_03;
 
         @include media ("<desktop") {
             min-width: 100px;
@@ -1429,6 +1452,8 @@ html {
         }
 
         svg {
+            transition: $anim_03;
+
             @include media ("<desktop") {
                 width: 17px;
             }
@@ -1469,7 +1494,6 @@ html {
 
         .stiker {
             border: 1px solid $gold6D;
-            background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
     
             svg {
                 fill: url(#paint0_linear_1383_27395);
@@ -1478,6 +1502,10 @@ html {
     
         .stiker-title {
             @include text-grad($black20, $gold6D);
+        }
+
+        .circle-wrap {
+            border: 1px solid $gold6D;
         }
 
         .circle {
@@ -1494,6 +1522,250 @@ html {
 
             svg {
                 fill: $gold6D;
+            }
+        }
+
+        .play-btn  {
+
+            &:hover {
+
+                .btn-content  {
+                    background-color: $gold6D;
+                    color: $black21;
+                }
+
+                svg {
+                    fill: $black21;
+                }
+            }
+        }
+    }
+
+    &.silver-sc {
+
+        .cloud-bg {
+            top: auto;
+            bottom: -150px;
+            transform: rotate(0deg);
+
+            @include media ("<phone") {
+                bottom: 150px;
+            }
+        }
+
+        .grad-bg {
+            right: auto;
+            bottom: auto;
+            top: 150px;
+            left: -150px;
+
+            @include media ("<phone") {
+                top: 40%;
+                left: -50%;
+            }
+        }
+
+        .stiker {
+            border: 1px solid $silver;
+    
+            svg {
+                fill: $silver;
+            }
+        }
+    
+        .stiker-title {
+            @include text-grad($black20, $silver);
+        }
+
+        .circle-wrap {
+            border: 1px solid $silver;
+        }
+
+        .circle {
+            border: 1px solid $silver;
+
+            &::before {
+                background-color: $silver;                
+            }
+        }
+
+        .btn-content {
+            border: 1px solid $silver;
+            color: $silver;
+
+            svg {
+                fill: $silver;
+            }
+        }
+
+        .play-btn  {
+
+            &:hover {
+
+                .btn-content  {
+                    background-color: $silver;
+                    color: $black21;
+                }
+
+                svg {
+                    fill: $black21;
+                }
+            }
+        }
+
+        .text {
+
+            span{
+
+                &::after {
+                    background: url(../images/icons/line-silver.svg) center no-repeat;
+                }
+            }
+        }
+
+        .main-btn {
+            background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));
+
+            &::before {
+                background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));  
+            }
+        }
+
+        .sec-btn {
+            border: 2px solid $silver;
+
+            &::before {
+                background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));              
+            }
+
+            &:hover {
+                border: 2px solid transparent;
+            }
+        }
+
+        .li {
+
+            &::before {
+                border: 1px solid $silver;
+                
+            }
+
+            &::after {
+                background-color: $silver;              
+            }
+        }
+    }
+
+    &.bronze-sc {
+
+        .cloud-bg {
+            top: -150px;
+            left: -250px;
+            transform: rotate(0deg);
+
+            @include media ("<phone") {
+                top: 50px;
+                left: -100px;
+            }
+        }
+
+        .grad-bg {
+            right: -250px;
+            bottom: -100px;
+
+            @include media ("<phone") {
+                right: -150px;
+                bottom: 20%;
+            }
+        }
+
+        .stiker {
+            border: 1px solid $bronze;
+    
+            svg {
+                fill: $bronze;
+            }
+        }
+    
+        .stiker-title {
+            @include text-grad($black20, $bronze);
+        }
+
+        .circle-wrap {
+            border: 1px solid $bronze;
+        }
+
+        .circle {
+            border: 1px solid $bronze;
+
+            &::before {
+                background-color: $bronze;                
+            }
+        }
+
+        .btn-content {
+            border: 1px solid $bronze;
+            color: $bronze;
+
+            svg {
+                fill: $bronze;
+            }
+        }
+
+        .play-btn  {
+
+            &:hover {
+
+                .btn-content  {
+                    background-color: $bronze;
+                    color: $black21;
+                }
+
+                svg {
+                    fill: $black21;
+                }
+            }
+        }
+
+        .text {
+
+            span{
+
+                &::after {
+                    background: url(../images/icons/line-bronze.svg) center no-repeat;
+                }
+            }
+        }
+
+        .main-btn {
+            background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%));
+
+            &::before {
+                background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%));
+            }
+        }
+
+        .sec-btn {
+            border: 2px solid $bronze;
+
+            &::before {
+                background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%));             
+            }
+
+            &:hover {
+                border: 2px solid transparent;
+            }
+        }
+
+        .li {
+
+            &::before {
+                border: 1px solid $bronze;
+                
+            }
+
+            &::after {
+                background-color: $bronze;              
             }
         }
     }
