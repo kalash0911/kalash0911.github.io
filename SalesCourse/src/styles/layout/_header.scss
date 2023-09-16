@@ -6,19 +6,24 @@ header {
         max-width: 1380px;
     }
 
-    .socials{
-        display: none;
+    .socials {
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
 
         @include media ("<desktop") {
-            display: flex;
+            width: 100%;
+            opacity: 1;
+            overflow: visible;
+            justify-content: flex-start;
         }
     }
 
-    .icon{
+    .icon {
         width: 48px;
         height: 48px;
 
-        svg{
+        svg {
             width: 30px;
             height: 30px;
         }
@@ -32,7 +37,7 @@ header {
         width: 100%;
     }
 
-    .nav{
+    .nav {
         @include media ("<desktop") {
             display: none;
         }
@@ -63,7 +68,7 @@ header {
         font-weight: 500;
         transition: $anim_03;
 
-        &:hover{
+        &:hover {
             background-color: $goldBE;
             transition: $anim_03;
         }
@@ -90,7 +95,7 @@ header {
             height: 3px;
             background: $goldBE;
             transition: all 0.4s ease;
-            border-radius:10px;
+            border-radius: 10px;
         }
 
         span {
@@ -101,7 +106,7 @@ header {
             top: 9px;
             left: 0;
             transition: all 0.4s ease;
-            border-radius:10px;
+            border-radius: 10px;
             opacity: 1;
         }
 

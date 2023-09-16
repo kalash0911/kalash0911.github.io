@@ -584,11 +584,16 @@ header {
   header .container {
     max-width: 1380px; }
   header .socials {
-    display: none; }
+    width: 0;
+    opacity: 0;
+    overflow: hidden; }
     @media (max-width: 1023px) {
       header .socials {
-        display: -ms-flexbox;
-        display: flex; } }
+        width: 100%;
+        opacity: 1;
+        overflow: visible;
+        -ms-flex-pack: start;
+        justify-content: flex-start; } }
   header .icon {
     width: 48px;
     height: 48px; }
@@ -2255,6 +2260,7 @@ footer {
     height: 48px; }
     footer .icon svg {
       width: 30px;
-      height: 30px; }
+      height: 30px;
+      fill: #DDB06D; }
 
 /*# sourceMappingURL=main.css.map */
