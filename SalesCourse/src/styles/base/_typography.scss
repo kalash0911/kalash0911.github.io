@@ -43,6 +43,15 @@ p {
 	color: $grayA9;
 }
 
+ul{
+	padding: 0;
+	margin: 0;
+
+	li{
+		list-style: none;
+	}
+}
+
 a {
 	color: $base-link-color;
 	text-decoration: none;

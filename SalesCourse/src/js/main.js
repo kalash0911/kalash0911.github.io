@@ -1,4 +1,5 @@
 new WOW().init();
+initBurger();
 
 // Video controls
 initVideoPlayers();
@@ -84,3 +85,30 @@ window.addEventListener('scroll', function () {
     paralax.style.transform = `translateY(${translateY}%)`;
   }
 });
+
+
+
+function initBurger() {
+  const btnBurger = document.querySelector(".header_burger");
+  if (!btnBurger) {
+      return;
+  }
+  const menuBurger = document.querySelector(".nav");
+  // const menuContainer = document.querySelector(".nav_container");
+
+  document.addEventListener("click", function (event) {
+      if (btnBurger.contains(event.target)) {
+          menuBurger.classList.toggle("nav_active");
+          btnBurger.classList.toggle("burger_active");
+          // menuContainer.classList.toggle("nav_container_active");
+          document.body.classList.toggle("body_lock");
+          return;
+      }
+      if (!menuBurger.contains(event.target)) {
+          menuBurger.classList.remove("nav_active");
+          btnBurger.classList.remove("burger_active");
+          document.body.classList.remove("body_lock");
+          // menuContainer.classList.remove("nav_container_active");
+      }
+  });
+}
