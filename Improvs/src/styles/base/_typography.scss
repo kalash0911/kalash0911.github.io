@@ -9,7 +9,7 @@ h6, .h6,
 .h {
 	font-family: $headings-font-family;
 	margin: 0;
-	color: $headings-color;
+	color: $white;
 }
 
 h1, .h1 {
@@ -38,6 +38,7 @@ h6, .h6 {
 
 p {
 	margin: 0;
+	color: $white;
 }
 
 a {

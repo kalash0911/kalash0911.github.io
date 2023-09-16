@@ -1,6 +1,3 @@
-body {
-    background: $black;
-}
 
 
 
@@ -74,12 +71,12 @@ body {
         transition: $transition_all_03;
 
         &:focus {
-            border: 1px solid $gray;
+            border: 1px solid $gray_A6;
             transition: $transition_all_03;
         }
 
         &::placeholder {
-            color: $gray;
+            color: $gray_A6;
             font-size: 14px;
             font-weight: 500;
             line-height: 126%;

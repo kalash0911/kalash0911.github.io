@@ -4,7 +4,10 @@
 
 $black: #0E0E0E;;
 $white: #fff;
-$gray:  #A6A6A6;
+$gray_A6:  #A6A6A6;
+$gray_9F:  #9F9F9F;
+$gray_D8:  #DBDBDB;
+$blue:  #3772FF;
 
 
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -36,9 +39,9 @@ $btn-font-size: inherit !default;
 
 // Forms
 $form-element-padding: $btn-padding !default;
-$form-element-border-color: $gray !default;
+$form-element-border-color: $gray_A6 !default;
 $form-element-focus-border-color: $black !default;
-$placeholder-color: $gray !default;
+$placeholder-color: $gray_A6 !default;
 
 // Headers
 $h1-font-size: 32px;

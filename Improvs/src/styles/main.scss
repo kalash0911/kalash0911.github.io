@@ -1,6 +1,7 @@
 $breakpoints: (
 	'xs-phone': 320px,
 	'phone': 480px,
+	'phone_max': 520px,
 	'tablet': 768px,
 	'desktop': 1024px,
 	'widescreen': 1200px
@@ -35,7 +36,7 @@ $media-expressions: (
 
 
 
-@import 'cashtrinity_styles/cashtrinity_style';
+@import 'cashtrinity_styles/cashtrinity_style.scss';
 
 
 
