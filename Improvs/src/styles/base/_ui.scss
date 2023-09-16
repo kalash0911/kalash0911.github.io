@@ -1,0 +1,105 @@
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include media ("<tablet") {
+        padding: 0 15px;
+    }
+}
+
+
+.site_btn_white {
+    width: 100%;
+    color: $black;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 126%;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    background-color: $white;
+    padding: 18px 16px;
+    border: 1px solid $white;
+    transition: $transition_all_03;
+    position: relative;
+
+    .left_arrow,
+    .right_arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .left_arrow {
+        left: 16px;
+    }
+
+    .right_arrow {
+        right: 16px;
+    }
+
+    svg {
+        fill: $black;
+        transition: $transition_all_03;
+    }
+
+    &:hover {
+        background-color: transparent;
+        transition: $transition_all_03;
+        color: $white;
+
+        svg {
+            fill: $white;
+            transition: $transition_all_03;
+        }
+    }
+}
+
+.site_btn_transparent {
+    width: 100%;
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 126%;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 18px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid $white;
+    transition: $transition_all_03;
+    position: relative;
+    max-width: 270px;
+
+    .left_arrow,
+    .right_arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .left_arrow {
+        left: 16px;
+    }
+
+    .right_arrow {
+        right: 16px;
+    }
+
+    svg {
+        fill: $white;
+        transition: $transition_all_03;
+    }
+
+    &:hover {
+        background-color: $white;
+        transition: $transition_all_03;
+        color: $black;
+
+        svg {
+            fill: $black;
+            transition: $transition_all_03;
+        }
+    }
+}

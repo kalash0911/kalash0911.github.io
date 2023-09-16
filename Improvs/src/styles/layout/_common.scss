@@ -1,3 +1,139 @@
 body {
-    
+    background: $black;
+}
+
+
+
+.contact_form_section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiv-vaule("padding-top", 135, 115, 1);
+    @include adaptiv-vaule("padding-bottom", 135, 115, 1);
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        max-width: 680px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .contact_title {
+        color: $white;
+        text-align: center;
+        @include adaptiv-vaule("font-size", 70, 42, 1);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -2.1px;
+        text-transform: uppercase;
+        @include adaptiv-vaule(" margin-bottom", 35, 45, 1);
+    }
+
+    form,
+    .inpur_wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .inpur_wrap {
+        margin-bottom: 15px;
+    }
+
+    .area {
+        margin-bottom: 25px;
+    }
+
+    .input_label {
+        color: $white;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 126%;
+        letter-spacing: -0.12px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    .data_text,
+    .area_text {
+        border: 1px solid #FFF;
+        background: transparent;
+        backdrop-filter: blur(5px);
+        width: 100%;
+        padding: 18px 16px;
+        color: $white;
+        font-size: 14px;
+        transition: $transition_all_03;
+
+        &:focus {
+            border: 1px solid $gray;
+            transition: $transition_all_03;
+        }
+
+        &::placeholder {
+            color: $gray;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 126%;
+            letter-spacing: -0.14px;
+            text-transform: uppercase;
+        }
+    }
+
+    .area_text {
+        height: 165px;
+    }
+
+    .form_btn {
+        width: 100%;
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 126%;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 18px 16px;
+        border: 1px solid $white;
+        transition: $transition_all_03;
+        position: relative;
+
+        .left_arrow,
+        .right_arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left_arrow {
+            left: 16px;
+        }
+
+        .right_arrow {
+            right: 16px;
+        }
+
+        svg {
+            fill: $black;
+            transition: $transition_all_03;
+        }
+
+        &:hover {
+            background-color: transparent;
+            transition: $transition_all_03;
+            color: $white;
+
+            svg {
+                fill: $white;
+                transition: $transition_all_03;
+            }
+        }
+    }
 }

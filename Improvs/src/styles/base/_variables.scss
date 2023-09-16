@@ -2,9 +2,9 @@
 // Color calculator - http://razorjam.github.io/sasscolourfunctioncalculator/
 // Color names - http://name-of-color.com/
 
-$black: #000;
+$black: #0E0E0E;;
 $white: #fff;
-$gray:  #ccc;
+$gray:  #A6A6A6;
 
 
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -53,3 +53,5 @@ $headings-color: inherit !default;
 
 
 $animation-speed: 0.3s;
+
+$transition_all_03: all .3s ease;
