@@ -130,16 +130,17 @@ html {
 
     span {
         position: relative;       
-        white-space: nowrap;
+        white-space: nowrap;     
 
         &::after {
             content:'';
             position: absolute;
             left: 0;
             bottom: -6px;
-            width: 100%;
+            width: 0;
             height: 6px;
             background: url(../images/icons/line.svg) center  no-repeat;
+            transition: $anim_line;
         }
     }
 
@@ -147,6 +148,16 @@ html {
         text-transform: uppercase;
         font-style: normal;
         @include text-grad($black20, $gold6D);
+    }
+
+    &.show {
+
+        span  {
+
+            &::after {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -642,6 +653,7 @@ html {
         left: 20%;
         transform: translateX(-50%);
         bottom: 37%;
+        transition: all .3s ease-in 0s;
 
         @include media ("<tablet") {
             left: 16px;
@@ -660,6 +672,7 @@ html {
         left: 44%;
         transform: translateX(-50%);
         bottom: 35%;
+        transition: all .3s ease-in .3s;
 
         @include media ("<tablet") {
             left: 16px;
@@ -683,6 +696,7 @@ html {
         left: 67%;
         transform: translateX(-50%);
         bottom: 24%;
+        transition: all .3s ease-in .6s;
 
         @include media ("<tablet") {
             left: auto;
@@ -707,6 +721,7 @@ html {
         transform: translateX(-50%);
         bottom: 16%;
         min-width: max-content;
+        transition: all .3s ease-in .9s;
 
         @include media ("<tablet") {
             left: auto;
@@ -769,6 +784,7 @@ html {
         flex-direction: column;
         align-items: center;
         z-index: 4;
+        opacity: 0;
         
         @include media ("<widescreen") {
             bottom: 0;
@@ -786,6 +802,10 @@ html {
             @include media ("<widescreen") {
                 transform: rotate(180deg);
             }
+        }
+
+        &.show {
+            opacity: 1;
         }
     }
 
@@ -1183,10 +1203,44 @@ html {
 
         &.left {
             text-align: left;
+
+            .li {
+                opacity: 0;
+                transform: translate(-100px);
+
+                &:nth-child(1) {
+                    transition: all 1s ease .3s;
+                }
+        
+                &:nth-child(2) {
+                    transition: all 1s ease .6s;
+                }
+        
+                &:nth-child(3) {
+                    transition: all 1s ease .9s;
+                }
+            }
         }
 
         &.right {
             text-align: right;
+
+            .li {
+                opacity: 0;
+                transform: translate(100px);
+                
+                &:nth-child(1) {
+                    transition: all 1s ease 1.2s;
+                }
+        
+                &:nth-child(2) {
+                    transition: all 1s ease 1.5s;
+                }
+        
+                &:nth-child(3) {
+                    transition: all 1s ease 1.8s;
+                }
+            }
         }
     }
 
@@ -1247,6 +1301,10 @@ html {
 
         span {
             font-weight: 700;
+
+            &::after {
+                transition: all .7s ease 2.1s; 
+            }
         }
     }
 
@@ -1254,6 +1312,8 @@ html {
         position: relative;
         height: 552px;
         min-width: 30%;
+        opacity: 0;
+        transition: $anim_1;
 
         @include media ("<desktop") {
             height: 342px;
@@ -1471,6 +1531,8 @@ html {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        opacity: 0;
+        transition: all .7s ease 2.1s; 
 
         @include media ("<tablet_b") {
             position: relative;
@@ -1770,6 +1832,35 @@ html {
             &::after {
                 background-color: $bronze;              
             }
+        }
+    }
+
+    &.show {
+
+        .list  {
+             
+            .li {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+
+        .circle-box {
+            opacity: 1;
+        }
+
+        .text {
+
+            span {
+
+                &::after {
+                    width: 100%;                  
+                }
+            }
+        }
+
+        .btn-wrap {
+            opacity: 1;
         }
     }
 }

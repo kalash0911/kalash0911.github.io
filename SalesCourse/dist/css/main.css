@@ -677,9 +677,10 @@ html {
       position: absolute;
       left: 0;
       bottom: -6px;
-      width: 100%;
+      width: 0;
       height: 6px;
-      background: url(../images/icons/line.svg) center no-repeat; }
+      background: url(../images/icons/line.svg) center no-repeat;
+      transition: all 0.7s ease 1s; }
   .text i {
     text-transform: uppercase;
     font-style: normal;
@@ -687,6 +688,8 @@ html {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent; }
+  .text.show span::after {
+    width: 100%; }
 
 .title {
   font-family: "SF Pro Display", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
@@ -1092,7 +1095,8 @@ html {
     left: 20%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 37%; }
+    bottom: 37%;
+    transition: all .3s ease-in 0s; }
     @media (max-width: 767px) {
       .find-section .item1 {
         left: 16px; } }
@@ -1105,7 +1109,8 @@ html {
     left: 44%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 35%; }
+    bottom: 35%;
+    transition: all .3s ease-in .3s; }
     @media (max-width: 767px) {
       .find-section .item2 {
         left: 16px;
@@ -1122,7 +1127,8 @@ html {
     left: 67%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 24%; }
+    bottom: 24%;
+    transition: all .3s ease-in .6s; }
     @media (max-width: 767px) {
       .find-section .item3 {
         left: auto;
@@ -1142,7 +1148,8 @@ html {
     bottom: 16%;
     min-width: -webkit-max-content;
     min-width: -moz-max-content;
-    min-width: max-content; }
+    min-width: max-content;
+    transition: all .3s ease-in .9s; }
     @media (max-width: 767px) {
       .find-section .item4 {
         left: auto;
@@ -1195,7 +1202,8 @@ html {
     flex-direction: column;
     -ms-flex-align: center;
     align-items: center;
-    z-index: 4; }
+    z-index: 4;
+    opacity: 0; }
     @media (max-width: 1199px) {
       .find-section .item {
         bottom: 0;
@@ -1211,6 +1219,8 @@ html {
         .find-section .item .line {
           -webkit-transform: rotate(180deg);
           transform: rotate(180deg); } }
+    .find-section .item.show {
+      opacity: 1; }
   @media (max-width: 767px) {
     .find-section .item2 {
       z-index: 2; } }
@@ -1526,8 +1536,28 @@ html {
         margin: 0 auto; } }
     .course-section .list.left {
       text-align: left; }
+      .course-section .list.left .li {
+        opacity: 0;
+        -webkit-transform: translate(-100px);
+        transform: translate(-100px); }
+        .course-section .list.left .li:nth-child(1) {
+          transition: all 1s ease .3s; }
+        .course-section .list.left .li:nth-child(2) {
+          transition: all 1s ease .6s; }
+        .course-section .list.left .li:nth-child(3) {
+          transition: all 1s ease .9s; }
     .course-section .list.right {
       text-align: right; }
+      .course-section .list.right .li {
+        opacity: 0;
+        -webkit-transform: translate(100px);
+        transform: translate(100px); }
+        .course-section .list.right .li:nth-child(1) {
+          transition: all 1s ease 1.2s; }
+        .course-section .list.right .li:nth-child(2) {
+          transition: all 1s ease 1.5s; }
+        .course-section .list.right .li:nth-child(3) {
+          transition: all 1s ease 1.8s; }
   .course-section .li {
     position: relative;
     list-style: none; }
@@ -1567,10 +1597,14 @@ html {
         display: none; } }
   .course-section .text span {
     font-weight: 700; }
+    .course-section .text span::after {
+      transition: all .7s ease 2.1s; }
   .course-section .circle-box {
     position: relative;
     height: 552px;
-    min-width: 30%; }
+    min-width: 30%;
+    opacity: 0;
+    transition: all 1s ease 0s; }
     @media (max-width: 1023px) {
       .course-section .circle-box {
         height: 342px; } }
@@ -1745,7 +1779,9 @@ html {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 10px; }
+    gap: 10px;
+    opacity: 0;
+    transition: all .7s ease 2.1s; }
     @media (max-width: 859px) {
       .course-section .btn-wrap {
         position: relative;
@@ -1903,6 +1939,16 @@ html {
     border: 1px solid #B9917A; }
   .course-section.bronze-sc .li::after {
     background-color: #B9917A; }
+  .course-section.show .list .li {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    opacity: 1; }
+  .course-section.show .circle-box {
+    opacity: 1; }
+  .course-section.show .text span::after {
+    width: 100%; }
+  .course-section.show .btn-wrap {
+    opacity: 1; }
 
 /* -------------------contact-section---------------- */
 .contact-section {
