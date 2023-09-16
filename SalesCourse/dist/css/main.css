@@ -1423,8 +1423,8 @@ html {
 
 /* -------------------course-section---------------- */
 .course-section {
-  padding: 100px 0; }
-  @media (max-width: 479px) {
+  padding: 150px 0; }
+  @media (max-width: 859px) {
     .course-section {
       padding: 50px 0; } }
   .course-section .container {
@@ -1435,13 +1435,32 @@ html {
     position: absolute;
     top: -250px;
     right: -250px;
-    z-index: -1;
+    z-index: 1;
     -webkit-transform: rotate(220deg);
     transform: rotate(220deg); }
+    @media (max-width: 479px) {
+      .course-section .cloud-bg {
+        top: -100px;
+        right: -100px; } }
+  .course-section .grad-bg {
+    position: absolute;
+    right: -250px;
+    bottom: -150px;
+    width: 761px;
+    height: 185px;
+    z-index: 1;
+    border-radius: 761px;
+    background: rgba(237, 229, 218, 0.1);
+    -webkit-filter: blur(187px);
+    filter: blur(187px); }
+    @media (max-width: 479px) {
+      .course-section .grad-bg {
+        bottom: 100px; } }
   .course-section .title {
     position: relative;
     margin-bottom: 24px;
-    z-index: 2; }
+    z-index: 2;
+    text-transform: none; }
     @media (max-width: 859px) {
       .course-section .title {
         font-size: 37px; } }
@@ -1457,7 +1476,8 @@ html {
     -webkit-backdrop-filter: blur(17px);
     backdrop-filter: blur(17px);
     margin-bottom: 45px;
-    z-index: 2; }
+    z-index: 2;
+    background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0) 100%); }
     @media (max-width: 479px) {
       .course-section .stiker {
         margin-bottom: 24px; } }
@@ -1563,8 +1583,7 @@ html {
     transform: translate(-50%);
     min-width: 552px;
     height: 552px;
-    border-radius: 50%;
-    border: 1px solid #DDB06D; }
+    border-radius: 50%; }
     @media (max-width: 1023px) {
       .course-section .circle-wrap {
         min-width: 342px;
@@ -1660,8 +1679,8 @@ html {
   .course-section .play-btn {
     position: absolute;
     top: -5px;
-    left: 0;
-    width: 100%;
+    left: -5px;
+    width: 102%;
     height: 102%;
     z-index: 1;
     background: transparent; }
@@ -1701,15 +1720,18 @@ html {
     font-weight: 600;
     line-height: 112%;
     letter-spacing: -0.16px;
-    z-index: 1; }
+    z-index: 1;
+    transition: all 0.3s ease 0s; }
     @media (max-width: 1023px) {
       .course-section .btn-content {
         min-width: 100px;
         min-height: 100px;
         font-size: 11px; } }
-    @media (max-width: 1023px) {
-      .course-section .btn-content svg {
-        width: 17px; } }
+    .course-section .btn-content svg {
+      transition: all 0.3s ease 0s; }
+      @media (max-width: 1023px) {
+        .course-section .btn-content svg {
+          width: 17px; } }
   .course-section .btn-wrap {
     position: absolute;
     bottom: -145px;
@@ -1739,8 +1761,7 @@ html {
     font-size: 14px;
     font-weight: 400; }
   .course-section.gold-sc .stiker {
-    border: 1px solid #DDB06D;
-    background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0) 100%); }
+    border: 1px solid #DDB06D; }
     .course-section.gold-sc .stiker svg {
       fill: url(#paint0_linear_1383_27395); }
   .course-section.gold-sc .stiker-title {
@@ -1748,6 +1769,8 @@ html {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent; }
+  .course-section.gold-sc .circle-wrap {
+    border: 1px solid #DDB06D; }
   .course-section.gold-sc .circle {
     border: 1px solid #DDB06D; }
     .course-section.gold-sc .circle::before {
@@ -1757,5 +1780,125 @@ html {
     color: #DDB06D; }
     .course-section.gold-sc .btn-content svg {
       fill: #DDB06D; }
+  .course-section.gold-sc .play-btn:hover .btn-content {
+    background-color: #DDB06D;
+    color: #171921; }
+  .course-section.gold-sc .play-btn:hover svg {
+    fill: #171921; }
+  .course-section.silver-sc .cloud-bg {
+    top: auto;
+    bottom: -150px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+    @media (max-width: 479px) {
+      .course-section.silver-sc .cloud-bg {
+        bottom: 150px; } }
+  .course-section.silver-sc .grad-bg {
+    right: auto;
+    bottom: auto;
+    top: 150px;
+    left: -150px; }
+    @media (max-width: 479px) {
+      .course-section.silver-sc .grad-bg {
+        top: 40%;
+        left: -50%; } }
+  .course-section.silver-sc .stiker {
+    border: 1px solid #D0D0D0; }
+    .course-section.silver-sc .stiker svg {
+      fill: #D0D0D0; }
+  .course-section.silver-sc .stiker-title {
+    background: linear-gradient(180deg, #111520 -200%, #D0D0D0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .course-section.silver-sc .circle-wrap {
+    border: 1px solid #D0D0D0; }
+  .course-section.silver-sc .circle {
+    border: 1px solid #D0D0D0; }
+    .course-section.silver-sc .circle::before {
+      background-color: #D0D0D0; }
+  .course-section.silver-sc .btn-content {
+    border: 1px solid #D0D0D0;
+    color: #D0D0D0; }
+    .course-section.silver-sc .btn-content svg {
+      fill: #D0D0D0; }
+  .course-section.silver-sc .play-btn:hover .btn-content {
+    background-color: #D0D0D0;
+    color: #171921; }
+  .course-section.silver-sc .play-btn:hover svg {
+    fill: #171921; }
+  .course-section.silver-sc .text span::after {
+    background: url(../images/icons/line-silver.svg) center no-repeat; }
+  .course-section.silver-sc .main-btn {
+    background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%)); }
+    .course-section.silver-sc .main-btn::before {
+      background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%)); }
+  .course-section.silver-sc .sec-btn {
+    border: 2px solid #D0D0D0; }
+    .course-section.silver-sc .sec-btn::before {
+      background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%)); }
+    .course-section.silver-sc .sec-btn:hover {
+      border: 2px solid transparent; }
+  .course-section.silver-sc .li::before {
+    border: 1px solid #D0D0D0; }
+  .course-section.silver-sc .li::after {
+    background-color: #D0D0D0; }
+  .course-section.bronze-sc .cloud-bg {
+    top: -150px;
+    left: -250px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+    @media (max-width: 479px) {
+      .course-section.bronze-sc .cloud-bg {
+        top: 50px;
+        left: -100px; } }
+  .course-section.bronze-sc .grad-bg {
+    right: -250px;
+    bottom: -100px; }
+    @media (max-width: 479px) {
+      .course-section.bronze-sc .grad-bg {
+        right: -150px;
+        bottom: 20%; } }
+  .course-section.bronze-sc .stiker {
+    border: 1px solid #B9917A; }
+    .course-section.bronze-sc .stiker svg {
+      fill: #B9917A; }
+  .course-section.bronze-sc .stiker-title {
+    background: linear-gradient(180deg, #111520 -200%, #B9917A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; }
+  .course-section.bronze-sc .circle-wrap {
+    border: 1px solid #B9917A; }
+  .course-section.bronze-sc .circle {
+    border: 1px solid #B9917A; }
+    .course-section.bronze-sc .circle::before {
+      background-color: #B9917A; }
+  .course-section.bronze-sc .btn-content {
+    border: 1px solid #B9917A;
+    color: #B9917A; }
+    .course-section.bronze-sc .btn-content svg {
+      fill: #B9917A; }
+  .course-section.bronze-sc .play-btn:hover .btn-content {
+    background-color: #B9917A;
+    color: #171921; }
+  .course-section.bronze-sc .play-btn:hover svg {
+    fill: #171921; }
+  .course-section.bronze-sc .text span::after {
+    background: url(../images/icons/line-bronze.svg) center no-repeat; }
+  .course-section.bronze-sc .main-btn {
+    background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%)); }
+    .course-section.bronze-sc .main-btn::before {
+      background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%)); }
+  .course-section.bronze-sc .sec-btn {
+    border: 2px solid #B9917A; }
+    .course-section.bronze-sc .sec-btn::before {
+      background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%)); }
+    .course-section.bronze-sc .sec-btn:hover {
+      border: 2px solid transparent; }
+  .course-section.bronze-sc .li::before {
+    border: 1px solid #B9917A; }
+  .course-section.bronze-sc .li::after {
+    background-color: #B9917A; }
 
 /*# sourceMappingURL=main.css.map */
