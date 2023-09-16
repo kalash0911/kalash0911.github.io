@@ -4,7 +4,7 @@ const rigger = require('gulp-rigger');
 const fileinclude = require('gulp-file-include');
 
 module.exports = function html() {
-    return gulp.src('src/*.html')
+    return gulp.src('src/**/*.html')
       .pipe(plumber())
       .pipe(fileinclude({
         prefix: '@@',

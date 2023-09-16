@@ -1,0 +1,246 @@
+.blog_page {
+  @include adaptiv-vaule("padding-top", 100, 50, 1);
+  padding-bottom: 30px;
+
+  .title_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiv-vaule("margin-bottom", 70, 35, 1);
+  }
+
+  .blog_title {
+    @include adaptiv-vaule("font-size", 132, 64, 1);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -3.96px;
+    text-transform: uppercase;
+  }
+
+  .dropbtn {
+    background-color: $black;
+    color: $white;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid $white;
+    width: 155px;
+    @include adaptiv-vaule("width", 155, 100, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+
+    &:hover {
+      img {
+        transform: rotateX(180deg);
+        transition: $transition_all_03;
+      }
+    }
+
+    img {
+      margin-right: 10px;
+      transition: $transition_all_03;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+
+    &:hover {
+      .dropdown-content {
+        transform: rotateX(0deg);
+        opacity: 1;
+        transition: $transition_all_03;
+      }
+    }
+  }
+
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    background-color: $black;
+    border: 1px solid $white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transform: rotateX(-90deg);
+    opacity: 0;
+    transform-origin: top;
+    transition: $transition_all_03;
+  }
+
+  .dropdown_item {
+    cursor: pointer;
+    color: $white;
+    font-size: 16px;
+    padding: 18px;
+    border-bottom: 1px solid $white;
+    width: 100%;
+    text-align: center;
+    transition: $transition_all_03;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+      transition: $transition_all_03;
+    }
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+  }
+
+
+  .similar_post {
+    height: 412px;
+    @include adaptiv-vaule("height", 412, 315, 1);
+    position: relative;
+    padding: 10px 10px 30px 25px;
+
+    &:nth-child(7n + 1) {
+      width: 49%;
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(7n + 2) {
+      width: 49%;
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(7n + 3) {
+      width: 29%;
+
+      @include media ("<desktop") {
+        width: 49%;
+      }
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(7n + 4) {
+      width: 69%;
+
+      @include media ("<desktop") {
+        width: 49%;
+      }
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(7n + 5) {
+      width: 32%;
+
+      @include media ("<desktop") {
+        width: 49%;
+      }
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(7n + 6) {
+      width: 32%;
+
+      @include media ("<desktop") {
+        width: 49%;
+      }
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(7n + 7) {
+      width: 32%;
+
+      @include media ("<desktop") {
+        width: 49%;
+      }
+
+      @include media ("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 195px;
+    }
+  }
+
+  .post_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .similar_post_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .post_text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+
+  .post_title {
+    @include adaptiv-vaule("font-size", 24, 18, 1);
+    font-weight: 600;
+    line-height: 126%;
+    letter-spacing: -0.24px;
+    margin-bottom: 12px;
+  }
+
+  .category_name {
+    color: $gray_A6;
+    @include adaptiv-vaule("font-size", 16, 12, 1);
+    font-weight: 500;
+    line-height: 126%;
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+    max-width: max-content;
+    text-align: center;
+    border: 1px solid $gray_A6;
+    padding: 3px 8px;
+  }
+}
