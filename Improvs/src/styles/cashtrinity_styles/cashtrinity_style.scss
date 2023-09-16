@@ -1,6 +1,6 @@
 // ---------- #Main_Trinity
 
-.main_trinity {
+.similar_main {
     @include adaptiv-vaule("padding-top", 120, 60, 1);
     @include adaptiv-vaule("padding-bottom", 140, 60, 1);
     text-align: center;
@@ -72,28 +72,31 @@
 
 // ---------- #About_Trinity
 
-.about_trinity {
+.about_trinity,
+.similar_info_bloks {
 
     .info_text_wrap {
         position: relative;
         @include adaptiv-vaule("top", -30, 0, 1);
+
+        .info_text {
+            @include adaptiv-vaule("font-size", 18, 14, 1);
+            font-weight: 500;
+            line-height: 126%;
+            letter-spacing: -0.18px;
+            text-transform: uppercase;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            .gray_text {
+                margin-left: 10px;
+            }
+        }
     }
 
-    .info_text {
-        @include adaptiv-vaule("font-size", 18, 14, 1);
-        font-weight: 500;
-        line-height: 126%;
-        letter-spacing: -0.18px;
-        text-transform: uppercase;
 
-        &:not(:last-child) {
-            margin-bottom: 15px;
-        }
-
-        .gray_text {
-            margin-left: 10px;
-        }
-    }
 }
 
 // ---------- #App
@@ -225,7 +228,11 @@
 
 // ---------- #Typography
 
-.typography_trinity {
+.similar_gradient {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
     .font_wrap {
         display: flex;
         align-items: center;
@@ -306,7 +313,7 @@
 
 // ---------- #Result
 
-.trinity_result {
+.similar_result {
     @include adaptiv-vaule("padding-top", 25, 20, 1);
     @include adaptiv-vaule("padding-bottom", 80, 40, 1);
 

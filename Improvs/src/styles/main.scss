@@ -4,7 +4,8 @@ $breakpoints: (
 	'phone_max': 520px,
 	'tablet': 768px,
 	'desktop': 1024px,
-	'widescreen': 1200px
+	'widescreen': 1200px,
+	'laptop': 1400px
 );
 
 // keywords
@@ -38,6 +39,7 @@ $media-expressions: (
 
 @import 'cashtrinity_styles/cashtrinity_style.scss';
 @import 'post_template_styles/post_template.scss';
+@import 'max_ratings_styles/max_ratings.scss';
 
 
 
