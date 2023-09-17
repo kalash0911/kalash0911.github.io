@@ -25,7 +25,7 @@
         letter-spacing: -0.42px;
     }
 
-    .swiper{
+    .swiper {
         position: relative;
         max-width: 1550px;
 
@@ -57,7 +57,7 @@
         padding-top: 100px;
         padding-bottom: 100px;
         max-width: 1550px;
-       
+
         .swiper-slide {
             transform: translateY(50px);
             transition: $transition_all_03;
@@ -110,8 +110,8 @@
         transform: translateX(-50%);
         display: flex;
         align-items: center;
-        width: 80px;
-        height: 35px;
+        width: 150px;
+        height: 40px;
 
         @include media ("<desktop") {
             display: none;
@@ -119,10 +119,30 @@
 
         .swiper-button-next {
             right: 0;
+            background-image: url(/src/images/across_us_template/AR_Right.svg);
+            width: 40px;
+            height: 37px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+
+            &::after {
+                display: none;
+            }
         }
 
         .swiper-button-prev {
             left: 0;
+            background-image: url(/src/images/across_us_template/AR_Left.svg);
+            width: 40px;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+
+            &::after {
+                display: none;
+            }
         }
     }
 }
@@ -229,8 +249,8 @@
         }
     }
 
-    .color_name{
-        &:last-child{
+    .color_name {
+        &:last-child {
             color: $black;
         }
     }
