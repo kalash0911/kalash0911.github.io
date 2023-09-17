@@ -1,0 +1,260 @@
+// DO NOT CHANGE ANYTHING IN THIS FILE
+
+.puzzles-container {
+    z-index: -1;
+}
+
+.puzzles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.puzzle-animation-first {
+    position: relative;
+    overflow: hidden;
+
+
+    .puzzle {
+        position: absolute;
+        width: 589px;
+        fill: #f1f2f5;
+
+        @include media('<phone') {
+            width: 300px;
+            opacity: 0;
+        }
+
+        &-top-left {
+            display: none;
+
+            @include media('<phone') {
+                display: block;
+                top: 22px;
+                left: -79px;
+                transform: scale(1.2);
+            }
+        }
+
+        &-top-right {
+            top: -310px;
+            right: -304px;
+
+            @include media('<phone') {
+                top: 0;
+                left: 213px;
+            }
+        }
+
+        &-bottom-right {
+            top: 495px;
+            right: -250px;
+            transform: rotate(90deg);
+
+            @include media('<phone') {
+                top: 283px;
+                left: 183px;
+            }
+        }
+
+        &-bottom-left {
+            top: 175px;
+            left: -315px;
+
+            @include media('<phone') {
+                top: 252px;
+                left: -106px;
+            }
+        }
+    }
+}
+
+.puzzle-animation-second {
+    position: relative;
+    overflow: hidden;
+
+    .puzzles-container {
+        transform: scale(1.5) translateX(5%);
+        left: 0;
+
+        @include media('>=xl-widescreen') {
+            left: 20%;
+        }
+
+
+        @include media('<desktop') {
+            top: 25%;
+            left: -50%;
+            transform: scale(1.5) translateX(0%);
+        }
+
+        @include media('<tablet') {
+            left: -75%;
+        }
+
+        @include media('<phone') {
+            top: 5%;
+            left: 0;
+            transform: scale(1.5) translateX(15%);
+        }
+    }
+
+    .left-side {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+    .right-side {
+        position: absolute;
+        top: 16px;
+        width: 100%;
+        left: 493px;
+        bottom: 0;
+
+        @include media('<phone') {
+            left: -40px;
+            top: 27px;
+        }
+    }
+
+    .puzzle {
+        position: absolute;
+        width: 589px;
+        fill: #f1f2f5;
+
+        @include media('<phone') {
+            width: 450px;
+        }
+
+        &-top-left {
+            top: 0;
+            left: 128px;
+
+            @include media('<phone') {
+                left: -295px;
+            }
+        }
+
+        &-top-right {
+            top: -70px;
+            left: 99px;
+            transform: scale(0.84);
+        }
+
+        &-bottom-right {
+            top: 390px;
+            left: 50px;
+            transform: scale(0.84) rotate(90deg);
+
+            @include media('<phone') {
+                top: 285px;
+                left: 63px;
+            }
+        }
+
+        &-bottom-left {
+            top: 359px;
+            left: 80px;
+            transform: scale(0.84);
+
+            @include media('<phone') {
+                top: 275px;
+                left: -330px;
+            }
+        }
+    }
+}
+
+.puzzle-animation-third {
+    position: relative;
+    overflow: hidden;
+
+    .puzzles-container {
+        transform: scale(1.5) translateX(13%);
+
+        @include media('>=xl-widescreen') {
+            transform: scale(1.5) translateX(30%);
+        }
+
+        @include media('<desktop') {
+            transform: scale(1.5) translateX(0%);
+        }
+
+        @include media('<phone') {
+            transform: scale(1.5) translateX(13%);
+        }
+    }
+
+    .left-side {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+
+        @include media('<phone') {
+            left: -243px;
+        }
+    }
+
+    .right-side {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 466px;
+        bottom: 0;
+
+        @include media('<phone') {
+            top: 17px;
+            left: 113px;
+        }
+    }
+
+    .puzzle {
+        position: absolute;
+        width: 589px;
+        fill: #f1f2f5;
+
+        @include media('<phone') {
+            width: 450px;
+        }
+
+        &-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        &-top-right {
+            top: -58px;
+            left: 0;
+            transform: scale(0.84);
+        }
+
+        &-bottom-right {
+            top: 404px;
+            left: -49px;
+            transform: scale(0.84) rotate(90deg);
+
+            @include media('<phone') {
+                top: 298px;
+                left: -37px;
+            }
+        }
+
+        &-bottom-left {
+            top: 358px;
+            left: -47px;
+            transform: scale(0.84);
+
+            @include media('<phone') {
+                top: 274px;
+                left: -37px;
+            }
+        }
+    }
+}

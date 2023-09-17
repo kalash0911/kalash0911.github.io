@@ -1,4 +1,4 @@
-const slider = new Swiper(".swiper_acrossUs", {
+const slider = new Swiper(".swiper_creditor", {
     speed: 1400,
     // slidesPerView: 1.6,
     centeredSlides: true,
@@ -6,20 +6,10 @@ const slider = new Swiper(".swiper_acrossUs", {
     // spaceBetween: 80,
     loopedSlides: 1,
     loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        // clickable: true,
-    },
+    autoplay:true,
     breakpoints: {
         320: {
             spaceBetween: 20,
-        },
-        480: {
             slidesPerView: 1,
         },
         768: {

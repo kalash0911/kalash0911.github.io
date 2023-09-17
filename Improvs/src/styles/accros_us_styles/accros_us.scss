@@ -6,7 +6,8 @@
     }
 }
 
-.swiper_across_us {
+.swiper_across_us,
+.similar_swiper {
     @include adaptiv-vaule("padding-top", 25, 20, 1);
     @include adaptiv-vaule("padding-bottom", 160, 80, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -24,10 +25,38 @@
         letter-spacing: -0.42px;
     }
 
+    .swiper{
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 15%;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            background: linear-gradient(270deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 15%;
+            z-index: 2;
+            background: linear-gradient(90deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+        }
+
+    }
+
     .swiper_acrossUs {
         padding-top: 100px;
         padding-bottom: 100px;
-
+        max-width: 1550px;
+       
         .swiper-slide {
             transform: translateY(50px);
             transition: $transition_all_03;
@@ -155,27 +184,28 @@
         margin-bottom: 15px;
         text-align: center;
 
-        &::after,&::before{
+        &::after,
+        &::before {
             @include adaptiv-vaule("height", 130, 40, 1);
         }
     }
 
-    .innovation_image{
+    .innovation_image {
         width: 100%;
         height: auto;
         position: relative;
     }
 
-    .innovation_bg{
+    .innovation_bg {
         height: 100%;
         width: 100%;
     }
 
-    .innovation_card{
+    .innovation_card {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50% , -50%);
+        transform: translate(-50%, -50%);
         @include adaptiv-vaule("width", 345, 200, 1);
         @include adaptiv-vaule("font-size", 230, 150, 1);
     }

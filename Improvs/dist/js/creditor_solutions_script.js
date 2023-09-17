@@ -1,6 +1,6 @@
 "use strict";
 
-var slider = new Swiper(".swiper_acrossUs", {
+var slider = new Swiper(".swiper_creditor", {
   speed: 1400,
   // slidesPerView: 1.6,
   centeredSlides: true,
@@ -8,20 +8,10 @@ var slider = new Swiper(".swiper_acrossUs", {
   // spaceBetween: 80,
   loopedSlides: 1,
   loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets" // clickable: true,
-
-  },
+  autoplay: true,
   breakpoints: {
     320: {
-      spaceBetween: 20
-    },
-    480: {
+      spaceBetween: 20,
       slidesPerView: 1
     },
     768: {
@@ -33,4 +23,4 @@ var slider = new Swiper(".swiper_acrossUs", {
     }
   }
 });
-//# sourceMappingURL=across_us_script.js.map
+//# sourceMappingURL=creditor_solutions_script.js.map

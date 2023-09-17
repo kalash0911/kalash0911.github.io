@@ -5,7 +5,8 @@ $breakpoints: (
 	'tablet': 768px,
 	'desktop': 1024px,
 	'widescreen': 1200px,
-	'laptop': 1400px
+	'laptop': 1400px,
+	'xl-widescreen': 1700px
 );
 
 // keywords
@@ -37,15 +38,17 @@ $media-expressions: (
 
 
 
-@import 'cashtrinity_styles/cashtrinity_style.scss';
-@import 'post_template_styles/post_template.scss';
-@import 'max_ratings_styles/max_ratings.scss';
-@import 'blog_page_styles/blog_style.scss';
-@import 'accros_us_styles/accros_us.scss';
+@import 'cashtrinity_styles/cashtrinity_style';
+@import 'post_template_styles/post_template';
+@import 'max_ratings_styles/max_ratings';
+@import 'blog_page_styles/blog_style';
+@import 'accros_us_styles/accros_us';
+@import 'creditor_solutions_styles/creditor_solutions';
 
 
 
 @import 'layout/header';
 @import 'layout/common';
 @import 'layout/footer';
+@import 'layout/puzzles';
 
