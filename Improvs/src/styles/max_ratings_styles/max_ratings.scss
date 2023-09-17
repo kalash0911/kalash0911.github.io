@@ -31,6 +31,12 @@
             background: linear-gradient(180deg, #000 0%, #F84F38 50.03%, #FFF 100%);
         }
     }
+
+    .color_name{
+        &:last-child{
+            color: $black;
+        }
+    }
 }
 
 .mobile_max_ratings {

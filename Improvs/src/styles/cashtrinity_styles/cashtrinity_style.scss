@@ -17,6 +17,13 @@
         text-align: center;
     }
 
+    .tip_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
     .main_tip {
         color: $gray_A6;
         @include adaptiv-vaule("font-size", 16, 12, 1);

@@ -84,4 +84,14 @@
 
         }
     }
+
+    .color_name {
+
+        &:last-child,
+        &:first-child {
+            color: $white;
+        }
+
+        color: $black;
+    }
 }

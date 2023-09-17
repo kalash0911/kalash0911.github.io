@@ -1,0 +1,121 @@
+.about_revenew {
+    .about_img {
+        &::before {
+            display: block;
+        }
+    }
+}
+
+.swiper_revenew_section {
+
+    .swiper{
+        &::before{
+            @include media ("<desktop") {
+                width: 5%;
+            }
+        }
+    }
+
+    .swiper_revenew {
+        padding-bottom: 100px;
+
+        @include media ("<desktop") {
+            padding-bottom: 0;
+        }
+
+        .swiper-slide {
+            transform: scale(0.7);
+            transition: $transition_all_03;
+        }
+
+        .swiper-slide-active {
+            transform: scale(1);
+        }
+
+    }
+
+    .slide_img {
+        margin-bottom: 30px;
+        max-width: 910px;
+        width: 100%;
+    }
+
+    .slide_text{
+        max-width: 910px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 15px;
+
+        @include media ("<desktop") {
+            margin-left: 20px;
+        }
+    }
+
+    .slide_title {
+        color: $gray_D8;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        font-weight: 500;
+        line-height: 126%;
+        letter-spacing: -0.18px;
+        text-transform: uppercase;
+
+    }
+
+    .pink_text {
+        color: $pink;
+        margin-right: 10px;
+    }
+
+    .arrows{
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+}
+
+.mobile_app_revenew {
+    padding-top: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    @include media ("<tablet") {
+        padding-top: 25px;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .content {
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        z-index: 1;
+
+        @include media ("<tablet") {
+            position: static;
+        }
+    }
+}
+
+.typography_revenew {
+    .gradient_block {
+        background: linear-gradient(90deg, #010101 0%, #FF3DB2 50.03%, #FFF 100%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #010101 0%, #FF3DB2 50.03%, #FFF 100%);
+        }
+    }
+
+    .color_name {
+        &:last-child {
+            color: $black;
+        }
+    }
+}
+
+.revenew_result {
+    .result_text {
+        max-width: 900px;
+    }
+}
