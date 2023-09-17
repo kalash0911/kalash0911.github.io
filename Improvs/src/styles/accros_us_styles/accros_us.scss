@@ -1,0 +1,193 @@
+.about_across_us {
+    .about_img {
+        &::before {
+            display: block;
+        }
+    }
+}
+
+.swiper_across_us {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .swiper_across_us_title {
+        max-width: 710px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 42px;
+        @include adaptiv-vaule("font-size", 42, 24, 1);
+        font-weight: 600;
+        line-height: 124%;
+        letter-spacing: -0.42px;
+    }
+
+    .swiper_acrossUs {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .swiper-slide {
+            transform: translateY(50px);
+            transition: $transition_all_03;
+        }
+
+        .swiper-slide-active {
+            transform: translateY(0);
+        }
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        top: 0;
+        height: 2px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 60px;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.3);
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $white;
+    }
+
+    .slide_img {
+        @include adaptiv-vaule("height", 650, 250, 1);
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 0 auto;
+
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .arrows {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        width: 80px;
+        height: 35px;
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+    }
+}
+
+.logo_across_us {
+    .about_img {
+
+        &::after,
+        &::before {
+            display: block;
+        }
+
+        &::before {
+            @include adaptiv-vaule("height", 250, 50, 1);
+        }
+    }
+}
+
+.mobile_across_us {
+    position: relative;
+    padding-top: 0;
+    border: none;
+
+    @include media ("<desktop") {
+        padding-top: 25px;
+    }
+
+    .container {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        z-index: 1;
+
+        @include media ("<desktop") {
+            position: static;
+        }
+    }
+
+    .about_img {
+
+        &::before {
+            display: block;
+            @include adaptiv-vaule("height", 460, 100, 1);
+        }
+
+        &::after {
+            @include adaptiv-vaule("height", 460, 100, 1);
+        }
+    }
+}
+
+.innovation {
+    padding-top: 5px;
+    @include adaptiv-vaule("padding-bottom", 50, 25, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .innovation_title {
+        font-size: 108px;
+        @include adaptiv-vaule("font-size", 108, 48, 1);
+        font-weight: 500;
+        line-height: 105%;
+        letter-spacing: -3.24px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        text-align: center;
+
+        &::after,&::before{
+            @include adaptiv-vaule("height", 130, 40, 1);
+        }
+    }
+
+    .innovation_image{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .innovation_bg{
+        height: 100%;
+        width: 100%;
+    }
+
+    .innovation_card{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        @include adaptiv-vaule("width", 345, 200, 1);
+        @include adaptiv-vaule("font-size", 230, 150, 1);
+    }
+}
+
+.typography_across_us {
+
+    .gradient_block {
+        background: linear-gradient(90deg, #2E2E2E 0%, #E54C26 50.03%, #FFF 100%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #2E2E2E 0%, #E54C26 50.03%, #FFF 100%);
+        }
+    }
+}

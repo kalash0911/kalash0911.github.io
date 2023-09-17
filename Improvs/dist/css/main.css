@@ -1713,6 +1713,187 @@ html ::-webkit-scrollbar-thumb {
       .blog_page .category_name {
         font-size: calc(12px + 4 * ((100vw - calc(320px)) / 980)); } }
 
+.about_across_us .about_img::before {
+  display: block; }
+
+.swiper_across_us {
+  /* Только если меньше контейнера */
+  padding-top: 25px;
+  /* Только если меньше контейнера */
+  padding-bottom: 160px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  @media (max-width: 1300px) {
+    .swiper_across_us {
+      padding-top: calc(20px + 5 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .swiper_across_us {
+      padding-bottom: calc(80px + 80 * ((100vw - calc(320px)) / 980)); } }
+  .swiper_across_us .swiper_across_us_title {
+    max-width: 710px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 42px;
+    /* Только если меньше контейнера */
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 124%;
+    letter-spacing: -0.42px; }
+    @media (max-width: 1300px) {
+      .swiper_across_us .swiper_across_us_title {
+        font-size: calc(24px + 18 * ((100vw - calc(320px)) / 980)); } }
+  .swiper_across_us .swiper_acrossUs {
+    padding-top: 100px;
+    padding-bottom: 100px; }
+    .swiper_across_us .swiper_acrossUs .swiper-slide {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      transition: all 0.3s ease; }
+    .swiper_across_us .swiper_acrossUs .swiper-slide-active {
+      -webkit-transform: translateY(0);
+      transform: translateY(0); }
+  .swiper_across_us .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper_across_us .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper_across_us .swiper-pagination-custom,
+  .swiper_across_us .swiper-pagination-fraction {
+    top: 0;
+    height: 2px; }
+  .swiper_across_us .swiper-pagination-bullet {
+    width: 60px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1; }
+  .swiper_across_us .swiper-pagination-bullet-active {
+    background-color: #fff; }
+  .swiper_across_us .slide_img {
+    /* Только если меньше контейнера */
+    height: 650px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto; }
+    @media (max-width: 1300px) {
+      .swiper_across_us .slide_img {
+        height: calc(250px + 400 * ((100vw - calc(320px)) / 980)); } }
+    @media (max-width: 767px) {
+      .swiper_across_us .slide_img {
+        padding: 0 15px; } }
+    .swiper_across_us .slide_img img {
+      width: 100%;
+      height: 100%; }
+  .swiper_across_us .arrows {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 80px;
+    height: 35px; }
+    .swiper_across_us .arrows .swiper-button-next {
+      right: 0; }
+    .swiper_across_us .arrows .swiper-button-prev {
+      left: 0; }
+
+.logo_across_us .about_img::after, .logo_across_us .about_img::before {
+  display: block; }
+
+.logo_across_us .about_img::before {
+  /* Только если меньше контейнера */
+  height: 250px; }
+  @media (max-width: 1300px) {
+    .logo_across_us .about_img::before {
+      height: calc(50px + 200 * ((100vw - calc(320px)) / 980)); } }
+
+.mobile_across_us {
+  position: relative;
+  padding-top: 0;
+  border: none; }
+  @media (max-width: 1023px) {
+    .mobile_across_us {
+      padding-top: 25px; } }
+  .mobile_across_us .container {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 1; }
+    @media (max-width: 1023px) {
+      .mobile_across_us .container {
+        position: static; } }
+  .mobile_across_us .about_img::before {
+    display: block;
+    /* Только если меньше контейнера */
+    height: 460px; }
+    @media (max-width: 1300px) {
+      .mobile_across_us .about_img::before {
+        height: calc(100px + 360 * ((100vw - calc(320px)) / 980)); } }
+  .mobile_across_us .about_img::after {
+    /* Только если меньше контейнера */
+    height: 460px; }
+    @media (max-width: 1300px) {
+      .mobile_across_us .about_img::after {
+        height: calc(100px + 360 * ((100vw - calc(320px)) / 980)); } }
+
+.innovation {
+  padding-top: 5px;
+  /* Только если меньше контейнера */
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  @media (max-width: 1300px) {
+    .innovation {
+      padding-bottom: calc(25px + 25 * ((100vw - calc(320px)) / 980)); } }
+  .innovation .innovation_title {
+    font-size: 108px;
+    /* Только если меньше контейнера */
+    font-size: 108px;
+    font-weight: 500;
+    line-height: 105%;
+    letter-spacing: -3.24px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center; }
+    @media (max-width: 1300px) {
+      .innovation .innovation_title {
+        font-size: calc(48px + 60 * ((100vw - calc(320px)) / 980)); } }
+    .innovation .innovation_title::after, .innovation .innovation_title::before {
+      /* Только если меньше контейнера */
+      height: 130px; }
+      @media (max-width: 1300px) {
+        .innovation .innovation_title::after, .innovation .innovation_title::before {
+          height: calc(40px + 90 * ((100vw - calc(320px)) / 980)); } }
+  .innovation .innovation_image {
+    width: 100%;
+    height: auto;
+    position: relative; }
+  .innovation .innovation_bg {
+    height: 100%;
+    width: 100%; }
+  .innovation .innovation_card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* Только если меньше контейнера */
+    width: 345px;
+    /* Только если меньше контейнера */
+    font-size: 230px; }
+    @media (max-width: 1300px) {
+      .innovation .innovation_card {
+        width: calc(200px + 145 * ((100vw - calc(320px)) / 980)); } }
+    @media (max-width: 1300px) {
+      .innovation .innovation_card {
+        font-size: calc(150px + 80 * ((100vw - calc(320px)) / 980)); } }
+
+.typography_across_us .gradient_block {
+  background: linear-gradient(90deg, #2E2E2E 0%, #E54C26 50.03%, #FFF 100%); }
+  @media (max-width: 519px) {
+    .typography_across_us .gradient_block {
+      background: linear-gradient(180deg, #2E2E2E 0%, #E54C26 50.03%, #FFF 100%); } }
+
 .contact_form_section {
   height: 100vh;
   width: 100%;
