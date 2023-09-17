@@ -22,6 +22,9 @@ var slider = new Swiper(".swiper_revenew", {
     // },
     1024: {
       slidesPerView: 1.6
+    },
+    1440: {
+      slidesPerView: 2
     }
   }
 });

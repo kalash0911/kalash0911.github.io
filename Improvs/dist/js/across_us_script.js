@@ -2,10 +2,8 @@
 
 var slider = new Swiper(".swiper_acrossUs", {
   speed: 1400,
-  // slidesPerView: 1.6,
   centeredSlides: true,
   grabCursor: true,
-  // spaceBetween: 80,
   loopedSlides: 1,
   loop: true,
   navigation: {
@@ -30,6 +28,10 @@ var slider = new Swiper(".swiper_acrossUs", {
     1024: {
       spaceBetween: 80,
       slidesPerView: 1.6
+    },
+    1440: {
+      slidesPerView: 2,
+      spaceBetween: 80
     }
   }
 });

@@ -35,6 +35,10 @@ function initCleanerSwiper() {
       1024: {
         spaceBetween: 80,
         slidesPerView: 1.6
+      },
+      1440: {
+        spaceBetween: 80,
+        slidesPerView: 2
       }
     }
   });
@@ -71,6 +75,10 @@ function initCustomerSwiper() {
       1024: {
         spaceBetween: 80,
         slidesPerView: 1.6
+      },
+      1440: {
+        spaceBetween: 80,
+        slidesPerView: 2
       }
     }
   });

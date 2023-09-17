@@ -32,8 +32,8 @@
         }
     }
 
-    .color_name{
-        &:last-child{
+    .color_name {
+        &:last-child {
             color: $black;
         }
     }
@@ -59,6 +59,10 @@
         max-width: 1240px;
         width: 100%;
         margin: 0 0 0 auto;
+
+        @include media (">laptop") {
+            max-width: 100%;
+        }
     }
 }
 
@@ -78,7 +82,7 @@
             z-index: 1;
         }
 
-        &::after{
+        &::after {
             @include adaptiv-vaule("height", 400, 200, 1);
         }
 

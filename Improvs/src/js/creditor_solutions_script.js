@@ -19,5 +19,9 @@ const slider = new Swiper(".swiper_creditor", {
             spaceBetween: 80,
             slidesPerView: 1.6,
         },
+        1024: {
+            spaceBetween: 80,
+            slidesPerView: 2,
+        },
     },
 });

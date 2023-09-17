@@ -1138,19 +1138,19 @@ html {
         z-index: -1;
         left: -23%; } }
   .main-section .socials {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 300px;
     right: 10px;
     -ms-flex-direction: column;
     flex-direction: column;
-    z-index: 2;
+    z-index: 4;
     gap: 90px; }
     @media (max-width: 1199px) {
       .main-section .socials {
         display: none; } }
   .main-section .icon {
-    width: 96px;
-    height: 96px; }
+    width: 66px;
+    height: 66px; }
 
 /* -------------------main-section----------------- */
 .find-section {
@@ -1813,8 +1813,14 @@ html {
       background: #171921;
       background: radial-gradient(circle, #171921 25%, rgba(23, 25, 33, 0) 100%);
       z-index: -1; }
-  .course-section .activecircleWrap::after, .course-section .activecircleWrap::before {
-    display: none; }
+  .course-section .activecircleWrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .course-section .activecircleWrap::after, .course-section .activecircleWrap::before {
+      display: none; }
   .course-section .circle {
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1879,8 +1885,8 @@ html {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 70vh;
+    width: 50vw;
+    height: 50vh;
     z-index: 6;
     border-radius: 10px;
     transition: all 0.7s ease 0s; }

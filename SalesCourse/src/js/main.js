@@ -3,6 +3,7 @@ initBurger();
 
 // Video controls
 initVideoPlayers();
+popUpVideo();
 
 function initVideoPlayers() {
     const closeElem = document.querySelector(".course-section .closeElem");
@@ -17,15 +18,26 @@ function initVideoPlayers() {
                 video.play();
                 videoWrap.classList.toggle("active");
             } else {
-                video.pause();
-                videoWrap.classList.toggle("active");
+                initPause();
             }
         });
 
-        closeElem.addEventListener('click',() => {
-          video.pause();
-          videoWrap.classList.remove("active");
+        function initPause() {
+            video.pause();
+            videoWrap.classList.toggle("active");
+        }
+
+        closeElem.addEventListener("click", () => {
+            initPause();
         });
+
+        function removeClassOnEscape(event) {
+            if (event.key === "Escape") {
+                initPause();
+            }
+        }
+
+        document.addEventListener("keydown", removeClassOnEscape);
     });
 }
 
@@ -104,13 +116,11 @@ function initBurger() {
         return;
     }
     const menuBurger = document.querySelector(".nav");
-    // const menuContainer = document.querySelector(".nav_container");
 
     document.addEventListener("click", function (event) {
         if (btnBurger.contains(event.target)) {
             menuBurger.classList.toggle("nav_active");
             btnBurger.classList.toggle("burger_active");
-            // menuContainer.classList.toggle("nav_container_active");
             document.body.classList.toggle("body_lock");
             return;
         }
@@ -118,46 +128,35 @@ function initBurger() {
             menuBurger.classList.remove("nav_active");
             btnBurger.classList.remove("burger_active");
             document.body.classList.remove("body_lock");
-            // menuContainer.classList.remove("nav_container_active");
         }
     });
 }
-popUpVideo();
-function popUpVideo() {
-    const video = document.querySelectorAll(".course-section .video");
-    const playBTn = document.querySelectorAll(".course-section .play-btn");
-    const videoWrap = document.querySelectorAll(".course-section .video-wrap");
-    const container = document.querySelector(".course-section .videoBG");
-    const box = document.querySelectorAll(".course-section .circle-box");
-    const circleWrap = document.querySelectorAll(
-        ".course-section .circle-wrap"
-    );
-    const closeElem = document.querySelector(".course-section .closeElem");
 
-    playBTn.forEach((item) => {
-        item.addEventListener("click", () => {
-            item.classList.add("activeBtn");
-            // video.forEach((videoItem) => {
-            //     videoItem.classList.add("fullScreen");
-            // });
-            videoWrap.forEach((itemWrap) => {
-                itemWrap.classList.add("activeWrap");
-            });
-            box.forEach((box) => {
-                box.classList.add("activeBox");
-            });
-            circleWrap.forEach((itemCircle) => {
-                itemCircle.classList.add("activecircleWrap");
-            });
+function popUpVideo() {
+    const videoElement = document.querySelectorAll(".video");
+    const videoWrap = document.querySelectorAll(".video-wrap");
+    const container = document.querySelector(".videoBG");
+    const box = document.querySelectorAll(".circle-box");
+    const circleWrap = document.querySelectorAll(".circle-wrap");
+    const playBTn = document.querySelectorAll(".play-btn");
+    const closeElem = document.querySelector(".closeElem");
+
+    playBTn.forEach((button, i) => {
+        button.addEventListener("click", () => {
+            button.classList.add("activeBtn");
+            videoWrap[i].classList.add("activeWrap");
+            box[i].classList.add("activeBox");
+            circleWrap[i].classList.add("activecircleWrap");
+            videoElement[i].setAttribute("controls", "");
             container.classList.add("activeContainer");
             document.body.classList.add("video_lock");
             closeElem.classList.add("activecloseElem");
         });
     });
 
-    closeElem.addEventListener("click", () => {
-        playBTn.forEach((item) => {
-            item.classList.remove("activeBtn");
+    function removeClasses() {
+        playBTn.forEach((button) => {
+            button.classList.remove("activeBtn");
         });
         videoWrap.forEach((itemWrap) => {
             itemWrap.classList.remove("activeWrap");
@@ -171,5 +170,17 @@ function popUpVideo() {
         container.classList.remove("activeContainer");
         document.body.classList.remove("video_lock");
         closeElem.classList.remove("activecloseElem");
+    }
+
+    closeElem.addEventListener("click", () => {
+        removeClasses();
     });
+
+    function removeClassOnEscape(event) {
+        if (event.key === "Escape") {
+            removeClasses();
+        }
+    }
+
+    document.addEventListener("keydown", removeClassOnEscape);
 }

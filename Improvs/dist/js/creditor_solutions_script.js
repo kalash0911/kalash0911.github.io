@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var slider = new Swiper(".swiper_creditor", {
   speed: 1400,
   // slidesPerView: 1.6,
@@ -9,7 +11,7 @@ var slider = new Swiper(".swiper_creditor", {
   loopedSlides: 1,
   loop: true,
   autoplay: true,
-  breakpoints: {
+  breakpoints: _defineProperty({
     320: {
       spaceBetween: 20,
       slidesPerView: 1
@@ -21,6 +23,9 @@ var slider = new Swiper(".swiper_creditor", {
       spaceBetween: 80,
       slidesPerView: 1.6
     }
-  }
+  }, "1024", {
+    spaceBetween: 80,
+    slidesPerView: 2
+  })
 });
 //# sourceMappingURL=creditor_solutions_script.js.map

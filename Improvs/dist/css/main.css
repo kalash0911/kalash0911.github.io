@@ -562,7 +562,6 @@ html ::-webkit-scrollbar-thumb {
   border-radius: 4px; }
 
 .container {
-  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px; }
@@ -691,7 +690,9 @@ html ::-webkit-scrollbar-thumb {
   /* Только если меньше контейнера */
   padding-bottom: 140px;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  width: 100vw;
+  overflow: hidden; }
   @media (max-width: 1300px) {
     .similar_main {
       padding-top: calc(60px + 60 * ((100vw - calc(320px)) / 980)); } }
@@ -743,9 +744,11 @@ html ::-webkit-scrollbar-thumb {
       .similar_main .main_tip {
         margin-bottom: calc(30px + 35 * ((100vw - calc(320px)) / 980)); } }
   .similar_main .main_img {
-    max-width: 1440px;
     width: 100%;
     margin: 0 auto; }
+    .similar_main .main_img img {
+      width: 100%;
+      height: 100%; }
 
 .similar {
   /* Только если меньше контейнера */
@@ -776,9 +779,11 @@ html ::-webkit-scrollbar-thumb {
       .similar .about_text {
         font-size: calc(22px + 10 * ((100vw - calc(320px)) / 980)); } }
   .similar .about_img {
-    max-width: 1440px;
     width: 100%;
     margin: 0 auto; }
+    .similar .about_img img {
+      width: 100%;
+      height: 100%; }
     .similar .about_img::before {
       display: none; }
     .similar .about_img::after {
@@ -922,6 +927,7 @@ html ::-webkit-scrollbar-thumb {
   display: block; }
 
 .similar_gradient {
+  padding: 0 20px;
   /* Только если меньше контейнера */
   padding-top: 25px;
   /* Только если меньше контейнера */
@@ -933,6 +939,9 @@ html ::-webkit-scrollbar-thumb {
   @media (max-width: 1300px) {
     .similar_gradient {
       padding-bottom: calc(80px + 80 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 767px) {
+    .similar_gradient {
+      padding: 0 15px; } }
   .similar_gradient .font_wrap {
     display: -ms-flexbox;
     display: flex;
@@ -986,8 +995,7 @@ html ::-webkit-scrollbar-thumb {
       .similar_gradient .font_text {
         font-size: calc(16px + 6 * ((100vw - calc(320px)) / 980)); } }
   .similar_gradient .gradient_block {
-    max-width: 1400px;
-    width: calc(100% - 40px);
+    width: 100%;
     margin: 0 auto;
     /* Только если меньше контейнера */
     height: 115px;
@@ -1357,6 +1365,9 @@ html ::-webkit-scrollbar-thumb {
   max-width: 1240px;
   width: 100%;
   margin: 0 0 0 auto; }
+  @media (min-width: 1441px) {
+    .mobile_max_ratings .about_img {
+      max-width: 100%; } }
 
 .reviews_max_retings {
   position: relative; }
@@ -1461,7 +1472,7 @@ html ::-webkit-scrollbar-thumb {
       height: 100%;
       background: linear-gradient(270deg, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%);
       z-index: 2; }
-      @media (max-width: 1399px) {
+      @media (max-width: 1439px) {
         .reviews_max_retings .main-slider::before, .reviews_max_retings .main-slider::after {
           width: 10%; } }
     .reviews_max_retings .main-slider::before {
@@ -1761,8 +1772,7 @@ html ::-webkit-scrollbar-thumb {
         font-size: calc(24px + 18 * ((100vw - calc(320px)) / 980)); } }
   .swiper_across_us .swiper,
   .similar_swiper .swiper {
-    position: relative;
-    max-width: 1550px; }
+    position: relative; }
     .swiper_across_us .swiper::before,
     .similar_swiper .swiper::before {
       content: '';
@@ -1786,8 +1796,7 @@ html ::-webkit-scrollbar-thumb {
   .swiper_across_us .swiper_acrossUs,
   .similar_swiper .swiper_acrossUs {
     padding-top: 100px;
-    padding-bottom: 100px;
-    max-width: 1550px; }
+    padding-bottom: 100px; }
     .swiper_across_us .swiper_acrossUs .swiper-slide,
     .similar_swiper .swiper_acrossUs .swiper-slide {
       -webkit-transform: translateY(50px);
@@ -1898,7 +1907,7 @@ html ::-webkit-scrollbar-thumb {
   .mobile_across_us .content {
     position: absolute;
     top: 25px;
-    left: 0;
+    left: 20px;
     z-index: 1; }
     @media (max-width: 1023px) {
       .mobile_across_us .content {
@@ -1957,16 +1966,8 @@ html ::-webkit-scrollbar-thumb {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    /* Только если меньше контейнера */
-    width: 345px;
-    /* Только если меньше контейнера */
-    font-size: 230px; }
-    @media (max-width: 1300px) {
-      .innovation .innovation_card {
-        width: calc(200px + 145 * ((100vw - calc(320px)) / 980)); } }
-    @media (max-width: 1300px) {
-      .innovation .innovation_card {
-        font-size: calc(150px + 80 * ((100vw - calc(320px)) / 980)); } }
+    width: 60%;
+    height: auto; }
 
 .typography_across_us .gradient_block {
   background: linear-gradient(90deg, #2E2E2E 0%, #E54C26 50.03%, #FFF 100%); }
@@ -2021,8 +2022,7 @@ html ::-webkit-scrollbar-thumb {
       padding-bottom: calc(80px + 80 * ((100vw - calc(320px)) / 980)); } }
   .swiper_creditor_solutions .swiper_creditor {
     padding-bottom: 60px;
-    margin-bottom: 30px;
-    max-width: 1440px; }
+    margin-bottom: 30px; }
     .swiper_creditor_solutions .swiper_creditor .swiper-slide {
       -webkit-transform: translateY(50px);
       transform: translateY(50px);
@@ -2079,12 +2079,18 @@ html ::-webkit-scrollbar-thumb {
   margin-bottom: 30px;
   max-width: 910px;
   width: 100%; }
+  @media (min-width: 1441px) {
+    .swiper_revenew_section .slide_img {
+      max-width: 1200px; } }
 
 .swiper_revenew_section .slide_text {
   max-width: 910px;
   margin: 0 auto;
   width: 100%;
   padding: 0 15px; }
+  @media (min-width: 1441px) {
+    .swiper_revenew_section .slide_text {
+      max-width: 1200px; } }
   @media (max-width: 1023px) {
     .swiper_revenew_section .slide_text {
       margin-left: 20px; } }
@@ -2245,7 +2251,7 @@ html ::-webkit-scrollbar-thumb {
 .page_uptidy .content {
   position: absolute;
   top: 25px;
-  left: 0;
+  left: 20px;
   z-index: 1; }
   @media (max-width: 1023px) {
     .page_uptidy .content {
@@ -2255,7 +2261,12 @@ html ::-webkit-scrollbar-thumb {
   max-width: 640px; }
 
 .page_uptidy .about_img {
-  text-align: end; }
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 0 0 auto; }
+  @media (min-width: 1441px) {
+    .page_uptidy .about_img {
+      max-width: 100%; } }
 
 .typography_uptidy .gradient_block {
   background: linear-gradient(90deg, #F8FAFB 0%, #00A7DB 25.52%, #FFF 50.03%, #0083AB 73.44%, #92DCEE 100%); }

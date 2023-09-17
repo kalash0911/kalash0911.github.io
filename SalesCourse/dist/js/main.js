@@ -10,6 +10,7 @@ new WOW().init();
 initBurger(); // Video controls
 
 initVideoPlayers();
+popUpVideo();
 
 function initVideoPlayers() {
   var closeElem = document.querySelector(".course-section .closeElem");
@@ -23,14 +24,26 @@ function initVideoPlayers() {
         video.play();
         videoWrap.classList.toggle("active");
       } else {
-        video.pause();
-        videoWrap.classList.toggle("active");
+        initPause();
       }
     });
-    closeElem.addEventListener('click', function () {
+
+    function initPause() {
       video.pause();
-      videoWrap.classList.remove("active");
+      videoWrap.classList.toggle("active");
+    }
+
+    closeElem.addEventListener("click", function () {
+      initPause();
     });
+
+    function removeClassOnEscape(event) {
+      if (event.key === "Escape") {
+        initPause();
+      }
+    }
+
+    document.addEventListener("keydown", removeClassOnEscape);
   });
 }
 /* castom anim */
@@ -122,13 +135,11 @@ function initBurger() {
     return;
   }
 
-  var menuBurger = document.querySelector(".nav"); // const menuContainer = document.querySelector(".nav_container");
-
+  var menuBurger = document.querySelector(".nav");
   document.addEventListener("click", function (event) {
     if (btnBurger.contains(event.target)) {
       menuBurger.classList.toggle("nav_active");
-      btnBurger.classList.toggle("burger_active"); // menuContainer.classList.toggle("nav_container_active");
-
+      btnBurger.classList.toggle("burger_active");
       document.body.classList.toggle("body_lock");
       return;
     }
@@ -136,44 +147,35 @@ function initBurger() {
     if (!menuBurger.contains(event.target)) {
       menuBurger.classList.remove("nav_active");
       btnBurger.classList.remove("burger_active");
-      document.body.classList.remove("body_lock"); // menuContainer.classList.remove("nav_container_active");
+      document.body.classList.remove("body_lock");
     }
   });
 }
 
-popUpVideo();
-
 function popUpVideo() {
-  var video = document.querySelectorAll(".course-section .video");
-  var playBTn = document.querySelectorAll(".course-section .play-btn");
-  var videoWrap = document.querySelectorAll(".course-section .video-wrap");
-  var container = document.querySelector(".course-section .videoBG");
-  var box = document.querySelectorAll(".course-section .circle-box");
-  var circleWrap = document.querySelectorAll(".course-section .circle-wrap");
-  var closeElem = document.querySelector(".course-section .closeElem");
-  playBTn.forEach(function (item) {
-    item.addEventListener("click", function () {
-      item.classList.add("activeBtn"); // video.forEach((videoItem) => {
-      //     videoItem.classList.add("fullScreen");
-      // });
-
-      videoWrap.forEach(function (itemWrap) {
-        itemWrap.classList.add("activeWrap");
-      });
-      box.forEach(function (box) {
-        box.classList.add("activeBox");
-      });
-      circleWrap.forEach(function (itemCircle) {
-        itemCircle.classList.add("activecircleWrap");
-      });
+  var videoElement = document.querySelectorAll(".video");
+  var videoWrap = document.querySelectorAll(".video-wrap");
+  var container = document.querySelector(".videoBG");
+  var box = document.querySelectorAll(".circle-box");
+  var circleWrap = document.querySelectorAll(".circle-wrap");
+  var playBTn = document.querySelectorAll(".play-btn");
+  var closeElem = document.querySelector(".closeElem");
+  playBTn.forEach(function (button, i) {
+    button.addEventListener("click", function () {
+      button.classList.add("activeBtn");
+      videoWrap[i].classList.add("activeWrap");
+      box[i].classList.add("activeBox");
+      circleWrap[i].classList.add("activecircleWrap");
+      videoElement[i].setAttribute("controls", "");
       container.classList.add("activeContainer");
       document.body.classList.add("video_lock");
       closeElem.classList.add("activecloseElem");
     });
   });
-  closeElem.addEventListener("click", function () {
-    playBTn.forEach(function (item) {
-      item.classList.remove("activeBtn");
+
+  function removeClasses() {
+    playBTn.forEach(function (button) {
+      button.classList.remove("activeBtn");
     });
     videoWrap.forEach(function (itemWrap) {
       itemWrap.classList.remove("activeWrap");
@@ -187,6 +189,18 @@ function popUpVideo() {
     container.classList.remove("activeContainer");
     document.body.classList.remove("video_lock");
     closeElem.classList.remove("activecloseElem");
+  }
+
+  closeElem.addEventListener("click", function () {
+    removeClasses();
   });
+
+  function removeClassOnEscape(event) {
+    if (event.key === "Escape") {
+      removeClasses();
+    }
+  }
+
+  document.addEventListener("keydown", removeClassOnEscape);
 }
 //# sourceMappingURL=main.js.map

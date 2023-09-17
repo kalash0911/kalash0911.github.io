@@ -38,6 +38,10 @@
         margin-bottom: 30px;
         max-width: 910px;
         width: 100%;
+
+        @include media (">laptop") {
+            max-width: 1200px;
+        }
     }
 
     .slide_text{
@@ -45,6 +49,10 @@
         margin: 0 auto;
         width: 100%;
         padding: 0 15px;
+
+        @include media (">laptop") {
+            max-width: 1200px;
+        }
 
         @include media ("<desktop") {
             margin-left: 20px;
