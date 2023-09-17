@@ -134,6 +134,94 @@
         }
     }
 }
+.brain_section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:url(../../images/main_page/brain.png) no-repeat right center;
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .content {
+        max-width: 865px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .brain_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 132, 52, 1);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -3px;
+        text-transform: uppercase;
+        @include adaptiv-vaule(" margin-bottom",24, 16, 1);
+    }
+
+
+    .brain_text {
+        color: $white;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-style: normal;
+        font-weight: 500;
+        max-width: 397px;
+        letter-spacing: -1px;
+        @include adaptiv-vaule(" margin-bottom",163, 44, 1);
+    }
+
+    .btn_black {
+        width: 100%;
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17.6px;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 18px 40px;
+        border: 1px solid $white;
+        transition: $transition_all_03;
+        position: relative;
+
+
+
+        .left_arrow,
+        .right_arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left_arrow {
+            left: 16px;
+        }
+
+        .right_arrow {
+            right: 16px;
+        }
+
+        svg {
+            fill: $white;
+            transition: $transition_all_03;
+        }
+
+        &:hover {
+            background-color: $white;
+            transition: $transition_all_03;
+            color: $black;
+
+            svg {
+                fill: $black;
+                transition: $transition_all_03;
+            }
+        }
+    }
+}
+
 
 .button_form_section {
     height: 100vh;
