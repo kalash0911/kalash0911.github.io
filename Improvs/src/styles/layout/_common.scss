@@ -134,3 +134,107 @@
         }
     }
 }
+
+.button_form_section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        max-width: 865px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .button_form_title {
+        color: $white;
+        text-align: center;
+        @include adaptiv-vaule("font-size", 132, 52, 1);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -3px;
+        text-transform: uppercase;
+    }
+
+
+    .button_form_text {
+        color: $white;
+        text-align: center;
+        @include adaptiv-vaule("font-size", 20, 16, 1);
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        @include adaptiv-vaule(" margin-bottom", 58, 20, 1);
+    }
+
+    .btn_white_circle {
+        width: 172px;
+        height: 172px;
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17.64px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        border: 1px solid $white;
+        transition: $transition_all_03;
+        position: absolute;
+        bottom: 100px;
+        right: 100px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: $white;
+
+        @include media ("<desktop") {
+          position:relative;
+          margin-left:auto;
+          margin-right:auto;
+          bottom:0;
+          right:0;
+        }
+
+        .left_arrow,
+        .right_arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left_arrow {
+            left: 16px;
+        }
+
+        .right_arrow {
+            right: 16px;
+        }
+
+        svg {
+            fill: $black;
+            transition: $transition_all_03;
+        }
+
+        &:hover {
+            background-color: transparent;
+            transition: $transition_all_03;
+            color: $white;
+
+            svg {
+                fill: $white;
+                transition: $transition_all_03;
+            }
+        }
+    }
+}
