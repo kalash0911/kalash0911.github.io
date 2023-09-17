@@ -10,6 +10,8 @@ header {
         width: 0;
         opacity: 0;
         overflow: hidden;
+        position: relative;
+        z-index: 5;
 
         @include media ("<desktop") {
             width: 100%;
@@ -39,14 +41,41 @@ header {
 
     .nav {
         @include media ("<desktop") {
-            display: none;
+            position: fixed;
+            right: -100%;
+            width: 60%;
+            top: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: $black21;
+            z-index: 3;
+            padding: 100px 20px 55px 20px;
+            transition: $anim_05;
         }
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
+    }
+
+    .nav_active {
+        right: 0;
     }
 
     .nav-menu {
         display: flex;
         align-items: center;
         @include adaptiv-vaule("gap", 30, 10, 1);
+
+        @include media ("<desktop") {
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1 1 auto;
+            justify-content: center;
+            gap: 50px;
+        }
     }
 
     .item_link {
@@ -55,6 +84,14 @@ header {
         font-weight: 600;
         line-height: 18px;
         text-transform: uppercase;
+
+        @include media ("<desktop") {
+            font-size: 22px;
+        }
+
+        &:hover {
+            color: $gold6D;
+        }
     }
 
     .login {
@@ -68,6 +105,10 @@ header {
         font-weight: 500;
         transition: $anim_03;
 
+        @include media ("<desktop") {
+            width: 100%;
+        }
+
         &:hover {
             background-color: $goldBE;
             transition: $anim_03;
@@ -79,9 +120,9 @@ header {
         width: 28px;
         height: 21px;
         position: relative;
+        z-index: 5;
         top: -2px;
         cursor: pointer;
-        z-index: 3;
 
         @include media ("<desktop") {
             display: block;

@@ -2,7 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
-.body_lock {
+.body_lock,
+.video_lock {
     overflow: hidden;
 }
 
@@ -34,7 +35,7 @@ html {
     background: linear-gradient(280deg, #111520 -80.16%, #DDB06D 70.75%);
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -93,7 +94,7 @@ html {
     overflow: hidden;
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -129,17 +130,17 @@ html {
     }
 
     span {
-        position: relative;       
-        white-space: nowrap;     
+        position: relative;
+        white-space: nowrap;
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             bottom: -6px;
             width: 0;
             height: 6px;
-            background: url(../images/icons/line.svg) center  no-repeat;
+            background: url(../images/icons/line.svg) center no-repeat;
             transition: $anim_line;
         }
     }
@@ -152,7 +153,7 @@ html {
 
     &.show {
 
-        span  {
+        span {
 
             &::after {
                 width: 100%;
@@ -208,7 +209,7 @@ html {
 
     &:hover {
         background: $gold6D;
-        
+
         .stop-g {
             stop-color: $black21;
         }
@@ -223,7 +224,7 @@ html {
         stop-color: $black20;
         transition: $anim_03;
     }
-    
+
 }
 
 .mob {
@@ -248,7 +249,7 @@ html {
     }
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         top: 50%;
         left: 50%;
@@ -270,7 +271,7 @@ html {
     }
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         top: -70%;
         left: 50%;
@@ -279,7 +280,7 @@ html {
         border-radius: 50%;
         transform: translateX(-50%);
         background: rgba(237, 229, 218, 0.10);
-        filter: blur(187px);     
+        filter: blur(187px);
         z-index: -1;
     }
 
@@ -379,7 +380,7 @@ html {
         }
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
@@ -441,7 +442,7 @@ html {
         }
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             top: -50%;
             left: -25%;
@@ -529,7 +530,7 @@ html {
     }
 
     &::after {
-        content:'';
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -537,7 +538,7 @@ html {
         height: 45%;
         background: linear-gradient(180deg, rgba(23, 25, 33, 0.00) 0%, #171921 100%);
         z-index: 3;
-        
+
         @include media ("<widescreen") {
             z-index: 4;
         }
@@ -549,7 +550,7 @@ html {
 
     .container {
         position: relative;
-        max-width: 1332px;  
+        max-width: 1332px;
 
         @include media ("<widescreen") {
             padding: 0;
@@ -569,7 +570,7 @@ html {
 
     .grad-left,
     .grad-right {
-        content:'';
+        content: '';
         position: absolute;
         bottom: 0;
         width: 200px;
@@ -582,7 +583,7 @@ html {
     }
 
     .grad-left {
-        left: 0; 
+        left: 0;
         background: linear-gradient(270deg, rgba(23, 25, 33, 0.00) 0%, #171921 100%);
     }
 
@@ -617,14 +618,14 @@ html {
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 300px;
             background: #171921;
-            background: linear-gradient(0deg, rgba(23,25,33,0) 0%, rgba(23,25,33,1) 100%);
+            background: linear-gradient(0deg, rgba(23, 25, 33, 0) 0%, rgba(23, 25, 33, 1) 100%);
             z-index: 1;
         }
     }
@@ -636,7 +637,7 @@ html {
         width: 100%;
         height: auto;
     }
-    
+
     .title {
         text-align: left;
 
@@ -779,13 +780,13 @@ html {
     }
 
     .item {
-        position: absolute;      
+        position: absolute;
         display: inline-flex;
         flex-direction: column;
         align-items: center;
         z-index: 4;
         opacity: 0;
-        
+
         @include media ("<widescreen") {
             bottom: 0;
             z-index: 1;
@@ -798,7 +799,7 @@ html {
         .line {
             width: 1px;
             background: linear-gradient(180deg, #191A22 -22.63%, #DAAE6C 112.37%);
-    
+
             @include media ("<widescreen") {
                 transform: rotate(180deg);
             }
@@ -834,11 +835,11 @@ html {
         @include text-grad($black20, $gold6D);
 
         @include media ("<desktop") {
-           font-size: 16px;
+            font-size: 16px;
         }
 
         span {
-            font-size: 36px; 
+            font-size: 36px;
 
             @include media ("<desktop") {
                 font-size: 24px;
@@ -957,7 +958,7 @@ html {
             }
         }
 
-        &.silver{
+        &.silver {
             border: 2px solid #CDCECE;
             background: linear-gradient(286deg, rgba(255, 255, 255, 0.05) -22.42%, rgba(217, 217, 217, 0.00) 100%);
 
@@ -972,7 +973,7 @@ html {
 
         &.bronze {
             border: 2px solid #B78F78;
-            background: linear-gradient(286deg, rgba(255, 255, 255, 0.05) -22.42%, rgba(217, 217, 217, 0.00) 100%);    
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.05) -22.42%, rgba(217, 217, 217, 0.00) 100%);
 
             .circle {
                 border: 1px solid #B78F78;
@@ -1054,8 +1055,8 @@ html {
         transform: translateY(-50%);
         width: 52px;
         height: 1px;
-        z-index: -1;    
-        
+        z-index: -1;
+
         @include media ("<tablet") {
             transform: translate(-50%) rotate(90deg);
             width: 43px;
@@ -1211,11 +1212,11 @@ html {
                 &:nth-child(1) {
                     transition: all 1s ease .3s;
                 }
-        
+
                 &:nth-child(2) {
                     transition: all 1s ease .6s;
                 }
-        
+
                 &:nth-child(3) {
                     transition: all 1s ease .9s;
                 }
@@ -1228,15 +1229,15 @@ html {
             .li {
                 opacity: 0;
                 transform: translate(100px);
-                
+
                 &:nth-child(1) {
                     transition: all 1s ease 1.2s;
                 }
-        
+
                 &:nth-child(2) {
                     transition: all 1s ease 1.5s;
                 }
-        
+
                 &:nth-child(3) {
                     transition: all 1s ease 1.8s;
                 }
@@ -1254,9 +1255,9 @@ html {
 
         &::before,
         &::after {
-            content:'';
+            content: '';
             position: absolute;
-            border-radius: 50%; 
+            border-radius: 50%;
             display: none;
 
             @include media ("<tablet_b") {
@@ -1264,12 +1265,12 @@ html {
             }
         }
 
-        &::before  {
+        &::before {
             top: 2px;
             left: 0;
             width: 15px;
             height: 15px;
-            border: 1px solid $gold6D;    
+            border: 1px solid $gold6D;
         }
 
         &::after {
@@ -1303,7 +1304,7 @@ html {
             font-weight: 700;
 
             &::after {
-                transition: all .7s ease 2.1s; 
+                transition: all .7s ease 2.1s;
             }
         }
     }
@@ -1324,6 +1325,10 @@ html {
         }
     }
 
+    .activeBox {
+        z-index: 7;
+    }
+
     .circle-wrap {
         position: absolute;
         top: 0;
@@ -1339,28 +1344,36 @@ html {
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             top: -150px;
             left: 50%;
             width: 500px;
             height: 300px;
             transform: translate(-50%);
-            background: rgb(23,25,33);
-            background: radial-gradient(circle, rgba(23,25,33,1) 25%, rgba(23,25,33,0) 100%);
+            background: rgb(23, 25, 33);
+            background: radial-gradient(circle, rgba(23, 25, 33, 1) 25%, rgba(23, 25, 33, 0) 100%);
         }
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             bottom: -150px;
             left: 50%;
             width: 500px;
             height: 300px;
             transform: translate(-50%);
-            background: rgb(23,25,33);
-            background: radial-gradient(circle, rgba(23,25,33,1) 25%, rgba(23,25,33,0) 100%);
+            background: rgb(23, 25, 33);
+            background: radial-gradient(circle, rgba(23, 25, 33, 1) 25%, rgba(23, 25, 33, 0) 100%);
             z-index: -1;
+        }
+    }
+
+    .activecircleWrap {
+
+        &::after,
+        &::before {
+            display: none;
         }
     }
 
@@ -1433,6 +1446,7 @@ html {
         height: 510px;
         border-radius: 50%;
         overflow: hidden;
+        transition: $anim_07;
 
         @include media ("<desktop") {
             width: 308px;
@@ -1442,7 +1456,7 @@ html {
         &.active {
 
             .play-btn {
-                
+
                 &::before {
                     opacity: 0;
                 }
@@ -1454,6 +1468,18 @@ html {
         }
     }
 
+    .activeWrap {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 70vh;
+        z-index: 6;
+        border-radius: 10px;
+        transition: $anim_07;
+    }
+
     .video {
         position: absolute;
         top: 0;
@@ -1461,6 +1487,11 @@ html {
         width: 100%;
         height: 102%;
         object-fit: cover;
+    }
+
+    .fullScreen {
+        width: 100%;
+        height: 100%;
     }
 
     .play-btn {
@@ -1471,9 +1502,9 @@ html {
         height: 102%;
         z-index: 1;
         background: transparent;
-        
+
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -1483,6 +1514,59 @@ html {
             background-color: $black21;
             opacity: .2;
         }
+    }
+
+    .activeBtn {
+        display: none;
+    }
+
+    .videoBG {
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 6;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .activeContainer {
+        display: block;
+    }
+
+    .closeElem {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        transform: scale(0);
+        position: fixed;
+        top: 30px;
+        right: 50px;
+        z-index: 6;
+        transition: $anim_03;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: $goldBE;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .activecloseElem {
+        transform: scale(1);
+        transition: $anim_03;
     }
 
     .btn-content {
@@ -1532,7 +1616,7 @@ html {
         flex-direction: column;
         gap: 10px;
         opacity: 0;
-        transition: all .7s ease 2.1s; 
+        transition: all .7s ease 2.1s;
 
         @include media ("<tablet_b") {
             position: relative;
@@ -1559,12 +1643,12 @@ html {
 
         .stiker {
             border: 1px solid $gold6D;
-    
+
             svg {
                 fill: url(#paint0_linear_1383_27395);
             }
         }
-    
+
         .stiker-title {
             @include text-grad($black20, $gold6D);
         }
@@ -1577,7 +1661,7 @@ html {
             border: 1px solid $gold6D;
 
             &::before {
-                background-color: $gold6D;                
+                background-color: $gold6D;
             }
         }
 
@@ -1590,11 +1674,11 @@ html {
             }
         }
 
-        .play-btn  {
+        .play-btn {
 
             &:hover {
 
-                .btn-content  {
+                .btn-content {
                     background-color: $gold6D;
                     color: $black21;
                 }
@@ -1632,12 +1716,12 @@ html {
 
         .stiker {
             border: 1px solid $silver;
-    
+
             svg {
                 fill: $silver;
             }
         }
-    
+
         .stiker-title {
             @include text-grad($black20, $silver);
         }
@@ -1650,7 +1734,7 @@ html {
             border: 1px solid $silver;
 
             &::before {
-                background-color: $silver;                
+                background-color: $silver;
             }
         }
 
@@ -1663,11 +1747,11 @@ html {
             }
         }
 
-        .play-btn  {
+        .play-btn {
 
             &:hover {
 
-                .btn-content  {
+                .btn-content {
                     background-color: $silver;
                     color: $black21;
                 }
@@ -1680,7 +1764,7 @@ html {
 
         .text {
 
-            span{
+            span {
 
                 &::after {
                     background: url(../images/icons/line-silver.svg) center no-repeat;
@@ -1692,7 +1776,7 @@ html {
             background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));
 
             &::before {
-                background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));  
+                background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));
             }
         }
 
@@ -1700,7 +1784,7 @@ html {
             border: 2px solid $silver;
 
             &::before {
-                background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));              
+                background: var(--silver, linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%));
             }
 
             &:hover {
@@ -1712,11 +1796,11 @@ html {
 
             &::before {
                 border: 1px solid $silver;
-                
+
             }
 
             &::after {
-                background-color: $silver;              
+                background-color: $silver;
             }
         }
     }
@@ -1746,12 +1830,12 @@ html {
 
         .stiker {
             border: 1px solid $bronze;
-    
+
             svg {
                 fill: $bronze;
             }
         }
-    
+
         .stiker-title {
             @include text-grad($black20, $bronze);
         }
@@ -1764,7 +1848,7 @@ html {
             border: 1px solid $bronze;
 
             &::before {
-                background-color: $bronze;                
+                background-color: $bronze;
             }
         }
 
@@ -1777,11 +1861,11 @@ html {
             }
         }
 
-        .play-btn  {
+        .play-btn {
 
             &:hover {
 
-                .btn-content  {
+                .btn-content {
                     background-color: $bronze;
                     color: $black21;
                 }
@@ -1794,7 +1878,7 @@ html {
 
         .text {
 
-            span{
+            span {
 
                 &::after {
                     background: url(../images/icons/line-bronze.svg) center no-repeat;
@@ -1814,7 +1898,7 @@ html {
             border: 2px solid $bronze;
 
             &::before {
-                background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%));             
+                background: var(--bronze, linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%));
             }
 
             &:hover {
@@ -1826,19 +1910,19 @@ html {
 
             &::before {
                 border: 1px solid $bronze;
-                
+
             }
 
             &::after {
-                background-color: $bronze;              
+                background-color: $bronze;
             }
         }
     }
 
     &.show {
 
-        .list  {
-             
+        .list {
+
             .li {
                 transform: translate(0);
                 opacity: 1;
@@ -1854,7 +1938,7 @@ html {
             span {
 
                 &::after {
-                    width: 100%;                  
+                    width: 100%;
                 }
             }
         }
@@ -1878,7 +1962,7 @@ html {
     @include media ("<phone") {
         padding: 20px 0 100px 0;
     }
-    
+
     .block {
         position: relative;
         max-width: 660px;
@@ -1921,7 +2005,7 @@ html {
         font-weight: 400;
 
         &:active,
-        &:focus{
+        &:focus {
             border: 1px solid #DDB06D;
         }
 
@@ -1969,14 +2053,14 @@ html {
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 300px;
             background: #171921;
-            background: linear-gradient(0deg, rgba(23,25,33,0) 0%, rgba(23,25,33,1) 100%);
+            background: linear-gradient(0deg, rgba(23, 25, 33, 0) 0%, rgba(23, 25, 33, 1) 100%);
             z-index: 1;
         }
     }

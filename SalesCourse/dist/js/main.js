@@ -12,6 +12,7 @@ initBurger(); // Video controls
 initVideoPlayers();
 
 function initVideoPlayers() {
+  var closeElem = document.querySelector(".course-section .closeElem");
   var videoWraps = document.querySelectorAll(".video-wrap");
   videoWraps === null || videoWraps === void 0 ? void 0 : videoWraps.forEach(function (videoWrap) {
     var video = videoWrap.querySelector(".video");
@@ -26,6 +27,10 @@ function initVideoPlayers() {
         videoWrap.classList.toggle("active");
       }
     });
+    closeElem.addEventListener('click', function () {
+      video.pause();
+      videoWrap.classList.remove("active");
+    });
   });
 }
 /* castom anim */
@@ -34,7 +39,7 @@ function initVideoPlayers() {
 function onEntry(entry) {
   entry.forEach(function (change) {
     if (change.isIntersecting) {
-      change.target.classList.add('show');
+      change.target.classList.add("show");
     }
   });
 }
@@ -43,7 +48,7 @@ var options = {
   threshold: [0.5]
 };
 var observer = new IntersectionObserver(onEntry, options);
-var elements = document.querySelectorAll('.anim');
+var elements = document.querySelectorAll(".anim");
 
 var _iterator = _createForOfIteratorHelper(elements),
     _step;
@@ -60,18 +65,18 @@ try {
   _iterator.f();
 }
 
-if (document.querySelectorAll('.count-progress').length) {
+if (document.querySelectorAll(".count-progress").length) {
   // создаем экземпляр Intersection Observer
   var _observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       // если элемент стал видимым и его анимация еще не проигрывалась, запускаем анимацию
-      if (entry.isIntersecting && entry.target.getAttribute('data-animated') === 'false') {
+      if (entry.isIntersecting && entry.target.getAttribute("data-animated") === "false") {
         var element = entry.target;
         var count = parseInt(element.innerText);
         var currentCount = 0;
-        var speed = parseInt(element.getAttribute('data-speed')) || 10; // считываем значение атрибута "data-speed" или устанавливаем значение по умолчанию
+        var speed = parseInt(element.getAttribute("data-speed")) || 10; // считываем значение атрибута "data-speed" или устанавливаем значение по умолчанию
 
-        var step = parseInt(element.getAttribute('data-step')) || 1; // считываем значение атрибута "data-step" или устанавливаем значение по умолчанию
+        var step = parseInt(element.getAttribute("data-step")) || 1; // считываем значение атрибута "data-step" или устанавливаем значение по умолчанию
 
         var interval = setInterval(function () {
           if (currentCount < count) {
@@ -84,7 +89,7 @@ if (document.querySelectorAll('.count-progress').length) {
             element.innerText = currentCount;
           } else {
             clearInterval(interval);
-            element.setAttribute('data-animated', 'true'); // устанавливаем атрибут "data-animated" в значение "true"
+            element.setAttribute("data-animated", "true"); // устанавливаем атрибут "data-animated" в значение "true"
           }
         }, speed);
       }
@@ -92,15 +97,15 @@ if (document.querySelectorAll('.count-progress').length) {
   }); // добавляем каждый элемент с классом "count-progress" в Observer
 
 
-  document.querySelectorAll('.count-progress').forEach(function (element) {
+  document.querySelectorAll(".count-progress").forEach(function (element) {
     _observer.observe(element);
   });
 } // For Paralax
 
 
-window.addEventListener('scroll', function () {
-  var section = document.getElementById('paralax-sc');
-  var paralax = document.querySelector('.paralax');
+window.addEventListener("scroll", function () {
+  var section = document.getElementById("paralax-sc");
+  var paralax = document.querySelector(".paralax");
   var windowHeight = window.innerHeight;
   var sectionBottom = section.getBoundingClientRect().bottom;
 
@@ -133,6 +138,55 @@ function initBurger() {
       btnBurger.classList.remove("burger_active");
       document.body.classList.remove("body_lock"); // menuContainer.classList.remove("nav_container_active");
     }
+  });
+}
+
+popUpVideo();
+
+function popUpVideo() {
+  var video = document.querySelectorAll(".course-section .video");
+  var playBTn = document.querySelectorAll(".course-section .play-btn");
+  var videoWrap = document.querySelectorAll(".course-section .video-wrap");
+  var container = document.querySelector(".course-section .videoBG");
+  var box = document.querySelectorAll(".course-section .circle-box");
+  var circleWrap = document.querySelectorAll(".course-section .circle-wrap");
+  var closeElem = document.querySelector(".course-section .closeElem");
+  playBTn.forEach(function (item) {
+    item.addEventListener("click", function () {
+      item.classList.add("activeBtn"); // video.forEach((videoItem) => {
+      //     videoItem.classList.add("fullScreen");
+      // });
+
+      videoWrap.forEach(function (itemWrap) {
+        itemWrap.classList.add("activeWrap");
+      });
+      box.forEach(function (box) {
+        box.classList.add("activeBox");
+      });
+      circleWrap.forEach(function (itemCircle) {
+        itemCircle.classList.add("activecircleWrap");
+      });
+      container.classList.add("activeContainer");
+      document.body.classList.add("video_lock");
+      closeElem.classList.add("activecloseElem");
+    });
+  });
+  closeElem.addEventListener("click", function () {
+    playBTn.forEach(function (item) {
+      item.classList.remove("activeBtn");
+    });
+    videoWrap.forEach(function (itemWrap) {
+      itemWrap.classList.remove("activeWrap");
+    });
+    box.forEach(function (box) {
+      box.classList.remove("activeBox");
+    });
+    circleWrap.forEach(function (itemCircle) {
+      itemCircle.classList.remove("activecircleWrap");
+    });
+    container.classList.remove("activeContainer");
+    document.body.classList.remove("video_lock");
+    closeElem.classList.remove("activecloseElem");
   });
 }
 //# sourceMappingURL=main.js.map
