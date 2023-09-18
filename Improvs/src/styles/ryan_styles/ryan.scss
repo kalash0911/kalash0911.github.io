@@ -1,4 +1,29 @@
+.main_ryan {
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+}
+
 .about_ryan {
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     padding-top: 0;
 
     @include media ("<desktop") {
@@ -79,6 +104,17 @@
         padding-bottom: 100px;
     }
 
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     .stars {
         position: absolute;
     }
@@ -121,7 +157,7 @@
     .circle {
         position: absolute;
         // bottom: -1900px;
-        bottom:-1815px;
+        bottom: -1815px;
         left: 50%;
         transform: translateX(-50%);
         // width: 2100px;
@@ -144,7 +180,7 @@
 
     .circle_dashed {
         position: absolute;
-        bottom:-1815px;
+        bottom: -1815px;
         left: 50%;
         transform: translateX(-50%);
         width: 200vw;
@@ -156,7 +192,7 @@
 
         @include media ("<desktop") {
             width: 1800px;
-            bottom:-1795px;
+            bottom: -1795px;
         }
 
         @include media('<phone') {
@@ -203,6 +239,18 @@
 }
 
 .phone-section {
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     padding-top: 25px;
     @include adaptiv-vaule("padding-bottom", 150, 75, 1);
     background-color: $yellowD0;
@@ -421,7 +469,26 @@
     }
 }
 
+.works_img{
+    width: 100%;
+
+    img{
+        width: 100%;
+    }
+}
+
 .voice_ryan {
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     border: none;
 
     .about_text {
@@ -524,6 +591,17 @@
 }
 
 .ryan_fairy {
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     @include adaptiv-vaule("padding-top", 40, 30, 1);
     @include adaptiv-vaule("padding-bottom", 160, 70, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -549,6 +627,17 @@
 }
 
 .page_ryan {
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     .about_img {
         &::before {
             display: block;
@@ -562,6 +651,17 @@
 }
 
 .typography_ryan {
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
+    }
+
     border: none;
 
     .gradient_block {
@@ -577,11 +677,11 @@
     @include adaptiv-vaule("padding-top", 40, 30, 1);
     @include adaptiv-vaule("padding-bottom", 105, 55, 1);
 
-    .feel_img{
-        width:100%;
-        height:auto;
+    .feel_img {
+        width: 100%;
+        height: auto;
 
-        img{
+        img {
             width: 100%;
             height: 100%;
         }

@@ -2637,8 +2637,25 @@ html ::-webkit-scrollbar-thumb {
     margin-bottom: 30px;
     font-size: 24px; }
 
+.main_ryan .container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 60px;
+  margin: 0 auto; }
+  @media (max-width: 1199px) {
+    .main_ryan .container {
+      padding: 0 20px; } }
+
 .about_ryan {
   padding-top: 0; }
+  .about_ryan .container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto; }
+    @media (max-width: 1199px) {
+      .about_ryan .container {
+        padding: 0 20px; } }
   @media (max-width: 1023px) {
     .about_ryan {
       padding-top: 25px; } }
@@ -2680,6 +2697,14 @@ html ::-webkit-scrollbar-thumb {
     .card-section {
       min-height: 520px;
       padding-bottom: 100px; } }
+  .card-section .container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto; }
+    @media (max-width: 1199px) {
+      .card-section .container {
+        padding: 0 20px; } }
   .card-section .stars {
     position: absolute; }
   .card-section .star1 {
@@ -2934,6 +2959,14 @@ html ::-webkit-scrollbar-thumb {
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(14, 14, 14, 0.2); }
+  .phone-section .container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto; }
+    @media (max-width: 1199px) {
+      .phone-section .container {
+        padding: 0 20px; } }
   @media (max-width: 1300px) {
     .phone-section {
       padding-bottom: calc(75px + 75 * ((100vw - calc(320px)) / 980)); } }
@@ -3097,8 +3130,21 @@ html ::-webkit-scrollbar-thumb {
       .phone-section .kids {
         width: 280px; } }
 
+.works_img {
+  width: 100%; }
+  .works_img img {
+    width: 100%; }
+
 .voice_ryan {
   border: none; }
+  .voice_ryan .container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto; }
+    @media (max-width: 1199px) {
+      .voice_ryan .container {
+        padding: 0 20px; } }
   .voice_ryan .about_text {
     max-width: 750px; }
   .voice_ryan .swiper_voice {
@@ -3200,6 +3246,14 @@ html ::-webkit-scrollbar-thumb {
   /* Только если меньше контейнера */
   padding-bottom: 160px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  .ryan_fairy .container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto; }
+    @media (max-width: 1199px) {
+      .ryan_fairy .container {
+        padding: 0 20px; } }
   @media (max-width: 1300px) {
     .ryan_fairy {
       padding-top: calc(30px + 10 * ((100vw - calc(320px)) / 980)); } }
@@ -3224,6 +3278,15 @@ html ::-webkit-scrollbar-thumb {
       width: 100%;
       height: 100%; }
 
+.page_ryan .container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 60px;
+  margin: 0 auto; }
+  @media (max-width: 1199px) {
+    .page_ryan .container {
+      padding: 0 20px; } }
+
 .page_ryan .about_img::before {
   display: block;
   /* Только если меньше контейнера */
@@ -3241,6 +3304,14 @@ html ::-webkit-scrollbar-thumb {
 
 .typography_ryan {
   border: none; }
+  .typography_ryan .container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto; }
+    @media (max-width: 1199px) {
+      .typography_ryan .container {
+        padding: 0 20px; } }
   .typography_ryan .gradient_block {
     background: linear-gradient(90deg, #27282A 0%, #918B7F 12.5%, #F6E9D0 24.48%, #FAF5EA 50.03%, #CF7C58 76.04%, #27282A 100%); }
     @media (max-width: 519px) {
