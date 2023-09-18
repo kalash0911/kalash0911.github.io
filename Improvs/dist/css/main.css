@@ -1864,7 +1864,7 @@ html ::-webkit-scrollbar-thumb {
     .swiper_across_us .arrows .swiper-button-next,
     .similar_swiper .arrows .swiper-button-next {
       right: 0;
-      background-image: url(/src/images/across_us_template/AR_Right.svg);
+      background-image: url(../images/across_us_template/AR_Right.svg);
       width: 40px;
       height: 37px;
       background-repeat: no-repeat;
@@ -1876,7 +1876,7 @@ html ::-webkit-scrollbar-thumb {
     .swiper_across_us .arrows .swiper-button-prev,
     .similar_swiper .arrows .swiper-button-prev {
       left: 0;
-      background-image: url(/src/images/across_us_template/AR_Left.svg);
+      background-image: url(../images/across_us_template/AR_Left.svg);
       width: 40px;
       height: 35px;
       background-repeat: no-repeat;
@@ -2744,7 +2744,7 @@ html ::-webkit-scrollbar-thumb {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  background: url(../../images/main_page/brain.png) no-repeat right center; }
+  background: url(../images/main_page/brain.png) no-repeat right center; }
   .brain_section .container {
     display: -ms-flexbox;
     display: flex;

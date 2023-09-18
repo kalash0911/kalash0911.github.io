@@ -1,28 +1,43 @@
-const slider = new Swiper(".swiper_revenew", {
-    speed: 1400,
+const slider = new Swiper(".main-slider", {
+    spaceBetween: 20,
+    slidesPerView: 4.5,
+    slidesPerGroup: 1,
     centeredSlides: true,
-    grabCursor: true,
-    loopedSlides: 1,
     loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+    speed: 700,
+    centerPadding: 0,
+
+    mousewheel: {
+        eventsTarget: ".main-slider",
     },
+
+    autoplay: {
+        delay: 1500,
+    },
+
     breakpoints: {
-        // 320: {
-        //     spaceBetween: 20,
-        // },
-        480: {
-            slidesPerView: 1,
+        320: {
+            slidesPerView: 1.75,
         },
-        // 768: {
-        //     spaceBetween: 40,
-        // },
-        1024: {
-            slidesPerView: 1.6,
+
+        640: {
+            slidesPerView: 2.5,
         },
-        1440: {
-            slidesPerView: 2,
+
+        1025: {
+            slidesPerView: 3.5,
+        },
+
+        1100: {
+            slidesPerView: 4,
+        },
+
+        1250: {
+            slidesPerView: 4.5,
+        },
+
+        1400: {
+            slidesPerView: 5.2,
         },
     },
 });
