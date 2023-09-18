@@ -3529,7 +3529,7 @@ html ::-webkit-scrollbar-thumb {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  background: url(../images/main_page/brain.png) no-repeat right center; }
+  background: url(../../src/images/main_page/brain.png) no-repeat right center; }
   .brain_section .container {
     display: -ms-flexbox;
     display: flex;
@@ -3704,5 +3704,117 @@ html ::-webkit-scrollbar-thumb {
       .button_form_section .btn_white_circle:hover svg {
         fill: #fff;
         transition: all 0.3s ease; }
+
+footer {
+  width: 100%;
+  position: relative;
+  padding-top: 79px;
+  /* Только если меньше контейнера */
+  padding-top: 79px; }
+  @media (max-width: 1300px) {
+    footer {
+      padding-top: calc(60px + 19 * ((100vw - calc(320px)) / 980)); } }
+  footer .content {
+    width: 100%;
+    margin: 0; }
+  footer .main_page {
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 767px) {
+      footer .main_page {
+        display: block; } }
+  footer .btn_block {
+    max-width: 300px; }
+    footer .btn_block h2 {
+      color: #fff;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      margin-bottom: 22px; }
+    footer .btn_block .btn_black {
+      display: inline-block;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17.6px;
+      letter-spacing: -0.14px;
+      text-transform: uppercase;
+      padding: 18px 32px;
+      border: 1px solid #fff; }
+    @media (max-width: 767px) {
+      footer .btn_block {
+        text-align: center;
+        margin: 0 auto; } }
+  footer .social_block {
+    margin-left: auto; }
+    footer .social_block li {
+      margin-bottom: 24px; }
+      footer .social_block li a {
+        color: #fff;
+        text-align: center;
+        /* Только если меньше контейнера */
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        /* Только если меньше контейнера */
+        line-height: 40px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        text-decoration: underline; }
+        @media (max-width: 1300px) {
+          footer .social_block li a {
+            font-size: calc(28px + 12 * ((100vw - calc(320px)) / 980)); } }
+        @media (max-width: 1300px) {
+          footer .social_block li a {
+            line-height: calc(28px + 12 * ((100vw - calc(320px)) / 980)); } }
+    @media (max-width: 767px) {
+      footer .social_block {
+        text-align: center;
+        margin: 85px 0; } }
+  footer .links_block {
+    margin-top: 247px; }
+    footer .links_block ul {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: end;
+      justify-content: end; }
+      footer .links_block ul li {
+        margin-left: 60px; }
+        @media (max-width: 767px) {
+          footer .links_block ul li {
+            margin: 0 10px; } }
+      footer .links_block ul a {
+        color: #fff;
+        text-align: center;
+        /* Только если меньше контейнера */
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        /* Только если меньше контейнера */
+        line-height: 24px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        white-space: nowrap; }
+        @media (max-width: 1300px) {
+          footer .links_block ul a {
+            font-size: calc(16px + 8 * ((100vw - calc(320px)) / 980)); } }
+        @media (max-width: 1300px) {
+          footer .links_block ul a {
+            line-height: calc(16px + 8 * ((100vw - calc(320px)) / 980)); } }
+      @media (max-width: 767px) {
+        footer .links_block ul {
+          -ms-flex-pack: center;
+          justify-content: center; } }
+    @media (max-width: 767px) {
+      footer .links_block {
+        margin: 0; } }
+  footer .banner_block {
+    position: absolute;
+    left: 0;
+    right: 0; }
+    footer .banner_block img {
+      width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
