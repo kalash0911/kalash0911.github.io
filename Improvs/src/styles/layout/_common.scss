@@ -1,4 +1,6 @@
 
+
+
 .contact_form_section {
     height: 100vh;
     width: 100%;
@@ -139,7 +141,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    background:url(../images/main_page/brain.png) no-repeat right center;
+    background: url(../images/main_page/brain.png) no-repeat right center;
 
     .container {
         display: flex;
@@ -159,7 +161,7 @@
         font-weight: 500;
         letter-spacing: -3px;
         text-transform: uppercase;
-        @include adaptiv-vaule(" margin-bottom",24, 16, 1);
+        @include adaptiv-vaule(" margin-bottom", 24, 16, 1);
     }
 
 
@@ -170,7 +172,7 @@
         font-weight: 500;
         max-width: 397px;
         letter-spacing: -1px;
-        @include adaptiv-vaule(" margin-bottom",163, 44, 1);
+        @include adaptiv-vaule(" margin-bottom", 163, 44, 1);
     }
 
     .btn_black {
@@ -286,11 +288,11 @@
         background: $white;
 
         @include media ("<desktop") {
-          position:relative;
-          margin-left:auto;
-          margin-right:auto;
-          bottom:0;
-          right:0;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 0;
+            right: 0;
         }
 
         .left_arrow,
