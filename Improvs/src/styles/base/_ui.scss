@@ -154,6 +154,7 @@ html {
     &::after {
         content: '';
         position: absolute;
+        z-index: 1;
         left: 0;
         @include adaptiv-vaule("height", 280, 40, 1);
         width: 100%;

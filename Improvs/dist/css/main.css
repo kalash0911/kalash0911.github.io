@@ -670,6 +670,7 @@ html ::-webkit-scrollbar-thumb {
   .shadow_block::before, .shadow_block::after {
     content: '';
     position: absolute;
+    z-index: 1;
     left: 0;
     /* Только если меньше контейнера */
     height: 280px;
@@ -2272,6 +2273,47 @@ html ::-webkit-scrollbar-thumb {
 
 .typography_uptidy .color_name:first-child, .typography_uptidy .color_name:last-child {
   color: #0E0E0E; }
+
+.main_indise {
+  position: relative; }
+  .main_indise .main_img {
+    /* Только если меньше контейнера */
+    height: 700px; }
+    @media (max-width: 1300px) {
+      .main_indise .main_img {
+        height: calc(400px + 300 * ((100vw - calc(320px)) / 980)); } }
+    @media (min-width: 1441px) {
+      .main_indise .main_img {
+        height: 1000px; } }
+  .main_indise .main_phone {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 2;
+    /* Только если меньше контейнера */
+    width: 390px;
+    /* Только если меньше контейнера */
+    height: 715px; }
+    @media (max-width: 1300px) {
+      .main_indise .main_phone {
+        width: calc(200px + 190 * ((100vw - calc(320px)) / 980)); } }
+    @media (max-width: 1300px) {
+      .main_indise .main_phone {
+        height: calc(200px + 515 * ((100vw - calc(320px)) / 980)); } }
+    @media (max-width: 767px) {
+      .main_indise .main_phone {
+        height: 390px;
+        width: 240px; } }
+  .main_indise .main_bg {
+    width: 100%; }
+    .main_indise .main_bg img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0; }
 
 .about_indise .about_img::before {
   display: block; }
