@@ -1,5 +1,6 @@
 //npm run start
 //npm run build
+//npm run watch
 
 const gulp = require('gulp');
 
@@ -12,6 +13,7 @@ const imgMin = require('./gulp/tasks/imgmin');
 const fonts = require('./gulp/tasks/fonts');
 const files = require('./gulp/tasks/files');
 const clean = require('./gulp/tasks/clean');
+
 
 function setMode(isProduction = false) {
     return cb => {
@@ -26,3 +28,12 @@ const build = gulp.series(clean, dev)
 
 module.exports.start = gulp.series(setMode(), build, server)
 module.exports.build = gulp.series(setMode(true), build)
+
+
+gulp.task("sass:watch", function() {
+  gulp.watch('src/styles/**/*.scss', gulp.parallel(styles));
+});
+
+gulp.task('js:watch', function () {
+  gulp.watch('./src/js/**/**/*.js', gulp.parallel(script));
+});
