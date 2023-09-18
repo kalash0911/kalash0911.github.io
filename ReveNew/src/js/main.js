@@ -304,7 +304,7 @@ const jsonAccessAnimations = new Array(4).fill('anim').map((step, ind, arr) => {
         return (prev += cur.getDuration());
       }, 0);
     }
-  });
+  }); 
   return anim;
 });
 

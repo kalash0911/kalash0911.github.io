@@ -18,7 +18,7 @@ winTriggersMethods.forEach((method) => {
       phoneAnimation();
       return;
     }
-  });
+  }); 
 });
 
 if (burger) {
@@ -197,7 +197,7 @@ function phoneAnimation() {
             startProgressTimer();
           }
         },
-      },
+      }, 
     }
   );
 }

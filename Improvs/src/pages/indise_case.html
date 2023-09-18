@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="../js/indise_script.js" defer></script>
+    <title>Indise</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        //= templates/header.html
+        <main id="main">
+            <section class="main_indise similar_main">
+                <div class="container">
+                    <div class="content">
+                        <h1 class="trinity_title">Indise</h1>
+                        <div class="tip_wrap">
+                            <span class="main_tip">mobile app</span>
+                            <span class="main_tip">Landing page</span>
+                            <span class="main_tip">ai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_img shadow_block">
+                    <img src="../images/indise_template/main_img.png" alt="image not found">
+                </div>
+            </section>
+            <section class="about_indise similar similar_info_bloks">
+                <div class="container">
+                    <div class="content">
+                        <span class="tip">about the project</span>
+                        <p class="about_text">
+                            Indise is an app aimed at designers to provide realistic, fast and high
+                            quality AI generated interiors. <span class="gray_text">It strives to
+                                help inspire, inspect and try out various ideas without going
+                                through the usual effort of a detailed design process.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="about_img shadow_block">
+                    <img src="../images/indise_template/about_img.png" alt="image not found">
+                </div>
+                <div class="container">
+                    <div class="info_text_wrap">
+                        <p class="info_text">Industry: <span class="gray_text">Interior
+                                design</span></p>
+                        <p class="info_text">Tech Stack: <span class="gray_text">Project management,
+                                Back-end development, Ux/ui Designer, Front-end development, QA,
+                                DevOps</span></p>
+                    </div>
+                </div>
+            </section>
+            <section class="indise_slider_section " id="how">
+                <div class="container">
+                    <span class="tip">How it works</span>
+                    <div class="swiper stepSlider">
+                        <ol class="slider-nav">
+                            <div class="sec-swiper-scrollbar" id="scrollbar"></div>
+                        </ol>
+                        <img class="gif-bg" src="../images/indise_template/gif-bg1.svg"
+                            alt="gif-bg">
+                        <div class="swiper-wrapper indise_swiper_anim">
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">Write a detailed description of the design you
+                                        would like to create</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">Select your desired square footage</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">Choose one interior design style from our
+                                        catalog</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">As needed, you can upload a reference image
+                                        directly from your iPhone gallery</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">Just 60 seconds of patience…</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">4 results are ready. Edit them or upscale for
+                                        higher resolution</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="content">
+                                    <h2 class="title">Here's your interior design, delivered in
+                                        under 90 seconds</h2>
+                                    <div class="gif-wrap">
+                                        <div class="json-anim" id="step_7"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clock-wrap">
+                            <div class="clock-cont">
+                                <div class="raz" style="--pie-p:0%;"></div>
+                                <div class="clock-arrow">
+                                    <img src="../images/indise_template/clock-arrow.svg"
+                                        alt="clock-arrow">
+                                </div>
+                                <img class="clock" src="../images/indise_template/clock.png"
+                                    alt="clock">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dream_indise innovation">
+                <div class="container">
+                    <div class="content">
+                        <h2 class="innovation_title shadow_block">Your dream interior design made by
+                            ai</h2>
+                    </div>
+                </div>
+                <div class="swiper swiper_indise">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide_img">
+                                <img src="/src/images/indise_template/slide_1.png"
+                                    alt="image not found">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_img">
+                                <img src="/src/images/indise_template/slide_2.png"
+                                    alt="image not found">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_img">
+                                <img src="/src/images/indise_template/slide_3.png"
+                                    alt="image not found">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_img">
+                                <img src="/src/images/indise_template/slide_4.png"
+                                    alt="image not found">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide_img">
+                                <img src="/src/images/indise_template/slide_1.png"
+                                    alt="image not found">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page_indise similar">
+                <div class="container">
+                    <span class="tip">landing page</span>
+                    <div class="content">
+                        <p class="about_text">
+                            With Indise we hope to capture how simple and quick you can create a
+                            design. <span class="gray_text">The page demonstrates the effortless
+                                steps and encourages the user to put it to the test.</span> Once
+                            they do, the app does the rest of the work.
+                        </p>
+                    </div>
+                </div>
+                <div class="about_img shadow_block">
+                    <img src="../images/indise_template/page_img.png" alt="image not found">
+                </div>
+            </section>
+            <section class="typography_indise similar_gradient">
+                <div class="container">
+                    <span class="tip">Typography & colors</span>
+                    <div class="content">
+                        <div class="font_wrap">
+                            <div class="font_block">
+                                <h2 class="font_title">Poppins</h2>
+                                <p class="font_text">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp
+                                    Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+                            </div>
+                            <div class="font_block">
+                                <h2 class="font_title">Recoleta</h2>
+                                <p class="font_text">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp
+                                    Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient_block">
+                    <span class="color_name">ebony grey</span>
+                    <span class="color_name">Dodger Blue</span>
+                    <span class="color_name">white</span>
+                    <span class="color_name">Santas Gray</span>
+                    <span class="color_name">ebony grey</span>
+                </div>
+            </section>
+            <section class="indise_result similar_result">
+                <div class="container">
+                    <span class="tip">Result</span>
+                    <p class="result_text">
+                        Indise will leave both designers and their potential costumers inspired with
+                        a clear understanding of their vision and plans, <span class="gray_text">and
+                            do it in a clean and painless way.</span>
+                    </p>
+                    <a href="#" class="site_btn_white first_btn">
+                        <div class="left_arrow">
+                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Polygon 4" opacity="0.8"
+                                    d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                            </svg>
+                        </div>
+                        Visit website
+                        <div class="right_arrow">
+                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Polygon 5" opacity="0.8"
+                                    d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="#" class="site_btn_white">
+                        <div class="left_arrow">
+                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Polygon 4" opacity="0.8"
+                                    d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                            </svg>
+                        </div>
+                        Download The app
+                        <div class="right_arrow">
+                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Polygon 5" opacity="0.8"
+                                    d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+        //= templates/footer.html
+    </div>
+</body>
+
+</html>

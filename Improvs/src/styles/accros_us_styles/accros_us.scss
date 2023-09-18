@@ -27,7 +27,6 @@
 
     .swiper {
         position: relative;
-        // max-width: 1550px;
 
         &::before {
             content: '';
@@ -218,9 +217,10 @@
     }
 
     .innovation_image {
-        width: 100%;
+        width: 80%;
         height: auto;
         position: relative;
+        margin: 0 auto;
     }
 
     .innovation_bg {
@@ -233,7 +233,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 60%;
+        width: 50%;
         height: auto;
     }
 }
