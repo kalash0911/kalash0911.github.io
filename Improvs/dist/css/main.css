@@ -3216,6 +3216,12 @@ html ::-webkit-scrollbar-thumb {
   @media (max-width: 1300px) {
     .feel_ryan {
       padding-bottom: calc(55px + 50 * ((100vw - calc(320px)) / 980)); } }
+  .feel_ryan .feel_img {
+    width: 100%;
+    height: auto; }
+    .feel_ryan .feel_img img {
+      width: 100%;
+      height: 100%; }
 
 .ryan_result .first_btn {
   margin-bottom: 20px; }
