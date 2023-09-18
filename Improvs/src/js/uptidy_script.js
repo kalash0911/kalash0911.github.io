@@ -34,10 +34,14 @@ function initCleanerSwiper() {
                 spaceBetween: 80,
                 slidesPerView: 1.6,
             },
-            1440: {
+            1920: {
                 spaceBetween: 80,
                 slidesPerView: 2,
             },
+            2300: {
+                spaceBetween: 80,
+                slidesPerView: 2.5,
+            }
         },
     });
 }
@@ -74,10 +78,14 @@ function initCustomerSwiper() {
                 spaceBetween: 80,
                 slidesPerView: 1.6,
             },
-            1440: {
+            1920: {
                 spaceBetween: 80,
                 slidesPerView: 2,
             },
+            2300: {
+                spaceBetween: 80,
+                slidesPerView: 2.5,
+            }
         },
     });
 }
@@ -85,9 +93,7 @@ function initCustomerSwiper() {
 function switchSlider() {
     const customerSwiper = document.querySelector(".swiper_uptidy_customer");
     const cleanerSwiper = document.querySelector(".swiper_uptidy_cleaner");
-    const switchersList = document.querySelector(".switcher_wrap");
     const switchersItems = document.querySelectorAll(".switcher");
-    const switcherArrow = document.querySelectorAll(".switch_arrow");
 
     switchersItems.forEach((element) => {
         element.addEventListener("click", (e) => {

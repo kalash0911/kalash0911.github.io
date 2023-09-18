@@ -2266,6 +2266,12 @@ html ::-webkit-scrollbar-thumb {
     .page_uptidy .about_img {
       max-width: 100%; } }
 
+.mobile_uptidy .about_text {
+  max-width: 850px; }
+
+.logo_uptidy .about_text {
+  max-width: 920px; }
+
 .typography_uptidy .gradient_block {
   background: linear-gradient(90deg, #F8FAFB 0%, #00A7DB 25.52%, #FFF 50.03%, #0083AB 73.44%, #92DCEE 100%); }
   @media (max-width: 519px) {

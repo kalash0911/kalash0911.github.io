@@ -36,9 +36,13 @@ function initCleanerSwiper() {
         spaceBetween: 80,
         slidesPerView: 1.6
       },
-      1440: {
+      1920: {
         spaceBetween: 80,
         slidesPerView: 2
+      },
+      2300: {
+        spaceBetween: 80,
+        slidesPerView: 2.5
       }
     }
   });
@@ -76,9 +80,13 @@ function initCustomerSwiper() {
         spaceBetween: 80,
         slidesPerView: 1.6
       },
-      1440: {
+      1920: {
         spaceBetween: 80,
         slidesPerView: 2
+      },
+      2300: {
+        spaceBetween: 80,
+        slidesPerView: 2.5
       }
     }
   });
@@ -87,9 +95,7 @@ function initCustomerSwiper() {
 function switchSlider() {
   var customerSwiper = document.querySelector(".swiper_uptidy_customer");
   var cleanerSwiper = document.querySelector(".swiper_uptidy_cleaner");
-  var switchersList = document.querySelector(".switcher_wrap");
   var switchersItems = document.querySelectorAll(".switcher");
-  var switcherArrow = document.querySelectorAll(".switch_arrow");
   switchersItems.forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.preventDefault();
