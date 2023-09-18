@@ -1,0 +1,105 @@
+footer {
+    width: 100%;
+    position: relative;
+    padding-top: 79px;
+    @include adaptiv-vaule("padding-top",79, 60, 1);
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+   .main_page{
+    display: flex;
+    @include media ("<tablet") {
+        display: block;
+    }
+ }
+    .btn_block{
+        max-width: 300px;
+        h2{
+            color: $white;
+           font-size: 48px;
+            font-style: normal;
+            font-weight: 500;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+           margin-bottom:22px;
+        }
+        .btn_black {
+            display: inline-block;
+            color: $white;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17.6px;
+            letter-spacing: -0.14px;
+            text-transform: uppercase;
+            padding: 18px 32px;
+            border: 1px solid $white;
+        }
+        @include media ("<tablet") {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    .social_block{
+        margin-left: auto;
+        li{
+            margin-bottom: 24px;
+            a{
+                color: $white;
+                text-align: center;
+                @include adaptiv-vaule("font-size",40, 28, 1);
+                font-style: normal;
+                font-weight: 500;
+                @include adaptiv-vaule("line-height",40, 28, 1);
+                letter-spacing: -1px;
+                text-transform: uppercase; 
+                text-decoration: underline;
+                
+                }
+        }
+        @include media ("<tablet") {
+            text-align: center;
+            margin: 85px 0;
+        }
+    }
+    .links_block{
+        margin-top: 247px;
+        
+        ul{
+            display: flex;
+            justify-content:end;
+            li{
+                margin-left: 60px;
+                @include media ("<tablet") {
+                    margin: 0 10px;
+                   }
+            }
+            a{
+                color: $white;
+                text-align: center;
+                @include adaptiv-vaule("font-size",24, 16, 1);
+                font-style: normal;
+                font-weight: 500;
+                @include adaptiv-vaule("line-height",24, 16, 1);
+                letter-spacing: -1px;
+                text-transform: uppercase; 
+                white-space: nowrap;
+            }
+            @include media ("<tablet") {
+               justify-content: center;
+              }
+        }
+        @include media ("<tablet") {
+          margin: 0;
+        }
+    }
+    .banner_block {
+        position: absolute;
+        left: 0;
+        right: 0;
+        img{
+            width: 100%;
+          }
+    
+    }
+}
