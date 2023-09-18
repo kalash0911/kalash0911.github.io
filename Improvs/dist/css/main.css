@@ -793,6 +793,7 @@ html ::-webkit-scrollbar-thumb {
 .about_trinity .info_text_wrap,
 .similar_info_bloks .info_text_wrap {
   position: relative;
+  z-index: 3;
   /* Только если меньше контейнера */
   top: -30px; }
   @media (max-width: 1300px) {
@@ -3338,6 +3339,29 @@ html ::-webkit-scrollbar-thumb {
 
 .ryan_result .first_btn {
   margin-bottom: 20px; }
+
+.desktop_image {
+  width: 100%; }
+  .desktop_image img {
+    width: 100%;
+    height: 100%; }
+
+.owners {
+  width: 100%; }
+  .owners img {
+    width: 100%;
+    height: 100%; }
+
+.typography_planeta .gradient_block {
+  background: linear-gradient(90deg, #EAF1FF 16.67%, #2758B7 49.48%, #FAF8F3 85.94%); }
+  @media (max-width: 519px) {
+    .typography_planeta .gradient_block {
+      background: linear-gradient(180deg, #EAF1FF 16.67%, #2758B7 49.48%, #FAF8F3 85.94%); } }
+
+.typography_planeta .color_name {
+  color: #fff; }
+  .typography_planeta .color_name:first-child, .typography_planeta .color_name:last-child {
+    color: #0E0E0E; }
 
 .contact_form_section {
   height: 100vh;

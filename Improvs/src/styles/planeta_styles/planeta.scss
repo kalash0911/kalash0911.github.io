@@ -1,0 +1,36 @@
+.desktop_image {
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.owners {
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.typography_planeta {
+    .gradient_block {
+        background: linear-gradient(90deg, #EAF1FF 16.67%, #2758B7 49.48%, #FAF8F3 85.94%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #EAF1FF 16.67%, #2758B7 49.48%, #FAF8F3 85.94%);
+        }
+    }
+
+    .color_name {
+        color: $white;
+
+        &:first-child,
+        &:last-child {
+            color: $black;
+        }
+    }
+}

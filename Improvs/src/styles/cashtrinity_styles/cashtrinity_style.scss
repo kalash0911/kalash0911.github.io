@@ -95,6 +95,7 @@
 
     .info_text_wrap {
         position: relative;
+        z-index: 3;
         @include adaptiv-vaule("top", -30, 0, 1);
 
         .info_text {
