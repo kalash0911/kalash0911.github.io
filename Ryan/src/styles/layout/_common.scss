@@ -341,7 +341,7 @@ body {
             @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 24);
         }
 
-        .item {
+        .item { 
             display: flex;
             justify-content: center;
             align-items: center;

@@ -247,14 +247,9 @@
 // ---------- #Typography
 
 .similar_gradient {
-    padding: 0 20px;
     @include adaptiv-vaule("padding-top", 25, 20, 1);
     @include adaptiv-vaule("padding-bottom", 160, 80, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
-    @include media ("<tablet") {
-        padding: 0 15px;
-    }
 
     .font_wrap {
         display: flex;
@@ -300,7 +295,7 @@
     }
 
     .gradient_block {
-        width: 100%;
+        width: calc(100% - 40px);
         margin: 0 auto;
         @include adaptiv-vaule("height", 115, 50, 1);
         background: linear-gradient(90deg, #23262F 0%, #2A85FF 24.48%, #FFF 50.03%, #777E90 76.04%, #23262F 100%);
@@ -310,8 +305,7 @@
 
         @include media ("<phone_max") {
             flex-direction: column;
-            width: 100%;
-            margin: 0 auto;
+            width: calc(100% - 30px);
             height: max-content;
             background: linear-gradient(180deg, #23262F 0%, #2A85FF 24.48%, #FFF 50.03%, #777E90 76.04%, #23262F 100%);
             gap: 30px;

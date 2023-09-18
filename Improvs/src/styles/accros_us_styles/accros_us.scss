@@ -202,7 +202,7 @@
 
     .innovation_title {
         font-size: 108px;
-        @include adaptiv-vaule("font-size", 108, 48, 1);
+        @include adaptiv-vaule("font-size", 108, 42, 1);
         font-weight: 500;
         line-height: 105%;
         letter-spacing: -3.24px;
