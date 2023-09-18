@@ -469,10 +469,10 @@
     }
 }
 
-.works_img{
+.works_img {
     width: 100%;
 
-    img{
+    img {
         width: 100%;
     }
 }
@@ -497,7 +497,7 @@
 
     .swiper_voice {
         border: none;
-        padding-bottom: 120px;
+        @include adaptiv-vaule("padding-bottom", 120, 0, 1);
         position: relative;
 
 
@@ -546,17 +546,22 @@
         transform: translate(-50%, -50%);
         width: 80px;
         height: 80px;
-        @include adaptiv-vaule("width", 80, 35, 1);
-        @include adaptiv-vaule("height", 80, 35, 1);
+        @include adaptiv-vaule("width", 80, 45, 1);
+        @include adaptiv-vaule("height", 80, 45, 1);
     }
 
-    .play {
+    .play,
+    .pause {
         transition: $transition_all_03;
         width: 100%;
         height: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
+
+    }
+
+    .play {
         transform: translate(-50%, -50%) scale(1);
     }
 
@@ -566,12 +571,6 @@
     }
 
     .pause {
-        width: 100%;
-        height: 100%;
-        transition: $transition_all_03;
-        position: absolute;
-        top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%) scale(0);
     }
 
@@ -607,8 +606,6 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
     .innovation_title {
-        max-width: 750px;
-        margin: 0 auto;
         text-align: center;
         margin-bottom: 50px;
     }

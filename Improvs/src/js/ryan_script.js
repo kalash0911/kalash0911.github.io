@@ -3,6 +3,7 @@ initAudioPlayers();
 const slider = new Swiper(".swiper_voice", {
     speed: 1200,
     centeredSlides: true,
+    loopedSlides: 3,
     grabCursor: true,
     loop: true,
     spaceBetween: 20,
@@ -60,9 +61,15 @@ function initAudioPlayers() {
                     pause[i].classList.remove("pauseActive");
                     play[i].classList.remove("playInactive");
                 }
+                audio.addEventListener("ended", () => {
+                    pause[i].classList.remove("pauseActive");
+                    play[i].classList.remove("playInactive");
+                });
             });
         });
     });
+
+ 
 }
 
 const videoThresholdScreenSize = 860;

@@ -3150,8 +3150,12 @@ html ::-webkit-scrollbar-thumb {
     max-width: 750px; }
   .voice_ryan .swiper_voice {
     border: none;
+    /* Только если меньше контейнера */
     padding-bottom: 120px;
     position: relative; }
+    @media (max-width: 1300px) {
+      .voice_ryan .swiper_voice {
+        padding-bottom: calc(0px + 120 * ((100vw - calc(320px)) / 980)); } }
     .voice_ryan .swiper_voice::before, .voice_ryan .swiper_voice::after {
       content: '';
       position: absolute;
@@ -3203,17 +3207,19 @@ html ::-webkit-scrollbar-thumb {
     height: 80px; }
     @media (max-width: 1300px) {
       .voice_ryan .play_btn {
-        width: calc(35px + 45 * ((100vw - calc(320px)) / 980)); } }
+        width: calc(45px + 35 * ((100vw - calc(320px)) / 980)); } }
     @media (max-width: 1300px) {
       .voice_ryan .play_btn {
-        height: calc(35px + 45 * ((100vw - calc(320px)) / 980)); } }
-  .voice_ryan .play {
+        height: calc(45px + 35 * ((100vw - calc(320px)) / 980)); } }
+  .voice_ryan .play,
+  .voice_ryan .pause {
     transition: all 0.3s ease;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; }
+  .voice_ryan .play {
     -webkit-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1); }
   .voice_ryan .playInactive {
@@ -3221,12 +3227,6 @@ html ::-webkit-scrollbar-thumb {
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.3s ease; }
   .voice_ryan .pause {
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     -webkit-transform: translate(-50%, -50%) scale(0);
     transform: translate(-50%, -50%) scale(0); }
   .voice_ryan .pauseActive {
@@ -3262,8 +3262,6 @@ html ::-webkit-scrollbar-thumb {
     .ryan_fairy {
       padding-bottom: calc(70px + 90 * ((100vw - calc(320px)) / 980)); } }
   .ryan_fairy .innovation_title {
-    max-width: 750px;
-    margin: 0 auto;
     text-align: center;
     margin-bottom: 50px; }
   .ryan_fairy .innovation_image {
