@@ -34,7 +34,6 @@ module.exports.build = gulp.series(setMode(true), build)
 
 gulp.task("watch", function() {
   gulp.watch('src/styles/**/*.scss', gulp.parallel(styles));
-  gulp.watch('src/**/*.html', gulp.series(html, cb => gulp.src('dist/').pipe(server.stream()).on('end', cb)))
   gulp.watch("*.html").on("change", reload);
   gulp.watch('./src/js/**/**/*.js', gulp.parallel(script));
 });
