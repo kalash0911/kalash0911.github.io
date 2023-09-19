@@ -1,9 +1,41 @@
 initAudioPlayers();
 
-const slider = new Swiper(".swiper_voice", {
+function destroySlidersOnResize(selector, width, obj, moreThan) {
+    const init = {
+        ...obj,
+    };
+
+    const win = window;
+    const sliderSelector = document.querySelector(selector);
+    if (!sliderSelector) {
+        return;
+    }
+    let swiper = new Swiper(selector, init);
+
+    const toggleInit = () => {
+        const neededWidth = moreThan
+            ? win.innerWidth >= width
+            : win.innerWidth <= width;
+        if (neededWidth) {
+            if (!sliderSelector.classList.contains("swiper-initialized")) {
+                swiper = new Swiper(selector, init);
+            }
+        } else if (
+            sliderSelector.classList.contains("swiper-initialized")
+        ) {
+            swiper.destroy();
+        }
+    };
+
+    ["load", "resize"].forEach((evt) =>
+        win.addEventListener(evt, toggleInit, false)
+    );
+}
+
+destroySlidersOnResize(".swiper_voice", 1440, {
     speed: 1200,
     centeredSlides: true,
-    loopedSlides: 3,
+    loopedSlides: 5,
     grabCursor: true,
     loop: true,
     spaceBetween: 20,
@@ -28,14 +60,45 @@ const slider = new Swiper(".swiper_voice", {
         1024: {
             slidesPerView: 4.6,
         },
-        1440: {
-            slidesPerView: 6.1,
-        },
-        1920: {
-            slidesPerView: 8,
-        },
     },
 });
+
+// const slider = new Swiper(".swiper_voice", {
+//     speed: 1200,
+//     centeredSlides: true,
+//     loopedSlides: 3,
+//     grabCursor: true,
+//     loop: true,
+//     spaceBetween: 20,
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+//     breakpoints: {
+//         320: {
+//             spaceBetween: 20,
+//             slidesPerView: 2,
+//         },
+//         480: {
+//             slidesPerView: 2.5,
+//         },
+//         620: {
+//             slidesPerView: 3,
+//         },
+//         768: {
+//             slidesPerView: 3.6,
+//         },
+//         1024: {
+//             slidesPerView: 4.6,
+//         },
+//         1440: {
+//             slidesPerView: 6.1,
+//         },
+//         1920: {
+//             slidesPerView: 8,
+//         },
+//     },
+// });
 
 function initAudioPlayers() {
     const audioList = document.querySelectorAll(".fairy_sound");
