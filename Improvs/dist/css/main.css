@@ -3367,6 +3367,36 @@ html ::-webkit-scrollbar-thumb {
   .typography_planeta .color_name:first-child, .typography_planeta .color_name:last-child {
     color: #0E0E0E; }
 
+.date_adventure {
+  /* Только если меньше контейнера */
+  padding-top: 160px;
+  /* Только если меньше контейнера */
+  padding-bottom: 160px; }
+  @media (max-width: 1300px) {
+    .date_adventure {
+      padding-top: calc(60px + 100 * ((100vw - calc(320px)) / 980)); } }
+  @media (max-width: 1300px) {
+    .date_adventure {
+      padding-bottom: calc(60px + 100 * ((100vw - calc(320px)) / 980)); } }
+  .date_adventure .innovation_title {
+    max-width: 875px;
+    margin: 0 auto; }
+    .date_adventure .innovation_title::before, .date_adventure .innovation_title::after {
+      /* Только если меньше контейнера */
+      height: 60px; }
+      @media (max-width: 1300px) {
+        .date_adventure .innovation_title::before, .date_adventure .innovation_title::after {
+          height: calc(20px + 40 * ((100vw - calc(320px)) / 980)); } }
+
+.typography_date .gradient_block {
+  background: linear-gradient(90deg, #0B0A06 0%, #F9C0AC 49.48%, #3F4D34 98.96%); }
+  @media (max-width: 519px) {
+    .typography_date .gradient_block {
+      background: linear-gradient(180deg, #0B0A06 0%, #F9C0AC 49.48%, #3F4D34 98.96%); } }
+
+.typography_date .color_name:last-child {
+  color: #0E0E0E; }
+
 .contact_form_section {
   height: 100vh;
   width: 100%;
