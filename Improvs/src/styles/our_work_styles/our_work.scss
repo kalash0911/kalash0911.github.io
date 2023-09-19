@@ -4,10 +4,15 @@
 
     .title_wrap {
         display: flex;
-        align-items: flex-start;
-        // justify-content: space-between;
+        align-items: flex-end;
+        justify-content: space-between;
         gap: 30px;
-        flex-direction: column;
+        @include adaptiv-vaule("margin-bottom", 80, 45, 1);
+
+        @include media ("<1350px") {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     .our_work_title {
@@ -52,10 +57,43 @@
         border: 1px solid #A6A6A6;
         padding: 12px 16px;
         cursor: pointer;
+        transition: $transition_all_03;
     }
 
-    .active_filter_item{
+    .active_filter_item {
         color: $white;
         border: 1px solid $white;
+        transition: $transition_all_03;
+    }
+}
+
+.case_list {
+
+    .case {
+        transition: $transition_all_03;
+    }
+
+
+    .tag {
+        color: $white;
+        font-size: 100px;
+    }
+
+    .orange {
+        background: orange;
+    }
+
+    .red {
+        background: red;
+    }
+
+    .blue {
+        background: blue;
+    }
+    .yellow {
+        background: yellow;
+    }
+    .palegreen {
+        background: palegreen;
     }
 }
