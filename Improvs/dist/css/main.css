@@ -3263,17 +3263,9 @@ html ::-webkit-scrollbar-thumb {
     .voice_ryan .swiper_voice::after {
       right: 0;
       background: linear-gradient(90deg, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%); }
-    @media (min-width: 1441px) {
-      .voice_ryan .swiper_voice .swiper-wrapper {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        max-width: 1440px;
-        margin: 0 auto;
-        gap: 20px; } }
+    .voice_ryan .swiper_voice .swiper-wrapper {
+      -ms-flex-pack: center;
+      justify-content: center; }
   .voice_ryan .swiper-slide {
     display: -ms-flexbox;
     display: flex;
@@ -3350,9 +3342,6 @@ html ::-webkit-scrollbar-thumb {
     font-weight: 700;
     line-height: 58.76px;
     text-align: center; }
-  @media (min-width: 1441px) {
-    .voice_ryan .arrows {
-      display: none; } }
 
 .ryan_fairy {
   /* Только если меньше контейнера */

@@ -510,6 +510,8 @@
 }
 
 .voice_ryan {
+    border: none;
+
     .container {
         width: 100%;
         max-width: 1440px;
@@ -521,7 +523,6 @@
         }
     }
 
-    border: none;
 
     .about_text {
         max-width: 750px;
@@ -554,14 +555,7 @@
         }
 
         .swiper-wrapper{
-            @include media (">laptop") {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                max-width: 1440px;
-                margin: 0 auto;
-                gap: 20px;
-            }
+           justify-content: center;
         }
     }
 
@@ -633,12 +627,6 @@
         font-weight: 700;
         line-height: 58.76px;
         text-align: center;
-    }
-
-    .arrows{
-        @include media (">laptop") {
-          display: none;
-        }
     }
 }
 
