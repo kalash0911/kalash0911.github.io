@@ -12,18 +12,6 @@
 }
 
 .about_ryan {
-
-    .container {
-        width: 100%;
-        max-width: 1440px;
-        padding: 0 60px;
-        margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
-    }
-
     padding-top: 0;
 
     @include media ("<desktop") {
@@ -32,6 +20,14 @@
 
     .container {
         position: relative;
+        width: 100%;
+        max-width: 1440px;
+        padding: 0 60px;
+        margin: 0 auto;
+
+        @include media('<widescreen') {
+            padding: 0 20px;
+        }
     }
 
     .content {
@@ -93,16 +89,15 @@
 
     position: relative;
     padding-top: 25px;
-    padding-bottom: 140px;
-    overflow: hidden;
-    min-height: 920px;
-    background-color: transparent;
+    // padding-bottom: 140px;
+    // overflow: hidden;
+    // min-height: 920px;
+    // background-color: transparent;
 
-    @include media('<phone') {
-        // min-height: 320px;
-        min-height: 520px;
-        padding-bottom: 100px;
-    }
+    // @include media('<phone') {
+    //     min-height: 320px;
+    //     min-height: 520px;
+    // }
 
     .container {
         width: 100%;
@@ -115,43 +110,80 @@
         }
     }
 
+    .card_image {
+        width: 100%;
+        position: relative;
+        top: 1px;
+
+        @include media ("<laptop") {
+            @include adaptiv-vaule("height", 1080, 350, 1);
+        }
+
+        @include media (">laptop") {
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            // position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+
+    .color_block {
+        width: 100%;
+        height: 130px;
+        @include adaptiv-vaule("height", 130, 20, 1);
+        background-color: $yellowD0;
+        border-radius: 5px 5px 0 0;
+
+        @include media ("<tablet") {
+            border-radius: 3px 3px 0 0;
+        }
+    }
+
     .stars {
         position: absolute;
     }
 
     .star1 {
-        width: 75px;
-        height: 75px;
         top: 10%;
         right: 5%;
+        @include adaptiv-vaule("width", 75, 17, 1);
+        @include adaptiv-vaule("height", 75, 17, 1);
     }
 
     .star2 {
-        width: 60px;
-        height: 60px;
-        top: 27%;
-        right: 21%;
+        @include adaptiv-vaule("width", 60, 14, 1);
+        @include adaptiv-vaule("height", 60, 14, 1);
+        top: 35%;
+        right: 10%;
     }
 
     .star3 {
-        width: 45px;
-        height: 45px;
-        top: 180px;
-        right: 40%;
+        @include adaptiv-vaule("width", 45, 10, 1);
+        @include adaptiv-vaule("height", 45, 10, 1);
+        top: 25%;
+        right: 20%;
     }
 
     .star4 {
-        width: 40px;
-        height: 40px;
-        top: 30%;
-        left: 15%;
+        @include adaptiv-vaule("width", 40, 23, 1);
+        @include adaptiv-vaule("height", 40, 23, 1);
+        top: 40%;
+        left: 25%;
     }
 
     .star5 {
         width: 30px;
         height: 30px;
-        top: 15%;
-        left: 35%;
+        @include adaptiv-vaule("width", 30, 15, 1);
+        @include adaptiv-vaule("height", 30, 15, 1);
+        top: 35%;
+        left: 15%;
     }
 
     .circle {
@@ -520,12 +552,27 @@
             right: 0;
             background: linear-gradient(90deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
         }
+
+        .swiper-wrapper{
+            @include media (">laptop") {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1440px;
+                margin: 0 auto;
+                gap: 20px;
+            }
+        }
     }
 
     .swiper-slide {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @include media (">laptop") {
+            max-width: max-content;
+        }
     }
 
     .slide_img {
@@ -586,6 +633,12 @@
         font-weight: 700;
         line-height: 58.76px;
         text-align: center;
+    }
+
+    .arrows{
+        @include media (">laptop") {
+          display: none;
+        }
     }
 }
 

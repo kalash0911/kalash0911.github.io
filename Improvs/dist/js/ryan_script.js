@@ -1,10 +1,46 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 initAudioPlayers();
-var slider = new Swiper(".swiper_voice", {
+
+function destroySlidersOnResize(selector, width, obj, moreThan) {
+  var init = _objectSpread({}, obj);
+
+  var win = window;
+  var sliderSelector = document.querySelector(selector);
+
+  if (!sliderSelector) {
+    return;
+  }
+
+  var swiper = new Swiper(selector, init);
+
+  var toggleInit = function toggleInit() {
+    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+
+    if (neededWidth) {
+      if (!sliderSelector.classList.contains("swiper-initialized")) {
+        swiper = new Swiper(selector, init);
+      }
+    } else if (sliderSelector.classList.contains("swiper-initialized")) {
+      swiper.destroy();
+    }
+  };
+
+  ["load", "resize"].forEach(function (evt) {
+    return win.addEventListener(evt, toggleInit, false);
+  });
+}
+
+destroySlidersOnResize(".swiper_voice", 1440, {
   speed: 1200,
   centeredSlides: true,
-  loopedSlides: 3,
+  loopedSlides: 5,
   grabCursor: true,
   loop: true,
   spaceBetween: 20,
@@ -28,15 +64,44 @@ var slider = new Swiper(".swiper_voice", {
     },
     1024: {
       slidesPerView: 4.6
-    },
-    1440: {
-      slidesPerView: 6.1
-    },
-    1920: {
-      slidesPerView: 8
     }
   }
-});
+}); // const slider = new Swiper(".swiper_voice", {
+//     speed: 1200,
+//     centeredSlides: true,
+//     loopedSlides: 3,
+//     grabCursor: true,
+//     loop: true,
+//     spaceBetween: 20,
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+//     breakpoints: {
+//         320: {
+//             spaceBetween: 20,
+//             slidesPerView: 2,
+//         },
+//         480: {
+//             slidesPerView: 2.5,
+//         },
+//         620: {
+//             slidesPerView: 3,
+//         },
+//         768: {
+//             slidesPerView: 3.6,
+//         },
+//         1024: {
+//             slidesPerView: 4.6,
+//         },
+//         1440: {
+//             slidesPerView: 6.1,
+//         },
+//         1920: {
+//             slidesPerView: 8,
+//         },
+//     },
+// });
 
 function initAudioPlayers() {
   var audioList = document.querySelectorAll(".fairy_sound");

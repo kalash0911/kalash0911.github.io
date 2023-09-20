@@ -1,6 +1,16 @@
 .main_indise{
-    
     position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        @include adaptiv-vaule("height", 280, 40, 1);
+        width: 100%;
+        background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+    }
 
     .main_img{
         @include adaptiv-vaule("height", 700, 400, 1);
@@ -12,7 +22,7 @@
 
     .main_phone{
         position: absolute;
-        top: 5%;
+        top: 10%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
