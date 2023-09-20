@@ -70,10 +70,12 @@ html {
 
     .left_arrow {
         left: 16px;
+        transition: $transition_all_03;
     }
 
     .right_arrow {
         right: 16px;
+        transition: $transition_all_03;
     }
 
     svg {
@@ -85,6 +87,17 @@ html {
         background-color: transparent;
         transition: $transition_all_03;
         color: $white;
+
+
+        .left_arrow {
+            left: 37%;
+            transition: $transition_all_03;
+        }
+
+        .right_arrow {
+            right: 37%;
+            transition: $transition_all_03;
+        }
 
         svg {
             fill: $white;

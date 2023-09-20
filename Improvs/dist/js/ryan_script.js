@@ -37,12 +37,12 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   });
 }
 
-destroySlidersOnResize(".swiper_voice", 1440, {
+destroySlidersOnResize(".swiper_voice", 9999, {
   speed: 1200,
-  centeredSlides: true,
-  loopedSlides: 5,
+  // centeredSlides: true,
+  // loopedSlides: 5,
   grabCursor: true,
-  loop: true,
+  // loop: true,
   spaceBetween: 20,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -51,7 +51,8 @@ destroySlidersOnResize(".swiper_voice", 1440, {
   breakpoints: {
     320: {
       spaceBetween: 20,
-      slidesPerView: 2
+      slidesPerView: 2,
+      centeredSlides: true
     },
     480: {
       slidesPerView: 2.5
@@ -64,6 +65,12 @@ destroySlidersOnResize(".swiper_voice", 1440, {
     },
     1024: {
       slidesPerView: 4.6
+    },
+    1200: {
+      slidesPerView: 5.6
+    },
+    1441: {
+      slidesPerView: "auto"
     }
   }
 }); // const slider = new Swiper(".swiper_voice", {
