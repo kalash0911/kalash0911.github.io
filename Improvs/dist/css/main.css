@@ -3506,6 +3506,71 @@ html ::-webkit-scrollbar-thumb {
     .typography_meating_burgers .gradient_block {
       background: linear-gradient(180deg, #131212 0%, #E6C856 49.48%, #241F1B 98.96%); } }
 
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  max-height: 80px;
+  background-color: #0E0E0E; }
+  .header .header__content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 13px 0; }
+    .header .header__content .header__main {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      width: 100%; }
+    .header .header__content .btn_black {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17.6px;
+      letter-spacing: -0.14px;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      border: 1px solid #fff;
+      transition: all 0.3s ease; }
+      .header .header__content .btn_black:hover {
+        background-color: #fff;
+        transition: all 0.3s ease;
+        color: #0E0E0E; }
+    .header .header__content .burger {
+      position: relative;
+      width: 30px;
+      height: 15px;
+      z-index: 5; }
+      .header .header__content .burger span {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 10px;
+        transition: all .7s ease 0s; }
+      .header .header__content .burger::before, .header .header__content .burger::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px; }
+
 html {
   height: 100%;
   scroll-behavior: smooth; }
