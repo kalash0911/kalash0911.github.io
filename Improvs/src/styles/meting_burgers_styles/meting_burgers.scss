@@ -1,0 +1,15 @@
+.meating_burgers_ads{
+    .about_img{
+        @include adaptiv-vaule("margin-bottom", 120 , 60, 1);
+    }
+}
+
+.typography_meating_burgers{
+    .gradient_block{
+        background: linear-gradient(90deg, #131212 0%, #E6C856 49.48%, #241F1B 98.96%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #131212 0%, #E6C856 49.48%, #241F1B 98.96%);
+        }
+    }
+}

@@ -1913,7 +1913,7 @@ html ::-webkit-scrollbar-thumb {
     position: absolute;
     top: 25px;
     left: 20px;
-    z-index: 1; }
+    z-index: 3; }
     @media (max-width: 1023px) {
       .mobile_across_us .content {
         position: static; } }
@@ -2057,9 +2057,9 @@ html ::-webkit-scrollbar-thumb {
       background: linear-gradient(180deg, #F2F4F8 0%, #9AA4C9 26.04%, #031C77 50.03%, #66666C 73.44%, #FFF 100%); } }
 
 .typography_solutions .color_name {
-  color: #0E0E0E; }
+  color: #fff; }
   .typography_solutions .color_name:last-child, .typography_solutions .color_name:first-child {
-    color: #fff; }
+    color: #0E0E0E; }
 
 .about_revenew .about_img::before {
   display: block; }
@@ -3492,6 +3492,19 @@ html ::-webkit-scrollbar-thumb {
 
 .typography_date .color_name:last-child {
   color: #0E0E0E; }
+
+.meating_burgers_ads .about_img {
+  /* Только если меньше контейнера */
+  margin-bottom: 120px; }
+  @media (max-width: 1300px) {
+    .meating_burgers_ads .about_img {
+      margin-bottom: calc(60px + 60 * ((100vw - calc(320px)) / 980)); } }
+
+.typography_meating_burgers .gradient_block {
+  background: linear-gradient(90deg, #131212 0%, #E6C856 49.48%, #241F1B 98.96%); }
+  @media (max-width: 519px) {
+    .typography_meating_burgers .gradient_block {
+      background: linear-gradient(180deg, #131212 0%, #E6C856 49.48%, #241F1B 98.96%); } }
 
 html {
   height: 100%;

@@ -175,7 +175,7 @@
         position: absolute;
         top: 25px;
         left: 20px;
-        z-index: 1;
+        z-index: 3;
 
         @include media ("<desktop") {
             position: static;
