@@ -2,6 +2,10 @@
   @include adaptiv-vaule("padding-top", 100, 50, 1);
   padding-bottom: 30px;
 
+  .container{
+    max-width: 1650px;
+  }
+
   .title_wrap {
     display: flex;
     align-items: center;
@@ -46,7 +50,7 @@
   .dropdown {
     position: relative;
     display: inline-block;
-    z-index: 2;
+    z-index: 4;
 
     &:hover {
       .dropdown-content {
@@ -94,7 +98,6 @@
   .list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 20px;
@@ -106,6 +109,29 @@
     @include adaptiv-vaule("height", 412, 315, 1);
     position: relative;
     padding: 10px 10px 30px 25px;
+
+    &::after{
+      content: '';
+      position: absolute;
+      transition: $transition_all_03;
+      width: 100%;
+      height: 150px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(28, 28, 28, 0.00) 0%, #1C1C1C 100%);
+    }
+
+    &:hover{
+      &::after{
+        height: 100%;
+        transition: $transition_all_03;
+      }
+
+      .post_text{
+        padding-bottom: 20px;
+        transition: $transition_all_03;
+      }
+    }
 
     &:nth-child(7n + 1) {
       width: 49%;
@@ -182,15 +208,6 @@
         width: 100%;
       }
     }
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 195px;
-    }
   }
 
   .post_link {
@@ -199,7 +216,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 3;
   }
 
   .similar_post_img {
@@ -219,6 +236,9 @@
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: $transition_all_03;
   }
 
   .post_title {
