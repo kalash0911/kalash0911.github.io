@@ -7,6 +7,14 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 initSwiperImg();
+anime({
+  begin: splt({}),
+  targets: ".char",
+  opacity: [0, 1],
+  duration: 10000,
+  scale: [1.5, 1],
+  delay: anime.stagger(50)
+});
 
 function initSwiperImg() {
   var slider = new Swiper(".swiper_indise", {

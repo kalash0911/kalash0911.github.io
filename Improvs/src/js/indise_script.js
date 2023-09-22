@@ -1,5 +1,14 @@
 initSwiperImg();
 
+anime({
+    begin: splt({}),
+    targets: ".char",
+    opacity: [0, 1],
+    duration: 10000,
+    scale: [1.5, 1],
+    delay: anime.stagger(50),
+});
+
 function initSwiperImg() {
     const slider = new Swiper(".swiper_indise", {
         speed: 1400,
@@ -131,7 +140,7 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
     const fps = 16;
     const durationMS = totalDuration * 1000;
     const msPerSlide = durationMS / totalSlides;
-   
+
     const intervalTimer = msPerSlide / fps;
     const progressCircle = document.querySelector(".raz");
     const clockArrow = document.querySelector(".clock-arrow");
@@ -213,3 +222,5 @@ function createObserver(target, callback) {
 }
 
 createObserver(indiseIntersectionObs, callback);
+
+
