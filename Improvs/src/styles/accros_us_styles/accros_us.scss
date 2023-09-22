@@ -37,6 +37,10 @@
             top: 0;
             left: 0;
             background: linear-gradient(270deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+
+            @include media ("<tablet") {
+                width: 5%;
+            }
         }
 
         &::after {
@@ -48,6 +52,10 @@
             width: 15%;
             z-index: 2;
             background: linear-gradient(90deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+
+            @include media ("<tablet") {
+                width: 5%;
+            }
         }
 
     }
@@ -55,6 +63,11 @@
     .swiper_acrossUs {
         padding-top: 100px;
         padding-bottom: 100px;
+
+        @include media ("<desktop") {
+            padding-bottom: 0;
+            padding-top: 50px;
+        }
 
         .swiper-slide {
             transform: translateY(50px);
@@ -202,13 +215,19 @@
 
     .innovation_title {
         font-size: 108px;
-        @include adaptiv-vaule("font-size", 108, 42, 1);
+        @include adaptiv-vaule("font-size", 108, 40, 1);
         font-weight: 500;
         line-height: 105%;
         letter-spacing: -3.24px;
         text-transform: uppercase;
         margin-bottom: 15px;
         text-align: center;
+
+        @include media ("<tablet") {
+            br{
+                display: none;
+            }
+        }
 
         &::after,
         &::before {
@@ -221,6 +240,10 @@
         height: auto;
         position: relative;
         margin: 0 auto;
+
+        @include media ("<tablet") {
+            width: 100%;
+        }
     }
 
     .innovation_bg {
@@ -235,6 +258,10 @@
         transform: translate(-50%, -50%);
         width: 50%;
         height: auto;
+
+        @include media ("<desktop") {
+            width: 80%;
+        }
     }
 }
 

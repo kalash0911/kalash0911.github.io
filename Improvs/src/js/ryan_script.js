@@ -60,7 +60,7 @@ destroySlidersOnResize(".swiper_voice", 9999, {
             slidesPerView: 4.6,
         },
         1200: {
-            slidesPerView: 5.6,
+            slidesPerView: 5,
         },
         1441: {
             slidesPerView: "auto",

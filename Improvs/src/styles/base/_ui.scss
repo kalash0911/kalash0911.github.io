@@ -36,7 +36,7 @@ html {
 
 .tip {
     color: $gray_D8;
-    @include adaptiv-vaule("font-size", 18, 14, 1);
+    @include adaptiv-vaule("font-size", 18, 16, 1);
     font-weight: 500;
     line-height: 126%;
     letter-spacing: -0.18px;
@@ -181,6 +181,292 @@ html {
     &::after {
         bottom: 0;
         background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+    }
+}
+
+
+.similar_main {
+    @include adaptiv-vaule("padding-top", 120, 60, 1);
+    @include adaptiv-vaule("padding-bottom", 140, 60, 1);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    overflow: hidden;
+
+    .trinity_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 132, 56, 1);
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -3.96px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .tip_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main_tip {
+        color: $gray_A6;
+        @include adaptiv-vaule("font-size", 16, 12, 1);
+        font-weight: 500;
+        line-height: 126%;
+        letter-spacing: -0.16px;
+        text-transform: uppercase;
+        @include adaptiv-vaule("margin-bottom", 65, 30, 1);
+        display: inline-block;
+        max-width: max-content;
+        text-align: center;
+        border: 1px solid $gray_A6;
+        padding: 3px 8px;
+    }
+
+    .main_img {
+        // max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.similar {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 60, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .about_text {
+        max-width: 850px;
+        width: 100%;
+        @include adaptiv-vaule("margin-bottom", 80, 40, 1);
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        font-weight: 500;
+        line-height: 132%;
+        letter-spacing: -0.32px;
+    }
+
+    .about_img {
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            height: 145px;
+        }
+    }
+
+}
+
+.similar_info_bloks {
+
+    .info_text_wrap {
+        position: relative;
+        z-index: 3;
+        @include adaptiv-vaule("top", -30, 0, 1);
+
+        .info_text {
+            @include adaptiv-vaule("font-size", 18, 16, 1);
+            font-weight: 500;
+            line-height: 126%;
+            letter-spacing: -0.18px;
+            text-transform: uppercase;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            .gray_text {
+                margin-left: 10px;
+            }
+        }
+    }
+
+
+}
+
+.similar_gradient {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .font_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+        gap: 50px;
+        @include adaptiv-vaule("margin-bottom", 120, 50, 1);
+
+        @include media ("<tablet") {
+            flex-direction: column;
+        }
+    }
+
+    .font_block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 490px;
+        width: 100%;
+
+        @include media ("<tablet") {
+            max-width: 100%;
+        }
+    }
+
+    .font_title {
+        font-size: 42px;
+        @include adaptiv-vaule("font-size", 42, 36, 1);
+        font-weight: 700;
+        line-height: 160%;
+        letter-spacing: -0.42px;
+        margin-bottom: 15px
+    }
+
+    .font_text {
+        color: $gray_D8;
+        text-align: justify;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: -0.22px;
+    }
+
+    .gradient_block {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+        @include adaptiv-vaule("height", 115, 50, 1);
+        background: linear-gradient(90deg, #23262F 0%, #2A85FF 24.48%, #FFF 50.03%, #777E90 76.04%, #23262F 100%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        @include media ("<phone_max") {
+            gap: 160px;
+            flex-direction: column;
+            width: calc(100% - 30px);
+            height: max-content;
+            background: linear-gradient(180deg, #23262F 0%, #2A85FF 24.48%, #FFF 50.03%, #777E90 76.04%, #23262F 100%);
+            padding: 45px 10px;
+        }
+    }
+
+    .color_name {
+        @include adaptiv-vaule("font-size", 18, 12, 1);
+        font-weight: 600;
+        line-height: 126%;
+        letter-spacing: -0.18px;
+        text-transform: uppercase;
+
+        &:first-child,
+        &:last-child {
+            color: $white;
+        }
+    }
+}
+
+.similar_result {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 80, 40, 1);
+
+    .tip {
+        @include adaptiv-vaule("margin-bottom", 60, 40, 1);
+    }
+
+    .result_text {
+        max-width: 810px;
+        width: 100%;
+        color: $white;
+        @include adaptiv-vaule("font-size", 32, 24, 1);
+        font-weight: 500;
+        line-height: 132%;
+        letter-spacing: -0.32px;
+        @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+
+        .gray_text {
+            color: rgba(255, 255, 255, 0.60);
+        }
+    }
+
+    .site_btn_white {
+        @include adaptiv-vaule("font-size", 20, 14, 1);
+    }
+}
+
+.similar_video {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 140, 60, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .container {
+        height: 100%;
+
+        @include media ("<tablet") {
+            padding: 0;
+        }
+    }
+
+    .tip{
+        @include media ("<tablet") {
+            padding: 0 15px;
+        }
+    }
+
+    .video_wrap {
+        position: relative;
+        // height: 900px;
+        @include adaptiv-vaule("height", 900, 300, 1);
+        width: 100%;
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .play_video_btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        @include adaptiv-vaule("width", 150, 50, 1);
+        @include adaptiv-vaule("height", 150, 50, 1);
+        border-radius: 50%;
+        border: 1px solid $white;
+        background-color: rgba(255, 255, 255, 0.20);
+        display: grid;
+        place-items: center;
+
+        img{
+            width: 45px;
+            height: 45px;
+            margin-left: 5px;
+            @include adaptiv-vaule("width", 40, 20, 1);
+            @include adaptiv-vaule("height", 45, 20, 1);
+        }
     }
 
 }
