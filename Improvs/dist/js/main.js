@@ -11,7 +11,7 @@ function nextSlide() {
 
     if (index < sections.length - 2) {
       index = index + 1;
-      var section = sections[index + 1].getAttribute('section');
+      var section = sections[index].getAttribute('section');
       scrollByElementName(section);
       setSectionState(section, index);
     }
@@ -31,7 +31,7 @@ function previousSlide() {
 
     if (index > 0) {
       index = index - 1;
-      var section = sections[index + 1].getAttribute('section');
+      var section = sections[index].getAttribute('section');
       scrollByElementName(section);
       setSectionState(section, index);
     }
@@ -137,8 +137,9 @@ document.addEventListener('touchstart', function (e) {
 });
 document.addEventListener('touchmove', function (e) {
   if (!x) return;
+  console.log(e.touches[0]);
 
-  if (e.touches[0].clientX < 0) {
+  if (e.touches[0]) {
     nextSlide();
   } else {
     previousSlide();

@@ -8,7 +8,7 @@ function nextSlide() {
         let index = slide.index;
         if (index < sections.length - 2) {
             index = index + 1;
-            let section = sections[index + 1].getAttribute('section');
+            let section = sections[index].getAttribute('section');
             scrollByElementName(section);
             setSectionState(section, index);
         }
@@ -25,7 +25,7 @@ function previousSlide() {
         let index = slide.index;
         if (index > 0) {
             index = index - 1;
-            let section = sections[index + 1].getAttribute('section');
+            let section = sections[index].getAttribute('section');
             scrollByElementName(section);
             setSectionState(section, index);
         }
@@ -127,7 +127,8 @@ let x = null;
 document.addEventListener('touchstart', e => x = e.touches[0].clientX);
 document.addEventListener('touchmove', e => {
     if (!x) return;
-    if (e.touches[0].clientX < 0) {
+    console.log(e.touches[0]);
+    if (e.touches[0]) {
         nextSlide();
     } else {
         previousSlide();
