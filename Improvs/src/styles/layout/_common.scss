@@ -1,44 +1,50 @@
-html{
+html {
     height: 100%;
     scroll-behavior: smooth;
 }
 
-body{
+body {
     height: 100%;
 }
 
-#wrapper{
+#wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-main{
+main {
     flex: 1 1 auto;
 }
-.video_page{
-    .content{
-       .video_block{
+
+.video_page {
+    .content {
+        .video_block {
             position: relative;
-            video{
+
+            video {
                 width: 100%;
                 height: 100%;
-              
+
             }
-            .top_video_btn{
+
+            .top_video_btn {
                 position: absolute;
                 right: 20px;
-                top:32px;
-                .btn_black{
+                top: 32px;
+
+                .btn_black {
                     padding: 18px 32px;
                 }
             }
-            .bottom_video_btn{
+
+            .bottom_video_btn {
                 position: absolute;
                 right: 20px;
-                bottom:40px;
+                bottom: 40px;
             }
-            .btn_black{
+
+            .btn_black {
                 display: inline-block;
                 position: relative;
                 width: 100%;
@@ -52,40 +58,40 @@ main{
                 border: 1px solid $white;
                 transition: $transition_all_03;
 
-        .left_arrow,
-        .right_arrow {
-            position: absolute;
-            top: 55%;
-            transform: translateY(-55%);
-        }
+                .left_arrow,
+                .right_arrow {
+                    position: absolute;
+                    top: 55%;
+                    transform: translateY(-55%);
+                }
 
-        .left_arrow {
-            left: 32px;
-        }
+                .left_arrow {
+                    left: 32px;
+                }
 
-        .right_arrow {
-            right: 32px;
-        }
+                .right_arrow {
+                    right: 32px;
+                }
 
-        svg {
-            fill: $white;
-            transition: $transition_all_03;
-        }
+                svg {
+                    fill: $white;
+                    transition: $transition_all_03;
+                }
 
-        &:hover {
-            background-color: $white;
-            transition: $transition_all_03;
-            color: $black;
+                &:hover {
+                    background-color: $white;
+                    transition: $transition_all_03;
+                    color: $black;
 
-            svg {
-                fill: $black;
-                transition: $transition_all_03;
+                    svg {
+                        fill: $black;
+                        transition: $transition_all_03;
+                    }
+                }
             }
         }
-            }
-        }
-  
-}
+
+    }
 }
 
 .work_page {
@@ -93,21 +99,23 @@ main{
     padding-bottom: 30px;
 
     .work_title {
-      @include adaptiv-vaule("font-size", 132, 64, 1);
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: -3.96px;
-      text-transform: uppercase;
+        @include adaptiv-vaule("font-size", 132, 64, 1);
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -3.96px;
+        text-transform: uppercase;
     }
-    .work_main_block{
-        .list{
-           display: grid;
-           grid-template-columns: 30% 70%;
-           grid-template-rows: 488px 488px ;
+
+    .work_main_block {
+        .list {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 488px 488px;
         }
     }
-    .swiper_work{
-        .swiper-wrapper{
+
+    .swiper_work {
+        .swiper-wrapper {
             width: 70%;
         }
     }
