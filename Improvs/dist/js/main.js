@@ -156,7 +156,7 @@ function setSectionState(name, index) {
     "section": name,
     "index": index
   };
-  window.history.pushState(stateObj, "MainPage", "/");
+  window.history.pushState(stateObj, "MainPage", window.location.href);
 }
 
 function getSectionState() {

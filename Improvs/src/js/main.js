@@ -146,7 +146,7 @@ document.addEventListener("touched", function (e) {
 //state
 function setSectionState(name, index) {
     let stateObj = { "section": name, "index": index };
-    window.history.pushState(stateObj, "MainPage", "/");
+    window.history.pushState(stateObj, "MainPage", window.location.href);
 }
 
 function getSectionState() {
