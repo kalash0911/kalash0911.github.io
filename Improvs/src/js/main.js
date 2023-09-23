@@ -1,7 +1,7 @@
 showHeader(false);
 const sections = document.querySelectorAll("[section]");
-const mainBlock = document.querySelector("#wrapper");
-const firstVideo=document.querySelector('#first_video');
+const mainBlock = document.querySelector("#main");
+const firstVideo=document.querySelector('#firstVideo');
 
 firstVideo.addEventListener('ended',myHandler,false);
 function myHandler(e) {
@@ -16,14 +16,19 @@ function nextSlide() {
         let index = slide.index;
         if (index <= sections.length - 2) {
             index = index + 1;
+
+            if(index==1){
+                showHeader(true);
+            }
+
             let section = sections[index].getAttribute('section');
             scrollByElementName(section);
-            setSectionState(section, index);
+            setSectionState(index);
         }
     } else {
         let section = sections[1].getAttribute('section');
         scrollByElementName(section);
-        setSectionState(section, 1);
+        setSectionState(1);
     }
 }
 
@@ -35,18 +40,19 @@ function previousSlide() {
             index = index - 1;
 
             if(index==0){
+                firstVideo.currentTime = 0
                 firstVideo.play();
                 showHeader(false);
             }
 
             let section = sections[index].getAttribute('section');
             scrollByElementName(section);
-            setSectionState(section, index);
+            setSectionState(index);
         }
     } else {
         let section = sections[1].getAttribute('section');
         scrollByElementName(section);
-        setSectionState(section, 1);
+        setSectionState(1);
     }
 }
 
@@ -138,8 +144,8 @@ document.addEventListener('wheel', function (event) {
 
 
 //state
-function setSectionState(name, index) {
-    let stateObj = { "section": name, "index": index };
+function setSectionState(index) {
+    let stateObj = { "index": index };
     window.history.pushState(stateObj, "MainPage", window.location.href);
 }
 
