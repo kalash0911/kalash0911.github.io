@@ -1,15 +1,20 @@
-new WOW().init();
-
-// Swiper:
-
+showHeader(false);
 const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#wrapper");
+const firstVideo=document.querySelector('#first_video');
+
+firstVideo.addEventListener('ended',myHandler,false);
+function myHandler(e) {
+    showHeader(true);
+    nextSlide();
+}
+
 
 function nextSlide() {
     var slide = getSectionState();
     if (slide) {
         let index = slide.index;
-        if (index < sections.length - 2) {
+        if (index <= sections.length - 2) {
             index = index + 1;
             let section = sections[index].getAttribute('section');
             scrollByElementName(section);
@@ -28,6 +33,12 @@ function previousSlide() {
         let index = slide.index;
         if (index > 0) {
             index = index - 1;
+
+            if(index==0){
+                firstVideo.play();
+                showHeader(false);
+            }
+
             let section = sections[index].getAttribute('section');
             scrollByElementName(section);
             setSectionState(section, index);
