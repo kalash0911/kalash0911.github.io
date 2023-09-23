@@ -55,6 +55,7 @@
     transition: $transition_all_03;
     .text_burger_btn {
        margin-left: 10px;
+
         &::before{
     content: 'menu';
     }
@@ -95,6 +96,124 @@ span {
 
 
 }
+.burger_active {
+
+    span {
+        opacity: 0;
+    }
+
+    &::before,
+    &::after {
+        animation-duration: .7s;
+        animation-fill-mode: forwards;
+    }
+
+    &::before {
+        animation-name: burger1;
+    }
+
+    &::after {
+        animation-name: burger2;
+    }
+
+@keyframes burger1 {
+    0% {
+        top: 0px;
+    }
+
+    40% {
+        transform: rotate(0deg);
+        top: 11px;
+    }
+
+    100% {
+        transform: rotate(45deg);
+        top: 11px;
+    }
+}
+
+@keyframes burger2 {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        transform: rotate(0deg);
+        bottom: 11px;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        bottom: 11px;
+    }
+}
+}
+.burger_finish {
+
+    &::before,
+    &::after {
+        animation-duration: .7s;
+        animation-fill-mode: forwards;
+    }
+
+    &::before {
+        animation-name: burger3;
+    }
+
+    &::after {
+        animation-name: burger4;
+    }
+
+    @keyframes burger3 {
+        0% {
+            transform: rotate(45deg);
+            top: 6px;
+        }
+
+        40% {
+            transform: rotate(0deg);
+            top: 11px;
+        }
+
+        100% {
+            top: 4px;
+        }
+    }
+
+    @keyframes burger4 {
+        0% {
+            transform: rotate(-45deg);
+            bottom: 11px;
+        }
+
+        40% {
+            transform: rotate(0deg);
+            bottom: 6px;
+        }
+
+        100% {
+            bottom: 4px;
+        }
+    }
+}
+
+.text_burger_btn-click {
+  
+     &::before{
+        animation-name: text-btn-burger;
+        animation-duration: .15s;
+            animation-fill-mode: forwards;
+        @keyframes text-btn-burger {
+            0% {
+           content: 'menu';
+            }
+    
+            100% {
+                content: 'Close';
+            }
+ }
+ }
+}
 .menu{
     position: relative;
     z-index: -1;
@@ -104,12 +223,12 @@ span {
     overflow: auto;
     top: 0;
     left: -100%;
-    background-color: $white;
+    background-color: $black;
     padding: 180px 45px 80px 70px;
     transition: all .5s ease 0s;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
 
     @include media ('<tablet'){
         min-width: 100%;
@@ -151,11 +270,14 @@ span {
 
     a{
         transition: color .3s ease 0s;
-        font-size: 24px;
-        color: $black;
+        @include adaptiv-vaule("font-size", 42, 26, 1);
+        color: $white;
         position: relative;
         margin-bottom: 5px;
-
+        opacity: 60%;
+        font-weight: 500;
+        @include adaptiv-vaule("line-height", 42, 26, 1);
+        letter-spacing: -3%;
         &::after{
             content:'';
             position: absolute;
@@ -173,13 +295,6 @@ span {
             }
         }
 
-        @include media ('<tablet'){
-            font-size: 64px;
-        }
-
-        @include media ('<phone'){
-            font-size: 46px;
-        }
     }
 }
 

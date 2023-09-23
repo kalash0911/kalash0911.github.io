@@ -25,14 +25,17 @@ function showHeader(isShow) {
 } //BURGERMENU
 
 
-var burger = document.querySelector(".burger-btn");
+var burger = document.querySelector(".burger");
+var burger_btn = document.querySelector(".burger-btn");
+var text_click = document.querySelector(".text_burger_btn");
 var menuBody = document.querySelector(".header__menu ");
 var linkClose = document.querySelectorAll(".link-close");
 
 if (burger) {
-  burger.addEventListener("click", function (e) {
+  burger_btn.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
+    text_click.classList.toggle("text_burger_btn-click");
 
     if (burger.classList.contains("burger_active")) {
       burger.classList.add("burger_finish");
@@ -51,6 +54,7 @@ if (linkClose.length) {
     linkClose[i].addEventListener("click", function (e) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
+      text_click.classList.remove("text_burger_btn-click");
       burger.classList.remove("burger_active");
       burger.classList.add("burger_finish");
       menuBody.classList.remove("menu_active");

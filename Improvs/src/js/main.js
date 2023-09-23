@@ -23,16 +23,20 @@ function showHeader(isShow) {
 }
 
 //BURGERMENU
-const burger = document.querySelector(".burger-btn");
+const burger = document.querySelector(".burger");
+const burger_btn = document.querySelector(".burger-btn");
+const text_click = document.querySelector(".text_burger_btn");
 const menuBody = document.querySelector(".header__menu ");
 const linkClose = document.querySelectorAll(".link-close");
 if (burger) {
-  burger.addEventListener("click", function (e) {
+  burger_btn.addEventListener("click", function (e) {
     document.body.classList.toggle("body_lock");
     document.body.classList.toggle("active");
+    text_click.classList.toggle("text_burger_btn-click");
     if (burger.classList.contains("burger_active")) {
       burger.classList.add("burger_finish");
       burger.classList.remove("burger_active");
+   
     } else {
       burger.classList.add("burger_active");
       burger.classList.remove("burger_finish");
@@ -46,9 +50,11 @@ if (linkClose.length) {
     linkClose[i].addEventListener("click", function (e) {
       document.body.classList.remove("body_lock");
       document.body.classList.remove("active");
+      text_click.classList.remove("text_burger_btn-click");
       burger.classList.remove("burger_active");
       burger.classList.add("burger_finish");
       menuBody.classList.remove("menu_active");
+     
     });
   }
 }
