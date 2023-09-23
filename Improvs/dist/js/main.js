@@ -1,5 +1,7 @@
 "use strict";
 
+new WOW().init(); // Swiper:
+
 var sections = document.querySelectorAll("[section]");
 var mainBlock = document.querySelector("#wrapper");
 

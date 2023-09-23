@@ -1,0 +1,114 @@
+.market {
+    width: 100%;
+    height: 100%;
+
+    .about_img {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.swiper_paritet_section {
+    .tip {
+        @include adaptiv-vaule("margin-bottom", 80, 40, 1);
+    }
+
+    .swiper_paritet {
+        padding-top: 80px;
+        padding-bottom: 130px;
+        position: relative;
+
+        @include media ("<desktop") {
+            padding-bottom: 80;
+        }
+
+        &::before {
+            width: 100%;
+            height: 10%;
+            background: linear-gradient(0deg, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%);
+        }
+
+        &::after {
+            top: 90%;
+            left: 0;
+            width: 100%;
+            height: 10%;
+            background: linear-gradient(180deg, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%);
+        }
+    }
+
+    .arrows {
+        bottom: 5%;
+        z-index: 3;
+    }
+
+    .swiper_paritet_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .slide_img {
+        border-radius: 15px;
+        border: 4px solid $gray_8A;
+        @include adaptiv-vaule("margin-bottom", 30, 20, 1);
+        padding: 0;
+    }
+
+    .slide_title {
+        color: #DBDBDB;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        font-weight: 400;
+        line-height: 126%;
+        letter-spacing: -0.18px;
+        text-transform: uppercase;
+
+        @include media ("<phone") {
+            margin-left: 20px;
+        }
+    }
+
+    .blue_text {
+        color: #5285F0;
+        margin-right: 5px;
+    }
+}
+
+.him-paritet_logo {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    padding-bottom: 0;
+    border: none;
+
+    .tip {
+        @include adaptiv-vaule("margin-bottom", 60, 40, 1);
+    }
+}
+
+.typography_him-paritet {
+    .gradient_block {
+        background: linear-gradient(90deg, #010101 0%, #4079EE 31.77%, #0CC689 66.67%, #FFF 100%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #010101 0%, #4079EE 31.77%, #0CC689 66.67%, #FFF 100%);
+        }
+    }
+
+    .color_name {
+        &:last-child {
+            color: $black;
+        }
+    }
+}

@@ -202,6 +202,8 @@ html {
         text-transform: uppercase;
         margin-bottom: 25px;
         text-align: center;
+        animation: fadeIn;
+        animation-duration: 2s;
     }
 
     .tip_wrap {
@@ -424,7 +426,7 @@ html {
         }
     }
 
-    .tip{
+    .tip {
         @include media ("<tablet") {
             padding: 0 15px;
         }
@@ -460,7 +462,7 @@ html {
         display: grid;
         place-items: center;
 
-        img{
+        img {
             width: 45px;
             height: 45px;
             margin-left: 5px;

@@ -1,3 +1,6 @@
+new WOW().init();
+
+// Swiper:
 
 const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#wrapper");

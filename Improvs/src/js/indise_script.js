@@ -1,13 +1,5 @@
-initSwiperImg();
 
-anime({
-    begin: splt({}),
-    targets: ".char",
-    opacity: [0, 1],
-    duration: 10000,
-    scale: [1.5, 1],
-    delay: anime.stagger(50),
-});
+initSwiperImg();
 
 function initSwiperImg() {
     const slider = new Swiper(".swiper_indise", {
