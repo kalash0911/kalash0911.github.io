@@ -1,6 +1,7 @@
 "use strict";
 
-// Swiper:
+new WOW().init(); // Swiper:
+
 var swiper = new Swiper('.main_page_swiper', {
   direction: 'vertical',
   sliderPerView: 1,

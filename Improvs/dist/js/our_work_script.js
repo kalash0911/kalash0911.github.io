@@ -1,5 +1,28 @@
 "use strict";
 
+var slider = new Swiper(".case_swiper", {
+  speed: 1400,
+  // centeredSlides: true,
+  // grabCursor: true,
+  spaceBetween: 20,
+  slidesPerView: 1.3,
+  breakpoints: {
+    320: {
+      slidesPerView: 1.15,
+      spaceBetween: 10
+    },
+    480: {
+      slidesPerView: 1.3
+    },
+    1440: {
+      slidesPerView: 1.5
+    },
+    1920: {
+      slidesPerView: 2.2
+    }
+  }
+});
+
 function filterCases(filter) {
   var cases = document.querySelectorAll(".case");
   cases.forEach(function (caseElement) {
@@ -12,9 +35,9 @@ function filterCases(filter) {
     });
 
     if (shouldShow) {
-      caseElement.style = "\n            transform: scale(1);\n            height: 100%;\n            ";
+      caseElement.style = "\n            display:flex;\n            ";
     } else {
-      caseElement.style = "\n            transform: scale(0);\n            height: 0;\n            ";
+      caseElement.style = "\n            display:none;\n            ";
     }
   });
   var filterItems = document.querySelectorAll(".work_filter_item");

@@ -1,3 +1,5 @@
+new WOW().init();
+
 // Swiper:
 
 var swiper = new Swiper('.main_page_swiper', {

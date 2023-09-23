@@ -1,3 +1,26 @@
+const slider = new Swiper(".case_swiper", {
+    speed: 1400,
+    // centeredSlides: true,
+    // grabCursor: true,
+    spaceBetween: 20,
+    slidesPerView: 1.3,
+    breakpoints: {
+        320: {
+            slidesPerView: 1.15,
+            spaceBetween: 10,
+        },
+        480: {
+            slidesPerView: 1.3,
+        },
+        1440: {
+            slidesPerView: 1.5,
+        },
+        1920: {
+            slidesPerView: 2.2,
+        },
+    },
+});
+
 function filterCases(filter) {
     const cases = document.querySelectorAll(".case");
 
@@ -13,13 +36,11 @@ function filterCases(filter) {
 
         if (shouldShow) {
             caseElement.style = `
-            transform: scale(1);
-            height: 100%;
+            display:flex;
             `;
         } else {
             caseElement.style = `
-            transform: scale(0);
-            height: 0;
+            display:none;
             `;
         }
     });
