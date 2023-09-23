@@ -112,11 +112,11 @@ body {
 
     &.mobile {
         position: relative;
-        
+
         svg {
             fill: none;
-        } 
-        
+        }
+
         &:after {
             content: "";
             display: inline-block;
@@ -135,7 +135,7 @@ body {
             color: $white;
             border: 2px solid transparent;
             background-color: $orange;
-    
+
             svg {
                 fill: none;
             }
@@ -249,18 +249,18 @@ body {
 /* ------------------- card-section ----------------*/
 @mixin on-circle($item-count, $circle-size, $item-size, $angle) {
     position: absolute;
-    width:  $circle-size + px;
+    width: $circle-size + px;
     height: $circle-size + px;
     padding: 0;
     border-radius: 50%;
     list-style: none;
 
-    > * {
+    >* {
         display: block;
         position: absolute;
-        top:  50%;
+        top: 50%;
         left: 50%;
-        width:  $item-size + px;
+        width: $item-size + px;
         height: $item-size + px;
         margin: -($item-size / 2) + px;
 
@@ -270,9 +270,9 @@ body {
         @for $i from 1 through $item-count {
             &:nth-of-type(#{$i}) {
                 transform:
-                        rotate($rot * 1deg)
-                        translate($itemTranslate + px);
+                    rotate($rot * 1deg) translate($itemTranslate + px);
             }
+
             $rot: $rot + $angle;
         }
     }
@@ -282,6 +282,7 @@ body {
     from {
         transform: rotate(360deg) translate(-50%, 0);
     }
+
     to {
         transform: rotate(0deg) translate(-50%, 0);
     }
@@ -341,7 +342,7 @@ body {
             @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 24);
         }
 
-        .item { 
+        .item {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -481,6 +482,7 @@ body {
 
         &.mobile {
             display: none;
+
             @include media('<phone') {
                 display: none;
                 position: fixed;
@@ -488,6 +490,7 @@ body {
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 500;
+
                 &.active {
                     display: inline-flex;
                 }
@@ -506,7 +509,7 @@ body {
         border-radius: 55px;
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
@@ -659,7 +662,7 @@ body {
     }
 
     &::before {
-        content:'';
+        content: '';
         position: absolute;
         width: 99%;
         height: 98%;
@@ -778,15 +781,15 @@ body {
             @include media('<tablet_x') {
 
                 .box {
-                    max-height: 800px;          
+                    max-height: 800px;
                 }
 
                 .play {
                     opacity: 0;
                 }
-    
+
                 .stop {
-                   opacity: 1;
+                    opacity: 1;
                 }
             }
         }
@@ -810,7 +813,7 @@ body {
         }
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -821,7 +824,7 @@ body {
         }
 
         &::after {
-            content:'';
+            content: '';
             display: none;
             position: absolute;
             bottom: 0;
@@ -833,7 +836,7 @@ body {
             @include media('<tablet_x') {
                 display: block;
             }
-            
+
         }
 
         &:hover {
@@ -874,7 +877,7 @@ body {
             font-size: 26px;
         }
     }
-    
+
     .img-wrap {
         position: relative;
         width: 100%;
@@ -954,7 +957,7 @@ body {
         display: block;
         min-height: 480px;
     }
-    
+
     .iphone_mockup {
         position: relative;
         z-index: 1;
@@ -997,7 +1000,7 @@ body {
         background: rgba(246, 233, 208, 0.40);
         backdrop-filter: blur(25px);
         z-index: 2;
-    
+
         @include media('<tablet_x') {
             display: none;
         }
@@ -1015,7 +1018,7 @@ body {
         overflow: hidden;
 
         &::before {
-            content:'';
+            content: '';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -1028,7 +1031,7 @@ body {
         }
 
         &:hover {
-            
+
             .player-controls {
                 bottom: 35px;
                 transition: all .7s ease 0s;
@@ -1040,7 +1043,7 @@ body {
             .play {
                 display: none;
             }
-    
+
             .stop {
                 display: block;
             }
@@ -1093,7 +1096,7 @@ body {
         z-index: 3;
         width: 240px;
         border-radius: 50px;
-                
+
         .video {
             position: absolute;
             top: 50%;
@@ -1145,7 +1148,7 @@ body {
     }
 
     .current,
-    .duration{
+    .duration {
         color: $whiteEA;
         font-family: $Poppins;
         font-size: 13px;
@@ -1170,7 +1173,7 @@ body {
         background: rgba(250, 245, 234, 0.50);
         order: 2;
     }
-    
+
     .video-progress-filled {
         width: 0;
         background: $orange;
@@ -1183,7 +1186,7 @@ body {
         place-items: center;
 
         &::after {
-            content:'';
+            content: '';
             position: absolute;
             top: -10px;
             left: 0;
@@ -1218,13 +1221,13 @@ body {
         background-color: rgba(250, 245, 234, 0.50);
         border-radius: 13.6px;
     }
-      
+
     input[type='range']::-webkit-slider-runnable-track {
         -webkit-appearance: none;
         color: $orange;
         margin-top: -1px;
     }
-      
+
     input[type='range']::-webkit-slider-thumb {
         width: 10px;
         -webkit-appearance: none;
@@ -1237,15 +1240,15 @@ body {
     input[type="range"]::-moz-range-progress {
         background-color: $orange;
     }
-    
+
     input[type="range"]::-moz-range-track {
         background-color: rgba(250, 245, 234, 0.50);
     }
-    
+
     input[type="range"]::-ms-fill-lower {
         background-color: $orange;
     }
-    
+
     input[type="range"]::-ms-fill-upper {
         background-color: rgba(250, 245, 234, 0.50);
     }
