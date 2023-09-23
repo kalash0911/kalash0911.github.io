@@ -95,6 +95,93 @@ span {
 
 
 }
+.menu{
+    position: relative;
+    z-index: -1;
+    position: fixed;
+    min-width: 400px;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    left: -100%;
+    background-color: $white;
+    padding: 180px 45px 80px 70px;
+    transition: all .5s ease 0s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    @include media ('<tablet'){
+        min-width: 100%;
+        padding: 210px 20px 80px 20px;
+        text-align: center;
+    }
+
+    @include media ('<phone'){
+        padding: 150px 20px 80px 20px;
+    }
+}
+.menu_active {
+    left: 0;
+}
+.menu__wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1;
 }
 
+.menu__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    position: relative;
+
+    @include media ('<tablet'){
+        justify-content: center;
+    }
+
+    a{
+        transition: color .3s ease 0s;
+        font-size: 24px;
+        color: $black;
+        position: relative;
+        margin-bottom: 5px;
+
+        &::after{
+            content:'';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -3px;
+            background-color: $black;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover{
+            &::after{
+                width: 100%;
+            }
+        }
+
+        @include media ('<tablet'){
+            font-size: 64px;
+        }
+
+        @include media ('<phone'){
+            font-size: 46px;
+        }
+    }
+}
+
+}
 }
