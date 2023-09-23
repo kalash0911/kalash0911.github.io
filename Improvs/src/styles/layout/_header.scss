@@ -201,7 +201,7 @@ span {
   
      &::before{
         animation-name: text-btn-burger;
-        animation-duration: .15s;
+        animation-duration: .7s;
             animation-fill-mode: forwards;
         @keyframes text-btn-burger {
             0% {
@@ -218,7 +218,7 @@ span {
     position: relative;
     z-index: -1;
     position: fixed;
-    min-width: 400px;
+    min-width: 609px;
     height: 100%;
     overflow: auto;
     top: 0;
@@ -229,7 +229,6 @@ span {
     display: flex;
     flex-direction: column;
 
-
     @include media ('<tablet'){
         min-width: 100%;
         padding: 210px 20px 80px 20px;
@@ -239,6 +238,7 @@ span {
     @include media ('<phone'){
         padding: 150px 20px 80px 20px;
     }
+
 }
 .menu_active {
     left: 0;
@@ -249,6 +249,7 @@ span {
     justify-content: space-between;
     height: 100%;
     z-index: 1;
+    border: 1px solid $white;
 }
 
 .menu__list{

@@ -3816,8 +3816,8 @@ html ::-webkit-scrollbar-thumb {
     .header .header__content .text_burger_btn-click::before {
       -webkit-animation-name: text-btn-burger;
       animation-name: text-btn-burger;
-      -webkit-animation-duration: .15s;
-      animation-duration: .15s;
+      -webkit-animation-duration: .7s;
+      animation-duration: .7s;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards; }
 
@@ -3836,7 +3836,7 @@ html ::-webkit-scrollbar-thumb {
       position: relative;
       z-index: -1;
       position: fixed;
-      min-width: 400px;
+      min-width: 609px;
       height: 100%;
       overflow: auto;
       top: 0;
@@ -3866,7 +3866,8 @@ html ::-webkit-scrollbar-thumb {
       -ms-flex-pack: justify;
       justify-content: space-between;
       height: 100%;
-      z-index: 1; }
+      z-index: 1;
+      border: 1px solid #fff; }
     .header .header__content .menu__list {
       padding: 0;
       margin: 0;
