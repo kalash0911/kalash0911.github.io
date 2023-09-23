@@ -1310,6 +1310,14 @@ html ::-webkit-scrollbar-thumb {
   @media (max-width: 1300px) {
     .similar_posts {
       padding-bottom: calc(60px + 60 * ((100vw - calc(375px)) / 925)); } }
+  .similar_posts .container {
+    max-width: 1460px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto; }
+    @media (max-width: 479px) {
+      .similar_posts .container {
+        padding: 0 15px; } }
   .similar_posts .similar_posts_title {
     /* Только если меньше контейнера */
     font-size: 132px;
@@ -1327,18 +1335,20 @@ html ::-webkit-scrollbar-thumb {
       .similar_posts .similar_posts_title {
         margin-bottom: calc(35px + 35 * ((100vw - calc(375px)) / 925)); } }
   .similar_posts .similar_posts_wrap {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    display: grid;
+    grid-template: 1fr/repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px; }
+    @media (max-width: 479px) {
+      .similar_posts .similar_posts_wrap {
+        grid-template: 1fr / 1fr; } }
   .similar_posts .similar_post {
-    max-width: 455px;
+    /* Только если меньше контейнера */
     height: 412px;
     position: relative;
     padding: 10px 10px 30px 25px; }
+    @media (max-width: 1300px) {
+      .similar_posts .similar_post {
+        height: calc(270px + 142 * ((100vw - calc(375px)) / 925)); } }
     .similar_posts .similar_post::after {
       content: '';
       position: absolute;
@@ -1682,8 +1692,10 @@ html ::-webkit-scrollbar-thumb {
     -moz-column-gap: 10px;
     column-gap: 10px;
     row-gap: 20px; }
+    @media (max-width: 479px) {
+      .blog_page .list {
+        grid-template: 1fr / 1fr; } }
   .blog_page .similar_post {
-    height: 412px;
     /* Только если меньше контейнера */
     height: 412px;
     position: relative;

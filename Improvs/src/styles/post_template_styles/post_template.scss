@@ -122,6 +122,17 @@
     @include adaptiv-vaule("padding-top", 70, 35, 1);
     @include adaptiv-vaule("padding-bottom", 120, 60, 1);
 
+    .container {
+        max-width: 1460px;
+        width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+
+        @include media ("<phone") {
+            padding: 0 15px;
+        }
+    }
+
     .similar_posts_title {
         @include adaptiv-vaule("font-size", 132, 64, 1);
         font-style: normal;
@@ -133,15 +144,17 @@
     }
 
     .similar_posts_wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
         gap: 20px;
+
+        @include media ("<phone") {
+            grid-template: 1fr / 1fr;
+        }
     }
 
     .similar_post {
-        max-width: 455px;
-        height: 412px;
+        @include adaptiv-vaule("height", 412, 270, 1);
         position: relative;
         padding: 10px 10px 30px 25px;
 
