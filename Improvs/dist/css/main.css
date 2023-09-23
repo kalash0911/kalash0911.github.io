@@ -4079,9 +4079,6 @@ html {
 body {
   height: 100%; }
 
-.main_body_section {
-  overflow: hidden; }
-
 #wrapper {
   transition: -webkit-transform 1000ms ease 0s;
   transition: transform 1000ms ease 0s;
@@ -4124,7 +4121,8 @@ main {
     text-transform: uppercase;
     padding: 18px 48px;
     border: 1px solid #fff;
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
     .video_page .content .video_block .btn_black .left_arrow,
     .video_page .content .video_block .btn_black .right_arrow {
       position: absolute;
@@ -4147,11 +4145,12 @@ main {
         transition: all 0.3s ease; }
   .video_page .content .video_block .turn_sound {
     border: 1px solid #FFFFFF;
-    padding: 7px;
+    padding: 24px;
     position: absolute;
     left: 20px;
     bottom: 40px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
 
 .work_page {
   /* Только если меньше контейнера */
@@ -4392,7 +4391,8 @@ main {
     padding: 18px 40px;
     border: 1px solid #fff;
     transition: all 0.3s ease;
-    position: relative; }
+    position: relative;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
     .brain_section .btn_black .left_arrow,
     .brain_section .btn_black .right_arrow {
       position: absolute;
