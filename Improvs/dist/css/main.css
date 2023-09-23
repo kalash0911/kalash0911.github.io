@@ -4145,6 +4145,13 @@ main {
       .video_page .content .video_block .btn_black:hover svg {
         fill: #0E0E0E;
         transition: all 0.3s ease; }
+  .video_page .content .video_block .turn_sound {
+    border: 1px solid #FFFFFF;
+    padding: 7px;
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    border-radius: 50%; }
 
 .work_page {
   /* Только если меньше контейнера */

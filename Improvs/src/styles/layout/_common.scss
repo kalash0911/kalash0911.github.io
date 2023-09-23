@@ -93,6 +93,14 @@ main {
                     }
                 }
             }
+            .turn_sound{
+                border: 1px solid #FFFFFF;
+                padding: 7px;
+                position: absolute;
+               left: 20px;
+                bottom: 40px;
+                border-radius: 50%;
+            }
         }
 
     }
