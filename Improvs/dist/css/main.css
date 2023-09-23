@@ -3842,7 +3842,7 @@ html ::-webkit-scrollbar-thumb {
       top: 0;
       left: -100%;
       background-color: #0E0E0E;
-      padding: 180px 45px 80px 70px;
+      padding: 80px 0px 20px 20px;
       transition: all .5s ease 0s;
       display: -ms-flexbox;
       display: flex;
@@ -3867,7 +3867,14 @@ html ::-webkit-scrollbar-thumb {
       justify-content: space-between;
       height: 100%;
       z-index: 1;
-      border: 1px solid #fff; }
+      border: 1px solid #fff;
+      padding: 40px; }
+      .header .header__content .menu__wrap .site_btn_white {
+        /* Только если меньше контейнера */
+        font-size: 20px; }
+        @media (max-width: 1300px) {
+          .header .header__content .menu__wrap .site_btn_white {
+            font-size: calc(14px + 6 * ((100vw - calc(375px)) / 925)); } }
     .header .header__content .menu__list {
       padding: 0;
       margin: 0;
@@ -3880,11 +3887,22 @@ html ::-webkit-scrollbar-thumb {
       -ms-flex-pack: justify;
       justify-content: space-between;
       margin-bottom: 35px;
-      position: relative; }
+      position: relative;
+      padding-right: 58px; }
       @media (max-width: 767px) {
         .header .header__content .menu__item {
           -ms-flex-pack: center;
           justify-content: center; } }
+      .header .header__content .menu__item::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        background: url(../images/arrrow-menu.svg) no-repeat;
+        width: 32px;
+        height: 32px;
+        opacity: 0; }
+      .header .header__content .menu__item:hover::after {
+        opacity: 1; }
       .header .header__content .menu__item a {
         transition: color .3s ease 0s;
         /* Только если меньше контейнера */
@@ -3896,24 +3914,16 @@ html ::-webkit-scrollbar-thumb {
         font-weight: 500;
         /* Только если меньше контейнера */
         line-height: 42px;
-        letter-spacing: -3%; }
+        letter-spacing: -3%;
+        text-transform: uppercase; }
         @media (max-width: 1300px) {
           .header .header__content .menu__item a {
             font-size: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
         @media (max-width: 1300px) {
           .header .header__content .menu__item a {
             line-height: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
-        .header .header__content .menu__item a::after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 2px;
-          left: 0;
-          bottom: -3px;
-          background-color: #0E0E0E;
-          transition: all .3s ease 0s; }
-        .header .header__content .menu__item a:hover::after {
-          width: 100%; }
+        .header .header__content .menu__item a:hover {
+          opacity: 1; }
 
 html {
   height: 100%;

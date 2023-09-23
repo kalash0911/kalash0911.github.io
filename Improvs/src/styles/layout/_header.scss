@@ -224,7 +224,7 @@ span {
     top: 0;
     left: -100%;
     background-color: $black;
-    padding: 180px 45px 80px 70px;
+    padding: 80px 0px 20px 20px;
     transition: all .5s ease 0s;
     display: flex;
     flex-direction: column;
@@ -250,7 +250,12 @@ span {
     height: 100%;
     z-index: 1;
     border: 1px solid $white;
+    padding: 40px;
+    .site_btn_white {
+        @include adaptiv-vaule("font-size", 20, 14, 1);
+    }
 }
+
 
 .menu__list{
     padding: 0;
@@ -264,11 +269,25 @@ span {
     justify-content: space-between;
     margin-bottom: 35px;
     position: relative;
+    padding-right: 58px;
 
     @include media ('<tablet'){
         justify-content: center;
     }
-
+    &::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        background: url(../images/arrrow-menu.svg) no-repeat;
+        width: 32px;
+        height: 32px;
+        opacity: 0;
+       
+    }
+    &:hover::after{
+        opacity: 1;
+    }
+  
     a{
         transition: color .3s ease 0s;
         @include adaptiv-vaule("font-size", 42, 26, 1);
@@ -278,22 +297,12 @@ span {
         opacity: 60%;
         font-weight: 500;
         @include adaptiv-vaule("line-height", 42, 26, 1);
-        letter-spacing: -3%;
-        &::after{
-            content:'';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            left: 0;
-            bottom: -3px;
-            background-color: $black;
-            transition: all .3s ease 0s;
-        }
+        letter-spacing: -3%;;
+        text-transform: uppercase;
+    
 
         &:hover{
-            &::after{
-                width: 100%;
-            }
+          opacity: 1;
         }
 
     }
