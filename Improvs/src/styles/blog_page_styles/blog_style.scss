@@ -2,9 +2,9 @@
   @include adaptiv-vaule("padding-top", 100, 50, 1);
   padding-bottom: 30px;
 
-  .container{
-    max-width: 1650px;
-  }
+  // .container {
+  //   max-width: 1440px;
+  // }
 
   .title_wrap {
     display: flex;
@@ -96,9 +96,9 @@
   }
 
   .list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    justify-content: space-between;
+    grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
     column-gap: 10px;
     row-gap: 20px;
   }
@@ -110,7 +110,7 @@
     position: relative;
     padding: 10px 10px 30px 25px;
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       transition: $transition_all_03;
@@ -121,91 +121,15 @@
       background: linear-gradient(180deg, rgba(28, 28, 28, 0.00) 0%, #1C1C1C 100%);
     }
 
-    &:hover{
-      &::after{
+    &:hover {
+      &::after {
         height: 100%;
         transition: $transition_all_03;
       }
 
-      .post_text{
+      .post_text {
         padding-bottom: 20px;
         transition: $transition_all_03;
-      }
-    }
-
-    &:nth-child(7n + 1) {
-      width: 49%;
-
-      @include media ("<tablet") {
-        width: 100%;
-      }
-    }
-
-    &:nth-child(7n + 2) {
-      width: 49%;
-
-      @include media ("<tablet") {
-        width: 100%;
-      }
-    }
-
-    &:nth-child(7n + 3) {
-      width: 29%;
-
-      @include media ("<desktop") {
-        width: 49%;
-      }
-
-      @include media ("<tablet") {
-        width: 100%;
-      }
-    }
-
-    &:nth-child(7n + 4) {
-      width: 69%;
-
-      @include media ("<desktop") {
-        width: 49%;
-      }
-
-      @include media ("<tablet") {
-        width: 100%;
-      }
-    }
-
-    &:nth-child(7n + 5) {
-      width: 32%;
-
-      @include media ("<desktop") {
-        width: 49%;
-      }
-
-      @include media ("<tablet") {
-        width: 100%;
-      }
-    }
-
-    &:nth-child(7n + 6) {
-      width: 32%;
-
-      @include media ("<desktop") {
-        width: 49%;
-      }
-
-      @include media ("<tablet") {
-        width: 100%;
-      }
-    }
-
-    &:nth-child(7n + 7) {
-      width: 32%;
-
-      @include media ("<desktop") {
-        width: 49%;
-      }
-
-      @include media ("<tablet") {
-        width: 100%;
       }
     }
   }
