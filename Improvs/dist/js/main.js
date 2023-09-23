@@ -2,18 +2,70 @@
 
 new WOW().init(); // Swiper:
 
-var swiper = new Swiper('.main_page_swiper', {
-  direction: 'vertical',
-  sliderPerView: 1,
-  spaceBetween: 0,
-  mousewheel: true,
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'progressbar'
-  }
-}); //header
+var sections = document.querySelectorAll("[section]");
+var mainBlock = document.querySelector("#wrapper");
 
-showHeader(true);
+function nextSlide() {
+  var slide = getSectionState();
+
+  if (slide) {
+    var index = slide.index;
+
+    if (index < sections.length - 2) {
+      index = index + 1;
+      var section = sections[index].getAttribute('section');
+      scrollByElementName(section);
+      setSectionState(section, index);
+    }
+  } else {
+    var _section = sections[1].getAttribute('section');
+
+    scrollByElementName(_section);
+    setSectionState(_section, 1);
+  }
+}
+
+function previousSlide() {
+  var slide = getSectionState();
+
+  if (slide) {
+    var index = slide.index;
+
+    if (index > 0) {
+      index = index - 1;
+      var section = sections[index].getAttribute('section');
+      scrollByElementName(section);
+      setSectionState(section, index);
+    }
+  } else {
+    var _section2 = sections[1].getAttribute('section');
+
+    scrollByElementName(_section2);
+    setSectionState(_section2, 1);
+  }
+} //scroll
+
+
+function scrollByElementName(elementName) {
+  var element = "";
+  element = document.querySelector("[section=".concat(elementName, "]"));
+
+  if (!element) {
+    return;
+  }
+
+  var scrollToValue = element.offsetTop;
+  scrollToOffset(scrollToValue);
+}
+
+function scrollToOffset(offset) {
+  mainBlock.style.transform = "translate3d(0px, -".concat(offset, "px, 0px)"); //window.scrollTo({
+  //  behavior: 'smooth',
+  // left: 0,
+  // top: offset
+  //});
+} //header
+
 
 function showHeader(isShow) {
   var header = document.querySelector("#header");
@@ -60,6 +112,42 @@ if (linkClose.length) {
       burger.classList.add("burger_finish");
       menuBody.classList.remove("menu_active");
     });
+  }
+} //mouse wheel event
+
+
+var delayWheel = true;
+document.addEventListener('wheel', function (event) {
+  if (delayWheel === true) {
+    delayWheel = false;
+
+    if (event.deltaY > 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
+
+    setTimeout(function () {
+      delayWheel = true;
+    }, 1500);
+  }
+}); //state
+
+function setSectionState(name, index) {
+  var stateObj = {
+    "section": name,
+    "index": index
+  };
+  window.history.pushState(stateObj, "MainPage", window.location.href);
+}
+
+function getSectionState() {
+  var state = window.history.state;
+
+  if (state) {
+    return window.history.state;
+  } else {
+    return null;
   }
 }
 //# sourceMappingURL=main.js.map
