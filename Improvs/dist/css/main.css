@@ -3935,6 +3935,9 @@ body {
   height: 100%; }
 
 #wrapper {
+  transition: -webkit-transform 1000ms ease 0s;
+  transition: transform 1000ms ease 0s;
+  transition: transform 1000ms ease 0s, -webkit-transform 1000ms ease 0s;
   min-height: 100%;
   display: -ms-flexbox;
   display: flex;

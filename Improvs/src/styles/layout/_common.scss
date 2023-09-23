@@ -8,6 +8,7 @@ body {
 }
 
 #wrapper {
+    transition: transform 1000ms ease 0s;
     min-height: 100%;
     display: flex;
     flex-direction: column;
