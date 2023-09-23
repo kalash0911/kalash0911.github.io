@@ -4079,6 +4079,9 @@ html {
 body {
   height: 100%; }
 
+.main_body_section {
+  overflow: hidden; }
+
 #wrapper {
   transition: -webkit-transform 1000ms ease 0s;
   transition: transform 1000ms ease 0s;

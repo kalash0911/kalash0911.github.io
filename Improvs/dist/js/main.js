@@ -1,9 +1,15 @@
 "use strict";
 
-new WOW().init(); // Swiper:
-
+showHeader(false);
 var sections = document.querySelectorAll("[section]");
 var mainBlock = document.querySelector("#wrapper");
+var firstVideo = document.querySelector('#first_video');
+firstVideo.addEventListener('ended', myHandler, false);
+
+function myHandler(e) {
+  showHeader(true);
+  nextSlide();
+}
 
 function nextSlide() {
   var slide = getSectionState();
@@ -11,7 +17,7 @@ function nextSlide() {
   if (slide) {
     var index = slide.index;
 
-    if (index < sections.length - 2) {
+    if (index <= sections.length - 2) {
       index = index + 1;
       var section = sections[index].getAttribute('section');
       scrollByElementName(section);
@@ -33,6 +39,12 @@ function previousSlide() {
 
     if (index > 0) {
       index = index - 1;
+
+      if (index == 0) {
+        firstVideo.play();
+        showHeader(false);
+      }
+
       var section = sections[index].getAttribute('section');
       scrollByElementName(section);
       setSectionState(section, index);
