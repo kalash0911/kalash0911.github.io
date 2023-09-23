@@ -116,39 +116,19 @@ if (linkClose.length) {
 
 var delayWheel = true;
 document.addEventListener('wheel', function (event) {
-  if (delayWheel) {
+  if (delayWheel === true) {
+    delayWheel = false;
+
     if (event.deltaY > 0) {
       nextSlide();
     } else {
       previousSlide();
     }
 
-    delayWheel = false;
+    setTimeout(function () {
+      delayWheel = true;
+    }, 1500);
   }
-
-  setTimeout(function () {
-    delayWheel = true;
-  }, 1000);
-}); //touch
-
-var event = null;
-document.addEventListener("touchstart", function (e) {
-  event = e;
-});
-document.addEventListener("touchmove", function (e) {
-  if (event) {
-    var position = e.touches[0].pageY - event.touches[0].pageY;
-    console.log(position);
-
-    if (position > 0) {
-      nextSlide();
-    } else {
-      previousSlide();
-    }
-  }
-});
-document.addEventListener("touched", function (e) {
-  event = null;
 }); //state
 
 function setSectionState(name, index) {
