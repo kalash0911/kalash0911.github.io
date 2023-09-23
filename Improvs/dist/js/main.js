@@ -2,8 +2,8 @@
 
 showHeader(false);
 var sections = document.querySelectorAll("[section]");
-var mainBlock = document.querySelector("#wrapper");
-var firstVideo = document.querySelector('#first_video');
+var mainBlock = document.querySelector("#main");
+var firstVideo = document.querySelector('#firstVideo');
 firstVideo.addEventListener('ended', myHandler, false);
 
 function myHandler(e) {
@@ -19,15 +19,20 @@ function nextSlide() {
 
     if (index <= sections.length - 2) {
       index = index + 1;
+
+      if (index == 1) {
+        showHeader(true);
+      }
+
       var section = sections[index].getAttribute('section');
       scrollByElementName(section);
-      setSectionState(section, index);
+      setSectionState(index);
     }
   } else {
     var _section = sections[1].getAttribute('section');
 
     scrollByElementName(_section);
-    setSectionState(_section, 1);
+    setSectionState(1);
   }
 }
 
@@ -41,19 +46,20 @@ function previousSlide() {
       index = index - 1;
 
       if (index == 0) {
+        firstVideo.currentTime = 0;
         firstVideo.play();
         showHeader(false);
       }
 
       var section = sections[index].getAttribute('section');
       scrollByElementName(section);
-      setSectionState(section, index);
+      setSectionState(index);
     }
   } else {
     var _section2 = sections[1].getAttribute('section');
 
     scrollByElementName(_section2);
-    setSectionState(_section2, 1);
+    setSectionState(1);
   }
 } //scroll
 
@@ -145,9 +151,8 @@ document.addEventListener('wheel', function (event) {
   }
 }); //state
 
-function setSectionState(name, index) {
+function setSectionState(index) {
   var stateObj = {
-    "section": name,
     "index": index
   };
   window.history.pushState(stateObj, "MainPage", window.location.href);
