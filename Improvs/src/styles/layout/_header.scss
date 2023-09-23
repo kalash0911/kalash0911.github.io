@@ -1,5 +1,5 @@
 .header{
-    position: sticky;
+    position: fixed;
     width: 100%; 
     top: 0;
     left: 0;
@@ -27,9 +27,10 @@
         line-height: 17.6px;
         letter-spacing: -0.14px;
         text-transform: uppercase;
-        padding: 18px 48px;
+        padding: 18px 32px;
         border: 1px solid $white;
         transition: $transition_all_03;
+        
         &:hover {
             background-color: $white;
             transition: $transition_all_03;
@@ -37,14 +38,36 @@
         }
 
 }
+.burger-btn{
+    background-color: rgba(28,28,28,0);
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.6px;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 15px;
+    border: 1px solid $white;
+    transition: $transition_all_03;
+    .text_burger_btn {
+       margin-left: 10px;
+        &::before{
+    content: 'menu';
+    }
+    }
+}
 .burger {
     position: relative;
-    width: 30px;
-    height: 15px;
+    width: 24px;
+    height: 24px;
     z-index: 5;
 span {
     position: absolute;
-    top: 6px;
+    top: 11px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -62,6 +85,16 @@ span {
     background-color: $white;
     border-radius: 10px;
 }
+&::before {
+    top: 4px;
+}
+
+&::after {
+    bottom: 4px;
+}
+
+
 }
 }
+
 }
