@@ -3900,7 +3900,8 @@ html ::-webkit-scrollbar-thumb {
         background: url(../images/arrrow-menu.svg) no-repeat;
         width: 32px;
         height: 32px;
-        opacity: 0; }
+        opacity: 0;
+        transition: 1s; }
       .header .header__content .menu__item:hover::after {
         opacity: 1; }
       .header .header__content .menu__item a {
@@ -3915,7 +3916,8 @@ html ::-webkit-scrollbar-thumb {
         /* Только если меньше контейнера */
         line-height: 42px;
         letter-spacing: -3%;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        transition: 1s; }
         @media (max-width: 1300px) {
           .header .header__content .menu__item a {
             font-size: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }

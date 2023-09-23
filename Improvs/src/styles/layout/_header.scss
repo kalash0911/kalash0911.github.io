@@ -282,6 +282,7 @@ span {
         width: 32px;
         height: 32px;
         opacity: 0;
+        transition: 1s;
        
     }
     &:hover::after{
@@ -299,6 +300,7 @@ span {
         @include adaptiv-vaule("line-height", 42, 26, 1);
         letter-spacing: -3%;;
         text-transform: uppercase;
+        transition: 1s;
     
 
         &:hover{
