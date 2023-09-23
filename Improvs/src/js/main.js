@@ -6,7 +6,7 @@ function nextSlide() {
     var slide = getSectionState();
     if (slide) {
         let index = slide.index;
-        if (index < sections.length-2) {
+        if (index < sections.length - 2) {
             index = index + 1;
             let section = sections[index + 1].getAttribute('section');
             scrollByElementName(section);
@@ -51,9 +51,9 @@ function scrollByElementName(elementName) {
 function scrollToOffset(offset) {
     mainBlock.style.transform = `translate3d(0px, -${offset}px, 0px)`;
     //window.scrollTo({
-      //  behavior: 'smooth',
-       // left: 0,
-       // top: offset
+    //  behavior: 'smooth',
+    // left: 0,
+    // top: offset
     //});
 }
 
@@ -128,9 +128,9 @@ document.addEventListener('touchstart', e => x = e.touches[0].clientX);
 document.addEventListener('touchmove', e => {
     if (!x) return;
     if (e.touches[0].clientX < 0) {
-        console.log("plus");
+        nextSlide();
     } else {
-        console.log("minus");
+        previousSlide();
     }
     x = null;
 });
@@ -148,7 +148,6 @@ function getSectionState() {
     } else {
         return null;
     }
-
 }
 
 

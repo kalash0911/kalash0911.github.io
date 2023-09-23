@@ -139,9 +139,9 @@ document.addEventListener('touchmove', function (e) {
   if (!x) return;
 
   if (e.touches[0].clientX < 0) {
-    console.log("plus");
+    nextSlide();
   } else {
-    console.log("minus");
+    previousSlide();
   }
 
   x = null;
