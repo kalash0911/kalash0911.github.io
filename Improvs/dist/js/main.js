@@ -131,21 +131,24 @@ document.addEventListener('wheel', function (event) {
   }, 1000);
 }); //touch
 
-var x = null;
-document.addEventListener('touchstart', function (e) {
-  return x = e.touches[0].clientX;
+var event = null;
+document.addEventListener("touchstart", function (e) {
+  event = e;
 });
-document.addEventListener('touchmove', function (e) {
-  if (!x) return;
-  console.log(e.touches[0]);
+document.addEventListener("touchmove", function (e) {
+  if (event) {
+    var position = e.touches[0].pageY - event.touches[0].pageY;
+    console.log(position);
 
-  if (e.touches[0]) {
-    nextSlide();
-  } else {
-    previousSlide();
+    if (position > 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
   }
-
-  x = null;
+});
+document.addEventListener("touched", function (e) {
+  event = null;
 }); //state
 
 function setSectionState(name, index) {

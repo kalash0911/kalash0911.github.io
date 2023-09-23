@@ -123,17 +123,24 @@ document.addEventListener('wheel', function (event) {
 });
 
 //touch
-let x = null;
-document.addEventListener('touchstart', e => x = e.touches[0].clientX);
-document.addEventListener('touchmove', e => {
-    if (!x) return;
-    console.log(e.touches[0]);
-    if (e.touches[0]) {
-        nextSlide();
-    } else {
-        previousSlide();
+let event = null;
+
+document.addEventListener("touchstart", function (e) {
+    event = e;
+});
+document.addEventListener("touchmove", function (e) {
+    if (event) {
+        let position = (e.touches[0].pageY - event.touches[0].pageY);
+        console.log(position);
+        if (position > 0) {
+            nextSlide();
+        } else {
+            previousSlide();
+        }
     }
-    x = null;
+});
+document.addEventListener("touched", function (e) {
+    event = null;
 });
 
 //state
