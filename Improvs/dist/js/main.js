@@ -128,7 +128,7 @@ document.addEventListener('wheel', function (event) {
 
   setTimeout(function () {
     delayWheel = true;
-  }, 500);
+  }, 1000);
 }); //touch
 
 var x = null;
