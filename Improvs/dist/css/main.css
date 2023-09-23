@@ -3613,6 +3613,14 @@ html ::-webkit-scrollbar-thumb {
   left: 0;
   z-index: 5;
   max-height: 80px; }
+  @media (max-width: 767px) {
+    .header {
+      max-height: 48px; } }
+  .header .container {
+    padding: 0px 20px; }
+    @media (max-width: 767px) {
+      .header .container {
+        padding: 0px 16px; } }
   .header .header__content {
     display: -ms-flexbox;
     display: flex;
@@ -3663,8 +3671,15 @@ html ::-webkit-scrollbar-thumb {
       padding: 15px;
       border: 1px solid #fff;
       transition: all 0.3s ease; }
+      @media (max-width: 767px) {
+        .header .header__content .burger-btn {
+          border: none;
+          padding: 0; } }
       .header .header__content .burger-btn .text_burger_btn {
         margin-left: 10px; }
+        @media (max-width: 767px) {
+          .header .header__content .burger-btn .text_burger_btn {
+            display: none; } }
         .header .header__content .burger-btn .text_burger_btn::before {
           content: 'menu'; }
     .header .header__content .burger {
@@ -3851,11 +3866,10 @@ html ::-webkit-scrollbar-thumb {
       @media (max-width: 767px) {
         .header .header__content .menu {
           min-width: 100%;
-          padding: 210px 20px 80px 20px;
-          text-align: center; } }
+          padding: 170px 16px 40px 16px; } }
       @media (max-width: 479px) {
         .header .header__content .menu {
-          padding: 150px 20px 80px 20px; } }
+          padding: 170px 16px 40px 16px; } }
     .header .header__content .menu_active {
       left: 0; }
     .header .header__content .menu__wrap {
@@ -3869,12 +3883,19 @@ html ::-webkit-scrollbar-thumb {
       z-index: 1;
       border: 1px solid #fff;
       padding: 40px; }
+      @media (max-width: 767px) {
+        .header .header__content .menu__wrap {
+          border: none;
+          padding: 0px; } }
       .header .header__content .menu__wrap .site_btn_white {
         /* Только если меньше контейнера */
         font-size: 20px; }
         @media (max-width: 1300px) {
           .header .header__content .menu__wrap .site_btn_white {
-            font-size: calc(14px + 6 * ((100vw - calc(375px)) / 925)); } }
+            font-size: calc(18px + 2 * ((100vw - calc(375px)) / 925)); } }
+    @media (max-width: 767px) {
+      .header .header__content .header_btn {
+        display: none; } }
     .header .header__content .menu__list {
       padding: 0;
       margin: 0;
@@ -3886,22 +3907,31 @@ html ::-webkit-scrollbar-thumb {
       align-items: center;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      margin-bottom: 35px;
+      /* Только если меньше контейнера */
+      margin-bottom: 30px;
       position: relative;
       padding-right: 58px; }
-      @media (max-width: 767px) {
+      @media (max-width: 1300px) {
         .header .header__content .menu__item {
-          -ms-flex-pack: center;
-          justify-content: center; } }
+          margin-bottom: calc(36px + -6 * ((100vw - calc(375px)) / 925)); } }
       .header .header__content .menu__item::after {
         content: '';
         position: absolute;
         right: 0;
-        background: url(../images/arrrow-menu.svg) no-repeat;
+        background: url(../images/arrow-menu.svg) no-repeat;
+        background-size: contain;
+        /* Только если меньше контейнера */
         width: 32px;
+        /* Только если меньше контейнера */
         height: 32px;
         opacity: 0;
         transition: 1s; }
+        @media (max-width: 1300px) {
+          .header .header__content .menu__item::after {
+            width: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
+        @media (max-width: 1300px) {
+          .header .header__content .menu__item::after {
+            height: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
       .header .header__content .menu__item:hover::after {
         opacity: 1; }
       .header .header__content .menu__item a {
@@ -3910,8 +3940,8 @@ html ::-webkit-scrollbar-thumb {
         font-size: 42px;
         color: #fff;
         position: relative;
-        margin-bottom: 5px;
         opacity: 60%;
+        margin-bottom: 5px;
         font-weight: 500;
         /* Только если меньше контейнера */
         line-height: 42px;
@@ -3926,6 +3956,14 @@ html ::-webkit-scrollbar-thumb {
             line-height: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
         .header .header__content .menu__item a:hover {
           opacity: 1; }
+    @media (max-width: 767px) {
+      .header .header__content .logo_block {
+        -ms-flex-order: 1;
+        order: 1; } }
+    @media (max-width: 767px) {
+      .header .header__content .burger_block {
+        -ms-flex-order: 2;
+        order: 2; } }
 
 html {
   height: 100%;
