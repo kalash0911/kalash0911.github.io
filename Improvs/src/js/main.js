@@ -291,7 +291,7 @@ document.addEventListener('wheel', function (event) {
 
         setTimeout(function () {
             delayWheel = true;
-        }, 1500);
+        }, 1000);
     }
 });
 
