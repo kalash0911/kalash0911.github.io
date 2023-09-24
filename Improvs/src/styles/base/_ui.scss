@@ -43,6 +43,8 @@ html {
     text-transform: uppercase;
     display: inline-block;
     @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+    animation: fadeInUp;
+    animation-duration: 2s;
 }
 
 .site_btn_white {
@@ -184,7 +186,6 @@ html {
     }
 }
 
-
 .similar_main {
     @include adaptiv-vaule("padding-top", 120, 60, 1);
     @include adaptiv-vaule("padding-bottom", 140, 60, 1);
@@ -253,6 +254,8 @@ html {
         font-weight: 500;
         line-height: 132%;
         letter-spacing: -0.32px;
+        animation: fadeIn;
+        animation-duration: 4s;
     }
 
     .about_img {
@@ -281,6 +284,8 @@ html {
         position: relative;
         z-index: 3;
         @include adaptiv-vaule("top", -30, 0, 1);
+        animation: fadeInUp;
+        animation-duration: 3s;
 
         .info_text {
             @include adaptiv-vaule("font-size", 18, 16, 1);
@@ -288,6 +293,7 @@ html {
             line-height: 126%;
             letter-spacing: -0.18px;
             text-transform: uppercase;
+       
 
             &:not(:last-child) {
                 margin-bottom: 15px;
@@ -402,6 +408,8 @@ html {
         line-height: 132%;
         letter-spacing: -0.32px;
         @include adaptiv-vaule("margin-bottom", 100, 40, 1);
+        animation: fadeIn;
+        animation-duration: 4s;
 
         .gray_text {
             color: rgba(255, 255, 255, 0.60);
