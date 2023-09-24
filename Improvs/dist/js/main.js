@@ -26,6 +26,10 @@ function init() {
     changeVideoForMobile();
   }
 }
+function copyCode() {
+  var jsCode = "<!DOCTYPE html>\n    <head><title></title></head>\n    <body>\n    <svg id=\"mySvg\" width=\"960\" height=\"500\"></svg>\n    <script src=\"http://d3js.org/d3.v7.min.js\"></script>\n    <script src=\"http://d3js.org/topojson.v3.min.js\"></script>\n    <script>\n    var width = 960, height = 500, svg = d3.select(\"svg\");\n    d3.json(\"https://raw.githubusercontent.com/org-scn-design-studio-\" +\n        \"community/sdkcommunitymaps/master/geojson/Europe/Ukraine-regions.json\"\n    ).then(function (data) {\n        var land = topojson.feature(data, data.objects.UKR_adm1),\n            projection = d3.geoAlbers().rotate([-30, 0, 0])\n                .fitSize([.9 * width, .9 * height], land),\n            path = d3.geoPath().projection(projection);\n        svg.selectAll(\"path\").data(land.features).enter()\n            .append(\"path\").attr(\"d\", path).attr(\"fill\", \"#FFD500')\n            .attr(\"stroke\", \"#005BBB\");\n        svg.append(\"text\").attr(\"x\", (width / 2)).attr(\"y\", height - (20))\n            .attr(\"text-anchor\", \"middle\").style(\"font-size\", \"24px\")\n            .style(\"fill\", \"#005BBB\").text(\"Improvs\");";
+  navigator.clipboard.writeText(jsCode);
+}
 
 //video
 
@@ -178,18 +182,16 @@ if (linkClose.length) {
     });
   }
 }
-if (menuOverlay.length) {
-  for (var i = 0; i < menuOverlay.length; ++i) {
-    menuOverlay[i].addEventListener("click", function (e) {
-      document.body.classList.remove("body_lock");
-      document.body.classList.remove("active");
-      text_click.classList.remove("text_burger_btn-click");
-      burger.classList.remove("burger_active");
-      burger.classList.add("burger_finish");
-      menuBody.classList.remove("menu_active");
-      menuOverlay.classList.remove("menu_overlay_active");
-    });
-  }
+if (menuOverlay) {
+  menuOverlay.addEventListener("click", function (e) {
+    document.body.classList.remove("body_lock");
+    document.body.classList.remove("active");
+    text_click.classList.remove("text_burger_btn-click");
+    burger.classList.remove("burger_active");
+    burger.classList.add("burger_finish");
+    menuBody.classList.remove("menu_active");
+    menuOverlay.classList.remove("menu_overlay_active");
+  });
 }
 
 //touch
@@ -211,6 +213,8 @@ document.addEventListener("touchmove", function (e) {
 document.addEventListener("touched", function (e) {
   eventTouch = null;
 });
+
+//touch desktop
 var event = null;
 document.addEventListener("mousedown", function (e) {
   event = e;
@@ -293,9 +297,9 @@ function filterCases(filter) {
       }
     });
     if (shouldShow) {
-      caseElement.style = "\n            display:flex;\n            ";
+      caseElement.style = "display:flex;";
     } else {
-      caseElement.style = "\n            display:none;\n            ";
+      caseElement.style = "display:none;";
     }
   });
   var filterItems = document.querySelectorAll(".work_filter_item");

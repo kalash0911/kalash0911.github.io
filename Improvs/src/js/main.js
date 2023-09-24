@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     init();
 });
-var path="../src/";
+var path = "../src/";
 const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#main");
 const videos = document.querySelectorAll('[video]');
@@ -29,12 +29,38 @@ function init() {
     }
 }
 
+function copyCode() {
+    var jsCode = `<!DOCTYPE html>
+    <head><title></title></head>
+    <body>
+    <svg id="mySvg" width="960" height="500"></svg>
+    <script src="http://d3js.org/d3.v7.min.js"></script>
+    <script src="http://d3js.org/topojson.v3.min.js"></script>
+    <script>
+    var width = 960, height = 500, svg = d3.select("svg");
+    d3.json("https://raw.githubusercontent.com/org-scn-design-studio-" +
+        "community/sdkcommunitymaps/master/geojson/Europe/Ukraine-regions.json"
+    ).then(function (data) {
+        var land = topojson.feature(data, data.objects.UKR_adm1),
+            projection = d3.geoAlbers().rotate([-30, 0, 0])
+                .fitSize([.9 * width, .9 * height], land),
+            path = d3.geoPath().projection(projection);
+        svg.selectAll("path").data(land.features).enter()
+            .append("path").attr("d", path).attr("fill", "#FFD500')
+            .attr("stroke", "#005BBB");
+        svg.append("text").attr("x", (width / 2)).attr("y", height - (20))
+            .attr("text-anchor", "middle").style("font-size", "24px")
+            .style("fill", "#005BBB").text("Improvs");`;
+
+    navigator.clipboard.writeText(jsCode);
+}
+
 //video
 
 function changeVideoForMobile() {
     for (let index = 0; index < videos.length; index++) {
         const video = videos[index];
-        video.src=path+`files/main_video/video_${index+1}_mobile.mp4`;
+        video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
     }
 }
 
@@ -45,9 +71,9 @@ turnSounds.forEach(turn => {
         if (video) {
             video.muted = !video.muted;
             if (video.muted) {
-                img.src = path+'/images/main_page/sound_switch.svg';
+                img.src = path + '/images/main_page/sound_switch.svg';
             } else {
-                img.src = path+'/images/main_page/sound_turn.svg';
+                img.src = path + '/images/main_page/sound_turn.svg';
             }
         }
     })
@@ -172,7 +198,7 @@ if (burger) {
         if (burger.classList.contains("burger_active")) {
             burger.classList.add("burger_finish");
             burger.classList.remove("burger_active");
-           
+
 
         } else {
             burger.classList.add("burger_active");
@@ -196,9 +222,8 @@ if (linkClose.length) {
         });
     }
 }
-if (menuOverlay.length) {
-    for (var i = 0; i < menuOverlay.length; ++i) {
-        menuOverlay[i].addEventListener("click", function (e) {
+if (menuOverlay) {
+    menuOverlay.addEventListener("click", function (e) {
             document.body.classList.remove("body_lock");
             document.body.classList.remove("active");
             text_click.classList.remove("text_burger_btn-click");
@@ -206,14 +231,11 @@ if (menuOverlay.length) {
             burger.classList.add("burger_finish");
             menuBody.classList.remove("menu_active");
             menuOverlay.classList.remove("menu_overlay_active");
-
         });
-    }
 }
 
 //touch
 let eventTouch = null;
-
 document.addEventListener("touchstart", function (e) {
     eventTouch = e;
 });
@@ -234,8 +256,8 @@ document.addEventListener("touched", function (e) {
     eventTouch = null;
 });
 
+//touch desktop
 var event = null;
-
 document.addEventListener("mousedown", function (e) {
     event = e;
 });
@@ -289,8 +311,8 @@ function getSectionState() {
     }
 }
 
- //OURWORK
- const slider = new Swiper(".case_swiper", {
+//OURWORK
+const slider = new Swiper(".case_swiper", {
     speed: 1400,
     // centeredSlides: true,
     // grabCursor: true,
@@ -327,13 +349,9 @@ function filterCases(filter) {
         });
 
         if (shouldShow) {
-            caseElement.style = `
-            display:flex;
-            `;
+            caseElement.style = `display:flex;`;
         } else {
-            caseElement.style = `
-            display:none;
-            `;
+            caseElement.style = `display:none;`;
         }
     });
 
