@@ -288,7 +288,12 @@ main {
 
 .img_brain_block{
     position: absolute;
+    right: 0;
     z-index: 1;
+    @include media ("<tablet") {
+        width: 200%;
+        top:200px;
+     }
 }
     .container {
         display: flex;

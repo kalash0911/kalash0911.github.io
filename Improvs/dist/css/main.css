@@ -4349,7 +4349,12 @@ main {
       padding-top: 80px; } }
   .brain_section .img_brain_block {
     position: absolute;
+    right: 0;
     z-index: 1; }
+    @media (max-width: 767px) {
+      .brain_section .img_brain_block {
+        width: 200%;
+        top: 200px; } }
   .brain_section .container {
     display: -ms-flexbox;
     display: flex;
