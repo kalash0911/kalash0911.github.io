@@ -49,6 +49,7 @@ main {
                 .btn_black {
                     padding: 28.5px 32px;
                     cursor: pointer;
+                    position: relative;
                     @include media ("<tablet") {
                         padding: 15.5px 32px;
                             }
@@ -280,17 +281,21 @@ main {
     display: flex;
     align-items: center;
     position: relative;
-    background: url(../../src/images/main_page/brain.png) no-repeat right center;
-
+.img_brain_block{
+    position: absolute;
+    z-index: 1;
+}
     .container {
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     .content {
         max-width: 865px;
         width: 100%;
         margin: 0;
+        z-index: 2;
     }
 
     .brain_title {
@@ -353,6 +358,7 @@ margin-bottom: 10px;
         }
     }
     .btn_white_circle {
+        cursor: pointer;
         width: 172px;
         height: 172px;
         color: $black;

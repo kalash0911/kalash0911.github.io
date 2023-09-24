@@ -4101,7 +4101,8 @@ main {
         right: 16px; } }
     .video_page .content .video_block .top_video_btn .btn_black {
       padding: 28.5px 32px;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
       @media (max-width: 767px) {
         .video_page .content .video_block .top_video_btn .btn_black {
           padding: 15.5px 32px; } }
@@ -4325,17 +4326,21 @@ main {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
-  background: url(../../src/images/main_page/brain.png) no-repeat right center; }
+  position: relative; }
+  .brain_section .img_brain_block {
+    position: absolute;
+    z-index: 1; }
   .brain_section .container {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
   .brain_section .content {
     max-width: 865px;
     width: 100%;
-    margin: 0; }
+    margin: 0;
+    z-index: 2; }
   .brain_section .brain_title {
     color: #fff;
     /* Только если меньше контейнера */
@@ -4408,6 +4413,7 @@ main {
       .button_form_section .button_form_title {
         margin-bottom: 44px; } }
   .button_form_section .btn_white_circle {
+    cursor: pointer;
     width: 172px;
     height: 172px;
     color: #0E0E0E;
