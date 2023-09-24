@@ -337,7 +337,7 @@
                 content: '';
                 position: absolute;
                 right: 0;
-                background: url(../images/arrow-menu.svg) no-repeat;
+                background: url(/dist/images/arrow-menu.svg) no-repeat;
                 background-size: contain;
                 @include adaptiv-vaule("width", 32, 20, 1);
                 @include adaptiv-vaule("height", 32, 20, 1);

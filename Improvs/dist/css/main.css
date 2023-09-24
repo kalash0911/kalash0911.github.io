@@ -4012,7 +4012,7 @@ html ::-webkit-scrollbar-thumb {
         content: '';
         position: absolute;
         right: 0;
-        background: url(../images/arrow-menu.svg) no-repeat;
+        background: url(/dist/images/arrow-menu.svg) no-repeat;
         background-size: contain;
         /* Только если меньше контейнера */
         width: 32px;
