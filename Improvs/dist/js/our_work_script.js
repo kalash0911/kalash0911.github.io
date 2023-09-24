@@ -22,7 +22,6 @@ var slider = new Swiper(".case_swiper", {
     }
   }
 });
-
 function filterCases(filter) {
   var cases = document.querySelectorAll(".case");
   cases.forEach(function (caseElement) {
@@ -33,7 +32,6 @@ function filterCases(filter) {
         shouldShow = true;
       }
     });
-
     if (shouldShow) {
       caseElement.style = "\n            display:flex;\n            ";
     } else {
@@ -47,7 +45,6 @@ function filterCases(filter) {
   var activeFilterItem = document.querySelector("[data-id=\"".concat(filter, "\"]"));
   activeFilterItem.classList.add("active_filter_item");
 }
-
 var filterItems = document.querySelectorAll(".work_filter_item");
 filterItems.forEach(function (filterItem) {
   filterItem.addEventListener("click", function (event) {
