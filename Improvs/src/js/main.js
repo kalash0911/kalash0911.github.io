@@ -374,6 +374,10 @@ filterItems.forEach((filterItem) => {
 });
 
 //move contact button
+function moveToForm(){
+    nextSlide();
+}
+
 let blockContactButton =document.querySelector('[section="button_form"]'); 
 var contactButton = document.querySelector("#move_form_button");
 

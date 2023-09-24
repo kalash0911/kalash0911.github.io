@@ -357,6 +357,10 @@ filterItems.forEach(function (filterItem) {
   });
 }); //move contact button
 
+function moveToForm() {
+  nextSlide();
+}
+
 var blockContactButton = document.querySelector('[section="button_form"]');
 var contactButton = document.querySelector("#move_form_button");
 
