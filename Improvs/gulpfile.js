@@ -24,16 +24,10 @@ function setMode(isProduction = false) {
     }
 }
 
-const dev = gulp.parallel(html, styles, jquery, script, fonts, files);
+const dev = gulp.parallel(html, styles, jquery, script, imgMin, fonts, files);
 
 const build = gulp.series(clean, dev)
 
 module.exports.start = gulp.series(setMode(), build, server)
 module.exports.build = gulp.series(setMode(true), build)
 
-
-gulp.task("watch", function() {
-  gulp.watch('src/styles/**/*.scss', gulp.parallel(styles));
-  gulp.watch("*.html").on("change", reload);
-  gulp.watch('./src/js/**/**/*.js', gulp.parallel(script));
-});
