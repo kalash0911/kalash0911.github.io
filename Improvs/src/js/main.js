@@ -372,3 +372,12 @@ filterItems.forEach((filterItem) => {
         filterCases(filter);
     });
 });
+
+//move contact button
+let blockContactButton =document.querySelector('[section="button_form"]'); 
+var contactButton = document.querySelector("#move_form_button");
+
+blockContactButton.onmousemove = function (e){
+    contactButton.style.left = e.clientX + -(contactButton.offsetWidth/2) + 'px';
+    contactButton.style.top = e.clientY + -(contactButton.offsetHeight/2)  + 'px';
+}

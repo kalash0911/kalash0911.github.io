@@ -355,5 +355,13 @@ filterItems.forEach(function (filterItem) {
     var filter = event.target.getAttribute("data-id");
     filterCases(filter);
   });
-});
+}); //move contact button
+
+var blockContactButton = document.querySelector('[section="button_form"]');
+var contactButton = document.querySelector("#move_form_button");
+
+blockContactButton.onmousemove = function (e) {
+  contactButton.style.left = e.clientX + -(contactButton.offsetWidth / 2) + 'px';
+  contactButton.style.top = e.clientY + -(contactButton.offsetHeight / 2) + 'px';
+};
 //# sourceMappingURL=main.js.map
