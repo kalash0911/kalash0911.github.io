@@ -579,7 +579,11 @@ html ::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   display: inline-block;
   /* Только если меньше контейнера */
-  margin-bottom: 100px; }
+  margin-bottom: 100px;
+  -webkit-animation: fadeInUp;
+  animation: fadeInUp;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s; }
   @media (max-width: 1300px) {
     .tip {
       font-size: calc(16px + 2 * ((100vw - calc(375px)) / 925)); } }
@@ -784,7 +788,11 @@ html ::-webkit-scrollbar-thumb {
     font-size: 32px;
     font-weight: 500;
     line-height: 132%;
-    letter-spacing: -0.32px; }
+    letter-spacing: -0.32px;
+    -webkit-animation: fadeIn;
+    animation: fadeIn;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s; }
     @media (max-width: 1300px) {
       .similar .about_text {
         margin-bottom: calc(40px + 40 * ((100vw - calc(375px)) / 925)); } }
@@ -806,7 +814,11 @@ html ::-webkit-scrollbar-thumb {
   position: relative;
   z-index: 3;
   /* Только если меньше контейнера */
-  top: -30px; }
+  top: -30px;
+  -webkit-animation: fadeInUp;
+  animation: fadeInUp;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s; }
   @media (max-width: 1300px) {
     .similar_info_bloks .info_text_wrap {
       top: calc(0px + -30 * ((100vw - calc(375px)) / 925)); } }
@@ -953,7 +965,11 @@ html ::-webkit-scrollbar-thumb {
     line-height: 132%;
     letter-spacing: -0.32px;
     /* Только если меньше контейнера */
-    margin-bottom: 100px; }
+    margin-bottom: 100px;
+    -webkit-animation: fadeIn;
+    animation: fadeIn;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s; }
     @media (max-width: 1300px) {
       .similar_result .result_text {
         font-size: calc(24px + 8 * ((100vw - calc(375px)) / 925)); } }

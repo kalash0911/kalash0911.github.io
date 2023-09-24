@@ -1,3 +1,5 @@
+new WOW().init();
+
 const slider = new Swiper(".swiper_acrossUs", {
     speed: 1400,
     centeredSlides: true,
