@@ -4081,7 +4081,7 @@ main {
     right: 20px;
     top: 32px; }
     .video_page .content .video_block .top_video_btn .btn_black {
-      padding: 18px 32px; }
+      padding: 28.5px 32px; }
   .video_page .content .video_block .bottom_video_btn {
     position: absolute;
     right: 20px;
@@ -4096,14 +4096,14 @@ main {
     line-height: 17.6px;
     letter-spacing: -0.14px;
     text-transform: uppercase;
-    padding: 18px 48px;
+    padding: 28.5px 58px;
     border: 1px solid #fff;
     transition: all 0.3s ease;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
     .video_page .content .video_block .btn_black .left_arrow,
     .video_page .content .video_block .btn_black .right_arrow {
       position: absolute;
-      top: 55%;
+      top: 50%;
       -webkit-transform: translateY(-55%);
       transform: translateY(-55%); }
     .video_page .content .video_block .btn_black .left_arrow {
@@ -4333,39 +4333,8 @@ main {
     @media (max-width: 1300px) {
       .brain_section .brain_text {
          margin-bottom: calc(44px + 119 * ((100vw - calc(375px)) / 925)); } }
-  .brain_section .btn_black {
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 17.6px;
-    letter-spacing: -0.14px;
-    text-transform: uppercase;
-    padding: 18px 40px;
-    border: 1px solid #fff;
-    transition: all 0.3s ease;
-    position: relative;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
-    .brain_section .btn_black .left_arrow,
-    .brain_section .btn_black .right_arrow {
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%); }
-    .brain_section .btn_black .left_arrow {
-      left: 16px; }
-    .brain_section .btn_black .right_arrow {
-      right: 16px; }
-    .brain_section .btn_black svg {
-      fill: #fff;
-      transition: all 0.3s ease; }
-    .brain_section .btn_black:hover {
-      background-color: #fff;
-      transition: all 0.3s ease;
-      color: #0E0E0E; }
-      .brain_section .btn_black:hover svg {
-        fill: #0E0E0E;
-        transition: all 0.3s ease; }
+  .brain_section .brain_text_first {
+    margin-bottom: 10px; }
 
 .button_form_section {
   height: 100vh;
@@ -4400,23 +4369,6 @@ main {
     @media (max-width: 1300px) {
       .button_form_section .button_form_title {
         font-size: calc(52px + 80 * ((100vw - calc(375px)) / 925)); } }
-  .button_form_section .button_form_text {
-    color: #fff;
-    text-align: center;
-    /* Только если меньше контейнера */
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    /* Только если меньше контейнера */
-     margin-bottom: 58px; }
-    @media (max-width: 1300px) {
-      .button_form_section .button_form_text {
-        font-size: calc(16px + 4 * ((100vw - calc(375px)) / 925)); } }
-    @media (max-width: 1300px) {
-      .button_form_section .button_form_text {
-         margin-bottom: calc(20px + 38 * ((100vw - calc(375px)) / 925)); } }
   .button_form_section .btn_white_circle {
     width: 172px;
     height: 172px;
@@ -4467,17 +4419,6 @@ main {
       .button_form_section .btn_white_circle:hover svg {
         fill: #fff;
         transition: all 0.3s ease; }
-
-.our_work_main {
-  height: 100vh; }
-  .our_work_main .case_list {
-    height: 50%; }
-  .our_work_main .our_work_btn {
-    margin: 60px 20px 40px; }
-  .our_work_main .case_main {
-    height: 100% !important; }
-    .our_work_main .case_main .slide_img {
-      height: 100%; }
 
 .our_work {
   /* Только если меньше контейнера */
@@ -4675,7 +4616,7 @@ footer {
   width: 100%;
   position: relative;
   /* Только если меньше контейнера */
-  padding-top: 80px;
+  padding-top: 100px;
   height: 100vh;
   display: -ms-flexbox;
   display: flex;
@@ -4685,7 +4626,7 @@ footer {
   justify-content: space-between; }
   @media (max-width: 1300px) {
     footer {
-      padding-top: calc(60px + 20 * ((100vw - calc(375px)) / 925)); } }
+      padding-top: calc(60px + 40 * ((100vw - calc(375px)) / 925)); } }
 
 .content {
   width: 100%;

@@ -42,7 +42,7 @@ main {
                 top: 32px;
 
                 .btn_black {
-                    padding: 18px 32px;
+                    padding: 28.5px 32px;
                 }
             }
 
@@ -62,7 +62,7 @@ main {
                 line-height: 17.6px;
                 letter-spacing: -0.14px;
                 text-transform: uppercase;
-                padding: 18px 48px;
+                padding: 28.5px 58px;
                 border: 1px solid $white;
                 transition: $transition_all_03;
                 background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
@@ -71,7 +71,7 @@ main {
                 .left_arrow,
                 .right_arrow {
                     position: absolute;
-                    top: 55%;
+                    top: 50%;
                     transform: translateY(-55%);
                 }
 
@@ -289,52 +289,10 @@ main {
         letter-spacing: -1px;
         @include adaptiv-vaule(" margin-bottom", 163, 44, 1);
     }
-
-    .btn_black {
-        width: 100%;
-        color: $white;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 17.6px;
-        letter-spacing: -0.14px;
-        text-transform: uppercase;
-        padding: 18px 40px;
-        border: 1px solid $white;
-        transition: $transition_all_03;
-        position: relative;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-
-        .left_arrow,
-        .right_arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .left_arrow {
-            left: 16px;
-        }
-
-        .right_arrow {
-            right: 16px;
-        }
-
-        svg {
-            fill: $white;
-            transition: $transition_all_03;
-        }
-
-        &:hover {
-            background-color: $white;
-            transition: $transition_all_03;
-            color: $black;
-
-            svg {
-                fill: $black;
-                transition: $transition_all_03;
-            }
-        }
-    }
+.brain_text_first{
+margin-bottom: 10px;
+}
+ 
 }
 
 
@@ -367,19 +325,6 @@ main {
         letter-spacing: -3px;
         text-transform: uppercase;
     }
-
-
-    .button_form_text {
-        color: $white;
-        text-align: center;
-        @include adaptiv-vaule("font-size", 20, 16, 1);
-        font-style: normal;
-        font-weight: 500;
-        letter-spacing: -1px;
-        text-transform: uppercase;
-        @include adaptiv-vaule(" margin-bottom", 58, 20, 1);
-    }
-
     .btn_white_circle {
         width: 172px;
         height: 172px;
@@ -441,19 +386,4 @@ main {
         }
     }
   
-}
-.our_work_main{
-height: 100vh;
-.case_list{
-    height: 50%;
-}
-.our_work_btn{
-    margin: 60px 20px 40px;
- }
- .case_main{
-        height: 100%!important;
-    .slide_img{
-        height: 100%;
-    }
- }
 }
