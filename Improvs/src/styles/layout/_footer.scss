@@ -51,6 +51,10 @@ footer {
     }
     .social_block{
         margin-left: auto;
+        text-align: end;
+        @include media ("<tablet") {
+            text-align: center;
+        }
         li{
             @include adaptiv-vaule("margin-bottom",20, 28, 1);
             a{

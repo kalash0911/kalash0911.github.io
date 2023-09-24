@@ -115,33 +115,6 @@ main {
     }
 }
 
-.work_page {
-    @include adaptiv-vaule("padding-top", 100, 50, 1);
-    padding-bottom: 30px;
-
-    .work_title {
-        @include adaptiv-vaule("font-size", 132, 64, 1);
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: -3.96px;
-        text-transform: uppercase;
-    }
-
-    .work_main_block {
-        .list {
-            display: grid;
-            grid-template-columns: 30% 70%;
-            grid-template-rows: 488px 488px;
-        }
-    }
-
-    .swiper_work {
-        .swiper-wrapper {
-            width: 70%;
-        }
-    }
-}
-
 
 .contact_form_section {
     height: 100vh;
@@ -467,4 +440,20 @@ main {
             }
         }
     }
+  
+}
+.our_work_main{
+height: 100vh;
+.case_list{
+    height: 50%;
+}
+.our_work_btn{
+    margin: 60px 20px 40px;
+ }
+ .case_main{
+        height: 100%!important;
+    .slide_img{
+        height: 100%;
+    }
+ }
 }

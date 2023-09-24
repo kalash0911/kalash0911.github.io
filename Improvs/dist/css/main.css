@@ -3694,6 +3694,9 @@ html ::-webkit-scrollbar-thumb {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 13px 0; }
+    @media (max-width: 767px) {
+      .header .header__content {
+        padding: 3px 0px 0px; } }
     .header .header__content .header__main {
       display: -ms-flexbox;
       display: flex;
@@ -3920,7 +3923,7 @@ html ::-webkit-scrollbar-thumb {
       height: 100%;
       overflow: auto;
       top: 0;
-      left: -100%;
+      left: -200%;
       background-color: #0E0E0E;
       padding: 80px 0px 20px 20px;
       transition: all .5s ease 0s;
@@ -3931,10 +3934,7 @@ html ::-webkit-scrollbar-thumb {
       @media (max-width: 767px) {
         .header .header__content .menu {
           min-width: 100%;
-          padding: 170px 16px 40px 16px; } }
-      @media (max-width: 479px) {
-        .header .header__content .menu {
-          padding: 170px 16px 40px 16px; } }
+          padding: 126px 16px 40px 16px; } }
     .header .header__content .menu_active {
       left: 0; }
     .header .header__content .menu__wrap {
@@ -3990,7 +3990,7 @@ html ::-webkit-scrollbar-thumb {
         /* Только если меньше контейнера */
         height: 32px;
         opacity: 0;
-        transition: 1s; }
+        transition: 0.5s; }
         @media (max-width: 1300px) {
           .header .header__content .menu__item::after {
             width: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
@@ -3998,6 +3998,8 @@ html ::-webkit-scrollbar-thumb {
           .header .header__content .menu__item::after {
             height: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
       .header .header__content .menu__item:hover::after {
+        opacity: 1; }
+      .header .header__content .menu__item:focus::after {
         opacity: 1; }
       .header .header__content .menu__item a {
         transition: color .3s ease 0s;
@@ -4012,7 +4014,7 @@ html ::-webkit-scrollbar-thumb {
         line-height: 42px;
         letter-spacing: -3%;
         text-transform: uppercase;
-        transition: 1s; }
+        transition: 0.5s; }
         @media (max-width: 1300px) {
           .header .header__content .menu__item a {
             font-size: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
@@ -4020,6 +4022,8 @@ html ::-webkit-scrollbar-thumb {
           .header .header__content .menu__item a {
             line-height: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
         .header .header__content .menu__item a:hover {
+          opacity: 1; }
+        .header .header__content .menu__item a:focus::after {
           opacity: 1; }
     @media (max-width: 767px) {
       .header .header__content .logo_block {
@@ -4029,6 +4033,16 @@ html ::-webkit-scrollbar-thumb {
       .header .header__content .burger_block {
         -ms-flex-order: 2;
         order: 2; } }
+  .header .menu_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; }
+  .header .menu_overlay_active {
+    display: block; }
 
 html {
   height: 100%;
@@ -4114,30 +4128,6 @@ main {
     bottom: 40px;
     border-radius: 50%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
-
-.work_page {
-  /* Только если меньше контейнера */
-  padding-top: 100px;
-  padding-bottom: 30px; }
-  @media (max-width: 1300px) {
-    .work_page {
-      padding-top: calc(50px + 50 * ((100vw - calc(375px)) / 925)); } }
-  .work_page .work_title {
-    /* Только если меньше контейнера */
-    font-size: 132px;
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -3.96px;
-    text-transform: uppercase; }
-    @media (max-width: 1300px) {
-      .work_page .work_title {
-        font-size: calc(64px + 68 * ((100vw - calc(375px)) / 925)); } }
-  .work_page .work_main_block .list {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 488px 488px; }
-  .work_page .swiper_work .swiper-wrapper {
-    width: 70%; }
 
 .contact_form_section {
   height: 100vh;
@@ -4478,6 +4468,17 @@ main {
         fill: #fff;
         transition: all 0.3s ease; }
 
+.our_work_main {
+  height: 100vh; }
+  .our_work_main .case_list {
+    height: 50%; }
+  .our_work_main .our_work_btn {
+    margin: 60px 20px 40px; }
+  .our_work_main .case_main {
+    height: 100% !important; }
+    .our_work_main .case_main .slide_img {
+      height: 100%; }
+
 .our_work {
   /* Только если меньше контейнера */
   padding-top: 120px;
@@ -4727,7 +4728,11 @@ footer {
       margin: 0 auto; } }
 
 .social_block {
-  margin-left: auto; }
+  margin-left: auto;
+  text-align: end; }
+  @media (max-width: 767px) {
+    .social_block {
+      text-align: center; } }
   .social_block li {
     /* Только если меньше контейнера */
     margin-bottom: 20px; }
