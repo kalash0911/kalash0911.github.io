@@ -4327,6 +4327,11 @@ main {
   -ms-flex-align: center;
   align-items: center;
   position: relative; }
+  @media (max-width: 767px) {
+    .brain_section {
+      -ms-flex-align: start;
+      align-items: start;
+      padding-top: 80px; } }
   .brain_section .img_brain_block {
     position: absolute;
     z-index: 1; }
@@ -4336,6 +4341,9 @@ main {
     -ms-flex-align: center;
     align-items: center;
     position: relative; }
+    @media (max-width: 767px) {
+      .brain_section .container {
+        display: block; } }
   .brain_section .content {
     max-width: 865px;
     width: 100%;
