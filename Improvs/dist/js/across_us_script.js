@@ -12,9 +12,10 @@ var slider = new Swiper(".swiper_acrossUs", {
   },
   pagination: {
     el: ".swiper-pagination",
-    type: "bullets" // clickable: true,
-
+    type: "bullets"
+    // clickable: true,
   },
+
   breakpoints: {
     320: {
       spaceBetween: 20
