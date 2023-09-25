@@ -175,6 +175,100 @@
             @include adaptiv-vaule("height", 50, 25, 1);
         }
     }
+
+    .shop_img_wrap {
+        position: relative;
+    }
+
+    .shop_img {
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .item_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1100px;
+        padding: 0 15px;
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include media ("<tablet") {
+            position: static;
+            padding: 40px 15px;
+            transform: translate(0, 0);
+        }
+
+        @include media ("<phone_max") {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+    }
+
+    .item_list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include adaptiv-vaule("gap", 120, 40, 1);
+
+        @include media ("<phone_max") {
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        align-items: flex-start;
+
+        @include media ("<tablet") {
+            align-items: center;
+        }
+    }
+
+    .right {
+        align-items: flex-end;
+
+        @include media ("<tablet") {
+            align-items: center;
+        }
+    }
+
+    .icon {
+        width: 84px;
+        height: 84px;
+        @include adaptiv-vaule("margin-bottom", 25, 15, 1);
+    }
+
+    .item_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 24, 20, 1);
+        font-weight: 600;
+        line-height: 112%;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .sub-title {
+        color: rgba(255, 255, 255, 0.60);
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 112%;
+        letter-spacing: 0.56px;
+        text-transform: uppercase;
+    }
 }
 
 .typography_beach_club {
