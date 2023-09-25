@@ -258,7 +258,6 @@
     display: flex;
     align-items: center;
     position: relative;
-    background: url(../images/main_page/background-brain.png);
     @include media ("<tablet") {
        align-items: start;
        padding-top: 80px;

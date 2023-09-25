@@ -2,7 +2,7 @@ footer {
     width: 100%;
     position: relative;
     @include adaptiv-vaule("padding-top",100, 60, 1);
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

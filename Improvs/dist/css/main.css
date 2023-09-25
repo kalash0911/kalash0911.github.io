@@ -1620,12 +1620,8 @@ main {
     transition: all .7s ease 0s; }
 
 .blog_page {
-  /* Только если меньше контейнера */
   padding-top: 100px;
   padding-bottom: 30px; }
-  @media (max-width: 1300px) {
-    .blog_page {
-      padding-top: calc(50px + 50 * ((100vw - calc(375px)) / 925)); } }
   .blog_page .title_wrap {
     display: -ms-flexbox;
     display: flex;
@@ -1693,7 +1689,10 @@ main {
     -ms-flex-pack: center;
     justify-content: center;
     position: absolute;
-    width: 100%;
+    right: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     background-color: #0E0E0E;
     border: 1px solid #fff;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -1775,6 +1774,8 @@ main {
     display: flex;
     -ms-flex-align: start;
     align-items: flex-start;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
     -ms-flex-direction: column;
     flex-direction: column;
     position: relative;
@@ -4906,8 +4907,7 @@ main {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
-  background: url(../images/main_page/background-brain.png); }
+  position: relative; }
   @media (max-width: 767px) {
     .brain_section {
       -ms-flex-align: start;
@@ -5064,7 +5064,7 @@ footer {
   position: relative;
   /* Только если меньше контейнера */
   padding-top: 100px;
-  height: 100vh;
+  height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
