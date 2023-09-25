@@ -59,6 +59,7 @@
                 border: 1px solid $white;
                 transition: $transition_all_03;
                 background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+                backdrop-filter: blur(10px);
                 @include media ("<tablet") {
                     padding: 18px 0;
                     text-align: center;
