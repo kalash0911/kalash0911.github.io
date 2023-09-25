@@ -4676,7 +4676,7 @@ main {
     @media (max-width: 767px) {
       .video_page .content .video_block .top_video_btn {
         top: auto;
-        bottom: 40px;
+        bottom: 120px;
         right: 16px; } }
     .video_page .content .video_block .top_video_btn .btn_black {
       padding: 28.5px 32px;
@@ -4693,7 +4693,7 @@ main {
       .video_page .content .video_block .bottom_video_btn {
         right: 16px;
         left: 16px;
-        bottom: 36px; } }
+        bottom: 116px; } }
   .video_page .content .video_block .btn_black {
     display: inline-block;
     position: relative;
