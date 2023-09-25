@@ -29,6 +29,12 @@ function init() {
     }
 }
 
+window.addEventListener('resize', function(event) {
+    if (isMobile()) {
+        changeVideoForMobile();
+    }
+}, true);
+
 function copyCode() {
     var jsCode = `<!DOCTYPE html>
     <head><title></title></head>
@@ -60,7 +66,9 @@ function copyCode() {
 function changeVideoForMobile() {
     for (let index = 0; index < videos.length; index++) {
         const video = videos[index];
-        video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
+        if(!video.src.includes("mobile")){
+            video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
+        }
     }
 }
 
@@ -115,6 +123,12 @@ function nextSlide() {
             }
 
             let section = sections[index].getAttribute('section');
+
+            if(section==="work"){
+                var body=document.querySelector(".main_body_section");
+                body.style.overflowY = "auto";
+            }
+
             scrollByElementName(section);
             setSectionState(index);
         }
@@ -144,6 +158,12 @@ function previousSlide() {
             }
 
             let section = sections[index].getAttribute('section');
+
+            if(section==="brain"){
+                var body=document.querySelector(".main_body_section");
+                body.style.overflowY = "hidden";
+            }
+
             scrollByElementName(section);
             setSectionState(index);
         }
@@ -157,7 +177,7 @@ function scrollByElementName(elementName) {
     if (!element) {
         return;
     }
-
+    
     let scrollToValue = element.offsetTop;
     scrollToOffset(scrollToValue);
 }
@@ -321,15 +341,3 @@ filterItems.forEach((filterItem) => {
     });
 });
 
-//move contact button
-function moveToForm(){
-    nextSlide();
-}
-
-let blockContactButton =document.querySelector('[section="button_form"]'); 
-var contactButton = document.querySelector("#move_form_button");
-
-blockContactButton.onmousemove = function (e){
-    contactButton.style.left = e.clientX + -(contactButton.offsetWidth/2) + 'px';
-    contactButton.style.top = e.clientY + -(contactButton.offsetHeight/2)  + 'px';
-}

@@ -34,6 +34,12 @@ function init() {
   }
 }
 
+window.addEventListener('resize', function (event) {
+  if (isMobile()) {
+    changeVideoForMobile();
+  }
+}, true);
+
 function copyCode() {
   var jsCode = "<!DOCTYPE html>\n    <head><title></title></head>\n    <body>\n    <svg id=\"mySvg\" width=\"960\" height=\"500\"></svg>\n    <script src=\"http://d3js.org/d3.v7.min.js\"></script>\n    <script src=\"http://d3js.org/topojson.v3.min.js\"></script>\n    <script>\n    var width = 960, height = 500, svg = d3.select(\"svg\");\n    d3.json(\"https://raw.githubusercontent.com/org-scn-design-studio-\" +\n        \"community/sdkcommunitymaps/master/geojson/Europe/Ukraine-regions.json\"\n    ).then(function (data) {\n        var land = topojson.feature(data, data.objects.UKR_adm1),\n            projection = d3.geoAlbers().rotate([-30, 0, 0])\n                .fitSize([.9 * width, .9 * height], land),\n            path = d3.geoPath().projection(projection);\n        svg.selectAll(\"path\").data(land.features).enter()\n            .append(\"path\").attr(\"d\", path).attr(\"fill\", \"#FFD500')\n            .attr(\"stroke\", \"#005BBB\");\n        svg.append(\"text\").attr(\"x\", (width / 2)).attr(\"y\", height - (20))\n            .attr(\"text-anchor\", \"middle\").style(\"font-size\", \"24px\")\n            .style(\"fill\", \"#005BBB\").text(\"Improvs\");";
   navigator.clipboard.writeText(jsCode);
@@ -43,7 +49,10 @@ function copyCode() {
 function changeVideoForMobile() {
   for (var index = 0; index < videos.length; index++) {
     var video = videos[index];
-    video.src = path + "files/main_video/video_".concat(index + 1, "_mobile.mp4");
+
+    if (!video.src.includes("mobile")) {
+      video.src = path + "files/main_video/video_".concat(index + 1, "_mobile.mp4");
+    }
   }
 }
 
@@ -105,6 +114,12 @@ function nextSlide() {
       }
 
       var section = sections[index].getAttribute('section');
+
+      if (section === "work") {
+        var body = document.querySelector(".main_body_section");
+        body.style.overflowY = "auto";
+      }
+
       scrollByElementName(section);
       setSectionState(index);
     }
@@ -137,6 +152,12 @@ function previousSlide() {
       }
 
       var section = sections[index].getAttribute('section');
+
+      if (section === "brain") {
+        var body = document.querySelector(".main_body_section");
+        body.style.overflowY = "hidden";
+      }
+
       scrollByElementName(section);
       setSectionState(index);
     }
@@ -302,17 +323,5 @@ filterItems.forEach(function (filterItem) {
     var filter = event.target.getAttribute("data-id");
     filterCases(filter);
   });
-}); //move contact button
-
-function moveToForm() {
-  nextSlide();
-}
-
-var blockContactButton = document.querySelector('[section="button_form"]');
-var contactButton = document.querySelector("#move_form_button");
-
-blockContactButton.onmousemove = function (e) {
-  contactButton.style.left = e.clientX + -(contactButton.offsetWidth / 2) + 'px';
-  contactButton.style.top = e.clientY + -(contactButton.offsetHeight / 2) + 'px';
-};
+});
 //# sourceMappingURL=main.js.map
