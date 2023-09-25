@@ -4708,7 +4708,9 @@ main {
     padding: 28.5px 58px;
     border: 1px solid #fff;
     transition: all 0.3s ease;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); }
     @media (max-width: 767px) {
       .video_page .content .video_block .btn_black {
         padding: 18px 0;
@@ -4907,8 +4909,7 @@ main {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
-  background: url(../images/main_page/background-brain.png); }
+  position: relative; }
   @media (max-width: 767px) {
     .brain_section {
       -ms-flex-align: start;
@@ -5065,7 +5066,7 @@ footer {
   position: relative;
   /* Только если меньше контейнера */
   padding-top: 100px;
-  height: 100vh;
+  height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
