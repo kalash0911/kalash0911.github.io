@@ -3525,13 +3525,21 @@ html ::-webkit-scrollbar-thumb {
   /* Только если меньше контейнера */
   padding-top: 160px;
   /* Только если меньше контейнера */
-  padding-bottom: 160px; }
+  padding-bottom: 160px;
+  position: relative; }
   @media (max-width: 1300px) {
     .date_adventure {
       padding-top: calc(60px + 100 * ((100vw - calc(375px)) / 925)); } }
   @media (max-width: 1300px) {
     .date_adventure {
       padding-bottom: calc(60px + 100 * ((100vw - calc(375px)) / 925)); } }
+  .date_adventure .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
   .date_adventure .innovation_title {
     max-width: 875px;
     margin: 0 auto; }
@@ -3541,6 +3549,65 @@ html ::-webkit-scrollbar-thumb {
       @media (max-width: 1300px) {
         .date_adventure .innovation_title::before, .date_adventure .innovation_title::after {
           height: calc(20px + 40 * ((100vw - calc(375px)) / 925)); } }
+  .date_adventure .image_wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 65px 15px; }
+    @media (max-width: 767px) {
+      .date_adventure .image_wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 60px; } }
+  .date_adventure .adventure_image {
+    max-width: 500px;
+    max-height: 500px; }
+    @media (max-width: 479px) {
+      .date_adventure .adventure_image {
+        max-width: 300px;
+        max-height: 300px; } }
+  .date_adventure .strawberry {
+    max-width: 140px;
+    margin-top: 50px; }
+    @media (max-width: 767px) {
+      .date_adventure .strawberry {
+        margin: 0; } }
+    @media (max-width: 479px) {
+      .date_adventure .strawberry {
+        max-width: 100px; } }
+  .date_adventure .chocolate {
+    max-width: 200px;
+    margin-bottom: 70px; }
+    @media (max-width: 767px) {
+      .date_adventure .chocolate {
+        margin: 0; } }
+    @media (max-width: 479px) {
+      .date_adventure .chocolate {
+        max-width: 100px; } }
+  .date_adventure .arrow_left {
+    margin-top: 150px; }
+    @media (max-width: 767px) {
+      .date_adventure .arrow_left {
+        margin: 0;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg); } }
+    @media (max-width: 479px) {
+      .date_adventure .arrow_left {
+        max-width: 70px; } }
+  .date_adventure .arrow_right {
+    margin-bottom: 120px; }
+    @media (max-width: 767px) {
+      .date_adventure .arrow_right {
+        margin: 0;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg); } }
+    @media (max-width: 479px) {
+      .date_adventure .arrow_right {
+        max-width: 70px; } }
 
 .typography_date .gradient_block {
   background: linear-gradient(90deg, #0B0A06 0%, #F9C0AC 49.48%, #3F4D34 98.96%); }
