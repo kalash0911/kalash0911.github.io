@@ -4666,9 +4666,6 @@ main {
 .video_page .content .video_block {
   position: relative;
   height: 100vh; }
-  @media (max-width: 767px) {
-    .video_page .content .video_block {
-      height: 90vh; } }
   .video_page .content .video_block video {
     width: 100%;
     height: 100%; }
@@ -4767,9 +4764,6 @@ main {
   @media (max-width: 1300px) {
     .contact_form_section {
       padding-bottom: calc(115px + 20 * ((100vw - calc(375px)) / 925)); } }
-  @media (max-width: 767px) {
-    .contact_form_section {
-      height: 90vh; } }
   .contact_form_section .container {
     display: -ms-flexbox;
     display: flex;
@@ -4918,8 +4912,7 @@ main {
     .brain_section {
       -ms-flex-align: start;
       align-items: start;
-      padding-top: 80px;
-      height: 90vh; } }
+      padding-top: 80px; } }
   .brain_section .img_brain_block {
     position: absolute;
     right: 0;
@@ -4988,9 +4981,6 @@ main {
   justify-content: center;
   position: relative;
   background: url(../images/main_page/background-form.png); }
-  @media (max-width: 767px) {
-    .button_form_section {
-      height: 90vh; } }
   .button_form_section .container {
     display: -ms-flexbox;
     display: flex;
