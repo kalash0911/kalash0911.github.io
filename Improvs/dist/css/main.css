@@ -3555,15 +3555,29 @@ main {
   display: block;
   background: linear-gradient(0deg, rgba(63, 77, 52, 0) 0%, #3F4D34 100%);
   height: 100px; }
+  @media (max-width: 479px) {
+    .mobile_date .about_img::before {
+      height: 30px; } }
 
 .mobile_date .about_img::after {
   background: linear-gradient(180deg, rgba(63, 77, 52, 0) 0%, #3F4D34 100%); }
+  @media (max-width: 479px) {
+    .mobile_date .about_img::after {
+      height: 30px; } }
 
 .how_works_date .about_img::before {
-  background: linear-gradient(0deg, rgba(63, 77, 52, 0) 0%, #3F4D34 100%); }
+  display: block;
+  background: linear-gradient(0deg, rgba(63, 77, 52, 0) 0%, #3F4D34 100%);
+  height: 100px; }
+  @media (max-width: 479px) {
+    .how_works_date .about_img::before {
+      height: 30px; } }
 
 .how_works_date .about_img::after {
   background: linear-gradient(180deg, rgba(63, 77, 52, 0) 0%, #3F4D34 100%); }
+  @media (max-width: 479px) {
+    .how_works_date .about_img::after {
+      height: 30px; } }
 
 .date_adventure {
   /* Только если меньше контейнера */
@@ -3583,10 +3597,11 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; }
+    z-index: 0; }
   .date_adventure .innovation_title {
     max-width: 875px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    z-index: 1; }
     .date_adventure .innovation_title::before {
       background: linear-gradient(0deg, rgba(63, 77, 52, 0) 0%, #3F4D34 100%); }
     .date_adventure .innovation_title::after {
@@ -3605,7 +3620,19 @@ main {
     -ms-flex-pack: center;
     justify-content: center;
     gap: 30px;
-    padding: 65px 15px; }
+    padding: 65px 15px;
+    /* Только если меньше контейнера */
+    padding-top: 65px;
+    /* Только если меньше контейнера */
+    padding-bottom: 65px;
+    position: relative;
+    z-index: 1; }
+    @media (max-width: 1300px) {
+      .date_adventure .image_wrap {
+        padding-top: calc(35px + 30 * ((100vw - calc(375px)) / 925)); } }
+    @media (max-width: 1300px) {
+      .date_adventure .image_wrap {
+        padding-bottom: calc(35px + 30 * ((100vw - calc(375px)) / 925)); } }
     @media (max-width: 767px) {
       .date_adventure .image_wrap {
         -ms-flex-direction: column;

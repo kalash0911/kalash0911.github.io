@@ -29,10 +29,18 @@
             display: block;
             background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
             height: 100px;
+
+            @include media ("<phone") {
+                height: 30px;
+            }
         }
 
         &::after {
             background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
+
+            @include media ("<phone") {
+                height: 30px;
+            }
         }
     }
 }
@@ -40,11 +48,21 @@
 .how_works_date {
     .about_img {
         &::before {
+            display: block;
             background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
+            height: 100px;
+
+            @include media ("<phone") {
+                height: 30px;
+            }
         }
 
         &::after {
             background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
+
+            @include media ("<phone") {
+                height: 30px;
+            }
         }
     }
 }
@@ -60,12 +78,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: 0;
     }
 
     .innovation_title {
         max-width: 875px;
         margin: 0 auto;
+        z-index: 1;
 
         &::before {
             background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
@@ -87,6 +106,10 @@
         justify-content: center;
         gap: 30px;
         padding: 65px 15px;
+        @include adaptiv-vaule("padding-top", 65, 35, 1);
+        @include adaptiv-vaule("padding-bottom", 65, 35, 1);
+        position: relative;
+        z-index: 1;
 
         @include media ("<tablet") {
             flex-direction: column;
