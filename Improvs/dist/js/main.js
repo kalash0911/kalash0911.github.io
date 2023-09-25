@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   init();
 });
-var path = "src/";
+var path = "./";
 var sections = document.querySelectorAll("[section]");
 var mainBlock = document.querySelector("#main");
 var videos = document.querySelectorAll('[video]');

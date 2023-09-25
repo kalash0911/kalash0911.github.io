@@ -8,6 +8,10 @@
         .video_block {
             position: relative;
             height: 100vh;
+            @include media ("<tablet") {
+                height: 90vh;
+                    }
+
 
             video {
                 width: 100%;
@@ -127,6 +131,10 @@
     justify-content: center;
     @include adaptiv-vaule("padding-top", 135, 115, 1);
     @include adaptiv-vaule("padding-bottom", 135, 115, 1);
+    background: url(../images/main_page/background-form.png);
+    @include media ("<tablet") {
+        height: 90vh;
+            }
 
     .container {
         display: flex;
@@ -259,9 +267,11 @@
     display: flex;
     align-items: center;
     position: relative;
+    background: url(../images/main_page/background-brain.png);
     @include media ("<tablet") {
        align-items: start;
        padding-top: 80px;
+       height: 90vh;
      }
 
 .img_brain_block{
@@ -323,6 +333,10 @@ margin-bottom: 10px;
     align-items: center;
     justify-content: center;
     position: relative;
+    background: url(../images/main_page/background-form.png);
+    @include media ("<tablet") {
+        height: 90vh;
+            }
 
     .container {
         display: flex;
