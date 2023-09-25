@@ -29,7 +29,7 @@ function init() {
     }
 }
 
-window.addEventListener('resize', function(event) {
+window.addEventListener('resize', function (event) {
     if (isMobile()) {
         changeVideoForMobile();
     }
@@ -66,7 +66,7 @@ function copyCode() {
 function changeVideoForMobile() {
     for (let index = 0; index < videos.length; index++) {
         const video = videos[index];
-        if(!video.src.includes("mobile")){
+        if (!video.src.includes("mobile")) {
             video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
         }
     }
@@ -124,8 +124,8 @@ function nextSlide() {
 
             let section = sections[index].getAttribute('section');
 
-            if(section==="work"){
-                var body=document.querySelector(".main_body_section");
+            if (section === "work") {
+                var body = document.querySelector(".main_body_section");
                 body.style.overflowY = "auto";
             }
 
@@ -159,13 +159,19 @@ function previousSlide() {
 
             let section = sections[index].getAttribute('section');
 
-            if(section==="brain"){
-                var body=document.querySelector(".main_body_section");
-                body.style.overflowY = "hidden";
+            if (section === "brain") {
+                var element = document.querySelector(`[section=${section}]`);
+                let scrollToValue = element.offsetTop;
+                if (scrollToValue+element.offsetHeight > window.scrollY) {
+                    var body = document.querySelector(".main_body_section");
+                    body.style.overflowY = "hidden";
+                    scrollByElementName(section);
+                    setSectionState(index);
+                }
+            } else {
+                scrollByElementName(section);
+                setSectionState(index);
             }
-
-            scrollByElementName(section);
-            setSectionState(index);
         }
     }
 }
@@ -177,7 +183,7 @@ function scrollByElementName(elementName) {
     if (!element) {
         return;
     }
-    
+
     let scrollToValue = element.offsetTop;
     scrollToOffset(scrollToValue);
 }

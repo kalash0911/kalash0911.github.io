@@ -154,12 +154,19 @@ function previousSlide() {
       var section = sections[index].getAttribute('section');
 
       if (section === "brain") {
-        var body = document.querySelector(".main_body_section");
-        body.style.overflowY = "hidden";
-      }
+        var element = document.querySelector("[section=".concat(section, "]"));
+        var scrollToValue = element.offsetTop;
 
-      scrollByElementName(section);
-      setSectionState(index);
+        if (scrollToValue + element.offsetHeight > window.scrollY) {
+          var body = document.querySelector(".main_body_section");
+          body.style.overflowY = "hidden";
+          scrollByElementName(section);
+          setSectionState(index);
+        }
+      } else {
+        scrollByElementName(section);
+        setSectionState(index);
+      }
     }
   }
 } //scroll
