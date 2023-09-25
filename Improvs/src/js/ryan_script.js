@@ -162,18 +162,18 @@ const playerStepMob = document.querySelectorAll(".img-step-mob");
 
 playerKids.forEach((video, ind) => {
     video.src = supportsHEVCAlpha()
-        ? `../files/${ind + 1}.mov`
-        : `../files/${ind + 1}.webm`;
+        ? `files/${ind + 1}.mov`
+        : `files/${ind + 1}.webm`;
 });
 
 playerStep.forEach((video, ind) => {
     video.src = supportsHEVCAlpha()
-        ? `../files/step${ind + 1}.mp4`
-        : `../files/step${ind + 1}.webm`;
+        ? `files/step${ind + 1}.mp4`
+        : `files/step${ind + 1}.webm`;
 });
 
 playerStepMob.forEach((video, ind) => {
     video.src = supportsHEVCAlpha()
-        ? `../files/step${ind + 1}-mob.mp4`
-        : `../files/step${ind + 1}-mob.webm`;
+        ? `files/step${ind + 1}-mob.mp4`
+        : `files/step${ind + 1}-mob.webm`;
 });

@@ -158,12 +158,12 @@ var playerKids = document.querySelectorAll(".kids");
 var playerStep = document.querySelectorAll(".img-step");
 var playerStepMob = document.querySelectorAll(".img-step-mob");
 playerKids.forEach(function (video, ind) {
-  video.src = supportsHEVCAlpha() ? "../files/".concat(ind + 1, ".mov") : "../files/".concat(ind + 1, ".webm");
+  video.src = supportsHEVCAlpha() ? "files/".concat(ind + 1, ".mov") : "files/".concat(ind + 1, ".webm");
 });
 playerStep.forEach(function (video, ind) {
-  video.src = supportsHEVCAlpha() ? "../files/step".concat(ind + 1, ".mp4") : "../files/step".concat(ind + 1, ".webm");
+  video.src = supportsHEVCAlpha() ? "files/step".concat(ind + 1, ".mp4") : "files/step".concat(ind + 1, ".webm");
 });
 playerStepMob.forEach(function (video, ind) {
-  video.src = supportsHEVCAlpha() ? "../files/step".concat(ind + 1, "-mob.mp4") : "../files/step".concat(ind + 1, "-mob.webm");
+  video.src = supportsHEVCAlpha() ? "files/step".concat(ind + 1, "-mob.mp4") : "files/step".concat(ind + 1, "-mob.webm");
 });
 //# sourceMappingURL=ryan_script.js.map

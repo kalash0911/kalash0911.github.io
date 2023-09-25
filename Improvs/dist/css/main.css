@@ -373,13 +373,13 @@ th {
 /* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Regular.ttf");
+  src: url("fonts/OpenSans-Regular.ttf");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Bold.ttf");
+  src: url("fonts/OpenSans-Bold.ttf");
   font-style: normal;
   font-weight: 700; }
 
@@ -1952,7 +1952,7 @@ main {
     .swiper_across_us .arrows .swiper-button-next,
     .similar_swiper .arrows .swiper-button-next {
       right: 0;
-      background-image: url(../images/across_us_template/AR_Right.svg);
+      background-image: url(images/across_us_template/AR_Right.svg);
       width: 40px;
       height: 37px;
       background-repeat: no-repeat;
@@ -1964,7 +1964,7 @@ main {
     .swiper_across_us .arrows .swiper-button-prev,
     .similar_swiper .arrows .swiper-button-prev {
       left: 0;
-      background-image: url(../images/across_us_template/AR_Left.svg);
+      background-image: url(images/across_us_template/AR_Left.svg);
       width: 40px;
       height: 35px;
       background-repeat: no-repeat;
@@ -3916,7 +3916,7 @@ main {
       display: none; } }
   .swiper_beach_club_section .arrows .swiper-button-next {
     right: 0;
-    background-image: url(../images/across_us_template/AR_Right.svg);
+    background-image: url(images/across_us_template/AR_Right.svg);
     width: 40px;
     height: 37px;
     background-repeat: no-repeat;
@@ -3926,7 +3926,7 @@ main {
       display: none; }
   .swiper_beach_club_section .arrows .swiper-button-prev {
     left: 0;
-    background-image: url(../images/across_us_template/AR_Left.svg);
+    background-image: url(images/across_us_template/AR_Left.svg);
     width: 40px;
     height: 35px;
     background-repeat: no-repeat;

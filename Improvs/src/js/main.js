@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     init();
 });
-var path = "../src/";
+var path = "src/";
 const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#main");
 const videos = document.querySelectorAll('[video]');

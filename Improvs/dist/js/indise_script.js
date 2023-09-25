@@ -79,7 +79,7 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
 var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function (step, ind, arr) {
   var anim = bodymovin.loadAnimation({
     container: document.getElementById("".concat(step, "_").concat(ind + 1)),
-    path: "../files/step_".concat(ind + 1, "/data.json"),
+    path: "files/step_".concat(ind + 1, "/data.json"),
     render: "svg",
     loop: false,
     autoplay: false

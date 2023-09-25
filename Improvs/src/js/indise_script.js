@@ -99,7 +99,7 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
     .map((step, ind, arr) => {
         const anim = bodymovin.loadAnimation({
             container: document.getElementById(`${step}_${ind + 1}`),
-            path: `../files/step_${ind + 1}/data.json`,
+            path: `files/step_${ind + 1}/data.json`,
             render: "svg",
             loop: false,
             autoplay: false,
