@@ -1,3 +1,5 @@
+new WOW().init();
+
 initAudioPlayers();
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {

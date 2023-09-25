@@ -1,3 +1,5 @@
+new WOW().init();
+
 const slider = new Swiper(".swiper_revenew", {
     speed: 1400,
     centeredSlides: true,

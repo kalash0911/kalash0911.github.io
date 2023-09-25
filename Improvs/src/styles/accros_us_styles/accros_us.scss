@@ -222,6 +222,8 @@
         text-transform: uppercase;
         margin-bottom: 15px;
         text-align: center;
+        animation: fadeIn;
+        animation-duration: 4s;
 
         @include media ("<tablet") {
             br{

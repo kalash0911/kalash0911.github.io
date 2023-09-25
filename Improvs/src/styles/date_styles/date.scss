@@ -1,71 +1,4 @@
-.date_page {
-    background-color: #3F4D34;
-}
 
-.main_date {
-    .main_img {
-        &::before {
-            background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-        }
-
-        &::after {
-            background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-        }
-    }
-}
-
-.about_date {
-    .about_img {
-        &::after {
-            background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-        }
-    }
-}
-
-.mobile_date {
-
-    .about_img {
-        &::before {
-            display: block;
-            background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-            height: 100px;
-
-            @include media ("<phone") {
-                height: 30px;
-            }
-        }
-
-        &::after {
-            background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-
-            @include media ("<phone") {
-                height: 30px;
-            }
-        }
-    }
-}
-
-.how_works_date {
-    .about_img {
-        &::before {
-            display: block;
-            background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-            height: 100px;
-
-            @include media ("<phone") {
-                height: 30px;
-            }
-        }
-
-        &::after {
-            background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-
-            @include media ("<phone") {
-                height: 30px;
-            }
-        }
-    }
-}
 
 .date_adventure {
     @include adaptiv-vaule("padding-top", 160, 60, 1);
@@ -85,14 +18,6 @@
         max-width: 875px;
         margin: 0 auto;
         z-index: 1;
-
-        &::before {
-            background: linear-gradient(0deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-        }
-
-        &::after {
-            background: linear-gradient(180deg, rgba(63, 77, 52, 0.00) 0%, #3F4D34 100%);
-        }
 
         &::before,
         &::after {

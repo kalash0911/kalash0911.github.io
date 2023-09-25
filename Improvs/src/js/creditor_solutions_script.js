@@ -1,3 +1,5 @@
+new WOW().init();
+
 const slider = new Swiper(".swiper_creditor", {
     speed: 1400,
     // slidesPerView: 1.6,

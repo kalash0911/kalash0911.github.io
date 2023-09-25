@@ -229,6 +229,8 @@ main {
         align-items: center;
         justify-content: center;
         gap: 15px;
+        animation: fadeIn;
+        animation-duration: 5s;
     }
 
     .main_tip {
@@ -244,6 +246,8 @@ main {
         text-align: center;
         border: 1px solid $gray_A6;
         padding: 3px 8px;
+        animation: fadeIn;
+        animation-duration: 5s;
     }
 
     .main_img {
@@ -262,6 +266,7 @@ main {
     @include adaptiv-vaule("padding-top", 25, 20, 1);
     @include adaptiv-vaule("padding-bottom", 160, 60, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
 
     .about_text {
         max-width: 850px;
@@ -310,7 +315,7 @@ main {
             line-height: 126%;
             letter-spacing: -0.18px;
             text-transform: uppercase;
-       
+
 
             &:not(:last-child) {
                 margin-bottom: 15px;
@@ -338,6 +343,8 @@ main {
         width: 100%;
         gap: 50px;
         @include adaptiv-vaule("margin-bottom", 120, 50, 1);
+        animation: fadeIn;
+        animation-duration: 4s;
 
         @include media ("<tablet") {
             flex-direction: column;
@@ -350,6 +357,8 @@ main {
         align-items: flex-start;
         max-width: 490px;
         width: 100%;
+        animation: fadeIn;
+        animation-duration: 4s;
 
         @include media ("<tablet") {
             max-width: 100%;
@@ -383,6 +392,9 @@ main {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        animation: gradient_block_width;
+        animation-duration: 4s;
+        border-radius: 5px;
 
         @include media ("<phone_max") {
             gap: 160px;
@@ -394,18 +406,32 @@ main {
         }
     }
 
+    @keyframes gradient_block_width {
+        0%{
+            width: 0;
+        }
+        100%{
+            width: calc(100% - 40px);
+        }
+    }
+
     .color_name {
         @include adaptiv-vaule("font-size", 18, 12, 1);
         font-weight: 600;
         line-height: 126%;
         letter-spacing: -0.18px;
         text-transform: uppercase;
+        animation: flipInX;
+        animation-duration: 10s;
 
         &:first-child,
         &:last-child {
             color: $white;
         }
     }
+
+
+   
 }
 
 .similar_result {

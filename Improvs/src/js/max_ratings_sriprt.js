@@ -1,3 +1,5 @@
+new WOW().init();
+
 const slider = new Swiper(".main-slider", {
     spaceBetween: 20,
     slidesPerView: 4.5,

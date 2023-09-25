@@ -1,3 +1,4 @@
+new WOW().init();
 initCleanerSwiper();
 initCustomerSwiper();
 switchSlider();

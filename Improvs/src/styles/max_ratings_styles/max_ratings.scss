@@ -22,7 +22,6 @@
 
 .typography_max_ratings {
 
-
     .gradient_block {
         background: linear-gradient(90deg, #000 0%, #F84F38 50.03%, #FFF 100%);
 
@@ -59,10 +58,6 @@
         max-width: 1240px;
         width: 100%;
         margin: 0 0 0 auto;
-
-        @include media (">laptop") {
-            max-width: 100%;
-        }
     }
 }
 
