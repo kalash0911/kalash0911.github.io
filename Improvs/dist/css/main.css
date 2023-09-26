@@ -4869,7 +4869,9 @@ main {
       .video_page .content .video_block .bottom_video_btn {
         right: 16px;
         left: 16px;
-        bottom: 116px; } }
+        bottom: 116px;
+        -webkit-transform: none;
+        transform: none; } }
   .video_page .content .video_block .btn_black {
     display: inline-block;
     position: relative;
