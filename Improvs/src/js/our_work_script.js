@@ -3,7 +3,7 @@ const slider = new Swiper(".case_swiper", {
     // centeredSlides: true,
     grabCursor: true,
     autoplay: {
-        delay: 500,
+        delay: 1500,
         pauseOnMouseEnter:true,
         disableOnInteraction:false
     },

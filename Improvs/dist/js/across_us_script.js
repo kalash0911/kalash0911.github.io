@@ -5,6 +5,7 @@ var slider = new Swiper(".swiper_acrossUs", {
   speed: 1400,
   centeredSlides: true,
   grabCursor: true,
+  autoplay: true,
   loopedSlides: 1,
   loop: true,
   navigation: {

@@ -41,7 +41,7 @@ main {
 }
 
 .container {
-    // max-width: 1400px;
+    // max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -208,7 +208,6 @@ main {
     @include adaptiv-vaule("padding-bottom", 140, 60, 1);
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    width: 100%;
     overflow: hidden;
 
     .trinity_title {
@@ -251,7 +250,6 @@ main {
     }
 
     .main_img {
-        // max-width: 1440px;
         width: 100%;
         margin: 0 auto;
 
@@ -282,7 +280,6 @@ main {
 
     .about_img {
         width: 100%;
-        margin: 0 auto;
 
         img {
             width: 100%;
@@ -407,10 +404,11 @@ main {
     }
 
     @keyframes gradient_block_width {
-        0%{
+        0% {
             width: 0;
         }
-        100%{
+
+        100% {
             width: calc(100% - 40px);
         }
     }
@@ -431,12 +429,13 @@ main {
     }
 
 
-   
+
 }
 
 .similar_result {
     @include adaptiv-vaule("padding-top", 25, 20, 1);
     @include adaptiv-vaule("padding-bottom", 80, 40, 1);
+
 
     .tip {
         @include adaptiv-vaule("margin-bottom", 60, 40, 1);
