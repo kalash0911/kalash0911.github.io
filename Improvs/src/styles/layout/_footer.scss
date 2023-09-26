@@ -1,7 +1,7 @@
 footer {
     width: 100%;
     position: relative;
-    @include adaptiv-vaule("padding-top",100, 60, 1);
+    @include adaptiv-vaule("padding-top",80, 60, 1);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -13,6 +13,7 @@ footer {
     }
    .main_page{
     display: flex;
+    justify-content: space-between;
     @include media ("<tablet") {
         display: block;
     }
@@ -49,25 +50,54 @@ footer {
             margin: 0 auto;
         }
     }
+    .menu_footer_block{
+        .menu_block{
+            margin-top: -5px;
+        }
+        display: flex;
+        li{
+            margin-bottom: 16px;
+            p{
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 18px;
+                color: white;
+                text-transform: uppercase;
+                margin-bottom: 23px;
+            }
+            a{
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 16px;
+                color: rgba(166, 166, 166, 1);
+                text-transform: uppercase;
+               &:hover{
+                color: $white;
+                text-decoration: underline;
+               }
+            }
+        }
+    }
     .social_block{
-        margin-left: auto;
-        text-align: end;
+        margin-left: 24px;
+        text-align: start;
+        margin-top: 4px;
         @include media ("<tablet") {
             text-align: center;
         }
         li{
-            @include adaptiv-vaule("margin-bottom",20, 28, 1);
+            @include adaptiv-vaule("margin-bottom",15, 15, 1);
             a{
                 color: $white;
-                text-align: center;
-                @include adaptiv-vaule("font-size",40, 28, 1);
+                text-align: start;
+                @include adaptiv-vaule("font-size",16, 16, 1);
                 font-style: normal;
                 font-weight: 500;
-                @include adaptiv-vaule("line-height",40, 28, 1);
-                letter-spacing: -1px;
+                @include adaptiv-vaule("line-height",16, 16, 1);
                 text-transform: uppercase; 
-                text-decoration: underline;
-                
+                img{
+                    margin-right: 6px;
+                }
                 }
         }
         @include media ("<tablet") {
@@ -102,19 +132,29 @@ footer {
                 letter-spacing: -1px;
                 text-transform: uppercase; 
                 white-space: nowrap;
+                text-transform: uppercase;
             }
             @include media ("<tablet") {
                justify-content: center;
               }
         }
     }
-    .banner_block {
-        position: relative;
-        left: 0;
-        right: 0;
-        img{
-            width: 100%;
-          }
-    
+    .bottom_footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 140px;
+        margin-bottom: 36px;
+        .privacy_block{
+            a{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            color: rgba(219, 219, 219, 1);
+            text-transform: uppercase;
+            }
+        }
     }
+
+
 
