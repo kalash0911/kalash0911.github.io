@@ -7,6 +7,7 @@ const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#main");
 const videos = document.querySelectorAll('[video]');
 const turnSounds = document.querySelectorAll('[turn-sound ]');
+const lastSection = document.querySelector(`[section="brain"]`);
 
 
 function isMobile() {
@@ -157,14 +158,18 @@ function previousSlide() {
                 showHeader(false);
             }
 
-            var element = document.querySelector(`[section="brain"]`);
-            let scrollToValue = element.offsetTop;
-            if (scrollToValue + element.offsetHeight > window.scrollY) {
-                var body = document.querySelector(".main_body_section");
-                body.style.overflowY = "hidden";
+            let section = sections[index].getAttribute('section');
+
+            if (section == "brain") {
+                if (lastSection.offsetTop + lastSection.offsetHeight > window.scrollY) {
+                    var body = document.querySelector(".main_body_section");
+                    body.style.overflowY = "hidden";
+                    scrollByElementName(section);
+                    setSectionState(index);
+                }
+                return;
             }
 
-            let section = sections[index].getAttribute('section');
             scrollByElementName(section);
             setSectionState(index);
         }
@@ -192,6 +197,19 @@ function scrollToOffset(offset) {
     //mainBlock.style.transform = `translate3d(0px, -${offset}px, 0px)`;
 }
 
+//sroll previous
+if (isMobile()) {
+    window.addEventListener("scroll", function () {
+        var currentScroll = window.scrollY;
+        var body = document.querySelector(".main_body_section");
+        if (currentScroll > lastSection.offsetTop) {
+            body.style.overflowY = "auto";
+        }
+        else {
+            body.style.overflowY = "hidden";
+        }
+    });
+}
 
 //header
 function showHeader(isShow) {
