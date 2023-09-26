@@ -157,21 +157,16 @@ function previousSlide() {
                 showHeader(false);
             }
 
-            let section = sections[index].getAttribute('section');
-
-            if (section === "brain") {
-                var element = document.querySelector(`[section=${section}]`);
-                let scrollToValue = element.offsetTop;
-                if (scrollToValue+element.offsetHeight > window.scrollY) {
-                    var body = document.querySelector(".main_body_section");
-                    body.style.overflowY = "hidden";
-                    scrollByElementName(section);
-                    setSectionState(index);
-                }
-            } else {
-                scrollByElementName(section);
-                setSectionState(index);
+            var element = document.querySelector(`[section="brain"]`);
+            let scrollToValue = element.offsetTop;
+            if (scrollToValue + element.offsetHeight > window.scrollY) {
+                var body = document.querySelector(".main_body_section");
+                body.style.overflowY = "hidden";
             }
+
+            let section = sections[index].getAttribute('section');
+            scrollByElementName(section);
+            setSectionState(index);
         }
     }
 }
