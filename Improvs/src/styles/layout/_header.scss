@@ -283,7 +283,7 @@
 
             @include media ('<tablet') {
                 min-width: 100%;
-                padding: 126px 16px 40px 16px;
+                padding: 196px 16px 40px 16px;
             }
 
         }
@@ -331,6 +331,10 @@
             @include adaptiv-vaule("margin-bottom", 30, 36, 1);
             position: relative;
             padding-right: 58px;
+
+    @include media ('<tablet') {
+        padding-right: 0px;
+    }
 
 
             &::after {
@@ -405,4 +409,7 @@
     .menu_overlay_active {
         display: block;
     }
+}
+.header_black{
+    background-color: $black;
 }
