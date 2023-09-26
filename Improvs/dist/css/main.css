@@ -4861,8 +4861,10 @@ main {
           padding: 15.5px 32px; } }
   .video_page .content .video_block .bottom_video_btn {
     position: absolute;
-    right: 20px;
-    bottom: 40px; }
+    left: 50%;
+    bottom: 32px;
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%); }
     @media (max-width: 767px) {
       .video_page .content .video_block .bottom_video_btn {
         right: 16px;
@@ -4918,7 +4920,11 @@ main {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
     @media (max-width: 767px) {
       .video_page .content .video_block .turn_sound {
-        display: none; } }
+        bottom: auto;
+        top: 36px;
+        left: auto;
+        right: 16px;
+        padding: 16px; } }
 
 .contact_form_section {
   height: 100vh;
