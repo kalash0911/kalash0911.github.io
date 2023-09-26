@@ -155,7 +155,7 @@ function previousSlide() {
       var section = sections[index].getAttribute('section');
 
       if (section == "brain") {
-        if (lastSection.offsetTop + lastSection.offsetHeight > window.scrollY) {
+        if (lastSection.offsetTop + lastSection.clientHeight + 420 > window.scrollY) {
           var body = document.querySelector(".main_body_section");
           body.style.overflowY = "hidden";
           scrollByElementName(section);
@@ -193,19 +193,16 @@ function scrollToOffset(offset) {
 } //sroll previous
 
 
-if (isMobile()) {
-  window.addEventListener("scroll", function () {
-    var currentScroll = window.scrollY;
-    var body = document.querySelector(".main_body_section");
+window.addEventListener("scroll", function () {
+  var currentScroll = window.scrollY;
+  var body = document.querySelector(".main_body_section");
 
-    if (currentScroll > lastSection.offsetTop) {
-      body.style.overflowY = "auto";
-    } else {
-      body.style.overflowY = "hidden";
-    }
-  });
-} //header
-
+  if (currentScroll > lastSection.offsetTop) {
+    body.style.overflowY = "auto";
+  } else {
+    body.style.overflowY = "hidden";
+  }
+}); //header
 
 function showHeader(isShow) {
   var header = document.querySelector("#header");
@@ -271,7 +268,7 @@ document.addEventListener('wheel', function (event) {
 
     setTimeout(function () {
       delayWheel = true;
-    }, 1000);
+    }, 500);
   }
 }); //state
 
