@@ -1,5 +1,6 @@
 "use strict";
 
+new WOW().init();
 var slider = new Swiper(".main-slider", {
   spaceBetween: 20,
   slidesPerView: 4.5,

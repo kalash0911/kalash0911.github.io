@@ -1,0 +1,1 @@
+{"version":3,"sources":["meating_burgers_script.js"],"names":["WOW","init"],"mappings":";;AAAA,IAAIA,GAAJ,GAAUC,IAAV","sourcesContent":["new WOW().init();"],"file":"meating_burgers_script.js"}

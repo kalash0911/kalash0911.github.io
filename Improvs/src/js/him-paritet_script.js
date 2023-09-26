@@ -26,12 +26,14 @@ const slider = new Swiper(".swiper_paritet", {
         },
         1024: {
             slidesPerView: 1.3,
+            spaceBetween: 60,
         },
         1440: {
             slidesPerView: 1.5,
+            spaceBetween: 70,
         },
         1920: {
-            slidesPerView: 2.3,
+            slidesPerView: 2.5,
         },
     },
 });

@@ -1,5 +1,6 @@
 "use strict";
 
+new WOW().init();
 var slider = new Swiper(".swiper_paritet", {
   speed: 1400,
   centeredSlides: true,
@@ -25,13 +26,15 @@ var slider = new Swiper(".swiper_paritet", {
       spaceBetween: 40
     },
     1024: {
-      slidesPerView: 1.3
+      slidesPerView: 1.3,
+      spaceBetween: 60
     },
     1440: {
-      slidesPerView: 1.5
+      slidesPerView: 1.5,
+      spaceBetween: 70
     },
     1920: {
-      slidesPerView: 2.3
+      slidesPerView: 2.5
     }
   }
 });

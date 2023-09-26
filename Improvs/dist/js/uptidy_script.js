@@ -1,5 +1,6 @@
 "use strict";
 
+new WOW().init();
 initCleanerSwiper();
 initCustomerSwiper();
 switchSlider();

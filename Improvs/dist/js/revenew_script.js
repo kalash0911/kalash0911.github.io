@@ -1,5 +1,6 @@
 "use strict";
 
+new WOW().init();
 var slider = new Swiper(".swiper_revenew", {
   speed: 1400,
   centeredSlides: true,

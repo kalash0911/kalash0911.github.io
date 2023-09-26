@@ -8,8 +8,8 @@
 
 .swiper_revenew_section {
 
-    .swiper{
-        &::before{
+    .swiper {
+        &::before {
             @include media ("<desktop") {
                 width: 5%;
             }
@@ -38,13 +38,14 @@
         margin-bottom: 30px;
         max-width: 910px;
         width: 100%;
+        border-radius: 0;
 
         @include media (">laptop") {
             max-width: 1200px;
         }
     }
 
-    .slide_text{
+    .slide_text {
         max-width: 910px;
         margin: 0 auto;
         width: 100%;
@@ -74,7 +75,7 @@
         margin-right: 10px;
     }
 
-    .arrows{
+    .arrows {
         @include media ("<desktop") {
             display: none;
         }
