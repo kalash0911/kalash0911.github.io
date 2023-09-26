@@ -204,7 +204,7 @@ main {
 }
 
 .similar_main {
-    @include adaptiv-vaule("padding-top", 120, 60, 1);
+    @include adaptiv-vaule("padding-top", 120, 100, 1);
     @include adaptiv-vaule("padding-bottom", 140, 60, 1);
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
