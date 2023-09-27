@@ -205,10 +205,15 @@ function scrollToOffset(offset) {
 
 
 window.addEventListener("scroll", function () {
+  var body = document.querySelector(".main_body_section");
+
+  if (window.body_lock) {
+    return;
+  }
+
   var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
   var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
   var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
-  var body = document.querySelector(".main_body_section");
 
   if (viewedPageHeight >= viewportOffsetLastVideo) {
     header.classList.remove("header_transparent");
@@ -309,9 +314,9 @@ function getSectionState() {
 
 
 var slider = new Swiper(".case_swiper", {
-  speed: 1400,
+  speed: 1500,
   // centeredSlides: true,
-  // grabCursor: true,
+  grabCursor: true,
   spaceBetween: 20,
   slidesPerView: 1.3,
   breakpoints: {
@@ -329,38 +334,11 @@ var slider = new Swiper(".case_swiper", {
       slidesPerView: 2.2
     }
   }
-});
-
-function filterCases(filter) {
-  var cases = document.querySelectorAll(".case");
-  cases.forEach(function (caseElement) {
-    var tags = caseElement.querySelectorAll(".tag");
-    var shouldShow = false;
-    tags.forEach(function (tag) {
-      if (tag.textContent === filter || filter === "all") {
-        shouldShow = true;
-      }
-    });
-
-    if (shouldShow) {
-      caseElement.style = "display:flex;";
-    } else {
-      caseElement.style = "display:none;";
-    }
-  });
-  var filterItems = document.querySelectorAll(".work_filter_item");
-  filterItems.forEach(function (filterItem) {
-    filterItem.classList.remove("active_filter_item");
-  });
-  var activeFilterItem = document.querySelector("[data-id=\"".concat(filter, "\"]"));
-  activeFilterItem.classList.add("active_filter_item");
-}
-
-var filterItems = document.querySelectorAll(".work_filter_item");
-filterItems.forEach(function (filterItem) {
-  filterItem.addEventListener("click", function (event) {
-    var filter = event.target.getAttribute("data-id");
-    filterCases(filter);
-  });
-});
+}); //our project section
+// let workSection =document.querySelector('[section="work"]'); 
+// var selectProjectButton = document.querySelector("#move_to_project_button");
+// workSection.onmousemove = function (e){
+//     selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth/2) + 'px';
+//     selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight/2)  + 'px';
+// }
 //# sourceMappingURL=main.js.map

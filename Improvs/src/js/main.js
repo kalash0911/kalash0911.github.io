@@ -210,11 +210,15 @@ function scrollToOffset(offset) {
 
 //sroll previous
 window.addEventListener("scroll", function () {
+    let body = document.querySelector(".main_body_section");
+
+    if (window.body_lock){
+        return;
+    }
 
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
     let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
     let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
-    let body = document.querySelector(".main_body_section");
 
     if (viewedPageHeight >= viewportOffsetLastVideo) {
         header.classList.remove("header_transparent");
@@ -322,9 +326,9 @@ function getSectionState() {
 
 //OURWORK
 const slider = new Swiper(".case_swiper", {
-    speed: 1400,
+    speed: 1500,
     // centeredSlides: true,
-    // grabCursor: true,
+    grabCursor: true,
     spaceBetween: 20,
     slidesPerView: 1.3,
     breakpoints: {
@@ -344,41 +348,12 @@ const slider = new Swiper(".case_swiper", {
     },
 });
 
-function filterCases(filter) {
-    const cases = document.querySelectorAll(".case");
 
-    cases.forEach((caseElement) => {
-        const tags = caseElement.querySelectorAll(".tag");
+//our project section
+// let workSection =document.querySelector('[section="work"]'); 
+// var selectProjectButton = document.querySelector("#move_to_project_button");
 
-        let shouldShow = false;
-        tags.forEach((tag) => {
-            if (tag.textContent === filter || filter === "all") {
-                shouldShow = true;
-            }
-        });
-
-        if (shouldShow) {
-            caseElement.style = `display:flex;`;
-        } else {
-            caseElement.style = `display:none;`;
-        }
-    });
-
-    const filterItems = document.querySelectorAll(".work_filter_item");
-    filterItems.forEach((filterItem) => {
-        filterItem.classList.remove("active_filter_item");
-    });
-
-    const activeFilterItem = document.querySelector(`[data-id="${filter}"]`);
-    activeFilterItem.classList.add("active_filter_item");
-}
-
-const filterItems = document.querySelectorAll(".work_filter_item");
-filterItems.forEach((filterItem) => {
-    filterItem.addEventListener("click", (event) => {
-        const filter = event.target.getAttribute("data-id");
-
-        filterCases(filter);
-    });
-});
-
+// workSection.onmousemove = function (e){
+//     selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth/2) + 'px';
+//     selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight/2)  + 'px';
+// }
