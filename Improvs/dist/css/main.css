@@ -4728,7 +4728,7 @@ main {
       flex-direction: column;
       -ms-flex-pack: justify;
       justify-content: space-between;
-      height: 100%;
+      height: auto;
       z-index: 1;
       border: 1px solid #fff;
       padding: 40px; }
@@ -4920,7 +4920,7 @@ body::-webkit-scrollbar {
     padding: 24px;
     position: absolute;
     left: 20px;
-    bottom: 40px;
+    bottom: 32px;
     border-radius: 50%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
     @media (max-width: 767px) {

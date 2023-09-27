@@ -110,7 +110,7 @@ body::-webkit-scrollbar {
                 padding: 24px;
                 position: absolute;
                 left: 20px;
-                bottom: 40px;
+                bottom: 32px;
                 border-radius: 50%;
                 background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
                 @include media ("<tablet") {
