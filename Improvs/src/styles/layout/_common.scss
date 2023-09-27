@@ -1,6 +1,6 @@
 body::-webkit-scrollbar {
     width: 0;
-  }
+}
 
 .main_body_section {
     overflow: hidden;
@@ -11,6 +11,7 @@ body::-webkit-scrollbar {
         .video_block {
             position: relative;
             height: 100vh;
+
             video {
                 width: 100%;
                 height: 100%;
@@ -20,20 +21,26 @@ body::-webkit-scrollbar {
                 position: absolute;
                 right: 20px;
                 top: 32px;
+
                 @include media ("<tablet") {
-                    top:auto;
-                    bottom:40px;
+                    top: auto;
+                    bottom: 40px;
                     right: 16px;
-                        }
+                }
 
                 .btn_black {
                     padding: 28.5px 32px;
                     cursor: pointer;
                     position: relative;
+
                     @include media ("<tablet") {
                         padding: 15.5px 32px;
-                        
-                            }
+
+                    }
+                }
+
+                .hide{
+                    display: none;
                 }
             }
 
@@ -42,12 +49,13 @@ body::-webkit-scrollbar {
                 left: 50%;
                 bottom: 32px;
                 transform: translate(-50%, 0%);
+
                 @include media ("<tablet") {
-                right: 16px;
-                left: 16px;
-                bottom: 36px;
-                transform: none;
-                right: 86px;
+                    right: 16px;
+                    left: 16px;
+                    bottom: 36px;
+                    transform: none;
+                    right: 86px;
 
                 }
             }
@@ -67,10 +75,11 @@ body::-webkit-scrollbar {
                 transition: $transition_all_03;
                 background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
                 backdrop-filter: blur(10px);
+
                 @include media ("<tablet") {
                     padding: 18px 0;
                     text-align: center;
-                        }
+                }
 
 
                 .left_arrow,
@@ -82,12 +91,12 @@ body::-webkit-scrollbar {
 
                 .left_arrow {
                     left: 32px;
-               
+
                 }
 
                 .right_arrow {
                     right: 32px;
-              
+
                 }
 
                 svg {
@@ -115,11 +124,12 @@ body::-webkit-scrollbar {
                 bottom: 32px;
                 border-radius: 50%;
                 background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+
                 @include media ("<tablet") {
-                bottom: 36px;
-                left: auto;
-                right: 16px;
-                padding: 16px;
+                    bottom: 36px;
+                    left: auto;
+                    right: 16px;
+                    padding: 16px;
                 }
 
             }
@@ -134,27 +144,31 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     position: relative;
-    @include media ("<tablet") {
-       align-items: start;
-       padding-top: 80px;
-     }
 
-.img_brain_block{
-    position: absolute;
-    right: 0;
-    z-index: 1;
     @include media ("<tablet") {
-        width: 200%;
-        top:200px;
-     }
-}
+        align-items: start;
+        padding-top: 80px;
+    }
+
+    .img_brain_block {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+
+        @include media ("<tablet") {
+            width: 200%;
+            top: 200px;
+        }
+    }
+
     .container {
         display: flex;
         align-items: center;
         position: relative;
+
         @include media ("<tablet") {
             display: block;
-         }
+        }
     }
 
     .content {
@@ -184,10 +198,11 @@ body::-webkit-scrollbar {
         letter-spacing: -1px;
         @include adaptiv-vaule(" margin-bottom", 163, 44, 1);
     }
-.brain_text_first{
-margin-bottom: 10px;
-}
- 
+
+    .brain_text_first {
+        margin-bottom: 10px;
+    }
+
 }
 
 
@@ -220,10 +235,12 @@ margin-bottom: 10px;
         font-weight: 500;
         letter-spacing: -3px;
         text-transform: uppercase;
+
         @include media ("<tablet") {
-           margin-bottom: 44px;
+            margin-bottom: 44px;
         }
     }
+
     .btn_white_circle {
         cursor: pointer;
         width: 172px;
@@ -285,27 +302,30 @@ margin-bottom: 10px;
             }
         }
     }
-  
+
 }
 
 
 //pop_up
-.body_lock{
-   overflow: hidden!important; 
+.body_lock {
+    overflow: hidden !important;
 }
-.overlay-popup{
+
+.overlay-popup {
     background: #0E0E0ECC;
     position: fixed;
-     top: 0;
-      left: 0;
-       width: 100vw;
-        height: 100vh;
-         z-index: 10;
-         display: none;
-        &.active{
-            display: block;
-         }
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: none;
+
+    &.active {
+        display: block;
+    }
 }
+
 .popup {
     display: none;
     position: fixed;
@@ -319,13 +339,14 @@ margin-bottom: 10px;
         display: block;
     }
 }
+
 .close_popup {
     position: absolute;
     width: 32px;
     height: 32px;
     z-index: 5;
-    top:42px;
-    right:42px;
+    top: 42px;
+    right: 42px;
     cursor: pointer;
 
     span {
@@ -364,6 +385,7 @@ margin-bottom: 10px;
 
 
 }
+
 .contact_form_section {
     height: 100vh;
     width: 100%;
@@ -374,19 +396,21 @@ margin-bottom: 10px;
     .container {
         display: flex;
         align-items: center;
-        justify-content: center;  
+        justify-content: center;
     }
-    .back_form{
+
+    .back_form {
         max-width: 790px;
         width: 100%;
-        background:rgba(14, 14, 14, 0.72);
+        background: rgba(14, 14, 14, 0.72);
     }
+
     .content {
         margin: 0 auto;
         background: linear-gradient(270deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.6%),
-        linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.15%),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.72%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.21%);   
+            linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.15%),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.72%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.21%);
         padding: 68px;
         position: relative;
     }
@@ -480,7 +504,7 @@ margin-bottom: 10px;
 
         .left_arrow {
             left: 16px;
-          
+
         }
 
         .right_arrow {
@@ -503,19 +527,25 @@ margin-bottom: 10px;
             }
         }
     }
-    .site_btn_white:hover .left_arrow{
+
+    .site_btn_white:hover .left_arrow {
         left: 35%;
     }
-    .site_btn_white:hover .right_arrow{
+
+    .site_btn_white:hover .right_arrow {
         right: 35%;
     }
 }
-.safari_button{
+
+.safari_button {
     bottom: 116px;
 }
-.our_work_main{
+
+.our_work_main {
     padding-bottom: 100px;
-.our_work_btn{
-    margin: 60px 20px 0px;
+
+    .our_work_btn {
+        margin: 60px 20px 0px;
+    }
 }
-}
+

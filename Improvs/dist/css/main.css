@@ -4867,6 +4867,8 @@ body::-webkit-scrollbar {
       @media (max-width: 767px) {
         .video_page .content .video_block .top_video_btn .btn_black {
           padding: 15.5px 32px; } }
+    .video_page .content .video_block .top_video_btn .hide {
+      display: none; }
   .video_page .content .video_block .bottom_video_btn {
     position: absolute;
     left: 50%;

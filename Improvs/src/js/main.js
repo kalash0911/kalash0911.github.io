@@ -10,6 +10,8 @@ const turnSounds = document.querySelectorAll('[turn-sound ]');
 const lastSection = document.querySelector(`[section="brain"]`);
 const lastVideoSection = document.querySelector(`[section="video3"]`);
 const header = document.querySelector("#header");
+const copyCodeButton = document.querySelector("[copyCode]");
+
 
 
 function isMobile() {
@@ -44,9 +46,17 @@ function init() {
             bottom_video_btn.classList.add("safari_button");
         });
     }
+
+
+    let firstVideo=videos[0];
+    firstVideo.addEventListener('timeupdate', function () {
+        if(firstVideo.currentTime>=3.50000){
+            hideCopyCodeButton(true);
+        }
+    }, false);
 }
 
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', function () {
     if (isMobile()) {
         changeVideoForMobile();
     }
@@ -76,6 +86,15 @@ function copyCode() {
             .style("fill", "#005BBB").text("Improvs");`;
 
     navigator.clipboard.writeText(jsCode);
+}
+
+function hideCopyCodeButton(isHide) {
+    if (isHide) {
+        copyCodeButton.classList.add("hide");
+        
+    } else {
+        copyCodeButton.classList.remove("hide");
+    }
 }
 
 //video
@@ -125,6 +144,10 @@ function stopAllVideo() {
 }
 
 function nextSlide() {
+    if (window.body_lock){
+        return;
+    }
+
     let index = getSectionState();
     if (index) {
         if (index <= sections.length - 2) {
@@ -160,6 +183,10 @@ function nextSlide() {
 }
 
 function previousSlide(isDownScroll = false) {
+    if (window.body_lock){
+        return;
+    }
+
     let index = getSectionState();
     if (index) {
         if (index > 0) {
@@ -167,6 +194,7 @@ function previousSlide(isDownScroll = false) {
 
             if (index <= 2) {
                 stopAllVideo();
+                hideCopyCodeButton(false);
                 videos[index].play();
             }
 
@@ -187,8 +215,6 @@ function previousSlide(isDownScroll = false) {
 
 //scroll
 function scrollByElementName(elementName) {
-    if (window.body_lock) return;
-
     let element = "";
     element = document.querySelector(`[section=${elementName}]`);
     if (!element) {

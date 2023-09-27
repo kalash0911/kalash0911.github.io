@@ -11,6 +11,7 @@ var turnSounds = document.querySelectorAll('[turn-sound ]');
 var lastSection = document.querySelector("[section=\"brain\"]");
 var lastVideoSection = document.querySelector("[section=\"video3\"]");
 var header = document.querySelector("#header");
+var copyCodeButton = document.querySelector("[copyCode]");
 
 function isMobile() {
   var check = false;
@@ -49,9 +50,16 @@ function init() {
       bottom_video_btn.classList.add("safari_button");
     });
   }
+
+  var firstVideo = videos[0];
+  firstVideo.addEventListener('timeupdate', function () {
+    if (firstVideo.currentTime >= 3.50000) {
+      hideCopyCodeButton(true);
+    }
+  }, false);
 }
 
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', function () {
   if (isMobile()) {
     changeVideoForMobile();
   }
@@ -60,6 +68,14 @@ window.addEventListener('resize', function (event) {
 function copyCode() {
   var jsCode = "<!DOCTYPE html>\n    <head><title></title></head>\n    <body>\n    <svg id=\"mySvg\" width=\"960\" height=\"500\"></svg>\n    <script src=\"http://d3js.org/d3.v7.min.js\"></script>\n    <script src=\"http://d3js.org/topojson.v3.min.js\"></script>\n    <script>\n    var width = 960, height = 500, svg = d3.select(\"svg\");\n    d3.json(\"https://raw.githubusercontent.com/org-scn-design-studio-\" +\n        \"community/sdkcommunitymaps/master/geojson/Europe/Ukraine-regions.json\"\n    ).then(function (data) {\n        var land = topojson.feature(data, data.objects.UKR_adm1),\n            projection = d3.geoAlbers().rotate([-30, 0, 0])\n                .fitSize([.9 * width, .9 * height], land),\n            path = d3.geoPath().projection(projection);\n        svg.selectAll(\"path\").data(land.features).enter()\n            .append(\"path\").attr(\"d\", path).attr(\"fill\", \"#FFD500')\n            .attr(\"stroke\", \"#005BBB\");\n        svg.append(\"text\").attr(\"x\", (width / 2)).attr(\"y\", height - (20))\n            .attr(\"text-anchor\", \"middle\").style(\"font-size\", \"24px\")\n            .style(\"fill\", \"#005BBB\").text(\"Improvs\");";
   navigator.clipboard.writeText(jsCode);
+}
+
+function hideCopyCodeButton(isHide) {
+  if (isHide) {
+    copyCodeButton.classList.add("hide");
+  } else {
+    copyCodeButton.classList.remove("hide");
+  }
 } //video
 
 
@@ -115,6 +131,10 @@ function stopAllVideo() {
 }
 
 function nextSlide() {
+  if (window.body_lock) {
+    return;
+  }
+
   var index = getSectionState();
 
   if (index) {
@@ -154,6 +174,11 @@ function nextSlide() {
 
 function previousSlide() {
   var isDownScroll = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+  if (window.body_lock) {
+    return;
+  }
+
   var index = getSectionState();
 
   if (index) {
@@ -162,6 +187,7 @@ function previousSlide() {
 
       if (index <= 2) {
         stopAllVideo();
+        hideCopyCodeButton(false);
         videos[index].play();
       }
 
@@ -183,7 +209,6 @@ function previousSlide() {
 
 
 function scrollByElementName(elementName) {
-  if (window.body_lock) return;
   var element = "";
   element = document.querySelector("[section=".concat(elementName, "]"));
 
