@@ -273,7 +273,7 @@
             z-index: -1;
             position: fixed;
             min-width: 609px;
-            height: 100%;
+            height: auto;
             overflow: auto;
             top: 0;
             left: -200%;
@@ -318,6 +318,9 @@
             @include media ('<tablet') {
                 display: none;
             }
+        }
+        .header_btn_none{
+            display: none;
         }
 
         .menu__list {
