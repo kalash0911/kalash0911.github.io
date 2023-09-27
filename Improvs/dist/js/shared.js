@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   initHeader();
+  addEventButtonPopUp();
 }); //BURGERMENU
 
 function initHeader() {
@@ -55,6 +56,42 @@ function initHeader() {
       menuBody.classList.remove("menu_active");
       menuOverlay.classList.remove("menu_overlay_active");
     });
+  }
+} //popUp
+
+
+var popup = document.querySelector(".popup");
+var overlay = document.querySelector(".overlay-popup");
+var body = document.querySelector("body");
+var btnsShowPopUp = document.querySelectorAll("[show_pop_up]");
+var btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
+
+function addEventButtonPopUp() {
+  btnsShowPopUp.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      Show(true);
+    });
+  });
+  btnsHidePopUp.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      Show(false);
+    });
+  });
+}
+
+var isOpen = false;
+
+function Show(isShow) {
+  if (isShow) {
+    overlay.classList.add("active");
+    popup.classList.add("active");
+    body.classList.add("body_lock");
+    isOpen = true;
+  } else {
+    overlay.classList.remove("active");
+    popup.classList.remove("active");
+    body.classList.remove("body_lock");
+    isOpen = false;
   }
 }
 //# sourceMappingURL=shared.js.map

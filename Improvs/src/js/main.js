@@ -8,7 +8,7 @@ const mainBlock = document.querySelector("#main");
 const videos = document.querySelectorAll('[video]');
 const turnSounds = document.querySelectorAll('[turn-sound ]');
 const lastSection = document.querySelector(`[section="brain"]`);
-const lastVideoSection= document.querySelector(`[section="video3"]`);
+const lastVideoSection = document.querySelector(`[section="video3"]`);
 const header = document.querySelector("#header");
 
 
@@ -24,7 +24,7 @@ function isMobile() {
 };
 
 function init() {
-    window.isDownScroll=false;
+    window.isDownScroll = false;
     window.currentIndex = null;
     showHeader(false);
 
@@ -146,7 +146,7 @@ function nextSlide() {
     }
 }
 
-function previousSlide(isDownScroll=false) {
+function previousSlide(isDownScroll = false) {
     let index = getSectionState();
     if (index) {
         if (index > 0) {
@@ -162,7 +162,7 @@ function previousSlide(isDownScroll=false) {
             }
 
             let section = sections[index].getAttribute('section');
-            if (section == "brain"&&!isDownScroll) {
+            if (section == "brain" && !isDownScroll) {
                 return;
             }
 
@@ -197,25 +197,24 @@ function scrollToOffset(offset) {
 window.addEventListener("scroll", function () {
 
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-    let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom+lastSection.offsetHeight + window.scrollY);
-    let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom+lastSection.offsetHeight + window.scrollY);
+    let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+    let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
     let body = document.querySelector(".main_body_section");
 
-    if(viewedPageHeight>=viewportOffsetLastVideo){
+    if (viewedPageHeight >= viewportOffsetLastVideo) {
         header.classList.remove("header_transparent");
-    }else{
+    } else {
         header.classList.add("header_transparent");
     }
 
-
-    if(viewedPageHeight<=viewportOffsetLastSection&&window.isDownScroll){
-        window.isDownScroll=false;
+    if (viewedPageHeight <= viewportOffsetLastSection && window.isDownScroll) {
+        window.isDownScroll = false;
         previousSlide(true);
         body.style.overflowY = "hidden";
     }
 
-    if(viewedPageHeight>=viewportOffsetLastSection){
-        window.isDownScroll=true;
+    if (viewedPageHeight >= viewportOffsetLastSection) {
+        window.isDownScroll = true;
     }
 });
 

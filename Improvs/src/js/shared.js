@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     initHeader();
+    addEventButtonPopUp();
 });
 
 //BURGERMENU
@@ -54,5 +55,37 @@ function initHeader() {
             menuBody.classList.remove("menu_active");
             menuOverlay.classList.remove("menu_overlay_active");
         });
+    }
+}
+
+//popUp
+const popup = document.querySelector(".popup");
+const overlay = document.querySelector(".overlay-popup");
+const body = document.querySelector("body");
+const btnsShowPopUp = document.querySelectorAll("[show_pop_up]");
+const btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
+
+function addEventButtonPopUp(){
+    btnsShowPopUp.forEach(function (btn) {
+        btn.addEventListener('click', function () { Show(true) });
+    });
+
+    btnsHidePopUp.forEach(function (btn) {
+        btn.addEventListener('click', function () { Show(false) });
+    });
+}
+
+let isOpen = false;
+function Show(isShow) {
+    if (isShow) {
+        overlay.classList.add("active");
+        popup.classList.add("active");
+        body.classList.add("body_lock");
+        isOpen = true;
+    } else {
+        overlay.classList.remove("active");
+        popup.classList.remove("active");
+        body.classList.remove("body_lock");
+        isOpen = false;
     }
 }
