@@ -5308,6 +5308,9 @@ body::-webkit-scrollbar {
 .safari_button {
   bottom: 116px; }
 
+.our_work_btn {
+  margin: 0 20px; }
+
 footer {
   width: 100%;
   position: relative;
