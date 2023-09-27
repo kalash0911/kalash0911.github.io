@@ -4833,6 +4833,9 @@ main {
 .header_transparent {
   background-color: none; }
 
+body::-webkit-scrollbar {
+  width: 0; }
+
 .main_body_section {
   overflow: hidden; }
 

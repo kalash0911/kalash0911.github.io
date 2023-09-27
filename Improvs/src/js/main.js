@@ -22,6 +22,7 @@ function isMobile() {
 };
 
 function init() {
+    window.isDownScroll=false;
     window.currentIndex = null;
     showHeader(false);
 
@@ -143,7 +144,7 @@ function nextSlide() {
     }
 }
 
-function previousSlide() {
+function previousSlide(isDownScroll=false) {
     let index = getSectionState();
     if (index) {
         if (index > 0) {
@@ -159,15 +160,10 @@ function previousSlide() {
             }
 
             let section = sections[index].getAttribute('section');
-            if (section == "brain") {
-                if ((lastSection.offsetTop + lastSection.clientHeight+420) > window.scrollY) {
-                    var body = document.querySelector(".main_body_section");
-                    body.style.overflowY = "hidden";
-                    scrollByElementName(section);
-                    setSectionState(index);
-                }
+            if (section == "brain"&&!isDownScroll) {
                 return;
             }
+
             scrollByElementName(section);
             setSectionState(index);
         }
@@ -196,15 +192,20 @@ function scrollToOffset(offset) {
 }
 
 //sroll previous
-
 window.addEventListener("scroll", function () {
-    var currentScroll = window.scrollY;
-    var body = document.querySelector(".main_body_section");
-    if (currentScroll > lastSection.offsetTop) {
-        body.style.overflowY = "auto";
-    }
-    else {
+
+    let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
+    let viewportOffset = Math.abs(lastSection.getBoundingClientRect().bottom+lastSection.offsetHeight + window.scrollY);
+    let body = document.querySelector(".main_body_section");
+
+    if(viewedPageHeight<=viewportOffset&&window.isDownScroll){
+        window.isDownScroll=false;
+        previousSlide(true);
         body.style.overflowY = "hidden";
+    }
+
+    if(viewedPageHeight>=viewportOffset){
+        window.isDownScroll=true;
     }
 });
 
@@ -276,7 +277,7 @@ document.addEventListener('wheel', function (event) {
 
         setTimeout(function () {
             delayWheel = true;
-        }, 500);
+        }, 1000);
     }
 });
 
