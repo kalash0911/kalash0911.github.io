@@ -8,6 +8,8 @@ const mainBlock = document.querySelector("#main");
 const videos = document.querySelectorAll('[video]');
 const turnSounds = document.querySelectorAll('[turn-sound ]');
 const lastSection = document.querySelector(`[section="brain"]`);
+const lastVideoSection= document.querySelector(`[section="video3"]`);
+const header = document.querySelector("#header");
 
 
 function isMobile() {
@@ -195,16 +197,24 @@ function scrollToOffset(offset) {
 window.addEventListener("scroll", function () {
 
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-    let viewportOffset = Math.abs(lastSection.getBoundingClientRect().bottom+lastSection.offsetHeight + window.scrollY);
+    let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom+lastSection.offsetHeight + window.scrollY);
+    let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom+lastSection.offsetHeight + window.scrollY);
     let body = document.querySelector(".main_body_section");
 
-    if(viewedPageHeight<=viewportOffset&&window.isDownScroll){
+    if(viewedPageHeight>=viewportOffsetLastVideo){
+        header.classList.remove("header_transparent");
+    }else{
+        header.classList.add("header_transparent");
+    }
+
+
+    if(viewedPageHeight<=viewportOffsetLastSection&&window.isDownScroll){
         window.isDownScroll=false;
         previousSlide(true);
         body.style.overflowY = "hidden";
     }
 
-    if(viewedPageHeight>=viewportOffset){
+    if(viewedPageHeight>=viewportOffsetLastSection){
         window.isDownScroll=true;
     }
 });
@@ -212,7 +222,6 @@ window.addEventListener("scroll", function () {
 
 //header
 function showHeader(isShow) {
-    let header = document.querySelector("#header");
     if (isShow) {
         header.style.display = "block";
     } else {

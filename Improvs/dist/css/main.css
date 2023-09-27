@@ -4831,7 +4831,7 @@ main {
     display: block; }
 
 .header_transparent {
-  background-color: none; }
+  background: none; }
 
 body::-webkit-scrollbar {
   width: 0; }
