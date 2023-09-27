@@ -4447,7 +4447,8 @@ main {
   max-height: 80px;
   opacity: 0;
   -webkit-animation: animateHeader 1s forwards;
-  animation: animateHeader 1s forwards; }
+  animation: animateHeader 1s forwards;
+  background-color: #0E0E0E; }
   @media (max-width: 767px) {
     .header {
       max-height: 48px; } }
@@ -4829,8 +4830,8 @@ main {
   .header .menu_overlay_active {
     display: block; }
 
-.header_black {
-  background-color: #0E0E0E; }
+.header_transparent {
+  background-color: none; }
 
 .main_body_section {
   overflow: hidden; }

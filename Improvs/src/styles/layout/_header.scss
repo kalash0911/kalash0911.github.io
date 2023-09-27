@@ -7,6 +7,7 @@
     max-height: 80px;
     opacity: 0;
     animation: animateHeader 1s forwards;
+    background-color: $black;
 
     @include media ('<tablet') {
         max-height: 48px;
@@ -410,6 +411,6 @@
         display: block;
     }
 }
-.header_black{
-    background-color: $black;
+.header_transparent{
+    background-color: none;
 }
