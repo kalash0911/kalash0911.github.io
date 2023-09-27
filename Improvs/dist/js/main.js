@@ -28,6 +28,11 @@ function isMobile() {
 
 ;
 
+function isSafari() {
+  var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  return isSafari;
+}
+
 function init() {
   window.isDownScroll = false;
   window.currentIndex = null;
@@ -35,6 +40,13 @@ function init() {
 
   if (isMobile()) {
     changeVideoForMobile();
+  }
+
+  if (isMobile() && isSafari()) {
+    var bottom_video_btns = document.querySelectorAll(".bottom_video_btn");
+    bottom_video_btns.forEach(function (bottom_video_btn) {
+      bottom_video_btn.classList.add("safari_button");
+    });
   }
 }
 
