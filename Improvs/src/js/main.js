@@ -31,6 +31,7 @@ function isSafari() {
 function init() {
     window.isDownScroll = false;
     window.currentIndex = null;
+    window.body_lock = false;
     showHeader(false);
 
     if (isMobile()) {
@@ -186,6 +187,8 @@ function previousSlide(isDownScroll = false) {
 
 //scroll
 function scrollByElementName(elementName) {
+    if (window.body_lock) return;
+
     let element = "";
     element = document.querySelector(`[section=${elementName}]`);
     if (!element) {

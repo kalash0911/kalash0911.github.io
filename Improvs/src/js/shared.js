@@ -67,7 +67,7 @@ const btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
 
 function addEventButtonPopUp(){
     btnsShowPopUp.forEach(function (btn) {
-        btn.addEventListener('click', function () { Show(true) });
+        btn.addEventListener('click', function () { Show(true) },false);
     });
 
     btnsHidePopUp.forEach(function (btn) {
@@ -88,4 +88,5 @@ function Show(isShow) {
         body.classList.remove("body_lock");
         isOpen = false;
     }
+    window.body_lock=isOpen;
 }

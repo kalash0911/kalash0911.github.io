@@ -70,7 +70,7 @@ function addEventButtonPopUp() {
   btnsShowPopUp.forEach(function (btn) {
     btn.addEventListener('click', function () {
       Show(true);
-    });
+    }, false);
   });
   btnsHidePopUp.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -93,5 +93,7 @@ function Show(isShow) {
     body.classList.remove("body_lock");
     isOpen = false;
   }
+
+  window.body_lock = isOpen;
 }
 //# sourceMappingURL=shared.js.map
