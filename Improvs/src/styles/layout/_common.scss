@@ -289,6 +289,19 @@ margin-bottom: 10px;
 
 
 //pop_up
+.overlay-popup{
+    background: #0E0E0ECC;
+    position: fixed;
+     top: 0;
+      left: 0;
+       width: 100vw;
+        height: 100vh;
+         z-index: 10;
+         display: none;
+        &.active{
+            display: block;
+         }
+}
 .popup {
     display: none;
     position: fixed;
@@ -296,24 +309,64 @@ margin-bottom: 10px;
     left: 50%;
     transform: translate(-50%);
     width: 100%;
-    max-width: 980px;
     z-index: 10;
-    padding: 50px 0;
 
     &.active {
         display: block;
     }
 }
+.close_popup {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    z-index: 5;
+    top:46px;
+    right:46px;
+    cursor: pointer;
 
+    span {
+        position: absolute;
+        top: 11px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        border-radius: 10px;
+        transition: all .7s ease 0s;
+        opacity: 0;
+
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $white;
+        border-radius: 10px;
+    }
+
+    &::before {
+        top: 11px;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        bottom: 11px;
+        transform: rotate(-45deg);
+    }
+
+
+}
 .contact_form_section {
     height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    @include adaptiv-vaule("padding-top", 135, 115, 1);
-    @include adaptiv-vaule("padding-bottom", 135, 115, 1);
-    background: url(../images/main_page/background-form.png);
+
     .container {
         display: flex;
         align-items: center;
@@ -321,9 +374,15 @@ margin-bottom: 10px;
     }
 
     .content {
+        position: relative;
         max-width: 680px;
         width: 100%;
         margin: 0 auto;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.6%),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.15%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.72%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.21%);   
+        padding: 68px;
     }
 
     .contact_title {
