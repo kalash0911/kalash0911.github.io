@@ -4500,7 +4500,8 @@ main {
       text-transform: uppercase;
       padding: 18px 32px;
       border: 1px solid #fff;
-      transition: all 0.3s ease; }
+      transition: all 0.3s ease;
+      background: none; }
       .header .header__content .btn_black:hover {
         background-color: #fff;
         transition: all 0.3s ease;
@@ -5164,13 +5165,15 @@ body::-webkit-scrollbar {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center; }
-  .contact_form_section .content {
-    position: relative;
+  .contact_form_section .back_form {
     max-width: 680px;
     width: 100%;
+    background: rgba(14, 14, 14, 0.72); }
+  .contact_form_section .content {
     margin: 0 auto;
     background: linear-gradient(270deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.6%), linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.15%), linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.72%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.21%);
-    padding: 68px; }
+    padding: 68px;
+    position: relative; }
   .contact_form_section .contact_title {
     color: #fff;
     text-align: center;
@@ -5343,7 +5346,8 @@ footer {
     letter-spacing: -0.14px;
     text-transform: uppercase;
     padding: 18px 32px;
-    border: 1px solid #fff; }
+    border: 1px solid #fff;
+    background: none; }
     .btn_block .btn_black:hover {
       background-color: #fff;
       transition: all 0.3s ease;
