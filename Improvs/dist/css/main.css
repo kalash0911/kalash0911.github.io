@@ -5090,6 +5090,9 @@ body::-webkit-scrollbar {
         fill: #fff;
         transition: all 0.3s ease; }
 
+.body_lock {
+  overflow: hidden !important; }
+
 .overlay-popup {
   background: #0E0E0ECC;
   position: fixed;
@@ -5116,11 +5119,11 @@ body::-webkit-scrollbar {
 
 .close_popup {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   z-index: 5;
-  top: 46px;
-  right: 46px;
+  top: 42px;
+  right: 42px;
   cursor: pointer; }
   .close_popup span {
     position: absolute;
@@ -5141,11 +5144,11 @@ body::-webkit-scrollbar {
     background-color: #fff;
     border-radius: 10px; }
   .close_popup::before {
-    top: 11px;
+    top: 15px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .close_popup::after {
-    bottom: 11px;
+    bottom: 15px;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
@@ -5166,7 +5169,7 @@ body::-webkit-scrollbar {
     -ms-flex-pack: center;
     justify-content: center; }
   .contact_form_section .back_form {
-    max-width: 680px;
+    max-width: 790px;
     width: 100%;
     background: rgba(14, 14, 14, 0.72); }
   .contact_form_section .content {
@@ -5297,6 +5300,10 @@ body::-webkit-scrollbar {
       .contact_form_section .form_btn:hover svg {
         fill: #fff;
         transition: all 0.3s ease; }
+  .contact_form_section .site_btn_white:hover .left_arrow {
+    left: 35%; }
+  .contact_form_section .site_btn_white:hover .right_arrow {
+    right: 35%; }
 
 footer {
   width: 100%;
