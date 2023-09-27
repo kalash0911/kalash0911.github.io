@@ -399,18 +399,15 @@ body::-webkit-scrollbar {
         justify-content: center;
     }
 
-    .back_form {
+    .back_form{
         max-width: 790px;
         width: 100%;
-        background: rgba(14, 14, 14, 0.72);
+        background:rgba(255, 255, 255, 0.1)
+        
     }
-
     .content {
         margin: 0 auto;
-        background: linear-gradient(270deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.6%),
-            linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.15%),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.72%),
-            linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.21%);
+        backdrop-filter: blur(10px);
         padding: 68px;
         position: relative;
     }

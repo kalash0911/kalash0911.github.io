@@ -4838,6 +4838,8 @@ main {
 
 .header_transparent {
   background: none; }
+  .header_transparent .header_btn {
+    opacity: 0; }
 
 body::-webkit-scrollbar {
   width: 0; }
@@ -5178,10 +5180,11 @@ body::-webkit-scrollbar {
   .contact_form_section .back_form {
     max-width: 790px;
     width: 100%;
-    background: rgba(14, 14, 14, 0.72); }
+    background: rgba(255, 255, 255, 0.1); }
   .contact_form_section .content {
     margin: 0 auto;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.6%), linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.15%), linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 8.72%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 9.21%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     padding: 68px;
     position: relative; }
   .contact_form_section .contact_title {
