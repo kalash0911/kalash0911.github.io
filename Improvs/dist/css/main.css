@@ -4741,7 +4741,8 @@ main {
           padding: 0px; } }
       .header .header__content .menu__wrap .site_btn_white {
         /* Только если меньше контейнера */
-        font-size: 20px; }
+        font-size: 20px;
+        padding: 28.5px 0px; }
         @media (max-width: 1300px) {
           .header .header__content .menu__wrap .site_btn_white {
             font-size: calc(18px + 2 * ((100vw - calc(375px)) / 925)); } }
@@ -4771,28 +4772,6 @@ main {
       @media (max-width: 767px) {
         .header .header__content .menu__item {
           padding-right: 0px; } }
-      .header .header__content .menu__item::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        background: url(../images/arrow-menu.svg) no-repeat;
-        background-size: contain;
-        /* Только если меньше контейнера */
-        width: 32px;
-        /* Только если меньше контейнера */
-        height: 32px;
-        opacity: 0;
-        transition: 0.5s; }
-        @media (max-width: 1300px) {
-          .header .header__content .menu__item::after {
-            width: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
-        @media (max-width: 1300px) {
-          .header .header__content .menu__item::after {
-            height: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
-      .header .header__content .menu__item:hover::after {
-        opacity: 1; }
-      .header .header__content .menu__item:focus::after {
-        opacity: 1; }
       .header .header__content .menu__item a {
         transition: color .3s ease 0s;
         /* Только если меньше контейнера */
@@ -4813,10 +4792,6 @@ main {
         @media (max-width: 1300px) {
           .header .header__content .menu__item a {
             line-height: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
-        .header .header__content .menu__item a:hover {
-          opacity: 1; }
-        .header .header__content .menu__item a:focus::after {
-          opacity: 1; }
     @media (max-width: 767px) {
       .header .header__content .logo_block {
         -ms-flex-order: 1;
@@ -4841,6 +4816,27 @@ main {
   .header_transparent .header_btn {
     opacity: 0; }
 
+.menu_active_link a {
+  opacity: 1 !important; }
+
+.menu_active_link::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  background: url(../images/arrow-menu.svg) no-repeat;
+  background-size: contain;
+  /* Только если меньше контейнера */
+  width: 32px;
+  /* Только если меньше контейнера */
+  height: 32px;
+  opacity: 1; }
+  @media (max-width: 1300px) {
+    .menu_active_link::after {
+      width: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
+  @media (max-width: 1300px) {
+    .menu_active_link::after {
+      height: calc(20px + 12 * ((100vw - calc(375px)) / 925)); } }
+
 body::-webkit-scrollbar {
   width: 0; }
 
@@ -4856,7 +4852,7 @@ body::-webkit-scrollbar {
   .video_page .content .video_block .top_video_btn {
     position: absolute;
     right: 20px;
-    top: 32px; }
+    top: 13px; }
     @media (max-width: 767px) {
       .video_page .content .video_block .top_video_btn {
         top: auto;
@@ -4865,7 +4861,8 @@ body::-webkit-scrollbar {
     .video_page .content .video_block .top_video_btn .btn_black {
       padding: 28.5px 32px;
       cursor: pointer;
-      position: relative; }
+      position: relative;
+      font-size: 20px; }
       @media (max-width: 767px) {
         .video_page .content .video_block .top_video_btn .btn_black {
           padding: 15.5px 32px; } }
@@ -4890,9 +4887,9 @@ body::-webkit-scrollbar {
     position: relative;
     width: 100%;
     color: #fff;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 500;
-    line-height: 17.6px;
+    line-height: 25.6px;
     letter-spacing: -0.14px;
     text-transform: uppercase;
     padding: 28.5px 58px;
@@ -5180,11 +5177,11 @@ body::-webkit-scrollbar {
   .contact_form_section .back_form {
     max-width: 790px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); }
+    background: rgba(255, 255, 255, 0.05); }
   .contact_form_section .content {
     margin: 0 auto;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     padding: 68px;
     position: relative; }
   .contact_form_section .contact_title {
@@ -5322,6 +5319,13 @@ body::-webkit-scrollbar {
   padding-bottom: 100px; }
   .our_work_main .our_work_btn {
     margin: 60px 20px 0px; }
+    .our_work_main .our_work_btn .site_btn_white {
+      background: none;
+      color: #fff;
+      padding: 28.5px 0px;
+      font-size: 20px; }
+      .our_work_main .our_work_btn .site_btn_white svg {
+        fill: #fff; }
 
 footer {
   width: 100%;
