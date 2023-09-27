@@ -48,9 +48,9 @@ function init() {
     }
 
 
-    let firstVideo=videos[0];
+    let firstVideo = videos[0];
     firstVideo.addEventListener('timeupdate', function () {
-        if(firstVideo.currentTime>=3.50000){
+        if (firstVideo.currentTime >= 3.50000) {
             hideCopyCodeButton(true);
         }
     }, false);
@@ -91,14 +91,13 @@ function copyCode() {
 function hideCopyCodeButton(isHide) {
     if (isHide) {
         copyCodeButton.classList.add("hide");
-        
+
     } else {
         copyCodeButton.classList.remove("hide");
     }
 }
 
 //video
-
 function changeVideoForMobile() {
     for (let index = 0; index < videos.length; index++) {
         const video = videos[index];
@@ -144,7 +143,7 @@ function stopAllVideo() {
 }
 
 function nextSlide() {
-    if (window.body_lock){
+    if (window.body_lock) {
         return;
     }
 
@@ -183,7 +182,7 @@ function nextSlide() {
 }
 
 function previousSlide(isDownScroll = false) {
-    if (window.body_lock){
+    if (window.body_lock) {
         return;
     }
 
@@ -238,7 +237,7 @@ function scrollToOffset(offset) {
 window.addEventListener("scroll", function () {
     let body = document.querySelector(".main_body_section");
 
-    if (window.body_lock){
+    if (window.body_lock) {
         return;
     }
 
@@ -352,11 +351,13 @@ function getSectionState() {
 
 //OURWORK
 const slider = new Swiper(".case_swiper", {
-    speed: 1500,
-    // centeredSlides: true,
     grabCursor: true,
-    spaceBetween: 20,
+    loop: true,
+    speed: 2000,
     slidesPerView: 1.3,
+    autoplay: {
+        delay: 1000,
+    },
     breakpoints: {
         320: {
             slidesPerView: 1.15,
@@ -372,14 +373,27 @@ const slider = new Swiper(".case_swiper", {
             slidesPerView: 2.2,
         },
     },
+    on: {
+        init() {
+          this.autoplay.stop();
+
+          this.el.addEventListener('mouseenter', () => {
+            this.autoplay.start();
+          });
+    
+          this.el.addEventListener('mouseleave', () => {
+            this.autoplay.stop();
+          });
+        }
+    }
 });
 
 
 //our project section
-// let workSection =document.querySelector('[section="work"]'); 
-// var selectProjectButton = document.querySelector("#move_to_project_button");
+let workSection =document.querySelector('[section="work"]');
+var selectProjectButton = document.querySelector("#move_to_project_button");
 
-// workSection.onmousemove = function (e){
-//     selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth/2) + 'px';
-//     selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight/2)  + 'px';
-// }
+workSection.onmousemove = function (e){
+    selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth/2) + 'px';
+    selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight/2)  + 'px';
+}

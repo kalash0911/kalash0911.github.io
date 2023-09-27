@@ -339,11 +339,13 @@ function getSectionState() {
 
 
 var slider = new Swiper(".case_swiper", {
-  speed: 1500,
-  // centeredSlides: true,
   grabCursor: true,
-  spaceBetween: 20,
+  loop: true,
+  speed: 2000,
   slidesPerView: 1.3,
+  autoplay: {
+    delay: 1000
+  },
   breakpoints: {
     320: {
       slidesPerView: 1.15,
@@ -358,12 +360,27 @@ var slider = new Swiper(".case_swiper", {
     1920: {
       slidesPerView: 2.2
     }
+  },
+  on: {
+    init: function init() {
+      var _this = this;
+
+      this.autoplay.stop();
+      this.el.addEventListener('mouseenter', function () {
+        _this.autoplay.start();
+      });
+      this.el.addEventListener('mouseleave', function () {
+        _this.autoplay.stop();
+      });
+    }
   }
 }); //our project section
-// let workSection =document.querySelector('[section="work"]'); 
-// var selectProjectButton = document.querySelector("#move_to_project_button");
-// workSection.onmousemove = function (e){
-//     selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth/2) + 'px';
-//     selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight/2)  + 'px';
-// }
+
+var workSection = document.querySelector('[section="work"]');
+var selectProjectButton = document.querySelector("#move_to_project_button");
+
+workSection.onmousemove = function (e) {
+  selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth / 2) + 'px';
+  selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight / 2) + 'px';
+};
 //# sourceMappingURL=main.js.map
