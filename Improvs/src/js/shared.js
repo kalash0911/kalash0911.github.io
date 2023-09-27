@@ -1,9 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
     initHeader();
+    selectCurrentPage();
     addEventButtonPopUp();
 });
 
+
+
+
 //BURGERMENU
+function selectCurrentPage(){
+    var menuItems=document.querySelectorAll(".menu__item");
+
+    menuItems.forEach((menu) => {
+        menu.classList.remove("menu_active_link");
+    });
+    if (/our_work/.test(location.href)) {
+        menuItems[1].classList.add("menu_active_link");
+      } else if(/blog_page/.test(location.href)) {
+        menuItems[2].classList.add("menu_active_link");
+      }else if(/brain_block/.test(location.href)) {
+        menuItems[3].classList.add("menu_active_link");
+      }else{
+        menuItems[0].classList.add("menu_active_link");
+      }
+}
 
 function initHeader() {
     const burger = document.querySelector(".burger");
@@ -90,3 +110,4 @@ function Show(isShow) {
     }
     window.body_lock=isOpen;
 }
+
