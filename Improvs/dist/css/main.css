@@ -4853,7 +4853,7 @@ body::-webkit-scrollbar {
     @media (max-width: 767px) {
       .video_page .content .video_block .top_video_btn {
         top: auto;
-        bottom: 120px;
+        bottom: 40px;
         right: 16px; } }
     .video_page .content .video_block .top_video_btn .btn_black {
       padding: 28.5px 32px;
@@ -4872,9 +4872,10 @@ body::-webkit-scrollbar {
       .video_page .content .video_block .bottom_video_btn {
         right: 16px;
         left: 16px;
-        bottom: 116px;
+        bottom: 36px;
         -webkit-transform: none;
-        transform: none; } }
+        transform: none;
+        right: 86px; } }
   .video_page .content .video_block .btn_black {
     display: inline-block;
     position: relative;
@@ -4925,8 +4926,7 @@ body::-webkit-scrollbar {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
     @media (max-width: 767px) {
       .video_page .content .video_block .turn_sound {
-        bottom: auto;
-        top: 36px;
+        bottom: 36px;
         left: auto;
         right: 16px;
         padding: 16px; } }
@@ -5304,6 +5304,9 @@ body::-webkit-scrollbar {
     left: 35%; }
   .contact_form_section .site_btn_white:hover .right_arrow {
     right: 35%; }
+
+.safari_button {
+  bottom: 116px; }
 
 footer {
   width: 100%;

@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
                 top: 32px;
                 @include media ("<tablet") {
                     top:auto;
-                    bottom:120px;
+                    bottom:40px;
                     right: 16px;
                         }
 
@@ -32,6 +32,7 @@ body::-webkit-scrollbar {
                     position: relative;
                     @include media ("<tablet") {
                         padding: 15.5px 32px;
+                        
                             }
                 }
             }
@@ -44,8 +45,9 @@ body::-webkit-scrollbar {
                 @include media ("<tablet") {
                 right: 16px;
                 left: 16px;
-                bottom: 116px;
+                bottom: 36px;
                 transform: none;
+                right: 86px;
 
                 }
             }
@@ -114,8 +116,7 @@ body::-webkit-scrollbar {
                 border-radius: 50%;
                 background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
                 @include media ("<tablet") {
-                bottom: auto;
-                top:36px;
+                bottom: 36px;
                 left: auto;
                 right: 16px;
                 padding: 16px;
@@ -508,4 +509,7 @@ margin-bottom: 10px;
     .site_btn_white:hover .right_arrow{
         right: 35%;
     }
+}
+.safari_button{
+    bottom: 116px;
 }
