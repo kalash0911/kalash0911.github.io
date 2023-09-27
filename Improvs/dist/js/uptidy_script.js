@@ -40,10 +40,6 @@ function initCleanerSwiper() {
       1920: {
         spaceBetween: 80,
         slidesPerView: 2
-      },
-      2300: {
-        spaceBetween: 80,
-        slidesPerView: 2.5
       }
     }
   });

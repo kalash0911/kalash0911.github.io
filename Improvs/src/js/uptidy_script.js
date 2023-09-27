@@ -39,10 +39,6 @@ function initCleanerSwiper() {
                 spaceBetween: 80,
                 slidesPerView: 2,
             },
-            2300: {
-                spaceBetween: 80,
-                slidesPerView: 2.5,
-            }
         },
     });
 }
