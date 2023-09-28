@@ -351,7 +351,6 @@ function getSectionState() {
 
 //OURWORK
 const slider = new Swiper(".case_swiper", {
-    grabCursor: true,
     loop: true,
     speed: 2000,
     slidesPerView: 1.3,
@@ -390,10 +389,30 @@ const slider = new Swiper(".case_swiper", {
 
 
 //our project section
-let workSection =document.querySelector('[section="work"]');
+let workSection =document.querySelector('.circle_main_block');
 var selectProjectButton = document.querySelector("#move_to_project_button");
+const cursor = document.querySelector(".cursor");
 
-workSection.onmousemove = function (e){
-    selectProjectButton.style.left = e.clientX + -(selectProjectButton.offsetWidth/2) + 'px';
-    selectProjectButton.style.top = e.clientY + -(selectProjectButton.offsetHeight/2)  + 'px';
-}
+const mouseMove = function (e) {
+    let x = e.pageX;
+    let y = e.pageY-3050;
+    cursor.style.left = x + "px";
+    cursor.style.top = y + "px";
+  };
+
+  
+const mouseLeave = function (e) {
+    workSection.classList.remove("cursor_custom");
+    cursor.style.display = 'none';
+  };
+
+  const mouseEnter = function (e) {
+    workSection.classList.add("cursor_custom");
+    cursor.style.display = 'block';
+  };
+
+  
+
+workSection.addEventListener("mousemove", mouseMove);
+workSection.addEventListener("mouseleave", mouseLeave);
+workSection.addEventListener("mouseout", mouseEnter);

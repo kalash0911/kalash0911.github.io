@@ -559,77 +559,27 @@ body::-webkit-scrollbar {
 
 
 
+.our_work_main {
+    cursor: auto;
 
+    .cursor_custom {
+        cursor: none;
+    }
 
-
-
-
-
-
-
-
-.circle_main_block{
-    position: relative;
-}
-.btn_white_circle {
-    cursor: pointer;
-    width: 172px;
-    height: 172px;
-    color: $black;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 17.64px;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    border: 1px solid $white;
-    transition: $transition_all_03;
-    position: absolute;
-    bottom: 100px;
-    right: 100px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: $white;
-    z-index: 100;
-
-    @include media ("<desktop") {
+    .circle_main_block {
         position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        bottom: 0;
-        right: 0;
     }
 
-    .left_arrow,
-    .right_arrow {
+    .cursor {
+        z-index: 40;
+        width: 172px;
+        height: 172px;
+        pointer-events: none;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .left_arrow {
-        left: 16px;
-    }
-
-    .right_arrow {
-        right: 16px;
-    }
-
-    svg {
-        fill: $black;
-        transition: $transition_all_03;
-    }
-
-    &:hover {
-        background-color: transparent;
-        transition: $transition_all_03;
-        color: $white;
-
-        svg {
-            fill: $white;
-            transition: $transition_all_03;
-        }
+        background: $white;
+        border-radius: 50%;
+        box-sizing: border-box;
+        transition: 0, 1s;
+        transform: translate(-50%, -50%);
     }
 }
