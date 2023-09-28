@@ -811,8 +811,7 @@ main {
   .similar .about_text {
     max-width: 850px;
     width: 100%;
-    /* Только если меньше контейнера */
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     /* Только если меньше контейнера */
     font-size: 32px;
     font-weight: 500;
@@ -822,9 +821,6 @@ main {
     animation: fadeIn;
     -webkit-animation-duration: 4s;
     animation-duration: 4s; }
-    @media (max-width: 1300px) {
-      .similar .about_text {
-        margin-bottom: calc(40px + 40 * ((100vw - calc(375px)) / 925)); } }
     @media (max-width: 1300px) {
       .similar .about_text {
         font-size: calc(24px + 8 * ((100vw - calc(375px)) / 925)); } }
@@ -2130,6 +2126,19 @@ main {
   @media (max-width: 1300px) {
     .about_creditor_solutions .about_img::after {
       height: calc(80px + 270 * ((100vw - calc(375px)) / 925)); } }
+
+.creditor_solutions_animations {
+  /* Только если меньше контейнера */
+  padding-top: 25px;
+  /* Только если меньше контейнера */
+  padding-bottom: 160px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+  @media (max-width: 1300px) {
+    .creditor_solutions_animations {
+      padding-top: calc(20px + 5 * ((100vw - calc(375px)) / 925)); } }
+  @media (max-width: 1300px) {
+    .creditor_solutions_animations {
+      padding-bottom: calc(80px + 80 * ((100vw - calc(375px)) / 925)); } }
 
 .creditor_solutions_website .about_img::before {
   display: block; }

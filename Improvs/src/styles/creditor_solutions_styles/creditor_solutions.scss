@@ -13,6 +13,11 @@
     }
 }
 
+.creditor_solutions_animations{
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
 
 .creditor_solutions_website {
     .about_img {
