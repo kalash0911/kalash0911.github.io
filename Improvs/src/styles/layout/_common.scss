@@ -589,3 +589,14 @@ body::-webkit-scrollbar {
     -o-transition-timing-function:linear!important;
     transition-timing-function:linear!important; 
   }
+  .expand_active{
+    .back_form {
+        max-width: 90%; 
+        height: 90%;
+        display: flex;
+        align-items: center;  
+    }
+    .content {
+        max-width: 958px;   
+    }
+}
