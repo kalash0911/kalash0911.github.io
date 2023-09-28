@@ -84,16 +84,14 @@
 
         &:hover {
             .permalink_wrap {
-                transform: scale(1);
-                transition: $transition_all_03;
-                // display: block;
+                display: block;
             }
         }
     }
 
     .permalink_wrap {
-        width: 172px;
-        height: 172px;
+        width: 120px;
+        height: 120px;
         background-color: rgba(14, 14, 14, 0.48);
         backdrop-filter: blur(2px);
         border: 1px solid $white;
@@ -101,17 +99,13 @@
         position: absolute;
         top: 40%;
         z-index: 3;
-        // display: none;
-        transition: $transition_all_03;
-        transform: scale(0);
+        display: none;
 
         &:hover {
             background-color: $white;
-            transition: $transition_all_03;
 
             .permalink {
                 color: $black;
-                transition: $transition_all_03;
             }
         }
 
