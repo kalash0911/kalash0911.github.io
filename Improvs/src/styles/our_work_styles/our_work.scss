@@ -84,14 +84,15 @@
 
         &:hover {
             .permalink_wrap {
-                display: block;
+                transform: scale(1);
+                transition: $transition_all_03;
             }
         }
     }
 
     .permalink_wrap {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
         background-color: rgba(14, 14, 14, 0.48);
         backdrop-filter: blur(2px);
         border: 1px solid $white;
@@ -99,7 +100,18 @@
         position: absolute;
         top: 40%;
         z-index: 3;
-        display: none;
+        transform: scale(0);
+        transition: $transition_all_03;
+
+        &:hover {
+            background-color: $white;
+            transition: $transition_all_03;
+
+            .permalink {
+                color: $black;
+                transition: $transition_all_03;
+            }
+        }
 
         &::before,
         &::after {
@@ -208,6 +220,7 @@
         margin: 0 0 0 20px;
         padding: 20px 0;
         position: relative;
+        
 
         @include media ("<tablet") {
             margin: 0 0 25px 33px;

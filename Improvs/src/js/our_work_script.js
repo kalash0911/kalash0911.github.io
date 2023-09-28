@@ -1,12 +1,11 @@
 const slider = new Swiper(".case_swiper", {
-    speed: 1500,
+    speed: 6000,
     grabCursor: true,
-    // autoplay: {
-    //     delay: 1500,
-    //     pauseOnMouseEnter:true,
-    //     disableOnInteraction:false
-    // },
-    loop:true,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false, // или сделать так, чтобы восстанавливался autoplay после взаимодействия
+    },
+    loop: true,
     spaceBetween: 20,
     slidesPerView: 1.3,
     breakpoints: {
