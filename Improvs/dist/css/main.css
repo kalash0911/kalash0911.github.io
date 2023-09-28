@@ -4813,8 +4813,6 @@ main {
 
 .header_transparent {
   background: none; }
-  .header_transparent .header_btn {
-    opacity: 0; }
 
 .menu_active_link a {
   opacity: 1 !important; }
@@ -4870,10 +4868,8 @@ body::-webkit-scrollbar {
       display: none; }
   .video_page .content .video_block .bottom_video_btn {
     position: absolute;
-    left: 50%;
-    bottom: 32px;
-    -webkit-transform: translate(-50%, 0%);
-    transform: translate(-50%, 0%); }
+    right: 20px;
+    bottom: 32px; }
     @media (max-width: 767px) {
       .video_page .content .video_block .bottom_video_btn {
         right: 16px;

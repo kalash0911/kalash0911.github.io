@@ -47,9 +47,8 @@ body::-webkit-scrollbar {
 
             .bottom_video_btn {
                 position: absolute;
-                left: 50%;
+                right: 20px;
                 bottom: 32px;
-                transform: translate(-50%, 0%);
 
                 @include media ("<tablet") {
                     right: 16px;
