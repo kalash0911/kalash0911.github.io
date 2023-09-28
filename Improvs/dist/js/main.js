@@ -124,18 +124,22 @@ var _loop = function _loop(index) {
     var nextIndex = index + 1;
 
     if (videos[nextIndex]) {
-      var currentVideo = videos[nextIndex];
-      var isPlaying = currentVideo.currentTime > 0 && !currentVideo.paused && !currentVideo.ended && currentVideo.readyState > currentVideo.HAVE_CURRENT_DATA;
-
-      if (isPlaying) {
-        currentVideo.play();
-      }
+      safePlayVideo(nextIndex);
     }
   });
 };
 
 for (var index = 0; index < videos.length; index++) {
   _loop(index);
+}
+
+function safePlayVideo(Index) {
+  var currentVideo = videos[Index];
+  var isPlaying = currentVideo.currentTime > 0 && !currentVideo.paused && !currentVideo.ended && currentVideo.readyState > currentVideo.HAVE_CURRENT_DATA;
+
+  if (isPlaying) {
+    currentVideo.play();
+  }
 }
 
 function stopAllVideo() {
@@ -158,7 +162,7 @@ function nextSlide() {
 
       if (index == 2) {
         stopAllVideo();
-        videos[2].play();
+        safePlayVideo(2);
       }
 
       if (index == 3) {
@@ -182,7 +186,7 @@ function nextSlide() {
 
     scrollByElementName(_section);
     stopAllVideo();
-    videos[1].play();
+    safePlayVideo(1);
     setSectionState(1);
   }
 }
@@ -203,7 +207,7 @@ function previousSlide() {
       if (index <= 2) {
         stopAllVideo();
         hideCopyCodeButton(false);
-        videos[index].play();
+        safePlayVideo(index);
       }
 
       if (index == 0) {
@@ -240,7 +244,7 @@ function scrollToOffset(offset) {
     behavior: 'smooth',
     left: 0,
     top: offset
-  }); //mainBlock.style.transform = `translate3d(0px, -${offset}px, 0px)`;
+  });
 } //sroll previous
 
 
@@ -390,8 +394,7 @@ var slider = new Swiper(".case_swiper", {
   }
 }); //our project section
 
-var workSection = document.querySelector('.circle_main_block');
-var selectProjectButton = document.querySelector("#move_to_project_button");
+var sliderSection = document.querySelector('.circle_main_block');
 var cursor = document.querySelector(".cursor");
 
 var mouseMove = function mouseMove(e) {
@@ -402,16 +405,16 @@ var mouseMove = function mouseMove(e) {
 };
 
 var mouseLeave = function mouseLeave(e) {
-  workSection.classList.remove("cursor_custom");
+  sliderSection.classList.remove("cursor_custom");
   cursor.style.display = 'none';
 };
 
 var mouseEnter = function mouseEnter(e) {
-  workSection.classList.add("cursor_custom");
+  sliderSection.classList.add("cursor_custom");
   cursor.style.display = 'block';
 };
 
-workSection.addEventListener("mousemove", mouseMove);
-workSection.addEventListener("mouseleave", mouseLeave);
-workSection.addEventListener("mouseout", mouseEnter);
+sliderSection.addEventListener("mousemove", mouseMove);
+sliderSection.addEventListener("mouseleave", mouseLeave);
+sliderSection.addEventListener("mouseout", mouseEnter);
 //# sourceMappingURL=main.js.map
