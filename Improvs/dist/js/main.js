@@ -124,7 +124,12 @@ var _loop = function _loop(index) {
     var nextIndex = index + 1;
 
     if (videos[nextIndex]) {
-      videos[nextIndex].play();
+      var currentVideo = videos[nextIndex];
+      var isPlaying = currentVideo.currentTime > 0 && !currentVideo.paused && !currentVideo.ended && currentVideo.readyState > currentVideo.HAVE_CURRENT_DATA;
+
+      if (isPlaying) {
+        currentVideo.play();
+      }
     }
   });
 };

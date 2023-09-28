@@ -48,14 +48,14 @@ function init() {
     }
 
     if (/phone_video/.test(location.href)) {
-       showHeader(true);
-       videos[2].play();
-       setSectionState(2);
-      } else if(/desktop_video/.test(location.href)) {
+        showHeader(true);
+        videos[2].play();
+        setSectionState(2);
+    } else if (/desktop_video/.test(location.href)) {
         showHeader(true);
         videos[1].play()
         setSectionState(1);
-      }
+    }
 
     let firstVideo = videos[0];
     firstVideo.addEventListener('timeupdate', function () {
@@ -139,7 +139,11 @@ for (let index = 0; index < videos.length; index++) {
         stopAllVideo();
         let nextIndex = index + 1;
         if (videos[nextIndex]) {
-            videos[nextIndex].play();
+            var currentVideo = videos[nextIndex];
+            var isPlaying = currentVideo.currentTime > 0 && !currentVideo.paused && !currentVideo.ended && currentVideo.readyState > currentVideo.HAVE_CURRENT_DATA;
+            if (isPlaying) {
+                currentVideo.play();
+            }
         }
     });
 }
@@ -383,44 +387,44 @@ const slider = new Swiper(".case_swiper", {
     },
     on: {
         init() {
-          this.autoplay.stop();
-
-          this.el.addEventListener('mouseenter', () => {
-            this.autoplay.start();
-          });
-    
-          this.el.addEventListener('mouseleave', () => {
             this.autoplay.stop();
-          });
+
+            this.el.addEventListener('mouseenter', () => {
+                this.autoplay.start();
+            });
+
+            this.el.addEventListener('mouseleave', () => {
+                this.autoplay.stop();
+            });
         }
     }
 });
 
 
 //our project section
-let workSection =document.querySelector('.circle_main_block');
+let workSection = document.querySelector('.circle_main_block');
 var selectProjectButton = document.querySelector("#move_to_project_button");
 const cursor = document.querySelector(".cursor");
 
 const mouseMove = function (e) {
     let x = e.pageX;
-    let y = e.pageY-3050;
+    let y = e.pageY - 3050;
     cursor.style.left = x + "px";
     cursor.style.top = y + "px";
-  };
+};
 
-  
+
 const mouseLeave = function (e) {
     workSection.classList.remove("cursor_custom");
     cursor.style.display = 'none';
-  };
+};
 
-  const mouseEnter = function (e) {
+const mouseEnter = function (e) {
     workSection.classList.add("cursor_custom");
     cursor.style.display = 'block';
-  };
+};
 
-  
+
 
 workSection.addEventListener("mousemove", mouseMove);
 workSection.addEventListener("mouseleave", mouseLeave);
