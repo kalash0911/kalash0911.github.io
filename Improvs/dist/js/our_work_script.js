@@ -4,10 +4,9 @@ var slider = new Swiper(".case_swiper", {
   speed: 6000,
   grabCursor: true,
   autoplay: {
-    delay: 0,
-    disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
-
+    delay: 0
   },
+  freeMode: true,
   loop: true,
   spaceBetween: 20,
   slidesPerView: 1.3,
@@ -24,6 +23,19 @@ var slider = new Swiper(".case_swiper", {
     },
     1920: {
       slidesPerView: 2.2
+    }
+  },
+  on: {
+    init: function init() {
+      var _this = this;
+
+      this.autoplay.stop();
+      this.el.addEventListener('mouseenter', function () {
+        _this.autoplay.start();
+      });
+      this.el.addEventListener('mouseleave', function () {
+        _this.autoplay.stop();
+      });
     }
   }
 });

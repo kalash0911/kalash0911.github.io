@@ -3,8 +3,8 @@ const slider = new Swiper(".case_swiper", {
     grabCursor: true,
     autoplay: {
         delay: 0,
-        disableOnInteraction: false, // или сделать так, чтобы восстанавливался autoplay после взаимодействия
     },
+    freeMode: true,
     loop: true,
     spaceBetween: 20,
     slidesPerView: 1.3,
@@ -23,6 +23,19 @@ const slider = new Swiper(".case_swiper", {
             slidesPerView: 2.2,
         },
     },
+    on: {
+        init() {
+            this.autoplay.stop();
+
+            this.el.addEventListener('mouseenter', () => {
+                this.autoplay.start();
+            });
+
+            this.el.addEventListener('mouseleave', () => {
+                this.autoplay.stop();
+            });
+        }
+    }
 });
 
 function filterCases(filter) {
@@ -62,7 +75,6 @@ const filterItems = document.querySelectorAll(".work_filter_item");
 filterItems.forEach((filterItem) => {
     filterItem.addEventListener("click", (event) => {
         const filter = event.target.getAttribute("data-id");
-
         filterCases(filter);
     });
 });
