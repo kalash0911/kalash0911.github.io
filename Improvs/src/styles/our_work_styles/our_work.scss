@@ -84,7 +84,9 @@
 
         &:hover {
             .permalink_wrap {
-                display: block;
+                transform: scale(1);
+                transition: $transition_all_03;
+                // display: block;
             }
         }
     }
@@ -99,7 +101,19 @@
         position: absolute;
         top: 40%;
         z-index: 3;
-        display: none;
+        // display: none;
+        transition: $transition_all_03;
+        transform: scale(0);
+
+        &:hover {
+            background-color: $white;
+            transition: $transition_all_03;
+
+            .permalink {
+                color: $black;
+                transition: $transition_all_03;
+            }
+        }
 
         &::before,
         &::after {
@@ -135,6 +149,7 @@
         left: 0;
         display: grid;
         place-items: center;
+        transition: $transition_all_03;
     }
 
     .case_text {

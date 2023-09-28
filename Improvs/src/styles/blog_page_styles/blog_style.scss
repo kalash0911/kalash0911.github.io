@@ -99,19 +99,23 @@
   .list {
     display: grid;
     justify-content: space-between;
-    grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
+    grid-template: 1fr / repeat(auto-fit, minmax(390px, 49%));
     column-gap: 10px;
     row-gap: 20px;
 
-    @include media ("<phone") {
+    @include media ("<desktop") {
+      grid-template: 1fr / repeat(auto-fit, minmax(340px, 49%));
+    }
+
+    @include media ("<tablet") {
       grid-template: 1fr / 1fr;
     }
   }
 
 
   .similar_post {
-    @include adaptiv-vaule("height", 412, 315, 1);
     position: relative;
+    @include adaptiv-vaule("height", 410, 270, 1);
     padding: 10px 10px 30px 25px;
 
     &::after {
@@ -162,7 +166,7 @@
     height: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content:flex-end;
+    justify-content: flex-end;
     flex-direction: column;
     position: relative;
     z-index: 2;
