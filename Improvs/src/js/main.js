@@ -141,7 +141,7 @@ for (let index = 0; index < videos.length; index++) {
     });
 }
 
-function safePlayVideo(Index){
+function safePlayVideo(Index) {
     let currentVideo = videos[Index];
     let isPlaying = currentVideo.currentTime > 0 && !currentVideo.paused && !currentVideo.ended && currentVideo.readyState > currentVideo.HAVE_CURRENT_DATA;
     if (isPlaying) {
@@ -358,12 +358,12 @@ function getSectionState() {
 
 //OURWORK
 const slider = new Swiper(".case_swiper", {
-    loop: true,
-    speed: 2000,
+    speed: 4500,
     slidesPerView: 1.3,
-    autoplay: {
-        delay: 1000,
-    },
+    loop: true,
+    autoplay: {     
+        delay: 0,   
+    }, 
     breakpoints: {
         320: {
             slidesPerView: 1.15,
@@ -395,27 +395,27 @@ const slider = new Swiper(".case_swiper", {
 });
 
 
-//our project section
-let sliderSection = document.querySelector('.circle_main_block');
-const cursor = document.querySelector(".cursor");
+// //our project section
+// let sliderSection = document.querySelector('.circle_main_block');
+// const cursor = document.querySelector(".cursor");
 
-const mouseMove = function (e) {
-    let x = e.pageX;
-    let y = e.pageY - 3050;
-    cursor.style.left = x + "px";
-    cursor.style.top = y + "px";
-};
+// const mouseMove = function (e) {
+//     let x = e.pageX;
+//     let y = e.pageY - 3050;
+//     cursor.style.left = x + "px";
+//     cursor.style.top = y + "px";
+// };
 
-const mouseLeave = function (e) {
-    sliderSection.classList.remove("cursor_custom");
-    cursor.style.display = 'none';
-};
+// const mouseLeave = function (e) {
+//     sliderSection.classList.remove("cursor_custom");
+//     cursor.style.display = 'none';
+// };
 
-const mouseEnter = function (e) {
-    sliderSection.classList.add("cursor_custom");
-    cursor.style.display = 'block';
-};
+// const mouseEnter = function (e) {
+//     sliderSection.classList.add("cursor_custom");
+//     cursor.style.display = 'block';
+// };
 
-sliderSection.addEventListener("mousemove", mouseMove);
-sliderSection.addEventListener("mouseleave", mouseLeave);
-sliderSection.addEventListener("mouseout", mouseEnter);
+// sliderSection.addEventListener("mousemove", mouseMove);
+// sliderSection.addEventListener("mouseleave", mouseLeave);
+// sliderSection.addEventListener("mouseout", mouseEnter);
