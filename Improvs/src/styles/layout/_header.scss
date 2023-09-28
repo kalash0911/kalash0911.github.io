@@ -388,10 +388,15 @@
 }
 .header_transparent{
     background: none;
+    .btn_black {
+        background: $white!important;
+        color: $black!important;
+    }
 }
 .menu_active_link{
     a{
         opacity: 1!important;
+
     }
     &::after {
         content: '';
