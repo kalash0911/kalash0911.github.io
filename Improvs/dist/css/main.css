@@ -1752,22 +1752,25 @@ main {
     display: grid;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    grid-template: 1fr/repeat(auto-fit, minmax(400px, 1fr));
+    grid-template: 1fr/repeat(auto-fit, minmax(390px, 49%));
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
     column-gap: 10px;
     row-gap: 20px; }
-    @media (max-width: 479px) {
+    @media (max-width: 1023px) {
+      .blog_page .list {
+        grid-template: 1fr/repeat(auto-fit, minmax(340px, 49%)); } }
+    @media (max-width: 767px) {
       .blog_page .list {
         grid-template: 1fr / 1fr; } }
   .blog_page .similar_post {
-    /* Только если меньше контейнера */
-    height: 412px;
     position: relative;
+    /* Только если меньше контейнера */
+    height: 410px;
     padding: 10px 10px 30px 25px; }
     @media (max-width: 1300px) {
       .blog_page .similar_post {
-        height: calc(315px + 97 * ((100vw - calc(375px)) / 925)); } }
+        height: calc(270px + 140 * ((100vw - calc(375px)) / 925)); } }
     .blog_page .similar_post::after {
       content: '';
       position: absolute;
@@ -4317,7 +4320,9 @@ main {
         border-top: none;
         height: 100%; } }
     .our_work .case:hover .permalink_wrap {
-      display: block; }
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      transition: all 0.3s ease; }
   .our_work .permalink_wrap {
     width: 172px;
     height: 172px;
@@ -4329,7 +4334,15 @@ main {
     position: absolute;
     top: 40%;
     z-index: 3;
-    display: none; }
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+    .our_work .permalink_wrap:hover {
+      background-color: #fff;
+      transition: all 0.3s ease; }
+      .our_work .permalink_wrap:hover .permalink {
+        color: #0E0E0E;
+        transition: all 0.3s ease; }
     .our_work .permalink_wrap::before, .our_work .permalink_wrap::after {
       position: absolute;
       top: 50%;
@@ -4356,7 +4369,8 @@ main {
     top: 0;
     left: 0;
     display: grid;
-    place-items: center; }
+    place-items: center;
+    transition: all 0.3s ease; }
   .our_work .case_text {
     width: 470px;
     display: -ms-flexbox;
