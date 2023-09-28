@@ -4640,11 +4640,11 @@ main {
   0% {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 6px; }
+    top: 11px; }
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    top: 11px; }
+    top: 6px; }
   100% {
     top: 4px; } }
 
@@ -4652,11 +4652,11 @@ main {
   0% {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    top: 6px; }
+    top: 11px; }
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    top: 11px; }
+    top: 6px; }
   100% {
     top: 4px; } }
 
