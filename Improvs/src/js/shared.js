@@ -14,14 +14,16 @@ function selectCurrentPage(){
     menuItems.forEach((menu) => {
         menu.classList.remove("menu_active_link");
     });
-    if (/our_work/.test(location.href)) {
-        menuItems[1].classList.add("menu_active_link");
+    if (/index/.test(location.href)) {
+        menuItems[0].classList.add("menu_active_link");
+      }else if(/our_work/.test(location.href)) {
+        menuItems[3].classList.add("menu_active_link");
       } else if(/blog_page/.test(location.href)) {
-        menuItems[2].classList.add("menu_active_link");
+        menuItems[4].classList.add("menu_active_link");
       }else if(/brain_block/.test(location.href)) {
         menuItems[3].classList.add("menu_active_link");
       }else{
-        menuItems[0].classList.add("menu_active_link");
+        menuItems[3].classList.add("menu_active_link");
       }
 }
 

@@ -51,6 +51,16 @@ function init() {
     });
   }
 
+  if (/phone_video/.test(location.href)) {
+    showHeader(true);
+    videos[2].play();
+    setSectionState(2);
+  } else if (/desktop_video/.test(location.href)) {
+    showHeader(true);
+    videos[1].play();
+    setSectionState(1);
+  }
+
   var firstVideo = videos[0];
   firstVideo.addEventListener('timeupdate', function () {
     if (firstVideo.currentTime >= 3.50000) {
