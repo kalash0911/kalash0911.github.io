@@ -7,7 +7,7 @@ const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#main");
 const videos = document.querySelectorAll('[video]');
 const turnSounds = document.querySelectorAll('[turn-sound ]');
-const lastSection = document.querySelector(`[section="brain"]`);
+const lastSection = document.querySelector(`[section="video3"]`);
 const lastVideoSection = document.querySelector(`[section="video3"]`);
 const header = document.querySelector("#header");
 const copyCodeButton = document.querySelector("[copyCode]");
@@ -202,7 +202,7 @@ function previousSlide(isDownScroll = false) {
             }
 
             let section = sections[index].getAttribute('section');
-            if (section == "brain" && !isDownScroll) {
+            if (section == "video3" && !isDownScroll) {
                 return;
             }
 

@@ -8,7 +8,7 @@ var sections = document.querySelectorAll("[section]");
 var mainBlock = document.querySelector("#main");
 var videos = document.querySelectorAll('[video]');
 var turnSounds = document.querySelectorAll('[turn-sound ]');
-var lastSection = document.querySelector("[section=\"brain\"]");
+var lastSection = document.querySelector("[section=\"video3\"]");
 var lastVideoSection = document.querySelector("[section=\"video3\"]");
 var header = document.querySelector("#header");
 var copyCodeButton = document.querySelector("[copyCode]");
@@ -197,7 +197,7 @@ function previousSlide() {
 
       var section = sections[index].getAttribute('section');
 
-      if (section == "brain" && !isDownScroll) {
+      if (section == "video3" && !isDownScroll) {
         return;
       }
 
