@@ -115,5 +115,15 @@ function Show(isShow) {
   }
 
   window.body_lock = isOpen;
+} //contact form
+
+
+var expandBtn = document.querySelector("[expandBtn]");
+
+function expandForm() {
+  var contact_form_section = document.querySelector(".contact_form_section");
+  contact_form_section.classList.toggle("expand_active");
 }
+
+expandBtn.addEventListener('click', expandForm, false);
 //# sourceMappingURL=shared.js.map

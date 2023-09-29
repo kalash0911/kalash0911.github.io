@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     addEventButtonPopUp();
 });
 
-
-
-
 //BURGERMENU
 function selectCurrentPage(){
     var menuItems=document.querySelectorAll(".menu__item");
@@ -113,3 +110,13 @@ function Show(isShow) {
     window.body_lock=isOpen;
 }
 
+
+//contact form
+const expandBtn = document.querySelector("[expandBtn]");
+
+function expandForm(){
+    let contact_form_section=document.querySelector(".contact_form_section");
+    contact_form_section.classList.toggle("expand_active");
+}
+
+expandBtn.addEventListener('click',expandForm,false);
