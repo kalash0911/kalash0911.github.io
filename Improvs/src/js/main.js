@@ -1,4 +1,6 @@
 
+new WOW().init();
+
 document.addEventListener('DOMContentLoaded', function () {
     init();
 });

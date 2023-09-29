@@ -13,7 +13,7 @@
     }
 }
 
-.creditor_solutions_animations{
+.creditor_solutions_animations {
     @include adaptiv-vaule("padding-top", 25, 20, 1);
     @include adaptiv-vaule("padding-bottom", 160, 80, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -52,17 +52,15 @@
     @include adaptiv-vaule("padding-bottom", 160, 80, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
-    .swiper_creditor {
-        padding-bottom: 60px;
-        margin-bottom: 30px;
+    .form_img {
+        max-width: 80vw;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 40px;
 
-        .swiper-slide {
-            transform: translateY(50px);
-            transition: $transition_all_03;
-        }
-
-        .swiper-slide-active {
-            transform: translateY(0);
+        @include media ("<tablet") {
+            max-width: 615px;
+            padding:  0 15px;
         }
     }
 

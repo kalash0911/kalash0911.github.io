@@ -136,24 +136,29 @@ body::-webkit-scrollbar {
         }
 
     }
+
     .text_main_video {
         font-size: 48px;
         font-weight: 500;
         line-height: 48px;
-        color: $white; 
-        position: absolute;  
-        top:160px;
+        color: $white;
+        position: absolute;
+        top: 160px;
         text-transform: uppercase;
         letter-spacing: -3px;
     }
-    .text_video_1{
+
+    .text_video_1 {
         left: 20px;
         max-width: 446px;
+        --animate-duration: 4s;
     }
-    .text_video_2{
+
+    .text_video_2 {
         right: 20px;
         max-width: 480px;
-     }
+        --animate-duration: 4s;
+    }
 }
 
 .brain_section {
@@ -357,39 +362,44 @@ body::-webkit-scrollbar {
         display: block;
     }
 }
-.exspand_btn{
+
+.exspand_btn {
     position: absolute;
     top: 32px;
-    right:32px;
-    button{
-    display: inline-block;
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 17.6px;
-    letter-spacing: -0.14px;
-    text-transform: uppercase;
-    padding: 15px 16px 15px 14px;
-    border: 1px solid #fff;
-    transition: all 0.3s ease;
-    background: none;
-    .icon_btn{
-        display: flex;
-        align-items: center;
-        svg{
-            margin-right: 10px;
+    right: 32px;
+
+    button {
+        display: inline-block;
+        width: 100%;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17.6px;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 15px 16px 15px 14px;
+        border: 1px solid #fff;
+        transition: all 0.3s ease;
+        background: none;
+
+        .icon_btn {
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 10px;
+            }
         }
     }
 }
-}
+
 .close_popup {
     position: absolute;
     width: 32px;
     height: 32px;
     z-index: 5;
     top: 40px;
-    left:32px;
+    left: 32px;
     cursor: pointer;
 
     span {
@@ -452,7 +462,7 @@ body::-webkit-scrollbar {
 
     .content {
         margin: 0 auto;
-        max-width: 790px;   
+        max-width: 790px;
         padding: 68px;
         position: relative;
     }
@@ -584,7 +594,7 @@ body::-webkit-scrollbar {
 }
 
 .our_work_main {
-    padding-bottom:0px;
+    padding-bottom: 0px;
 
     .our_work_btn {
         margin: 60px 20px 0px;
@@ -594,12 +604,15 @@ body::-webkit-scrollbar {
             color: $white;
             padding: 28.5px 0px;
             font-size: 20px;
-            &:hover .left_arrow{
+
+            &:hover .left_arrow {
                 left: 44%;
             }
-            &:hover .right_arrow{
+
+            &:hover .right_arrow {
                 right: 44%;
             }
+
             svg {
                 fill: $white;
             }
@@ -607,20 +620,21 @@ body::-webkit-scrollbar {
     }
 }
 
-.expand_active{
+.expand_active {
     .back_form {
-        max-width: 90%; 
+        max-width: 90%;
         height: 90%;
-        display: flex;  
+        display: flex;
         align-items: center;
     }
-    .content{
-        max-width:958px ;
+
+    .content {
+        max-width: 958px;
     }
 }
 
 .swiper-wrapper {
-    -webkit-transition-timing-function:linear!important; 
-    -o-transition-timing-function:linear!important;
-    transition-timing-function:linear!important; 
-  }
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+}
