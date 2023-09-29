@@ -99,12 +99,11 @@
   .list {
     display: grid;
     justify-content: space-between;
-    grid-template: 1fr / repeat(auto-fit, minmax(390px, 49%));
-    column-gap: 10px;
+    grid-template: 1fr / repeat(auto-fit, minmax(390px, 49.5%));
     row-gap: 20px;
 
     @include media ("<desktop") {
-      grid-template: 1fr / repeat(auto-fit, minmax(340px, 49%));
+      grid-template: 1fr / repeat(auto-fit, minmax(340px, 49.5%));
     }
 
     @include media ("<tablet") {

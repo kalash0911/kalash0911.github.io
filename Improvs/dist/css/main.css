@@ -1752,14 +1752,11 @@ main {
     display: grid;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    grid-template: 1fr/repeat(auto-fit, minmax(390px, 49%));
-    -webkit-column-gap: 10px;
-    -moz-column-gap: 10px;
-    column-gap: 10px;
+    grid-template: 1fr/repeat(auto-fit, minmax(390px, 49.5%));
     row-gap: 20px; }
     @media (max-width: 1023px) {
       .blog_page .list {
-        grid-template: 1fr/repeat(auto-fit, minmax(340px, 49%)); } }
+        grid-template: 1fr/repeat(auto-fit, minmax(340px, 49.5%)); } }
     @media (max-width: 767px) {
       .blog_page .list {
         grid-template: 1fr / 1fr; } }
