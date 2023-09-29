@@ -79,6 +79,7 @@
         height: 2px;
         background-color: rgba(255, 255, 255, 0.3);
         opacity: 1;
+        border-radius:0;
     }
 
     .swiper-pagination-bullet-active {
@@ -323,6 +324,10 @@
         letter-spacing: 0.56px;
         text-transform: uppercase;
     }
+}
+
+.beach_club_video{
+    border: none;
 }
 
 .typography_beach_club {

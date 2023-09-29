@@ -4,7 +4,7 @@ const slider = new Swiper(".swiper_paritet", {
     speed: 1400,
     centeredSlides: true,
     grabCursor: true,
-    loopedSlides: 1,
+    loopedSlides: 3,
     spaceBetween: 70,
     loop: true,
     navigation: {
@@ -33,7 +33,7 @@ const slider = new Swiper(".swiper_paritet", {
             spaceBetween: 70,
         },
         1920: {
-            slidesPerView: 2.5,
+            slidesPerView: 2.1,
         },
     },
 });

@@ -1,9 +1,9 @@
 body {
     background: $black;
     height: 100%;
-    max-width: 1920px;
-    width: 100%;
-    margin: 0 auto;
+    // max-width: 1920px;
+    // width: 100%;
+    // margin: 0 auto;
 }
 
 html {
@@ -65,6 +65,7 @@ main {
     @include adaptiv-vaule("margin-bottom", 100, 40, 1);
     animation: fadeInUp;
     animation-duration: 2s;
+    font-family: $IBM-font;
 }
 
 .site_btn_white {
@@ -78,7 +79,7 @@ main {
     letter-spacing: -0.14px;
     text-transform: uppercase;
     background-color: $white;
-    padding: 18px 16px;
+    padding: 25px 16px;
     border: 1px solid $white;
     transition: $transition_all_03;
     position: relative;
@@ -250,6 +251,7 @@ main {
         padding: 3px 8px;
         animation: fadeIn;
         animation-duration: 5s;
+        font-family: 'IBMPlexMono';
     }
 
     .main_img {
@@ -463,6 +465,18 @@ main {
 
     .site_btn_white {
         @include adaptiv-vaule("font-size", 20, 14, 1);
+
+        &:hover {
+            .left_arrow {
+                left: 42%;
+            }
+
+            .right_arrow {
+                right: 42%;
+
+            }
+
+        }
     }
 }
 

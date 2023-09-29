@@ -1,33 +1,12 @@
-.main_ryan {
-    .container {
-        width: 100%;
-        max-width: 1440px;
-        padding: 0 60px;
-        margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
-    }
-}
-
 .about_ryan {
     padding-top: 0;
 
-    @include media ("<desktop") {
-        padding-top: 25px;
-    }
-
     .container {
         position: relative;
-        width: 100%;
-        max-width: 1440px;
-        padding: 0;
-        margin: 0 auto;
+    }
 
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
+    @include media ("<desktop") {
+        padding-top: 25px;
     }
 
     .content {
@@ -271,16 +250,11 @@
 }
 
 .phone-section {
-
     .container {
-        width: 100%;
         max-width: 1440px;
-        padding: 0 60px;
+        width: 100%;
+        padding: 0 20px;
         margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
     }
 
     padding-top: 25px;
@@ -526,18 +500,6 @@
 .voice_ryan {
     border: none;
 
-    .container {
-        width: 100%;
-        max-width: 1440px;
-        padding: 0 60px;
-        margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
-    }
-
-
     .about_text {
         max-width: 750px;
     }
@@ -573,7 +535,6 @@
                 justify-content: center;
             }
         }
-
     }
 
     .swiper-slide {
@@ -648,17 +609,6 @@
 }
 
 .ryan_fairy {
-    .container {
-        width: 100%;
-        max-width: 1440px;
-        padding: 0 60px;
-        margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
-    }
-
     @include adaptiv-vaule("padding-top", 40, 30, 1);
     @include adaptiv-vaule("padding-bottom", 160, 70, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -684,16 +634,6 @@
 }
 
 .page_ryan {
-    .container {
-        width: 100%;
-        max-width: 1440px;
-        padding: 0 60px;
-        margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
-    }
 
     .about_img {
         &::before {

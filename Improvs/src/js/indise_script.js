@@ -114,6 +114,7 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
                     };
                     return (prev += cur.getDuration());
                 }, 0);
+                console.log(totalDuration)
             }
         });
         return anim;
@@ -122,6 +123,7 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
 function checktimer(progress, total, intervalId) {
     if (progress >= total) clearInterval(intervalId);
 }
+
 
 function startProgressTimer(currentSlideIndex = 0, reset = false) {
     if (reset) {
@@ -132,7 +134,9 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
     const totalSlides = 7;
     const fps = 16;
     const durationMS = totalDuration * 1000;
+    console.log(durationMS)
     const msPerSlide = durationMS / totalSlides;
+    console.log(msPerSlide)
 
     const intervalTimer = msPerSlide / fps;
     const progressCircle = document.querySelector(".raz");
@@ -141,12 +145,17 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
 
     if (!timerIntervalId) {
         timerIntervalId = setInterval(() => {
+
+            const totalTime = (progress / durationMS) || 0;
+
             progress += intervalTimer;
-            const percent = (progress / durationMS) * 100;
-            const clockArrowDeg = (progress / durationMS) * 360;
+            const percent = totalTime * 100;
+            const clockArrowDeg = totalTime * 360;
             progressCircle.style.setProperty("--pie-p", `${percent}%`);
             clockArrow.style.transform = `translate(-50%, -50%) rotate(${clockArrowDeg}deg)`;
             checktimer(progress, durationMS, timerIntervalId);
+            console.log(percent)
+            console.log(clockArrowDeg)
         }, intervalTimer);
     }
 }
@@ -201,10 +210,13 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 const indiseIntersectionObs = document.querySelector(".indise_slider_section");
 function callback(entries, observer) {
     entries.forEach((entry) => {
-        jsonPhoneAnimations[0].play();
-        startProgressTimer();
+        if(entry.isIntersecting){
+            jsonPhoneAnimations[0].play();
+            startProgressTimer();
+        }
     });
 }
+
 function createObserver(target, callback) {
     const options = {
         root: null,

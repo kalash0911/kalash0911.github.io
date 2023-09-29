@@ -97,7 +97,7 @@ function copyCode() {
             .style("fill", "#005BBB").text("Improvs");`;
 
     navigator.clipboard.writeText(jsCode);
-}
+} 
 
 function hideCopyCodeButton(isHide) {
     if (isHide) {
@@ -405,4 +405,3 @@ const slider = new Swiper(".case_swiper", {
         }
     }
 });
-

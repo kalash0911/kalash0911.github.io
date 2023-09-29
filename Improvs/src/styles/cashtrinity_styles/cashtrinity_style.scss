@@ -4,9 +4,10 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
     .container {
-        @include media ("<tablet") {
-            padding: 0;
-        }
+        max-width: 1350px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
     }
 
     .tip {
@@ -17,7 +18,7 @@
 
     .trinity_app_content {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
 
         @include media ("<tablet") {
@@ -28,6 +29,21 @@
     .trinity_app_text,
     .trinity_app_img {
         width: 48%
+    }
+
+    .trinity_app_img{
+        margin-right: -20px;
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 25%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: linear-gradient(90deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+        }
     }
 
     .trinity_app_text {

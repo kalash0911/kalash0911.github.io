@@ -154,6 +154,8 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
 
 
 // Scroll Trigger phoneAnimation
+
+
 function phoneAnimation() {
   const secondSection = document.querySelector(".sec-section");
   const phone = document.querySelector(".phone-anim");

@@ -372,16 +372,10 @@ th {
 /* 20 - минимальное значение свойства в px */
 /* 0 или 1 или 2 - ($type) условие, по которому будет выполняться адаптив */
 @font-face {
-  font-family: "Open Sans";
-  src: url("fonts/OpenSans-Regular.ttf");
+  font-family: "IBMPlexMono";
+  src: url("../fonts/IBMPlexMono-Medium.ttf");
   font-style: normal;
-  font-weight: 400; }
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("fonts/OpenSans-Bold.ttf");
-  font-style: normal;
-  font-weight: 700; }
+  font-weight: 500; }
 
 .clearfix:after {
   content: '';
@@ -427,7 +421,6 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .h {
-  font-family: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
   margin: 0;
   color: #fff; }
 
@@ -546,10 +539,7 @@ input[type='submit'] {
 
 body {
   background: #0E0E0E;
-  height: 100%;
-  max-width: 1920px;
-  width: 100%;
-  margin: 0 auto; }
+  height: 100%; }
 
 html {
   height: 100%;
@@ -604,7 +594,8 @@ main {
   -webkit-animation: fadeInUp;
   animation: fadeInUp;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s; }
+  animation-duration: 2s;
+  font-family: "IBMPlexMono"; }
   @media (max-width: 1300px) {
     .tip {
       font-size: calc(16px + 2 * ((100vw - calc(375px)) / 925)); } }
@@ -623,7 +614,7 @@ main {
   letter-spacing: -0.14px;
   text-transform: uppercase;
   background-color: #fff;
-  padding: 18px 16px;
+  padding: 25px 16px;
   border: 1px solid #fff;
   transition: all 0.3s ease;
   position: relative; }
@@ -781,7 +772,8 @@ main {
     -webkit-animation: fadeIn;
     animation: fadeIn;
     -webkit-animation-duration: 5s;
-    animation-duration: 5s; }
+    animation-duration: 5s;
+    font-family: 'IBMPlexMono'; }
     @media (max-width: 1300px) {
       .similar_main .main_tip {
         font-size: calc(12px + 4 * ((100vw - calc(375px)) / 925)); } }
@@ -1037,6 +1029,10 @@ main {
     @media (max-width: 1300px) {
       .similar_result .site_btn_white {
         font-size: calc(14px + 6 * ((100vw - calc(375px)) / 925)); } }
+    .similar_result .site_btn_white:hover .left_arrow {
+      left: 42%; }
+    .similar_result .site_btn_white:hover .right_arrow {
+      right: 42%; }
 
 .similar_video {
   /* Только если меньше контейнера */
@@ -1123,17 +1119,19 @@ main {
   @media (max-width: 1300px) {
     .trinity_app {
       padding-bottom: calc(80px + 110 * ((100vw - calc(375px)) / 925)); } }
-  @media (max-width: 767px) {
-    .trinity_app .container {
-      padding: 0; } }
+  .trinity_app .container {
+    max-width: 1350px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px; }
   @media (max-width: 767px) {
     .trinity_app .tip {
       padding: 0 15px; } }
   .trinity_app .trinity_app_content {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: start;
+    align-items: flex-start;
     -ms-flex-pack: justify;
     justify-content: space-between; }
     @media (max-width: 767px) {
@@ -1143,6 +1141,17 @@ main {
   .trinity_app .trinity_app_text,
   .trinity_app .trinity_app_img {
     width: 48%; }
+  .trinity_app .trinity_app_img {
+    margin-right: -20px;
+    position: relative; }
+    .trinity_app .trinity_app_img::after {
+      content: '';
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: linear-gradient(90deg, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%); }
   @media (max-width: 767px) {
     .trinity_app .trinity_app_text {
       width: 100%;
@@ -2798,29 +2807,13 @@ main {
 .indise_result .first_btn {
   margin-bottom: 20px; }
 
-.main_ryan .container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 60px;
-  margin: 0 auto; }
-  @media (max-width: 1199px) {
-    .main_ryan .container {
-      padding: 0 20px; } }
-
 .about_ryan {
   padding-top: 0; }
+  .about_ryan .container {
+    position: relative; }
   @media (max-width: 1023px) {
     .about_ryan {
       padding-top: 25px; } }
-  .about_ryan .container {
-    position: relative;
-    width: 100%;
-    max-width: 1440px;
-    padding: 0;
-    margin: 0 auto; }
-    @media (max-width: 1199px) {
-      .about_ryan .container {
-        padding: 0 20px; } }
   .about_ryan .content {
     position: absolute;
     top: 25px;
@@ -3188,13 +3181,10 @@ main {
   z-index: 2;
   border-top: 1px solid rgba(14, 14, 14, 0.2); }
   .phone-section .container {
-    width: 100%;
     max-width: 1440px;
-    padding: 0 60px;
+    width: 100%;
+    padding: 0 20px;
     margin: 0 auto; }
-    @media (max-width: 1199px) {
-      .phone-section .container {
-        padding: 0 20px; } }
   @media (max-width: 1300px) {
     .phone-section {
       padding-bottom: calc(75px + 75 * ((100vw - calc(375px)) / 925)); } }
@@ -3382,14 +3372,6 @@ main {
 
 .voice_ryan {
   border: none; }
-  .voice_ryan .container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 60px;
-    margin: 0 auto; }
-    @media (max-width: 1199px) {
-      .voice_ryan .container {
-        padding: 0 20px; } }
   .voice_ryan .about_text {
     max-width: 750px; }
   .voice_ryan .swiper_voice {
@@ -3487,14 +3469,6 @@ main {
   /* Только если меньше контейнера */
   padding-bottom: 160px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
-  .ryan_fairy .container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 60px;
-    margin: 0 auto; }
-    @media (max-width: 1199px) {
-      .ryan_fairy .container {
-        padding: 0 20px; } }
   @media (max-width: 1300px) {
     .ryan_fairy {
       padding-top: calc(30px + 10 * ((100vw - calc(375px)) / 925)); } }
@@ -3520,15 +3494,6 @@ main {
     .ryan_fairy .innovation_image img {
       width: 100%;
       height: 100%; }
-
-.page_ryan .container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 60px;
-  margin: 0 auto; }
-  @media (max-width: 1199px) {
-    .page_ryan .container {
-      padding: 0 20px; } }
 
 .page_ryan .about_img::before {
   display: block;
@@ -3623,6 +3588,9 @@ main {
       @media (max-width: 1300px) {
         .owners .innovation_title::before, .owners .innovation_title::after {
           height: calc(20px + 40 * ((100vw - calc(375px)) / 925)); } }
+
+.planeta_video {
+  border: none; }
 
 .typography_planeta .gradient_block {
   background: linear-gradient(90deg, #EAF1FF 16.67%, #2758B7 49.48%, #FAF8F3 85.94%); }
@@ -3952,7 +3920,8 @@ main {
   width: 60px;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.3);
-  opacity: 1; }
+  opacity: 1;
+  border-radius: 0; }
 
 .swiper_beach_club_section .swiper-pagination-bullet-active {
   background-color: #fff; }
@@ -4204,6 +4173,9 @@ main {
     @media (max-width: 1300px) {
       .shop_services .sub-title {
         font-size: calc(12px + 2 * ((100vw - calc(375px)) / 925)); } }
+
+.beach_club_video {
+  border: none; }
 
 .typography_beach_club .gradient_block {
   background: linear-gradient(90deg, #211F19 0%, #DDD4C5 49.48%, #C99E59 98.96%); }
@@ -4583,7 +4555,7 @@ main {
         height: 2px;
         background-color: #fff;
         border-radius: 10px;
-        transition: all .7s ease 0s; }
+        transition: all .3s ease-in 0s; }
       .header .header__content .burger::before, .header .header__content .burger::after {
         content: '';
         position: absolute;
@@ -4592,7 +4564,8 @@ main {
         width: 100%;
         background-color: #fff;
         border-radius: 10px;
-        transition: all .7s ease 0s; }
+        left: 0;
+        transition: all .3s ease-in 0s; }
       .header .header__content .burger::before {
         top: 4px; }
       .header .header__content .burger::after {
