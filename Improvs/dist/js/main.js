@@ -13,6 +13,7 @@ var lastSection = document.querySelector("[section=\"video3\"]");
 var lastVideoSection = document.querySelector("[section=\"video3\"]");
 var header = document.querySelector("#header");
 var copyCodeButton = document.querySelector("[copyCode]");
+var body = document.querySelector(".main_body_section");
 
 function isMobile() {
   var check = false;
@@ -39,6 +40,7 @@ function init() {
   window.isDownScroll = false;
   window.currentIndex = null;
   window.body_lock = false;
+  window.isScroling = false;
   showHeader(false);
 
   if (isMobile()) {
@@ -173,7 +175,6 @@ function nextSlide() {
       var section = sections[index].getAttribute('section');
 
       if (section === "work") {
-        var body = document.querySelector(".main_body_section");
         body.style.overflowY = "auto";
       }
 
@@ -252,7 +253,6 @@ function scrollToOffset(offset) {
 var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
 var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
 window.addEventListener("scroll", function () {
-  var body = document.querySelector(".main_body_section");
   var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
   if (window.body_lock) {
@@ -274,6 +274,11 @@ window.addEventListener("scroll", function () {
   if (viewedPageHeight >= viewportOffsetLastSection && !isDownScroll) {
     window.isDownScroll = true;
   }
+
+  window.isScroling = true;
+  setTimeout(function () {
+    return window.isScroling = false;
+  }, 500);
 }); //header
 
 function showHeader(isShow) {
@@ -387,8 +392,10 @@ var slider = new Swiper(".case_swiper", {
       var _this = this;
 
       this.autoplay.stop();
-      this.el.addEventListener('mouseenter', function () {
-        _this.autoplay.start();
+      this.el.addEventListener('mousemove', function () {
+        if (!window.isScroling) {
+          _this.autoplay.start();
+        }
       });
       this.el.addEventListener('mouseleave', function () {
         _this.autoplay.stop();
