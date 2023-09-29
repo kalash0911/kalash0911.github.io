@@ -129,11 +129,12 @@
             &::after {
                 content: '';
                 position: absolute;
-                right: 0;
+               left: 0;
                 height: 2px;
                 width: 100%;
                 background-color: $white;
                 border-radius: 10px;
+                transition: all .7s ease 0s;
             }
 
             &::before {
@@ -382,6 +383,15 @@
         }
 
         .burger_block {
+            &:hover span{
+                width: 80%;
+            }
+            &:hover .burger::after{
+                width: 50%;
+            }
+            &:hover .burger_active::after{
+                width: 100%!important;
+            }
             @include media ('<tablet') {
                 order: 2;
             }
