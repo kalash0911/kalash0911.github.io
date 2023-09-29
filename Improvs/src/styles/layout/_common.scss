@@ -607,57 +607,6 @@ body::-webkit-scrollbar {
     }
 }
 
-
-
-.our_work_main {
-    cursor: auto;
-
-    .cursor_custom {
-        cursor: none;
-    }
-
-    .circle_main_block {
-        position: relative;
-    }
-
-    .cursor {
-        display: block!important;
-        z-index: 40;
-        width: 144px;
-        height: 144px;
-        pointer-events: none;
-        position: absolute;
-        background: rgba(217, 217, 217, 1);
-        border-radius: 50%;
-        box-sizing: border-box;
-        transition: 0, 1s;
-        transform: translate(-50%, -50%);
-
-        .left_arrow,
-        .right_arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-          
-        }
-
-        .left_arrow {
-            left: 22px;
-
-        }
-
-        .right_arrow {
-            right: 22px;
-
-        }
-
-        svg {
-            fill: black;
-            transition: $transition_all_03;
-            transform: rotate(180deg);
-        }
-    }
-}
 .expand_active{
     .back_form {
         max-width: 90%; 
@@ -669,3 +618,9 @@ body::-webkit-scrollbar {
         max-width:958px ;
     }
 }
+
+.swiper-wrapper {
+    -webkit-transition-timing-function:linear!important; 
+    -o-transition-timing-function:linear!important;
+    transition-timing-function:linear!important; 
+  }
