@@ -3,6 +3,7 @@ const slider = new Swiper(".case_swiper", {
     grabCursor: true,
     autoplay: {
         delay: 0,
+        disableOnInteraction: false,
     },
     freeMode: true,
     loop: true,
@@ -27,15 +28,15 @@ const slider = new Swiper(".case_swiper", {
         init() {
             this.autoplay.stop();
 
-            this.el.addEventListener('mouseenter', () => {
+            this.el.addEventListener("mouseenter", () => {
                 this.autoplay.start();
             });
 
-            this.el.addEventListener('mouseleave', () => {
+            this.el.addEventListener("mouseleave", () => {
                 this.autoplay.stop();
             });
-        }
-    }
+        },
+    },
 });
 
 function filterCases(filter) {
