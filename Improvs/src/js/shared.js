@@ -3,14 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     selectCurrentPage();
     addEventButtonPopUp();
 });
+const menuItems=document.querySelectorAll(".menu__item");
 
 //BURGERMENU
 function selectCurrentPage(){
-    var menuItems=document.querySelectorAll(".menu__item");
+    cleanHoverMenu();
 
-    menuItems.forEach((menu) => {
-        menu.classList.remove("menu_active_link");
-    });
     if (/index/.test(location.href)) {
         menuItems[0].classList.add("menu_active_link");
       }else if(/our_work/.test(location.href)) {
@@ -22,6 +20,12 @@ function selectCurrentPage(){
       }else{
         menuItems[3].classList.add("menu_active_link");
       }
+}
+
+function cleanHoverMenu(){
+    menuItems.forEach((menu) => {
+        menu.classList.remove("menu_active_link");
+    });
 }
 
 function initHeader() {
@@ -40,11 +44,12 @@ function initHeader() {
             if (burger.classList.contains("burger_active")) {
                 burger.classList.add("burger_finish");
                 burger.classList.remove("burger_active");
-
+                window.body_lock=false;
 
             } else {
                 burger.classList.add("burger_active");
                 burger.classList.remove("burger_finish");
+                window.body_lock=true;
             }
             menuBody.classList.toggle("menu_active");
         });
@@ -60,7 +65,6 @@ function initHeader() {
                 burger.classList.add("burger_finish");
                 menuBody.classList.remove("menu_active");
                 menuOverlay.classList.remove("menu_overlay_active");
-
             });
         }
     }
@@ -77,6 +81,29 @@ function initHeader() {
     }
 }
 
+
+document.addEventListener('scroll', function () {
+    let main = document.querySelector("[section=\"video1\"]");
+    let website = document.querySelector("[section=\"video2\"]");
+    let mobileApplication = document.querySelector("[section=\"video3\"]");
+    let work = document.querySelector("[section=\"work\"]");
+    let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
+
+    let viewportOffsetMain= Math.abs(main.getBoundingClientRect().top + window.scrollY);
+    let viewportOffsetWebsite= Math.abs(website.getBoundingClientRect().top + window.scrollY);
+    let viewportOffMobileAppication= Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
+    let viewportOffWork= Math.abs(work.getBoundingClientRect().top + window.scrollY);
+
+    if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
+        cleanHoverMenu();
+        menuItems[1].classList.add("menu_active_link");
+    } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight <= viewportOffWork) {
+        cleanHoverMenu();
+        menuItems[2].classList.add("menu_active_link");
+    } 
+});
+
+
 //popUp
 const popup = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay-popup");
@@ -86,7 +113,7 @@ const btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
 
 function addEventButtonPopUp(){
     btnsShowPopUp.forEach(function (btn) {
-        btn.addEventListener('click', function () { Show(true) },false);
+        btn.addEventListener('click', function () { Show(true) });
     });
 
     btnsHidePopUp.forEach(function (btn) {

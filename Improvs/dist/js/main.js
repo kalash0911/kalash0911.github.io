@@ -278,7 +278,7 @@ window.addEventListener("scroll", function () {
   window.isScroling = true;
   setTimeout(function () {
     return window.isScroling = false;
-  }, 1000);
+  }, 500);
 }); //header
 
 function showHeader(isShow) {
@@ -365,6 +365,7 @@ function getSectionState() {
 var slider = new Swiper(".case_swiper", {
   speed: 4500,
   loop: true,
+  spaceBetween: 20,
   freeMode: true,
   centeredSlides: false,
   preventInteractionOnTransition: false,

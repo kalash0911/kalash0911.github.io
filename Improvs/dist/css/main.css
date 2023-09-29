@@ -4587,11 +4587,12 @@ main {
       .header .header__content .burger::before, .header .header__content .burger::after {
         content: '';
         position: absolute;
-        right: 0;
+        left: 0;
         height: 2px;
         width: 100%;
         background-color: #fff;
-        border-radius: 10px; }
+        border-radius: 10px;
+        transition: all .7s ease 0s; }
       .header .header__content .burger::before {
         top: 4px; }
       .header .header__content .burger::after {
@@ -4848,6 +4849,12 @@ main {
   100% {
     -webkit-transform: rotateZ(5deg);
     transform: rotateZ(5deg); } }
+    .header .header__content .burger_block:hover span {
+      width: 80%; }
+    .header .header__content .burger_block:hover .burger::after {
+      width: 50%; }
+    .header .header__content .burger_block:hover .burger_active::after {
+      width: 100% !important; }
     @media (max-width: 767px) {
       .header .header__content .burger_block {
         -ms-flex-order: 2;
@@ -5209,9 +5216,22 @@ body::-webkit-scrollbar {
     letter-spacing: -0.14px;
     text-transform: uppercase;
     padding: 15px 16px 15px 14px;
-    border: 1px solid #fff;
+    border: none;
     transition: all 0.3s ease;
-    background: none; }
+    background: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+    .exspand_btn button::before {
+      content: '';
+      background: url(../images/main_page/expand-icon.svg);
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px; }
+    .exspand_btn button::after {
+      content: 'Expand'; }
     .exspand_btn button .icon_btn {
       display: -ms-flexbox;
       display: flex;
@@ -5283,7 +5303,8 @@ body::-webkit-scrollbar {
     margin: 0 auto;
     max-width: 790px;
     padding: 68px;
-    position: relative; }
+    position: relative;
+    transition: all 1s ease; }
   .contact_form_section .contact_title {
     color: #fff;
     text-align: center;
@@ -5325,9 +5346,7 @@ body::-webkit-scrollbar {
   .contact_form_section .data_text,
   .contact_form_section .area_text {
     border: 1px solid #FFF;
-    background: transparent;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    background: #262626;
     width: 100%;
     padding: 18px 16px;
     color: #fff;
@@ -5431,17 +5450,27 @@ body::-webkit-scrollbar {
       .our_work_main .our_work_btn .site_btn_white svg {
         fill: #fff; }
 
-.expand_active .back_form {
-  max-width: 90%;
-  height: 90%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
+.expand_active {
   transition: all 1s ease; }
-
-.expand_active .content {
-  max-width: 958px; }
+  .expand_active .exspand_btn button::before {
+    content: '';
+    background: url(../images/main_page/minimize-icon.svg);
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; }
+  .expand_active .exspand_btn button::after {
+    content: 'minimize'; }
+  .expand_active .back_form {
+    max-width: 90%;
+    height: 90%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    transition: all 1s ease; }
+  .expand_active .content {
+    max-width: 958px; }
 
 .swiper-wrapper {
   transition-timing-function: linear !important; }
