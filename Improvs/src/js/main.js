@@ -247,27 +247,29 @@ function scrollToOffset(offset) {
 }
 
 //sroll previous
+let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
 window.addEventListener("scroll", function () {
     let body = document.querySelector(".main_body_section");
+     
+    let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
     if (window.body_lock) {
         return;
     }
 
-    let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-    let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
-    let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
     if (viewedPageHeight >= viewportOffsetLastVideo) {
         header.classList.remove("header_transparent");
     } else {
         header.classList.add("header_transparent");
     }
-    if (viewedPageHeight <= viewportOffsetLastSection && window.isDownScroll) {
+    if (viewedPageHeight <= (viewportOffsetLastSection-50) && window.isDownScroll) {
         window.isDownScroll = false;
-        previousSlide(true);
         body.style.overflowY = "hidden";
+        previousSlide(true);
+        
     }
-    if (viewedPageHeight >= viewportOffsetLastSection) {
+    if (viewedPageHeight >= viewportOffsetLastSection&&!isDownScroll) {
         window.isDownScroll = true;
     }
 });

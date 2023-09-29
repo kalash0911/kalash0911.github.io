@@ -249,16 +249,15 @@ function scrollToOffset(offset) {
 } //sroll previous
 
 
+var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
 window.addEventListener("scroll", function () {
   var body = document.querySelector(".main_body_section");
+  var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
   if (window.body_lock) {
     return;
   }
-
-  var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-  var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
-  var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
 
   if (viewedPageHeight >= viewportOffsetLastVideo) {
     header.classList.remove("header_transparent");
@@ -266,13 +265,13 @@ window.addEventListener("scroll", function () {
     header.classList.add("header_transparent");
   }
 
-  if (viewedPageHeight <= viewportOffsetLastSection && window.isDownScroll) {
+  if (viewedPageHeight <= viewportOffsetLastSection - 50 && window.isDownScroll) {
     window.isDownScroll = false;
-    previousSlide(true);
     body.style.overflowY = "hidden";
+    previousSlide(true);
   }
 
-  if (viewedPageHeight >= viewportOffsetLastSection) {
+  if (viewedPageHeight >= viewportOffsetLastSection && !isDownScroll) {
     window.isDownScroll = true;
   }
 }); //header
