@@ -5197,7 +5197,8 @@ body::-webkit-scrollbar {
 .exspand_btn {
   position: absolute;
   top: 32px;
-  right: 32px; }
+  right: 32px;
+  z-index: 15; }
   .exspand_btn button {
     display: inline-block;
     width: 100%;
@@ -5276,7 +5277,8 @@ body::-webkit-scrollbar {
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
     -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px); }
+    backdrop-filter: blur(5px);
+    transition: all 1s ease; }
   .contact_form_section .content {
     margin: 0 auto;
     max-width: 790px;
@@ -5435,7 +5437,8 @@ body::-webkit-scrollbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  transition: all 1s ease; }
 
 .expand_active .content {
   max-width: 958px; }
