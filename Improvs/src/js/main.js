@@ -273,7 +273,7 @@ window.addEventListener("scroll", function () {
     }
 
     window.isScroling=true;
-    setTimeout(() => window.isScroling=false, 500);
+    setTimeout(() => window.isScroling=false, 1000);
 });
 
 

@@ -278,7 +278,7 @@ window.addEventListener("scroll", function () {
   window.isScroling = true;
   setTimeout(function () {
     return window.isScroling = false;
-  }, 500);
+  }, 1000);
 }); //header
 
 function showHeader(isShow) {
