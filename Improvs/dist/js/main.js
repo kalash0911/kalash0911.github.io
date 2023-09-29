@@ -265,7 +265,7 @@ window.addEventListener("scroll", function () {
     header.classList.add("header_transparent");
   }
 
-  if (viewedPageHeight <= viewportOffsetLastSection - 50 && window.isDownScroll) {
+  if (viewedPageHeight <= viewportOffsetLastSection - 500 && window.isDownScroll) {
     window.isDownScroll = false;
     body.style.overflowY = "hidden";
     previousSlide(true);

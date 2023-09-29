@@ -140,10 +140,8 @@ function Show(isShow) {
 
 //contact form
 const expandBtn = document.querySelector("[expandBtn]");
-
 function expandForm(){
     let contact_form_section=document.querySelector(".contact_form_section");
     contact_form_section.classList.toggle("expand_active");
 }
-
 expandBtn.addEventListener('click',expandForm,false);
