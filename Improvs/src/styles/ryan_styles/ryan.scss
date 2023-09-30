@@ -78,17 +78,6 @@
     //     min-height: 520px;
     // }
 
-    .container {
-        width: 100%;
-        max-width: 1440px;
-        padding: 0 60px;
-        margin: 0 auto;
-
-        @include media('<widescreen') {
-            padding: 0 20px;
-        }
-    }
-
     .card_image {
         width: 100%;
         position: relative;
@@ -163,89 +152,6 @@
         @include adaptiv-vaule("height", 30, 15, 1);
         top: 35%;
         left: 15%;
-    }
-
-    .circle {
-        position: absolute;
-        // bottom: -1900px;
-        bottom: -1815px;
-        left: 50%;
-        transform: translateX(-50%);
-        // width: 2100px;
-        width: 200vw;
-        height: 2100px;
-        background-color: $yellowD0;
-        border-radius: 50%;
-        z-index: 2;
-
-        @include media ("<desktop") {
-            width: 1800px;
-        }
-
-        @include media('<phone') {
-            bottom: -870px;
-            width: 1000px;
-            height: 1000px;
-        }
-    }
-
-    .circle_dashed {
-        position: absolute;
-        bottom: -1815px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200vw;
-        height: 2100px;
-        background-color: transparent;
-        border-radius: 50%;
-        z-index: 2;
-        border: 2px dashed #CF7C58;
-
-        @include media ("<desktop") {
-            width: 1800px;
-            bottom: -1795px;
-        }
-
-        @include media('<phone') {
-            bottom: -840px;
-            width: 1000px;
-            height: 1000px;
-        }
-    }
-
-    .block {
-        display: flex;
-    }
-
-    .card-holder {
-        @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 320, $angle: 24);
-        position: absolute;
-        // top: 20px;
-        top: 260px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        transform-origin: 0 $cardCarouselWidth / 2 + px;
-        animation: rotating 150s linear infinite;
-
-        @include media('<phone') {
-            top: 200px;
-            $cardCarouselWidth: 1300;
-            $cardCarouselHeight: 900;
-            transform-origin: 0 $cardCarouselWidth / 2 + px;
-            @include on-circle($item-count: 20, $circle-size: $cardCarouselWidth, $item-size: 135, $angle: 24);
-        }
-
-        .item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 100%;
-            transition: .15s;
-
-            img {
-                transform: rotate(90deg);
-            }
-        }
     }
 }
 

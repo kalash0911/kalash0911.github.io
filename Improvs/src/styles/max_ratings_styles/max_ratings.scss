@@ -38,26 +38,11 @@
     }
 }
 
-.mobile_max_ratings {
-    .container {
-        position: relative;
-    }
-
-    .content {
-        position: absolute;
-        top: 105px;
-        left: 20px;
-        z-index: 1;
-
-        @include media ("<desktop") {
-            position: static;
+.mobile_max_ratings{
+    .about_img{
+        &::before{
+            display: block;
         }
-    }
-
-    .about_img {
-        max-width: 1240px;
-        width: 100%;
-        margin: 0 0 0 auto;
     }
 }
 

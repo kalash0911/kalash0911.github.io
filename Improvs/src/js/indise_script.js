@@ -114,7 +114,6 @@ const jsonPhoneAnimations = new Array(menuSteps.length)
                     };
                     return (prev += cur.getDuration());
                 }, 0);
-                console.log(totalDuration)
             }
         });
         return anim;
@@ -134,9 +133,7 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
     const totalSlides = 7;
     const fps = 16;
     const durationMS = totalDuration * 1000;
-    console.log(durationMS)
     const msPerSlide = durationMS / totalSlides;
-    console.log(msPerSlide)
 
     const intervalTimer = msPerSlide / fps;
     const progressCircle = document.querySelector(".raz");
@@ -154,8 +151,6 @@ function startProgressTimer(currentSlideIndex = 0, reset = false) {
             progressCircle.style.setProperty("--pie-p", `${percent}%`);
             clockArrow.style.transform = `translate(-50%, -50%) rotate(${clockArrowDeg}deg)`;
             checktimer(progress, durationMS, timerIntervalId);
-            console.log(percent)
-            console.log(clockArrowDeg)
         }, intervalTimer);
     }
 }

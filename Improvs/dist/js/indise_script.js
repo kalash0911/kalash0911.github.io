@@ -96,7 +96,6 @@ var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function 
 
         return prev += cur.getDuration();
       }, 0);
-      console.log(totalDuration);
     }
   });
   return anim;
@@ -118,9 +117,7 @@ function startProgressTimer() {
   var totalSlides = 7;
   var fps = 16;
   var durationMS = totalDuration * 1000;
-  console.log(durationMS);
   var msPerSlide = durationMS / totalSlides;
-  console.log(msPerSlide);
   var intervalTimer = msPerSlide / fps;
   var progressCircle = document.querySelector(".raz");
   var clockArrow = document.querySelector(".clock-arrow");
@@ -135,8 +132,6 @@ function startProgressTimer() {
       progressCircle.style.setProperty("--pie-p", "".concat(percent, "%"));
       clockArrow.style.transform = "translate(-50%, -50%) rotate(".concat(clockArrowDeg, "deg)");
       checktimer(progress, durationMS, timerIntervalId);
-      console.log(percent);
-      console.log(clockArrowDeg);
     }, intervalTimer);
   }
 } // Swiper:
