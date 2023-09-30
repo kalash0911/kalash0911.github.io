@@ -195,6 +195,7 @@ function nextSlide() {
 
 function previousSlide() {
   var isDownScroll = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  console.log("previousSlide");
 
   if (window.body_lock) {
     return;
@@ -242,6 +243,7 @@ function scrollByElementName(elementName) {
 }
 
 function scrollToOffset(offset) {
+  console.log("scrollToOffset " + offset);
   window.scrollTo({
     behavior: 'smooth',
     left: 0,
@@ -250,7 +252,7 @@ function scrollToOffset(offset) {
 } //sroll previous
 
 
-var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
 var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
 window.addEventListener("scroll", function () {
   var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
@@ -265,13 +267,13 @@ window.addEventListener("scroll", function () {
     header.classList.add("header_transparent");
   }
 
-  if (viewedPageHeight <= viewportOffsetLastSection - 500 && window.isDownScroll) {
+  if (viewedPageHeight <= viewportOffsetLastSection && window.isDownScroll) {
     window.isDownScroll = false;
     body.style.overflowY = "hidden";
     previousSlide(true);
   }
 
-  if (viewedPageHeight >= viewportOffsetLastSection && !isDownScroll) {
+  if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
     window.isDownScroll = true;
   }
 
