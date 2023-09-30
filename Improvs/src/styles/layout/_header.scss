@@ -308,8 +308,7 @@
             height: 100%;
             overflow: auto;
             top: 0;
-            left: -200%;
-            background-color: $black;
+            left: -100%;
             padding: 80px 0px 20px 20px;
             transition: all .5s ease 0s;
             display: flex;
@@ -336,6 +335,7 @@
             z-index: 1;
             border: 1px solid $white;
             padding: 40px;
+            background-color: $black;
 
             @include media ('<tablet') {
                 border: none;
