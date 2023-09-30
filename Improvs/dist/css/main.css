@@ -4224,6 +4224,7 @@ main {
       object-fit: cover; }
 
 .header {
+  font-family: IBM Plex Mono;
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -4234,7 +4235,6 @@ main {
   top: 0;
   left: 0;
   z-index: 5;
-  max-height: 80px;
   opacity: 0;
   -webkit-animation: animateHeader 1s forwards;
   animation: animateHeader 1s forwards;
@@ -4279,7 +4279,7 @@ main {
       justify-content: space-between;
       width: 100%; }
     .header .header__content .btn_black {
-      font-family: 'IBMPlexMono';
+      font-family: IBM Plex Mono;
       display: inline-block;
       position: relative;
       width: 100%;
@@ -4289,10 +4289,21 @@ main {
       line-height: 17.6px;
       letter-spacing: -0.14px;
       text-transform: uppercase;
-      padding: 18px 32px;
+      padding: 18px;
       border: 1px solid #fff;
       transition: all 0.3s ease;
-      background: none; }
+      background: none;
+      min-width: 164px;
+      /* Только если больше контейнера */
+      font-size: 14px;
+      /* Только если больше контейнера */
+      padding: 18px; }
+      @media (min-width: 1300px) {
+        .header .header__content .btn_black {
+          font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
+      @media (min-width: 1300px) {
+        .header .header__content .btn_black {
+          padding: calc(15px + 3 * ((100vw - calc(375px)) / 1065)); } }
       .header .header__content .btn_black:hover {
         background-color: #fff;
         transition: all 0.3s ease;
@@ -4313,7 +4324,19 @@ main {
       text-transform: uppercase;
       padding: 15px;
       border: 1px solid #fff;
-      transition: all 0.3s ease; }
+      transition: all 0.3s ease;
+      -webkit-transform: none;
+      transform: none;
+      /* Только если больше контейнера */
+      font-size: 14px;
+      /* Только если больше контейнера */
+      padding: 15px; }
+      @media (min-width: 1300px) {
+        .header .header__content .burger-btn {
+          font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
+      @media (min-width: 1300px) {
+        .header .header__content .burger-btn {
+          padding: calc(14px + 1 * ((100vw - calc(375px)) / 1065)); } }
       @media (max-width: 767px) {
         .header .header__content .burger-btn {
           border: none;
@@ -4324,16 +4347,28 @@ main {
           .header .header__content .burger-btn .text_burger_btn {
             display: none; } }
         .header .header__content .burger-btn .text_burger_btn::before {
-          font-family: 'IBMPlexMono';
+          font-family: IBM Plex Mono;
           content: 'menu'; }
     .header .header__content .burger {
       position: relative;
       width: 24px;
       height: 24px;
-      z-index: 5; }
+      z-index: 5;
+      /* Только если больше контейнера */
+      width: 24px;
+      /* Только если больше контейнера */
+      height: 24px; }
+      @media (min-width: 1300px) {
+        .header .header__content .burger {
+          width: calc(20px + 4 * ((100vw - calc(375px)) / 1065)); } }
+      @media (min-width: 1300px) {
+        .header .header__content .burger {
+          height: calc(20px + 4 * ((100vw - calc(375px)) / 1065)); } }
       .header .header__content .burger span {
         position: absolute;
-        top: 11px;
+        top: 50%;
+        -webkit-transform: translateY(-40%);
+        transform: translateY(-40%);
         left: 0;
         width: 100%;
         height: 2px;
@@ -4374,11 +4409,11 @@ main {
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    top: 11px; }
+    top: 40%; }
   100% {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 11px; } }
+    -webkit-transform: rotate(45deg) translateY(-40%);
+    transform: rotate(45deg) translateY(-40%);
+    top: 40%; } }
 
 @keyframes burger1 {
   0% {
@@ -4386,11 +4421,11 @@ main {
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    top: 11px; }
+    top: 40%; }
   100% {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 11px; } }
+    -webkit-transform: rotate(45deg) translateY(-40%);
+    transform: rotate(45deg) translateY(-40%);
+    top: 40%; } }
 
 @-webkit-keyframes burger2 {
   0% {
@@ -4398,11 +4433,11 @@ main {
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    bottom: 11px; }
+    top: 40%; }
   100% {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    bottom: 11px; } }
+    -webkit-transform: rotate(-45deg) translateY(-40%);
+    transform: rotate(-45deg) translateY(-40%);
+    top: 40%; } }
 
 @keyframes burger2 {
   0% {
@@ -4410,11 +4445,11 @@ main {
   40% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    bottom: 11px; }
+    top: 40%; }
   100% {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    bottom: 11px; } }
+    -webkit-transform: rotate(-45deg) translateY(-40%);
+    transform: rotate(-45deg) translateY(-40%);
+    top: 40%; } }
     .header .header__content .burger_finish::before, .header .header__content .burger_finish::after {
       -webkit-animation-duration: .7s;
       animation-duration: .7s;
@@ -4508,7 +4543,12 @@ main {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
-      flex-direction: column; }
+      flex-direction: column;
+      /* Только если больше контейнера */
+      padding-top: 80px; }
+      @media (min-width: 1300px) {
+        .header .header__content .menu {
+          padding-top: calc(75px + 5 * ((100vw - calc(375px)) / 1065)); } }
       @media (max-width: 767px) {
         .header .header__content .menu {
           min-width: 100%;
