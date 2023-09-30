@@ -1685,9 +1685,12 @@ main {
   .reviews_max_retings .swiper-slide-next {
     transition: all .7s ease 0s; }
 
+.blogPageWrapper footer {
+  padding-top: 0; }
+
 .blog_page {
   padding-top: 100px;
-  padding-bottom: 30px; }
+  padding-bottom: 50px; }
   .blog_page .title_wrap {
     display: -ms-flexbox;
     display: flex;
@@ -1717,8 +1720,6 @@ main {
     font-size: 16px;
     border: 1px solid #fff;
     width: 155px;
-    /* Только если меньше контейнера */
-    width: 155px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -1726,9 +1727,6 @@ main {
     -ms-flex-pack: center;
     justify-content: center;
     padding: 18px; }
-    @media (max-width: 1300px) {
-      .blog_page .dropbtn {
-        width: calc(100px + 55 * ((100vw - calc(375px)) / 925)); } }
     .blog_page .dropbtn:hover img {
       -webkit-transform: rotateX(180deg);
       transform: rotateX(180deg);
@@ -3994,7 +3992,7 @@ main {
       padding-top: calc(100px + 20 * ((100vw - calc(375px)) / 925)); } }
   @media (max-width: 1300px) {
     .our_work {
-      padding-bottom: calc(100px + 20 * ((100vw - calc(375px)) / 925)); } }
+      padding-bottom: calc(40px + 80 * ((100vw - calc(375px)) / 925)); } }
   .our_work .our_work_title {
     color: #fff;
     /* Только если меньше контейнера */
@@ -4171,7 +4169,8 @@ main {
     @media (max-width: 767px) {
       .our_work .case_text {
         width: 100%;
-        border: none; } }
+        border: none;
+        padding-top: 0; } }
   .our_work .case_title {
     color: #FFF;
     font-size: 24px;
@@ -4221,7 +4220,8 @@ main {
     position: relative; }
     @media (max-width: 767px) {
       .our_work .case_swiper {
-        margin: 0 0 25px 33px; } }
+        margin: 0 0 25px 33px;
+        padding-bottom: 0; } }
     .our_work .case_swiper::after {
       content: '';
       position: absolute;

@@ -7,7 +7,6 @@ var slider = new Swiper(".case_swiper", {
     delay: 0,
     disableOnInteraction: false
   },
-  freeMode: true,
   loop: true,
   spaceBetween: 20,
   slidesPerView: 1.3,
@@ -18,6 +17,9 @@ var slider = new Swiper(".case_swiper", {
     },
     480: {
       slidesPerView: 1.3
+    },
+    1024: {
+      freeMode: true
     },
     1440: {
       slidesPerView: 1.5
