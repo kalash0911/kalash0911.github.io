@@ -636,7 +636,13 @@ main {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px; }
+    .site_btn_white .left_arrow svg,
+    .site_btn_white .right_arrow svg {
+      width: 100%;
+      height: 100%; }
   .site_btn_white .left_arrow {
     left: 16px;
     transition: all 0.3s ease; }
@@ -684,7 +690,13 @@ main {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px; }
+    .site_btn_transparent .left_arrow svg,
+    .site_btn_transparent .right_arrow svg {
+      width: 100%;
+      height: 100%; }
   .site_btn_transparent .left_arrow {
     left: 16px; }
   .site_btn_transparent .right_arrow {
