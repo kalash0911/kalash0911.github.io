@@ -84,9 +84,13 @@ function copyCode() {
 }
 
 function hideCopyCodeButton(isHide) {
+  var firstVideo = document.querySelector("[section=\"video1\"]");
+
   if (isHide) {
+    firstVideo.classList.add("video_block_full");
     copyCodeButton.classList.add("hide");
   } else {
+    firstVideo.classList.remove("video_block_full");
     copyCodeButton.classList.remove("hide");
   }
 } //video
