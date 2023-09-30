@@ -148,7 +148,7 @@ body::-webkit-scrollbar {
 
         @include media ("<tablet") {
             bottom: auto;
-            top:101px;
+            top:50px;
             left: 16px;
             padding: 16px;
         }
@@ -648,7 +648,7 @@ body::-webkit-scrollbar {
     bottom: 120px !important;
 }
 .safari_button_2 {
-    bottom: 200px !important;
+    bottom: 195px !important;
 }
 .our_work_main {
     font-family: $NeueHaas-font;
