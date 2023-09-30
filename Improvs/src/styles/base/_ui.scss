@@ -107,11 +107,12 @@ main {
         transition: $transition_all_03;
     }
 
+
+
     &:hover {
         background-color: transparent;
         transition: $transition_all_03;
         color: $white;
-
 
         .left_arrow {
             left: 37%;
@@ -469,15 +470,16 @@ main {
         @include adaptiv-vaule("font-size", 20, 14, 1);
 
         &:hover {
-            .left_arrow {
-                left: 42%;
+            @include media (">desktop") {
+                .left_arrow {
+                    left: 42%;
+                }
+
+                .right_arrow {
+                    right: 42%;
+
+                }
             }
-
-            .right_arrow {
-                right: 42%;
-
-            }
-
         }
     }
 }

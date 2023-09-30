@@ -58,15 +58,11 @@
 }
 
 .indise_slider_section {
-    padding: 130px 0;
+    padding: 25px 0 130px 0;
     overflow: hidden;
 
     .container {
         max-width: 1440px;
-    }
-
-    @include media('<tablet') {
-        padding: 100px 0;
     }
 
     .swiper {
