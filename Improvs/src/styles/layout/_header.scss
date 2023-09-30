@@ -33,6 +33,7 @@
         margin-left: 60px;
         @include media ('<tablet') {
            margin-top: 5px;
+           margin-left: 0px;
         }
     }
 

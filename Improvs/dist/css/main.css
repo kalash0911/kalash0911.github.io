@@ -4309,7 +4309,8 @@ main {
     margin-left: 60px; }
     @media (max-width: 767px) {
       .header .logo_block {
-        margin-top: 5px; } }
+        margin-top: 5px;
+        margin-left: 0px; } }
   .header .hide_logo {
     opacity: 0; }
   .header .container {
@@ -5112,6 +5113,10 @@ body::-webkit-scrollbar {
   top: 40px;
   left: 32px;
   cursor: pointer; }
+  @media (max-width: 767px) {
+    .close_popup {
+      left: 24px;
+      top: 24px; } }
   .close_popup span {
     position: absolute;
     top: 11px;
@@ -5174,7 +5179,7 @@ body::-webkit-scrollbar {
     transition: all 1s ease; }
     @media (max-width: 767px) {
       .contact_form_section .content {
-        padding: 107px 24px 68px; } }
+        padding: 90px 24px 68px; } }
   .contact_form_section .contact_title {
     font-family: "NeueHaas";
     color: #fff;
