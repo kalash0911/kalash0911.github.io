@@ -98,7 +98,7 @@ body::-webkit-scrollbar {
         backdrop-filter: blur(10px);
 
         @include media ("<tablet") {
-            padding: 18px 0;
+            padding: 15px 32px;
             text-align: center;
         }
 
@@ -643,10 +643,13 @@ body::-webkit-scrollbar {
     }
 }
 
-.safari_button {
-    bottom: 116px !important;
-}
 
+.safari_button {
+    bottom: 120px !important;
+}
+.safari_button-2 {
+    bottom: 200px !important;
+}
 .our_work_main {
     font-family: $NeueHaas-font;
     padding-bottom: 0px;

@@ -4805,7 +4805,7 @@ body::-webkit-scrollbar {
   backdrop-filter: blur(10px); }
   @media (max-width: 767px) {
     .video_page .btn_black {
-      padding: 18px 0;
+      padding: 15px 32px;
       text-align: center; } }
   .video_page .btn_black .left_arrow,
   .video_page .btn_black .right_arrow {
@@ -5307,7 +5307,10 @@ body::-webkit-scrollbar {
     right: 36%; }
 
 .safari_button {
-  bottom: 116px !important; }
+  bottom: 120px !important; }
+
+.safari_button-2 {
+  bottom: 200px !important; }
 
 .our_work_main {
   font-family: "NeueHaas";
