@@ -18,13 +18,13 @@ let reload = serverbrowser.reload;
 
 
 function setMode(isProduction = false) {
-    return cb => {
-      process.env.NODE_ENV = isProduction ? 'production' : 'development'
-      cb()
-    }
+  return cb => {
+    process.env.NODE_ENV = isProduction ? 'production' : 'development'
+    cb()
+  }
 }
 
-const dev = gulp.parallel(html, styles, jquery, script, fonts, files);
+const dev = gulp.parallel(html, styles, jquery, script, imgMin, fonts, files);
 
 const build = gulp.series(clean, dev)
 
