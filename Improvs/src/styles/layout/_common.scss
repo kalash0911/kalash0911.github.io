@@ -7,142 +7,151 @@ body::-webkit-scrollbar {
 }
 
 .video_page {
-    .content {
-        .video_block {
-            position: relative;
-            height: 100vh;
+
+    .video_block {
+        position: relative;
+        height: 100vh;
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &.video_block_full {
 
             video {
-                width: 100%;
-                height: 100%;
+                object-fit: cover;
             }
+        }
+    }
 
-            .top_video_btn {
-                position: absolute;
-                right: 20px;
-                top: 13px;
+    .top_video_btn {
+        position: absolute;
+        right: 20px;
+        top: 13px;
 
-                @include media ("<tablet") {
-                    top: auto;
-                    bottom: 40px;
-                    right: 16px;
-                }
+        @include media ("<tablet") {
+            top: auto;
+            bottom: 40px;
+            right: 16px;
+        }
+    }
 
-                .btn_black {
-                    font-family: $IBM-font;
-                    padding: 28.5px 32px;
-                    cursor: pointer;
-                    position: relative;
-                    font-size: 20px;
-                    font-family: $IBM-font;
+    .btn_black {
+        font-family: $IBM-font;
+        padding: 28.5px 32px;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        font-family: $IBM-font;
 
-                    @include media ("<tablet") {
-                        padding: 15.5px 32px;
+        @include media ("<tablet") {
+            padding: 15.5px 32px;
 
-                    }
-                }
+        }
+    }
 
-                .hide {
-                    display: none;
-                }
-            }
+    .hide {
+        display: none;
+    }
 
-            .bottom_video_btn {
-                position: absolute;
-                right: 20px;
-                bottom: 32px;
+    .bottom_video_btn {
+        position: absolute;
+        right: 20px;
+        bottom: 32px;
 
-                @include media ("<tablet") {
-                    right: 16px;
-                    left: 16px;
-                    bottom: 36px;
-                    transform: none;
-                    right: 16px;
+        @include media ("<tablet") {
+            right: 16px;
+            left: 16px;
+            bottom: 36px;
+            transform: none;
+            right: 16px;
 
-                }
-            }
-            .bottom_video_btn-top{
-                bottom: 111px;
-                display: none;
-                @include media ("<tablet") {
-                    display: block;
-                 }
-            }
+        }
+    }
+    .bottom_video_btn-top{
+        bottom: 111px;
+        display: none;
 
-            .btn_black {
-                font-family: $IBM-font;
-                display: inline-block;
-                position: relative;
-                width: 100%;
-                color: $white;
-                font-size: 20px;
-                font-weight: 500;
-                line-height: 128%;
-                letter-spacing: -0.14px;
-                text-transform: uppercase;
-                padding: 28.5px 58px;
-                border: 1px solid $white;
+        @include media ("<tablet") {
+            display: block;
+        }
+    }
+
+    .btn_black {
+        font-family: $IBM-font;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        color: $white;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 128%;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 28.5px 58px;
+        border: 1px solid $white;
+        transition: $transition_all_03;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(10px);
+
+        @include media ("<tablet") {
+            padding: 18px 0;
+            text-align: center;
+        }
+
+
+        .left_arrow,
+        .right_arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .left_arrow {
+            left: 32px;
+
+        }
+
+        .right_arrow {
+            right: 32px;
+
+        }
+
+        svg {
+            fill: $white;
+            transition: $transition_all_03;
+        }
+
+        &:hover {
+            background-color: $white;
+            transition: $transition_all_03;
+            color: $black;
+
+            svg {
+                fill: $black;
                 transition: $transition_all_03;
-                background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-                backdrop-filter: blur(10px);
-
-                @include media ("<tablet") {
-                    padding: 18px 0;
-                    text-align: center;
-                }
-
-
-                .left_arrow,
-                .right_arrow {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-
-                .left_arrow {
-                    left: 32px;
-
-                }
-
-                .right_arrow {
-                    right: 32px;
-
-                }
-
-                svg {
-                    fill: $white;
-                    transition: $transition_all_03;
-                }
-
-                &:hover {
-                    background-color: $white;
-                    transition: $transition_all_03;
-                    color: $black;
-
-                    svg {
-                        fill: $black;
-                        transition: $transition_all_03;
-                    }
-                }
             }
+        }
+    }
 
-            .turn_sound {
-                border: 1px solid $white;
-                padding: 24px;
-                position: absolute;
-                left: 20px;
-                bottom: 32px;
-                border-radius: 50%;
-                background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    .turn_sound {
+        border: 1px solid $white;
+        padding: 24px;
+        position: absolute;
+        left: 20px;
+        bottom: 32px;
+        border-radius: 50%;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 
-                @include media ("<tablet") {
-                    bottom: auto;
-                    top:101px;
-                    left: 16px;
-                    padding: 16px;
-                }
-
-            }
+        @include media ("<tablet") {
+            bottom: auto;
+            top:101px;
+            left: 16px;
+            padding: 16px;
         }
 
     }
