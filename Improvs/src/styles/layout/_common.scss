@@ -162,7 +162,6 @@ body::-webkit-scrollbar {
         line-height:100%;
         color: $white;
         position: absolute;
-        top: 160px;
         text-transform: uppercase;
         letter-spacing: -3px;
         @include media ("<tablet") {
@@ -171,12 +170,15 @@ body::-webkit-scrollbar {
     }
 
     .text_video_1 {
+        top: 160px;
         left: 20px;
         max-width: 430px;
         --animate-duration: 4s; 
     }
 
     .text_video_2 {
+        top:50%;
+        transform: translate(0,-50%);
         right: 20px;
         max-width: 480px;
         --animate-duration: 4s;
