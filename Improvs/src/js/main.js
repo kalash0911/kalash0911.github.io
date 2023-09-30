@@ -32,9 +32,14 @@ function init() {
     }
 
     if (isMobile() && isSafari()) {
-        const bottom_video_btns = document.querySelectorAll(".bottom_video_btn");
-        bottom_video_btns.forEach((bottom_video_btn) => {
-            bottom_video_btn.classList.add("safari_button");
+        const video_btns_safari_1 = document.querySelectorAll(".video_btn_safari_1");
+        const video_btns_safari_2 = document.querySelectorAll(".video_btn_safari_2");
+        video_btns_safari_1.forEach((bottom_video_btn) => {
+            bottom_video_btn.classList.add("safari_button_1");
+        });
+
+        video_btns_safari_2.forEach((bottom_video_btn) => {
+            bottom_video_btn.classList.add("safari_button_2");
         });
     }
 

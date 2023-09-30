@@ -32,9 +32,13 @@ function init() {
   }
 
   if (isMobile() && isSafari()) {
-    var bottom_video_btns = document.querySelectorAll(".bottom_video_btn");
-    bottom_video_btns.forEach(function (bottom_video_btn) {
-      bottom_video_btn.classList.add("safari_button");
+    var video_btns_safari_1 = document.querySelectorAll(".video_btn_safari_1");
+    var video_btns_safari_2 = document.querySelectorAll(".video_btn_safari_2");
+    video_btns_safari_1.forEach(function (bottom_video_btn) {
+      bottom_video_btn.classList.add("safari_button_1");
+    });
+    video_btns_safari_2.forEach(function (bottom_video_btn) {
+      bottom_video_btn.classList.add("safari_button_2");
     });
   }
 
