@@ -4224,10 +4224,10 @@ main {
       object-fit: cover; }
 
 .header {
-  font-family: IBM Plex Mono;
+  font-family: "IBMPlexMono";
   font-size: 14px;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 128%;
   letter-spacing: -0.01em;
   text-align: left;
   position: fixed;
@@ -4279,14 +4279,14 @@ main {
       justify-content: space-between;
       width: 100%; }
     .header .header__content .btn_black {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       display: inline-block;
       position: relative;
       width: 100%;
       color: #fff;
       font-size: 14px;
       font-weight: 500;
-      line-height: 17.6px;
+      line-height: 125%;
       letter-spacing: -0.14px;
       text-transform: uppercase;
       padding: 18px;
@@ -4319,7 +4319,7 @@ main {
       color: #fff;
       font-size: 14px;
       font-weight: 500;
-      line-height: 17.6px;
+      line-height: 125%;
       letter-spacing: -0.14px;
       text-transform: uppercase;
       padding: 15px;
@@ -4347,7 +4347,7 @@ main {
           .header .header__content .burger-btn .text_burger_btn {
             display: none; } }
         .header .header__content .burger-btn .text_burger_btn::before {
-          font-family: IBM Plex Mono;
+          font-family: "IBMPlexMono";
           content: 'menu'; }
     .header .header__content .burger {
       position: relative;
@@ -4538,7 +4538,7 @@ main {
       top: 0;
       left: -100%;
       padding: 80px 0px 20px 20px;
-      transition: all .5s ease 0s;
+      transition: all .15s ease 0s;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
@@ -4551,7 +4551,8 @@ main {
       @media (max-width: 767px) {
         .header .header__content .menu {
           min-width: 100%;
-          padding: 196px 16px 40px 16px; } }
+          padding: 196px 16px 40px 16px;
+          background-color: #0E0E0E; } }
     .header .header__content .menu_active {
       left: 0; }
     .header .header__content .menu__wrap {
@@ -4571,7 +4572,7 @@ main {
           border: none;
           padding: 0px; } }
       .header .header__content .menu__wrap .site_btn_white {
-        font-family: IBM Plex Mono;
+        font-family: "IBMPlexMono";
         /* Только если меньше контейнера */
         font-size: 20px;
         padding: 28.5px 0px; }
@@ -4613,17 +4614,13 @@ main {
         opacity: 60%;
         margin-bottom: 5px;
         font-weight: 500;
-        /* Только если меньше контейнера */
-        line-height: 42px;
+        line-height: 100%;
         letter-spacing: -3%;
         text-transform: uppercase;
         transition: 0.5s; }
         @media (max-width: 1300px) {
           .header .header__content .menu__item a {
             font-size: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
-        @media (max-width: 1300px) {
-          .header .header__content .menu__item a {
-            line-height: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
     .header .header__content .logo_block:hover {
       -webkit-animation: animateLogo .1s ease-in-out;
       animation: animateLogo .1s ease-in-out; }
@@ -4701,125 +4698,112 @@ body::-webkit-scrollbar {
 .main_body_section {
   overflow: hidden; }
 
-.video_page .video_block {
+.video_page .content .video_block {
   position: relative;
   height: 100vh; }
-  .video_page .video_block video {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .video_page .content .video_block video {
     width: 100%;
     height: 100%; }
-  .video_page .video_block.video_block_full video {
-    -o-object-fit: cover;
-    object-fit: cover; }
-
-.video_page .top_video_btn {
-  position: absolute;
-  right: 20px;
-  top: 13px; }
-  @media (max-width: 767px) {
-    .video_page .top_video_btn {
-      top: auto;
-      bottom: 40px;
-      right: 16px; } }
-
-.video_page .btn_black {
-  font-family: IBM Plex Mono;
-  padding: 28.5px 32px;
-  cursor: pointer;
-  position: relative;
-  font-size: 20px;
-  font-family: IBM Plex Mono; }
-  @media (max-width: 767px) {
-    .video_page .btn_black {
-      padding: 15.5px 32px; } }
-
-.video_page .hide {
-  display: none; }
-
-.video_page .bottom_video_btn {
-  position: absolute;
-  right: 20px;
-  bottom: 32px; }
-  @media (max-width: 767px) {
-    .video_page .bottom_video_btn {
-      right: 16px;
-      left: 16px;
-      bottom: 36px;
-      -webkit-transform: none;
-      transform: none;
-      right: 16px; } }
-
-.video_page .bottom_video_btn-top {
-  bottom: 111px;
-  display: none; }
-  @media (max-width: 767px) {
-    .video_page .bottom_video_btn-top {
-      display: block; } }
-
-.video_page .btn_black {
-  font-family: IBM Plex Mono;
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 25.6px;
-  letter-spacing: -0.14px;
-  text-transform: uppercase;
-  padding: 28.5px 58px;
-  border: 1px solid #fff;
-  transition: all 0.3s ease;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px); }
-  @media (max-width: 767px) {
-    .video_page .btn_black {
-      padding: 18px 0;
-      text-align: center; } }
-  .video_page .btn_black .left_arrow,
-  .video_page .btn_black .right_arrow {
+  .video_page .content .video_block .top_video_btn {
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
-  .video_page .btn_black .left_arrow {
-    left: 32px; }
-  .video_page .btn_black .right_arrow {
-    right: 32px; }
-  .video_page .btn_black svg {
-    fill: #fff;
-    transition: all 0.3s ease; }
-  .video_page .btn_black:hover {
-    background-color: #fff;
+    right: 20px;
+    top: 13px; }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .top_video_btn {
+        top: auto;
+        bottom: 40px;
+        right: 16px; } }
+    .video_page .content .video_block .top_video_btn .btn_black {
+      font-family: "IBMPlexMono";
+      padding: 28.5px 32px;
+      cursor: pointer;
+      position: relative;
+      font-size: 20px;
+      font-family: "IBMPlexMono"; }
+      @media (max-width: 767px) {
+        .video_page .content .video_block .top_video_btn .btn_black {
+          padding: 15.5px 32px; } }
+    .video_page .content .video_block .top_video_btn .hide {
+      display: none; }
+  .video_page .content .video_block .bottom_video_btn {
+    position: absolute;
+    right: 20px;
+    bottom: 32px; }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .bottom_video_btn {
+        right: 16px;
+        left: 16px;
+        bottom: 36px;
+        -webkit-transform: none;
+        transform: none;
+        right: 16px; } }
+  .video_page .content .video_block .bottom_video_btn-top {
+    bottom: 111px;
+    display: none; }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .bottom_video_btn-top {
+        display: block; } }
+  .video_page .content .video_block .btn_black {
+    font-family: "IBMPlexMono";
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 128%;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 28.5px 58px;
+    border: 1px solid #fff;
     transition: all 0.3s ease;
-    color: #0E0E0E; }
-    .video_page .btn_black:hover svg {
-      fill: #0E0E0E;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .btn_black {
+        padding: 18px 0;
+        text-align: center; } }
+    .video_page .content .video_block .btn_black .left_arrow,
+    .video_page .content .video_block .btn_black .right_arrow {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .video_page .content .video_block .btn_black .left_arrow {
+      left: 32px; }
+    .video_page .content .video_block .btn_black .right_arrow {
+      right: 32px; }
+    .video_page .content .video_block .btn_black svg {
+      fill: #fff;
       transition: all 0.3s ease; }
-
-.video_page .turn_sound {
-  border: 1px solid #FFFFFF;
-  padding: 24px;
-  position: absolute;
-  left: 20px;
-  bottom: 32px;
-  border-radius: 50%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
-  @media (max-width: 767px) {
-    .video_page .turn_sound {
-      bottom: auto;
-      top: 101px;
-      left: 16px;
-      padding: 16px; } }
+    .video_page .content .video_block .btn_black:hover {
+      background-color: #fff;
+      transition: all 0.3s ease;
+      color: #0E0E0E; }
+      .video_page .content .video_block .btn_black:hover svg {
+        fill: #0E0E0E;
+        transition: all 0.3s ease; }
+  .video_page .content .video_block .turn_sound {
+    border: 1px solid #fff;
+    padding: 24px;
+    position: absolute;
+    left: 20px;
+    bottom: 32px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .turn_sound {
+        bottom: auto;
+        top: 101px;
+        left: 16px;
+        padding: 16px; } }
 
 .video_page .text_main_video {
-  font-family: Neue Haas Grotesk Display Pro;
+  font-family: "NeueHaas";
   font-size: 48px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 100%;
   color: #fff;
   position: absolute;
   top: 160px;
@@ -4840,7 +4824,7 @@ body::-webkit-scrollbar {
   --animate-duration: 4s; }
 
 .brain_section {
-  font-family: Neue Haas Grotesk Display Pro;
+  font-family: "NeueHaas";
   height: 100vh;
   width: 100%;
   display: -ms-flexbox;
@@ -4954,7 +4938,7 @@ body::-webkit-scrollbar {
     color: #0E0E0E;
     font-size: 14px;
     font-weight: 500;
-    line-height: 17.64px;
+    line-height: 128%;
     letter-spacing: -1px;
     text-transform: uppercase;
     border: 1px solid #fff;
@@ -5040,7 +5024,7 @@ body::-webkit-scrollbar {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    line-height: 17.6px;
+    line-height: 128%;
     letter-spacing: -0.14px;
     text-transform: uppercase;
     padding: 15px 16px 15px 14px;
@@ -5059,7 +5043,7 @@ body::-webkit-scrollbar {
       height: 24px;
       margin-right: 10px; }
     .exspand_btn button::after {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       content: 'Expand'; }
     .exspand_btn button .icon_btn {
       display: -ms-flexbox;
@@ -5114,7 +5098,7 @@ body::-webkit-scrollbar {
   -ms-flex-pack: center;
   justify-content: center; }
   .contact_form_section .site_btn_white {
-    font-family: IBM Plex Mono; }
+    font-family: "IBMPlexMono"; }
   .contact_form_section .container {
     display: -ms-flexbox;
     display: flex;
@@ -5140,7 +5124,7 @@ body::-webkit-scrollbar {
       .contact_form_section .content {
         padding: 107px 24px 68px; } }
   .contact_form_section .contact_title {
-    font-family: Neue Haas Grotesk Display Pro;
+    font-family: "NeueHaas";
     color: #fff;
     text-align: center;
     /* Только если меньше контейнера */
@@ -5159,7 +5143,7 @@ body::-webkit-scrollbar {
          margin-bottom: calc(45px + -10 * ((100vw - calc(375px)) / 925)); } }
   .contact_form_section form,
   .contact_form_section .inpur_wrap {
-    font-family: IBM Plex Mono;
+    font-family: "IBMPlexMono";
     width: 100%;
     display: -ms-flexbox;
     display: flex;
@@ -5172,7 +5156,7 @@ body::-webkit-scrollbar {
   .contact_form_section .area {
     margin-bottom: 25px; }
   .contact_form_section .input_label {
-    font-family: IBM Plex Mono;
+    font-family: "IBMPlexMono";
     color: #fff;
     font-size: 12px;
     font-weight: 600;
@@ -5182,7 +5166,7 @@ body::-webkit-scrollbar {
     margin-bottom: 5px; }
   .contact_form_section .data_text,
   .contact_form_section .area_text {
-    border: 1px solid #FFF;
+    border: 1px solid #fff;
     background: #262626;
     width: 100%;
     padding: 18px 16px;
@@ -5194,7 +5178,7 @@ body::-webkit-scrollbar {
       border: 1px solid #A6A6A6;
       transition: all 0.3s ease; }
     .contact_form_section .data_text::-webkit-input-placeholder, .contact_form_section .area_text::-webkit-input-placeholder {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       color: #A6A6A6;
       font-size: 14px;
       font-weight: 500;
@@ -5202,7 +5186,7 @@ body::-webkit-scrollbar {
       letter-spacing: -0.14px;
       text-transform: uppercase; }
     .contact_form_section .data_text::-moz-placeholder, .contact_form_section .area_text::-moz-placeholder {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       color: #A6A6A6;
       font-size: 14px;
       font-weight: 500;
@@ -5210,7 +5194,7 @@ body::-webkit-scrollbar {
       letter-spacing: -0.14px;
       text-transform: uppercase; }
     .contact_form_section .data_text:-ms-input-placeholder, .contact_form_section .area_text:-ms-input-placeholder {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       color: #A6A6A6;
       font-size: 14px;
       font-weight: 500;
@@ -5218,7 +5202,7 @@ body::-webkit-scrollbar {
       letter-spacing: -0.14px;
       text-transform: uppercase; }
     .contact_form_section .data_text::-ms-input-placeholder, .contact_form_section .area_text::-ms-input-placeholder {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       color: #A6A6A6;
       font-size: 14px;
       font-weight: 500;
@@ -5227,7 +5211,7 @@ body::-webkit-scrollbar {
       text-transform: uppercase; }
     .contact_form_section .data_text::placeholder,
     .contact_form_section .area_text::placeholder {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       color: #A6A6A6;
       font-size: 14px;
       font-weight: 500;
@@ -5237,7 +5221,7 @@ body::-webkit-scrollbar {
   .contact_form_section .area_text {
     height: 165px; }
   .contact_form_section .form_btn {
-    font-family: IBM Plex Mono;
+    font-family: "IBMPlexMono";
     width: 100%;
     color: #0E0E0E;
     font-size: 14px;
@@ -5278,12 +5262,12 @@ body::-webkit-scrollbar {
   bottom: 116px; }
 
 .our_work_main {
-  font-family: Neue Haas Grotesk Display Pro;
+  font-family: "NeueHaas";
   padding-bottom: 0px; }
   .our_work_main .our_work_btn {
     margin: 60px 20px 0px; }
     .our_work_main .our_work_btn .site_btn_white {
-      font-family: IBM Plex Mono;
+      font-family: "IBMPlexMono";
       background: none;
       color: #fff;
       padding: 28.5px 0px;
@@ -5324,7 +5308,7 @@ body::-webkit-scrollbar {
   overflow: auto; }
 
 footer {
-  font-family: Neue Haas Grotesk Display Pro;
+  font-family: "NeueHaas";
   width: 100%;
   position: relative;
   /* Только если меньше контейнера */
@@ -5373,7 +5357,7 @@ footer {
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    line-height: 17.6px;
+    line-height: 125%;
     letter-spacing: -0.14px;
     text-transform: uppercase;
     padding: 18px 32px;
@@ -5399,7 +5383,7 @@ footer {
     .menu_footer_block ul li a {
       font-size: 18px;
       font-weight: 500;
-      line-height: 18px;
+      line-height: 100%;
       color: #fff;
       text-transform: uppercase; }
       .menu_footer_block ul li a:hover {
@@ -5431,15 +5415,11 @@ footer {
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        /* Только если меньше контейнера */
-        line-height: 24px;
+        line-height: 100%;
         text-transform: uppercase; }
         @media (max-width: 1300px) {
           .social_block div li a {
             font-size: calc(16px + 8 * ((100vw - calc(375px)) / 925)); } }
-        @media (max-width: 1300px) {
-          .social_block div li a {
-            line-height: calc(16px + 8 * ((100vw - calc(375px)) / 925)); } }
         .social_block div li a:hover {
           text-decoration: underline; }
         .social_block div li a img {
@@ -5480,8 +5460,7 @@ footer {
       font-size: 24px;
       font-style: normal;
       font-weight: 500;
-      /* Только если меньше контейнера */
-      line-height: 24px;
+      line-height: 100%;
       letter-spacing: -1px;
       text-transform: uppercase;
       white-space: nowrap;
@@ -5489,9 +5468,6 @@ footer {
       @media (max-width: 1300px) {
         .links_block ul a {
           font-size: calc(15px + 9 * ((100vw - calc(375px)) / 925)); } }
-      @media (max-width: 1300px) {
-        .links_block ul a {
-          line-height: calc(16px + 8 * ((100vw - calc(375px)) / 925)); } }
     @media (max-width: 767px) {
       .links_block ul {
         -ms-flex-pack: center;
@@ -5510,12 +5486,12 @@ footer {
   .bottom_footer .year_block {
     font-size: 16px;
     font-weight: 500;
-    line-height: 16px;
+    line-height: 100%;
     color: #A6A6A6; }
   .bottom_footer .privacy_block a {
     font-size: 16px;
     font-weight: 500;
-    line-height: 16px;
+    line-height: 100%;
     color: #dbdbdb;
     text-transform: uppercase; }
     .bottom_footer .privacy_block a:hover {

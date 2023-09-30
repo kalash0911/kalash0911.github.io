@@ -7,161 +7,151 @@ body::-webkit-scrollbar {
 }
 
 .video_page {
-
-    .video_block {
-        position: relative;
-        height: 100vh;
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        &.video_block_full {
+    .content {
+        .video_block {
+            position: relative;
+            height: 100vh;
 
             video {
-                object-fit: cover;
+                width: 100%;
+                height: 100%;
             }
-        }
 
-    }
-    
-    .top_video_btn {
-        position: absolute;
-        right: 20px;
-        top: 13px;
+            .top_video_btn {
+                position: absolute;
+                right: 20px;
+                top: 13px;
 
-        @include media ("<tablet") {
-            top: auto;
-            bottom: 40px;
-            right: 16px;
-        }
-    }
+                @include media ("<tablet") {
+                    top: auto;
+                    bottom: 40px;
+                    right: 16px;
+                }
 
-    .btn_black {
-        font-family: IBM Plex Mono;
-        padding: 28.5px 32px;
-        cursor: pointer;
-        position: relative;
-        font-size: 20px;
-        font-family: IBM Plex Mono;
+                .btn_black {
+                    font-family: $IBM-font;
+                    padding: 28.5px 32px;
+                    cursor: pointer;
+                    position: relative;
+                    font-size: 20px;
+                    font-family: $IBM-font;
 
-        @include media ("<tablet") {
-            padding: 15.5px 32px;
+                    @include media ("<tablet") {
+                        padding: 15.5px 32px;
 
-        }
-    }
+                    }
+                }
 
-    .hide {
-        display: none;
-    }
-
-    .bottom_video_btn {
-        position: absolute;
-        right: 20px;
-        bottom: 32px;
-
-        @include media ("<tablet") {
-            right: 16px;
-            left: 16px;
-            bottom: 36px;
-            transform: none;
-            right: 16px;
-
-        }
-    }
-    
-    .bottom_video_btn-top{
-        bottom: 111px;
-        display: none;
-        @include media ("<tablet") {
-            display: block;
+                .hide {
+                    display: none;
+                }
             }
-    }
 
-    .btn_black {
-        font-family: IBM Plex Mono;
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        color: $white;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 25.6px;
-        letter-spacing: -0.14px;
-        text-transform: uppercase;
-        padding: 28.5px 58px;
-        border: 1px solid $white;
-        transition: $transition_all_03;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-        backdrop-filter: blur(10px);
+            .bottom_video_btn {
+                position: absolute;
+                right: 20px;
+                bottom: 32px;
 
-        @include media ("<tablet") {
-            padding: 18px 0;
-            text-align: center;
-        }
+                @include media ("<tablet") {
+                    right: 16px;
+                    left: 16px;
+                    bottom: 36px;
+                    transform: none;
+                    right: 16px;
 
+                }
+            }
+            .bottom_video_btn-top{
+                bottom: 111px;
+                display: none;
+                @include media ("<tablet") {
+                    display: block;
+                 }
+            }
 
-        .left_arrow,
-        .right_arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .left_arrow {
-            left: 32px;
-
-        }
-
-        .right_arrow {
-            right: 32px;
-
-        }
-
-        svg {
-            fill: $white;
-            transition: $transition_all_03;
-        }
-
-        &:hover {
-            background-color: $white;
-            transition: $transition_all_03;
-            color: $black;
-
-            svg {
-                fill: $black;
+            .btn_black {
+                font-family: $IBM-font;
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                color: $white;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 128%;
+                letter-spacing: -0.14px;
+                text-transform: uppercase;
+                padding: 28.5px 58px;
+                border: 1px solid $white;
                 transition: $transition_all_03;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+                backdrop-filter: blur(10px);
+
+                @include media ("<tablet") {
+                    padding: 18px 0;
+                    text-align: center;
+                }
+
+
+                .left_arrow,
+                .right_arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .left_arrow {
+                    left: 32px;
+
+                }
+
+                .right_arrow {
+                    right: 32px;
+
+                }
+
+                svg {
+                    fill: $white;
+                    transition: $transition_all_03;
+                }
+
+                &:hover {
+                    background-color: $white;
+                    transition: $transition_all_03;
+                    color: $black;
+
+                    svg {
+                        fill: $black;
+                        transition: $transition_all_03;
+                    }
+                }
             }
-        }
-    }
 
-    .turn_sound {
-        border: 1px solid #FFFFFF;
-        padding: 24px;
-        position: absolute;
-        left: 20px;
-        bottom: 32px;
-        border-radius: 50%;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+            .turn_sound {
+                border: 1px solid $white;
+                padding: 24px;
+                position: absolute;
+                left: 20px;
+                bottom: 32px;
+                border-radius: 50%;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 
-        @include media ("<tablet") {
-            bottom: auto;
-            top:101px;
-            left: 16px;
-            padding: 16px;
+                @include media ("<tablet") {
+                    bottom: auto;
+                    top:101px;
+                    left: 16px;
+                    padding: 16px;
+                }
+
+            }
         }
 
     }
 
     .text_main_video {
-        font-family: Neue Haas Grotesk Display Pro;
+        font-family: $NeueHaas-font;
         font-size: 48px;
         font-weight: 500;
-        line-height: 48px;
+        line-height:100%;
         color: $white;
         position: absolute;
         top: 160px;
@@ -186,7 +176,7 @@ body::-webkit-scrollbar {
 }
 
 .brain_section {
-    font-family: Neue Haas Grotesk Display Pro;
+    font-family: $NeueHaas-font;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -296,7 +286,7 @@ body::-webkit-scrollbar {
         color: $black;
         font-size: 14px;
         font-weight: 500;
-        line-height: 17.64px;
+        line-height:128%;
         letter-spacing: -1px;
         text-transform: uppercase;
         border: 1px solid $white;
@@ -400,10 +390,10 @@ body::-webkit-scrollbar {
     button {
         display: inline-block;
         width: 100%;
-        color: #fff;
+        color: $white;
         font-size: 14px;
         font-weight: 500;
-        line-height: 17.6px;
+        line-height: 128%;
         letter-spacing: -0.14px;
         text-transform: uppercase;
         padding: 15px 16px 15px 14px;
@@ -421,7 +411,7 @@ body::-webkit-scrollbar {
             margin-right: 10px;
         }
         &::after {
-            font-family: IBM Plex Mono;
+            font-family: $IBM-font;
             content: 'Expand';
         }
         .icon_btn {
@@ -488,7 +478,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     .site_btn_white{
-        font-family: IBM Plex Mono;
+        font-family: $IBM-font;
     }
     .container {
         display: flex;
@@ -517,7 +507,7 @@ body::-webkit-scrollbar {
     }
 
     .contact_title {
-        font-family: Neue Haas Grotesk Display Pro;
+        font-family: $NeueHaas-font;
         color: $white;
         text-align: center;
         @include adaptiv-vaule("font-size", 70, 42, 1);
@@ -530,7 +520,7 @@ body::-webkit-scrollbar {
 
     form,
     .inpur_wrap {
-        font-family: IBM Plex Mono;
+        font-family: $IBM-font;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -546,7 +536,7 @@ body::-webkit-scrollbar {
     }
 
     .input_label {
-        font-family: IBM Plex Mono;
+        font-family: $IBM-font;
         color: $white;
         font-size: 12px;
         font-weight: 600;
@@ -558,7 +548,7 @@ body::-webkit-scrollbar {
 
     .data_text,
     .area_text {
-        border: 1px solid #FFF;
+        border: 1px solid $white;
         background: #262626;
         width: 100%;
         padding: 18px 16px;
@@ -572,7 +562,7 @@ body::-webkit-scrollbar {
         }
 
         &::placeholder {
-            font-family: IBM Plex Mono;
+            font-family: $IBM-font;
             color: $gray_A6;
             font-size: 14px;
             font-weight: 500;
@@ -587,7 +577,7 @@ body::-webkit-scrollbar {
     }
 
     .form_btn {
-        font-family: IBM Plex Mono;
+        font-family: $IBM-font;
         width: 100%;
         color: $black;
         font-size: 14px;
@@ -647,14 +637,14 @@ body::-webkit-scrollbar {
 }
 
 .our_work_main {
-    font-family: Neue Haas Grotesk Display Pro;
+    font-family: $NeueHaas-font;
     padding-bottom: 0px;
 
     .our_work_btn {
         margin: 60px 20px 0px;
 
         .site_btn_white {
-            font-family: IBM Plex Mono;
+            font-family: $IBM-font;
             background: none;
             color: $white;
             padding: 28.5px 0px;
