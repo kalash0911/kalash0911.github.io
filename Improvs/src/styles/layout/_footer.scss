@@ -9,9 +9,12 @@ footer {
     justify-content: space-between;
     .logo_block{
         margin-bottom: 55px;
+        @include media ("<tablet") {
+            margin-bottom: 40px;
+        }
         img{
-            width: 169px;
-            height: 51px;
+             @include adaptiv-vaule("width",169, 150, 1);
+            @include adaptiv-vaule("height",51, 46, 1);
         }
     }
 }
@@ -67,13 +70,17 @@ footer {
         }
         li{
             margin-right: 16px;
+            @include media ("<tablet") {
+               margin-top:20px;
+              }
             a{
-                font-size: 18px;
+                @include adaptiv-vaule("font-size",18, 16, 1);
                 font-weight: 500;
                 line-height: 100%;
-                color:$white;
+                color: rgba(166, 166, 166, 1);
                 text-transform: uppercase;
                &:hover{
+                color:$white;
                 text-decoration: underline;
                }
             }
@@ -89,7 +96,7 @@ footer {
             text-align: center;
         }
         li{
-            @include adaptiv-vaule("margin-bottom",15, 15, 1);
+            @include adaptiv-vaule("margin-bottom",24, 22, 1);
             &:last-child{
                 margin-bottom: 0;
             }
@@ -98,7 +105,7 @@ footer {
                 text-align: start;
                 display: flex;
                 align-items: end;
-                @include adaptiv-vaule("font-size",24, 16, 1);
+                @include adaptiv-vaule("font-size",24, 20, 1);
                 font-style: normal;
                 font-weight: 500;
                line-height:100%;
@@ -108,14 +115,15 @@ footer {
                    }
                 img{
                     margin-right: 8px;
-                    width: 24px;
-                    height: 24px;
+                    @include adaptiv-vaule("width",24, 20, 1);
+                    @include adaptiv-vaule("height",24, 20, 1);
                 }
                 }
         }
         @include media ("<tablet") {
             text-align: center;
-            margin: 85px 0;
+            margin: 40px 0;
+            
         }
     }
     }
