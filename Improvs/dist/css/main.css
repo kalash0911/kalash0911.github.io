@@ -4538,7 +4538,7 @@ main {
       top: 0;
       left: -100%;
       padding: 80px 0px 20px 20px;
-      transition: all .15s ease 0s;
+      transition: all .5s ease 0s;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
