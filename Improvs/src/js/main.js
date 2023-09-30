@@ -277,6 +277,29 @@ window.addEventListener("scroll", function () {
         window.isDownScroll = true;
     }
 
+
+    //menu hover
+    let main = document.querySelector("[section=\"video1\"]");
+    let website = document.querySelector("[section=\"video2\"]");
+    let mobileApplication = document.querySelector("[section=\"video3\"]");
+    let work = document.querySelector("[section=\"work\"]");
+
+    let viewportOffsetMain= Math.abs(main.getBoundingClientRect().top + window.scrollY);
+    let viewportOffsetWebsite= Math.abs(website.getBoundingClientRect().top + window.scrollY);
+    let viewportOffMobileAppication= Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
+    let viewportOffWork= Math.abs(work.getBoundingClientRect().top + window.scrollY);
+
+    if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
+        cleanHoverMenu();
+        menuItems[1].classList.add("menu_active_link");
+    } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight < viewportOffWork) {
+        cleanHoverMenu();
+        menuItems[2].classList.add("menu_active_link");
+    }else if(viewedPageHeight >= viewportOffWork){
+        cleanHoverMenu();
+        menuItems[3].classList.add("menu_active_link");
+    }
+
     window.isScroling=true;
     setTimeout(() => window.isScroling=false, 500);
 });

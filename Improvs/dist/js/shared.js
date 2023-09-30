@@ -83,27 +83,8 @@ function initHeader() {
       menuOverlay.classList.remove("menu_overlay_active");
     });
   }
-}
+} //popUp
 
-document.addEventListener('scroll', function () {
-  var main = document.querySelector("[section=\"video1\"]");
-  var website = document.querySelector("[section=\"video2\"]");
-  var mobileApplication = document.querySelector("[section=\"video3\"]");
-  var work = document.querySelector("[section=\"work\"]");
-  var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-  var viewportOffsetMain = Math.abs(main.getBoundingClientRect().top + window.scrollY);
-  var viewportOffsetWebsite = Math.abs(website.getBoundingClientRect().top + window.scrollY);
-  var viewportOffMobileAppication = Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
-  var viewportOffWork = Math.abs(work.getBoundingClientRect().top + window.scrollY);
-
-  if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
-    cleanHoverMenu();
-    menuItems[1].classList.add("menu_active_link");
-  } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight <= viewportOffWork) {
-    cleanHoverMenu();
-    menuItems[2].classList.add("menu_active_link");
-  }
-}); //popUp
 
 var popup = document.querySelector(".popup");
 var overlay = document.querySelector(".overlay-popup");
@@ -150,18 +131,32 @@ function expandForm() {
   contact_form_section.classList.toggle("expand_active");
 }
 
-expandBtn.addEventListener('click', expandForm, false);
-var animateLogoBlock = document.querySelector('.header_logo');
-var animateLogo = bodymovin.loadAnimation({
-  wrapper: animateLogoBlock,
+expandBtn.addEventListener('click', expandForm, false); //logo animate
+
+var animateHeaderLogoBlock = document.querySelector('.header_logo');
+var animateHeaderLogo = bodymovin.loadAnimation({
+  wrapper: animateHeaderLogoBlock,
   animType: 'svg',
   autoplay: false,
   path: './files/Logo.json'
 });
-animateLogoBlock.addEventListener("mouseenter", function () {
-  animateLogo.play();
+animateHeaderLogoBlock.addEventListener("mouseenter", function () {
+  animateHeaderLogo.play();
 });
-animateLogoBlock.addEventListener("mouseleave", function () {
-  animateLogo.pause();
+animateHeaderLogoBlock.addEventListener("mouseleave", function () {
+  animateHeaderLogo.pause();
+});
+var animateFooterLogoBlock = document.querySelector('.footer_logo');
+var animateFooterLogo = bodymovin.loadAnimation({
+  wrapper: animateFooterLogoBlock,
+  animType: 'svg',
+  autoplay: false,
+  path: './files/Logo.json'
+});
+animateFooterLogoBlock.addEventListener("mouseenter", function () {
+  animateFooterLogo.play();
+});
+animateFooterLogoBlock.addEventListener("mouseleave", function () {
+  animateFooterLogo.pause();
 });
 //# sourceMappingURL=shared.js.map

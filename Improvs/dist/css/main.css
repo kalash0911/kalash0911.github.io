@@ -5345,17 +5345,8 @@ footer {
     @media (max-width: 767px) {
       footer .logo_block {
         margin-bottom: 40px; } }
-    footer .logo_block img {
-      /* Только если меньше контейнера */
-      width: 169px;
-      /* Только если меньше контейнера */
-      height: 51px; }
-      @media (max-width: 1300px) {
-        footer .logo_block img {
-          width: calc(150px + 19 * ((100vw - calc(375px)) / 925)); } }
-      @media (max-width: 1300px) {
-        footer .logo_block img {
-          height: calc(46px + 5 * ((100vw - calc(375px)) / 925)); } }
+    footer .logo_block svg {
+      width: 300px !important; }
 
 .content {
   width: 100%;

@@ -279,6 +279,27 @@ window.addEventListener("scroll", function () {
 
   if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
     window.isDownScroll = true;
+  } //menu hover
+
+
+  var main = document.querySelector("[section=\"video1\"]");
+  var website = document.querySelector("[section=\"video2\"]");
+  var mobileApplication = document.querySelector("[section=\"video3\"]");
+  var work = document.querySelector("[section=\"work\"]");
+  var viewportOffsetMain = Math.abs(main.getBoundingClientRect().top + window.scrollY);
+  var viewportOffsetWebsite = Math.abs(website.getBoundingClientRect().top + window.scrollY);
+  var viewportOffMobileAppication = Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
+  var viewportOffWork = Math.abs(work.getBoundingClientRect().top + window.scrollY);
+
+  if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
+    cleanHoverMenu();
+    menuItems[1].classList.add("menu_active_link");
+  } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight < viewportOffWork) {
+    cleanHoverMenu();
+    menuItems[2].classList.add("menu_active_link");
+  } else if (viewedPageHeight >= viewportOffWork) {
+    cleanHoverMenu();
+    menuItems[3].classList.add("menu_active_link");
   }
 
   window.isScroling = true;

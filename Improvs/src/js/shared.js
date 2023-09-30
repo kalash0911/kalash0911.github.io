@@ -81,29 +81,6 @@ function initHeader() {
     }
 }
 
-
-document.addEventListener('scroll', function () {
-    let main = document.querySelector("[section=\"video1\"]");
-    let website = document.querySelector("[section=\"video2\"]");
-    let mobileApplication = document.querySelector("[section=\"video3\"]");
-    let work = document.querySelector("[section=\"work\"]");
-    let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-
-    let viewportOffsetMain= Math.abs(main.getBoundingClientRect().top + window.scrollY);
-    let viewportOffsetWebsite= Math.abs(website.getBoundingClientRect().top + window.scrollY);
-    let viewportOffMobileAppication= Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
-    let viewportOffWork= Math.abs(work.getBoundingClientRect().top + window.scrollY);
-
-    if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
-        cleanHoverMenu();
-        menuItems[1].classList.add("menu_active_link");
-    } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight <= viewportOffWork) {
-        cleanHoverMenu();
-        menuItems[2].classList.add("menu_active_link");
-    } 
-});
-
-
 //popUp
 const popup = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay-popup");
@@ -147,19 +124,36 @@ function expandForm(){
 expandBtn.addEventListener('click',expandForm,false);
 
 
-var animateLogoBlock = document.querySelector('.header_logo');
-var animateLogo =  bodymovin.loadAnimation({
-  wrapper: animateLogoBlock,
+//logo animate
+var animateHeaderLogoBlock = document.querySelector('.header_logo');
+var animateHeaderLogo =  bodymovin.loadAnimation({
+  wrapper: animateHeaderLogoBlock,
   animType: 'svg',
   autoplay: false,
   path: './files/Logo.json'
 });
 
-
-animateLogoBlock.addEventListener("mouseenter", function () {
-    animateLogo.play();
+animateHeaderLogoBlock.addEventListener("mouseenter", function () {
+    animateHeaderLogo.play();
   });
 
-  animateLogoBlock.addEventListener("mouseleave", function () {
-    animateLogo.pause();
+  animateHeaderLogoBlock.addEventListener("mouseleave", function () {
+    animateHeaderLogo.pause();
+  });
+
+
+var animateFooterLogoBlock = document.querySelector('.footer_logo');
+var animateFooterLogo =  bodymovin.loadAnimation({
+  wrapper: animateFooterLogoBlock,
+  animType: 'svg',
+  autoplay: false,
+  path: './files/Logo.json'
+});
+
+animateFooterLogoBlock.addEventListener("mouseenter", function () {
+    animateFooterLogo.play();
+  });
+
+  animateFooterLogoBlock.addEventListener("mouseleave", function () {
+    animateFooterLogo.pause();
   });

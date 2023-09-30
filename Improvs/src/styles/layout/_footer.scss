@@ -12,9 +12,8 @@ footer {
         @include media ("<tablet") {
             margin-bottom: 40px;
         }
-        img{
-             @include adaptiv-vaule("width",169, 150, 1);
-            @include adaptiv-vaule("height",51, 46, 1);
+        svg{
+            width: 300px!important;
         }
     }
 }
