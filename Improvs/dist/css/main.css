@@ -4219,6 +4219,12 @@ main {
       object-fit: cover; }
 
 .header {
+  font-family: IBM Plex Mono;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-align: left;
   position: fixed;
   width: 100%;
   top: 0;
@@ -4269,6 +4275,7 @@ main {
       justify-content: space-between;
       width: 100%; }
     .header .header__content .btn_black {
+      font-family: IBM Plex Mono;
       display: inline-block;
       position: relative;
       width: 100%;
@@ -4313,6 +4320,7 @@ main {
           .header .header__content .burger-btn .text_burger_btn {
             display: none; } }
         .header .header__content .burger-btn .text_burger_btn::before {
+          font-family: IBM Plex Mono;
           content: 'menu'; }
     .header .header__content .burger {
       position: relative;
@@ -4519,6 +4527,7 @@ main {
           border: none;
           padding: 0px; } }
       .header .header__content .menu__wrap .site_btn_white {
+        font-family: IBM Plex Mono;
         /* Только если меньше контейнера */
         font-size: 20px;
         padding: 28.5px 0px; }
@@ -4664,10 +4673,12 @@ body::-webkit-scrollbar {
         bottom: 40px;
         right: 16px; } }
     .video_page .content .video_block .top_video_btn .btn_black {
+      font-family: IBM Plex Mono;
       padding: 28.5px 32px;
       cursor: pointer;
       position: relative;
-      font-size: 20px; }
+      font-size: 20px;
+      font-family: IBM Plex Mono; }
       @media (max-width: 767px) {
         .video_page .content .video_block .top_video_btn .btn_black {
           padding: 15.5px 32px; } }
@@ -4686,6 +4697,7 @@ body::-webkit-scrollbar {
         transform: none;
         right: 86px; } }
   .video_page .content .video_block .btn_black {
+    font-family: IBM Plex Mono;
     display: inline-block;
     position: relative;
     width: 100%;
@@ -4741,6 +4753,7 @@ body::-webkit-scrollbar {
         padding: 16px; } }
 
 .video_page .text_main_video {
+  font-family: Neue Haas Grotesk Display Pro;
   font-size: 48px;
   font-weight: 500;
   line-height: 48px;
@@ -4752,7 +4765,7 @@ body::-webkit-scrollbar {
 
 .video_page .text_video_1 {
   left: 20px;
-  max-width: 446px;
+  max-width: 430px;
   --animate-duration: 4s; }
 
 .video_page .text_video_2 {
@@ -4761,6 +4774,7 @@ body::-webkit-scrollbar {
   --animate-duration: 4s; }
 
 .brain_section {
+  font-family: Neue Haas Grotesk Display Pro;
   height: 100vh;
   width: 100%;
   display: -ms-flexbox;
@@ -5180,10 +5194,12 @@ body::-webkit-scrollbar {
   bottom: 116px; }
 
 .our_work_main {
+  font-family: Neue Haas Grotesk Display Pro;
   padding-bottom: 0px; }
   .our_work_main .our_work_btn {
     margin: 60px 20px 0px; }
     .our_work_main .our_work_btn .site_btn_white {
+      font-family: IBM Plex Mono;
       background: none;
       color: #fff;
       padding: 28.5px 0px;
@@ -5221,6 +5237,7 @@ body::-webkit-scrollbar {
   transition-timing-function: linear !important; }
 
 footer {
+  font-family: Neue Haas Grotesk Display Pro;
   width: 100%;
   position: relative;
   /* Только если меньше контейнера */
@@ -5235,6 +5252,11 @@ footer {
   @media (max-width: 1300px) {
     footer {
       padding-top: calc(60px + 20 * ((100vw - calc(375px)) / 925)); } }
+  footer .logo_block {
+    margin-bottom: 55px; }
+    footer .logo_block img {
+      width: 169px;
+      height: 51px; }
 
 .content {
   width: 100%;
@@ -5279,62 +5301,65 @@ footer {
       text-align: center;
       margin: 0 auto; } }
 
-.menu_footer_block {
+.menu_footer_block ul {
   display: -ms-flexbox;
   display: flex; }
-  .menu_footer_block li {
-    margin-bottom: 16px; }
-    .menu_footer_block li p {
+  .menu_footer_block ul li {
+    margin-right: 16px; }
+    .menu_footer_block ul li a {
       font-size: 18px;
       font-weight: 500;
       line-height: 18px;
-      color: white;
-      text-transform: uppercase;
-      margin-bottom: 23px; }
-    .menu_footer_block li a {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 16px;
-      color: #a6a6a6;
+      color: #fff;
       text-transform: uppercase; }
-      .menu_footer_block li a:hover {
-        color: #fff;
+      .menu_footer_block ul li a:hover {
         text-decoration: underline; }
 
 .social_block {
-  margin-left: 24px;
-  text-align: start; }
-  @media (max-width: 767px) {
-    .social_block {
-      text-align: center; } }
-  .social_block li {
-    /* Только если меньше контейнера */
-    margin-bottom: 15px; }
-    @media (max-width: 1300px) {
-      .social_block li {
-        margin-bottom: calc(15px + 0 * ((100vw - calc(375px)) / 925)); } }
-    .social_block li a {
-      color: #fff;
-      text-align: start;
+  margin-top: auto; }
+  .social_block div {
+    text-align: start; }
+    @media (max-width: 767px) {
+      .social_block div {
+        text-align: center; } }
+    .social_block div li {
       /* Только если меньше контейнера */
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      /* Только если меньше контейнера */
-      line-height: 16px;
-      text-transform: uppercase; }
+      margin-bottom: 15px; }
       @media (max-width: 1300px) {
-        .social_block li a {
-          font-size: calc(16px + 0 * ((100vw - calc(375px)) / 925)); } }
-      @media (max-width: 1300px) {
-        .social_block li a {
-          line-height: calc(16px + 0 * ((100vw - calc(375px)) / 925)); } }
-      .social_block li a img {
-        margin-right: 6px; }
-  @media (max-width: 767px) {
-    .social_block {
-      text-align: center;
-      margin: 85px 0; } }
+        .social_block div li {
+          margin-bottom: calc(15px + 0 * ((100vw - calc(375px)) / 925)); } }
+      .social_block div li:last-child {
+        margin-bottom: 0; }
+      .social_block div li a {
+        color: #fff;
+        text-align: start;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: end;
+        align-items: end;
+        /* Только если меньше контейнера */
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        /* Только если меньше контейнера */
+        line-height: 24px;
+        text-transform: uppercase; }
+        @media (max-width: 1300px) {
+          .social_block div li a {
+            font-size: calc(16px + 8 * ((100vw - calc(375px)) / 925)); } }
+        @media (max-width: 1300px) {
+          .social_block div li a {
+            line-height: calc(16px + 8 * ((100vw - calc(375px)) / 925)); } }
+        .social_block div li a:hover {
+          text-decoration: underline; }
+        .social_block div li a img {
+          margin-right: 8px;
+          width: 24px;
+          height: 24px; }
+    @media (max-width: 767px) {
+      .social_block div {
+        text-align: center;
+        margin: 85px 0; } }
 
 .links_block {
   position: absolute;
@@ -5389,13 +5414,21 @@ footer {
   justify-content: space-between;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 140px;
-  margin-bottom: 36px; }
+  padding: 20px 0px;
+  margin-top: 58px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); }
+  .bottom_footer .year_block {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #A6A6A6; }
   .bottom_footer .privacy_block a {
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
     color: #dbdbdb;
     text-transform: uppercase; }
+    .bottom_footer .privacy_block a:hover {
+      text-decoration: underline; }
 
 /*# sourceMappingURL=main.css.map */
