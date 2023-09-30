@@ -33,6 +33,10 @@ body::-webkit-scrollbar {
         right: 20px;
         top: 13px;
 
+        .hide{
+            display: none !important;
+        }
+
         @include media ("<tablet") {
             top: auto;
             bottom: 40px;
@@ -51,10 +55,6 @@ body::-webkit-scrollbar {
             padding: 15.5px 32px;
 
         }
-    }
-
-    .hide {
-        display: none;
     }
 
     .bottom_video_btn {

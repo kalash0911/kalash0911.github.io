@@ -4716,6 +4716,8 @@ body::-webkit-scrollbar {
   position: absolute;
   right: 20px;
   top: 13px; }
+  .video_page .top_video_btn .hide {
+    display: none !important; }
   @media (max-width: 767px) {
     .video_page .top_video_btn {
       top: auto;
@@ -4731,9 +4733,6 @@ body::-webkit-scrollbar {
   @media (max-width: 767px) {
     .video_page .btn_black {
       padding: 15.5px 32px; } }
-
-.video_page .hide {
-  display: none; }
 
 .video_page .bottom_video_btn {
   position: absolute;
