@@ -28,6 +28,14 @@
         }
     }
 
+    .logo_block {
+        transition: all .3s ease-in 0s;
+    }
+
+    .hide_logo{
+        opacity: 0;
+    }
+
     .container {
         padding: 0px 20px;
 
