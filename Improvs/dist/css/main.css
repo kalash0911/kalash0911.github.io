@@ -638,7 +638,13 @@ main {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 14px;
-    height: 14px; }
+    height: 14px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
     .site_btn_white .left_arrow svg,
     .site_btn_white .right_arrow svg {
       width: 100%;
@@ -692,7 +698,13 @@ main {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 14px;
-    height: 14px; }
+    height: 14px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
     .site_btn_transparent .left_arrow svg,
     .site_btn_transparent .right_arrow svg {
       width: 100%;

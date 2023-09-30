@@ -92,6 +92,9 @@ main {
         transform: translateY(-50%);
         width: 14px;
         height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg{
             width: 100%;
@@ -164,6 +167,9 @@ main {
         transform: translateY(-50%);
         width: 14px;
         height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg{
             width: 100%;
