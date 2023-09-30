@@ -145,3 +145,21 @@ function expandForm(){
     contact_form_section.classList.toggle("expand_active");
 }
 expandBtn.addEventListener('click',expandForm,false);
+
+
+var animateLogoBlock = document.querySelector('.header_logo');
+var animateLogo =  bodymovin.loadAnimation({
+  wrapper: animateLogoBlock,
+  animType: 'svg',
+  autoplay: false,
+  path: './files/Logo.json'
+});
+
+
+animateLogoBlock.addEventListener("mouseenter", function () {
+    animateLogo.play();
+  });
+
+  animateLogoBlock.addEventListener("mouseleave", function () {
+    animateLogo.pause();
+  });
