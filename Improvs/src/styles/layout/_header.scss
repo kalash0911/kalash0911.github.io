@@ -1,5 +1,4 @@
 .header {
-    font-family: $IBM-font;
     font-size: 14px;
     font-weight: 500;
     line-height: 128%;
@@ -377,6 +376,7 @@
             }
 
             a {
+                font-family: $NeueHaas-font;
                 transition: color .3s ease 0s;
                 @include adaptiv-vaule("font-size", 42, 26, 1);
                 color: $white;

@@ -4247,7 +4247,6 @@ main {
       object-fit: cover; }
 
 .header {
-  font-family: "IBMPlexMono";
   font-size: 14px;
   font-weight: 500;
   line-height: 128%;
@@ -4625,6 +4624,7 @@ main {
         .header .header__content .menu__item {
           padding-right: 0px; } }
       .header .header__content .menu__item a {
+        font-family: "NeueHaas";
         transition: color .3s ease 0s;
         /* Только если меньше контейнера */
         font-size: 42px;
@@ -4727,8 +4727,7 @@ body::-webkit-scrollbar {
   padding: 28.5px 32px;
   cursor: pointer;
   position: relative;
-  font-size: 20px;
-  font-family: "IBMPlexMono"; }
+  font-size: 20px; }
   @media (max-width: 767px) {
     .video_page .btn_black {
       padding: 15.5px 32px; } }
@@ -5125,9 +5124,10 @@ body::-webkit-scrollbar {
     max-width: 790px;
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    transition: all 1s ease; }
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    transition: all 1s ease;
+    border: 1px solid #fff; }
   .contact_form_section .content {
     margin: 0 auto;
     max-width: 790px;
@@ -5268,9 +5268,9 @@ body::-webkit-scrollbar {
         fill: #fff;
         transition: all 0.3s ease; }
   .contact_form_section .site_btn_white:hover .left_arrow {
-    left: 35%; }
+    left: 36%; }
   .contact_form_section .site_btn_white:hover .right_arrow {
-    right: 35%; }
+    right: 36%; }
 
 .safari_button {
   bottom: 116px; }

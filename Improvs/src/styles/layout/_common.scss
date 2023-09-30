@@ -46,7 +46,6 @@ body::-webkit-scrollbar {
         cursor: pointer;
         position: relative;
         font-size: 20px;
-        font-family: $IBM-font;
 
         @include media ("<tablet") {
             padding: 15.5px 32px;
@@ -500,8 +499,9 @@ body::-webkit-scrollbar {
         max-width: 790px;
         width: 100%;
         background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(12px);
         transition: all 1s ease;
+        border: 1px solid $white;
     }
 
     .content {
@@ -633,11 +633,11 @@ body::-webkit-scrollbar {
     }
 
     .site_btn_white:hover .left_arrow {
-        left: 35%;
+        left: 36%;
     }
 
     .site_btn_white:hover .right_arrow {
-        right: 35%;
+        right: 36%;
     }
 }
 
