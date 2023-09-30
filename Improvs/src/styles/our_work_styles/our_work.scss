@@ -1,6 +1,6 @@
 .our_work {
     @include adaptiv-vaule("padding-top", 120, 100, 1);
-    @include adaptiv-vaule("padding-bottom", 120, 100, 1);
+    @include adaptiv-vaule("padding-bottom", 120, 40, 1);
     overflow: hidden;
 
     .our_work_title {
@@ -187,6 +187,7 @@
         @include media ("<tablet") {
             width: 100%;
             border: none;
+            padding-top: 0;
         }
     }
 
@@ -245,6 +246,7 @@
 
         @include media ("<tablet") {
             margin: 0 0 25px 33px;
+            padding-bottom: 0;
         }
 
         &::after {

@@ -1,10 +1,12 @@
+.blogPageWrapper {
+  footer {
+    padding-top: 0;
+  }
+}
+
 .blog_page {
   padding-top: 100px;
-  padding-bottom: 30px;
-
-  // .container {
-  //   max-width: 1440px;
-  // }
+  padding-bottom: 50px;
 
   .title_wrap {
     display: flex;
@@ -28,7 +30,6 @@
     font-size: 16px;
     border: 1px solid $white;
     width: 155px;
-    @include adaptiv-vaule("width", 155, 100, 1);
     display: flex;
     align-items: center;
     justify-content: center;
