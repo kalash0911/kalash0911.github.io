@@ -629,7 +629,8 @@ main {
   padding: 25px 16px;
   border: 1px solid #fff;
   transition: all 0.3s ease;
-  position: relative; }
+  position: relative;
+  font-family: 'IBMPlexMono'; }
   .site_btn_white .left_arrow,
   .site_btn_white .right_arrow {
     position: absolute;
@@ -676,7 +677,8 @@ main {
   border: 1px solid #fff;
   transition: all 0.3s ease;
   position: relative;
-  max-width: 270px; }
+  max-width: 270px;
+  font-family: 'IBMPlexMono'; }
   .site_btn_transparent .left_arrow,
   .site_btn_transparent .right_arrow {
     position: absolute;
@@ -4219,7 +4221,6 @@ main {
       object-fit: cover; }
 
 .header {
-  font-family: IBM Plex Mono;
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -4275,7 +4276,7 @@ main {
       justify-content: space-between;
       width: 100%; }
     .header .header__content .btn_black {
-      font-family: IBM Plex Mono;
+      font-family: 'IBMPlexMono';
       display: inline-block;
       position: relative;
       width: 100%;
@@ -4320,7 +4321,7 @@ main {
           .header .header__content .burger-btn .text_burger_btn {
             display: none; } }
         .header .header__content .burger-btn .text_burger_btn::before {
-          font-family: IBM Plex Mono;
+          font-family: 'IBMPlexMono';
           content: 'menu'; }
     .header .header__content .burger {
       position: relative;
@@ -4657,112 +4658,101 @@ body::-webkit-scrollbar {
 .main_body_section {
   overflow: hidden; }
 
-.video_page .video_block {
+.video_page .content .video_block {
   position: relative;
   height: 100vh; }
-  .video_page .video_block video {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .video_page .content .video_block video {
     width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover; }
-
-.video_page .top_video_btn {
-  position: absolute;
-  right: 20px;
-  top: 13px; }
-  @media (max-width: 767px) {
-    .video_page .top_video_btn {
-      top: auto;
-      bottom: 40px;
-      right: 16px; } }
-  .video_page .top_video_btn .btn_black {
-    font-family: IBM Plex Mono;
-    padding: 28.5px 32px;
-    cursor: pointer;
-    position: relative;
-    font-size: 20px;
-    font-family: IBM Plex Mono; }
-    @media (max-width: 767px) {
-      .video_page .top_video_btn .btn_black {
-        padding: 15.5px 32px; } }
-  .video_page .top_video_btn .hide {
-    display: none; }
-
-.video_page .bottom_video_btn {
-  position: absolute;
-  right: 20px;
-  bottom: 32px; }
-  @media (max-width: 767px) {
-    .video_page .bottom_video_btn {
-      right: 16px;
-      left: 16px;
-      bottom: 36px;
-      -webkit-transform: none;
-      transform: none;
-      right: 86px; } }
-
-.video_page .btn_black {
-  font-family: IBM Plex Mono;
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 25.6px;
-  letter-spacing: -0.14px;
-  text-transform: uppercase;
-  padding: 28.5px 58px;
-  border: 1px solid #fff;
-  transition: all 0.3s ease;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px); }
-  @media (max-width: 767px) {
-    .video_page .btn_black {
-      padding: 18px 0;
-      text-align: center; } }
-  .video_page .btn_black .left_arrow,
-  .video_page .btn_black .right_arrow {
+    height: 100%; }
+  .video_page .content .video_block .top_video_btn {
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
-  .video_page .btn_black .left_arrow {
-    left: 32px; }
-  .video_page .btn_black .right_arrow {
-    right: 32px; }
-  .video_page .btn_black svg {
-    fill: #fff;
-    transition: all 0.3s ease; }
-  .video_page .btn_black:hover {
-    background-color: #fff;
+    right: 20px;
+    top: 13px; }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .top_video_btn {
+        top: auto;
+        bottom: 40px;
+        right: 16px; } }
+    .video_page .content .video_block .top_video_btn .btn_black {
+      font-family: 'IBMPlexMono';
+      padding: 28.5px 32px;
+      cursor: pointer;
+      position: relative;
+      font-size: 20px; }
+      @media (max-width: 767px) {
+        .video_page .content .video_block .top_video_btn .btn_black {
+          padding: 15.5px 32px; } }
+    .video_page .content .video_block .top_video_btn .hide {
+      display: none; }
+  .video_page .content .video_block .bottom_video_btn {
+    position: absolute;
+    right: 20px;
+    bottom: 32px; }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .bottom_video_btn {
+        right: 16px;
+        left: 16px;
+        bottom: 36px;
+        -webkit-transform: none;
+        transform: none;
+        right: 86px; } }
+  .video_page .content .video_block .btn_black {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25.6px;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 28.5px 58px;
+    border: 1px solid #fff;
     transition: all 0.3s ease;
-    color: #0E0E0E; }
-    .video_page .btn_black:hover svg {
-      fill: #0E0E0E;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-family: 'IBMPlexMono'; }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .btn_black {
+        padding: 18px 0;
+        text-align: center; } }
+    .video_page .content .video_block .btn_black .left_arrow,
+    .video_page .content .video_block .btn_black .right_arrow {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .video_page .content .video_block .btn_black .left_arrow {
+      left: 32px; }
+    .video_page .content .video_block .btn_black .right_arrow {
+      right: 32px; }
+    .video_page .content .video_block .btn_black svg {
+      fill: #fff;
       transition: all 0.3s ease; }
-
-.video_page .turn_sound {
-  border: 1px solid #FFFFFF;
-  padding: 24px;
-  position: absolute;
-  left: 20px;
-  bottom: 32px;
-  border-radius: 50%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
-  @media (max-width: 767px) {
-    .video_page .turn_sound {
-      bottom: 36px;
-      left: auto;
-      right: 16px;
-      padding: 16px; } }
+    .video_page .content .video_block .btn_black:hover {
+      background-color: #fff;
+      transition: all 0.3s ease;
+      color: #0E0E0E; }
+      .video_page .content .video_block .btn_black:hover svg {
+        fill: #0E0E0E;
+        transition: all 0.3s ease; }
+  .video_page .content .video_block .turn_sound {
+    border: 1px solid #FFFFFF;
+    padding: 24px;
+    position: absolute;
+    left: 20px;
+    bottom: 32px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
+    @media (max-width: 767px) {
+      .video_page .content .video_block .turn_sound {
+        bottom: 36px;
+        left: auto;
+        right: 16px;
+        padding: 16px; } }
 
 .video_page .text_main_video {
-  font-family: Neue Haas Grotesk Display Pro;
   font-size: 48px;
   font-weight: 500;
   line-height: 48px;
@@ -4783,7 +4773,6 @@ body::-webkit-scrollbar {
   --animate-duration: 4s; }
 
 .brain_section {
-  font-family: Neue Haas Grotesk Display Pro;
   height: 100vh;
   width: 100%;
   display: -ms-flexbox;
@@ -5203,12 +5192,11 @@ body::-webkit-scrollbar {
   bottom: 116px; }
 
 .our_work_main {
-  font-family: Neue Haas Grotesk Display Pro;
   padding-bottom: 0px; }
   .our_work_main .our_work_btn {
     margin: 60px 20px 0px; }
     .our_work_main .our_work_btn .site_btn_white {
-      font-family: IBM Plex Mono;
+      font-family: 'IBMPlexMono';
       background: none;
       color: #fff;
       padding: 28.5px 0px;

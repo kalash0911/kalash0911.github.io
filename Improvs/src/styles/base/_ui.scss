@@ -83,6 +83,7 @@ main {
     border: 1px solid $white;
     transition: $transition_all_03;
     position: relative;
+    font-family: 'IBMPlexMono';
 
     .left_arrow,
     .right_arrow {
@@ -146,6 +147,7 @@ main {
     transition: $transition_all_03;
     position: relative;
     max-width: 270px;
+    font-family: 'IBMPlexMono';
 
     .left_arrow,
     .right_arrow {

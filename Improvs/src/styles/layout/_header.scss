@@ -1,10 +1,9 @@
 .header {
-     font-family: IBM Plex Mono;
     font-size: 14px;
-font-weight: 500;
-line-height: 18px;
-letter-spacing: -0.01em;
-text-align: left;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-align: left;
 
     position: fixed;
     width: 100%;
@@ -57,7 +56,7 @@ text-align: left;
         }
 
         .btn_black {
-            font-family: IBM Plex Mono;
+            font-family: 'IBMPlexMono';
             display: inline-block;
             position: relative;
             width: 100%;
@@ -95,20 +94,6 @@ text-align: left;
             border: 1px solid $white;
             transition: $transition_all_03;
 
-            // &:hover {
-            //     .burger {
-            //         span {
-            //             width: 65%;
-            //             transition: all .3s ease-in 0s;
-            //         }
-
-            //         &::before {
-            //             width: 40%;
-            //             transition: all .3s ease-in 0s;
-            //         }
-            //     }
-            // }
-
             @include media ('<tablet') {
                 border: none;
                 padding: 0;
@@ -123,7 +108,7 @@ text-align: left;
                 }
 
                 &::before {
-                    font-family: IBM Plex Mono;
+                    font-family: 'IBMPlexMono';
                     content: 'menu';
                 }
             }
@@ -150,7 +135,7 @@ text-align: left;
             &::after {
                 content: '';
                 position: absolute;
-               left: 0;
+                left: 0;
                 height: 2px;
                 width: 100%;
                 background-color: $white;
@@ -406,15 +391,18 @@ text-align: left;
         }
 
         .burger_block {
-            &:hover span{
+            &:hover span {
                 width: 80%;
             }
-            &:hover .burger::after{
+
+            &:hover .burger::after {
                 width: 50%;
             }
-            &:hover .burger_active::after{
-                width: 100%!important;
+
+            &:hover .burger_active::after {
+                width: 100% !important;
             }
+
             @include media ('<tablet') {
                 order: 2;
             }

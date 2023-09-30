@@ -7,143 +7,139 @@ body::-webkit-scrollbar {
 }
 
 .video_page {
-
-    .video_block {
-        position: relative;
-        height: 100vh;
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .top_video_btn {
-        position: absolute;
-        right: 20px;
-        top: 13px;
-
-        @include media ("<tablet") {
-            top: auto;
-            bottom: 40px;
-            right: 16px;
-        }
-
-        .btn_black {
-            font-family: IBM Plex Mono;
-            padding: 28.5px 32px;
-            cursor: pointer;
+    .content {
+        .video_block {
             position: relative;
-            font-size: 20px;
-            font-family: IBM Plex Mono;
+            height: 100vh;
 
-            @include media ("<tablet") {
-                padding: 15.5px 32px;
-
+            video {
+                width: 100%;
+                height: 100%;
             }
-        }
 
-        .hide {
-            display: none;
-        }
-    }
+            .top_video_btn {
+                position: absolute;
+                right: 20px;
+                top: 13px;
 
-    .bottom_video_btn {
-        position: absolute;
-        right: 20px;
-        bottom: 32px;
+                @include media ("<tablet") {
+                    top: auto;
+                    bottom: 40px;
+                    right: 16px;
+                }
 
-        @include media ("<tablet") {
-            right: 16px;
-            left: 16px;
-            bottom: 36px;
-            transform: none;
-            right: 86px;
+                .btn_black {
+                    font-family: 'IBMPlexMono';
+                    padding: 28.5px 32px;
+                    cursor: pointer;
+                    position: relative;
+                    font-size: 20px;
 
-        }
-    }
+                    @include media ("<tablet") {
+                        padding: 15.5px 32px;
 
-    .btn_black {
-        font-family: IBM Plex Mono;
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        color: $white;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 25.6px;
-        letter-spacing: -0.14px;
-        text-transform: uppercase;
-        padding: 28.5px 58px;
-        border: 1px solid $white;
-        transition: $transition_all_03;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-        backdrop-filter: blur(10px);
+                    }
+                }
 
-        @include media ("<tablet") {
-            padding: 18px 0;
-            text-align: center;
-        }
+                .hide {
+                    display: none;
+                }
+            }
 
+            .bottom_video_btn {
+                position: absolute;
+                right: 20px;
+                bottom: 32px;
 
-        .left_arrow,
-        .right_arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+                @include media ("<tablet") {
+                    right: 16px;
+                    left: 16px;
+                    bottom: 36px;
+                    transform: none;
+                    right: 86px;
 
-        .left_arrow {
-            left: 32px;
+                }
+            }
 
-        }
-
-        .right_arrow {
-            right: 32px;
-
-        }
-
-        svg {
-            fill: $white;
-            transition: $transition_all_03;
-        }
-
-        &:hover {
-            background-color: $white;
-            transition: $transition_all_03;
-            color: $black;
-
-            svg {
-                fill: $black;
+            .btn_black {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                color: $white;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 25.6px;
+                letter-spacing: -0.14px;
+                text-transform: uppercase;
+                padding: 28.5px 58px;
+                border: 1px solid $white;
                 transition: $transition_all_03;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+                backdrop-filter: blur(10px);
+                font-family: 'IBMPlexMono';
+
+                @include media ("<tablet") {
+                    padding: 18px 0;
+                    text-align: center;
+                }
+
+
+                .left_arrow,
+                .right_arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .left_arrow {
+                    left: 32px;
+
+                }
+
+                .right_arrow {
+                    right: 32px;
+
+                }
+
+                svg {
+                    fill: $white;
+                    transition: $transition_all_03;
+                }
+
+                &:hover {
+                    background-color: $white;
+                    transition: $transition_all_03;
+                    color: $black;
+
+                    svg {
+                        fill: $black;
+                        transition: $transition_all_03;
+                    }
+                }
             }
-        }
-    }
 
-    .turn_sound {
-        border: 1px solid #FFFFFF;
-        padding: 24px;
-        position: absolute;
-        left: 20px;
-        bottom: 32px;
-        border-radius: 50%;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+            .turn_sound {
+                border: 1px solid #FFFFFF;
+                padding: 24px;
+                position: absolute;
+                left: 20px;
+                bottom: 32px;
+                border-radius: 50%;
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 
-        @include media ("<tablet") {
-            bottom: 36px;
-            left: auto;
-            right: 16px;
-            padding: 16px;
+                @include media ("<tablet") {
+                    bottom: 36px;
+                    left: auto;
+                    right: 16px;
+                    padding: 16px;
+                }
+
+            }
         }
 
     }
 
     .text_main_video {
-        font-family: Neue Haas Grotesk Display Pro;
         font-size: 48px;
         font-weight: 500;
         line-height: 48px;
@@ -168,7 +164,6 @@ body::-webkit-scrollbar {
 }
 
 .brain_section {
-    font-family: Neue Haas Grotesk Display Pro;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -232,9 +227,7 @@ body::-webkit-scrollbar {
     .brain_text_first {
         margin-bottom: 10px;
     }
-
 }
-
 
 .button_form_section {
     height: 100vh;
@@ -615,14 +608,13 @@ body::-webkit-scrollbar {
 }
 
 .our_work_main {
-    font-family: Neue Haas Grotesk Display Pro;
     padding-bottom: 0px;
 
     .our_work_btn {
         margin: 60px 20px 0px;
 
         .site_btn_white {
-            font-family: IBM Plex Mono;
+            font-family: 'IBMPlexMono';
             background: none;
             color: $white;
             padding: 28.5px 0px;
