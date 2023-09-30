@@ -1043,10 +1043,11 @@ main {
     @media (max-width: 1300px) {
       .similar_result .site_btn_white {
         font-size: calc(14px + 6 * ((100vw - calc(375px)) / 925)); } }
-    .similar_result .site_btn_white:hover .left_arrow {
-      left: 42%; }
-    .similar_result .site_btn_white:hover .right_arrow {
-      right: 42%; }
+    @media (min-width: 1025px) {
+      .similar_result .site_btn_white:hover .left_arrow {
+        left: 42%; }
+      .similar_result .site_btn_white:hover .right_arrow {
+        right: 42%; } }
 
 .similar_video {
   /* Только если меньше контейнера */
@@ -1951,7 +1952,8 @@ main {
     width: 60px;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.3);
-    opacity: 1; }
+    opacity: 1;
+    border-radius: 0; }
   .swiper_across_us .swiper-pagination-bullet-active,
   .similar_swiper .swiper-pagination-bullet-active {
     background-color: #fff; }
@@ -2495,15 +2497,12 @@ main {
   display: block; }
 
 .indise_slider_section {
-  padding: 130px 0;
+  padding: 25px 0 130px 0;
   overflow: hidden;
   /* clock styles */
   /* clock styles end */ }
   .indise_slider_section .container {
     max-width: 1440px; }
-  @media (max-width: 767px) {
-    .indise_slider_section {
-      padding: 100px 0; } }
   .indise_slider_section .swiper {
     display: -ms-flexbox;
     display: flex;
