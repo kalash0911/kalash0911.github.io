@@ -5171,6 +5171,8 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(12px);
     transition: all 1s ease;
     border: 1px solid #fff; }
+  .contact_form_section .success_block {
+    display: none; }
   .contact_form_section .content {
     margin: 0 auto;
     max-width: 790px;
@@ -5179,7 +5181,7 @@ body::-webkit-scrollbar {
     transition: all 1s ease; }
     @media (max-width: 767px) {
       .contact_form_section .content {
-        padding: 90px 24px 68px; } }
+        padding: 50px 24px 50px; } }
   .contact_form_section .contact_title {
     font-family: "NeueHaas";
     color: #fff;
@@ -5197,7 +5199,19 @@ body::-webkit-scrollbar {
         font-size: calc(42px + 28 * ((100vw - calc(375px)) / 925)); } }
     @media (max-width: 1300px) {
       .contact_form_section .contact_title {
-         margin-bottom: calc(45px + -10 * ((100vw - calc(375px)) / 925)); } }
+         margin-bottom: calc(28px + 7 * ((100vw - calc(375px)) / 925)); } }
+  .contact_form_section .success_text {
+    /* Только если меньше контейнера */
+     margin-bottom: 55px; }
+    @media (max-width: 1300px) {
+      .contact_form_section .success_text {
+         margin-bottom: calc(28px + 27 * ((100vw - calc(375px)) / 925)); } }
+    .contact_form_section .success_text p {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 150%;
+      text-align: center;
+      color: #dbdbdb; }
   .contact_form_section form,
   .contact_form_section .inpur_wrap {
     font-family: "IBMPlexMono";
