@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
         right: 20px;
         top: 13px;
 
-        .hide{
+        .hide {
             display: none !important;
         }
 
@@ -88,7 +88,8 @@ body::-webkit-scrollbar {
 
         }
     }
-    .bottom_video_btn-top{
+
+    .bottom_video_btn-top {
         bottom: 111px;
         display: none;
 
@@ -165,7 +166,7 @@ body::-webkit-scrollbar {
 
         @include media ("<tablet") {
             bottom: auto;
-            top:50px;
+            top: 50px;
             left: 16px;
             padding: 16px;
         }
@@ -176,11 +177,13 @@ body::-webkit-scrollbar {
         font-family: $NeueHaas-font;
         font-size: 48px;
         font-weight: 500;
-        line-height:100%;
+        line-height: 100%;
         color: $white;
         position: absolute;
         text-transform: uppercase;
         letter-spacing: -3px;
+        letter-spacing: 2px;
+
         @include media ("<tablet") {
             display: none;
         }
@@ -190,14 +193,14 @@ body::-webkit-scrollbar {
         top: 160px;
         left: 20px;
         max-width: 430px;
-        --animate-duration: 4s; 
+        --animate-duration: 4s;
     }
 
     .text_video_2 {
-        top:50%;
-        transform: translate(0,-50%);
+        top: 50%;
+        transform: translate(0, -50%);
         right: 20px;
-        max-width: 480px;
+        max-width: 500px;
         --animate-duration: 4s;
     }
 }
@@ -313,7 +316,7 @@ body::-webkit-scrollbar {
         color: $black;
         font-size: 14px;
         font-weight: 500;
-        line-height:128%;
+        line-height: 128%;
         letter-spacing: -1px;
         text-transform: uppercase;
         border: 1px solid $white;
@@ -410,8 +413,9 @@ body::-webkit-scrollbar {
     top: 32px;
     right: 32px;
     z-index: 15;
+
     @include media ("<tablet") {
-       display: none;
+        display: none;
     }
 
     button {
@@ -429,6 +433,7 @@ body::-webkit-scrollbar {
         background: none;
         display: flex;
         align-items: center;
+
         &::before {
             content: '';
             background: url(../images/main_page/expand-icon.svg);
@@ -437,10 +442,12 @@ body::-webkit-scrollbar {
             height: 24px;
             margin-right: 10px;
         }
+
         &::after {
             font-family: $IBM-font;
             content: 'Expand';
         }
+
         .icon_btn {
             display: flex;
             align-items: center;
@@ -460,9 +467,10 @@ body::-webkit-scrollbar {
     top: 40px;
     left: 32px;
     cursor: pointer;
+
     @include media ("<tablet") {
         left: 24px;
-        top:24px;
+        top: 24px;
     }
 
     span {
@@ -508,9 +516,11 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    .site_btn_white{
+
+    .site_btn_white {
         font-family: $IBM-font;
     }
+
     .container {
         display: flex;
         align-items: center;
@@ -526,7 +536,8 @@ body::-webkit-scrollbar {
         transition: all 1s ease;
         border: 1px solid $white;
     }
-    .success_block{
+
+    .success_block {
         display: none;
     }
 
@@ -536,6 +547,7 @@ body::-webkit-scrollbar {
         padding: 68px;
         position: relative;
         transition: all 1s ease;
+
         @include media ('<tablet') {
             padding: 50px 24px 50px;
         }
@@ -552,9 +564,11 @@ body::-webkit-scrollbar {
         text-transform: uppercase;
         @include adaptiv-vaule(" margin-bottom", 35, 28, 1);
     }
-    .success_text{
+
+    .success_text {
         @include adaptiv-vaule(" margin-bottom", 55, 28, 1);
-        p{
+
+        p {
             font-size: 22px;
             font-weight: 500;
             line-height: 150%;
@@ -563,6 +577,7 @@ body::-webkit-scrollbar {
 
         }
     }
+
     form,
     .inpur_wrap {
         font-family: $IBM-font;
@@ -681,12 +696,28 @@ body::-webkit-scrollbar {
 .safari_button_1 {
     bottom: 120px !important;
 }
+
 .safari_button_2 {
     bottom: 195px !important;
 }
+
 .our_work_main {
     font-family: $NeueHaas-font;
     padding-bottom: 0px;
+
+    .phone_link{
+        display: none;
+
+        @include media ("<desktop") {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
 
     .our_work_btn {
         margin: 60px 20px 0px;
@@ -715,20 +746,22 @@ body::-webkit-scrollbar {
 
 .expand_active {
     transition: all 1s ease;
+
     .exspand_btn {
         button {
-    &::before {
-        content: '';
-        background: url(../images/main_page/minimize-icon.svg);
-        display: block;
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-    }
-    &::after {
-        content: 'minimize';
-    }
-}
+            &::before {
+                content: '';
+                background: url(../images/main_page/minimize-icon.svg);
+                display: block;
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+            }
+
+            &::after {
+                content: 'minimize';
+            }
+        }
     }
 
     .back_form {
@@ -749,6 +782,7 @@ body::-webkit-scrollbar {
     -o-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
 }
-.scroll_body{
-    overflow:auto;
+
+.scroll_body {
+    overflow: auto;
 }
