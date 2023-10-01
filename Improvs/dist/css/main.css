@@ -4852,12 +4852,12 @@ body::-webkit-scrollbar {
     .video_page .btn_black {
       padding: 15.5px 32px; } }
 
-.video_page .bottom_video_btn {
+.video_page .video_btn_block-mob {
   position: absolute;
   right: 20px;
   bottom: 32px; }
   @media (max-width: 767px) {
-    .video_page .bottom_video_btn {
+    .video_page .video_btn_block-mob {
       right: 16px;
       left: 16px;
       bottom: 36px;
@@ -4866,8 +4866,8 @@ body::-webkit-scrollbar {
       right: 16px; } }
 
 .video_page .bottom_video_btn-top {
-  bottom: 111px;
-  display: none; }
+  display: none;
+  margin-bottom: 12px; }
   @media (max-width: 767px) {
     .video_page .bottom_video_btn-top {
       display: block; } }
@@ -4891,8 +4891,22 @@ body::-webkit-scrollbar {
   backdrop-filter: blur(10px); }
   @media (max-width: 767px) {
     .video_page .btn_black {
-      padding: 15px 32px;
+      /* Только если меньше контейнера */
+      padding-top: 15px;
+      /* Только если меньше контейнера */
+      padding-bottom: 15px;
+      /* Только если меньше контейнера */
+      font-size: 20px;
       text-align: center; } }
+  @media (max-width: 767px) and (max-width: 1300px) {
+    .video_page .btn_black {
+      padding-top: calc(10px + 5 * ((100vw - calc(375px)) / 925)); } }
+  @media (max-width: 767px) and (max-width: 1300px) {
+    .video_page .btn_black {
+      padding-bottom: calc(10px + 5 * ((100vw - calc(375px)) / 925)); } }
+  @media (max-width: 767px) and (max-width: 1300px) {
+    .video_page .btn_black {
+      font-size: calc(16px + 4 * ((100vw - calc(375px)) / 925)); } }
   .video_page .btn_black .left_arrow,
   .video_page .btn_black .right_arrow {
     position: absolute;
@@ -5434,11 +5448,11 @@ body::-webkit-scrollbar {
   .contact_form_section .site_btn_white:hover .right_arrow {
     right: 36%; }
 
-.safari_button_1 {
-  bottom: 120px !important; }
+.safari_button {
+  bottom: 105px !important; }
 
-.safari_button_2 {
-  bottom: 195px !important; }
+.chrome_button {
+  bottom: 120px !important; }
 
 .our_work_main {
   font-family: "NeueHaas";

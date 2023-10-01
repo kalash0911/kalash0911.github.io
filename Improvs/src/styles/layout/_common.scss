@@ -75,7 +75,7 @@ body::-webkit-scrollbar {
         }
     }
 
-    .bottom_video_btn {
+     .video_btn_block-mob{
         position: absolute;
         right: 20px;
         bottom: 32px;
@@ -89,11 +89,11 @@ body::-webkit-scrollbar {
 
         }
     }
-
+            
     .bottom_video_btn-top {
-        bottom: 111px;
         display: none;
-
+        margin-bottom: 12px;
+        
         @include media ("<tablet") {
             display: block;
         }
@@ -117,7 +117,9 @@ body::-webkit-scrollbar {
         backdrop-filter: blur(10px);
 
         @include media ("<tablet") {
-            padding: 15px 32px;
+            @include adaptiv-vaule("padding-top", 15, 10, 1);
+            @include adaptiv-vaule("padding-bottom", 15, 10, 1);
+            @include adaptiv-vaule("font-size", 20, 16, 1);
             text-align: center;
         }
 
@@ -718,13 +720,14 @@ body::-webkit-scrollbar {
 }
 
 
-.safari_button_1 {
+.safari_button {
+    bottom: 105px !important;
+}
+
+.chrome_button {
     bottom: 120px !important;
 }
 
-.safari_button_2 {
-    bottom: 195px !important;
-}
 
 .our_work_main {
     font-family: $NeueHaas-font;

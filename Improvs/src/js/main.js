@@ -14,11 +14,12 @@ const header = document.querySelector("#header");
 const copyCodeButton = document.querySelector("[copyCode]");
 const body = document.querySelector(".main_body_section");
 const mobilePosters = document.querySelectorAll("[poster_mobile]");
+const mobile_buttons = document.querySelectorAll("[mobile_button]");
 
-function isSafari() {
-    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    return isSafari;
-}
+let userAgentString = navigator.userAgent;
+let isSafari = userAgentString.indexOf("Safari") > -1;
+let isChromeAgent = userAgentString.indexOf("Chrome") > -1;
+
 
 function init() {
     window.isDownScroll = false;
@@ -33,15 +34,15 @@ function init() {
         changeMobilePosters();
     }
 
-    if (isMobile() && isSafari()) {
-        const video_btns_safari_1 = document.querySelectorAll(".video_btn_safari_1");
-        const video_btns_safari_2 = document.querySelectorAll(".video_btn_safari_2");
-        video_btns_safari_1.forEach((bottom_video_btn) => {
-            bottom_video_btn.classList.add("safari_button_1");
+    if (isMobile() && isSafari) {
+        mobile_buttons.forEach((mobile_button) => {
+            mobile_button.classList.add("safari_button");
         });
-
-        video_btns_safari_2.forEach((bottom_video_btn) => {
-            bottom_video_btn.classList.add("safari_button_2");
+    }
+    
+    if (isMobile() && isChromeAgent) {
+        mobile_buttons.forEach((mobile_button) => {
+            mobile_button.classList.add("chrome_button");
         });
     }
 
