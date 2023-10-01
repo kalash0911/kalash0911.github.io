@@ -397,9 +397,9 @@ function getSectionState() {
 //OURWORK
 const slider = new Swiper(".case_swiper", {
     speed: 4500,
-    loop: true,
+    // loop: true,
     spaceBetween: 20,
-    freeMode: true,
+    // freeMode: true,
     centeredSlides: false,
     preventInteractionOnTransition: false,
     autoplay: {

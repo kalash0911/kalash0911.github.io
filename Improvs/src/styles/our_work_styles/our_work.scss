@@ -3,6 +3,10 @@
     @include adaptiv-vaule("padding-bottom", 120, 40, 1);
     overflow: hidden;
 
+    @include media (">2560px") {
+        padding-top: 200px;
+    }
+
     .our_work_title {
         color: $white;
         @include adaptiv-vaule("font-size", 132, 52, 1);
@@ -14,6 +18,10 @@
         margin-bottom: 30px;
         padding-left: 20px;
         width: max-content;
+
+        @include media (">desktop") {
+            font-size: 5vw;
+        }
     }
 
     .work_counter {
@@ -29,6 +37,10 @@
         @include adaptiv-vaule("top", -20, -10, 1);
         @include adaptiv-vaule("right", -55, -30, 1);
         font-family: $IBM-font;
+
+        @include media (">desktop") {
+            font-size: 0.7vw;
+        }
     }
 
     .our_work_filterList {
@@ -60,6 +72,10 @@
         cursor: pointer;
         transition: $transition_all_03;
         font-family: $IBM-font;
+
+        @include media (">desktop") {
+            font-size: 0.8vw;
+        }
     }
 
     .active_filter_item {
@@ -78,6 +94,10 @@
         position: relative;
         overflow: hidden;
 
+        @include media (">2560px") {
+            height: 33vh;
+        }
+
         @include media ("<tablet") {
             flex-direction: column-reverse;
             border-top: none;
@@ -92,7 +112,7 @@
         }
     }
 
-    .phone_link{
+    .phone_link {
         display: none;
 
         @include media ("<desktop") {
@@ -113,9 +133,6 @@
         backdrop-filter: blur(2px);
         border: 1px solid $white;
         border-radius: 50%;
-        position: absolute;
-        top: 40%;
-        z-index: 3;
         transform: scale(0);
         transition: $transition_all_03;
 
@@ -168,6 +185,11 @@
         display: grid;
         place-items: center;
         transition: $transition_all_03;
+
+        @include media (">desktop") {
+            font-size: 0.6vw;
+        }
+
     }
 
     .case_text {
@@ -179,6 +201,10 @@
         height: 100%;
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         padding: 20px;
+
+        @include media (">desktop") {
+            width: 20vw;
+        }
 
         @include media ("<desktop") {
             min-width: 325px;
@@ -200,6 +226,10 @@
         letter-spacing: -0.24px;
         text-transform: uppercase;
         margin-bottom: 15px;
+
+        @include media (">desktop") {
+            font-size: 2vw;
+        }
     }
 
     .case_description {
@@ -210,9 +240,16 @@
         letter-spacing: -0.2px;
         max-width: 335px;
 
+        @include media (">desktop") {
+            font-size: 1vw;
+            max-width: 100%;
+        }
+
         @include media ("<tablet") {
             margin-bottom: 40px;
         }
+
+
     }
 
     .tags_wrap {
@@ -235,6 +272,11 @@
         border: 1px solid #A6A6A6;
         padding: 5px 8px;
         font-family: $IBM-font;
+
+
+        @include media (">desktop") {
+            font-size: 0.8vw;
+        }
     }
 
     .case_swiper {
@@ -242,7 +284,11 @@
         margin: 0 0 0 20px;
         padding: 20px 0;
         position: relative;
-        
+
+        @include media (">2560px") {
+            height: 100%;
+        }
+
 
         @include media ("<tablet") {
             margin: 0 0 25px 33px;
@@ -267,6 +313,10 @@
 
     .slide_img {
         @include adaptiv-vaule("height", 450, 315, 1);
+
+        @include media (">2560px") {
+            height: 100%;
+        }
 
         img {
             width: 100%;

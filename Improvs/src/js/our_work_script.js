@@ -22,8 +22,14 @@ const slider = new Swiper(".case_swiper", {
         1440: {
             slidesPerView: 1.5,
         },
-        1920: {
+        1520: {
             slidesPerView: 2.2,
+        },
+        1920: {
+            slidesPerView: 2.5,
+        },
+        2560: {
+            slidesPerView: 3,
         },
     },
     on: {
