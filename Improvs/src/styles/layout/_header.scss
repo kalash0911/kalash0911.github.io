@@ -361,7 +361,7 @@
 
         .header_btn {
             @include media ('<tablet') {
-                display: none;
+               opacity: 0;
             }
         }
 

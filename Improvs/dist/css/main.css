@@ -4636,7 +4636,7 @@ main {
             font-size: calc(18px + 2 * ((100vw - calc(375px)) / 925)); } }
     @media (max-width: 767px) {
       .header .header__content .header_btn {
-        display: none; } }
+        opacity: 0; } }
     .header .header__content .header_btn_none {
       display: none; }
     .header .header__content .menu__list {
