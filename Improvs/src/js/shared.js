@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     selectCurrentPage();
     addEventButtonPopUp();
 });
-const menuItems=document.querySelectorAll(".menu__item");
+const menuItems = document.querySelectorAll(".menu__item");
 const headerLogoBlock = document.querySelector(".logo_block ");
-const footer=document.querySelector("#footer");
+const footer = document.querySelector("#footer");
 
 //isMobile
 function isMobile() {
@@ -19,23 +19,23 @@ function isMobile() {
 };
 
 //BURGERMENU
-function selectCurrentPage(){
+function selectCurrentPage() {
     cleanHoverMenu();
 
     if (/index/.test(location.href)) {
         menuItems[0].classList.add("menu_active_link");
-      }else if(/our_work/.test(location.href)) {
+    } else if (/our_work/.test(location.href)) {
         menuItems[3].classList.add("menu_active_link");
-      } else if(/blog_page/.test(location.href)) {
+    } else if (/blog/.test(location.href)) {
         menuItems[4].classList.add("menu_active_link");
-      }else if(/brain_block/.test(location.href)) {
+    } else if (/brain_block/.test(location.href)) {
         menuItems[3].classList.add("menu_active_link");
-      }else{
+    } else {
         menuItems[3].classList.add("menu_active_link");
-      }
+    }
 }
 
-function cleanHoverMenu(){
+function cleanHoverMenu() {
     menuItems.forEach((menu) => {
         menu.classList.remove("menu_active_link");
     });
@@ -57,12 +57,12 @@ function initHeader() {
             if (burger.classList.contains("burger_active")) {
                 burger.classList.add("burger_finish");
                 burger.classList.remove("burger_active");
-                window.body_lock=false;
+                window.body_lock = false;
 
             } else {
                 burger.classList.add("burger_active");
                 burger.classList.remove("burger_finish");
-                window.body_lock=true;
+                window.body_lock = true;
             }
             menuBody.classList.toggle("menu_active");
         });
@@ -94,18 +94,18 @@ function initHeader() {
     }
 }
 
-window.addEventListener("scroll", function () {   
+window.addEventListener("scroll", function () {
     //hide logo in header 
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-    let viewportOffsetFooter= Math.abs(footer.getBoundingClientRect().top + window.scrollY);
-    if (viewedPageHeight >= viewportOffsetFooter&&isMobile()) {
+    let viewportOffsetFooter = Math.abs(footer.getBoundingClientRect().top + window.scrollY);
+    if (viewedPageHeight >= viewportOffsetFooter && isMobile()) {
         headerLogoBlock.classList.add("hide_logo");
-    }else{
+    } else {
         headerLogoBlock.classList.remove("hide_logo");
     }
 });
 
-function OpenFormCloseMenu(){
+function OpenFormCloseMenu() {
     const burger_btn = document.querySelector(".burger-btn");
     burger_btn.click();
     ShowConcactForm(true);
@@ -117,8 +117,10 @@ const overlay = document.querySelector(".overlay-popup");
 const body = document.querySelector("body");
 const btnsShowPopUp = document.querySelectorAll("[show_pop_up]");
 const btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
+const btnShowPopUpThankYou = document.querySelector("[show_pop_up_thank_you]");
+const btnHidePopUpThankYou = document.querySelector("[hide_pop_up_thank_you]");
 
-function addEventButtonPopUp(){
+function addEventButtonPopUp() {
     btnsShowPopUp.forEach(function (btn) {
         btn.addEventListener('click', function () { ShowConcactForm(true) });
     });
@@ -126,6 +128,14 @@ function addEventButtonPopUp(){
     btnsHidePopUp.forEach(function (btn) {
         btn.addEventListener('click', function () { ShowConcactForm(false) });
     });
+
+    if (btnShowPopUpThankYou) {
+        btnShowPopUpThankYou.addEventListener('click', function () { showThankYouPage(true) });
+    }
+
+    if (btnHidePopUpThankYou) {
+        btnHidePopUpThankYou.addEventListener('click', function () { showThankYouPage(false) });
+    }
 }
 
 let isOpen = false;
@@ -141,49 +151,59 @@ function ShowConcactForm(isShow) {
         body.classList.remove("body_lock");
         isOpen = false;
     }
-    window.body_lock=isOpen;
+    window.body_lock = isOpen;
 }
 
 
 //contact form
 const expandBtn = document.querySelector("[expandBtn]");
-function expandForm(){
-    let contact_form_section=document.querySelector(".contact_form_section");
+function expandForm() {
+    let contact_form_section = document.querySelector(".contact_form_section");
     contact_form_section.classList.toggle("expand_active");
 }
-expandBtn.addEventListener('click',expandForm,false);
+expandBtn.addEventListener('click', expandForm, false);
 
+function showThankYouPage(isShow) {
+    let contactForm = document.querySelector(".back_form");
+    let thankYouBlock = document.querySelector(".success_block");
+    if (isShow) {
+        contactForm.style.display = 'none';
+        thankYouBlock.style.display = 'block';
+    } else {
+        contactForm.style.display = 'block';
+        thankYouBlock.style.display = 'none';
+    }
+}
 
 //logo animate
 var animateHeaderLogoBlock = document.querySelector('.header_logo');
-var animateHeaderLogo =  bodymovin.loadAnimation({
-  wrapper: animateHeaderLogoBlock,
-  animType: 'svg',
-  autoplay: false,
-  path: './files/Logo.json'
+var animateHeaderLogo = bodymovin.loadAnimation({
+    wrapper: animateHeaderLogoBlock,
+    animType: 'svg',
+    autoplay: false,
+    path: './files/Logo.json'
 });
 
 animateHeaderLogoBlock.addEventListener("mouseenter", function () {
     animateHeaderLogo.play();
-  });
+});
 
-  animateHeaderLogoBlock.addEventListener("mouseleave", function () {
+animateHeaderLogoBlock.addEventListener("mouseleave", function () {
     animateHeaderLogo.pause();
-  });
-
+});
 
 var animateFooterLogoBlock = document.querySelector('.footer_logo');
-var animateFooterLogo =  bodymovin.loadAnimation({
-  wrapper: animateFooterLogoBlock,
-  animType: 'svg',
-  autoplay: false,
-  path: './files/Logo.json'
+var animateFooterLogo = bodymovin.loadAnimation({
+    wrapper: animateFooterLogoBlock,
+    animType: 'svg',
+    autoplay: false,
+    path: './files/Logo.json'
 });
 
 animateFooterLogoBlock.addEventListener("mouseenter", function () {
     animateFooterLogo.play();
-  });
+});
 
-  animateFooterLogoBlock.addEventListener("mouseleave", function () {
+animateFooterLogoBlock.addEventListener("mouseleave", function () {
     animateFooterLogo.pause();
-  });
+});

@@ -32,7 +32,7 @@ function selectCurrentPage() {
     menuItems[0].classList.add("menu_active_link");
   } else if (/our_work/.test(location.href)) {
     menuItems[3].classList.add("menu_active_link");
-  } else if (/blog_page/.test(location.href)) {
+  } else if (/blog/.test(location.href)) {
     menuItems[4].classList.add("menu_active_link");
   } else if (/brain_block/.test(location.href)) {
     menuItems[3].classList.add("menu_active_link");
@@ -127,6 +127,8 @@ var overlay = document.querySelector(".overlay-popup");
 var body = document.querySelector("body");
 var btnsShowPopUp = document.querySelectorAll("[show_pop_up]");
 var btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
+var btnShowPopUpThankYou = document.querySelector("[show_pop_up_thank_you]");
+var btnHidePopUpThankYou = document.querySelector("[hide_pop_up_thank_you]");
 
 function addEventButtonPopUp() {
   btnsShowPopUp.forEach(function (btn) {
@@ -139,6 +141,18 @@ function addEventButtonPopUp() {
       ShowConcactForm(false);
     });
   });
+
+  if (btnShowPopUpThankYou) {
+    btnShowPopUpThankYou.addEventListener('click', function () {
+      showThankYouPage(true);
+    });
+  }
+
+  if (btnHidePopUpThankYou) {
+    btnHidePopUpThankYou.addEventListener('click', function () {
+      showThankYouPage(false);
+    });
+  }
 }
 
 var isOpen = false;
@@ -167,7 +181,21 @@ function expandForm() {
   contact_form_section.classList.toggle("expand_active");
 }
 
-expandBtn.addEventListener('click', expandForm, false); //logo animate
+expandBtn.addEventListener('click', expandForm, false);
+
+function showThankYouPage(isShow) {
+  var contactForm = document.querySelector(".back_form");
+  var thankYouBlock = document.querySelector(".success_block");
+
+  if (isShow) {
+    contactForm.style.display = 'none';
+    thankYouBlock.style.display = 'block';
+  } else {
+    contactForm.style.display = 'block';
+    thankYouBlock.style.display = 'none';
+  }
+} //logo animate
+
 
 var animateHeaderLogoBlock = document.querySelector('.header_logo');
 var animateHeaderLogo = bodymovin.loadAnimation({
