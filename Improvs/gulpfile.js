@@ -24,7 +24,7 @@ function setMode(isProduction = false) {
   }
 }
 
-const dev = gulp.parallel(html, styles, jquery, script, /* imgMin, */ fonts, files);
+const dev = gulp.parallel(html, styles, jquery, script, imgMin, fonts, files);
 
 const build = gulp.series(clean, dev)
 
