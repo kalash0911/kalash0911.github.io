@@ -1,4 +1,3 @@
-
 new WOW().init();
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -14,6 +13,7 @@ const lastVideoSection = document.querySelector(`[section="video3"]`);
 const header = document.querySelector("#header");
 const copyCodeButton = document.querySelector("[copyCode]");
 const body = document.querySelector(".main_body_section");
+const mobilePosters = document.querySelectorAll("[poster_mobile]");
 
 function isSafari() {
     var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -30,6 +30,7 @@ function init() {
 
     if (isMobile()) {
         changeVideoForMobile();
+        changeMobilePosters();
     }
 
     if (isMobile() && isSafari()) {
@@ -57,7 +58,11 @@ function init() {
     let firstVideo = videos[0];
 
     firstVideo.addEventListener("error", function (e) {
-        firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')
+        if(isMobile()){
+            firstVideo.setAttribute('poster', 'images/main_page/video_img_mobile_1.png')
+        }else{
+            firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')  
+        }
     });
 
     firstVideo.addEventListener('timeupdate', function () {
@@ -127,8 +132,16 @@ function changeVideoForMobile() {
         const video = videos[index];
         if (!video.src.includes("mobile")) {
             video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
+            
         }
     }
+}
+
+function changeMobilePosters(){
+    mobilePosters.forEach((mobilePoster) => {
+        let poster=mobilePoster.getAttribute("poster_mobile");
+        mobilePoster.poster=poster;
+    });
 }
 
 turnSounds.forEach(turn => {
