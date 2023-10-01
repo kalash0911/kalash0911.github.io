@@ -179,11 +179,6 @@ function nextSlide() {
       }
 
       var section = sections[index].getAttribute('section');
-
-      if (section === "work") {
-        body.style.overflowY = "auto";
-      }
-
       scrollByElementName(section);
       setSectionState(index);
     }
@@ -201,7 +196,6 @@ function nextSlide() {
 
 function previousSlide() {
   var isDownScroll = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-  console.log("previousSlide");
 
   if (window.body_lock) {
     return;
@@ -224,6 +218,15 @@ function previousSlide() {
       }
 
       var section = sections[index].getAttribute('section');
+
+      if (section === "video3" && isDownScroll) {
+        var scrollToVideo = function scrollToVideo() {
+          scrollByElementName(section);
+          window.removeEventListener('scrollend', scrollToVideo);
+        };
+
+        window.addEventListener('scrollend', scrollToVideo);
+      }
 
       if (section == "video3" && !isDownScroll) {
         return;
@@ -249,7 +252,6 @@ function scrollByElementName(elementName) {
 }
 
 function scrollToOffset(offset) {
-  console.log("scrollToOffset " + offset);
   window.scrollTo({
     behavior: 'smooth',
     left: 0,
@@ -280,6 +282,7 @@ window.addEventListener("scroll", function () {
   }
 
   if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
+    body.style.overflowY = "auto";
     window.isDownScroll = true;
   } //menu hover
 
