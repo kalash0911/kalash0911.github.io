@@ -26,6 +26,8 @@ function init() {
     window.body_lock = false;
     window.isScroling = false;
 
+    header.classList.add("header_transparent");
+
     if (isMobile()) {
         changeVideoForMobile();
     }
