@@ -122,11 +122,11 @@ const btnHidePopUpThankYou = document.querySelector("[hide_pop_up_thank_you]");
 
 function addEventButtonPopUp() {
     btnsShowPopUp.forEach(function (btn) {
-        btn.addEventListener('click', function () { ShowConcactForm(true) });
+        btn.addEventListener('click', function () { showConcactForm(true) });
     });
 
     btnsHidePopUp.forEach(function (btn) {
-        btn.addEventListener('click', function () { ShowConcactForm(false) });
+        btn.addEventListener('click', function () { showConcactForm(false) });
     });
 
     if (btnShowPopUpThankYou) {
@@ -139,7 +139,7 @@ function addEventButtonPopUp() {
 }
 
 let isOpen = false;
-function ShowConcactForm(isShow) {
+function showConcactForm(isShow) {
     if (isShow) {
         overlay.classList.add("active");
         popup.classList.add("active");
@@ -150,10 +150,10 @@ function ShowConcactForm(isShow) {
         popup.classList.remove("active");
         body.classList.remove("body_lock");
         isOpen = false;
+        expandFormParam(false);
     }
     window.body_lock = isOpen;
 }
-
 
 //contact form
 const expandBtn = document.querySelector("[expandBtn]");
@@ -161,6 +161,16 @@ function expandForm() {
     let contact_form_section = document.querySelector(".contact_form_section");
     contact_form_section.classList.toggle("expand_active");
 }
+
+function expandFormParam(isShow) {
+    let contact_form_section = document.querySelector(".contact_form_section");
+    if(isShow){
+        contact_form_section.classList.add("expand_active");
+    }else{
+        contact_form_section.classList.remove("expand_active");
+    }
+}
+
 expandBtn.addEventListener('click', expandForm, false);
 
 function showThankYouPage(isShow) {
@@ -169,9 +179,11 @@ function showThankYouPage(isShow) {
     if (isShow) {
         contactForm.style.display = 'none';
         thankYouBlock.style.display = 'block';
+        expandFormParam(false);
     } else {
-        contactForm.style.display = 'block';
         thankYouBlock.style.display = 'none';
+        contactForm.style.display = 'block';
+        showConcactForm(false);
     }
 }
 
