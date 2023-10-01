@@ -230,6 +230,15 @@ function previousSlide(isDownScroll = false) {
             }
 
             let section = sections[index].getAttribute('section');
+
+            if (section === "video3" && isDownScroll) {
+                function scrollToVideo() {
+                    scrollByElementName(section);
+                    window.removeEventListener('scrollend', scrollToVideo);
+                }
+                window.addEventListener('scrollend', scrollToVideo)
+            }
+
             if (section == "video3" && !isDownScroll) {
                 return;
             }
@@ -280,7 +289,6 @@ window.addEventListener("scroll", function () {
         window.isDownScroll = false;
         body.style.overflowY = "hidden";
         previousSlide(true);
-
     }
     if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
         window.isDownScroll = true;
