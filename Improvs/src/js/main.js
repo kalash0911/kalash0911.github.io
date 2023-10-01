@@ -236,7 +236,7 @@ function previousSlide(isDownScroll = false) {
 }
 
 //scroll
-function scrollByElementName(elementName) {
+/* function scrollByElementName(elementName) {
     let element = "";
     element = document.querySelector(`[section=${elementName}]`);
     if (!element) {
@@ -254,7 +254,7 @@ function scrollToOffset(offset) {
         left: 0,
         top: offset
     });
-}
+} */
 
 //sroll previous
 let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);

@@ -2,207 +2,211 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
-.main_body_section {
-    overflow: hidden;
+#main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
-.video_page {
+.scroll-sec {
+    position: relative;
+    scroll-snap-align: start;
+}
 
-    .video_block {
-        position: relative;
-        height: 100vh;
+.video_block {
+    position: relative;
+    height: 100vh;
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.video_block_full {
 
         video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            object-fit: cover;
         }
+    }
 
-        &.video_block_full {
+    &.video-opacity {
+        animation-name: opacity-video;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
 
-            video {
-                object-fit: cover;
+        @keyframes opacity-video {
+            
+            0%{
+                opacity: 1;
             }
-        }
 
-        &.video-opacity {
-            animation-name: opacity-video;
-            animation-duration: 0.8s;
-            animation-fill-mode: forwards;
-
-            @keyframes opacity-video {
-                
-                0%{
-                    opacity: 1;
-                }
-
-                100%{
-                    opacity: 0;
-                }
+            100%{
+                opacity: 0;
             }
         }
     }
+}
 
-    .top_video_btn {
+.top_video_btn {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+
+    .hide {
+        display: none !important;
+    }
+
+    @include media ("<tablet") {
+        top: auto;
+        bottom: 40px;
+        right: 16px;
+    }
+}
+
+.btn_black {
+    font-family: $IBM-font;
+    padding: 28.5px 32px;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+
+    @include media ("<tablet") {
+        padding: 15.5px 32px;
+
+    }
+}
+
+.bottom_video_btn {
+    position: absolute;
+    right: 20px;
+    bottom: 32px;
+
+    @include media ("<tablet") {
+        right: 16px;
+        left: 16px;
+        bottom: 36px;
+        transform: none;
+        right: 16px;
+
+    }
+}
+
+.bottom_video_btn-top {
+    bottom: 111px;
+    display: none;
+
+    @include media ("<tablet") {
+        display: block;
+    }
+}
+
+.btn_black {
+    font-family: $IBM-font;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    color: $white;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 128%;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 28.5px 58px;
+    border: 1px solid $white;
+    transition: $transition_all_03;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+
+    @include media ("<tablet") {
+        padding: 15px 32px;
+        text-align: center;
+    }
+
+
+    .left_arrow,
+    .right_arrow {
         position: absolute;
-        right: 20px;
-        top: 13px;
-
-        .hide {
-            display: none !important;
-        }
-
-        @include media ("<tablet") {
-            top: auto;
-            bottom: 40px;
-            right: 16px;
-        }
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .btn_black {
-        font-family: $IBM-font;
-        padding: 28.5px 32px;
-        cursor: pointer;
-        position: relative;
-        font-size: 20px;
+    .left_arrow {
+        left: 32px;
 
-        @include media ("<tablet") {
-            padding: 15.5px 32px;
-
-        }
     }
 
-    .bottom_video_btn {
-        position: absolute;
-        right: 20px;
-        bottom: 32px;
+    .right_arrow {
+        right: 32px;
 
-        @include media ("<tablet") {
-            right: 16px;
-            left: 16px;
-            bottom: 36px;
-            transform: none;
-            right: 16px;
-
-        }
     }
 
-    .bottom_video_btn-top {
-        bottom: 111px;
-        display: none;
-
-        @include media ("<tablet") {
-            display: block;
-        }
-    }
-
-    .btn_black {
-        font-family: $IBM-font;
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        color: $white;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 128%;
-        letter-spacing: -0.14px;
-        text-transform: uppercase;
-        padding: 28.5px 58px;
-        border: 1px solid $white;
+    svg {
+        fill: $white;
         transition: $transition_all_03;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-        backdrop-filter: blur(10px);
+    }
 
-        @include media ("<tablet") {
-            padding: 15px 32px;
-            text-align: center;
-        }
-
-
-        .left_arrow,
-        .right_arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .left_arrow {
-            left: 32px;
-
-        }
-
-        .right_arrow {
-            right: 32px;
-
-        }
+    &:hover {
+        background-color: $white;
+        transition: $transition_all_03;
+        color: $black;
 
         svg {
-            fill: $white;
+            fill: $black;
             transition: $transition_all_03;
         }
+    }
+}
 
-        &:hover {
-            background-color: $white;
-            transition: $transition_all_03;
-            color: $black;
+.turn_sound {
+    border: 1px solid $white;
+    padding: 24px;
+    position: absolute;
+    left: 20px;
+    bottom: 32px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 
-            svg {
-                fill: $black;
-                transition: $transition_all_03;
-            }
-        }
+    @include media ("<tablet") {
+        bottom: auto;
+        top: 50px;
+        left: 16px;
+        padding: 16px;
     }
 
-    .turn_sound {
-        border: 1px solid $white;
-        padding: 24px;
-        position: absolute;
-        left: 20px;
-        bottom: 32px;
-        border-radius: 50%;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+}
 
-        @include media ("<tablet") {
-            bottom: auto;
-            top: 50px;
-            left: 16px;
-            padding: 16px;
-        }
+.text_main_video {
+    font-family: $NeueHaas-font;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 100%;
+    color: $white;
+    position: absolute;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    letter-spacing: 2px;
 
+    @include media ("<tablet") {
+        display: none;
     }
+}
 
-    .text_main_video {
-        font-family: $NeueHaas-font;
-        font-size: 48px;
-        font-weight: 500;
-        line-height: 100%;
-        color: $white;
-        position: absolute;
-        text-transform: uppercase;
-        letter-spacing: -3px;
-        letter-spacing: 2px;
+.text_video_1 {
+    top: 160px;
+    left: 20px;
+    max-width: 430px;
+    --animate-duration: 4s;
+}
 
-        @include media ("<tablet") {
-            display: none;
-        }
-    }
-
-    .text_video_1 {
-        top: 160px;
-        left: 20px;
-        max-width: 430px;
-        --animate-duration: 4s;
-    }
-
-    .text_video_2 {
-        top: 50%;
-        transform: translate(0, -50%);
-        right: 20px;
-        max-width: 500px;
-        --animate-duration: 4s;
-    }
+.text_video_2 {
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    max-width: 500px;
+    --animate-duration: 4s;
 }
 
 .brain_section {

@@ -4744,22 +4744,29 @@ main {
 body::-webkit-scrollbar {
   width: 0; }
 
-.main_body_section {
-  overflow: hidden; }
+#main {
+  height: 100vh;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; }
 
-.video_page .video_block {
+.scroll-sec {
+  position: relative;
+  scroll-snap-align: start; }
+
+.video_block {
   position: relative;
   height: 100vh; }
-  .video_page .video_block video {
+  .video_block video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .video_page .video_block.video_block_full video {
+  .video_block.video_block_full video {
     -o-object-fit: cover;
     object-fit: cover; }
-  .video_page .video_block.video-opacity {
+  .video_block.video-opacity {
     -webkit-animation-name: opacity-video;
     animation-name: opacity-video;
     -webkit-animation-duration: 0.8s;
@@ -4779,34 +4786,34 @@ body::-webkit-scrollbar {
   100% {
     opacity: 0; } }
 
-.video_page .top_video_btn {
+.top_video_btn {
   position: absolute;
   right: 20px;
   top: 13px; }
-  .video_page .top_video_btn .hide {
+  .top_video_btn .hide {
     display: none !important; }
   @media (max-width: 767px) {
-    .video_page .top_video_btn {
+    .top_video_btn {
       top: auto;
       bottom: 40px;
       right: 16px; } }
 
-.video_page .btn_black {
+.btn_black {
   font-family: "IBMPlexMono";
   padding: 28.5px 32px;
   cursor: pointer;
   position: relative;
   font-size: 20px; }
   @media (max-width: 767px) {
-    .video_page .btn_black {
+    .btn_black {
       padding: 15.5px 32px; } }
 
-.video_page .bottom_video_btn {
+.bottom_video_btn {
   position: absolute;
   right: 20px;
   bottom: 32px; }
   @media (max-width: 767px) {
-    .video_page .bottom_video_btn {
+    .bottom_video_btn {
       right: 16px;
       left: 16px;
       bottom: 36px;
@@ -4814,14 +4821,14 @@ body::-webkit-scrollbar {
       transform: none;
       right: 16px; } }
 
-.video_page .bottom_video_btn-top {
+.bottom_video_btn-top {
   bottom: 111px;
   display: none; }
   @media (max-width: 767px) {
-    .video_page .bottom_video_btn-top {
+    .bottom_video_btn-top {
       display: block; } }
 
-.video_page .btn_black {
+.btn_black {
   font-family: "IBMPlexMono";
   display: inline-block;
   position: relative;
@@ -4839,31 +4846,31 @@ body::-webkit-scrollbar {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); }
   @media (max-width: 767px) {
-    .video_page .btn_black {
+    .btn_black {
       padding: 15px 32px;
       text-align: center; } }
-  .video_page .btn_black .left_arrow,
-  .video_page .btn_black .right_arrow {
+  .btn_black .left_arrow,
+  .btn_black .right_arrow {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
-  .video_page .btn_black .left_arrow {
+  .btn_black .left_arrow {
     left: 32px; }
-  .video_page .btn_black .right_arrow {
+  .btn_black .right_arrow {
     right: 32px; }
-  .video_page .btn_black svg {
+  .btn_black svg {
     fill: #fff;
     transition: all 0.3s ease; }
-  .video_page .btn_black:hover {
+  .btn_black:hover {
     background-color: #fff;
     transition: all 0.3s ease;
     color: #0E0E0E; }
-    .video_page .btn_black:hover svg {
+    .btn_black:hover svg {
       fill: #0E0E0E;
       transition: all 0.3s ease; }
 
-.video_page .turn_sound {
+.turn_sound {
   border: 1px solid #fff;
   padding: 24px;
   position: absolute;
@@ -4872,13 +4879,13 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
   @media (max-width: 767px) {
-    .video_page .turn_sound {
+    .turn_sound {
       bottom: auto;
       top: 50px;
       left: 16px;
       padding: 16px; } }
 
-.video_page .text_main_video {
+.text_main_video {
   font-family: "NeueHaas";
   font-size: 48px;
   font-weight: 500;
@@ -4889,16 +4896,16 @@ body::-webkit-scrollbar {
   letter-spacing: -3px;
   letter-spacing: 2px; }
   @media (max-width: 767px) {
-    .video_page .text_main_video {
+    .text_main_video {
       display: none; } }
 
-.video_page .text_video_1 {
+.text_video_1 {
   top: 160px;
   left: 20px;
   max-width: 430px;
   --animate-duration: 4s; }
 
-.video_page .text_video_2 {
+.text_video_2 {
   top: 50%;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);

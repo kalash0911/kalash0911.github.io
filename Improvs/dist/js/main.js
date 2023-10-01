@@ -232,27 +232,26 @@ function previousSlide() {
   }
 } //scroll
 
+/* function scrollByElementName(elementName) {
+    let element = "";
+    element = document.querySelector(`[section=${elementName}]`);
+    if (!element) {
+        return;
+    }
 
-function scrollByElementName(elementName) {
-  var element = "";
-  element = document.querySelector("[section=".concat(elementName, "]"));
-
-  if (!element) {
-    return;
-  }
-
-  var scrollToValue = element.offsetTop;
-  scrollToOffset(scrollToValue);
+    let scrollToValue = element.offsetTop;
+    scrollToOffset(scrollToValue);
 }
 
 function scrollToOffset(offset) {
-  console.log("scrollToOffset " + offset);
-  window.scrollTo({
-    behavior: 'smooth',
-    left: 0,
-    top: offset
-  });
-} //sroll previous
+    console.log("scrollToOffset " + offset);
+    window.scrollTo({
+        behavior: 'smooth',
+        left: 0,
+        top: offset
+    });
+} */
+//sroll previous
 
 
 var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
