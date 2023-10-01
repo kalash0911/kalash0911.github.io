@@ -49,6 +49,7 @@ body::-webkit-scrollbar {
         position: absolute;
         right: 20px;
         top: 13px;
+        z-index: 6;
 
         .hide {
             display: none !important;
