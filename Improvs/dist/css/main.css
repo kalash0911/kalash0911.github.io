@@ -4325,138 +4325,140 @@ main {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    .header .header__content .header__main {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      width: 100%; }
-    .header .header__content .btn_black {
-      font-family: "IBMPlexMono";
-      display: inline-block;
-      position: relative;
-      width: 100%;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 125%;
-      letter-spacing: -0.14px;
-      text-transform: uppercase;
-      padding: 18px;
-      border: 1px solid #fff;
+  .header .header__main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%; }
+  .header .btn_black {
+    font-family: "IBMPlexMono";
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 125%;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 18px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+    background: none;
+    min-width: 164px;
+    /* Только если больше контейнера */
+    font-size: 14px;
+    /* Только если больше контейнера */
+    padding: 18px; }
+    @media (min-width: 1300px) {
+      .header .btn_black {
+        font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
+    @media (min-width: 1300px) {
+      .header .btn_black {
+        padding: calc(15px + 3 * ((100vw - calc(375px)) / 1065)); } }
+    .header .btn_black:hover {
+      background-color: #fff;
       transition: all 0.3s ease;
-      background: none;
-      min-width: 164px;
-      /* Только если больше контейнера */
-      font-size: 14px;
-      /* Только если больше контейнера */
-      padding: 18px; }
-      @media (min-width: 1300px) {
-        .header .header__content .btn_black {
-          font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
-      @media (min-width: 1300px) {
-        .header .header__content .btn_black {
-          padding: calc(15px + 3 * ((100vw - calc(375px)) / 1065)); } }
-      .header .header__content .btn_black:hover {
-        background-color: #fff;
-        transition: all 0.3s ease;
-        color: #0E0E0E; }
-    .header .header__content .burger-btn {
-      background-color: rgba(28, 28, 28, 0);
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      position: relative;
-      width: 100%;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 125%;
-      letter-spacing: -0.14px;
-      text-transform: uppercase;
-      padding: 15px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease;
-      -webkit-transform: none;
-      transform: none;
-      /* Только если больше контейнера */
-      font-size: 14px;
-      /* Только если больше контейнера */
-      padding: 15px; }
-      @media (min-width: 1300px) {
-        .header .header__content .burger-btn {
-          font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
-      @media (min-width: 1300px) {
-        .header .header__content .burger-btn {
-          padding: calc(14px + 1 * ((100vw - calc(375px)) / 1065)); } }
+      color: #0E0E0E; }
+  .header .burger-btn {
+    background-color: rgba(28, 28, 28, 0);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-width: 110px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 125%;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    padding: 15px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+    -webkit-transform: none;
+    transform: none;
+    /* Только если больше контейнера */
+    font-size: 14px;
+    /* Только если больше контейнера */
+    padding: 15px; }
+    @media (min-width: 1300px) {
+      .header .burger-btn {
+        font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
+    @media (min-width: 1300px) {
+      .header .burger-btn {
+        padding: calc(14px + 1 * ((100vw - calc(375px)) / 1065)); } }
+    @media (max-width: 767px) {
+      .header .burger-btn {
+        border: none;
+        padding: 0;
+        min-width: 0; } }
+    .header .burger-btn .text_burger_btn {
+      margin-left: 10px; }
       @media (max-width: 767px) {
-        .header .header__content .burger-btn {
-          border: none;
-          padding: 0; } }
-      .header .header__content .burger-btn .text_burger_btn {
-        margin-left: 10px; }
-        @media (max-width: 767px) {
-          .header .header__content .burger-btn .text_burger_btn {
-            display: none; } }
-        .header .header__content .burger-btn .text_burger_btn::before {
-          font-family: "IBMPlexMono";
-          content: 'menu'; }
-    .header .header__content .burger {
-      position: relative;
-      width: 24px;
-      height: 24px;
-      z-index: 5;
-      /* Только если больше контейнера */
-      width: 24px;
-      /* Только если больше контейнера */
-      height: 24px; }
-      @media (min-width: 1300px) {
-        .header .header__content .burger {
-          width: calc(20px + 4 * ((100vw - calc(375px)) / 1065)); } }
-      @media (min-width: 1300px) {
-        .header .header__content .burger {
-          height: calc(20px + 4 * ((100vw - calc(375px)) / 1065)); } }
-      .header .header__content .burger span {
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translateY(-40%);
-        transform: translateY(-40%);
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        border-radius: 10px;
-        transition: all .3s ease-in 0s; }
-      .header .header__content .burger::before, .header .header__content .burger::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: #fff;
-        border-radius: 10px;
-        left: 0;
-        transition: all .3s ease-in 0s; }
-      .header .header__content .burger::before {
-        top: 4px; }
-      .header .header__content .burger::after {
-        bottom: 4px; }
-    .header .header__content .burger_active span {
-      opacity: 0; }
-    .header .header__content .burger_active::before, .header .header__content .burger_active::after {
-      -webkit-animation-duration: .7s;
-      animation-duration: .7s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards; }
-    .header .header__content .burger_active::before {
-      -webkit-animation-name: burger1;
-      animation-name: burger1; }
-    .header .header__content .burger_active::after {
-      -webkit-animation-name: burger2;
-      animation-name: burger2; }
+        .header .burger-btn .text_burger_btn {
+          display: none; } }
+      .header .burger-btn .text_burger_btn::before {
+        font-family: "IBMPlexMono";
+        content: 'menu'; }
+  .header .burger {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    z-index: 5;
+    /* Только если больше контейнера */
+    width: 24px;
+    /* Только если больше контейнера */
+    height: 24px; }
+    @media (min-width: 1300px) {
+      .header .burger {
+        width: calc(20px + 4 * ((100vw - calc(375px)) / 1065)); } }
+    @media (min-width: 1300px) {
+      .header .burger {
+        height: calc(20px + 4 * ((100vw - calc(375px)) / 1065)); } }
+    .header .burger span {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-40%);
+      transform: translateY(-40%);
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 10px;
+      transition: all .3s ease-in 0s; }
+    .header .burger::before, .header .burger::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 10px;
+      left: 0;
+      transition: all .3s ease-in 0s; }
+    .header .burger::before {
+      top: 4px; }
+    .header .burger::after {
+      bottom: 4px; }
+  .header .burger_active span {
+    opacity: 0; }
+  .header .burger_active::before, .header .burger_active::after {
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .header .burger_active::before {
+    -webkit-animation-name: burger1;
+    animation-name: burger1; }
+  .header .burger_active::after {
+    -webkit-animation-name: burger2;
+    animation-name: burger2; }
 
 @-webkit-keyframes burger1 {
   0% {
@@ -4505,17 +4507,17 @@ main {
     -webkit-transform: rotate(-45deg) translateY(-40%);
     transform: rotate(-45deg) translateY(-40%);
     top: 40%; } }
-    .header .header__content .burger_finish::before, .header .header__content .burger_finish::after {
-      -webkit-animation-duration: .7s;
-      animation-duration: .7s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards; }
-    .header .header__content .burger_finish::before {
-      -webkit-animation-name: burger3;
-      animation-name: burger3; }
-    .header .header__content .burger_finish::after {
-      -webkit-animation-name: burger4;
-      animation-name: burger4; }
+  .header .burger_finish::before, .header .burger_finish::after {
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .header .burger_finish::before {
+    -webkit-animation-name: burger3;
+    animation-name: burger3; }
+  .header .burger_finish::after {
+    -webkit-animation-name: burger4;
+    animation-name: burger4; }
 
 @-webkit-keyframes burger3 {
   0% {
@@ -4564,13 +4566,13 @@ main {
     bottom: 6px; }
   100% {
     bottom: 4px; } }
-    .header .header__content .text_burger_btn-click::before {
-      -webkit-animation-name: text-btn-burger;
-      animation-name: text-btn-burger;
-      -webkit-animation-duration: .7s;
-      animation-duration: .7s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards; }
+  .header .text_burger_btn-click::before {
+    -webkit-animation-name: text-btn-burger;
+    animation-name: text-btn-burger;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
 
 @-webkit-keyframes text-btn-burger {
   0% {
@@ -4583,115 +4585,130 @@ main {
     content: 'menu'; }
   100% {
     content: 'Close'; } }
-    .header .header__content .menu {
-      position: relative;
-      z-index: -1;
-      position: fixed;
-      min-width: 609px;
-      height: 100%;
-      overflow: auto;
-      top: 0;
-      left: -100%;
-      padding: 80px 0px 20px 20px;
-      transition: all .5s ease 0s;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      /* Только если больше контейнера */
-      padding-top: 80px; }
-      @media (min-width: 1300px) {
-        .header .header__content .menu {
-          padding-top: calc(75px + 5 * ((100vw - calc(375px)) / 1065)); } }
-      @media (max-width: 767px) {
-        .header .header__content .menu {
-          min-width: 100%;
-          padding: 100px 16px 40px 16px;
-          background-color: #0E0E0E; } }
-    .header .header__content .menu_active {
-      left: 0; }
-    .header .header__content .menu__wrap {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      height: 100%;
-      z-index: 1;
-      border: 1px solid #fff;
-      padding: 40px;
-      background-color: #0E0E0E; }
-      @media (max-width: 767px) {
-        .header .header__content .menu__wrap {
-          border: none;
-          padding: 0px; } }
-      .header .header__content .menu__wrap .site_btn_white {
-        font-family: "IBMPlexMono";
-        /* Только если меньше контейнера */
-        font-size: 20px;
-        padding: 28.5px 0px; }
-        @media (max-width: 1300px) {
-          .header .header__content .menu__wrap .site_btn_white {
-            font-size: calc(18px + 2 * ((100vw - calc(375px)) / 925)); } }
+  .header .menu {
+    position: relative;
+    z-index: -1;
+    position: fixed;
+    min-width: 609px;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    left: -100%;
+    padding: 80px 0px 20px 20px;
+    transition: all 1s ease 0s;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* Только если больше контейнера */
+    padding-top: 80px; }
+    @media (min-width: 1300px) {
+      .header .menu {
+        padding-top: calc(75px + 5 * ((100vw - calc(375px)) / 1065)); } }
     @media (max-width: 767px) {
-      .header .header__content .header_btn {
-        opacity: 0; } }
-    .header .header__content .header_btn_none {
-      display: none; }
-    .header .header__content .menu__list {
-      padding: 0;
-      margin: 0;
-      list-style: none; }
-    .header .header__content .menu__item {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
+      .header .menu {
+        min-width: 100%;
+        padding: 100px 16px 40px 16px;
+        background-color: #0E0E0E;
+        transition: all .5s ease 0s; } }
+  .header .menu_active {
+    left: 0;
+    transition: all .5s ease 0s; }
+  @media (max-width: 767px) {
+    .header .header_btn {
+      display: none; } }
+  .header .menu__wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1;
+    border: 1px solid #fff;
+    padding: 40px;
+    background-color: #0E0E0E; }
+    @media (max-width: 767px) {
+      .header .menu__wrap {
+        border: none;
+        padding: 0px; } }
+  .header .site_btn_white {
+    font-family: "IBMPlexMono";
+    /* Только если меньше контейнера */
+    font-size: 20px;
+    padding: 28.5px 0px; }
+    @media (max-width: 1300px) {
+      .header .site_btn_white {
+        font-size: calc(18px + 2 * ((100vw - calc(375px)) / 925)); } }
+  @media (max-width: 767px) {
+    .header .header_btn {
+      display: none; } }
+  .header .header_btn_none {
+    display: none; }
+  .header .menu__list {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+  .header .menu__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* Только если меньше контейнера */
+    margin-bottom: 30px;
+    position: relative;
+    padding-right: 58px; }
+    @media (max-width: 1300px) {
+      .header .menu__item {
+        margin-bottom: calc(36px + -6 * ((100vw - calc(375px)) / 925)); } }
+    @media (max-width: 767px) {
+      .header .menu__item {
+        padding-right: 0px; } }
+    .header .menu__item a {
+      font-family: "NeueHaas";
+      transition: color .3s ease 0s;
       /* Только если меньше контейнера */
-      margin-bottom: 30px;
+      font-size: 42px;
+      color: #fff;
       position: relative;
-      padding-right: 58px; }
+      opacity: 60%;
+      margin-bottom: 5px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -3%;
+      text-transform: uppercase;
+      transition: 0.5s; }
       @media (max-width: 1300px) {
-        .header .header__content .menu__item {
-          margin-bottom: calc(36px + -6 * ((100vw - calc(375px)) / 925)); } }
-      @media (max-width: 767px) {
-        .header .header__content .menu__item {
-          padding-right: 0px; } }
-      .header .header__content .menu__item a {
-        font-family: "NeueHaas";
-        transition: color .3s ease 0s;
-        /* Только если меньше контейнера */
-        font-size: 42px;
-        color: #fff;
-        position: relative;
-        opacity: 60%;
-        margin-bottom: 5px;
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: -3%;
-        text-transform: uppercase;
-        transition: 0.5s; }
-        @media (max-width: 1300px) {
-          .header .header__content .menu__item a {
-            font-size: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
-    .header .header__content .header_logo svg {
-      max-height: 38px !important; }
-      @media (max-width: 767px) {
-        .header .header__content .header_logo svg {
-          max-height: 29px !important; } }
-    .header .header__content .burger_block:hover span {
-      width: 80%; }
-    .header .header__content .burger_block:hover .burger::after {
-      width: 50%; }
-    .header .header__content .burger_block:hover .burger_active::after {
-      width: 100% !important; }
+        .header .menu__item a {
+          font-size: calc(26px + 16 * ((100vw - calc(375px)) / 925)); } }
+  .header .header_logo svg {
+    max-width: 130px;
+    /* Только если больше контейнера */
+    max-width: 130px;
+    /* Только если больше контейнера */
+    width: 130px; }
+    @media (min-width: 1300px) {
+      .header .header_logo svg {
+        max-width: calc(100px + 30 * ((100vw - calc(375px)) / 1065)); } }
+    @media (min-width: 1300px) {
+      .header .header_logo svg {
+        width: calc(100px + 30 * ((100vw - calc(375px)) / 1065)); } }
     @media (max-width: 767px) {
-      .header .header__content .burger_block {
-        -ms-flex-order: 2;
-        order: 2; } }
+      .header .header_logo svg {
+        max-width: 100px; } }
+  .header .burger_block:hover span {
+    width: 80%; }
+  .header .burger_block:hover .burger::after {
+    width: 50%; }
+  .header .burger_block:hover .burger_active::after {
+    width: 100%; }
+  @media (max-width: 767px) {
+    .header .burger_block {
+      -ms-flex-order: 2;
+      order: 2; } }
   .header .menu_overlay {
     display: none;
     position: fixed;

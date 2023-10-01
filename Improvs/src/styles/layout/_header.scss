@@ -31,6 +31,7 @@
     .logo_block {
         transition: all .3s ease-in 0s;
         margin-left: 60px;
+
         @include media ('<tablet') {
            margin-top: 5px;
            margin-left: 0px;
@@ -53,378 +54,391 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
 
+    .header__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
 
-        .header__main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
+    .btn_black {
+        font-family: $IBM-font;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 125%;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 18px;
+        border: 1px solid $white;
+        transition: $transition_all_03;
+        background: none;
+        min-width: 164px;
 
+        @include adaptiv-vaule("font-size", 14, 10, 2);
+        @include adaptiv-vaule("padding", 18, 15, 2);
+
+        &:hover {
+            background-color: $white;
+            transition: $transition_all_03;
+            color: $black;
+        }
+    }
+
+    .burger-btn {
+        background-color: rgba(28, 28, 28, 0);
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        min-width: 110px;
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 125%;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 15px;
+        border: 1px solid $white;
+        transition: $transition_all_03;
+        transform: none;
+
+        @include adaptiv-vaule("font-size", 14, 10, 2);
+        @include adaptiv-vaule("padding", 15, 14, 2);
+
+        @include media ('<tablet') {
+            border: none;
+            padding: 0;
+            min-width: 0;
         }
 
-        .btn_black {
-            font-family: $IBM-font;
-            display: inline-block;
-            position: relative;
-            width: 100%;
-            color: $white;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 125%;
-            letter-spacing: -0.14px;
-            text-transform: uppercase;
-            padding: 18px;
-            border: 1px solid $white;
-            transition: $transition_all_03;
-            background: none;
-            min-width: 164px;
-
-            @include adaptiv-vaule("font-size", 14, 10, 2);
-            @include adaptiv-vaule("padding", 18, 15, 2);
-
-            &:hover {
-                background-color: $white;
-                transition: $transition_all_03;
-                color: $black;
-            }
-        }
-
-        .burger-btn {
-            background-color: rgba(28, 28, 28, 0);
-            display: flex;
-            align-items: center;
-            position: relative;
-            width: 100%;
-            color: $white;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 125%;
-            letter-spacing: -0.14px;
-            text-transform: uppercase;
-            padding: 15px;
-            border: 1px solid $white;
-            transition: $transition_all_03;
-            transform: none;
-
-            @include adaptiv-vaule("font-size", 14, 10, 2);
-            @include adaptiv-vaule("padding", 15, 14, 2);
-
-            // &:hover {
-            //     .burger {
-            //         span {
-            //             width: 65%;
-            //             transition: all .3s ease-in 0s;
-            //         }
-
-            //         &::before {
-            //             width: 40%;
-            //             transition: all .3s ease-in 0s;
-            //         }
-            //     }
-            // }
+        .text_burger_btn {
+            margin-left: 10px;
 
             @include media ('<tablet') {
-                border: none;
-                padding: 0;
-            }
+                display: none;
 
-            .text_burger_btn {
-                margin-left: 10px;
-
-                @include media ('<tablet') {
-                    display: none;
-
-                }
-
-                &::before {
-                    font-family: $IBM-font;
-                    content: 'menu';
-                }
-            }
-        }
-
-        .burger {
-            position: relative;
-            width: 24px;
-            height: 24px;
-            z-index: 5;
-
-            @include adaptiv-vaule("width", 24, 20, 2);
-            @include adaptiv-vaule("height", 24, 20, 2);
-
-            span {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-40%);
-                left: 0;
-                width: 100%;
-                height: 2px;
-                background-color: $white;
-                border-radius: 10px;
-                transition: all .3s ease-in 0s;
-            }
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                height: 2px;
-                width: 100%;
-                background-color: $white;
-                border-radius: 10px;
-                left: 0;
-                transition: all .3s ease-in 0s;
             }
 
             &::before {
-                top: 4px;
+                font-family: $IBM-font;
+                content: 'menu';
+            }
+        }
+    }
+
+    .burger {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        z-index: 5;
+
+        @include adaptiv-vaule("width", 24, 20, 2);
+        @include adaptiv-vaule("height", 24, 20, 2);
+
+        span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-40%);
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $white;
+            border-radius: 10px;
+            transition: all .3s ease-in 0s;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: $white;
+            border-radius: 10px;
+            left: 0;
+            transition: all .3s ease-in 0s;
+        }
+
+        &::before {
+            top: 4px;
+        }
+
+        &::after {
+            bottom: 4px;
+        }
+    }
+
+    .burger_active {
+
+        span {
+            opacity: 0;
+        }
+
+        &::before,
+        &::after {
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
+        }
+
+        &::before {
+            animation-name: burger1;
+        }
+
+        &::after {
+            animation-name: burger2;
+        }
+
+        @keyframes burger1 {
+            0% {
+                top: 0px;
             }
 
-            &::after {
+            40% {
+                transform: rotate(0deg);
+                top: 40%;
+            }
+
+            100% {
+                transform: rotate(45deg) translateY(-40%);
+                top: 40%;
+            }
+        }
+
+        @keyframes burger2 {
+            0% {
+                bottom: 0;
+            }
+
+            40% {
+                transform: rotate(0deg);
+                top: 40%;
+            }
+
+            100% {
+                transform: rotate(-45deg) translateY(-40%);
+                top: 40%;
+            }
+        }
+    }
+
+    .burger_finish {
+
+        &::before,
+        &::after {
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
+        }
+
+        &::before {
+            animation-name: burger3;
+        }
+
+        &::after {
+            animation-name: burger4;
+        }
+
+        @keyframes burger3 {
+            0% {
+                transform: rotate(45deg);
+                top: 11px;
+            }
+
+            40% {
+                transform: rotate(0deg);
+                top: 6px;
+            }
+
+            100% {
+                top: 4px;
+            }
+        }
+
+        @keyframes burger4 {
+            0% {
+                transform: rotate(-45deg);
+                bottom: 11px;
+            }
+
+            40% {
+                transform: rotate(0deg);
+                bottom: 6px;
+            }
+
+            100% {
                 bottom: 4px;
             }
         }
+    }
 
-        .burger_active {
+    .text_burger_btn-click {
 
-            span {
-                opacity: 0;
-            }
+        &::before {
+            animation-name: text-btn-burger;
+            animation-duration: .7s;
+            animation-fill-mode: forwards;
 
-            &::before,
-            &::after {
-                animation-duration: .7s;
-                animation-fill-mode: forwards;
-            }
-
-            &::before {
-                animation-name: burger1;
-            }
-
-            &::after {
-                animation-name: burger2;
-            }
-
-            @keyframes burger1 {
+            @keyframes text-btn-burger {
                 0% {
-                    top: 0px;
-                }
-
-                40% {
-                    transform: rotate(0deg);
-                    top: 40%;
+                    content: 'menu';
                 }
 
                 100% {
-                    transform: rotate(45deg) translateY(-40%);
-                    top: 40%;
-                }
-            }
-
-            @keyframes burger2 {
-                0% {
-                    bottom: 0;
-                }
-
-                40% {
-                    transform: rotate(0deg);
-                    top: 40%;
-                }
-
-                100% {
-                    transform: rotate(-45deg) translateY(-40%);
-                    top: 40%;
+                    content: 'Close';
                 }
             }
         }
+    }
 
-        .burger_finish {
+    .menu {
+        position: relative;
+        z-index: -1;
+        position: fixed;
+        min-width: 609px;
+        height: 100%;
+        overflow: auto;
+        top: 0;
+        left: -100%;
+        padding: 80px 0px 20px 20px;
+        transition: all 1s ease 0s;
+        display: flex;
+        flex-direction: column;
 
-            &::before,
-            &::after {
-                animation-duration: .7s;
-                animation-fill-mode: forwards;
-            }
+        @include adaptiv-vaule("padding-top", 80, 75, 2);
 
-            &::before {
-                animation-name: burger3;
-            }
-
-            &::after {
-                animation-name: burger4;
-            }
-
-            @keyframes burger3 {
-                0% {
-                    transform: rotate(45deg);
-                    top: 11px;
-                }
-
-                40% {
-                    transform: rotate(0deg);
-                    top: 6px;
-                }
-
-                100% {
-                    top: 4px;
-                }
-            }
-
-            @keyframes burger4 {
-                0% {
-                    transform: rotate(-45deg);
-                    bottom: 11px;
-                }
-
-                40% {
-                    transform: rotate(0deg);
-                    bottom: 6px;
-                }
-
-                100% {
-                    bottom: 4px;
-                }
-            }
-        }
-
-        .text_burger_btn-click {
-
-            &::before {
-                animation-name: text-btn-burger;
-                animation-duration: .7s;
-                animation-fill-mode: forwards;
-
-                @keyframes text-btn-burger {
-                    0% {
-                        content: 'menu';
-                    }
-
-                    100% {
-                        content: 'Close';
-                    }
-                }
-            }
-        }
-
-        .menu {
-            position: relative;
-            z-index: -1;
-            position: fixed;
-            min-width: 609px;
-            height: 100%;
-            overflow: auto;
-            top: 0;
-            left: -100%;
-            padding: 80px 0px 20px 20px;
-            transition: all .5s ease 0s;
-            display: flex;
-            flex-direction: column;
-
-            @include adaptiv-vaule("padding-top", 80, 75, 2);
-
-            @include media ('<tablet') {
-                min-width: 100%;
-                padding: 100px 16px 40px 16px;
-                background-color: $black;
-            }
-
-        }
-
-        .menu_active {
-            left: 0;
-        }
-
-        .menu__wrap {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            z-index: 1;
-            border: 1px solid $white;
-            padding: 40px;
+        @include media ('<tablet') {
+            min-width: 100%;
+            padding: 100px 16px 40px 16px;
             background-color: $black;
-
-            @include media ('<tablet') {
-                border: none;
-                padding: 0px;
-            }
-
-            .site_btn_white {
-                font-family: $IBM-font;
-                @include adaptiv-vaule("font-size", 20, 18, 1);
-                padding: 28.5px 0px;
-
-            }
+            transition: all .5s ease 0s;
         }
+    }
 
-        .header_btn {
-            @include media ('<tablet') {
-               opacity: 0;
-            }
-        }
+    .menu_active {
+        left: 0;
+        transition: all .5s ease 0s;
+    }
 
-        .header_btn_none {
+    .header_btn {
+
+        @include media ('<tablet') {
             display: none;
         }
+    }
 
-        .menu__list {
-            padding: 0;
-            margin: 0;
-            list-style: none;
+    .menu__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        z-index: 1;
+        border: 1px solid $white;
+        padding: 40px;
+        background-color: $black;
+
+        @include media ('<tablet') {
+            border: none;
+            padding: 0px;
+
+        }
+    }
+
+    .site_btn_white {
+        font-family: $IBM-font;
+        @include adaptiv-vaule("font-size", 20, 18, 1);
+        padding: 28.5px 0px;
+    }
+
+    .header_btn {
+
+        @include media ('<tablet') {
+            display: none;
+        }
+    }
+
+    .header_btn_none {
+        display: none;
+    }
+
+    .menu__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .menu__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-vaule("margin-bottom", 30, 36, 1);
+        position: relative;
+        padding-right: 58px;
+
+        @include media ('<tablet') {
+            padding-right: 0px;
         }
 
-
-        .menu__item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            @include adaptiv-vaule("margin-bottom", 30, 36, 1);
+        a {
+            font-family: $NeueHaas-font;
+            transition: color .3s ease 0s;
+            @include adaptiv-vaule("font-size", 42, 26, 1);
+            color: $white;
             position: relative;
-            padding-right: 58px;
-
-            @include media ('<tablet') {
-                padding-right: 0px;
-            }
-
-            a {
-                font-family: $NeueHaas-font;
-                transition: color .3s ease 0s;
-                @include adaptiv-vaule("font-size", 42, 26, 1);
-                color: $white;
-                position: relative;
-                opacity: 60%;
-                margin-bottom: 5px;
-                font-weight: 500;
-                line-height:100%;
-                letter-spacing: -3%;
-                text-transform: uppercase;
-                transition: 0.5s;
-            }
+            opacity: 60%;
+            margin-bottom: 5px;
+            font-weight: 500;
+            line-height:100%;
+            letter-spacing: -3%;
+            text-transform: uppercase;
+            transition: 0.5s;
         }
+    }
 
-        .header_logo {
-            svg{
-            max-height: 38px!important;      
+    .header_logo {
+
+        svg{
+            max-width: 130px;  
+
+            @include adaptiv-vaule("max-width", 130, 100, 2);
+            @include adaptiv-vaule("width", 130, 100, 2);
+
             @include media ('<tablet') {
-                max-height: 29px!important;
+                max-width: 100px;
             } 
         }
     }
-        .burger_block {
-            &:hover span{
+    
+    .burger_block {
+
+        &:hover {
+
+            span {
                 width: 80%;
             }
-            &:hover .burger::after{
-                width: 50%;
+
+            .burger {
+
+                &::after {
+                    width: 50%;                   
+                }
             }
-            &:hover .burger_active::after{
-                width: 100%!important;
+
+            .burger_active {
+
+                &::after {
+                    width: 100%;                    
+                }
             }
-            @include media ('<tablet') {
-                order: 2;
-            }
+        }
+        
+        @include media ('<tablet') {
+            order: 2;
         }
     }
 
@@ -453,9 +467,9 @@
 }
 
 .menu_active_link {
+
     a {
         opacity: 1 !important;
-
     }
 
     &::after {
@@ -468,5 +482,4 @@
         @include adaptiv-vaule("height", 32, 20, 1);
         opacity: 1;
     }
-
 }
