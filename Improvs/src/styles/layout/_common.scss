@@ -539,6 +539,12 @@ body::-webkit-scrollbar {
 
     .success_block {
         display: none;
+        max-width: 790px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        transition: all 1s ease;
+        border: 1px solid $white;
     }
 
     .content {
