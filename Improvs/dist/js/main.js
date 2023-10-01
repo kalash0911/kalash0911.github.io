@@ -52,6 +52,9 @@ function init() {
   }
 
   var firstVideo = videos[0];
+  firstVideo.addEventListener("error", function (e) {
+    firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png');
+  });
   firstVideo.addEventListener('timeupdate', function () {
     var firstVideoBlock = document.querySelector("[section=\"video1\"]");
 
