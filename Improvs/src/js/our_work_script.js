@@ -5,7 +5,7 @@ const slider = new Swiper(".case_swiper", {
         delay: 0,
         disableOnInteraction: false,
     },
-    loop: true,
+    // loop: true,
     spaceBetween: 20,
     slidesPerView: 1.3,
     breakpoints: {
