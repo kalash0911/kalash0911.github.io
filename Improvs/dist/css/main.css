@@ -4275,37 +4275,26 @@ main {
     text-decoration: underline; }
 
 .header {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 128%;
-  letter-spacing: -0.01em;
-  text-align: left;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 5;
   opacity: 0;
-  -webkit-animation: animateHeader 1s forwards;
-  animation: animateHeader 1s forwards;
-  background-color: #0E0E0E; }
+  background-color: #0E0E0E;
+  transition: all .7s ease 0s; }
   @media (max-width: 767px) {
     .header {
       max-height: 48px; } }
-
-@-webkit-keyframes animateHeader {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes animateHeader {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+  .header.active {
+    opacity: 1; }
+    .header.active .logo_block {
+      -webkit-transform: translateY(0);
+      transform: translateY(0); }
   .header .logo_block {
-    transition: all .3s ease-in 0s;
+    -webkit-transform: translateY(-80px);
+    transform: translateY(-80px);
+    transition: all .7s ease-in 0s;
     margin-left: 60px; }
     @media (max-width: 767px) {
       .header .logo_block {

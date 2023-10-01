@@ -91,10 +91,10 @@ function copyCode() {
             .style("fill", "#005BBB").text("Improvs");`;
 
     navigator.clipboard.writeText(jsCode);
-} 
+}
 
 function hideCopyCodeButton(isHide) {
-    let firstVideo=document.querySelector("[section=\"video1\"]");
+    let firstVideo = document.querySelector("[section=\"video1\"]");
     if (isHide) {
         firstVideo.classList.add("video_block_full");
         copyCodeButton.classList.add("hide");
@@ -238,7 +238,7 @@ function scrollByElementName(elementName) {
 }
 
 function scrollToOffset(offset) {
-    console.log("scrollToOffset "+offset);
+    console.log("scrollToOffset " + offset);
     window.scrollTo({
         behavior: 'smooth',
         left: 0,
@@ -247,9 +247,9 @@ function scrollToOffset(offset) {
 }
 
 //sroll previous
-let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight-50) + window.scrollY);
+let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
 let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
-window.addEventListener("scroll", function () {   
+window.addEventListener("scroll", function () {
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
     if (window.body_lock) {
@@ -265,9 +265,9 @@ window.addEventListener("scroll", function () {
         window.isDownScroll = false;
         body.style.overflowY = "hidden";
         previousSlide(true);
-        
+
     }
-    if (viewedPageHeight >= viewportOffsetLastVideo&&!isDownScroll) {
+    if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
         window.isDownScroll = true;
     }
 
@@ -278,10 +278,10 @@ window.addEventListener("scroll", function () {
     let mobileApplication = document.querySelector("[section=\"video3\"]");
     let work = document.querySelector("[section=\"work\"]");
 
-    let viewportOffsetMain= Math.abs(main.getBoundingClientRect().top + window.scrollY);
-    let viewportOffsetWebsite= Math.abs(website.getBoundingClientRect().top + window.scrollY);
-    let viewportOffMobileAppication= Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
-    let viewportOffWork= Math.abs(work.getBoundingClientRect().top + window.scrollY);
+    let viewportOffsetMain = Math.abs(main.getBoundingClientRect().top + window.scrollY);
+    let viewportOffsetWebsite = Math.abs(website.getBoundingClientRect().top + window.scrollY);
+    let viewportOffMobileAppication = Math.abs(mobileApplication.getBoundingClientRect().top + window.scrollY);
+    let viewportOffWork = Math.abs(work.getBoundingClientRect().top + window.scrollY);
 
     if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
         cleanHoverMenu();
@@ -289,22 +289,22 @@ window.addEventListener("scroll", function () {
     } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight < viewportOffWork) {
         cleanHoverMenu();
         menuItems[2].classList.add("menu_active_link");
-    }else if(viewedPageHeight >= viewportOffWork){
+    } else if (viewedPageHeight >= viewportOffWork) {
         cleanHoverMenu();
         menuItems[3].classList.add("menu_active_link");
     }
 
-    window.isScroling=true;
-    setTimeout(() => window.isScroling=false, 500);
+    window.isScroling = true;
+    setTimeout(() => window.isScroling = false, 500);
 });
 
 
 //header
 function showHeader(isShow) {
     if (isShow) {
-        header.style.display = "block";
+        header.classList.add("active");
     } else {
-        header.style.display = "none";
+        header.classList.remove("active");
     }
 }
 
@@ -391,11 +391,11 @@ const slider = new Swiper(".case_swiper", {
     spaceBetween: 20,
     freeMode: true,
     centeredSlides: false,
-    preventInteractionOnTransition:false,
+    preventInteractionOnTransition: false,
     autoplay: {
         delay: 1,
         disableOnInteraction: false
-      },
+    },
     breakpoints: {
         320: {
             slidesPerView: 1.15,
@@ -416,7 +416,7 @@ const slider = new Swiper(".case_swiper", {
             this.autoplay.stop();
 
             this.el.addEventListener('mousemove', () => {
-                if(!window.isScroling){
+                if (!window.isScroling) {
                     this.autoplay.start();
                 }
             });

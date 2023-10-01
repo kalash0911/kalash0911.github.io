@@ -298,9 +298,9 @@ window.addEventListener("scroll", function () {
 
 function showHeader(isShow) {
   if (isShow) {
-    header.style.display = "block";
+    header.classList.add("active");
   } else {
-    header.style.display = "none";
+    header.classList.remove("active");
   }
 } //touch
 

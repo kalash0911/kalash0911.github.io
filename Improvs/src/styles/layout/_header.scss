@@ -1,35 +1,28 @@
 .header {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 128%;
-    letter-spacing: -0.01em;
-    text-align: left;
-
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 5;
     opacity: 0;
-    animation: animateHeader 1s forwards;
     background-color: $black;
+    transition: all .7s ease 0s;
 
     @include media ('<tablet') {
         max-height: 48px;
     }
 
-    @keyframes animateHeader {
-        0% {
-            opacity: 0;
-        }
+    &.active {
+        opacity: 1;
 
-        100% {
-            opacity: 1;
+        .logo_block {
+            transform: translateY(0);
         }
     }
 
     .logo_block {
-        transition: all .3s ease-in 0s;
+        transform: translateY(-80px);
+        transition: all .7s ease-in 0s;
         margin-left: 60px;
 
         @include media ('<tablet') {
