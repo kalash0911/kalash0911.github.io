@@ -225,17 +225,16 @@ function previousSlide(isDownScroll = false) {
             }
 
             let section = sections[index].getAttribute('section');
-
             if (section == "video3" && !isDownScroll) {
                 return;
-            } 
+            }
 
             scrollByElementName(section);
             setSectionState(index);
         }
     }
 }
- 
+
 //scroll
 function scrollByElementName(elementName) {
     let element = "";
@@ -260,18 +259,8 @@ function scrollToOffset(offset) {
 //sroll previous
 let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
 let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
-let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
-
-
-window.addEventListener('scrollend', () => {
-    if (viewedPageHeight <= (viewportOffsetLastSection) && window.isDownScroll) {
-        window.isDownScroll = false;
-        body.style.overflowY = "hidden";
-        previousSlide(true);
-    }
-})
-
 window.addEventListener("scroll", function () {
+    let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
     if (window.body_lock) {
         return;
@@ -282,7 +271,12 @@ window.addEventListener("scroll", function () {
     } else {
         header.classList.add("header_transparent");
     }
+    if (viewedPageHeight <= (viewportOffsetLastSection) && window.isDownScroll) {
+        window.isDownScroll = false;
+        body.style.overflowY = "hidden";
+        previousSlide(true);
 
+    }
     if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
         window.isDownScroll = true;
     }
