@@ -192,9 +192,6 @@ function nextSlide() {
             }
 
             let section = sections[index].getAttribute('section');
-            if (section === "work") {
-                body.style.overflowY = "auto";
-            }
 
             scrollByElementName(section);
             setSectionState(index);
@@ -210,7 +207,6 @@ function nextSlide() {
 }
 
 function previousSlide(isDownScroll = false) {
-    console.log("previousSlide");
     if (window.body_lock) {
         return;
     }
@@ -230,6 +226,15 @@ function previousSlide(isDownScroll = false) {
             }
 
             let section = sections[index].getAttribute('section');
+
+            if (section === "video3" && isDownScroll) {
+                function scrollToVideo() {
+                    scrollByElementName(section);
+                    window.removeEventListener('scrollend', scrollToVideo);
+                }
+                window.addEventListener('scrollend', scrollToVideo)
+            }
+
             if (section == "video3" && !isDownScroll) {
                 return;
             }
@@ -253,7 +258,6 @@ function scrollByElementName(elementName) {
 }
 
 function scrollToOffset(offset) {
-    console.log("scrollToOffset " + offset);
     window.scrollTo({
         behavior: 'smooth',
         left: 0,
@@ -280,9 +284,9 @@ window.addEventListener("scroll", function () {
         window.isDownScroll = false;
         body.style.overflowY = "hidden";
         previousSlide(true);
-
     }
     if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
+        body.style.overflowY = "auto";
         window.isDownScroll = true;
     }
 
