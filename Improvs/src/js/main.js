@@ -53,6 +53,11 @@ function init() {
     }
 
     let firstVideo = videos[0];
+
+    firstVideo.addEventListener("error", function (e) {
+        firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')
+    });
+
     firstVideo.addEventListener('timeupdate', function () {
         let firstVideoBlock = document.querySelector("[section=\"video1\"]");
         if (firstVideo.currentTime >= 3.50000) {
