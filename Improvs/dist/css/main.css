@@ -4274,31 +4274,26 @@ main {
     color: #fff;
     text-decoration: underline; }
 
-.main_body_section .header {
-  opacity: 0; }
-  .main_body_section .header.active {
-    opacity: 1;
-    transition: opacity 2s linear .5s; }
-    .main_body_section .header.active .burger_block,
-    .main_body_section .header.active .header_btn {
-      opacity: 1; }
-  .main_body_section .header .burger_block,
-  .main_body_section .header .header_btn {
-    opacity: 0;
-    transition: opacity .7s ease 1.5s; }
-
 .header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 5;
+  opacity: 0;
   background-color: #0E0E0E;
   transition: all .7s ease 0s; }
   @media (max-width: 767px) {
     .header {
       max-height: 48px; } }
+  .header.active {
+    opacity: 1; }
+    .header.active .logo_block {
+      -webkit-transform: translateY(0);
+      transform: translateY(0); }
   .header .logo_block {
+    -webkit-transform: translateY(-80px);
+    transform: translateY(-80px);
     transition: all .7s ease-in 0s;
     margin-left: 60px; }
     @media (max-width: 767px) {

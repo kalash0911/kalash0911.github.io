@@ -1,33 +1,10 @@
-.main_body_section {
-
-    .header {
-        opacity: 0;
-        
-        &.active {
-            opacity: 1;
-            transition: opacity 2s linear .5s;
-
-            .burger_block,
-            .header_btn {
-                opacity: 1;
-            }
-        }
-
-        .burger_block,
-        .header_btn {
-            opacity: 0;
-            transition: opacity .7s ease 1.5s;
-        }
-    }
-}
-
-
 .header {
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 5;
+    opacity: 0;
     background-color: $black;
     transition: all .7s ease 0s;
 
@@ -35,7 +12,16 @@
         max-height: 48px;
     }
 
+    &.active {
+        opacity: 1;
+
+        .logo_block {
+            transform: translateY(0);
+        }
+    }
+
     .logo_block {
+        transform: translateY(-80px);
         transition: all .7s ease-in 0s;
         margin-left: 60px;
 
