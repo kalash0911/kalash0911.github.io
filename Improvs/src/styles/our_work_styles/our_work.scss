@@ -140,6 +140,16 @@
             display: none;
         }
 
+        @include media (">2560px") {
+            width: 180px;
+            height: 180px;
+        }
+
+        @include media (">3200px") {
+            width: 280px;
+            height: 280px;
+        }
+
         &:hover {
             background-color: $white;
             transition: $transition_all_03;
