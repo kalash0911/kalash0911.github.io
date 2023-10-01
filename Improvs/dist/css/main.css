@@ -4754,6 +4754,25 @@ body::-webkit-scrollbar {
   .video_page .video_block.video_block_full video {
     -o-object-fit: cover;
     object-fit: cover; }
+  .video_page .video_block.video-opacity {
+    -webkit-animation-name: opacity-video;
+    animation-name: opacity-video;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+
+@-webkit-keyframes opacity-video {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes opacity-video {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 .video_page .top_video_btn {
   position: absolute;

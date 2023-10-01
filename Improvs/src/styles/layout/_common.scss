@@ -26,6 +26,23 @@ body::-webkit-scrollbar {
                 object-fit: cover;
             }
         }
+
+        &.video-opacity {
+            animation-name: opacity-video;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+
+            @keyframes opacity-video {
+                
+                0%{
+                    opacity: 1;
+                }
+
+                100%{
+                    opacity: 0;
+                }
+            }
+        }
     }
 
     .top_video_btn {
