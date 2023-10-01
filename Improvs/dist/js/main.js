@@ -14,6 +14,7 @@ var lastVideoSection = document.querySelector("[section=\"video3\"]");
 var header = document.querySelector("#header");
 var copyCodeButton = document.querySelector("[copyCode]");
 var body = document.querySelector(".main_body_section");
+var mobilePosters = document.querySelectorAll("[poster_mobile]");
 
 function isSafari() {
   var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -29,6 +30,7 @@ function init() {
 
   if (isMobile()) {
     changeVideoForMobile();
+    changeMobilePosters();
   }
 
   if (isMobile() && isSafari()) {
@@ -54,7 +56,11 @@ function init() {
 
   var firstVideo = videos[0];
   firstVideo.addEventListener("error", function (e) {
-    firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png');
+    if (isMobile()) {
+      firstVideo.setAttribute('poster', 'images/main_page/video_img_mobile_1.png');
+    } else {
+      firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png');
+    }
   });
   firstVideo.addEventListener('timeupdate', function () {
     var firstVideoBlock = document.querySelector("[section=\"video1\"]");
@@ -107,6 +113,13 @@ function changeVideoForMobile() {
       video.src = path + "files/main_video/video_".concat(index + 1, "_mobile.mp4");
     }
   }
+}
+
+function changeMobilePosters() {
+  mobilePosters.forEach(function (mobilePoster) {
+    var poster = mobilePoster.getAttribute("poster_mobile");
+    mobilePoster.poster = poster;
+  });
 }
 
 turnSounds.forEach(function (turn) {

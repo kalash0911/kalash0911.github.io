@@ -4825,7 +4825,8 @@ body::-webkit-scrollbar {
 .video_page .top_video_btn {
   position: absolute;
   right: 20px;
-  top: 13px; }
+  top: 13px;
+  z-index: 6; }
   .video_page .top_video_btn .hide {
     display: none !important; }
   @media (max-width: 767px) {
