@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 
         &.video-opacity {
             animation-name: opacity-video;
-            animation-duration: 2s;
+            animation-duration: 0.8s;
             animation-fill-mode: forwards;
 
             @keyframes opacity-video {

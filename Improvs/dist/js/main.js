@@ -25,7 +25,6 @@ function init() {
   window.currentIndex = null;
   window.body_lock = false;
   window.isScroling = false;
-  showHeader(false);
 
   if (isMobile()) {
     changeVideoForMobile();
@@ -54,8 +53,20 @@ function init() {
 
   var firstVideo = videos[0];
   firstVideo.addEventListener('timeupdate', function () {
+    var firstVideoBlock = document.querySelector("[section=\"video1\"]");
+
     if (firstVideo.currentTime >= 3.50000) {
       hideCopyCodeButton(true);
+    }
+
+    if (firstVideo.currentTime >= 15.00000) {
+      firstVideoBlock.classList.add("video-opacity");
+      showHeader(true);
+    }
+
+    if (firstVideo.currentTime >= 15.80000) {
+      nextSlide();
+      firstVideoBlock.classList.remove("video-opacity");
     }
   }, false);
 }
