@@ -4092,7 +4092,7 @@ main {
     overflow: hidden; }
     @media (min-width: 2561px) {
       .our_work .case {
-        height: 33vh; } }
+        height: 750px; } }
     @media (max-width: 767px) {
       .our_work .case {
         -ms-flex-direction: column-reverse;
@@ -4167,6 +4167,7 @@ main {
     height: 100%;
     top: 0;
     left: 0;
+    font-family: "IBMPlexMono";
     display: grid;
     place-items: center;
     transition: all 0.3s ease; }
@@ -4208,7 +4209,7 @@ main {
     margin-bottom: 15px; }
     @media (min-width: 1025px) {
       .our_work .case_title {
-        font-size: 2vw; } }
+        font-size: 1.7vw; } }
   .our_work .case_description {
     color: #DBDBDB;
     font-size: 20px;

@@ -84,7 +84,6 @@
         transition: $transition_all_03;
     }
 
-
     .case {
         display: flex;
         align-items: center;
@@ -95,7 +94,7 @@
         overflow: hidden;
 
         @include media (">2560px") {
-            height: 33vh;
+            height: 750px;
         }
 
         @include media ("<tablet") {
@@ -192,6 +191,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        font-family:$IBM-font;
         display: grid;
         place-items: center;
         transition: $transition_all_03;
@@ -238,7 +238,7 @@
         margin-bottom: 15px;
 
         @include media (">desktop") {
-            font-size: 2vw;
+            font-size: 1.7vw;
         }
     }
 
