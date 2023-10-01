@@ -125,15 +125,22 @@ function changeMobilePosters() {
 turnSounds.forEach(function (turn) {
   turn.addEventListener('click', function () {
     var video = videos[getSectionState()];
-    var img = turn.querySelector('img');
 
     if (video) {
       video.muted = !video.muted;
+      var sound_turn = turn.querySelector(".sound_turn");
+      var sound_switch = turn.querySelector(".sound_switch");
 
       if (video.muted) {
-        img.src = path + '/images/main_page/sound_switch.svg';
+        if (sound_turn) {
+          sound_turn.style.display = "none";
+          sound_switch.style.display = "block";
+        }
       } else {
-        img.src = path + '/images/main_page/sound_turn.svg';
+        if (sound_switch) {
+          sound_switch.style.display = "none";
+          sound_turn.style.display = "block";
+        }
       }
     }
   });

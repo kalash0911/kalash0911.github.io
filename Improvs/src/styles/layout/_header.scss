@@ -40,7 +40,8 @@
 
         @include media ('<tablet') {
            margin-top: 5px;
-           margin-left: 0px;
+           margin-left: auto;
+           margin-right: auto;
         }
     }
 
@@ -469,6 +470,12 @@
     .btn_black {
         background: $white !important;
         color: $black !important;
+        &:hover{
+            color: $white!important;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))!important;
+            backdrop-filter: blur(10px)!important;
+            transition: all 0.3s ease;
+        }
     }
 }
 

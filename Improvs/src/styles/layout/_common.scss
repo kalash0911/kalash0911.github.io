@@ -104,7 +104,6 @@ body::-webkit-scrollbar {
         display: inline-block;
         position: relative;
         width: 100%;
-        color: $white;
         font-size: 20px;
         font-weight: 500;
         line-height: 128%;
@@ -113,6 +112,7 @@ body::-webkit-scrollbar {
         padding: 28.5px 58px;
         border: 1px solid $white;
         transition: $transition_all_03;
+        color: $white;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
         backdrop-filter: blur(10px);
 
@@ -155,7 +155,9 @@ body::-webkit-scrollbar {
             }
         }
     }
-
+    .sound_turn{
+        display: none;
+    }
     .turn_sound {
         border: 1px solid $white;
         padding: 24px;
@@ -164,12 +166,28 @@ body::-webkit-scrollbar {
         bottom: 32px;
         border-radius: 50%;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
-
+        display: flex;
+        &:hover{
+            background: $white;
+            transition: all 0.3s ease;
+        }
+        &:hover svg path {
+            fill:$black;
+            transition: all 0.3s ease;
+        }
+    
         @include media ("<tablet") {
             bottom: auto;
-            top: 50px;
+            top: 10px;
             left: 16px;
-            padding: 16px;
+            padding: 5px;
+            z-index: 10;
+        }
+        svg{
+            @include media ("<tablet") {
+            width: 20px;
+            height: 20px;
+            }  
         }
 
     }
@@ -792,4 +810,11 @@ body::-webkit-scrollbar {
 
 .scroll_body {
     overflow: auto;
+}
+
+
+
+
+.sound_turn{
+    display: none;
 }

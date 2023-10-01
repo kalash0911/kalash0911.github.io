@@ -58,10 +58,10 @@ function init() {
     let firstVideo = videos[0];
 
     firstVideo.addEventListener("error", function (e) {
-        if(isMobile()){
+        if (isMobile()) {
             firstVideo.setAttribute('poster', 'images/main_page/video_img_mobile_1.png')
-        }else{
-            firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')  
+        } else {
+            firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')
         }
     });
 
@@ -132,28 +132,36 @@ function changeVideoForMobile() {
         const video = videos[index];
         if (!video.src.includes("mobile")) {
             video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
-            
+
         }
     }
 }
 
-function changeMobilePosters(){
+function changeMobilePosters() {
     mobilePosters.forEach((mobilePoster) => {
-        let poster=mobilePoster.getAttribute("poster_mobile");
-        mobilePoster.poster=poster;
+        let poster = mobilePoster.getAttribute("poster_mobile");
+        mobilePoster.poster = poster;
     });
 }
 
 turnSounds.forEach(turn => {
     turn.addEventListener('click', function () {
         let video = videos[getSectionState()]
-        let img = turn.querySelector('img');
         if (video) {
             video.muted = !video.muted;
+            let sound_turn = turn.querySelector(".sound_turn");
+            let sound_switch = turn.querySelector(".sound_switch");
             if (video.muted) {
-                img.src = path + '/images/main_page/sound_switch.svg';
+                if (sound_turn) {
+                    sound_turn.style.display = "none";
+                    sound_switch.style.display = "block";
+                }
             } else {
-                img.src = path + '/images/main_page/sound_turn.svg';
+                if (sound_switch) {
+                    sound_switch.style.display = "none";
+                    sound_turn.style.display = "block";
+
+                }
             }
         }
     })

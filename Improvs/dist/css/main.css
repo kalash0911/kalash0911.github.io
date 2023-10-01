@@ -4347,7 +4347,8 @@ main {
     @media (max-width: 767px) {
       .header .logo_block {
         margin-top: 5px;
-        margin-left: 0px; } }
+        margin-left: auto;
+        margin-right: auto; } }
   .header .hide_logo {
     opacity: 0; }
   .header .container {
@@ -4762,6 +4763,12 @@ main {
   .header_transparent .btn_black {
     background: #fff !important;
     color: #0E0E0E !important; }
+    .header_transparent .btn_black:hover {
+      color: #fff !important;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      backdrop-filter: blur(10px) !important;
+      transition: all 0.3s ease; }
 
 .menu_active_link a {
   opacity: 1 !important; }
@@ -4870,7 +4877,6 @@ body::-webkit-scrollbar {
   display: inline-block;
   position: relative;
   width: 100%;
-  color: #fff;
   font-size: 20px;
   font-weight: 500;
   line-height: 128%;
@@ -4879,6 +4885,7 @@ body::-webkit-scrollbar {
   padding: 28.5px 58px;
   border: 1px solid #fff;
   transition: all 0.3s ease;
+  color: #fff;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); }
@@ -4907,6 +4914,9 @@ body::-webkit-scrollbar {
       fill: #0E0E0E;
       transition: all 0.3s ease; }
 
+.video_page .sound_turn {
+  display: none; }
+
 .video_page .turn_sound {
   border: 1px solid #fff;
   padding: 24px;
@@ -4914,13 +4924,26 @@ body::-webkit-scrollbar {
   left: 20px;
   bottom: 32px;
   border-radius: 50%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); }
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+  display: -ms-flexbox;
+  display: flex; }
+  .video_page .turn_sound:hover {
+    background: #fff;
+    transition: all 0.3s ease; }
+  .video_page .turn_sound:hover svg path {
+    fill: #0E0E0E;
+    transition: all 0.3s ease; }
   @media (max-width: 767px) {
     .video_page .turn_sound {
       bottom: auto;
-      top: 50px;
+      top: 10px;
       left: 16px;
-      padding: 16px; } }
+      padding: 5px;
+      z-index: 10; } }
+  @media (max-width: 767px) {
+    .video_page .turn_sound svg {
+      width: 20px;
+      height: 20px; } }
 
 .video_page .text_main_video {
   font-family: "NeueHaas";
@@ -5473,6 +5496,9 @@ body::-webkit-scrollbar {
 
 .scroll_body {
   overflow: auto; }
+
+.sound_turn {
+  display: none; }
 
 footer {
   font-family: "NeueHaas";
