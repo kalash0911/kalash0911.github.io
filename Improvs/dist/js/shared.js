@@ -113,7 +113,14 @@ window.addEventListener("scroll", function () {
   } else {
     headerLogoBlock.classList.remove("hide_logo");
   }
-}); //popUp
+});
+
+function OpenFormCloseMenu() {
+  var burger_btn = document.querySelector(".burger-btn");
+  burger_btn.click();
+  ShowConcactForm(true);
+} //popUp
+
 
 var popup = document.querySelector(".popup");
 var overlay = document.querySelector(".overlay-popup");
@@ -124,19 +131,19 @@ var btnsHidePopUp = document.querySelectorAll("[hide_pop_up]");
 function addEventButtonPopUp() {
   btnsShowPopUp.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      Show(true);
+      ShowConcactForm(true);
     });
   });
   btnsHidePopUp.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      Show(false);
+      ShowConcactForm(false);
     });
   });
 }
 
 var isOpen = false;
 
-function Show(isShow) {
+function ShowConcactForm(isShow) {
   if (isShow) {
     overlay.classList.add("active");
     popup.classList.add("active");
