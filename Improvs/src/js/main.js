@@ -57,12 +57,18 @@ function init() {
         } else {
             firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')
         }
+        showCopyCodeButton(true);
     });
 
     firstVideo.addEventListener('timeupdate', function () {
         let firstVideoBlock = document.querySelector("[section=\"video1\"]");
+        if (firstVideo.currentTime > 0) {
+            showCopyCodeButton(true);
+        }
+
         if (firstVideo.currentTime >= 3.50000) {
-            hideCopyCodeButton(true);
+            showCopyCodeButton(false);
+            addFullVideo(true);
         }
 
         if (firstVideo.currentTime >= 15.00000) {
@@ -109,14 +115,20 @@ function copyCode() {
     navigator.clipboard.writeText(jsCode);
 }
 
-function hideCopyCodeButton(isHide) {
-    let firstVideo = document.querySelector("[section=\"video1\"]");
-    if (isHide) {
-        firstVideo.classList.add("video_block_full");
+function showCopyCodeButton(isShow) {
+    if (isShow) {
+        copyCodeButton.classList.remove("hide");
+    } else {
         copyCodeButton.classList.add("hide");
+    }
+}
+
+function addFullVideo(isFullVideo) {
+    let firstVideo = document.querySelector("[section=\"video1\"]");
+    if (isFullVideo) {
+        firstVideo.classList.add("video_block_full");
     } else {
         firstVideo.classList.remove("video_block_full");
-        copyCodeButton.classList.remove("hide");
     }
 }
 
@@ -235,7 +247,8 @@ function previousSlide(isDownScroll = false) {
 
             if (index <= 2) {
                 stopAllVideo();
-                hideCopyCodeButton(false);
+                showCopyCodeButton(false);
+                addFullVideo(false);
                 safePlayVideo(index);
             }
             if (index == 0) {
