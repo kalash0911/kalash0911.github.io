@@ -192,7 +192,9 @@ function expandFormParam(isShow) {
   }
 }
 
-expandBtn.addEventListener('click', expandForm, false);
+if (expandBtn) {
+  expandBtn.addEventListener('click', expandForm, false);
+}
 
 function showThankYouPage(isShow) {
   var contactForm = document.querySelector(".back_form");

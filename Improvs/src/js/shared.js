@@ -164,14 +164,16 @@ function expandForm() {
 
 function expandFormParam(isShow) {
     let contact_form_section = document.querySelector(".contact_form_section");
-    if(isShow){
+    if (isShow) {
         contact_form_section.classList.add("expand_active");
-    }else{
+    } else {
         contact_form_section.classList.remove("expand_active");
     }
 }
 
-expandBtn.addEventListener('click', expandForm, false);
+if (expandBtn) {
+    expandBtn.addEventListener('click', expandForm, false);
+}
 
 function showThankYouPage(isShow) {
     let contactForm = document.querySelector(".back_form");
