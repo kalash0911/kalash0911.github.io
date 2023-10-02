@@ -18,7 +18,6 @@ var mobilePosters = document.querySelectorAll("[poster_mobile]");
 var mobile_buttons = document.querySelectorAll("[mobile_button]");
 var userAgentString = navigator.userAgent;
 var isSafari = userAgentString.indexOf("Safari") > -1;
-var isChromeAgent = userAgentString.indexOf("Chrome") > -1;
 
 function init() {
   window.isDownScroll = false;
@@ -35,12 +34,6 @@ function init() {
   if (isMobile() && isSafari) {
     mobile_buttons.forEach(function (mobile_button) {
       mobile_button.classList.add("safari_button");
-    });
-  }
-
-  if (isMobile() && isChromeAgent) {
-    mobile_buttons.forEach(function (mobile_button) {
-      mobile_button.classList.add("chrome_button");
     });
   }
 

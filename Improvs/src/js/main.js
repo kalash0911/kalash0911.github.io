@@ -18,7 +18,6 @@ const mobile_buttons = document.querySelectorAll("[mobile_button]");
 
 let userAgentString = navigator.userAgent;
 let isSafari = userAgentString.indexOf("Safari") > -1;
-let isChromeAgent = userAgentString.indexOf("Chrome") > -1;
 
 
 function init() {
@@ -37,12 +36,6 @@ function init() {
     if (isMobile() && isSafari) {
         mobile_buttons.forEach((mobile_button) => {
             mobile_button.classList.add("safari_button");
-        });
-    }
-    
-    if (isMobile() && isChromeAgent) {
-        mobile_buttons.forEach((mobile_button) => {
-            mobile_button.classList.add("chrome_button");
         });
     }
 
