@@ -206,6 +206,11 @@ function nextSlide() {
       }
 
       var section = sections[index].getAttribute('section');
+
+      if (section === "work" && isMobile()) {
+        body.style.overflowY = "auto";
+      }
+
       scrollByElementName(section);
       setSectionState(index);
     }
@@ -289,10 +294,16 @@ function scrollToOffset(offset) {
 } //sroll previous
 
 
-var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
-var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
+var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+var plusMobileVievPort = 0;
+var minusMobileVievPort = 50;
 window.addEventListener("scroll", function () {
   var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
+
+  if (isMobile()) {
+    plusMobileVievPort = 150;
+  }
 
   if (window.body_lock) {
     return;
@@ -304,13 +315,13 @@ window.addEventListener("scroll", function () {
     header.classList.add("header_transparent");
   }
 
-  if (viewedPageHeight <= viewportOffsetLastSection && window.isDownScroll) {
+  if (viewedPageHeight + plusMobileVievPort <= viewportOffsetLastSection - minusMobileVievPort && window.isDownScroll) {
     window.isDownScroll = false;
     body.style.overflowY = "hidden";
     previousSlide(true);
   }
 
-  if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
+  if (viewedPageHeight + plusMobileVievPort >= viewportOffsetLastVideo && !isDownScroll) {
     body.style.overflowY = "auto";
     window.isDownScroll = true;
   } //menu hover
@@ -393,12 +404,12 @@ document.addEventListener("mouseup", function (e) {
 
 var delayWheel = true;
 document.addEventListener('wheel', function (event) {
-  console.log("event wheel");
-
   if (delayWheel === true) {
+    console.log("event wheel");
     delayWheel = false;
 
     if (event.deltaY > 0) {
+      console.log("event wheel nextSlide");
       nextSlide();
     } else {
       console.log("event wheel previousSlide");

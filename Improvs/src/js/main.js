@@ -222,6 +222,10 @@ function nextSlide() {
 
             let section = sections[index].getAttribute('section');
 
+            if (section === "work"&&isMobile()) {
+                body.style.overflowY = "auto";
+            }
+
             scrollByElementName(section);
             setSectionState(index);
         }
@@ -297,10 +301,17 @@ function scrollToOffset(offset) {
 }
 
 //sroll previous
-let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
-let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight-50) + window.scrollY);
+let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
+let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
+let plusMobileVievPort=0;
+let minusMobileVievPort=50;
+
 window.addEventListener("scroll", function () {
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
+
+    if(isMobile()){
+        plusMobileVievPort=150;
+    }
 
     if (window.body_lock) {
         return;
@@ -311,16 +322,15 @@ window.addEventListener("scroll", function () {
     } else {
         header.classList.add("header_transparent");
     }
-    if (viewedPageHeight <= (viewportOffsetLastSection) && window.isDownScroll) {
+    if ((viewedPageHeight+plusMobileVievPort) <= (viewportOffsetLastSection-minusMobileVievPort) && window.isDownScroll) {
         window.isDownScroll = false;
         body.style.overflowY = "hidden";
         previousSlide(true);
     }
-    if (viewedPageHeight >= viewportOffsetLastVideo && !isDownScroll) {
+    if (viewedPageHeight+plusMobileVievPort >= viewportOffsetLastVideo && !isDownScroll) {
         body.style.overflowY = "auto";
         window.isDownScroll = true;
     }
-
 
     //menu hover
     let main = document.querySelector("[section=\"video1\"]");
@@ -405,10 +415,11 @@ document.addEventListener("mouseup", function (e) {
 //mouse wheel event
 var delayWheel = true;
 document.addEventListener('wheel', function (event) {
-    console.log("event wheel")
     if (delayWheel === true) {
+        console.log("event wheel")
         delayWheel = false;
         if (event.deltaY > 0) {
+            console.log("event wheel nextSlide")
             nextSlide();
         } else {
             console.log("event wheel previousSlide")
