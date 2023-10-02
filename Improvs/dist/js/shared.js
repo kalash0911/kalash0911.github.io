@@ -86,6 +86,7 @@ function initHeader() {
         burger.classList.add("burger_finish");
         menuBody.classList.remove("menu_active");
         menuOverlay.classList.remove("menu_overlay_active");
+        window.body_lock = false;
       });
     }
   }
