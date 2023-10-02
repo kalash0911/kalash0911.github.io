@@ -169,6 +169,7 @@ body::-webkit-scrollbar {
         border-radius: 50%;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
         display: flex;
+        @include media (">tablet") {
         &:hover{
             background: $white;
             transition: all 0.3s ease;
@@ -177,7 +178,7 @@ body::-webkit-scrollbar {
             fill:$black;
             transition: all 0.3s ease;
         }
-    
+        }
         @include media ("<tablet") {
             bottom: auto;
             top: 10px;
@@ -721,7 +722,7 @@ body::-webkit-scrollbar {
 
 
 .safari_button {
-    bottom: 105px !important;
+    bottom: 110px !important;
 }
 
 .chrome_button {

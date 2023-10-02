@@ -4444,6 +4444,13 @@ main {
       .header .burger-btn .text_burger_btn::before {
         font-family: "IBMPlexMono";
         content: 'menu'; }
+  .header .mop_block {
+    width: 24px;
+    height: 24px;
+    display: none; }
+    @media (max-width: 767px) {
+      .header .mop_block {
+        display: block; } }
   .header .burger {
     position: relative;
     width: 24px;
@@ -4941,12 +4948,13 @@ body::-webkit-scrollbar {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
   display: -ms-flexbox;
   display: flex; }
-  .video_page .turn_sound:hover {
-    background: #fff;
-    transition: all 0.3s ease; }
-  .video_page .turn_sound:hover svg path {
-    fill: #0E0E0E;
-    transition: all 0.3s ease; }
+  @media (min-width: 769px) {
+    .video_page .turn_sound:hover {
+      background: #fff;
+      transition: all 0.3s ease; }
+    .video_page .turn_sound:hover svg path {
+      fill: #0E0E0E;
+      transition: all 0.3s ease; } }
   @media (max-width: 767px) {
     .video_page .turn_sound {
       bottom: auto;
@@ -5449,7 +5457,7 @@ body::-webkit-scrollbar {
     right: 36%; }
 
 .safari_button {
-  bottom: 105px !important; }
+  bottom: 110px !important; }
 
 .chrome_button {
   bottom: 125px !important; }

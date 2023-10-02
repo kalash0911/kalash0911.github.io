@@ -228,6 +228,7 @@ function previousSlide() {
     return;
   }
 
+  console.log("function previousSlide");
   var index = getSectionState();
 
   if (index) {
@@ -289,7 +290,7 @@ function scrollToOffset(offset) {
 
 
 var viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
-var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+var viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
 window.addEventListener("scroll", function () {
   var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
@@ -392,18 +393,21 @@ document.addEventListener("mouseup", function (e) {
 
 var delayWheel = true;
 document.addEventListener('wheel', function (event) {
+  console.log("event wheel");
+
   if (delayWheel === true) {
     delayWheel = false;
 
     if (event.deltaY > 0) {
       nextSlide();
     } else {
+      console.log("event wheel previousSlide");
       previousSlide();
     }
 
     setTimeout(function () {
       delayWheel = true;
-    }, 1000);
+    }, 2000);
   }
 }); //state
 

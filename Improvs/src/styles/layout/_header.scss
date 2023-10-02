@@ -138,7 +138,14 @@
             }
         }
     }
-
+     .mop_block{
+        width: 24px;
+        height: 24px;
+        display: none; 
+        @include media ("<tablet") {
+            display: block;
+        }
+     }
     .burger {
         position: relative;
         width: 24px;

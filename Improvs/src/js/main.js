@@ -239,6 +239,7 @@ function previousSlide(isDownScroll = false) {
     if (window.body_lock) {
         return;
     }
+    console.log("function previousSlide")
 
     let index = getSectionState();
     if (index) {
@@ -297,7 +298,7 @@ function scrollToOffset(offset) {
 
 //sroll previous
 let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight - 50) + window.scrollY);
-let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + lastSection.offsetHeight + window.scrollY);
+let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight-50) + window.scrollY);
 window.addEventListener("scroll", function () {
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
@@ -404,17 +405,19 @@ document.addEventListener("mouseup", function (e) {
 //mouse wheel event
 var delayWheel = true;
 document.addEventListener('wheel', function (event) {
+    console.log("event wheel")
     if (delayWheel === true) {
         delayWheel = false;
         if (event.deltaY > 0) {
             nextSlide();
         } else {
+            console.log("event wheel previousSlide")
             previousSlide();
         }
 
         setTimeout(function () {
             delayWheel = true;
-        }, 1000);
+        }, 2000);
     }
 });
 
