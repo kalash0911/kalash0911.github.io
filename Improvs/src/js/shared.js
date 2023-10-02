@@ -108,7 +108,7 @@ window.addEventListener("scroll", function () {
 function OpenFormCloseMenu() {
     const burger_btn = document.querySelector(".burger-btn");
     burger_btn.click();
-    ShowConcactForm(true);
+    showConcactForm(true);
 }
 
 //popUp
