@@ -117,6 +117,7 @@
 
         @include adaptiv-vaule("font-size", 14, 10, 2);
         @include adaptiv-vaule("padding", 15, 14, 2);
+        @include adaptiv-vaule("min-width", 110, 90, 2);
 
         @include media ('<tablet') {
             border: none;

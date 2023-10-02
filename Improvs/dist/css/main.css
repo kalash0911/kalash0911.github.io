@@ -4437,13 +4437,18 @@ main {
     /* Только если больше контейнера */
     font-size: 14px;
     /* Только если больше контейнера */
-    padding: 15px; }
+    padding: 15px;
+    /* Только если больше контейнера */
+    min-width: 110px; }
     @media (min-width: 1300px) {
       .header .burger-btn {
         font-size: calc(10px + 4 * ((100vw - calc(375px)) / 1065)); } }
     @media (min-width: 1300px) {
       .header .burger-btn {
         padding: calc(14px + 1 * ((100vw - calc(375px)) / 1065)); } }
+    @media (min-width: 1300px) {
+      .header .burger-btn {
+        min-width: calc(90px + 20 * ((100vw - calc(375px)) / 1065)); } }
     @media (max-width: 767px) {
       .header .burger-btn {
         border: none;
