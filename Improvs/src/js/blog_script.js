@@ -1,24 +1,40 @@
-blogFilter();
+function filterBlogs(filter) {
+    const posts = document.querySelectorAll(".similar_post");
 
-function blogFilter() {
-    const list = document.querySelector(".dropdown-content");
-    const items = document.querySelectorAll(".similar_post");
+    posts.forEach((postElement) => {
+        const categories = postElement.querySelectorAll(".category_name");
 
-    list.addEventListener("click", (e) => {
-        const targetId = e.target.closest('.dropdown_item').dataset.id;
-
-        getItems(targetId === 'all' ? "similar_post" : targetId);
-    });
-
-    function getItems(className) {
-        items.forEach((item) => {
-            if (item.classList.contains(className)) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
+        let shouldShow = false;
+        categories.forEach((category) => {
+            if (category.textContent === filter || filter === "all") {
+                shouldShow = true;
             }
         });
-    }
+
+        if (shouldShow) {
+            postElement.style = `
+            display:flex;
+            `;
+        } else {
+            postElement.style = `
+            display:none;
+            `;
+        }
+    });
+
+    const filterItems = document.querySelectorAll(".dropdown_item");
+    filterItems.forEach((filterItem) => {
+        filterItem.classList.remove("active_filter_item");
+    });
+
+    const activeFilterItem = document.querySelector(`[data-id="${filter}"]`);
+    activeFilterItem.classList.add("active_filter_item");
 }
 
-
+const filterItems = document.querySelectorAll(".dropdown_item");
+filterItems.forEach((filterItem) => {
+    filterItem.addEventListener("click", (event) => {
+        const filter = event.target.getAttribute("data-id");
+        filterBlogs(filter);
+    });
+});
