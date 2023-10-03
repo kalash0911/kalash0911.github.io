@@ -36,8 +36,8 @@
                     <div class="menu_overlay"></div>
                     <div class="header__menu menu">
                         <nav class="menu__wrap">
-                            <ul class="menu__list">
-                                <li class="menu__item  menu_active_link"><a class="link-close" href="index.html">Home</a></li>
+                            <ul class="menu__list" id="menu">
+                                <li class="menu__item "><a class="link-close" href="index.html">Home</a></li>
                                 <li class="menu__item "><a class="link-close" href="index.html#desktop_video">WEBSITES </a></li>
                                 <li class="menu__item "><a class="link-close" href="index.html#phone_video">MOBILE APPLICATIONS</a></li>
                                 <li class="menu__item "><a class="link-close" href="our_work.html">OUR WORKS</a></li>
@@ -72,15 +72,15 @@
         <main id="main">
             <div id="fullpage">
                 <section class="video_block section" section="video1">
-                    <video video autoplay muted playsinline poster="#" src="files/main_video/video_1.mp4"></video>
+                    <video data-keepplaying video autoplay muted playsinline poster="#" src="files/main_video/video_1.mp4"></video>
                     <div class="top_video_btn" mobile_button>
                         <button onclick="copyCode()" copyCode class="btn_black hide">
                             Сopy code
                             </a>
                     </div>
                 </section>
-                <section class="video_block video_block_full section" id="desktop_video" section="video2">
-                    <video video autoplay muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
+                <section class="video_block video_block_full section" section="video2">
+                    <video data-keepplaying video autoplay muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
                         poster="images/main_page/video_img_2.png" src="files/main_video/video_2.mp4"></video>
                     <h2 id="result" class="text_main_video text_video_1 wow animate__animated animate__fadeIn"
                         data-wow-duration="5s">
@@ -156,8 +156,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="video_block video_block_full section" id="phone_video" section="video3">
-                    <video autoplay video muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
+                <section class="video_block video_block_full section" section="video3">
+                    <video data-keepplaying autoplay video muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
                         poster="images/main_page/video_img_3.png" src="files/main_video/video_3.mp4"></video>
                     <h2 class="text_main_video text_video_2 wow animate__animated animate__fadeIn">
                         And mind-blowing mobile apps
@@ -309,9 +309,6 @@
                         </a>
                     </div>
                 </section>
-                <div class="loader_block">
-                    <div class="loader"></div>
-                </div>
                 <footer id="footer" class="section fp-auto-height">
                     <div class="container">
                         <div class="content">
@@ -359,6 +356,9 @@
                         
                         </div>
                 </footer>
+            </div>
+            <div class="loader_block">
+                <div class="loader"></div>
             </div>
         </main>
         <div class="overlay overlay-popup"></div>

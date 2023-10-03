@@ -1,6 +1,6 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   initHeader();
   selectCurrentPage();
   addEventButtonPopUp();
@@ -21,21 +21,22 @@ function isMobile() {
   }
 
   return check;
-}
+} //BURGERMENU
 
-; //BURGERMENU
 
 function selectCurrentPage() {
   cleanHoverMenu();
 
-  if (/index/.test(location.href)) {
-    menuItems[0].classList.add("menu_active_link");
+  if (/desktop_video/.test(location.href)) {
+    menuItems[1].classList.add("menu_active_link");
   } else if (/our_work/.test(location.href)) {
     menuItems[3].classList.add("menu_active_link");
   } else if (/blog/.test(location.href)) {
     menuItems[4].classList.add("menu_active_link");
   } else if (/brain_block/.test(location.href)) {
     menuItems[3].classList.add("menu_active_link");
+  } else if (/index/.test(location.href)) {
+    menuItems[0].classList.add("menu_active_link");
   } else {
     menuItems[3].classList.add("menu_active_link");
   }
@@ -105,7 +106,7 @@ function initHeader() {
 }
 
 window.addEventListener("scroll", function () {
-  //hide logo in header 
+  //hide logo in header
   var viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
   var viewportOffsetFooter = Math.abs(footer.getBoundingClientRect().top + window.scrollY);
 
@@ -133,24 +134,24 @@ var btnHidePopUpThankYou = document.querySelector("[hide_pop_up_thank_you]");
 
 function addEventButtonPopUp() {
   btnsShowPopUp.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.addEventListener("click", function () {
       showConcactForm(true);
     });
   });
   btnsHidePopUp.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.addEventListener("click", function () {
       showConcactForm(false);
     });
   });
 
   if (btnShowPopUpThankYou) {
-    btnShowPopUpThankYou.addEventListener('click', function () {
+    btnShowPopUpThankYou.addEventListener("click", function () {
       showThankYouPage(true);
     });
   }
 
   if (btnHidePopUpThankYou) {
-    btnHidePopUpThankYou.addEventListener('click', function () {
+    btnHidePopUpThankYou.addEventListener("click", function () {
       showThankYouPage(false);
     });
   }
@@ -194,7 +195,7 @@ function expandFormParam(isShow) {
 }
 
 if (expandBtn) {
-  expandBtn.addEventListener('click', expandForm, false);
+  expandBtn.addEventListener("click", expandForm, false);
 }
 
 function showThankYouPage(isShow) {
@@ -202,23 +203,23 @@ function showThankYouPage(isShow) {
   var thankYouBlock = document.querySelector(".success_block");
 
   if (isShow) {
-    contactForm.style.display = 'none';
-    thankYouBlock.style.display = 'block';
+    contactForm.style.display = "none";
+    thankYouBlock.style.display = "block";
     expandFormParam(false);
   } else {
-    thankYouBlock.style.display = 'none';
-    contactForm.style.display = 'block';
+    thankYouBlock.style.display = "none";
+    contactForm.style.display = "block";
     showConcactForm(false);
   }
 } //logo animate
 
 
-var animateHeaderLogoBlock = document.querySelector('.header_logo');
+var animateHeaderLogoBlock = document.querySelector(".header_logo");
 var animateHeaderLogo = bodymovin.loadAnimation({
   wrapper: animateHeaderLogoBlock,
-  animType: 'svg',
+  animType: "svg",
   autoplay: false,
-  path: './files/Logo.json'
+  path: "./files/Logo.json"
 });
 animateHeaderLogoBlock.addEventListener("mouseenter", function () {
   animateHeaderLogo.play();
@@ -226,12 +227,12 @@ animateHeaderLogoBlock.addEventListener("mouseenter", function () {
 animateHeaderLogoBlock.addEventListener("mouseleave", function () {
   animateHeaderLogo.pause();
 });
-var animateFooterLogoBlock = document.querySelector('.footer_logo');
+var animateFooterLogoBlock = document.querySelector(".footer_logo");
 var animateFooterLogo = bodymovin.loadAnimation({
   wrapper: animateFooterLogoBlock,
-  animType: 'svg',
+  animType: "svg",
   autoplay: false,
-  path: './files/Logo.json'
+  path: "./files/Logo.json"
 });
 animateFooterLogoBlock.addEventListener("mouseenter", function () {
   animateFooterLogo.play();
