@@ -9,9 +9,11 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/shared.js" defer></script>
 </head>
@@ -68,325 +70,295 @@
         
         </header>
         <main id="main">
-            <section class="video_page">
-                <div class="content">
-                    <div class="video_block" section="video1">
-                        <video video autoplay muted playsinline poster="#" src="files/main_video/video_1.mp4"></video>
-                        <div class="top_video_btn" mobile_button>
-                            <button onclick="copyCode()" copyCode class="btn_black hide">
-                                Сopy code
-                                </a>
+            <div id="fullpage">
+                <section class="video_block section" section="video1">
+                    <video video autoplay muted playsinline poster="#" src="files/main_video/video_1.mp4"></video>
+                    <div class="top_video_btn" mobile_button>
+                        <button onclick="copyCode()" copyCode class="btn_black hide">
+                            Сopy code
+                            </a>
+                    </div>
+                </section>
+                <section class="video_block video_block_full section" id="desktop_video" section="video2">
+                    <video video autoplay muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
+                        poster="images/main_page/video_img_2.png" src="files/main_video/video_2.mp4"></video>
+                    <h2 id="result" class="text_main_video text_video_1 wow animate__animated animate__fadeIn"
+                        data-wow-duration="5s">
+                        We make f... awesome websites
+                    </h2>
+                    <div turn-sound class="turn_sound">
+                        <svg class="sound_turn" width="34" height="34" viewBox="0 0 34 34" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1584_56463)">
+                                <path
+                                    d="M12.5921 22.667H7.08268C6.70696 22.667 6.34662 22.5178 6.08095 22.2521C5.81527 21.9864 5.66602 21.6261 5.66602 21.2504V12.7504C5.66602 12.3746 5.81527 12.0143 6.08095 11.7486C6.34662 11.4829 6.70696 11.3337 7.08268 11.3337H12.5921L20.0919 5.19669C20.1957 5.11161 20.3215 5.05777 20.4547 5.04141C20.5879 5.02506 20.723 5.04688 20.8442 5.10432C20.9655 5.16176 21.068 5.25247 21.1397 5.36589C21.2114 5.4793 21.2494 5.61075 21.2493 5.74494V28.2558C21.2494 28.39 21.2114 28.5214 21.1397 28.6348C21.068 28.7482 20.9655 28.8389 20.8442 28.8964C20.723 28.9538 20.5879 28.9757 20.4547 28.9593C20.3215 28.9429 20.1957 28.8891 20.0919 28.804L12.5935 22.667H12.5921ZM26.7219 23.5043L24.7074 21.4898C25.3952 20.9609 25.9521 20.281 26.335 19.5025C26.718 18.7241 26.9168 17.8679 26.916 17.0004C26.916 14.9745 25.8535 13.1966 24.2527 12.195L26.2913 10.1564C27.3643 10.9458 28.2365 11.9766 28.8373 13.1656C29.438 14.3546 29.7505 15.6682 29.7493 17.0004C29.7493 19.6099 28.5735 21.9445 26.7219 23.5043Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1584_56463">
+                                    <rect width="34" height="34" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+    
+                        <svg class="sound_switch" width="34" height="34" viewBox="0 0 34 34" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1584_56471)">
+                                <path
+                                    d="M8.3421 22.667H2.83268C2.45696 22.667 2.09662 22.5178 1.83095 22.2521C1.56527 21.9864 1.41602 21.6261 1.41602 21.2504V12.7504C1.41602 12.3746 1.56527 12.0143 1.83095 11.7486C2.09662 11.4829 2.45696 11.3337 2.83268 11.3337H8.3421L15.8419 5.19669C15.9457 5.11161 16.0715 5.05777 16.2047 5.04141C16.3379 5.02506 16.473 5.04688 16.5942 5.10432C16.7155 5.16176 16.818 5.25247 16.8897 5.36589C16.9614 5.4793 16.9994 5.61075 16.9993 5.74494V28.2558C16.9994 28.39 16.9614 28.5214 16.8897 28.6348C16.818 28.7482 16.7155 28.8389 16.5942 28.8964C16.473 28.9538 16.3379 28.9757 16.2047 28.9593C16.0715 28.9429 15.9457 28.8891 15.8419 28.804L8.3421 22.667ZM28.9192 17.0004L33.9285 22.0097L31.9253 24.0129L26.916 19.0035L21.9067 24.0129L19.9035 22.0097L24.9128 17.0004L19.9035 11.991L21.9067 9.98786L26.916 14.9972L31.9253 9.98786L33.9285 11.991L28.9192 17.0004Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1584_56471">
+                                    <rect width="34" height="34" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="video_btn_block-mob" mobile_button>
+                        <div class="bottom_video_btn bottom_video_btn-top ">
+                            <a show_pop_up class="btn_black">
+                                <div class="left_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 4" opacity="0.8"
+                                            d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                                    </svg>
+                                </div>
+                                get in touch
+                                <div class="right_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 5" opacity="0.8"
+                                            d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bottom_video_btn">
+                            <a href="our_work.html" class="btn_black">
+                                <div class="left_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 4" opacity="0.8"
+                                            d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                                    </svg>
+                                </div>
+                                View All Projects
+                                <div class="right_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 5" opacity="0.8"
+                                            d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="video_block video_block_full" id="desktop_video" section="video2">
-                        <video video autoplay muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
-                            poster="images/main_page/video_img_2.png" src="files/main_video/video_2.mp4"></video>
-                        <h2 id="result" class="text_main_video text_video_1 wow animate__animated animate__fadeIn"
-                            data-wow-duration="5s">
-                            We make f... awesome websites
-                        </h2>
-                        <div turn-sound class="turn_sound">
-                            <svg class="sound_turn" width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1584_56463)">
-                                    <path
-                                        d="M12.5921 22.667H7.08268C6.70696 22.667 6.34662 22.5178 6.08095 22.2521C5.81527 21.9864 5.66602 21.6261 5.66602 21.2504V12.7504C5.66602 12.3746 5.81527 12.0143 6.08095 11.7486C6.34662 11.4829 6.70696 11.3337 7.08268 11.3337H12.5921L20.0919 5.19669C20.1957 5.11161 20.3215 5.05777 20.4547 5.04141C20.5879 5.02506 20.723 5.04688 20.8442 5.10432C20.9655 5.16176 21.068 5.25247 21.1397 5.36589C21.2114 5.4793 21.2494 5.61075 21.2493 5.74494V28.2558C21.2494 28.39 21.2114 28.5214 21.1397 28.6348C21.068 28.7482 20.9655 28.8389 20.8442 28.8964C20.723 28.9538 20.5879 28.9757 20.4547 28.9593C20.3215 28.9429 20.1957 28.8891 20.0919 28.804L12.5935 22.667H12.5921ZM26.7219 23.5043L24.7074 21.4898C25.3952 20.9609 25.9521 20.281 26.335 19.5025C26.718 18.7241 26.9168 17.8679 26.916 17.0004C26.916 14.9745 25.8535 13.1966 24.2527 12.195L26.2913 10.1564C27.3643 10.9458 28.2365 11.9766 28.8373 13.1656C29.438 14.3546 29.7505 15.6682 29.7493 17.0004C29.7493 19.6099 28.5735 21.9445 26.7219 23.5043Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1584_56463">
-                                        <rect width="34" height="34" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                            <svg class="sound_switch" width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1584_56471)">
-                                    <path
-                                        d="M8.3421 22.667H2.83268C2.45696 22.667 2.09662 22.5178 1.83095 22.2521C1.56527 21.9864 1.41602 21.6261 1.41602 21.2504V12.7504C1.41602 12.3746 1.56527 12.0143 1.83095 11.7486C2.09662 11.4829 2.45696 11.3337 2.83268 11.3337H8.3421L15.8419 5.19669C15.9457 5.11161 16.0715 5.05777 16.2047 5.04141C16.3379 5.02506 16.473 5.04688 16.5942 5.10432C16.7155 5.16176 16.818 5.25247 16.8897 5.36589C16.9614 5.4793 16.9994 5.61075 16.9993 5.74494V28.2558C16.9994 28.39 16.9614 28.5214 16.8897 28.6348C16.818 28.7482 16.7155 28.8389 16.5942 28.8964C16.473 28.9538 16.3379 28.9757 16.2047 28.9593C16.0715 28.9429 15.9457 28.8891 15.8419 28.804L8.3421 22.667ZM28.9192 17.0004L33.9285 22.0097L31.9253 24.0129L26.916 19.0035L21.9067 24.0129L19.9035 22.0097L24.9128 17.0004L19.9035 11.991L21.9067 9.98786L26.916 14.9972L31.9253 9.98786L33.9285 11.991L28.9192 17.0004Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1584_56471">
-                                        <rect width="34" height="34" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
+                </section>
+                <section class="video_block video_block_full section" id="phone_video" section="video3">
+                    <video autoplay video muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
+                        poster="images/main_page/video_img_3.png" src="files/main_video/video_3.mp4"></video>
+                    <h2 class="text_main_video text_video_2 wow animate__animated animate__fadeIn">
+                        And mind-blowing mobile apps
+                    </h2>
+                    <div turn-sound class="turn_sound">
+                        <svg class="sound_turn" width="34" height="34" viewBox="0 0 34 34" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1584_56463)">
+                                <path
+                                    d="M12.5921 22.667H7.08268C6.70696 22.667 6.34662 22.5178 6.08095 22.2521C5.81527 21.9864 5.66602 21.6261 5.66602 21.2504V12.7504C5.66602 12.3746 5.81527 12.0143 6.08095 11.7486C6.34662 11.4829 6.70696 11.3337 7.08268 11.3337H12.5921L20.0919 5.19669C20.1957 5.11161 20.3215 5.05777 20.4547 5.04141C20.5879 5.02506 20.723 5.04688 20.8442 5.10432C20.9655 5.16176 21.068 5.25247 21.1397 5.36589C21.2114 5.4793 21.2494 5.61075 21.2493 5.74494V28.2558C21.2494 28.39 21.2114 28.5214 21.1397 28.6348C21.068 28.7482 20.9655 28.8389 20.8442 28.8964C20.723 28.9538 20.5879 28.9757 20.4547 28.9593C20.3215 28.9429 20.1957 28.8891 20.0919 28.804L12.5935 22.667H12.5921ZM26.7219 23.5043L24.7074 21.4898C25.3952 20.9609 25.9521 20.281 26.335 19.5025C26.718 18.7241 26.9168 17.8679 26.916 17.0004C26.916 14.9745 25.8535 13.1966 24.2527 12.195L26.2913 10.1564C27.3643 10.9458 28.2365 11.9766 28.8373 13.1656C29.438 14.3546 29.7505 15.6682 29.7493 17.0004C29.7493 19.6099 28.5735 21.9445 26.7219 23.5043Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1584_56463">
+                                    <rect width="34" height="34" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+    
+                        <svg class="sound_switch" width="34" height="34" viewBox="0 0 34 34" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1584_56471)">
+                                <path
+                                    d="M8.3421 22.667H2.83268C2.45696 22.667 2.09662 22.5178 1.83095 22.2521C1.56527 21.9864 1.41602 21.6261 1.41602 21.2504V12.7504C1.41602 12.3746 1.56527 12.0143 1.83095 11.7486C2.09662 11.4829 2.45696 11.3337 2.83268 11.3337H8.3421L15.8419 5.19669C15.9457 5.11161 16.0715 5.05777 16.2047 5.04141C16.3379 5.02506 16.473 5.04688 16.5942 5.10432C16.7155 5.16176 16.818 5.25247 16.8897 5.36589C16.9614 5.4793 16.9994 5.61075 16.9993 5.74494V28.2558C16.9994 28.39 16.9614 28.5214 16.8897 28.6348C16.818 28.7482 16.7155 28.8389 16.5942 28.8964C16.473 28.9538 16.3379 28.9757 16.2047 28.9593C16.0715 28.9429 15.9457 28.8891 15.8419 28.804L8.3421 22.667ZM28.9192 17.0004L33.9285 22.0097L31.9253 24.0129L26.916 19.0035L21.9067 24.0129L19.9035 22.0097L24.9128 17.0004L19.9035 11.991L21.9067 9.98786L26.916 14.9972L31.9253 9.98786L33.9285 11.991L28.9192 17.0004Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1584_56471">
+                                    <rect width="34" height="34" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+    
+                    </div>
+                    <div class="video_btn_block-mob" mobile_button>
+                        <div class="bottom_video_btn bottom_video_btn-top">
+                            <a show_pop_up class="btn_black">
+                                <div class="left_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 4" opacity="0.8"
+                                            d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                                    </svg>
+                                </div>
+                                get in touch
+                                <div class="right_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 5" opacity="0.8"
+                                            d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
-                        <div class="video_btn_block-mob" mobile_button>
-                            <div class="bottom_video_btn bottom_video_btn-top ">
-                                <a show_pop_up class="btn_black">
-                                    <div class="left_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 4" opacity="0.8"
-                                                d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
-                                        </svg>
-                                    </div>
-                                    get in touch
-                                    <div class="right_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 5" opacity="0.8"
-                                                d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="bottom_video_btn">
-                                <a href="our_work.html" class="btn_black">
-                                    <div class="left_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 4" opacity="0.8"
-                                                d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
-                                        </svg>
-                                    </div>
-                                    View All Projects
-                                    <div class="right_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 5" opacity="0.8"
-                                                d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="bottom_video_btn ">
+                            <a href="our_work.html" class="btn_black">
+                                <div class="left_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 4" opacity="0.8"
+                                            d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                                    </svg>
+                                </div>
+                                View All Projects
+                                <div class="right_arrow">
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Polygon 5" opacity="0.8"
+                                            d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="video_block video_block_full" id="phone_video" section="video3">
-                        <video video muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
-                            poster="images/main_page/video_img_3.png" src="files/main_video/video_3.mp4"></video>
-                        <h2 class="text_main_video text_video_2 wow animate__animated animate__fadeIn">
-                            And mind-blowing mobile apps
-                        </h2>
-                        <div turn-sound class="turn_sound">
-                            <svg class="sound_turn" width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1584_56463)">
-                                    <path
-                                        d="M12.5921 22.667H7.08268C6.70696 22.667 6.34662 22.5178 6.08095 22.2521C5.81527 21.9864 5.66602 21.6261 5.66602 21.2504V12.7504C5.66602 12.3746 5.81527 12.0143 6.08095 11.7486C6.34662 11.4829 6.70696 11.3337 7.08268 11.3337H12.5921L20.0919 5.19669C20.1957 5.11161 20.3215 5.05777 20.4547 5.04141C20.5879 5.02506 20.723 5.04688 20.8442 5.10432C20.9655 5.16176 21.068 5.25247 21.1397 5.36589C21.2114 5.4793 21.2494 5.61075 21.2493 5.74494V28.2558C21.2494 28.39 21.2114 28.5214 21.1397 28.6348C21.068 28.7482 20.9655 28.8389 20.8442 28.8964C20.723 28.9538 20.5879 28.9757 20.4547 28.9593C20.3215 28.9429 20.1957 28.8891 20.0919 28.804L12.5935 22.667H12.5921ZM26.7219 23.5043L24.7074 21.4898C25.3952 20.9609 25.9521 20.281 26.335 19.5025C26.718 18.7241 26.9168 17.8679 26.916 17.0004C26.916 14.9745 25.8535 13.1966 24.2527 12.195L26.2913 10.1564C27.3643 10.9458 28.2365 11.9766 28.8373 13.1656C29.438 14.3546 29.7505 15.6682 29.7493 17.0004C29.7493 19.6099 28.5735 21.9445 26.7219 23.5043Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1584_56463">
-                                        <rect width="34" height="34" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                            <svg class="sound_switch" width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1584_56471)">
-                                    <path
-                                        d="M8.3421 22.667H2.83268C2.45696 22.667 2.09662 22.5178 1.83095 22.2521C1.56527 21.9864 1.41602 21.6261 1.41602 21.2504V12.7504C1.41602 12.3746 1.56527 12.0143 1.83095 11.7486C2.09662 11.4829 2.45696 11.3337 2.83268 11.3337H8.3421L15.8419 5.19669C15.9457 5.11161 16.0715 5.05777 16.2047 5.04141C16.3379 5.02506 16.473 5.04688 16.5942 5.10432C16.7155 5.16176 16.818 5.25247 16.8897 5.36589C16.9614 5.4793 16.9994 5.61075 16.9993 5.74494V28.2558C16.9994 28.39 16.9614 28.5214 16.8897 28.6348C16.818 28.7482 16.7155 28.8389 16.5942 28.8964C16.473 28.9538 16.3379 28.9757 16.2047 28.9593C16.0715 28.9429 15.9457 28.8891 15.8419 28.804L8.3421 22.667ZM28.9192 17.0004L33.9285 22.0097L31.9253 24.0129L26.916 19.0035L21.9067 24.0129L19.9035 22.0097L24.9128 17.0004L19.9035 11.991L21.9067 9.98786L26.916 14.9972L31.9253 9.98786L33.9285 11.991L28.9192 17.0004Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1584_56471">
-                                        <rect width="34" height="34" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
+                </section>
+                <!-- <section class="brain_section" section="brain" id="brain_block">
+                    <div class="container">
+                        <div class="content">
+                            <h2 class="brain_title">Artificial Intelligence </h2>
+                            <p class="brain_text brain_text_first">We possess the capability to train artificial
+                                intelligence exclusively for your needs, targeting any systematically outlined and
+                                predictable process.</p>
+                            <p class="brain_text"> With such a tailor-made tool, optimizing your business financially and
+                                technically becomes a smooth and straightforward task. </p>
                         </div>
-                        <div class="video_btn_block-mob" mobile_button>
-                            <div class="bottom_video_btn bottom_video_btn-top">
-                                <a show_pop_up class="btn_black">
-                                    <div class="left_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 4" opacity="0.8"
-                                                d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
-                                        </svg>
-                                    </div>
-                                    get in touch
-                                    <div class="right_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 5" opacity="0.8"
-                                                d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="bottom_video_btn ">
-                                <a href="our_work.html" class="btn_black">
-                                    <div class="left_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 4" opacity="0.8"
-                                                d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
-                                        </svg>
-                                    </div>
-                                    View All Projects
-                                    <div class="right_arrow">
-                                        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path id="Polygon 5" opacity="0.8"
-                                                d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+    
                     </div>
-                </div>
-            </section>
-            <!-- <section class="brain_section" section="brain" id="brain_block">
-                <div class="container">
-                    <div class="content">
-                        <h2 class="brain_title">Artificial Intelligence </h2>
-                        <p class="brain_text brain_text_first">We possess the capability to train artificial
-                            intelligence exclusively for your needs, targeting any systematically outlined and
-                            predictable process.</p>
-                        <p class="brain_text"> With such a tailor-made tool, optimizing your business financially and
-                            technically becomes a smooth and straightforward task. </p>
-                    </div>
-
-                </div>
-            </section> -->
-            <section class="our_work our_work_main" section="work">
-                <h1 class="our_work_title">Latest works
-                </h1>
-                <div class="case_list">
-                    <div class="case">
-                        <a href="indise_case.html" class="phone_link"></a>
-                        <div class="case_text">
-                            <div class="case_text_wrap">
-                                <h2 class="case_title">Indise </h2>
-                                <p class="case_description">
-                                    An app where artificial intelligence generates interiors.
-                                </p>
-                            </div>
-                            <div class="permalink_wrap">
-                                <a href="indise_case.html" target="_blank" class="permalink">view <br> project</a>
-                            </div>
-                            <div class="tags_wrap">
-                                <div class="tag">mobile app</div>
-                                <div class="tag">landing page</div>
-                                <div class="tag">ai</div>
-                            </div>
-                        </div>
-                        <div class="swiper case_swiper">
+                </section> -->
+                <section class="our_work-sc section" section="work">
+                    <div class="container">
+                        <h1 class="title">Latest works<span class="work_counter">(3)</span></h1>
+                        <div class="swiper our_work-slider">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/indise_template/case_img_2.png" alt="image not found">
+                                <div class="swiper-slide item">
+                                    <a class="link" href="indise_case.html"></a>
+                                    <img class="img" src="images/indise_template/main_img1.png" alt="image not found">
+                                    <div class="tags_wrap">
+                                        <span class="tag">mobile app</span>
+                                        <span class="tag">landing page</span>
+                                        <span class="tag">ai</span>
+                                    </div>
+                                    <div class="text_wrap">
+                                        <h2 class="item_title">Indise</h2>
+                                        <p class="item_description">An app where artificial intelligence generates interiors.</p>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/indise_template/case_img.png" alt="image not found">
+                                <div class="swiper-slide item">
+                                    <a class="link" href="indise_case.html"></a>
+                                    <img class="img" src="images/uptidy_template/main_img.png" alt="image not found">
+                                    <div class="tags_wrap">
+                                        <span class="tag">mobile app</span>
+                                        <span class="tag">landing page</span>
+                                        <span class="tag">ai</span>
+                                    </div>
+                                    <div class="text_wrap">
+                                        <h2 class="item_title">Uptidy</h2>
+                                        <p class="item_description">A service for cleaners looking for work and for people who need to clean.</p>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/indise_template/case_3.jpg" alt="image not found">
+                                <div class="swiper-slide item">
+                                    <a class="link" href="indise_case.html"></a>
+                                    <img class="img" src="./images/max_ratings_template/max_ratings_img.png" alt="image not found">
+                                    <div class="tags_wrap">
+                                        <span class="tag">landing page</span>
+                                    </div>
+                                    <div class="text_wrap">
+                                        <h2 class="item_title">Max Ratings</h2>
+                                        <p class="item_description">Landing for professional review services.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <a href="our_work.html" target="_blank" class="site_btn_white ">
+                            <div class="left_arrow">
+                                <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="Polygon 4" opacity="0.8"
+                                        d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
+                                </svg>
+                            </div>
+                            OUR WORKS
+                            <div class="right_arrow">
+                                <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="Polygon 5" opacity="0.8"
+                                        d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
+                                </svg>
+                            </div>
+                        </a>
                     </div>
-                    <div class="case ">
-                        <a href="uptidy_case.html" class="phone_link"></a>
-                        <div class="case_text">
-                            <div class="case_text_wrap">
-                                <h2 class="case_title">Uptidy</h2>
-                                <p class="case_description">
-                                    A service for cleaners looking for work and for people who need to clean.
-                                </p>
-                            </div>
-                            <div class="permalink_wrap">
-                                <a href="uptidy_case.html" target="_blank" class="permalink">view <br> project</a>
-                            </div>
-                            <div class="tags_wrap">
-                                <div class="tag">landing page</div>
-                                <div class="tag">web application</div>
-                            </div>
-                        </div>
-                        <div class="swiper case_swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/uptidy_template/main_img.png" alt="image not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/uptidy_template/logo_img.png" alt="image not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/uptidy_template/about_img.png" alt="image not found">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case ">
-                        <a href="max_ratings_case.html" class="phone_link"></a>
-                        <div class="case_text">
-                            <div class="case_text_wrap">
-                                <h2 class="case_title">Max Ratings</h2>
-                                <p class="case_description">
-                                    Landing for professional review services.
-                                </p>
-                            </div>
-                            <div class="permalink_wrap">
-                                <a href="max_ratings_case.html" target="_blank" class="permalink">view <br> project</a>
-                            </div>
-                            <div class="tags_wrap">
-                                <div class="tag">landing page</div>
-                            </div>
-                        </div>
-                        <div class="swiper case_swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/max_ratings_template/max_ratings_img.png"
-                                            alt="image not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/max_ratings_template/mobile_img.png" alt="image not found">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slide_img">
-                                        <img src="images/max_ratings_template/about_img.png" alt="image not found">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </section>
+                <div class="loader_block">
+                    <div class="loader"></div>
                 </div>
-                <div class="our_work_btn">
-                    <a href="our_work.html" target="_blank" class="site_btn_white ">
-                        <div class="left_arrow">
-                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path id="Polygon 4" opacity="0.8"
-                                    d="M12 7L3.01142e-07 13.9282L9.06825e-07 0.0717964L12 7Z" />
-                            </svg>
+                <footer id="footer" class="section fp-auto-height">
+                    <div class="container">
+                        <div class="content">
+                            <div class="main_page">
+                                <div class="menu_footer_block">
+                                <div class="logo_block">
+                                    <a href="index.html" class="footer_logo">
+                                    </a>
+                                </div>
+                                <div class="menu_block">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index.html#desktop_video">WEBSITES</a></li>
+                                        <li><a href="index.html#phone_video">MOBILE APPLICATIONS</a></li>
+                                        <li><a href="our_work.html">OUR WORKS</a></li>
+                                        <li><a href="blog_page.html">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <div class="social_block">
+                                <div >
+                                    <ul>
+                                 <li>
+                                    <a href="#"><img src="images/footer_page/instagram.svg">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/footer_page/linkedin.svg">Linkedin</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="images/footer_page/facebook.svg">Facebook</a>
+                                </li>
+                                </ul>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="bottom_footer">
+                                <div class="year_block">
+                                    ©  <script>document.write((new Date).getFullYear());</script> Improvs
+                                </div>
+                                <div class="privacy_block">
+                                    <a href="privacy_policy.html">Privacy Policy</a>
+                                </div>
+                            </div>
                         </div>
-                        OUR WORKS
-                        <div class="right_arrow">
-                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path id="Polygon 5" opacity="0.8"
-                                    d="M9.5399e-08 7L12 0.0717966L12 13.9282L9.5399e-08 7Z" />
-                            </svg>
+                        
                         </div>
-                    </a>
-                </div>
-
-            </section>
-            <div class="loader_block">
-                <div class="loader"></div>
+                </footer>
             </div>
         </main>
         <div class="overlay overlay-popup"></div>

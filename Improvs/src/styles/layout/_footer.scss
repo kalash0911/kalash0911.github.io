@@ -1,197 +1,233 @@
 footer {
-    font-family: $NeueHaas-font; 
+    font-family: $NeueHaas-font;
     width: 100%;
     position: relative;
-    @include adaptiv-vaule("padding-top",80, 60, 1);
+    @include adaptiv-vaule("padding-top", 80, 60, 1);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .logo_block{
+    // height: auto !important;
+
+    // .fp-tableCell {
+    //     height: auto !important;
+    // }
+
+    .logo_block {
         margin-bottom: 55px;
+
         @include media ("<tablet") {
             margin-bottom: 40px;
         }
-        svg{
-            width: 169px!important;
+
+        svg {
+            width: 169px !important;
+
             @include media ('<tablet') {
-                width: 150px!important;
+                width: 150px !important;
             }
         }
     }
 }
-    .content {
-        width: 100%;
-        margin: 0;
-    }
-   .main_page{
+
+.content {
+    width: 100%;
+    margin: 0;
+}
+
+.main_page {
     display: flex;
     justify-content: space-between;
+
     @include media ("<tablet") {
         display: block;
     }
- }
-    .btn_block{
-        max-width: 300px;
-        h2{
-            color: $white;
-           font-size: 48px;
-            font-style: normal;
-            font-weight: 500;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-           margin-bottom:22px;
-        }
-        .btn_black {
-            display: inline-block;
-            color: $white;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 125%;
-            letter-spacing: -0.14px;
-            text-transform: uppercase;
-            padding: 18px 32px;
-            border: 1px solid $white;
-            background: none;
-            &:hover {
-                background-color: $white;
-                transition: $transition_all_03;
-                color: $black;
-            }
-        }
-        @include media ("<tablet") {
-            text-align: center;
-            margin: 0 auto;
+}
+
+.btn_block {
+    max-width: 300px;
+
+    h2 {
+        color: $white;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+    }
+
+    .btn_black {
+        display: inline-block;
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 125%;
+        letter-spacing: -0.14px;
+        text-transform: uppercase;
+        padding: 18px 32px;
+        border: 1px solid $white;
+        background: none;
+
+        &:hover {
+            background-color: $white;
+            transition: $transition_all_03;
+            color: $black;
         }
     }
-    .menu_footer_block{
-        ul{
+
+    @include media ("<tablet") {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.menu_footer_block {
+    ul {
         display: flex;
+
         @include media ("<tablet") {
-          display: block;
+            display: block;
         }
-        li{
+
+        li {
             margin-right: 16px;
+
             @include media ("<tablet") {
-               margin-top:20px;
-              }
-            a{
-                @include adaptiv-vaule("font-size",18, 16, 1);
+                margin-top: 20px;
+            }
+
+            a {
+                @include adaptiv-vaule("font-size", 18, 16, 1);
                 font-weight: 500;
                 line-height: 100%;
                 color: rgba(166, 166, 166, 1);
                 text-transform: uppercase;
-               &:hover{
-                color:$white;
-                text-decoration: underline;
-               }
+
+                &:hover {
+                    color: $white;
+                    text-decoration: underline;
+                }
             }
         }
-        }
-        }
-      
-    .social_block{
-        margin-top: auto;
-        div{
+    }
+}
+
+.social_block {
+    margin-top: auto;
+
+    div {
         text-align: start;
+
         @include media ("<tablet") {
             text-align: center;
         }
-        li{
-            @include adaptiv-vaule("margin-bottom",24, 22, 1);
-            &:last-child{
+
+        li {
+            @include adaptiv-vaule("margin-bottom", 24, 22, 1);
+
+            &:last-child {
                 margin-bottom: 0;
             }
-            a{
+
+            a {
                 color: $white;
                 text-align: start;
                 display: flex;
                 align-items: end;
-                @include adaptiv-vaule("font-size",24, 20, 1);
+                @include adaptiv-vaule("font-size", 24, 20, 1);
                 font-style: normal;
                 font-weight: 500;
-               line-height:100%;
-                text-transform: uppercase; 
-                &:hover{
+                line-height: 100%;
+                text-transform: uppercase;
+
+                &:hover {
                     text-decoration: underline;
-                   }
-                img{
+                }
+
+                img {
                     margin-right: 8px;
-                    @include adaptiv-vaule("width",24, 20, 1);
-                    @include adaptiv-vaule("height",24, 20, 1);
+                    @include adaptiv-vaule("width", 24, 20, 1);
+                    @include adaptiv-vaule("height", 24, 20, 1);
                 }
-                }
+            }
         }
+
         @include media ("<tablet") {
             text-align: center;
             margin: 40px 0;
-            
+
         }
     }
-    }
+}
 
-    .links_block{
-       position: absolute;
-       top:38%;
-       left: 8%;
-       @include media ("<tablet") {
+.links_block {
+    position: absolute;
+    top: 38%;
+    left: 8%;
+
+    @include media ("<tablet") {
         position: static;
         margin-bottom: 23px;
     }
-        ul{
-            display: flex;
-            justify-content:end;
-            li{
-                @include adaptiv-vaule("margin-left",71, 15, 1);
-                @include media ("<tablet") {
-                    margin: 0 8px;
-                   }
-            }
-            a{
-                color: $white;
-                text-align: center;
-                @include adaptiv-vaule("font-size",24, 15, 1);
-                font-style: normal;
-                font-weight: 500;
-                line-height:100%;
-                letter-spacing: -1px;
-                text-transform: uppercase; 
-                white-space: nowrap;
-                text-transform: uppercase;
-            }
+
+    ul {
+        display: flex;
+        justify-content: end;
+
+        li {
+            @include adaptiv-vaule("margin-left", 71, 15, 1);
+
             @include media ("<tablet") {
-               justify-content: center;
-              }
+                margin: 0 8px;
+            }
+        }
+
+        a {
+            color: $white;
+            text-align: center;
+            @include adaptiv-vaule("font-size", 24, 15, 1);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        @include media ("<tablet") {
+            justify-content: center;
         }
     }
+}
 
-    .bottom_footer{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 0px;
-        margin-top: 58px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        .year_block{
+.bottom_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    margin-top: 58px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    .year_block {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 100%;
+        color: #A6A6A6;
+    }
+
+    .privacy_block {
+        a {
             font-size: 16px;
             font-weight: 500;
-            line-height:100%;
-            color: #A6A6A6;
-        }
-        .privacy_block{
-            a{
-            font-size: 16px;
-            font-weight: 500;
-            line-height:100%;
+            line-height: 100%;
             color: rgba(219, 219, 219, 1);
             text-transform: uppercase;
-            &:hover{
+
+            &:hover {
                 text-decoration: underline;
-               }
             }
         }
     }
-
-
-
-
+}

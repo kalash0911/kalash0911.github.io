@@ -5071,7 +5071,6 @@ body::-webkit-scrollbar {
 
 } */
 .our_work-sc {
-  padding: 100px 0 30px 0;
   min-height: 100vh;
   display: -ms-flexbox;
   display: flex; }
@@ -5083,7 +5082,9 @@ body::-webkit-scrollbar {
     -ms-flex-pack: justify;
     justify-content: space-between;
     -ms-flex: 1 1 auto;
-    flex: 1 1 auto; }
+    flex: 1 1 auto;
+    padding: 100px 0 30px 0;
+    height: 100%; }
   .our_work-sc .title {
     position: relative;
     max-width: -webkit-max-content;
