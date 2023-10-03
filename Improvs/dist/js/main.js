@@ -16,6 +16,7 @@ var copyCodeButton = document.querySelector("[copyCode]");
 var body = document.querySelector(".main_body_section");
 var mobilePosters = document.querySelectorAll("[poster_mobile]");
 var mobile_buttons = document.querySelectorAll("[mobile_button]");
+var loaderBlock = document.querySelector(".loader_block");
 var userAgentString = navigator.userAgent;
 var isSafari = userAgentString.indexOf("Safari") > -1;
 
@@ -38,10 +39,12 @@ function init() {
   }
 
   if (/phone_video/.test(location.href)) {
+    showLoader(true);
     showHeader(true);
     videos[2].play();
     setSectionState(2);
   } else if (/desktop_video/.test(location.href)) {
+    showLoader(true);
     showHeader(true);
     videos[1].play();
     setSectionState(1);
@@ -86,6 +89,16 @@ window.addEventListener('resize', function () {
     changeVideoForMobile();
   }
 }, true);
+
+function showLoader(isShow) {
+  if (isShow) {
+    loaderBlock.classList.add("show_loader");
+  } else {
+    setTimeout(function () {
+      loaderBlock.classList.remove("show_loader");
+    }, 1000);
+  }
+}
 
 function copyCode() {
   var jsCode = "<!DOCTYPE html>\n    <head><title></title></head>\n    <body>\n    <svg id=\"mySvg\" width=\"960\" height=\"500\"></svg>\n    <script src=\"http://d3js.org/d3.v7.min.js\"></script>\n    <script src=\"http://d3js.org/topojson.v3.min.js\"></script>\n    <script>\n    var width = 960, height = 500, svg = d3.select(\"svg\");\n    d3.json(\"https://raw.githubusercontent.com/org-scn-design-studio-\" +\n        \"community/sdkcommunitymaps/master/geojson/Europe/Ukraine-regions.json\"\n    ).then(function (data) {\n        var land = topojson.feature(data, data.objects.UKR_adm1),\n            projection = d3.geoAlbers().rotate([-30, 0, 0])\n                .fitSize([.9 * width, .9 * height], land),\n            path = d3.geoPath().projection(projection);\n        svg.selectAll(\"path\").data(land.features).enter()\n            .append(\"path\").attr(\"d\", path).attr(\"fill\", \"#FFD500')\n            .attr(\"stroke\", \"#005BBB\");\n        svg.append(\"text\").attr(\"x\", (width / 2)).attr(\"y\", height - (20))\n            .attr(\"text-anchor\", \"middle\").style(\"font-size\", \"24px\")\n            .style(\"fill\", \"#005BBB\").text(\"Improvs\");";
@@ -180,8 +193,8 @@ function safePlayVideo(Index) {
 
 function stopAllVideo() {
   videos.forEach(function (video) {
-    video.currentTime = 0;
     video.pause();
+    video.currentTime = 0;
   });
 }
 
@@ -281,8 +294,11 @@ function scrollByElementName(elementName) {
     return;
   }
 
-  var scrollToValue = element.offsetTop;
-  scrollToOffset(scrollToValue);
+  $("[section=".concat(elementName, "]")).animatescroll({
+    scrollSpeed: 200,
+    easing: 'easeInSine'
+  }); //let scrollToValue = element.offsetTop;
+  //scrollToOffset(scrollToValue);
 }
 
 function scrollToOffset(offset) {
@@ -339,9 +355,11 @@ window.addEventListener("scroll", function () {
   if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
     cleanHoverMenu();
     menuItems[1].classList.add("menu_active_link");
-  } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight < viewportOffWork) {
+    showLoader(false);
+  } else if (viewedPageHeight >= viewportOffsetWebsite) {
     cleanHoverMenu();
     menuItems[2].classList.add("menu_active_link");
+    showLoader(false);
   } else if (viewedPageHeight >= viewportOffWork) {
     cleanHoverMenu();
     menuItems[3].classList.add("menu_active_link");

@@ -5540,6 +5540,39 @@ body::-webkit-scrollbar {
 .sound_turn {
   display: none; }
 
+.loader_block {
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #0E0E0E;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  transition: all 0.3s ease; }
+  .loader_block .loader {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    border-top-color: #333;
+    -webkit-animation: rotate 1s infinite;
+    animation: rotate 1s infinite; }
+
+@keyframes rotate {
+  100% {
+    rotate: 360deg; } }
+
+.show_loader {
+  display: -ms-flexbox;
+  display: flex; }
+
 footer {
   font-family: "NeueHaas";
   width: 100%;

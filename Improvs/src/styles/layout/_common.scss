@@ -33,12 +33,12 @@ body::-webkit-scrollbar {
             animation-fill-mode: forwards;
 
             @keyframes opacity-video {
-                
-                0%{
+
+                0% {
                     opacity: 1;
                 }
 
-                100%{
+                100% {
                     opacity: 0;
                 }
             }
@@ -75,7 +75,7 @@ body::-webkit-scrollbar {
         }
     }
 
-     .video_btn_block-mob{
+    .video_btn_block-mob {
         position: absolute;
         right: 20px;
         bottom: 32px;
@@ -89,11 +89,11 @@ body::-webkit-scrollbar {
 
         }
     }
-            
+
     .bottom_video_btn-top {
         display: none;
         margin-bottom: 12px;
-        
+
         @include media ("<tablet") {
             display: block;
         }
@@ -157,9 +157,11 @@ body::-webkit-scrollbar {
             }
         }
     }
-    .sound_turn{
+
+    .sound_turn {
         display: none;
     }
+
     .turn_sound {
         border: 1px solid $white;
         padding: 24px;
@@ -169,16 +171,19 @@ body::-webkit-scrollbar {
         border-radius: 50%;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
         display: flex;
+
         @include media (">tablet") {
-        &:hover{
-            background: $white;
-            transition: all 0.3s ease;
+            &:hover {
+                background: $white;
+                transition: all 0.3s ease;
+            }
+
+            &:hover svg path {
+                fill: $black;
+                transition: all 0.3s ease;
+            }
         }
-        &:hover svg path {
-            fill:$black;
-            transition: all 0.3s ease;
-        }
-        }
+
         @include media ("<tablet") {
             bottom: auto;
             top: 10px;
@@ -186,11 +191,12 @@ body::-webkit-scrollbar {
             padding: 5px;
             z-index: 10;
         }
-        svg{
+
+        svg {
             @include media ("<tablet") {
-            width: 20px;
-            height: 20px;
-            }  
+                width: 20px;
+                height: 20px;
+            }
         }
 
     }
@@ -734,7 +740,7 @@ body::-webkit-scrollbar {
     font-family: $NeueHaas-font;
     padding-bottom: 0px;
 
-    .phone_link{
+    .phone_link {
         display: none;
 
         @include media ("<desktop") {
@@ -819,6 +825,41 @@ body::-webkit-scrollbar {
 
 
 
-.sound_turn{
+.sound_turn {
     display: none;
+}
+
+.loader_block {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: $black;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    transition: all 0.3s ease;
+
+    .loader {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 5px solid #ddd;
+        border-top-color: #333;
+        animation: rotate 1s infinite;
+    }
+
+    @keyframes rotate {
+        100% {
+            rotate: 360deg;
+        }
+    }
+}
+
+.show_loader {
+    display: flex;
 }

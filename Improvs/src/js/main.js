@@ -15,6 +15,7 @@ const copyCodeButton = document.querySelector("[copyCode]");
 const body = document.querySelector(".main_body_section");
 const mobilePosters = document.querySelectorAll("[poster_mobile]");
 const mobile_buttons = document.querySelectorAll("[mobile_button]");
+const loaderBlock = document.querySelector(".loader_block");
 
 let userAgentString = navigator.userAgent;
 let isSafari = userAgentString.indexOf("Safari") > -1;
@@ -40,10 +41,12 @@ function init() {
     }
 
     if (/phone_video/.test(location.href)) {
+        showLoader(true);
         showHeader(true);
         videos[2].play();
         setSectionState(2);
     } else if (/desktop_video/.test(location.href)) {
+        showLoader(true);
         showHeader(true);
         videos[1].play()
         setSectionState(1);
@@ -88,6 +91,16 @@ window.addEventListener('resize', function () {
         changeVideoForMobile();
     }
 }, true);
+
+function showLoader(isShow) {
+    if (isShow) {
+        loaderBlock.classList.add("show_loader");
+    } else {
+        setTimeout(function () {
+            loaderBlock.classList.remove("show_loader");
+        }, 1000);
+    }
+}
 
 function copyCode() {
     var jsCode = `<!DOCTYPE html>
@@ -196,8 +209,8 @@ function safePlayVideo(Index) {
 
 function stopAllVideo() {
     videos.forEach(video => {
-        video.currentTime = 0;
         video.pause();
+        video.currentTime = 0;
     });
 }
 
@@ -222,7 +235,7 @@ function nextSlide() {
 
             let section = sections[index].getAttribute('section');
 
-            if (section === "work"&&isMobile()) {
+            if (section === "work" && isMobile()) {
                 body.style.overflowY = "auto";
             }
 
@@ -288,8 +301,10 @@ function scrollByElementName(elementName) {
         return;
     }
 
-    let scrollToValue = element.offsetTop;
-    scrollToOffset(scrollToValue);
+    $(`[section=${elementName}]`).animatescroll({ scrollSpeed: 200, easing: 'easeInSine' });
+
+    //let scrollToValue = element.offsetTop;
+    //scrollToOffset(scrollToValue);
 }
 
 function scrollToOffset(offset) {
@@ -303,14 +318,14 @@ function scrollToOffset(offset) {
 //sroll previous
 let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
 let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
-let plusMobileVievPort=0;
-let minusMobileVievPort=50;
+let plusMobileVievPort = 0;
+let minusMobileVievPort = 50;
 
 window.addEventListener("scroll", function () {
     let viewedPageHeight = Math.abs(document.body.getBoundingClientRect().top) + window.innerHeight;
 
-    if(isMobile()){
-        plusMobileVievPort=150;
+    if (isMobile()) {
+        plusMobileVievPort = 150;
     }
 
     if (window.body_lock) {
@@ -322,12 +337,12 @@ window.addEventListener("scroll", function () {
     } else {
         header.classList.add("header_transparent");
     }
-    if ((viewedPageHeight+plusMobileVievPort) <= (viewportOffsetLastSection-minusMobileVievPort) && window.isDownScroll) {
+    if ((viewedPageHeight + plusMobileVievPort) <= (viewportOffsetLastSection - minusMobileVievPort) && window.isDownScroll) {
         window.isDownScroll = false;
         body.style.overflowY = "hidden";
         previousSlide(true);
     }
-    if (viewedPageHeight+plusMobileVievPort >= viewportOffsetLastVideo && !isDownScroll) {
+    if (viewedPageHeight + plusMobileVievPort >= viewportOffsetLastVideo && !isDownScroll) {
         body.style.overflowY = "auto";
         window.isDownScroll = true;
     }
@@ -346,12 +361,14 @@ window.addEventListener("scroll", function () {
     if (viewedPageHeight >= viewportOffsetMain && viewedPageHeight <= viewportOffMobileAppication) {
         cleanHoverMenu();
         menuItems[1].classList.add("menu_active_link");
-    } else if (viewedPageHeight >= viewportOffsetWebsite && viewedPageHeight < viewportOffWork) {
+        showLoader(false);
+    } else if (viewedPageHeight >= viewportOffsetWebsite ) {
         cleanHoverMenu();
         menuItems[2].classList.add("menu_active_link");
+        showLoader(false);
     } else if (viewedPageHeight >= viewportOffWork) {
         cleanHoverMenu();
-        menuItems[3].classList.add("menu_active_link");
+        menuItems[3].classList.add("menu_active_link");     
     }
 
     window.isScroling = true;
