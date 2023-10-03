@@ -165,36 +165,10 @@ turnSounds.forEach(function (turn) {
   });
 });
 
-var _loop = function _loop(index) {
+for (var index = 0; index < videos.length; index++) {
   var video = videos[index];
   video.addEventListener('ended', function (e) {
     nextSlide();
-    stopAllVideo();
-    var nextIndex = index + 1;
-
-    if (videos[nextIndex]) {
-      safePlayVideo(nextIndex);
-    }
-  });
-};
-
-for (var index = 0; index < videos.length; index++) {
-  _loop(index);
-}
-
-function safePlayVideo(Index) {
-  var currentVideo = videos[Index];
-  var isPlaying = currentVideo.currentTime == 0;
-
-  if (isPlaying) {
-    currentVideo.play();
-  }
-}
-
-function stopAllVideo() {
-  videos.forEach(function (video) {
-    video.pause();
-    video.currentTime = 0;
   });
 }
 
@@ -210,12 +184,13 @@ function nextSlide() {
       index = index + 1;
 
       if (index == 2) {
-        stopAllVideo();
-        safePlayVideo(2);
+        videos[1].pause();
+        videos[2].currentTime = 0;
+        videos[2].play();
       }
 
       if (index == 3) {
-        stopAllVideo();
+        videos[2].pause();
       }
 
       var section = sections[index].getAttribute('section');
@@ -233,8 +208,9 @@ function nextSlide() {
     var _section = sections[1].getAttribute('section');
 
     scrollByElementName(_section);
-    stopAllVideo();
-    safePlayVideo(1);
+    videos[0].pause();
+    videos[1].currentTime = 0;
+    videos[1].play();
     setSectionState(1);
   }
 }
@@ -254,14 +230,26 @@ function previousSlide() {
       index = index - 1;
 
       if (index <= 2) {
-        stopAllVideo();
         showCopyCodeButton(false);
         addFullVideo(false);
-        safePlayVideo(index);
       }
 
       if (index == 0) {
         showHeader(false);
+        videos[1].pause();
+        videos[0].currentTime = 0;
+        videos[0].play();
+      }
+
+      if (index == 1) {
+        videos[2].pause();
+        videos[1].currentTime = 0;
+        videos[1].play();
+      }
+
+      if (index == 2) {
+        videos[2].currentTime = 0;
+        videos[2].play();
       }
 
       var section = sections[index].getAttribute('section');
@@ -294,11 +282,8 @@ function scrollByElementName(elementName) {
     return;
   }
 
-  $("[section=".concat(elementName, "]")).animatescroll({
-    scrollSpeed: 200,
-    easing: 'easeInSine'
-  }); //let scrollToValue = element.offsetTop;
-  //scrollToOffset(scrollToValue);
+  var scrollToValue = element.offsetTop;
+  scrollToOffset(scrollToValue);
 }
 
 function scrollToOffset(offset) {

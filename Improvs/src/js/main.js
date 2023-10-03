@@ -191,28 +191,9 @@ for (let index = 0; index < videos.length; index++) {
     const video = videos[index];
     video.addEventListener('ended', function (e) {
         nextSlide();
-        stopAllVideo();
-        let nextIndex = index + 1;
-        if (videos[nextIndex]) {
-            safePlayVideo(nextIndex);
-        }
     });
 }
 
-function safePlayVideo(Index) {
-    let currentVideo = videos[Index];
-    let isPlaying = currentVideo.currentTime == 0;
-    if (isPlaying) {
-        currentVideo.play();
-    }
-}
-
-function stopAllVideo() {
-    videos.forEach(video => {
-        video.pause();
-        video.currentTime = 0;
-    });
-}
 
 function nextSlide() {
     if (window.body_lock) {
@@ -225,12 +206,13 @@ function nextSlide() {
             index = index + 1;
 
             if (index == 2) {
-                stopAllVideo();
-                safePlayVideo(2);
+                videos[1].pause();
+                videos[2].currentTime = 0;
+                videos[2].play();
             }
 
             if (index == 3) {
-                stopAllVideo();
+                videos[2].pause();
             }
 
             let section = sections[index].getAttribute('section');
@@ -246,8 +228,9 @@ function nextSlide() {
         showHeader(true);
         let section = sections[1].getAttribute('section');
         scrollByElementName(section);
-        stopAllVideo();
-        safePlayVideo(1);
+        videos[0].pause();
+        videos[1].currentTime = 0;
+        videos[1].play();
         setSectionState(1);
     }
 }
@@ -264,13 +247,24 @@ function previousSlide(isDownScroll = false) {
             index = index - 1;
 
             if (index <= 2) {
-                stopAllVideo();
                 showCopyCodeButton(false);
                 addFullVideo(false);
-                safePlayVideo(index);
             }
+
             if (index == 0) {
                 showHeader(false);
+                videos[1].pause();
+                videos[0].currentTime = 0;
+                videos[0].play();
+            }
+            if (index == 1) {
+                videos[2].pause();
+                videos[1].currentTime = 0;
+                videos[1].play();
+            }
+            if (index == 2) {
+                videos[2].currentTime = 0;
+                videos[2].play();
             }
 
             let section = sections[index].getAttribute('section');
@@ -301,10 +295,8 @@ function scrollByElementName(elementName) {
         return;
     }
 
-    $(`[section=${elementName}]`).animatescroll({ scrollSpeed: 200, easing: 'easeInSine' });
-
-    //let scrollToValue = element.offsetTop;
-    //scrollToOffset(scrollToValue);
+    let scrollToValue = element.offsetTop;
+    scrollToOffset(scrollToValue);
 }
 
 function scrollToOffset(offset) {
