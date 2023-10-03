@@ -51,17 +51,17 @@ function init() {
         videos[1].play()
         setSectionState(1);
     }
-
-    let firstVideo = videos[0];
-
-    firstVideo.addEventListener("error", function (e) {
-        if (isMobile()) {
-            firstVideo.setAttribute('poster', 'images/main_page/video_img_mobile_1.png')
-        } else {
-            firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')
-        }
-        showCopyCodeButton(true);
-    });
+    /* 
+        let firstVideo = videos[0];
+    
+        firstVideo.addEventListener("error", function (e) {
+            if (isMobile()) {
+                firstVideo.setAttribute('poster', 'images/main_page/video_img_mobile_1.png')
+            } else {
+                firstVideo.setAttribute('poster', 'images/main_page/video_img_1.png')
+            }
+            showCopyCodeButton(true);
+        }); */
 
     firstVideo.addEventListener('timeupdate', function () {
         let firstVideoBlock = document.querySelector("[section=\"video1\"]");
@@ -288,7 +288,7 @@ function previousSlide(isDownScroll = false) {
 }
 
 //scroll
-function scrollByElementName(elementName) {
+/* function scrollByElementName(elementName) {
     let element = "";
     element = document.querySelector(`[section=${elementName}]`);
     if (!element) {
@@ -305,10 +305,10 @@ function scrollToOffset(offset) {
         left: 0,
         top: offset
     });
-}
+} */
 
 //sroll previous
-let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
+/* let viewportOffsetLastSection = Math.abs(lastSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
 let viewportOffsetLastVideo = Math.abs(lastVideoSection.getBoundingClientRect().bottom + (lastSection.offsetHeight) + window.scrollY);
 let plusMobileVievPort = 0;
 let minusMobileVievPort = 50;
@@ -354,18 +354,18 @@ window.addEventListener("scroll", function () {
         cleanHoverMenu();
         menuItems[1].classList.add("menu_active_link");
         showLoader(false);
-    } else if (viewedPageHeight >= viewportOffsetWebsite ) {
+    } else if (viewedPageHeight >= viewportOffsetWebsite) {
         cleanHoverMenu();
         menuItems[2].classList.add("menu_active_link");
         showLoader(false);
     } else if (viewedPageHeight >= viewportOffWork) {
         cleanHoverMenu();
-        menuItems[3].classList.add("menu_active_link");     
+        menuItems[3].classList.add("menu_active_link");
     }
 
     window.isScroling = true;
     setTimeout(() => window.isScroling = false, 500);
-});
+}); */
 
 
 //header
@@ -457,45 +457,7 @@ function getSectionState() {
 }
 
 //OURWORK
-const slider = new Swiper(".case_swiper", {
-    speed: 4500,
-    // loop: true,
+const slider = new Swiper(".our_work-slider", {
+    slidesPerView: 1.5,
     spaceBetween: 20,
-    // freeMode: true,
-    centeredSlides: false,
-    preventInteractionOnTransition: false,
-    autoplay: {
-        delay: 1,
-        disableOnInteraction: false
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1.15,
-            spaceBetween: 10,
-        },
-        480: {
-            slidesPerView: 1.3,
-        },
-        1440: {
-            slidesPerView: 1.5,
-        },
-        1920: {
-            slidesPerView: 2.2,
-        },
-    },
-    on: {
-        init() {
-            this.autoplay.stop();
-
-            this.el.addEventListener('mousemove', () => {
-                if (!window.isScroling) {
-                    this.autoplay.start();
-                }
-            });
-
-            this.el.addEventListener('mouseleave', () => {
-                this.autoplay.stop();
-            });
-        }
-    }
 });
