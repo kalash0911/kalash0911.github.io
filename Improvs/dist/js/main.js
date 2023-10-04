@@ -51,6 +51,8 @@ new fullpage("#fullpage", {
     setSectionState(destination.index);
 
     if (destination.index === 1) {
+      var firstVideo = document.querySelector('[section="video1"]');
+      firstVideo.classList.remove("video_block_full");
       showHeader(true);
     }
 
@@ -91,8 +93,8 @@ var userAgentString = navigator.userAgent;
 var isSafari = userAgentString.indexOf("Safari") > -1;
 
 function init() {
+  showLoader(true);
   window.currentIndex = null;
-  window.body_lock = false;
   header.classList.add("header_transparent");
 
   if (isMobile()) {
@@ -138,13 +140,13 @@ function init() {
       addFullVideo(true);
     }
 
-    if (firstVideo.currentTime >= 15.0) {
+    if (firstVideo.currentTime >= 14.8) {
       firstVideoBlock.classList.add("video-opacity");
-      showHeader(true);
     }
 
     if (firstVideo.currentTime >= 15.8) {
       firstVideoBlock.classList.remove("video-opacity");
+      showHeader(true);
     }
   }, false);
 }
