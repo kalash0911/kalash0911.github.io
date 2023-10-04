@@ -248,6 +248,28 @@ function getSectionState() {
 
 var slider = new Swiper(".our_work-slider", {
   slidesPerView: 1.5,
-  spaceBetween: 20
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev"
+  },
+  pagination: {
+    el: ".nav-pag",
+    type: "bullets"
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 1.5
+    },
+    1440: {
+      slidesPerView: 2.5
+    },
+    1920: {
+      slidesPerView: 3.5
+    }
+  }
 });
 //# sourceMappingURL=main.js.map

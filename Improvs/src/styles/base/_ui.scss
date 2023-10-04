@@ -117,26 +117,27 @@ main {
         transition: $transition_all_03;
     }
 
-
-
-    &:hover {
-        background-color: transparent;
-        transition: $transition_all_03;
-        color: $white;
-
-        .left_arrow {
-            left: 37%;
+    @include media (">phone") {
+        
+        &:hover {
+            background-color: transparent;
             transition: $transition_all_03;
-        }
-
-        .right_arrow {
-            right: 37%;
-            transition: $transition_all_03;
-        }
-
-        svg {
-            fill: $white;
-            transition: $transition_all_03;
+            color: $white;
+    
+            .left_arrow {
+                left: 37%;
+                transition: $transition_all_03;
+            }
+    
+            .right_arrow {
+                right: 37%;
+                transition: $transition_all_03;
+            }
+    
+            svg {
+                fill: $white;
+                transition: $transition_all_03;
+            }
         }
     }
 }

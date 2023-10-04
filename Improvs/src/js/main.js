@@ -43,7 +43,7 @@ new fullpage("#fullpage", {
         menuItems.forEach((menu) => {
             menu.classList.remove("menu_active_link");
             const a = menu.querySelector("a");
-            if (a.href.endsWith({ toString: () => destination.anchor || 'index.html'})) {
+            if (a.href.endsWith({ toString: () => destination.anchor || 'index.html' })) {
                 menu.classList.add("menu_active_link");
             }
         });
@@ -270,4 +270,29 @@ function getSectionState() {
 const slider = new Swiper(".our_work-slider", {
     slidesPerView: 1.5,
     spaceBetween: 20,
+
+    navigation: {
+        nextEl: ".btn-next",
+        prevEl: ".btn-prev",
+    },
+
+    pagination: {
+        el: ".nav-pag",
+        type: "bullets",
+    },
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        480: {
+            slidesPerView: 1.5,
+        },
+        1440: {
+            slidesPerView: 2.5,
+        },
+        1920: {
+            slidesPerView: 3.5,
+        },
+    },
 });

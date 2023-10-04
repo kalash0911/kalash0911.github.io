@@ -658,19 +658,20 @@ main {
   .site_btn_white svg {
     fill: #0E0E0E;
     transition: all 0.3s ease; }
-  .site_btn_white:hover {
-    background-color: transparent;
-    transition: all 0.3s ease;
-    color: #fff; }
-    .site_btn_white:hover .left_arrow {
-      left: 37%;
-      transition: all 0.3s ease; }
-    .site_btn_white:hover .right_arrow {
-      right: 37%;
-      transition: all 0.3s ease; }
-    .site_btn_white:hover svg {
-      fill: #fff;
-      transition: all 0.3s ease; }
+  @media (min-width: 481px) {
+    .site_btn_white:hover {
+      background-color: transparent;
+      transition: all 0.3s ease;
+      color: #fff; }
+      .site_btn_white:hover .left_arrow {
+        left: 37%;
+        transition: all 0.3s ease; }
+      .site_btn_white:hover .right_arrow {
+        right: 37%;
+        transition: all 0.3s ease; }
+      .site_btn_white:hover svg {
+        fill: #fff;
+        transition: all 0.3s ease; } }
 
 .site_btn_transparent {
   display: inline-block;
@@ -5083,8 +5084,42 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 100px 0 30px 0;
+    padding: 100px 20px 30px 20px;
     height: 100%; }
+  .our_work-sc .arrows-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .our_work-sc .arrows {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 32px; }
+    @media (max-width: 1023px) {
+      .our_work-sc .arrows {
+        display: none; } }
+  .our_work-sc .btn-prev {
+    left: 0;
+    background-image: url(//improvs.com/wp-content/themes/improvs/css/../images/across_us_template/AR_Left.svg);
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer; }
+  .our_work-sc .btn-next {
+    right: 0;
+    background-image: url(//improvs.com/wp-content/themes/improvs/css/../images/across_us_template/AR_Right.svg);
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    cursor: pointer; }
   .our_work-sc .title {
     position: relative;
     max-width: -webkit-max-content;
@@ -5099,6 +5134,14 @@ body::-webkit-scrollbar {
     letter-spacing: -2.58px;
     text-transform: uppercase;
     margin-bottom: 30px; }
+    @media (max-width: 1023px) {
+      .our_work-sc .title {
+        font-size: 52px; } }
+    @media (max-width: 479px) {
+      .our_work-sc .title {
+        max-width: -webkit-min-content;
+        max-width: -moz-min-content;
+        max-width: min-content; } }
   .our_work-sc .work_counter {
     position: absolute;
     top: -20px;
@@ -5114,9 +5157,12 @@ body::-webkit-scrollbar {
     font-family: "IBMPlexMono"; }
   .our_work-sc .our_work-slider {
     width: 100%;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto; }
+    @media (max-width: 479px) {
+      .our_work-sc .our_work-slider {
+        padding-bottom: 60px; } }
   .our_work-sc .item {
     position: relative;
     display: -ms-flexbox;
@@ -5162,7 +5208,16 @@ body::-webkit-scrollbar {
     right: 20px;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 10px; }
+    @media (max-width: 479px) {
+      .our_work-sc .tags_wrap {
+        position: relative;
+        top: auto;
+        right: auto;
+        z-index: 1;
+        padding: 0 20px; } }
   .our_work-sc .tag {
     color: #A6A6A6;
     font-size: 16px;
@@ -5178,11 +5233,17 @@ body::-webkit-scrollbar {
     text-align: center;
     border: 1px solid #A6A6A6;
     padding: 3px 8px; }
+    @media (max-width: 479px) {
+      .our_work-sc .tag {
+        font-size: 12px; } }
   .our_work-sc .text_wrap {
     position: relative;
     z-index: 1;
-    padding: 20px;
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    padding: 20px; }
+    @media (max-width: 479px) {
+      .our_work-sc .text_wrap {
+        font-size: 12px; } }
   .our_work-sc .item_title {
     color: #fff;
     font-family: "NeueHaas";
@@ -5193,6 +5254,9 @@ body::-webkit-scrollbar {
     letter-spacing: -0.24px;
     text-transform: uppercase;
     margin-bottom: 5px; }
+    @media (max-width: 479px) {
+      .our_work-sc .item_title {
+        font-size: 20px; } }
   .our_work-sc .item_description {
     color: #DBDBDB;
     font-family: "IBMPlexMono";
@@ -5202,6 +5266,27 @@ body::-webkit-scrollbar {
     line-height: 126%;
     letter-spacing: -0.14px;
     text-transform: uppercase; }
+  .our_work-sc .site_btn_white {
+    background: none;
+    color: #fff; }
+    .our_work-sc .site_btn_white svg {
+      fill: #fff; }
+  .our_work-sc .nav-pag {
+    display: none;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    bottom: auto;
+    padding: 35px 0; }
+    @media (max-width: 479px) {
+      .our_work-sc .nav-pag {
+        display: -ms-flexbox;
+        display: flex; } }
+  .our_work-sc .swiper-pagination-bullet {
+    background-color: #DBDBDB; }
+  .our_work-sc .swiper-pagination-bullet-active {
+    background-color: #fff; }
 
 .button_form_section {
   height: 100vh;

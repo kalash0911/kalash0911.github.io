@@ -2,14 +2,9 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
-
 .main_body_section {
     overflow-x: hidden;
 }
-
-// .section{
-//     height: 100vh;
-// }
 
 .video_block {
     position: relative;
@@ -312,8 +307,46 @@ body::-webkit-scrollbar {
         flex-direction: column;
         justify-content: space-between;
         flex: 1 1 auto;
-        padding: 100px 0 30px 0;
+        padding: 100px 20px 30px 20px;
         height: 100%;
+    }
+
+    .arrows-wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrows {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .btn-prev {
+        left: 0;
+        background-image: url(//improvs.com/wp-content/themes/improvs/css/../images/across_us_template/AR_Left.svg);
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+
+    .btn-next {
+        right: 0;
+        background-image: url(//improvs.com/wp-content/themes/improvs/css/../images/across_us_template/AR_Right.svg);
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        cursor: pointer;
     }
 
     .title {
@@ -328,6 +361,14 @@ body::-webkit-scrollbar {
         letter-spacing: -2.58px;
         text-transform: uppercase;
         margin-bottom: 30px;
+
+        @include media ("<desktop") {
+            font-size: 52px;
+        }
+
+        @include media ("<phone") {
+            max-width: min-content;
+        }
     }
 
     .work_counter {
@@ -347,8 +388,12 @@ body::-webkit-scrollbar {
 
     .our_work-slider {
         width: 100%;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
         flex: 1 1 auto;
+
+        @include media ("<phone") {
+            padding-bottom: 60px;
+        }
     }
 
     .item {
@@ -405,7 +450,16 @@ body::-webkit-scrollbar {
         top: 20px;
         right: 20px;
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
+
+        @include media ("<phone") {
+            position: relative;
+            top: auto;
+            right: auto;
+            z-index: 1;
+            padding: 0 20px;
+        }
     }
 
     .tag {
@@ -421,13 +475,21 @@ body::-webkit-scrollbar {
         text-align: center;
         border: 1px solid $gray_A6;
         padding: 3px 8px;
+
+        @include media ("<phone") {
+            font-size: 12px;
+        }
     }
 
     .text_wrap {
         position: relative;
         z-index: 1;
-        padding: 20px;
         transition: all 0.3s ease;
+        padding: 20px;
+
+        @include media ("<phone") {
+            font-size: 12px;
+        }
     }
 
     .item_title {
@@ -440,6 +502,10 @@ body::-webkit-scrollbar {
         letter-spacing: -0.24px;
         text-transform: uppercase;
         margin-bottom: 5px;
+
+        @include media ("<phone") {
+            font-size: 20px;
+        }
     }
 
     .item_description {
@@ -451,6 +517,36 @@ body::-webkit-scrollbar {
         line-height: 126%;
         letter-spacing: -0.14px;
         text-transform: uppercase;
+    }
+
+    .site_btn_white {
+        background: none;
+        color: $white;
+
+        svg {
+            fill: $white;
+        }
+    }
+
+    .nav-pag {
+        display: none;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        bottom: auto;
+        padding: 35px 0;
+
+        @include media ("<phone") {
+            display: flex;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        background-color: $gray_D8;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $white;
     }
 }
 
