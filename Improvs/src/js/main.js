@@ -20,7 +20,15 @@ new fullpage("#fullpage", {
         const videos = document.querySelectorAll("[video]");
         for (let index = 0; index < videos.length; index++) {
             const video = videos[index];
-            video.currentTime = 0;
+            if (index == getSectionState()) {
+                setTimeout(function () {
+                    video.currentTime = 0;
+                }, 1000);
+
+            } else {
+                video.currentTime = 0;
+            }
+
             if (origin.index === index) {
                 if (!video.muted) {
                     video.muted = true;
@@ -70,10 +78,8 @@ let userAgentString = navigator.userAgent;
 let isSafari = userAgentString.indexOf("Safari") > -1;
 
 function init() {
-    window.isDownScroll = false;
     window.currentIndex = null;
     window.body_lock = false;
-    window.isScroling = false;
 
     header.classList.add("header_transparent");
 
@@ -133,7 +139,6 @@ function init() {
             }
 
             if (firstVideo.currentTime >= 15.8) {
-                nextSlide();
                 firstVideoBlock.classList.remove("video-opacity");
             }
         },

@@ -22,19 +22,30 @@ new fullpage("#fullpage", {
   onLeave: function onLeave(origin, destination, direction, trigger) {
     var videos = document.querySelectorAll("[video]");
 
-    for (var _index = 0; _index < videos.length; _index++) {
-      var _video = videos[_index];
-      _video.currentTime = 0;
+    var _loop = function _loop(_index) {
+      var video = videos[_index];
+
+      if (_index == getSectionState()) {
+        setTimeout(function () {
+          video.currentTime = 0;
+        }, 1000);
+      } else {
+        video.currentTime = 0;
+      }
 
       if (origin.index === _index) {
-        if (!_video.muted) {
-          _video.muted = true;
+        if (!video.muted) {
+          video.muted = true;
           var sound_turn = origin.item.querySelector(".sound_turn");
           var sound_switch = origin.item.querySelector(".sound_switch");
           sound_switch.style.display = "block";
           sound_turn.style.display = "none";
         }
       }
+    };
+
+    for (var _index = 0; _index < videos.length; _index++) {
+      _loop(_index);
     }
 
     setSectionState(destination.index);
@@ -80,10 +91,8 @@ var userAgentString = navigator.userAgent;
 var isSafari = userAgentString.indexOf("Safari") > -1;
 
 function init() {
-  window.isDownScroll = false;
   window.currentIndex = null;
   window.body_lock = false;
-  window.isScroling = false;
   header.classList.add("header_transparent");
 
   if (isMobile()) {
@@ -135,7 +144,6 @@ function init() {
     }
 
     if (firstVideo.currentTime >= 15.8) {
-      nextSlide();
       firstVideoBlock.classList.remove("video-opacity");
     }
   }, false);
@@ -183,10 +191,10 @@ function addFullVideo(isFullVideo) {
 
 function changeVideoForMobile() {
   for (var _index2 = 0; _index2 < videos.length; _index2++) {
-    var _video2 = videos[_index2];
+    var _video = videos[_index2];
 
-    if (!_video2.src.includes("mobile")) {
-      _video2.src = path + "files/main_video/video_".concat(_index2 + 1, "_mobile.mp4");
+    if (!_video.src.includes("mobile")) {
+      _video.src = path + "files/main_video/video_".concat(_index2 + 1, "_mobile.mp4");
     }
   }
 }
