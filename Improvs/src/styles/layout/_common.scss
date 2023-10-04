@@ -182,18 +182,7 @@ body::-webkit-scrollbar {
         }
 
         @include media ("<tablet") {
-            bottom: auto;
-            top: 10px;
-            left: 16px;
-            padding: 5px;
-            z-index: 10;
-        }
-
-        svg {
-            @include media ("<tablet") {
-                width: 20px;
-                height: 20px;
-            }
+         display: none;
         }
 
     }

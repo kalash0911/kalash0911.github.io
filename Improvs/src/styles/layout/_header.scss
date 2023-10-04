@@ -139,14 +139,7 @@
             }
         }
     }
-     .mop_block{
-        width: 24px;
-        height: 24px;
-        display: none; 
-        @include media ("<tablet") {
-            display: block;
-        }
-     }
+
     .burger {
         position: relative;
         width: 24px;
@@ -454,6 +447,7 @@
         
         @include media ('<tablet') {
             order: 2;
+            margin-left: 8px;
         }
     }
 
@@ -503,4 +497,19 @@
         @include adaptiv-vaule("height", 32, 20, 1);
         opacity: 1;
     }
+}
+.turn_sound {
+    border: 1px solid $white;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    display: flex;
+    svg{
+            width: 20px;
+            height: 20px;
+        }
+        @include media (">tablet"){
+            display: none;
+        }   
+
 }

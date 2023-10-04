@@ -4,7 +4,6 @@ new WOW().init();
 initCleanerSwiper();
 initCustomerSwiper();
 switchSlider();
-
 function initCleanerSwiper() {
   var slider = new Swiper(".swiper_uptidy_cleaner", {
     speed: 1400,
@@ -20,9 +19,10 @@ function initCleanerSwiper() {
     },
     pagination: {
       el: ".swiper-pagination",
-      type: "bullets" // clickable: true,
-
+      type: "bullets"
+      // clickable: true,
     },
+
     breakpoints: {
       320: {
         spaceBetween: 20
@@ -44,7 +44,6 @@ function initCleanerSwiper() {
     }
   });
 }
-
 function initCustomerSwiper() {
   var slider = new Swiper(".swiper_uptidy_customer", {
     speed: 1400,
@@ -60,9 +59,10 @@ function initCustomerSwiper() {
     },
     pagination: {
       el: ".swiper-pagination",
-      type: "bullets" // clickable: true,
-
+      type: "bullets"
+      // clickable: true,
     },
+
     breakpoints: {
       320: {
         spaceBetween: 20
@@ -88,7 +88,6 @@ function initCustomerSwiper() {
     }
   });
 }
-
 function switchSlider() {
   var customerSwiper = document.querySelector(".swiper_uptidy_customer");
   var cleanerSwiper = document.querySelector(".swiper_uptidy_cleaner");
@@ -100,7 +99,6 @@ function switchSlider() {
         item.classList.remove("activeSwitch");
       });
       element.classList.add("activeSwitch");
-
       if (element.classList.contains('customer')) {
         customerSwiper.style.display = 'block';
         cleanerSwiper.style.display = 'none';
