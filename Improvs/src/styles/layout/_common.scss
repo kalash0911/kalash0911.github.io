@@ -1017,6 +1017,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+.turn_sound_header.hide{
+    opacity: 0;
+}
+
 .loader_block {
     justify-content: center;
     align-items: center;

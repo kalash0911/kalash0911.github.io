@@ -10,6 +10,7 @@ function filterBlogs(filter) {
         shouldShow = true;
       }
     });
+
     if (shouldShow) {
       postElement.style = "\n            display:flex;\n            ";
     } else {
@@ -23,6 +24,7 @@ function filterBlogs(filter) {
   var activeFilterItem = document.querySelector("[data-id=\"".concat(filter, "\"]"));
   activeFilterItem.classList.add("active_filter_item");
 }
+
 var filterItems = document.querySelectorAll(".dropdown_item");
 filterItems.forEach(function (filterItem) {
   filterItem.addEventListener("click", function (event) {

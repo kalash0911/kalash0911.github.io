@@ -13,10 +13,9 @@ var slider = new Swiper(".swiper_beach_club", {
   },
   pagination: {
     el: ".swiper-pagination",
-    type: "bullets"
-    // clickable: true,
-  },
+    type: "bullets" // clickable: true,
 
+  },
   breakpoints: {
     320: {
       slidesPerView: 1,

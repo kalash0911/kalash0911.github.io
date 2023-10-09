@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="header__content">
                     <div class="header__main">
-                        <div turn-sound class="turn_sound">
+                        <div turn-sound-mobile class="turn_sound_header">
                             <svg class="sound_turn" width="34" height="34" viewBox="0 0 34 34" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1584_56463)">
@@ -98,7 +98,12 @@
         <main id="main">
             <div id="fullpage">
                 <section class="video_block section" section="video1">
-                    <video data-keepplaying video autoplay muted playsinline poster="#" src="files/main_video/video_1.mp4"></video>
+                    <video class="lazy" data-keepplaying video autoplay muted playsinline poster="#" src="files/main_video/video_1.mp4">
+                        <source data-src="files/main_video/video_1.webm" type="video/webm">
+                        <source data-src="files/main_video/video_1.mp4" type="video/mp4">
+                        <source data-src_mobile="files/main_video/video_1_mobile.mp4" type="video/mp4">
+                        <source data-src_mobile="files/main_video/video_1_mobile.webm" type="video/webm">
+                    </video>
                     <div class="top_video_btn" mobile_button>
                         <button onclick="copyCode()" copyCode class="btn_black hide">
                             Сopy code
@@ -106,8 +111,12 @@
                     </div>
                 </section>
                 <section class="video_block video_block_full section" section="video2">
-                    <video data-keepplaying video autoplay muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
-                        poster="images/main_page/video_img_2.png" src="files/main_video/video_2.mp4"></video>
+                    <video class="lazy" data-keepplaying video autoplay muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png" poster="images/main_page/video_img_2.png">
+                        <source data-src="files/main_video/video_2.webm" type="video/webm">
+                        <source data-src="files/main_video/video_2.mp4" type="video/mp4">
+                        <source data-src_mobile="files/main_video/video_2_mobile.mp4" type="video/mp4">
+                        <source data-src_mobile="files/main_video/video_2_mobile.webm" type="video/webm">
+                    </video>
                     <h2 id="result" class="text_main_video text_video_1 wow animate__animated animate__fadeIn"
                         data-wow-duration="5s">
                         We make f... awesome websites
@@ -183,8 +192,13 @@
                     </div>
                 </section>
                 <section class="video_block video_block_full section" section="video3">
-                    <video data-keepplaying autoplay video muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
-                        poster="images/main_page/video_img_3.png" src="files/main_video/video_3.mp4"></video>
+                    <video class="lazy" data-keepplaying autoplay video muted playsinline poster_mobile="images/main_page/video_img_mobile_2.png"
+                        poster="images/main_page/video_img_3.png">
+                        <source data-src="files/main_video/video_3.webm" type="video/webm">
+                        <source data-src="files/main_video/video_3.mp4" type="video/mp4">
+                        <source data-src_mobile="files/main_video/video_3_mobile.mp4" type="video/mp4">
+                        <source data-src_mobile="files/main_video/video_3_mobile.webm" type="video/webm">
+                    </video>
                     <h2 class="text_main_video text_video_2 wow animate__animated animate__fadeIn">
                         And mind-blowing mobile apps
                     </h2>
