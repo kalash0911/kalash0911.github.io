@@ -4960,14 +4960,19 @@ body::-webkit-scrollbar {
     display: none; }
   .video_block .turn_sound {
     border: 1px solid #fff;
-    padding: 24px;
     position: absolute;
     left: 20px;
     bottom: 32px;
-    border-radius: 50%;
+    border-radius: 0%;
+    padding: 0;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     display: -ms-flexbox;
     display: flex; }
+    .video_block .turn_sound svg {
+      width: 100px !important;
+      height: 54px !important; }
     @media (min-width: 769px) {
       .video_block .turn_sound:hover {
         background: #fff;
@@ -5715,6 +5720,10 @@ body::-webkit-scrollbar {
 .sound_turn {
   display: none; }
 
+@media (min-width: 769px) {
+  .turn_sound_header {
+    display: none; } }
+
 .turn_sound_header.hide {
   opacity: 0; }
 
@@ -5750,6 +5759,9 @@ body::-webkit-scrollbar {
 .show_loader {
   display: -ms-flexbox;
   display: flex; }
+
+.hide_video {
+  display: none; }
 
 footer {
   font-family: "NeueHaas";

@@ -6,9 +6,26 @@ var videos = document.querySelectorAll("[video]");
 
 for (var index = 0; index < videos.length; index++) {
   var video = videos[index];
-  video.addEventListener("ended", function (e) {
-    fullpage_api.moveSectionDown();
-  });
+
+  if (index == 0) {
+    video.addEventListener("ended", function (e) {
+      videos[0].classList.add("hide_video");
+      videos[1].classList.remove("hide_video");
+      videos[1].play();
+    });
+  } else if (index == 1) {
+    video.addEventListener("ended", function (e) {
+      fullpage_api.moveSectionDown();
+      videos[0].classList.remove("hide_video");
+      videos[1].classList.add("hide_video");
+      videos[1].pause();
+      videos[1].currentIndex = 0;
+    });
+  } else {
+    video.addEventListener("ended", function (e) {
+      fullpage_api.moveSectionDown();
+    });
+  }
 }
 
 new fullpage("#fullpage", {
@@ -169,7 +186,8 @@ function init() {
 }
 
 window.addEventListener("resize", function () {
-  if (isMobile()) {//changeVideoForMobile();
+  if (isMobile()) {
+    changeVideoForMobile();
   }
 }, true);
 
@@ -321,34 +339,34 @@ var slider = new Swiper(".our_work-slider", {
     }
   }
 });
-document.addEventListener("DOMContentLoaded", function () {
-  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (video) {
-        if (video.isIntersecting) {
-          for (var source in video.target.children) {
-            var videoSource = video.target.children[source];
-
-            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-              if (isMobile()) {
-                videoSource.src = videoSource.dataset.src_mobile;
-              } else {
-                videoSource.src = videoSource.dataset.src;
-              }
-            }
-          }
-
-          video.target.load();
-          video.target.classList.remove("lazy");
-          lazyVideoObserver.unobserve(video.target);
-        }
-      });
-    });
-    lazyVideos.forEach(function (lazyVideo) {
-      lazyVideoObserver.observe(lazyVideo);
-    });
-  }
+var animateSoundTurnBlocks = document.querySelectorAll(".sound_turn");
+animateSoundTurnBlocks.forEach(function (soundTurn) {
+  lottie.loadAnimation({
+    container: soundTurn,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './files/robot.json'
+  });
 });
+var animateSountSwitchBlocks = document.querySelectorAll(".sound_switch");
+animateSountSwitchBlocks.forEach(function (soundSwitch) {
+  lottie.loadAnimation({
+    container: soundSwitch,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './files/robot_still.json'
+  });
+}); //animate 
+
+function runAnimation(element, animPath) {
+  lottie.loadAnimation({
+    container: element,
+    renderer: 'svg',
+    loop: false,
+    autoplay: true,
+    path: animPath
+  });
+}
 //# sourceMappingURL=main.js.map
