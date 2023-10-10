@@ -1,28 +1,35 @@
 new WOW().init();
 const menuItems = document.querySelectorAll(".menu__item");
 const videos = document.querySelectorAll("[video]");
-for (let index = 0; index < videos.length; index++) {
-    const video = videos[index];
+// for (let index = 0; index < videos.length; index++) {
+//     const video = videos[index];
 
-    if (index == 0) {
-        video.addEventListener("ended", function (e) {
-            videos[0].classList.add("hide_video");
-            videos[1].classList.remove("hide_video");
-            videos[1].play();
-        });
-    } else if (index == 1) {
-        video.addEventListener("ended", function (e) {
-            fullpage_api.moveSectionDown();
-            videos[0].classList.remove("hide_video");
-            videos[1].classList.add("hide_video");
-            videos[1].pause();
-            videos[1].currentIndex = 0;
-        });
-    } else {
-        video.addEventListener("ended", function (e) {
-            fullpage_api.moveSectionDown();
-        });
-    }
+//     if (index == 0) {
+//         video.addEventListener("ended", function (e) {
+//             videos[0].classList.add("hide_video");
+//             videos[1].classList.remove("hide_video");
+//             videos[1].play();
+//         });
+//     } else if (index == 1) {
+//         video.addEventListener("ended", function (e) {
+//             fullpage_api.moveSectionDown();
+//             videos[0].classList.remove("hide_video");
+//             videos[1].classList.add("hide_video");
+//             videos[1].pause();
+//             videos[1].currentIndex = 0;
+//         });
+//     } else {
+//         video.addEventListener("ended", function (e) {
+//             fullpage_api.moveSectionDown();
+//         });
+//     }
+// }
+
+for (var index = 0; index < videos.length; index++) {
+    var video = videos[index];
+    video.addEventListener("ended", function (e) {
+        fullpage_api.moveSectionDown();
+    });
 }
 
 new fullpage("#fullpage", {
@@ -43,7 +50,6 @@ new fullpage("#fullpage", {
                 setTimeout(function () {
                     video.currentTime = 0;
                 }, 1000);
-
             } else {
                 video.currentTime = 0;
             }
@@ -54,9 +60,6 @@ new fullpage("#fullpage", {
                     video.muted = true;
                     var sound_turn = origin.item.querySelector(".sound_turn");
                     var sound_switch = origin.item.querySelector(".sound_switch");
-                    let turn_sound_header = document.querySelector(".turn_sound_header");
-                    turn_sound_header.querySelector(".sound_turn").style.display = "none";
-                    turn_sound_header.querySelector(".sound_switch").style.display = "block";
                     sound_switch.style.display = "block";
                     sound_turn.style.display = "none";
                 }
@@ -64,12 +67,6 @@ new fullpage("#fullpage", {
         };
 
         setSectionState(destination.index);
-
-        if (destination.index >= 3) {
-            turnSoundsMobile[0].classList.add("hide");
-        } else {
-            turnSoundsMobile[0].classList.remove("hide");
-        }
 
         if (destination.index === 1) {
             showHeader(true);
@@ -98,7 +95,6 @@ var path = "./";
 const sections = document.querySelectorAll("[section]");
 const mainBlock = document.querySelector("#main");
 const turnSounds = document.querySelectorAll("[turn-sound]");
-const turnSoundsMobile = document.querySelectorAll("[turn-sound-mobile]");
 const lastSection = document.querySelector(`[section="video3"]`);
 const lastVideoSection = document.querySelector(`[section="video3"]`);
 const header = document.querySelector("#header");
@@ -118,7 +114,7 @@ function init() {
     header.classList.add("header_transparent");
 
     if (isMobile()) {
-        //changeVideoForMobile();
+        changeVideoForMobile();
         changeMobilePosters();
     }
 
@@ -140,17 +136,17 @@ function init() {
     let firstVideo = videos[0];
 
     firstVideo.addEventListener("error", function (e) {
-        if (isMobile()) {
-            firstVideo.setAttribute(
-                "poster",
-                "images/main_page/video_img_mobile_1.png"
-            );
-        } else {
-            firstVideo.setAttribute(
-                "poster",
-                "images/main_page/video_img_1.png"
-            );
-        }
+        // if (isMobile()) {
+        //     firstVideo.setAttribute(
+        //         "poster",
+        //         "images/main_page/video_img_mobile_1.png"
+        //     );
+        // } else {
+        //     firstVideo.setAttribute(
+        //         "poster",
+        //         "images/main_page/video_img_1.png"
+        //     );
+        // }
         showCopyCodeButton(true);
     });
 
@@ -283,28 +279,6 @@ turnSounds.forEach((turn) => {
     });
 });
 
-turnSoundsMobile.forEach((turn) => {
-    turn.addEventListener("click", function () {
-        let video = videos[getSectionState()];
-        if (video) {
-            video.muted = !video.muted;
-            let sound_turn = turn.querySelector(".sound_turn");
-            let sound_switch = turn.querySelector(".sound_switch");
-            if (video.muted) {
-                if (sound_turn) {
-                    sound_turn.style.display = "none";
-                    sound_switch.style.display = "block";
-                }
-            } else {
-                if (sound_switch) {
-                    sound_switch.style.display = "none";
-                    sound_turn.style.display = "block";
-                }
-            }
-        }
-    });
-});
-
 //header
 function showHeader(isShow) {
     if (isShow) {
@@ -381,14 +355,3 @@ animateSountSwitchBlocks.forEach((soundSwitch) => {
         path: './files/robot_still.json'
     });
 });
-
-//animate 
-function runAnimation(element, animPath) {
-    lottie.loadAnimation({
-        container: element,
-        renderer: 'svg',
-        loop: false,
-        autoplay: true,
-        path: animPath
-    });
-}

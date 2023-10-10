@@ -1,6 +1,7 @@
 "use strict";
 
 playVideo();
+
 function playVideo() {
   var playButton = document.querySelectorAll('.play_video_btn');
   var video = document.querySelectorAll('.similar_video_item');

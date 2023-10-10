@@ -76,6 +76,9 @@ body::-webkit-scrollbar {
         position: absolute;
         right: 20px;
         bottom: 32px;
+        left: 20px;
+        display: flex;
+        justify-content: space-between;
 
         @include media ("<tablet") {
             right: 16px;
@@ -83,6 +86,7 @@ body::-webkit-scrollbar {
             bottom: 36px;
             transform: none;
             right: 16px;
+            display: flex;
 
         }
     }
@@ -93,9 +97,17 @@ body::-webkit-scrollbar {
 
         @include media ("<tablet") {
             display: block;
+            @include media ("<tablet") {
+                display: block;
+            }
         }
     }
-
+    .bottom_video_btn {
+        width: fit-content;
+        @include media ("<tablet") {
+           width: 70%;
+        }
+    }
     .btn_black {
         font-family: $IBM-font;
         display: inline-block;
@@ -106,7 +118,7 @@ body::-webkit-scrollbar {
         line-height: 128%;
         letter-spacing: -0.14px;
         text-transform: uppercase;
-        padding: 28.5px 58px;
+        padding: 18px 58px;
         border: 1px solid $white;
         transition: $transition_all_03;
         color: $white;
@@ -114,9 +126,8 @@ body::-webkit-scrollbar {
         backdrop-filter: blur(10px);
 
         @include media ("<tablet") {
-            @include adaptiv-vaule("padding-top", 15, 10, 1);
-            @include adaptiv-vaule("padding-bottom", 15, 10, 1);
-            @include adaptiv-vaule("font-size", 20, 16, 1);
+            padding: 18px 23px;
+           font-size: 14px;
             text-align: center;
         }
 
@@ -130,11 +141,18 @@ body::-webkit-scrollbar {
 
         .left_arrow {
             left: 32px;
+            @include media ("<tablet") {
+                left:16px ;
+            }
 
         }
 
         .right_arrow {
             right: 32px;
+            @include media ("<tablet") {
+               right:16px ;
+            }
+
 
         }
 
@@ -161,17 +179,23 @@ body::-webkit-scrollbar {
 
     .turn_sound {
         border: 1px solid $white;
-        position: absolute;
-        left: 20px;
-        bottom: 32px;
+        width: fit-content;
         border-radius: 0%;
         padding: 0;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
         backdrop-filter: blur(10px);
         display: flex;
+        justify-content: center;
+        align-items: center;
         svg{
-          width: 100px!important;
+          width: 120px!important;
            height: 54px!important;
+        }
+        @include media ("<tablet") {
+            width: 30%;
+            height: 56px;;
+        order: 2;
+        margin-left: 12px;
         }
         @include media (">tablet") {
             &:hover {
@@ -185,9 +209,7 @@ body::-webkit-scrollbar {
             }
         }
 
-        @include media ("<tablet") {
-         display: none;
-        }
+   
 
     }
 
