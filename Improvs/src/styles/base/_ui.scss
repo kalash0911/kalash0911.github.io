@@ -562,5 +562,107 @@ main {
             @include adaptiv-vaule("height", 45, 20, 1);
         }
     }
+}
 
+.similar_swiper {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .swiper {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 15%;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            background: linear-gradient(270deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+
+            @include media ("<tablet") {
+                width: 5%;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 15%;
+            z-index: 2;
+            background: linear-gradient(90deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+
+            @include media ("<tablet") {
+                width: 5%;
+            }
+        }
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        top: 0;
+        height: 2px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 60px;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.3);
+        opacity: 1;
+        border-radius:0;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $white;
+    }
+
+    .arrows {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 40px;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+
+        .swiper-button-next {
+            right: 0;
+            background-image: url(../images/across_us_template/AR_Right.svg);
+            width: 40px;
+            height: 37px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .swiper-button-prev {
+            left: 0;
+            background-image: url(../images/across_us_template/AR_Left.svg);
+            width: 40px;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
 }

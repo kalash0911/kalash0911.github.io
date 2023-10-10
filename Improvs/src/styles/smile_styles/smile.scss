@@ -1,0 +1,348 @@
+.swiper_smile_section {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .swiper_smile_title {
+        max-width: 710px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 42px;
+        @include adaptiv-vaule("font-size", 42, 24, 1);
+        font-weight: 600;
+        line-height: 124%;
+        letter-spacing: -0.42px;
+    }
+
+    .swiper_smile {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        @include media ("<desktop") {
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+
+        .swiper-slide {
+            transform: translateY(50px);
+            transition: $transition_all_03;
+        }
+
+        .swiper-slide-active {
+            transform: translateY(0);
+        }
+    }
+
+    .slide_img {
+        @include adaptiv-vaule("height", 640, 320, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 0;
+
+        @include media (">laptop") {
+            height: 50vh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.mobile_smile {
+    .about_img {
+        &::before {
+            display: block;
+        }
+    }
+}
+
+.swiper_smile_photo_section {
+
+    .slide_img {
+        padding: 0;
+        border-radius: 0;
+        height: 390px;
+        @include adaptiv-vaule("height", 390, 300, 1);
+
+        @include media (">laptop") {
+            height: 50vh;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.smile_video {
+    border: none;
+}
+
+.choose_smile {
+    @include adaptiv-vaule("padding-bottom", 160, 70, 1);
+
+    .choose_smile_title {
+        font-size: 108px;
+        @include adaptiv-vaule("font-size", 108, 40, 1);
+        font-weight: 500;
+        line-height: 105%;
+        letter-spacing: -3.24px;
+        text-transform: uppercase;
+        text-align: center;
+        animation: fadeIn;
+        animation-duration: 4s;
+        max-width: 1070px;
+        width: 100%;
+        margin: 0 auto;
+        @include adaptiv-vaule("margin-bottom", 80, 40, 1);
+        padding: 0 15px;
+
+        &::after,
+        &::before {
+            @include adaptiv-vaule("height", 120, 40, 1);
+        }
+    }
+
+    .choose_smile_img {
+        @include adaptiv-vaule("height", 220, 150, 1);
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .choose_list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .choose_item {
+        padding: 60px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: start;
+
+        @include media ("<desktop") {
+            padding-right: 0;
+        }
+
+        @include media ("<tablet") {
+            br {
+                display: none;
+            }
+        }
+
+        &:nth-child(1) {
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            width: 30%;
+
+            @include media ("<desktop") {
+                width: 50%;
+                display: grid;
+                place-items: start;
+                @include adaptiv-vaule("padding-left", 40, 0, 1);
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                padding: 45px 0;
+                place-items: start;
+                border-right: none;
+            }
+        }
+
+        &:nth-child(2) {
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            width: 40%;
+            display: grid;
+            place-items: center;
+
+            @include media ("<desktop") {
+                width: 50%;
+                border-right: none;
+                place-items: start;
+                @include adaptiv-vaule("padding-left", 40, 0, 1);
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                padding: 45px 0;
+                place-items: start;
+                border-right: none;
+            }
+        }
+
+        &:nth-child(3) {
+            width: 30%;
+            display: grid;
+            place-items: end;
+            padding-right: 45px;
+
+            @include media ("<desktop") {
+                width: 50%;
+                border-right: 1px solid rgba(255, 255, 255, 0.15);
+                display: grid;
+                place-items: start;
+                @include adaptiv-vaule("padding-left", 40, 0, 1);
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                padding: 45px 0;
+                place-items: start;
+                border-right: none;
+            }
+        }
+
+        &:nth-child(4) {
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            width: 30%;
+
+            @include media ("<desktop") {
+                width: 50%;
+                border-right: none;
+                display: grid;
+                place-items: start;
+                @include adaptiv-vaule("padding-left", 40, 0, 1);
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                padding: 45px 0;
+                place-items: start;
+                border-right: none;
+            }
+        }
+
+        &:nth-child(5) {
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            width: 40%;
+            display: grid;
+            place-items: center;
+
+            @include media ("<desktop") {
+                width: 50%;
+                place-items: start;
+                @include adaptiv-vaule("padding-left", 40, 0, 1);
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                padding: 45px 0;
+                place-items: start;
+                border-right: none;
+            }
+        }
+
+        &:nth-child(6) {
+            width: 30%;
+            display: grid;
+            place-items: end;
+            padding-right: 45px;
+
+            @include media ("<desktop") {
+                width: 50%;
+                display: grid;
+                place-items: start;
+                @include adaptiv-vaule("padding-left", 40, 0, 1);
+            }
+
+            @include media ("<tablet") {
+                width: 100%;
+                padding: 45px 0;
+                place-items: start;
+                border-right: none;
+            }
+        }
+    }
+
+    .number {
+        color: $goldEE;
+        font-family: $IBM-font;
+        @include adaptiv-vaule("font-size", 18, 16, 1);
+        font-weight: 500;
+        line-height: 126%;
+        letter-spacing: -0.18px;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .item_title {
+        color: $white;
+        @include adaptiv-vaule("font-size", 32, 26, 1);
+        font-weight: 500;
+        line-height: 132%;
+        letter-spacing: -0.32px;
+    }
+}
+
+.dentist {
+    position: relative;
+    @include adaptiv-vaule("padding-top", 140, 70, 1);
+    @include adaptiv-vaule("padding-bottom", 140, 70, 1);
+
+    .dentist_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .subtitle {
+        color: $white;
+        text-align: center;
+        @include adaptiv-vaule("font-size", 22, 16, 1);
+        line-height: 162%;
+        letter-spacing: 0.457px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        display: block;
+    }
+
+    .dentist_title {
+        color: $white;
+        text-align: center;
+        @include adaptiv-vaule("font-size", 52, 22, 1);
+        line-height: 126%;
+        max-width: 1075px;
+        width: 100%;
+        margin: 0 auto;
+        letter-spacing: 1.029px;
+        text-transform: uppercase;
+    }
+}
+
+.typography_smile {
+    .gradient_block {
+        background: linear-gradient(90deg, #010B6C 0%, #F9F4EF 49.48%, #EEB663 98.96%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #010B6C 0%, #F9F4EF 49.48%, #EEB663 98.96%);
+        }
+
+    }
+
+    .color_name {
+        &:last-child {
+            color: $black;
+        }
+    }
+}
