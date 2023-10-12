@@ -1,36 +1,36 @@
 new WOW().init();
 const menuItems = document.querySelectorAll(".menu__item");
 const videos = document.querySelectorAll("[video]");
-// for (let index = 0; index < videos.length; index++) {
-//     const video = videos[index];
+for (let index = 0; index < videos.length; index++) {
+    const video = videos[index];
 
-//     if (index == 0) {
-//         video.addEventListener("ended", function (e) {
-//             videos[0].classList.add("hide_video");
-//             videos[1].classList.remove("hide_video");
-//             videos[1].play();
-//         });
-//     } else if (index == 1) {
-//         video.addEventListener("ended", function (e) {
-//             fullpage_api.moveSectionDown();
-//             videos[0].classList.remove("hide_video");
-//             videos[1].classList.add("hide_video");
-//             videos[1].pause();
-//             videos[1].currentIndex = 0;
-//         });
-//     } else {
-//         video.addEventListener("ended", function (e) {
-//             fullpage_api.moveSectionDown();
-//         });
-//     }
-// }
-
-for (var index = 0; index < videos.length; index++) {
-    var video = videos[index];
-    video.addEventListener("ended", function (e) {
-        fullpage_api.moveSectionDown();
-    });
+    if (index == 0) {
+        video.addEventListener("ended", function (e) {
+            videos[0].classList.add("hide_video");
+            videos[1].classList.remove("hide_video");
+            videos[1].play();
+        });
+    } else if (index == 1) {
+        video.addEventListener("ended", function (e) {
+            fullpage_api.moveSectionDown();
+            videos[0].classList.remove("hide_video");
+            videos[1].classList.add("hide_video");
+            videos[1].pause();
+            videos[1].currentIndex = 0;
+        });
+    } else {
+        video.addEventListener("ended", function (e) {
+            fullpage_api.moveSectionDown();
+        });
+    }
 }
+
+// for (var index = 0; index < videos.length; index++) {
+//     var video = videos[index];
+//     video.addEventListener("ended", function (e) {
+//         fullpage_api.moveSectionDown();
+//     });
+// }
 
 new fullpage("#fullpage", {
     navigation: false,
@@ -245,7 +245,13 @@ function changeVideoForMobile() {
     for (let index = 0; index < videos.length; index++) {
         const video = videos[index];
         if (!video.src.includes("mobile")) {
-            video.src = path + `files/main_video/video_${index + 1}_mobile.mp4`;
+            if(index==0){
+                video.src = path + `files/main_video/video_1_part1.mov_mobile.mov`;
+            }else if(index==1){
+                video.src = path + `files/main_video/video_1_part2.mov_mobile.mov`;
+            }else{
+                video.src = path + `files/main_video/video_${index}_mov_mobile.mov`;
+            }
         }
     }
 }

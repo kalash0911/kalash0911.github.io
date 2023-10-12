@@ -2,35 +2,37 @@
 
 new WOW().init();
 var menuItems = document.querySelectorAll(".menu__item");
-var videos = document.querySelectorAll("[video]"); // for (let index = 0; index < videos.length; index++) {
-//     const video = videos[index];
-//     if (index == 0) {
-//         video.addEventListener("ended", function (e) {
-//             videos[0].classList.add("hide_video");
-//             videos[1].classList.remove("hide_video");
-//             videos[1].play();
-//         });
-//     } else if (index == 1) {
-//         video.addEventListener("ended", function (e) {
-//             fullpage_api.moveSectionDown();
-//             videos[0].classList.remove("hide_video");
-//             videos[1].classList.add("hide_video");
-//             videos[1].pause();
-//             videos[1].currentIndex = 0;
-//         });
-//     } else {
-//         video.addEventListener("ended", function (e) {
-//             fullpage_api.moveSectionDown();
-//         });
-//     }
-// }
+var videos = document.querySelectorAll("[video]");
 
 for (var index = 0; index < videos.length; index++) {
   var video = videos[index];
-  video.addEventListener("ended", function (e) {
-    fullpage_api.moveSectionDown();
-  });
-}
+
+  if (index == 0) {
+    video.addEventListener("ended", function (e) {
+      videos[0].classList.add("hide_video");
+      videos[1].classList.remove("hide_video");
+      videos[1].play();
+    });
+  } else if (index == 1) {
+    video.addEventListener("ended", function (e) {
+      fullpage_api.moveSectionDown();
+      videos[0].classList.remove("hide_video");
+      videos[1].classList.add("hide_video");
+      videos[1].pause();
+      videos[1].currentIndex = 0;
+    });
+  } else {
+    video.addEventListener("ended", function (e) {
+      fullpage_api.moveSectionDown();
+    });
+  }
+} // for (var index = 0; index < videos.length; index++) {
+//     var video = videos[index];
+//     video.addEventListener("ended", function (e) {
+//         fullpage_api.moveSectionDown();
+//     });
+// }
+
 
 new fullpage("#fullpage", {
   navigation: false,
@@ -229,7 +231,13 @@ function changeVideoForMobile() {
     var _video = videos[_index2];
 
     if (!_video.src.includes("mobile")) {
-      _video.src = path + "files/main_video/video_".concat(_index2 + 1, "_mobile.mp4");
+      if (_index2 == 0) {
+        _video.src = path + "files/main_video/video_1_part1.mov_mobile.mov";
+      } else if (_index2 == 1) {
+        _video.src = path + "files/main_video/video_1_part2.mov_mobile.mov";
+      } else {
+        _video.src = path + "files/main_video/video_".concat(_index2, "_mov_mobile.mov");
+      }
     }
   }
 }
