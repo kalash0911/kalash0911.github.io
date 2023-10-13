@@ -80,6 +80,8 @@ new fullpage("#fullpage", {
     setSectionState(destination.index);
 
     if (destination.index === 1) {
+      videos[1].classList.add("hide_video");
+      videos[0].classList.remove("hide_video");
       showHeader(true);
     }
 
