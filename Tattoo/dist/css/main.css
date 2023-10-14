@@ -620,5 +620,44 @@ body {
   .main-section .text {
     max-width: 140px;
     margin: 0 auto; }
+  .main-section .mouse {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%); }
+    @media (max-width: 767px) {
+      .main-section .mouse {
+        display: none; } }
+    .main-section .mouse:hover svg {
+      fill: #FBFBFB; }
+    .main-section .mouse svg {
+      fill: #AEAEAE;
+      transition: all 0.3s ease 0s; }
+  .main-section .mouse2 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    -webkit-animation-name: arrow_tik;
+    animation-name: arrow_tik;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: steps(3, start);
+    animation-timing-function: steps(3, start);
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+
+@-webkit-keyframes arrow_tik {
+  0% {
+    top: -2px; }
+  100% {
+    top: 12px; } }
+
+@keyframes arrow_tik {
+  0% {
+    top: -2px; }
+  100% {
+    top: 12px; } }
 
 /*# sourceMappingURL=main.css.map */

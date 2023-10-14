@@ -57,4 +57,9 @@ $headings-font-family: $base-font-sans-serif;
 $headings-color: inherit !default;
 
 
-$animation-speed: 0.3s;
+$anim_03: all .3s ease 0s;
+$anim_05: all .5s ease 0s;
+$anim_07: all .7s ease 0s;
+$anim_1: all 1s ease 0s;
+
+$anim_line: all .7s ease 1s;

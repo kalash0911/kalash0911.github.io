@@ -60,4 +60,46 @@ body {
         max-width: 140px;
         margin: 0 auto;
     }
+
+    .mouse {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+
+        @include media ("<tablet") {
+            display: none;
+        }
+
+        &:hover {
+
+            svg {
+                fill: $whiteFB;
+            }
+        }
+
+        svg {
+            fill: $grayAE;
+            transition: $anim_03;
+        }
+    }
+
+    .mouse2 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        animation-name: arrow_tik;
+        animation-duration: 2s;
+        animation-timing-function: steps(3,start);
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes arrow_tik {
+        0%{
+            top: -2px;
+        }
+        100% {
+            top: 12px;
+        }
+    }
 }
