@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: $black0E;
 }
@@ -14,6 +18,23 @@ body {
     margin: 0 auto;
 }
 
+.title {
+    font-family: $SF;
+    color: $whiteFB;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 20px;
+
+    @include media ("<tablet") {
+        font-size: 48px;
+    }
+
+    @include media ("<phone") {
+        font-size: 36px;
+    }
+}
+
 .text {
     font-family: $SF;
     font-size: 18px;
@@ -21,14 +42,30 @@ body {
     line-height: 120%;
 }
 
+.animate__animated {
+    --animate-duration: 1.5s;
+}
+
+/* ------------------------------main-section----------------------- */
+
 .main-section {
     position: relative;
     min-height: 100vh;
-    padding: 100px 0;
+    padding: 150px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    &::after {
+        content:'';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 188px;
+        background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+    }
 
     .main-bg {
         position: absolute;
@@ -47,6 +84,21 @@ body {
         font-size: 88px;
         font-weight: 600;
         line-height: 100%;
+
+        @include media ("<tablet") {
+            font-size: 68px;
+        }
+
+        @include media ("<phone") {
+            font-size: 48px;
+        }
+    }
+
+    .block {
+
+        @include media ("<tablet") {
+            display: none;
+        }
     }
 
     .qr-wrap {
@@ -63,13 +115,10 @@ body {
 
     .mouse {
         position: absolute;
-        bottom: 20px;
+        bottom: 60px;
         left: 50%;
         transform: translate(-50%);
-
-        @include media ("<tablet") {
-            display: none;
-        }
+        z-index: 1;
 
         &:hover {
 
@@ -100,6 +149,340 @@ body {
         }
         100% {
             top: 12px;
+        }
+    }
+
+    .block-btn {
+        display: none;
+
+        @include media ("<tablet") {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+}
+
+/* ------------------------------how-section----------------------- */
+
+.how-section {
+    padding: 100px 0;
+
+    @include media ("<phone") {
+        padding: 80px 0 30px 0;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .circle {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        @include media ("<tablet") {
+            display: none;
+            top: 65%;
+        }
+
+        &.mob {
+            display: block;
+        }   
+    }   
+
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include media ("<desktop") {
+            align-items: flex-end;
+        }
+
+        @include media ("<tablet") {
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+
+    .title {
+        margin-bottom: 64px;
+        opacity: 0;
+        transform: translateY(40px);
+
+        @include media ("<tablet") {
+            margin: 0 auto;
+        }
+
+        &.show {
+            opacity: 1;
+            transform: translate(0);
+            transition: $anim_15;
+        }
+    }
+
+    .slider-how-nav {
+        position: relative;
+        width: 100%;
+        max-width: 580px;
+        margin: 0;
+
+        @include media ("<tablet") {
+           display: none;
+        }
+
+        &.show {
+
+            .item-nav {
+                opacity: 1;
+    
+                &:nth-child(1) {
+                    transition: opacity .5s ease 0s;
+                }
+    
+                &:nth-child(2) {
+                    transition: opacity .5s ease .3s;
+                }
+    
+                &:nth-child(3) {
+                    transition: opacity .5s ease .6s;
+                }
+    
+                &:nth-child(4) {
+                    transition: opacity .5s ease .9s;
+                }
+            }
+    
+            .top {
+                opacity: 1;
+                transition: opacity .5s ease .6s;
+            }
+    
+            .mid {
+                opacity: 1;
+                transition: opacity .5s ease .9s;
+            }
+    
+            .bot {
+                opacity: 1;
+                transition: opacity .5s ease 1.2s;
+            }
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 56px;
+
+            @include media ("<desktop") {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+
+    .item-nav {
+        height: auto;
+        width: 100%;
+        max-width: 232px;
+        min-width: 232px;
+        margin-left: 56px;
+        transition: $anim_03;
+        cursor: pointer;
+        opacity: 0;
+
+        @include media ("<desktop") {
+            margin: 0;
+            max-width: 100%;
+        }
+
+        &.first {
+            margin: 0;
+        }
+
+        &:hover {
+            .item-nav-content {
+                border: 2px solid $green55;
+            }
+        }
+    }
+
+    .swiper-slide-thumb-active {
+
+        .item-nav-content {
+            border: 2px solid $green55;
+        }
+    }
+
+    .item-nav-content {
+        padding: 36px 22px;
+        border-radius: 40px;
+        border: 2px solid transparent;
+        background-color: $black1B;
+        transition: $anim_03;
+
+        @include media ("<desktop") {
+            padding: 22px;
+        }
+
+        @include media ("<tablet") {
+            background: none;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto 30px auto;
+            max-width: 208px;
+        }
+
+        .img {
+            margin-bottom: 12px;
+        }
+
+        .text {
+            margin: 0;
+            font-family: $SF;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 140%;
+
+            @include media ("<phone") {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .line {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+
+        &.top {
+            top: 80px;
+            left: 44%;
+            transform: translate(-50%);
+        }
+
+        &.mid {
+            top: 50%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.bot {
+            bottom: 80px;
+            left: 55%;
+            transform: translate(-50%);
+        }
+    }
+
+    .slider-how {
+        width: 100%;
+        max-width: 332px;
+        opacity: 0;
+        transform: translate(100px);
+        transition: $anim_2;
+
+        @include media ("<tablet") {
+            opacity: 1;
+            transform: translate(0);
+            max-width: 100%;
+        }
+
+        &.show {
+            opacity: 1;
+            transform: translate(0);
+            transition: $anim_15;
+        }
+    }
+
+    .slide {
+
+        .item-nav-content {
+
+            @include media ("<tablet") {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: $anim_15;
+            }
+        }
+
+        .slide-content {
+
+            @include media ("<tablet") {
+                opacity: 0;
+                transform: translate(100px);
+                transition: $anim_15;
+            }
+        }
+
+        &.show {
+
+            .item-nav-content {
+                opacity: 1;
+                transform: translate(0);
+            }
+
+            .slide-content {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+    }
+    
+    .swiper-slide-active {
+
+        .slide-content {
+            opacity: 1;
+        }
+    }
+
+    .slide-content {
+        position: relative;
+        opacity: 0;
+        transition: $anim_1;
+        width: 332px;
+        height: 660px;
+        border-radius: 60px;
+        overflow: hidden;
+        margin: 0 auto;
+
+        @include media ("<phone") {
+            width: 219px;
+            height: 436px;
+            border-radius: 40px;
+        }
+    }
+
+    .mockup {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 332px;
+        height: 660px;
+
+        @include media ("<phone") {
+            width: 219px;
+            height: 436px;
+        }
+    }
+
+    .video {
+        width: 332px;
+        height: 660px;
+    }
+
+    .mob {
+        display: none;
+
+        @include media ("<tablet") {
+            display: block;
         }
     }
 }

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tattoos with AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/main.css">
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
@@ -31,8 +31,17 @@
                         </div>
                         <p class="text wow animate__animated animate__fadeInUp">Scan to Download Tattoo App</p>
                     </div>
+                    <div class="block-btn">
+                        <a class="btn animate__animated animate__fadeInLeft" href="#" target="_blank">
+                            <img src="./images/icons/app-btn.svg" alt="btn img">
+                        </a>
+                        <p class="text wow animate__animated animate__fadeIn">or</p>
+                        <a class="btn wow animate__animated animate__fadeInRight" href="#" target="_blank">
+                            <img src="./images/icons/google-btn.svg" alt="btn img">
+                        </a>
+                    </div>
                 </div>
-                <a class="mouse" href="#">
+                <a class="mouse wow animate__animated animate__fadeIn" href="#how">
                     <svg class="mouse1" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24.0025 43.2008C27.567 43.2008 30.9855 41.7848 33.506 39.2643C36.0265 36.7438 37.4425 33.3253 37.4425 29.7608V18.2408C37.4425 14.6763 36.0265 11.2578 33.506 8.73727C30.9855 6.21678 27.567 4.80078 24.0025 4.80078C20.438 4.80078 17.0195 6.21678 14.499 8.73727C11.9785 11.2578 10.5625 14.6763 10.5625 18.2408V29.7608C10.5625 33.3253 11.9785 36.7438 14.499 39.2643C17.0195 41.7848 20.438 43.2008 24.0025 43.2008ZM12.4825 18.2408C12.4825 15.1855 13.6962 12.2553 15.8566 10.0949C18.017 7.93449 20.9472 6.72078 24.0025 6.72078C27.0578 6.72078 29.988 7.93449 32.1484 10.0949C34.3088 12.2553 35.5225 15.1855 35.5225 18.2408V29.7608C35.5225 32.8161 34.3088 35.7462 32.1484 37.9067C29.988 40.0671 27.0578 41.2808 24.0025 41.2808C20.9472 41.2808 18.017 40.0671 15.8566 37.9067C13.6962 35.7462 12.4825 32.8161 12.4825 29.7608V18.2408Z"/>
                     </svg>
@@ -40,6 +49,97 @@
                         <path d="M23.0441 23.5225H23.1305L23.3225 23.7241C23.4117 23.8141 23.5179 23.8855 23.6349 23.9342C23.7519 23.983 23.8774 24.0081 24.0041 24.0081C24.1308 24.0081 24.2563 23.983 24.3733 23.9342C24.4903 23.8855 24.5965 23.8141 24.6857 23.7241L24.8777 23.5225H24.9641V23.4361L30.4457 17.9641L29.0825 16.6009L24.9641 20.7289V10.5625H23.0441V20.7289L18.9257 16.6009L17.5625 17.9641L23.0441 23.4361V23.5225Z"/>
                     </svg>
                 </a>
+            </section>
+            <section class="how-section" id="how">
+                <div class="container">
+                    <img class="circle" src="./images/green-circle.png" alt="icon">
+                    <div class="content">
+                        <h2 class="title anim mob">How It works</h2>
+                        <div class="swiper slider-how-nav anim">
+                            <h2 class="title anim">How It works</h2>
+                            <div class="swiper-wrapper">
+                                <div class="item-nav first swiper-slide">
+                                    <div class="item-nav-content">
+                                        <img class="img" src="./images/icons/how-icon1.svg" alt="icon">
+                                        <p class="text">Describe a Tattoo You’d Like to Get</p>
+                                    </div>
+                                </div>
+                                <div class="item-nav swiper-slide">
+                                    <div class="item-nav-content">
+                                        <img class="img" src="./images/icons/how-icon2.svg" alt="icon">
+                                        <p class="text">Choose Tattoo Spot and Options</p>
+                                    </div>
+                                </div>
+                                <div class="item-nav swiper-slide">
+                                    <div class="item-nav-content">
+                                        <img class="img" src="./images/icons/how-icon3.svg" alt="icon">
+                                        <p class="text">You Can Upload a Reference</p>
+                                    </div>
+                                </div>
+                                <div class="item-nav swiper-slide">
+                                    <div class="item-nav-content">
+                                        <img class="img" src="./images/icons/how-icon4.svg" alt="icon">
+                                        <p class="text">Upscale or Edit Your Results</p>
+                                    </div>
+                                </div>
+                                <svg class="line top" xmlns="http://www.w3.org/2000/svg" width="142" height="34" viewBox="0 0 142 34" fill="none">
+                                    <path opacity="0.5" d="M1.5 33.0006C52 -14.4994 109 -1.99943 140.5 27.5006" stroke="#AEAEAE" stroke-width="2"/>
+                                </svg>
+                                <svg class="line mid" xmlns="http://www.w3.org/2000/svg" width="203" height="95" viewBox="0 0 203 95" fill="none">
+                                    <path opacity="0.5" d="M202.001 0.5C191.001 62 133.5 58.5 95.5023 43C50.4591 24.626 0.00145513 44.5 1.50146 94.5" stroke="#AEAEAE" stroke-width="2"/>
+                                </svg>
+                                <svg class="line bot" xmlns="http://www.w3.org/2000/svg" width="141" height="34" viewBox="0 0 141 34" fill="none">
+                                    <path opacity="0.5" d="M1 0.99943C51.5 48.4994 108.5 35.9994 140 6.49943" stroke="#AEAEAE" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="swiper slider-how anim">
+                            <div class="swiper-wrapper">
+                                <div class="slide swiper-slide anim">
+                                    <div class="item-nav-content mob">
+                                        <img class="img" src="./images/icons/how-icon1.svg" alt="icon">
+                                        <p class="text">Describe a Tattoo You’d Like to Get</p>
+                                    </div>
+                                    <div class="slide-content">
+                                        <img class="mockup" src="./images/mockup.png" alt="img">
+                                        <img class="video" src="./images/main-bg.png" alt="video">
+                                    </div>
+                                    <img class="circle mob" src="./images/green-circle.png" alt="icon">
+                                </div>
+                                <div class="slide swiper-slide anim">
+                                    <div class="item-nav-content mob">
+                                        <img class="img" src="./images/icons/how-icon2.svg" alt="icon">
+                                        <p class="text">Choose Tattoo Spot and Options</p>
+                                    </div>
+                                    <div class="slide-content">
+                                        <img class="mockup" src="./images/mockup.png" alt="img">
+                                    </div>
+                                    <img class="circle mob" src="./images/green-circle.png" alt="icon">
+                                </div>
+                                <div class="slide swiper-slide anim">
+                                    <div class="item-nav-content mob">
+                                        <img class="img" src="./images/icons/how-icon3.svg" alt="icon">
+                                        <p class="text">You Can Upload a Reference</p>
+                                    </div>
+                                    <div class="slide-content">
+                                        <img class="mockup" src="./images/mockup.png" alt="img">
+                                    </div>
+                                    <img class="circle mob" src="./images/green-circle.png" alt="icon">
+                                </div>
+                                <div class="slide swiper-slide anim">
+                                    <div class="item-nav-content mob">
+                                        <img class="img" src="./images/icons/how-icon4.svg" alt="icon">
+                                        <p class="text">Upscale or Edit Your Results</p>
+                                    </div>
+                                    <div class="slide-content">
+                                        <img class="mockup" src="./images/mockup.png" alt="img">
+                                    </div>
+                                    <img class="circle mob" src="./images/green-circle.png" alt="icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer id="footer">
