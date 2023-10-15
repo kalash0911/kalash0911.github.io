@@ -74,6 +74,7 @@ new fullpage("#fullpage", {
             first_main_video.classList.remove("hide_video");
             first_main_video.currentTime = 0;
             second_main_video.currentIndex = 0;
+            first_main_video.play();
         }
 
         menuItems.forEach((menu) => {
@@ -148,6 +149,10 @@ function init() {
         }
         showCopyCodeButton(true);
     });
+
+    first_main_video.addEventListener('loadeddata', function() {
+        showLoader(false);
+    }, false);
 
     first_main_video.addEventListener(
         "timeupdate",
