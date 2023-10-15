@@ -1,0 +1,335 @@
+.body_lock {
+    overflow: hidden;
+}
+
+.overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: $anim_03;
+}
+
+.overflow_active {
+    z-index: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 24px 0;
+    z-index: 5;
+   /*  animation-name: header_anim; */
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    @include media('<desktop'){
+        padding: 0;
+    }
+
+    @keyframes header_anim {
+        0% {
+            top: -200px;
+            opacity: 0;
+        }
+        100% {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    .container {
+        max-width: 1352px;
+
+        @include media('<desktop'){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 0 16px;
+        }
+    }
+
+    .logo {
+        z-index: 1;
+        margin-right: 100px;
+
+        @include media('<desktop'){
+            display: none;
+        }
+
+        @include media('<phone'){
+            width: 45px;
+        }
+
+        &.mob {
+            display: none;
+
+            @include media('<desktop'){
+                display: block;
+            }
+        }
+    }
+
+    .menu-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        @include media('<widescreen'){
+            gap: 30px;
+        }
+
+        @include media('<desktop'){
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 40%;
+            height: 100vh;
+            min-height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px 20px 100px 20px;
+            transition: $anim_1;
+            background-color: $black0E;
+            overflow: hidden;
+        }
+
+        @include media('<tablet'){
+            width: 60%;
+        }
+
+        @include media('<phone'){
+            width: 100%;
+            transition: $anim_05;
+        }
+
+        .active & {
+            right: 0;
+            transition: $anim_05;
+        }
+    }
+
+    .menu-wrap {
+        z-index: 1;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include media('<desktop'){
+            flex-direction: column;
+        }
+    }
+    
+    .main-btn {
+        z-index: 1;
+        min-height: 56px;
+
+        @include media('<desktop'){
+            display: none;
+        }
+    }
+
+    .img-bg {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 981px;
+        height: 887px;
+
+        @include media('<desktop'){
+            display: block;
+        }
+    }
+    
+    .link {
+        position: relative;
+        font-family: $SF;
+        color: $whiteF4;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 112%;
+        transition: $anim_03;
+
+        @include media('<desktop'){
+            font-size: 22px;
+        }
+
+        &::before,
+        &::after {
+            content:'';
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            width: 0;
+            height: 1px;
+            background-color: $green55;
+            transition: $anim_03;
+        }
+
+        &::before {
+            top: -5px;
+        }
+
+        &::after {
+            bottom: -5px;
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* ---------------burger */
+
+.burger{
+    position: relative;
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &::before {
+        content:'';
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.10);
+    }
+
+    @include media('<desktop'){
+        display: block;
+    }
+
+    .des {
+        position: absolute;
+    }
+
+    .plates {
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(.75);
+    }
+
+    .burger-plate {
+        width: 80px;
+        height: 80px;
+        filter: url(#gooeyness);
+    }
+
+    .x {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        transition: transform 500ms;
+    }
+
+    .line {
+        fill: none;
+        stroke: $green55;
+        stroke-width: 5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transform-origin: 50%;
+        transition: stroke-dasharray 600ms 300ms, stroke-dashoffset 600ms 300ms, transform 500ms 200ms;
+    }
+
+    .x .line {
+        stroke-width: 5.5px;
+    }
+
+    .line1 {
+        stroke-dasharray: 21 185.62753295898438;
+        transition-delay: 0;
+    }
+
+    .line2 {
+        stroke-dasharray: 21 178.6514129638672;
+        transition-delay: 30ms;
+    }
+
+    .line3 {
+        stroke-dasharray: 21 197.92425537109375;
+        transition-delay: 60ms;
+    }
+
+    .line4 {
+        stroke-dasharray: 21 190.6597137451172;
+        transition-delay: 90ms;
+    }
+
+    .line5 {
+        stroke-dasharray: 21 208.52874755859375;
+        transition-delay: 120ms;
+    }
+
+    .line6 {
+        stroke-dasharray: 21 186.59703063964844;
+        transition-delay: 150ms;
+    }
+
+    .active & {
+
+        .line1 {
+            stroke-dasharray: 5 185.62753295898438;
+            stroke-dashoffset: -141px;
+        }
+
+        .line2 {
+            stroke-dasharray: 5 178.6514129638672;
+            stroke-dashoffset: -137px;
+        }
+
+        .line3 {
+            stroke-dasharray: 5 197.92425537109375;
+            stroke-dashoffset: -176px;
+        }
+
+        .line4 {
+            stroke-dasharray: 5 190.6597137451172;
+            stroke-dashoffset: -159px;
+        }
+
+        .line5 {
+            stroke-dasharray: 5 208.52874755859375;
+            stroke-dashoffset: -139px;
+        }
+
+        .line6 {
+            stroke-dasharray: 5 186.59703063964844;
+            stroke-dashoffset: -176px;
+        }
+
+        .x {
+            transform: scale(1);
+            transition: transform 400ms 250ms;
+        }
+    }
+}

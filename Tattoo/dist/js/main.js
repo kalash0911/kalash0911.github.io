@@ -12,7 +12,44 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-new WOW().init(); // Swiper:
+new WOW().init(); // for header
+
+var burger = document.querySelector(".burger");
+var menuBody = document.querySelector(".menu-wrap");
+var linkClose = document.querySelectorAll(".link-close");
+var overflow = document.querySelector(".overflow");
+
+if (burger) {
+  burger.addEventListener("click", function (e) {
+    document.body.classList.toggle("body_lock");
+    document.body.classList.toggle("active");
+    overflow.classList.toggle("overflow_active");
+  });
+}
+
+;
+
+if (overflow) {
+  overflow.addEventListener("click", function (e) {
+    document.body.classList.toggle("body_lock");
+    document.body.classList.toggle("active");
+    overflow.classList.toggle("overflow_active");
+  });
+}
+
+;
+
+if (linkClose.length) {
+  for (var i = 0; i < linkClose.length; ++i) {
+    linkClose[i].addEventListener("click", function (e) {
+      document.body.classList.remove("body_lock");
+      document.body.classList.remove("active");
+      overflow.classList.remove("overflow_active");
+    });
+  }
+}
+
+; // Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
