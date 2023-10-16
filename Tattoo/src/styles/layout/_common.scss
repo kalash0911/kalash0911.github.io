@@ -118,6 +118,16 @@ body {
     }
 }
 
+.btn {
+    transition: $anim_03;
+    border-radius: 7px;
+    overflow: hidden;
+
+    &:hover {
+        box-shadow: 2px 2px 5px $grayAE;
+    }
+}
+
 .animate__animated {
     --animate-duration: 1.5s;
 }
@@ -476,9 +486,22 @@ body {
             transform: translate(0);
             transition: $anim_15;
         }
+
+        .swiper-wrapper {
+
+            @include media ("<tablet") {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+            }
+        }
     }
 
     .slide {
+
+        @include media ("<tablet") {
+            transform: none;
+        }
 
         .item-nav-content {
 
@@ -1124,4 +1147,97 @@ body {
             font-size: 20px;
         }
     }
+}
+
+/* -----------------------------download-section-------------------- */
+
+.download-section {
+    position: relative;
+    padding: 100px 0;
+
+    @include media ("<phone") {
+        padding: 60px 0;
+    }
+
+    &::before,
+    &::after {
+        content:'';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        z-index: -1;
+
+        @include media ("<phone") {
+            height: 50px;
+        }
+    }
+
+    &::before {
+        top: 0;
+        background: linear-gradient(0deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+    }
+
+    &::after {
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(14, 14, 14, 0.00) 0%, #0E0E0E 100%);
+    }
+    
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    .title {
+        margin-bottom: 56px;
+        text-align: center;
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 36px;
+        row-gap: 12px;
+
+        @include media ("<phone") {
+            flex-direction: column;
+        }
+    }
+
+    .qr-code-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    .code {
+        width: 124px;
+
+        @include media ("<tablet") {
+            display: none;
+        }
+    }
+
+    .text {
+        margin: 0;
+        font-family: $SF;
+        color: $grayAE;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+        transform: translateY(-35px);
+
+        @include media ("<tablet") {
+            transform: none;
+        }
+    }
+    
 }
