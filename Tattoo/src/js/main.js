@@ -76,7 +76,14 @@ const howSlider = destroySlidersOnResize(".slider-how", 99999, {
 
 });
 
-destroySlidersOnResize(".slider-how-nav", 1, {});
+destroySlidersOnResize(".slider-how-nav", 99999, {});
+
+
+destroySlidersOnResize(".slider-our", 99999, {
+  spaceBetween: 20,
+  freeMode: true,
+  slidesPerView: 'auto',
+});
 
 /* castom anim */
 
