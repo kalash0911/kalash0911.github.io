@@ -46,8 +46,8 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
 
   const toggleInit = () => {
     const neededWidth = moreThan
-      ? win.innerWidth >= width
-      : win.innerWidth <= width;
+      ? win.innerWidth <= width
+      : win.innerWidth >= width;
     if (neededWidth) {
       if (!sliderSelector?.classList.contains("swiper-initialized")) {
         swiper = new Swiper(selector, init);
@@ -60,11 +60,9 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   ["load", "resize"].forEach((evt) =>
     win.addEventListener(evt, toggleInit, false)
   );
-
-  return swiper;
 }
 
-const howSlider = destroySlidersOnResize(".slider-how", 99999, {
+const howSlider = destroySlidersOnResize(".slider-how", 768, {
   speed: 0,
 
   thumbs: {
@@ -76,13 +74,37 @@ const howSlider = destroySlidersOnResize(".slider-how", 99999, {
 
 });
 
-destroySlidersOnResize(".slider-how-nav", 99999, {});
+destroySlidersOnResize(".slider-how-nav", 768, {});
 
-
-destroySlidersOnResize(".slider-our", 99999, {
+destroySlidersOnResize(".slider-our", 1, {
   spaceBetween: 20,
   freeMode: true,
   slidesPerView: 'auto',
+});
+
+destroySlidersOnResize(".slider-reviews", 1, {
+  spaceBetween: 20,
+  slidesPerView: 5,
+
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
+
+  breakpoints: {
+    300: {
+      slidesPerView: 1,
+    },
+
+    768: {
+      slidesPerView: 2,
+    },
+
+    1024: {
+      slidesPerView: 5,
+    },
+  },
+
 });
 
 /* castom anim */
@@ -99,4 +121,42 @@ let observer = new IntersectionObserver(onEntry, options);
 let elements = document.querySelectorAll('.anim');
 for (let elm of elements) {
   observer.observe(elm);
+}
+
+// For counter animate
+if (document.querySelectorAll(".count-progress").length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (
+        entry.isIntersecting &&
+        entry.target.getAttribute("data-animated") === "false"
+      ) {
+        const element = entry.target;
+        const count = parseFloat(element.innerText);
+        const isInteger = count % 1 === 0; // Проверяем, является ли число целым
+
+        let currentCount = 0;
+        const speed = parseInt(element.getAttribute("data-speed")) || 10;
+        const step = parseFloat(element.getAttribute("data-step")) || 0.1;
+        const decimalPlaces = isInteger ? 0 : 1; // Устанавливаем количество знаков после запятой в зависимости от того, целое число или нет
+
+        const interval = setInterval(() => {
+          if (currentCount < count) {
+            currentCount += step;
+            if (currentCount > count) {
+              currentCount = count;
+            }
+            element.innerText = currentCount.toFixed(decimalPlaces);
+          } else {
+            clearInterval(interval);
+            element.setAttribute("data-animated", "true");
+          }
+        }, speed);
+      }
+    });
+  });
+
+  document.querySelectorAll(".count-progress").forEach((element) => {
+    observer.observe(element);
+  });
 }

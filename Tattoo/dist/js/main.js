@@ -59,7 +59,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   var swiper = new Swiper(selector, init);
 
   var toggleInit = function toggleInit() {
-    var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
+    var neededWidth = moreThan ? win.innerWidth <= width : win.innerWidth >= width;
 
     if (neededWidth) {
       if (!(sliderSelector === null || sliderSelector === void 0 ? void 0 : sliderSelector.classList.contains("swiper-initialized"))) {
@@ -73,10 +73,9 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   ["load", "resize"].forEach(function (evt) {
     return win.addEventListener(evt, toggleInit, false);
   });
-  return swiper;
 }
 
-var howSlider = destroySlidersOnResize(".slider-how", 99999, {
+var howSlider = destroySlidersOnResize(".slider-how", 768, {
   speed: 0,
   thumbs: {
     swiper: {
@@ -85,11 +84,30 @@ var howSlider = destroySlidersOnResize(".slider-how", 99999, {
     }
   }
 });
-destroySlidersOnResize(".slider-how-nav", 99999, {});
-destroySlidersOnResize(".slider-our", 99999, {
+destroySlidersOnResize(".slider-how-nav", 768, {});
+destroySlidersOnResize(".slider-our", 1, {
   spaceBetween: 20,
   freeMode: true,
   slidesPerView: 'auto'
+});
+destroySlidersOnResize(".slider-reviews", 1, {
+  spaceBetween: 20,
+  slidesPerView: 5,
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev"
+  },
+  breakpoints: {
+    300: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 5
+    }
+  }
 });
 /* castom anim */
 
@@ -114,10 +132,47 @@ try {
   for (_iterator.s(); !(_step = _iterator.n()).done;) {
     var elm = _step.value;
     observer.observe(elm);
-  }
+  } // For counter animate
+
 } catch (err) {
   _iterator.e(err);
 } finally {
   _iterator.f();
+}
+
+if (document.querySelectorAll(".count-progress").length) {
+  var _observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && entry.target.getAttribute("data-animated") === "false") {
+        var element = entry.target;
+        var count = parseFloat(element.innerText);
+        var isInteger = count % 1 === 0; // Проверяем, является ли число целым
+
+        var currentCount = 0;
+        var speed = parseInt(element.getAttribute("data-speed")) || 10;
+        var step = parseFloat(element.getAttribute("data-step")) || 0.1;
+        var decimalPlaces = isInteger ? 0 : 1; // Устанавливаем количество знаков после запятой в зависимости от того, целое число или нет
+
+        var interval = setInterval(function () {
+          if (currentCount < count) {
+            currentCount += step;
+
+            if (currentCount > count) {
+              currentCount = count;
+            }
+
+            element.innerText = currentCount.toFixed(decimalPlaces);
+          } else {
+            clearInterval(interval);
+            element.setAttribute("data-animated", "true");
+          }
+        }, speed);
+      }
+    });
+  });
+
+  document.querySelectorAll(".count-progress").forEach(function (element) {
+    _observer.observe(element);
+  });
 }
 //# sourceMappingURL=main.js.map

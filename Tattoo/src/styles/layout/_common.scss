@@ -64,6 +64,21 @@ body {
     @include media ("<phone") {
         font-size: 36px;
     }
+
+    .img-wrap {
+        display: inline-block;
+        width: 100px;
+        height: 64px;
+        border-radius: 49px;
+        overflow: hidden;
+        transform: translateY(13px);
+
+        @include media ("<tablet") {
+            width: 50px;
+            height: 32px;
+            transform: translateY(2px);
+        }
+    }
 }
 
 .text {
@@ -74,6 +89,32 @@ body {
 
     @include media ("<phone") {
         font-size: 16px;
+    }
+}
+
+.stiker {
+    display: inline-block;
+    background-color: rgba($green55, 0.12);
+    border-radius: 20px;
+    padding: 9px 24px;
+    text-align: center;
+    font-family: $SF;
+    color: $green55;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.img-wrap {
+    position: relative;
+    
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -522,7 +563,7 @@ body {
     }
 }
 
-/* ------------------------------try-section----------------------- */
+/* ------------------------------try-section---------------------- */
 
 .try-section {
     padding: 100px 0;
@@ -598,6 +639,18 @@ body {
 
 /* ------------------------------our-section----------------------- */
 
+@mixin transition {
+	@for $i from 1 through 100 {
+
+		&:nth-child(#{$i}) {
+
+			.slide-content {
+				transition: all .7s #{$i * .3}s ease;
+			}
+		}
+	}
+}
+
 .our-section {
     padding: 100px 0;
     text-align: center;
@@ -623,6 +676,7 @@ body {
         min-width: 216px;
         max-width: 216px;
         min-height: 500px;
+        @include transition;
 
         @include media ("<phone") {
             min-width: 100px;
@@ -653,6 +707,22 @@ body {
         &:nth-child(7n) {
             justify-content: flex-end;
         }
+
+        &:nth-child(odd) {
+            
+            .slide-content {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+        }
+
+        &:nth-child(even) {
+
+            .slide-content {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+        }
     }
 
     .slide-content {
@@ -677,5 +747,381 @@ body {
         height: 100%;
         object-fit: cover;
     }
+
+    .show {
+
+        .slide {
+             
+            &:nth-child(odd),
+            &:nth-child(even) {
+                
+                .slide-content {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* -----------------------------reviews-section--------------------- */
+
+.reviews-section {
+    padding: 100px 0;
+
+    @include media ("<phone") {
+        padding: 40px 0;
+    }
+
+    .container {
+        text-align: center;
+        padding: 0;
+    }
+
+    .stiker {
+        margin-bottom: 36px;
+    }
+
+    .title {
+        margin-bottom: 200px;
+        line-height: 122%;
+        padding: 0 16px;
+
+        @include media ("<desktop") {
+            margin-bottom: 80px;
+        }
+
+        @include media ("<phone") {
+            font-size: 34px;
+        }
     
+        .img-wrap {
+    
+            @include media ("<phone") {
+                transform: translateY(5px);
+            }
+        }
+    }
+
+    .block {
+        position: relative;
+        min-height: 600px;
+
+        @include media ("<desktop") {
+            display: flex;
+        }
+
+        @include media ("<phone") {
+            min-height: 340px;
+        }
+    }
+
+    .map-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .slider-reviews {
+        min-height: 600px;
+        overflow: inherit;
+
+        @include media ("<desktop") {
+            min-height: 0;
+            overflow: hidden;
+            margin: auto 0;
+            padding: 0 45px;
+        }
+    }
+
+    .slide {
+        min-height: 600px;
+        @include transition;
+
+        @include media ("<desktop") {
+            min-height: 0;
+        }
+
+        @include media (">desktop") {
+
+            &:nth-child(1) {
+                z-index: 1;
+    
+                .text-box {
+                    top: 80%;
+                }
+    
+                .slide-content {
+                    left: 55%;
+                    top: 33%;
+    
+                    &:hover {
+                        
+                        .text-box {
+                            top: 130%;
+                        }
+                    }
+                }
+            }
+    
+            &:nth-child(2) {
+                z-index: 2;
+    
+                .text-box {
+                    bottom: 80%;
+                }
+    
+                .slide-content {
+                    left: 50%;
+                    top: 60%;
+    
+                    &:hover {
+                        
+                        .text-box {
+                            bottom: 130%;
+                        }
+                    }
+                }
+            }
+    
+            &:nth-child(3) {
+                z-index: 3;
+    
+                .text-box {
+                    top: 80%;
+                }
+    
+                .slide-content {
+                    left: 43%;
+                    top: 26%;
+    
+                    &:hover {
+                        
+                        .text-box {
+                            top: 130%;
+                        }
+                    }
+                }
+            }
+    
+            &:nth-child(4) {
+                z-index: 4;
+    
+                .text-box {
+                    bottom: 80%;
+                }
+    
+                .slide-content {
+                    left: 50%;
+                    top: 44%;
+    
+                    &:hover {
+                        
+                        .text-box {
+                            bottom: 130%;
+                        }
+                    }
+                }
+            }
+    
+            &:nth-child(5) {
+                z-index: 5;
+    
+                .text-box {
+                    bottom: 80%;
+                }
+    
+                .slide-content {
+                    left: 10%;
+                    top: 65%;
+    
+                    &:hover {
+                        
+                        .text-box {
+                            bottom: 130%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slide-content {
+        position: absolute;
+        z-index: 1;
+        cursor: pointer;
+        opacity: 0;
+
+        @include media ("<desktop") {
+            position: relative;
+        }
+
+        &:hover {
+
+            .slide-img {
+                border: 3px solid $green55;
+            }
+            
+            .text-box {
+                opacity: 1;
+            }
+        }
+    }
+
+    .slide-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid transparent;
+        transition: $anim_03;
+
+        @include media ("<desktop") {
+            display: none;
+        }
+    }
+
+    .text-box {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        opacity: 0;
+        min-width: 224px;
+        padding: 24px;
+        border-radius: 30px;
+        background: $black1B;
+        transition: $anim_03;
+        z-index: -1;
+        pointer-events: none;
+
+        @include media ("<desktop") {
+            position: relative;
+            left: auto;
+            transform: none;
+            opacity: 1;
+            min-width: 0;
+            z-index: 1;
+            pointer-events: all;
+        }
+    }
+
+    .name-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 6px;
+    }
+
+    .name {
+        font-family: $SF;
+        color: $whiteFB;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .rait {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: $SF;
+        color: $green55;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 111%;
+    }
+
+    .text {
+        margin: 0;
+        text-align: left;
+        font-family: $SF;
+        color: $grayAE;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 140%;
+    }
+
+    .arrow {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        @include media ("<desktop") {
+            display: block;
+        }
+
+        &.prev {
+            left: 30px;
+
+        }
+
+        &.next {
+            right: 30px;
+        }
+    }
+
+    .show {
+
+        .slide-content {
+            opacity: 1;
+        }
+    }
+
+    .num-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 36px;
+        padding: 0 16px;
+
+        @include media ("<desktop") {
+            flex-wrap: wrap;
+        }
+    }
+
+    .item {
+        text-align: left;
+
+        @include media ("<desktop") {
+            width: 45%;
+            text-align: center;
+        }
+
+        @include media ("<550px") {
+            width: 100%;
+        }
+    }
+
+    .num {
+        margin-bottom: 12px;
+        font-family: $SF;
+        color: $green55;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+
+        @include media ("<phone") {
+            font-size: 36px;
+        }
+    }
+
+    .num-text {
+        margin: 0;
+        font-family: $SF;
+        color: $whiteFB;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 100%;
+
+        @include media ("<phone") {
+            font-size: 20px;
+        }
+    }
 }
