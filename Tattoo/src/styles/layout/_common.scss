@@ -471,9 +471,10 @@ body {
     .slider-how {
         width: 100%;
         max-width: 332px;
-        opacity: 0;
-        transform: translate(100px);
         transition: $anim_2;
+        opacity: 0;
+        transition: $anim_1;
+        transform: translate(100px);
 
         @include media ("<tablet") {
             opacity: 1;
@@ -498,20 +499,7 @@ body {
     }
 
     .slide {
-        opacity: 0;
         transition: $anim_1;
-
-        &.first {
-            transform: translate(50px);
-
-            @include media ("<tablet") {
-                transform: translateY(100px);
-            }
-        }
-
-        @include media ("<tablet") {
-            transform: translateY(100px);
-        }
 
         .item-nav-content {
 
@@ -523,26 +511,26 @@ body {
         }
 
         &.show {
-            opacity: 1;
-            transform: translate(0);
-
+            
             .item-nav-content {
-                opacity: 1;
-                transform: translate(0);
+                
+                @include media ("<tablet") {
+                    opacity: 1;
+                    transform: translate(0);
+                }
             }
-        }
-    }
-    
-    .swiper-slide-active {
 
-        .slide-content {
-            opacity: 1;
+            .slide-content  {
+                @include media ("<tablet") {
+                    opacity: 1;
+                    transform: translate(0);
+                }
+            }
         }
     }
 
     .slide-content {
         position: relative;
-        opacity: 0;
         width: 332px;
         height: 660px;
         border-radius: 60px;
@@ -551,7 +539,8 @@ body {
         transition: $anim_1;
 
         @include media ("<tablet") {
-            opacity: 1;
+            opacity: 0;
+            transform: translateY(100px);
         }
 
         @include media ("<phone") {
