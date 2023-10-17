@@ -1240,41 +1240,48 @@ body {
         -ms-flex-direction: column;
         flex-direction: column;
         gap: 60px; } }
-  @media (max-width: 767px) {
-    .how-section .slide {
-      -webkit-transform: none;
-      transform: none; } }
-  @media (max-width: 767px) {
-    .how-section .slide .item-nav-content {
-      opacity: 0;
-      -webkit-transform: translateY(30px);
-      transform: translateY(30px);
-      transition: all 1.5s ease 0s; } }
-  @media (max-width: 767px) {
-    .how-section .slide .slide-content {
-      opacity: 0;
-      -webkit-transform: translate(100px);
-      transform: translate(100px);
-      transition: all 1.5s ease 0s; } }
-  .how-section .slide.show .item-nav-content {
-    opacity: 1;
-    -webkit-transform: translate(0);
-    transform: translate(0); }
-  .how-section .slide.show .slide-content {
-    opacity: 1;
-    -webkit-transform: translate(0);
-    transform: translate(0); }
+  .how-section .slide {
+    opacity: 0;
+    transition: all 1s ease 0s; }
+    .how-section .slide.first {
+      -webkit-transform: translate(50px);
+      transform: translate(50px); }
+      @media (max-width: 767px) {
+        .how-section .slide.first {
+          -webkit-transform: translateY(100px);
+          transform: translateY(100px); } }
+    @media (max-width: 767px) {
+      .how-section .slide {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px); } }
+    @media (max-width: 767px) {
+      .how-section .slide .item-nav-content {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        transition: all 1.5s ease 0s; } }
+    .how-section .slide.show {
+      opacity: 1;
+      -webkit-transform: translate(0);
+      transform: translate(0); }
+      .how-section .slide.show .item-nav-content {
+        opacity: 1;
+        -webkit-transform: translate(0);
+        transform: translate(0); }
   .how-section .swiper-slide-active .slide-content {
     opacity: 1; }
   .how-section .slide-content {
     position: relative;
     opacity: 0;
-    transition: all 1s ease 0s;
     width: 332px;
     height: 660px;
     border-radius: 60px;
     overflow: hidden;
-    margin: 0 auto; }
+    margin: 0 auto;
+    transition: all 1s ease 0s; }
+    @media (max-width: 767px) {
+      .how-section .slide-content {
+        opacity: 1; } }
     @media (max-width: 479px) {
       .how-section .slide-content {
         width: 219px;
@@ -1285,14 +1292,25 @@ body {
     top: 0;
     left: 0;
     width: 332px;
-    height: 660px; }
+    height: 660px;
+    z-index: 1; }
     @media (max-width: 479px) {
       .how-section .mockup {
         width: 219px;
         height: 436px; } }
-  .how-section .video {
-    width: 332px;
-    height: 660px; }
+  .how-section .video-step {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 650px;
+    border-radius: 40px; }
+    @media (max-width: 479px) {
+      .how-section .video-step {
+        width: 202px;
+        height: 430px; } }
   .how-section .mob {
     display: none; }
     @media (max-width: 767px) {

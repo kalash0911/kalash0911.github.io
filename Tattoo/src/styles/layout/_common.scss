@@ -498,9 +498,19 @@ body {
     }
 
     .slide {
+        opacity: 0;
+        transition: $anim_1;
+
+        &.first {
+            transform: translate(50px);
+
+            @include media ("<tablet") {
+                transform: translateY(100px);
+            }
+        }
 
         @include media ("<tablet") {
-            transform: none;
+            transform: translateY(100px);
         }
 
         .item-nav-content {
@@ -512,23 +522,11 @@ body {
             }
         }
 
-        .slide-content {
-
-            @include media ("<tablet") {
-                opacity: 0;
-                transform: translate(100px);
-                transition: $anim_15;
-            }
-        }
-
         &.show {
+            opacity: 1;
+            transform: translate(0);
 
             .item-nav-content {
-                opacity: 1;
-                transform: translate(0);
-            }
-
-            .slide-content {
                 opacity: 1;
                 transform: translate(0);
             }
@@ -545,12 +543,16 @@ body {
     .slide-content {
         position: relative;
         opacity: 0;
-        transition: $anim_1;
         width: 332px;
         height: 660px;
         border-radius: 60px;
         overflow: hidden;
         margin: 0 auto;
+        transition: $anim_1;
+
+        @include media ("<tablet") {
+            opacity: 1;
+        }
 
         @include media ("<phone") {
             width: 219px;
@@ -565,6 +567,7 @@ body {
         left: 0;
         width: 332px;
         height: 660px;
+        z-index: 1;
 
         @include media ("<phone") {
             width: 219px;
@@ -572,9 +575,19 @@ body {
         }
     }
 
-    .video {
-        width: 332px;
-        height: 660px;
+    .video-step {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 650px;
+        border-radius: 40px;
+
+        @include media ("<phone") {
+            width: 202px;
+            height: 430px;
+        }
     }
 
     .mob {
