@@ -12,7 +12,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-new WOW().init(); // for header
+new WOW().init();
+var tabletScreenSize = 768; // for header
 
 var burger = document.querySelector(".burger");
 var menuBody = document.querySelector(".menu-wrap");
@@ -73,6 +74,7 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   ["load", "resize"].forEach(function (evt) {
     return win.addEventListener(evt, toggleInit, false);
   });
+  return swiper;
 }
 
 var howSlider = destroySlidersOnResize(".slider-how", 768, {
@@ -81,6 +83,13 @@ var howSlider = destroySlidersOnResize(".slider-how", 768, {
     swiper: {
       el: '.slider-how-nav',
       slidesPerView: 4
+    }
+  },
+  on: {
+    activeIndexChange: function activeIndexChange(swiper) {
+      sliderHowVideos[swiper.activeIndex].play();
+      sliderHowVideos[swiper.previousIndex].currentTime = 0;
+      sliderHowVideos[swiper.previousIndex].pause();
     }
   }
 });
@@ -173,6 +182,55 @@ if (document.querySelectorAll(".count-progress").length) {
 
   document.querySelectorAll(".count-progress").forEach(function (element) {
     _observer.observe(element);
+  });
+}
+
+var sliderHowVideos = document.querySelectorAll(".slider-how video");
+["load", "resize"].forEach(function (event) {
+  window.addEventListener(event, videoSliderSync);
+});
+
+function videoSliderSync() {
+  if (window.innerWidth > tabletScreenSize) {
+    sliderHowVideos.forEach(function (video) {
+      video.pause();
+      video.addEventListener("ended", function () {
+        var _sliderHowVideos$next;
+
+        var nextSlideIndex = howSlider.activeIndex + 1;
+        howSlider.slideNext();
+        (_sliderHowVideos$next = sliderHowVideos[nextSlideIndex]) === null || _sliderHowVideos$next === void 0 ? void 0 : _sliderHowVideos$next.play();
+      });
+    });
+    var videoObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var firstVideo = howSlider.hostEl.querySelector("video");
+          firstVideo.play();
+        }
+      });
+    }, {
+      threshold: [0.5]
+    });
+    videoObserver.observe(howSlider.hostEl);
+    return;
+  }
+
+  var mobileVideoObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        // entry.target.currentTime = 0;
+        entry.target.pause();
+      }
+    });
+  }, {
+    threshold: [0.5]
+  });
+  sliderHowVideos.forEach(function (video) {
+    video.pause();
+    mobileVideoObserver.observe(video);
   });
 }
 //# sourceMappingURL=main.js.map

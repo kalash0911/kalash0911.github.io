@@ -1,5 +1,7 @@
 new WOW().init();
 
+const tabletScreenSize = 768;
+
 // for header
 
 const burger = document.querySelector(".burger");
@@ -60,6 +62,8 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
   ["load", "resize"].forEach((evt) =>
     win.addEventListener(evt, toggleInit, false)
   );
+
+  return swiper;
 }
 
 const howSlider = destroySlidersOnResize(".slider-how", 768, {
@@ -72,6 +76,13 @@ const howSlider = destroySlidersOnResize(".slider-how", 768, {
     },
   },
 
+  on: {
+    activeIndexChange: (swiper) => {
+      sliderHowVideos[swiper.activeIndex].play();
+      sliderHowVideos[swiper.previousIndex].currentTime = 0;
+      sliderHowVideos[swiper.previousIndex].pause();
+    },
+  }
 });
 
 destroySlidersOnResize(".slider-how-nav", 768, {});
@@ -158,5 +169,56 @@ if (document.querySelectorAll(".count-progress").length) {
 
   document.querySelectorAll(".count-progress").forEach((element) => {
     observer.observe(element);
+  });
+}
+
+const sliderHowVideos = document.querySelectorAll(".slider-how video");
+
+["load", "resize"].forEach((event) => {
+  window.addEventListener(event, videoSliderSync);
+});
+
+function videoSliderSync() {
+  if (window.innerWidth > tabletScreenSize) {
+    sliderHowVideos.forEach((video) => {
+      video.pause();
+      video.addEventListener("ended", () => {
+        const nextSlideIndex = howSlider.activeIndex + 1;
+        howSlider.slideNext();
+        sliderHowVideos[nextSlideIndex]?.play();
+      });
+    });
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const firstVideo = howSlider.hostEl.querySelector("video");
+            firstVideo.play();
+          }
+        });
+      },
+      { threshold: [0.5] }
+    );
+    videoObserver.observe(howSlider.hostEl);
+    return;
+  }
+
+  const mobileVideoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          // entry.target.currentTime = 0;
+          entry.target.pause();
+        }
+      });
+    },
+    { threshold: [0.5] }
+  );
+  sliderHowVideos.forEach((video) => {
+    video.pause();
+    mobileVideoObserver.observe(video);
   });
 }
