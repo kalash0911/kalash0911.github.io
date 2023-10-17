@@ -1359,3 +1359,68 @@ body {
         font-weight: 600;
     }
 }
+
+/* -------------------------------policy-section-------------------- */
+
+.policy-section {
+    padding: 150px 0;
+
+    @include media ("<phone") {
+        padding: 100px 0 50px 0;
+    }
+
+    .container {
+        max-width: 1100px;
+    }
+
+    .title {
+        color: $green55;
+        margin-bottom: 100px;
+
+        @include media ("<phone") {
+            margin-bottom: 50px;
+        }
+    }
+
+    h2 {
+        font-family: $SF;
+        color: $whiteFB;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @include media ("<phone") {
+            font-size: 22px;
+        }
+    }
+
+    p {
+        font-family: $SF;
+        color: $grayAE;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 155%;
+        margin-bottom: 20px;
+
+        @include media ("<phone") {
+            font-size: 16px;
+        }
+
+        strong {
+            color: $whiteFB;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 20px;
+    }
+
+    li {
+        font-family: $SF;
+        color: $grayAE;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 155%;
+    }
+}
