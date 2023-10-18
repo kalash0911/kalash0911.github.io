@@ -7,9 +7,17 @@ var first_main_video = document.querySelector("[first_main_video]");
 var second_main_video = document.querySelector("[second_main_video]");
 changeMainVideo();
 first_main_video.addEventListener("ended", function (e) {
-  first_main_video.classList.add("hide_video");
-  second_main_video.classList.remove("hide_video");
-  second_main_video.play();
+  if (isMobile()) {
+    var currentIndex = getSectionState();
+
+    if (!currentIndex) {
+      fullpage_api.moveSectionDown();
+    }
+  } else {
+    first_main_video.classList.add("hide_video");
+    second_main_video.classList.remove("hide_video");
+    second_main_video.play();
+  }
 });
 second_main_video.addEventListener("ended", function (e) {
   var currentIndex = getSectionState();
@@ -82,10 +90,14 @@ new fullpage("#fullpage", {
       showHeader(false);
       var firstVideo = document.querySelector('[section="video1"]');
       firstVideo.classList.remove("video_block_full");
-      second_main_video.classList.add("hide_video");
-      first_main_video.classList.remove("hide_video");
+
+      if (!isMobile) {
+        second_main_video.classList.add("hide_video");
+        first_main_video.classList.remove("hide_video");
+        second_main_video.currentIndex = 0;
+      }
+
       first_main_video.currentTime = 0;
-      second_main_video.currentIndex = 0;
       first_main_video.play();
     }
 
@@ -348,13 +360,7 @@ function supportsHEVCAlpha() {
 }
 
 function changeMainVideoForMobile() {
-  if (supportsHEVCAlpha()) {
-    first_main_video.src = "files/main_video/video_1_part1_mobile.mov";
-  } else {
-    first_main_video.src = "files/main_video/video_1_part1_mobile.webm";
-  }
-
-  second_main_video.src = "files/main_video/video_1_part2_mobile.mov";
+  first_main_video.src = "files/main_video/video_1_mobile.mov";
 }
 
 function changeMainVideo() {
