@@ -104,12 +104,12 @@ let sliderMain = new Swiper(".swiper_cvoe", {
 let sliderMainText = new Swiper(".swiper_cvoe_text", {
     speed: 1400,
     slidesPerView: 1,
+    direction: "vertical",
     effect: "cube",
     cubeEffect: {
         slideShadows: false,
         shadow: false,
     },
-    direction: "vertical",
 });
 
 sliderMain.controller.control = sliderMainText;

@@ -5075,12 +5075,13 @@ main {
     .swiper_cvoe_section {
       padding-bottom: calc(80px + 80 * ((100vw - calc(375px)) / 925)); } }
   .swiper_cvoe_section .swiper_cvoe_text {
+    text-align: center;
     height: 50px;
     /* Только если меньше контейнера */
-    padding-bottom: 50px; }
+    margin-bottom: 50px; }
     @media (max-width: 1300px) {
       .swiper_cvoe_section .swiper_cvoe_text {
-        padding-bottom: calc(25px + 25 * ((100vw - calc(375px)) / 925)); } }
+        margin-bottom: calc(25px + 25 * ((100vw - calc(375px)) / 925)); } }
   .swiper_cvoe_section .swiper_cvoe_title {
     max-width: -webkit-max-content;
     max-width: -moz-max-content;

@@ -105,12 +105,12 @@ var sliderMain = new Swiper(".swiper_cvoe", {
 var sliderMainText = new Swiper(".swiper_cvoe_text", {
   speed: 1400,
   slidesPerView: 1,
+  direction: "vertical",
   effect: "cube",
   cubeEffect: {
     slideShadows: false,
     shadow: false
-  },
-  direction: "vertical"
+  }
 });
 sliderMain.controller.control = sliderMainText;
 //# sourceMappingURL=cvoe_script.js.map

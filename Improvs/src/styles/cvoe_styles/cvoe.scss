@@ -4,8 +4,9 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
     .swiper_cvoe_text {
+        text-align: center;
         height: 50px;
-        @include adaptiv-vaule("padding-bottom", 50, 25, 1);
+        @include adaptiv-vaule("margin-bottom", 50, 25, 1);
     }
 
     .swiper_cvoe_title {
