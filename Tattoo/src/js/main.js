@@ -91,6 +91,16 @@ destroySlidersOnResize(".slider-our", 1, {
   spaceBetween: 20,
   freeMode: true,
   slidesPerView: 'auto',
+
+  breakpoints: {
+    300: {
+      spaceBetween: 10,
+    },
+
+    280: {
+      spaceBetween: 20,
+    },
+  },
 });
 
 destroySlidersOnResize(".slider-reviews", 1, {
