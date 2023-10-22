@@ -34,10 +34,13 @@ let sliderStudent = new Swiper(".swiper_logos_student", {
                 dynamicBullets: true,
             },
         },
-        // 768: {
-        //     spaceBetween: 40,
-        //     slidesPerView: 1.2,
-        // },
+        768: {
+            // spaceBetween: 40,
+            // slidesPerView: 1.2,
+            pagination: {
+                dynamicBullets: false,
+            },
+        },
         // 1024: {
         //     spaceBetween: 60,
         //     slidesPerView: 1.6,
@@ -95,10 +98,13 @@ let sliderTeacher = new Swiper(".swiper_logos_teacher", {
                 dynamicBullets: true,
             },
         },
-        // 768: {
-        //     spaceBetween: 40,
-        //     slidesPerView: 1.2,
-        // },
+        768: {
+            //     spaceBetween: 40,
+            //     slidesPerView: 1.2,
+            pagination: {
+                dynamicBullets: false,
+            },
+        },
         // 1024: {
         //     spaceBetween: 60,
         //     slidesPerView: 1.6,

@@ -1,0 +1,90 @@
+.swiper_cvoe_section {
+    @include adaptiv-vaule("padding-top", 25, 20, 1);
+    @include adaptiv-vaule("padding-bottom", 160, 80, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    .swiper_cvoe_text {
+        height: 50px;
+        @include adaptiv-vaule("padding-bottom", 50, 25, 1);
+    }
+
+    .swiper_cvoe_title {
+        max-width: max-content;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 42px;
+        @include adaptiv-vaule("font-size", 42, 24, 1);
+        font-weight: 600;
+        line-height: 124%;
+        letter-spacing: -0.42px;
+    }
+
+    .swiper_cvoe {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        @include media ("<desktop") {
+            padding-bottom: 0;
+            padding-top: 50px;
+        }
+
+        .swiper-slide {
+            transform: translateY(50px);
+            transition: $transition_all_03;
+        }
+
+        .swiper-slide-active {
+            transform: translateY(0);
+        }
+    }
+
+    .slide_img {
+        @include adaptiv-vaule("height", 640, 300, 1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 740px;
+
+        @include media (">laptop") {
+            height: 50vh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.mobile_cvoe {
+    .about_img {
+        &::before {
+            display: block;
+        }
+    }
+
+    .info_img {
+        @include adaptiv-vaule("padding-top", 160, 60, 1);
+        @include adaptiv-vaule("padding-bottom", 160, 60, 1);
+    }
+}
+
+.typography_cvoe {
+    .gradient_block {
+        background: linear-gradient(90deg, #2E4939 0%, #DC503C 49.48%, #F1F2ED 98.96%);
+
+        @include media ("<phone_max") {
+            background: linear-gradient(180deg, #2E4939 0%, #DC503C 49.48%, #F1F2ED 98.96%);
+        }
+    }
+
+    .color_name {
+        color: $white;
+
+        &:last-child {
+            color: $black;
+        }
+    }
+}

@@ -34,11 +34,14 @@ var sliderStudent = new Swiper(".swiper_logos_student", {
       pagination: {
         dynamicBullets: true
       }
-    } // 768: {
-    //     spaceBetween: 40,
-    //     slidesPerView: 1.2,
-    // },
-    // 1024: {
+    },
+    768: {
+      // spaceBetween: 40,
+      // slidesPerView: 1.2,
+      pagination: {
+        dynamicBullets: false
+      }
+    } // 1024: {
     //     spaceBetween: 60,
     //     slidesPerView: 1.6,
     // },
@@ -92,11 +95,14 @@ var sliderTeacher = new Swiper(".swiper_logos_teacher", {
       pagination: {
         dynamicBullets: true
       }
-    } // 768: {
-    //     spaceBetween: 40,
-    //     slidesPerView: 1.2,
-    // },
-    // 1024: {
+    },
+    768: {
+      //     spaceBetween: 40,
+      //     slidesPerView: 1.2,
+      pagination: {
+        dynamicBullets: false
+      }
+    } // 1024: {
     //     spaceBetween: 60,
     //     slidesPerView: 1.6,
     // },
