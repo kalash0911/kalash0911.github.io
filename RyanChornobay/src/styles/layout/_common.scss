@@ -247,10 +247,11 @@ body {
 
     .ilona {
         max-width: 630px;
-        width: 90%;
+        width: 80%;
+        transform: scale(1.25);
 
         @include media('<phone') {
-            width: 150%;
+            // width: 150%;
         }
     }
 }

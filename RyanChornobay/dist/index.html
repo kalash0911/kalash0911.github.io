@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -43,7 +45,9 @@
           <img class="bg" src="./images/main-bg.jpg" alt="bg img">
           <div class="container">
             <h1 class="main-title"><strong>Ілона Чернобай</strong> <br> амбасадор застосунку <br> <strong><i>Ryan AI</i></strong></h1>
-            <img class="ilona" src="./images/ilona.png" alt="ilona">
+            <div id="pinBlock">
+              <img class="ilona" src="./images/ilona.png" alt="ilona">
+            </div>
           </div>
         </section>
         <section class="avatar-section">
@@ -55,10 +59,9 @@
                   <h3 class="item-title">Українська <strong>телеведуча</strong></h3>
                 </div>
               </div>
-              <div class="item big-item">
+              <div class="item big-item" id="endPin">
                 <div class="content">
                   <h2 class="title"><span>Ілона</span> <br> Чернобай</h2>
-                  <img src="./images/ilona.png" alt="img">
                 </div>
               </div>
               <div class="item">

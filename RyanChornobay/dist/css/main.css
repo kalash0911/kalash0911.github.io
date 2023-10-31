@@ -841,10 +841,9 @@ body {
           font-size: 40px; } }
   .main-section .ilona {
     max-width: 630px;
-    width: 90%; }
-    @media (max-width: 479px) {
-      .main-section .ilona {
-        width: 150%; } }
+    width: 80%;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25); }
 
 /* ------------------ avatar-section ---------------*/
 .avatar-section {

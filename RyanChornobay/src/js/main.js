@@ -295,3 +295,55 @@ function fixedDownloadBtn() {
     }
   });
 }
+
+pinBlockInit();
+function pinBlockInit() {
+  const pinBlock = document.querySelector("#pinBlock");
+  const img = pinBlock.querySelector("img");
+  const endBlock = document.querySelector("#endPin");
+  const paddingBottom = Number(
+    getComputedStyle(endBlock).paddingBottom.replace("px", "")
+  );
+  const initialImgScale =
+    Number(
+      getComputedStyle(img).transform.split(",")[0].replace("matrix(", "")
+    ) || 1.23;
+  img.style.transform = `scale(${initialImgScale})`;
+
+  const togglePinClasses = () => {
+    document.body.classList.add('pinned');
+    document.body.classList.remove('unpinned');
+  }
+
+  const toggleUnpinClasses = () => {
+    document.body.classList.remove('pinned');
+    document.body.classList.add('unpinned');
+  }
+
+  ScrollTrigger.create({
+    trigger: pinBlock,
+    start: "bottom bottom",
+    endTrigger: endBlock,
+    end: `bottom-=${paddingBottom} bottom`,
+    pin: "#pinBlock",
+    // markers: true,
+    onEnter: () => {
+      togglePinClasses();
+    },
+    onEnterBack: () => {
+      togglePinClasses();
+    },
+    onLeave: () => {
+      toggleUnpinClasses();
+    },
+    onLeaveBack: () => {
+      toggleUnpinClasses();
+    },
+    onUpdate: (self) => {
+      const progress = self.progress;
+      const newScale = initialImgScale + (1 - initialImgScale) * progress;
+
+      img.style.transform = `scale(${newScale})`;
+    },
+  });
+}
