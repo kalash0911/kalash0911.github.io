@@ -940,7 +940,7 @@ body {
     color: rgba(22, 22, 19, 0.75);
     font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 155%;
     margin-bottom: 36px; }
     @media (max-width: 479px) {
@@ -1029,7 +1029,6 @@ body {
     font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-weight: 600;
     line-height: 140%;
-    text-transform: capitalize;
     margin-bottom: 40px;
     /* Только если меньше контейнера */
     font-size: 56px; }
@@ -1041,7 +1040,7 @@ body {
         margin-bottom: 20px; } }
   .form-section form {
     width: 100%;
-    max-width: 833px;
+    max-width: 660px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -1052,7 +1051,7 @@ body {
     color: #fff;
     font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 125%; }
   .form-section .input {
     width: 100%;
@@ -1062,7 +1061,7 @@ body {
     padding: 18px 22px;
     font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 140%;
     color: #212121; }
     .form-section .input::-webkit-input-placeholder {
@@ -1127,11 +1126,12 @@ body {
     font-size: 56px;
     font-weight: 600;
     line-height: 140%;
-    text-transform: capitalize;
     margin-bottom: 10px; }
     @media (max-width: 1320px) {
       .now-section .title {
         font-size: calc(28px + 28 * ((100vw - calc(320px)) / 1000)); } }
+    .now-section .title i {
+      color: #CF7C58; }
   .now-section .text {
     color: #554F4A;
     font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;

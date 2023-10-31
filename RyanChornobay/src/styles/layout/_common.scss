@@ -392,7 +392,7 @@ body {
         color: rgba(22, 22, 19, 0.75);
         font-family: $Montserrat;
         font-size: 18px;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 155%;
         margin-bottom: 36px;
 
@@ -506,7 +506,6 @@ body {
         font-family: $Lora;
         font-weight: 600;
         line-height: 140%;
-        text-transform: capitalize;
         margin-bottom: 40px;
         @include adaptiv-vaule("font-size", 56, 28, 1);
 
@@ -517,7 +516,7 @@ body {
 
     form {
         width: 100%;
-        max-width: 833px;
+        max-width: 660px;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -528,7 +527,7 @@ body {
         color: $white;
         font-family: $Lora;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 125%;
     }
 
@@ -540,7 +539,7 @@ body {
         padding: 18px 22px;
         font-family: $Montserrat;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 140%;
         color: $black21;
 
@@ -613,8 +612,11 @@ body {
         @include adaptiv-vaule("font-size", 56, 28, 1);
         font-weight: 600;
         line-height: 140%;
-        text-transform: capitalize;
         margin-bottom: 10px;
+
+        i {
+            color: $orange;
+        }
     }
 
     .text {
