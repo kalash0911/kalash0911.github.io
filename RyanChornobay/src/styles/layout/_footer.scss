@@ -1,0 +1,96 @@
+#footer {
+    background: $black27;
+    padding: 32px 0;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include media('<tablet') {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .top {
+        padding: 14px 0;
+        border-radius: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+        color: $white;
+        font-family: $Lora;
+        font-size: 36px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .menu {
+        display: flex;
+        column-gap: 50px;
+        row-gap: 20px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @include media('<phone') {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .link {
+        color: $white;
+        font-family: $Montserrat;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+        transition: $animation-speed;
+
+        &:hover {
+            color: #CF7C58;
+        }
+    }
+
+    .socials {
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .icon {
+        display: grid;
+        place-items: center;
+        transition: $animation-speed;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .bot {
+        padding-top: 24px;
+    }
+
+    .text {
+        color: #FEFBF4;
+        font-family: $Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .icon-site {
+        transition: $animation-speed;
+
+        &:hover {
+            transform: scale(1.05);
+        } 
+    }
+}

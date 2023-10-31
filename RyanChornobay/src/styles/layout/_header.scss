@@ -1,0 +1,69 @@
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 0;
+    z-index: 5;
+    border-radius: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+
+
+    @include media('<desktop') {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .logo {
+        color: $white;
+        font-family: $Lora;
+        font-size: 36px;
+        font-weight: 700;
+        font-style: italic;
+        margin-right: 95px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .link {
+        position: relative;
+        color: $whiteEA;
+        font-family: $Montserrat;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 0;
+            height: 2px;
+            background-color: $whiteEA;
+            transition: all 0.3s ease 0s;
+            transition: $animation-speed;
+        }
+
+        &:hover {
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
