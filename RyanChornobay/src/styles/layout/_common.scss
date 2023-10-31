@@ -51,32 +51,10 @@ body {
     }
 }
 
-.btn-store {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 20px;
-    border-radius: 160px;
-    background: #161613;
-    transition: $animation-speed;
-    border: 1px solid #A6A6A6;
+.store-btn {
+    display: inline-block;
+    max-width: 164px;
 
-    &:hover {
-        transform: scale(1.05);
-    }
-
-    @include media('<phone') {
-        padding: 5px 17px;
-        border-radius: 5px;
-    }
-}
-
-.btn-google {
-    transition: $animation-speed;
-
-    &:hover {
-        transform: scale(1.05);
-    }
 }
 
 .btn-orange {
@@ -113,6 +91,7 @@ body {
 
     &.mobile {
         position: relative;
+        min-width: 270px;
 
         svg {
             fill: none;
@@ -202,6 +181,10 @@ body {
         @include media('<widescreen') {
             padding: 100px 20px 0 20px;
         }
+
+        @include media('<phone') {
+            padding: 60px 20px 0 20px;
+        }
     }
     
     .bg{
@@ -224,6 +207,16 @@ body {
         line-height: 105%;
         z-index: 1;
 
+        @include media('<tablet') {
+            font-size: 48px;
+            letter-spacing: -0.35px;
+            line-height: 110%;
+        }
+
+        @include media('<phone') {
+            font-size: 30px;
+        }
+
         &::after {
             content:'';
             position: absolute;
@@ -240,14 +233,164 @@ body {
 
         strong {
             font-size: 73px;
+
+            @include media('<tablet') {
+                font-size: 58px;
+                letter-spacing: -0.42px;
+            }
+    
+            @include media('<phone') {
+                font-size: 40px;
+            }
         }
     }
 
     .ilona {
         max-width: 630px;
         width: 90%;
+
+        @include media('<phone') {
+            width: 150%;
+        }
     }
 }
+
+
+/* ------------------ avatar-section ---------------*/
+
+.avatar-section {
+    padding: 70px 0;
+
+    @include media('<phone') {
+        padding-bottom: 0;
+    }
+
+    .block {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+
+        @include media('<1300px') {
+            gap: 15px;
+        }
+
+        @include media('<widescreen') {
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        }
+
+        @include media('<desktop') {
+            grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        min-height: 240px;
+        border-radius: 20px;
+        border: 2px dashed $orange;
+        padding: 10px;
+
+        @include media('<phone') {
+            min-height: 160px;
+            padding: 6px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        gap: 16px;
+        width: 100%;
+        padding: 36px 20px;
+        border-radius: 14px;
+        background-color: $yellowD0;
+
+        @include media('<phone') {
+            padding: 24px 10px;
+            gap: 10px;
+        }
+
+        img {
+            width: 48px;
+
+            @include media('<phone') {
+                width: 32px;
+            }
+        }
+    }
+
+    .big-item {
+        grid-column: span 2;
+        grid-row: span 3;
+        border-radius: 400px 400px 40px 40px;
+        border: 2px dashed $orange;
+
+        @include media('<desktop') {
+            order: -1;
+        }
+
+        .content {
+            align-items: center;
+            justify-content: space-between;
+            padding: 52px 30px 0 30px;
+            border-radius: 400px 400px 34px 34px;
+
+            @include media('<phone') {
+                padding: 75px 0 0 0;
+                overflow: hidden;
+            }
+
+            img {
+                width: 100%;
+                max-width: 550px;
+
+                @include media('<phone') {
+                    width: 130%;
+                }
+            }
+        }
+    }
+
+    .item-title {
+        color: $orange;
+        font-family: $Lora;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 127%;
+        margin: 0;
+
+        @include media('<widescreen') {
+            font-size: 18px;
+        }
+
+        @include media('<phone') {
+            font-size: 14px;
+        }
+    }
+
+    .title {
+        text-align: center;
+        color: $black27;
+        font-family: $Lora;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        margin: 0;
+
+        @include media('<phone') {
+            display: none;
+        }
+
+        span {
+            color: $orange;
+        }
+    }
+}
+
 
 /* ------------------- card-section ----------------*/
 
@@ -255,6 +398,10 @@ body {
     position: relative;
     overflow: hidden;
     min-height: 300px;
+
+    @include media('<phone') {
+        min-height: 150px;
+    }
 
     .circle {
         position: absolute;
@@ -271,7 +418,7 @@ body {
         @include media('<phone') {
             bottom: -825px;
             width: 1000px;
-            height: 1000px;
+            height: 880px;
         }
     }
 }

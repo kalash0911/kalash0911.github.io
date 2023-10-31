@@ -8,17 +8,19 @@
     border-radius: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 
-
-
-    @include media('<desktop') {
-        display: none;
-    }
-
     .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 24px;
+
+        @include media('<1400px') {
+            padding: 0 20px;
+        }
+
+        @include media('<widescreen') {
+            justify-content: center;
+        }
     }
 
     .logo {
@@ -28,6 +30,14 @@
         font-weight: 700;
         font-style: italic;
         margin-right: 95px;
+
+        @include media('<1400px') {
+            margin: 0;
+        }
+
+        @include media('<phone') {
+            font-size: 28px;
+        }
     }
 
     .menu {
@@ -36,6 +46,10 @@
         margin: 0;
         padding: 0;
         list-style: none;
+
+        @include media('<widescreen') {
+            display: none;
+        }
     }
 
     .link {
@@ -45,6 +59,10 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 150%;
+
+        @include media('<1300px') {
+            font-size: 14px;
+        }
 
         &::after {
             content: '';
@@ -64,6 +82,13 @@
             &::after {
                 width: 100%;
             }
+        }
+    }
+
+    .main-btn {
+
+        @include media('<widescreen') {
+            display: none;
         }
     }
 }
