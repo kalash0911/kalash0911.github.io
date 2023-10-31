@@ -663,7 +663,11 @@ body {
 
 .store-btn {
   display: inline-block;
-  max-width: 164px; }
+  max-width: 164px;
+  transition: all 0.3s ease 0s; }
+  .store-btn:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
 
 .btn-orange {
   min-width: 250px;
@@ -844,6 +848,10 @@ body {
     width: 80%;
     -webkit-transform: scale(1.25);
     transform: scale(1.25); }
+    @media (max-width: 479px) {
+      .main-section .ilona {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5); } }
 
 /* ------------------ avatar-section ---------------*/
 .avatar-section {
@@ -906,7 +914,11 @@ body {
     @media (max-width: 1023px) {
       .avatar-section .big-item {
         -ms-flex-order: -1;
-        order: -1; } }
+        order: -1;
+        min-height: 700px; } }
+    @media (max-width: 479px) {
+      .avatar-section .big-item {
+        min-height: 500px; } }
     .avatar-section .big-item .content {
       -ms-flex-align: center;
       align-items: center;
@@ -947,9 +959,6 @@ body {
     font-weight: 700;
     line-height: 100%;
     margin: 0; }
-    @media (max-width: 479px) {
-      .avatar-section .title {
-        display: none; } }
     .avatar-section .title span {
       color: #CF7C58; }
 
@@ -1482,21 +1491,40 @@ body {
     @media (max-width: 479px) {
       .now-section .text {
         font-size: 16px; } }
-  .now-section .btn-store {
-    margin-bottom: 12px; }
+  .now-section .qr-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 25px; }
+    @media (max-width: 479px) {
+      .now-section .qr-wrap {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 15px; } }
+  .now-section .qr-box {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px; }
   .now-section .or {
     color: #554F4A;
     font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 124%;
-    margin-bottom: 14px; }
-    @media (max-width: 479px) {
+    margin-bottom: 70px; }
+    @media (max-width: 767px) {
       .now-section .or {
-        display: none; } }
+        margin: 0; } }
   .now-section .qr-code {
-    width: 200px; }
-    @media (max-width: 479px) {
+    width: 120px; }
+    @media (max-width: 767px) {
       .now-section .qr-code {
         display: none; } }
 
@@ -1966,12 +1994,15 @@ body {
   #footer .logo {
     color: #fff;
     font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-style: italic;
     font-size: 36px;
     font-weight: 600;
     margin: 0; }
   #footer .menu {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-column-gap: 50px;
     -moz-column-gap: 50px;
     column-gap: 50px;
@@ -1979,7 +2010,10 @@ body {
     padding: 0;
     margin: 0;
     list-style: none; }
-    @media (max-width: 479px) {
+    @media (max-width: 1199px) {
+      #footer .menu {
+        gap: 20px; } }
+    @media (max-width: 767px) {
       #footer .menu {
         -ms-flex-direction: column;
         flex-direction: column;
@@ -2015,10 +2049,24 @@ body {
     font-size: 14px;
     font-weight: 400;
     margin: 0; }
-  #footer .icon-site {
-    transition: all 0.3s ease 0s; }
-    #footer .icon-site:hover {
-      -webkit-transform: scale(1.05);
-      transform: scale(1.05); }
+  #footer .creator {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+    color: #625E5C;
+    font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 131%;
+    text-transform: uppercase; }
+    #footer .creator:hover {
+      color: #FAF5EA; }
+    #footer .creator img {
+      width: 100px;
+      margin-left: 10px;
+      margin-bottom: 5px; }
 
 /*# sourceMappingURL=main.css.map */

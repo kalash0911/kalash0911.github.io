@@ -54,6 +54,11 @@ body {
 .store-btn {
     display: inline-block;
     max-width: 164px;
+    transition: $animation-speed;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 
 }
 
@@ -251,7 +256,7 @@ body {
         transform: scale(1.25);
 
         @include media('<phone') {
-            // width: 150%;
+            transform: scale(1.5);
         }
     }
 }
@@ -329,6 +334,11 @@ body {
 
         @include media('<desktop') {
             order: -1;
+            min-height: 700px;
+        }
+
+        @include media('<phone') {
+            min-height: 500px;
         }
 
         .content {
@@ -380,10 +390,6 @@ body {
         font-weight: 700;
         line-height: 100%;
         margin: 0;
-
-        @include media('<phone') {
-            display: none;
-        }
 
         span {
             color: $orange;
@@ -1059,8 +1065,23 @@ body {
         }
     }
 
-    .btn-store {
-        margin-bottom: 12px;
+    .qr-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+
+        @include media('<phone') {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    .qr-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .or {
@@ -1069,17 +1090,17 @@ body {
         font-size: 14px;
         font-weight: 500;
         line-height: 124%;
-        margin-bottom: 14px;
+        margin-bottom: 70px;
 
-        @include media('<phone') {
-            display: none;
+        @include media('<tablet') {
+            margin: 0;
         }
     }
 
     .qr-code {
-        width: 200px;
+        width: 120px;
 
-        @include media('<phone') {
+        @include media('<tablet') {
             display: none;
         }
     }

@@ -24,6 +24,7 @@
     .logo {
         color: $white;
         font-family: $Lora;
+        font-style: italic;
         font-size: 36px;
         font-weight: 600;
         margin: 0;
@@ -31,13 +32,18 @@
 
     .menu {
         display: flex;
+        flex-wrap: wrap;
         column-gap: 50px;
         row-gap: 20px;
         padding: 0;
         margin: 0;
         list-style: none;
 
-        @include media('<phone') {
+        @include media('<widescreen') {
+            gap: 20px;
+        }
+
+        @include media('<tablet') {
             flex-direction: column;
             text-align: center;
         }
@@ -86,11 +92,26 @@
         margin: 0;
     }
 
-    .icon-site {
-        transition: $animation-speed;
+    .creator {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease 0s;
+        color: #625E5C;
+        font-family: $Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 131%;
+        text-transform: uppercase;
 
         &:hover {
-            transform: scale(1.05);
-        } 
+            color: $whiteEA;
+        }
+
+        img {
+            width: 100px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+        }
     }
 }
