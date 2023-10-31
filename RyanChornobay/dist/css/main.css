@@ -1145,6 +1145,216 @@ body {
       .phone-section .kids {
         width: 280px; } }
 
+/* ------------------ tiket-section ----------------*/
+.tiket-section {
+  padding: 200px 0 100px 0; }
+  @media (max-width: 1099px) {
+    .tiket-section {
+      padding: 80px 0; } }
+  .tiket-section .title {
+    max-width: 880px;
+    color: #2A2827;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 81px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    margin-bottom: 100px; }
+    @media (max-width: 1299px) {
+      .tiket-section .title {
+        font-size: 68px;
+        max-width: 700px; } }
+    @media (max-width: 1099px) {
+      .tiket-section .title {
+        margin-bottom: 30px; } }
+    @media (max-width: 859px) {
+      .tiket-section .title {
+        font-size: 48px; } }
+    @media (max-width: 479px) {
+      .tiket-section .title {
+        font-size: 32px; } }
+    .tiket-section .title span {
+      color: #CF7C58; }
+  .tiket-section .block {
+    position: relative; }
+  .tiket-section .tiket-img-wrap {
+    position: absolute;
+    bottom: 85%;
+    right: 0;
+    width: 480px;
+    height: 600px; }
+    @media (max-width: 1099px) {
+      .tiket-section .tiket-img-wrap {
+        position: relative;
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+        height: 400px; } }
+    @media (max-width: 767px) {
+      .tiket-section .tiket-img-wrap {
+        height: 250px; } }
+    .tiket-section .tiket-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 468px;
+      height: 674px;
+      background: radial-gradient(50% 50% at 50% 50%, #B26D4F 0%, rgba(195, 122, 90, 0) 100%);
+      opacity: 0.3;
+      z-index: -1; }
+  @media (max-width: 767px) {
+    .tiket-section .tiket-img {
+      width: 300px;
+      margin: 0 auto;
+      display: block; } }
+  .tiket-section .item {
+    position: relative;
+    border-radius: 54px;
+    background: #F6E9D0;
+    padding: 75px 90px 65px 90px;
+    text-align: end;
+    -webkit-transform: rotate(-2.5deg);
+    transform: rotate(-2.5deg); }
+    @media (max-width: 767px) {
+      .tiket-section .item {
+        padding: 40px; } }
+  .tiket-section .bord {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #CF7C58;
+    border-radius: 54px; }
+  .tiket-section .circle {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px dashed #CF7C58;
+    background-color: #FAF5EA;
+    z-index: 1; }
+    @media (max-width: 767px) {
+      .tiket-section .circle {
+        width: 40px;
+        height: 40px; } }
+    .tiket-section .circle::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      width: 40px;
+      height: 80px;
+      background-color: #FAF5EA; }
+      @media (max-width: 767px) {
+        .tiket-section .circle::after {
+          width: 20px; } }
+    .tiket-section .circle.right {
+      right: -40px; }
+      @media (max-width: 767px) {
+        .tiket-section .circle.right {
+          right: -20px; } }
+      .tiket-section .circle.right::after {
+        right: -2px; }
+    .tiket-section .circle.left {
+      left: -40px; }
+      @media (max-width: 767px) {
+        .tiket-section .circle.left {
+          left: -20px; } }
+      .tiket-section .circle.left::after {
+        left: -2px; }
+  .tiket-section .bg {
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: 329px;
+    height: 475px; }
+    @media (max-width: 859px) {
+      .tiket-section .bg {
+        width: 170px;
+        height: 260px; } }
+    @media (max-width: 479px) {
+      .tiket-section .bg {
+        left: 40%; } }
+  .tiket-section .item-title {
+    position: relative;
+    color: #554F4A;
+    font-family: "Montserrat", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 120%;
+    z-index: 1;
+    margin-bottom: 40px;
+    text-align: left; }
+    @media (max-width: 767px) {
+      .tiket-section .item-title {
+        font-size: 32px; } }
+    @media (max-width: 479px) {
+      .tiket-section .item-title {
+        font-size: 22px; } }
+    .tiket-section .item-title strong {
+      font-size: 55px;
+      font-weight: 700; }
+      @media (max-width: 767px) {
+        .tiket-section .item-title strong {
+          font-size: 42px; } }
+      @media (max-width: 479px) {
+        .tiket-section .item-title strong {
+          font-size: 28px; } }
+    .tiket-section .item-title span {
+      color: #CF7C58;
+      font-weight: 700; }
+  .tiket-section .price-box {
+    position: relative;
+    z-index: 1; }
+  .tiket-section .price {
+    color: #CF7C58;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 162px;
+    font-weight: 700;
+    line-height: 80%;
+    margin: 0; }
+    @media (max-width: 859px) {
+      .tiket-section .price {
+        font-size: 62px; } }
+    .tiket-section .price span {
+      font-size: 40px; }
+      @media (max-width: 859px) {
+        .tiket-section .price span {
+          font-size: 18px; } }
+  .tiket-section .old-price {
+    position: relative;
+    display: inline-block;
+    color: #CF7C58;
+    font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 80%;
+    margin: 0;
+    opacity: .6; }
+    @media (max-width: 859px) {
+      .tiket-section .old-price {
+        font-size: 22px; } }
+    .tiket-section .old-price::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 39%;
+      width: 100%;
+      height: 3px;
+      background: #968D87; }
+    .tiket-section .old-price span {
+      font-size: 23px; }
+      @media (max-width: 859px) {
+        .tiket-section .old-price span {
+          font-size: 12px; } }
+
 /* ------------------- form-section ----------------*/
 .form-section {
   padding: 100px 0;
