@@ -1156,7 +1156,9 @@ body {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    max-width: 265px; }
+    max-width: 265px;
+    border-radius: 40px;
+    overflow: hidden; }
   .phone-section .kids-wrap {
     overflow: hidden;
     width: 460px; }
@@ -1741,7 +1743,9 @@ body {
     left: 50%;
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
-    width: 255px; }
+    width: 255px;
+    border-radius: 40px;
+    overflow: hidden; }
 
 /* ----------------------modal-pop-up---------------------- */
 .modal-pop-up {
