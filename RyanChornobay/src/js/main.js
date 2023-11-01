@@ -276,7 +276,7 @@ function fixedDownloadBtn() {
   document.addEventListener("scroll", (e) => {
     if (
       window.scrollY + document.documentElement.clientHeight >
-      startPos + startPos / 2
+      startPos + startPos / 5
     ) {
       if (!btn.classList.contains("active")) {
         btn.classList.add("active");

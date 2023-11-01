@@ -289,7 +289,7 @@ function fixedDownloadBtn() {
   const startPos = startPosEl.getBoundingClientRect().top + document.documentElement.scrollTop;
   const endPos = endPosEl.offsetTop;
   document.addEventListener("scroll", e => {
-    if (window.scrollY + document.documentElement.clientHeight > startPos + startPos / 2) {
+    if (window.scrollY + document.documentElement.clientHeight > startPos + startPos / 5) {
       if (!btn.classList.contains("active")) {
         btn.classList.add("active");
       }
