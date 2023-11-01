@@ -336,10 +336,10 @@ body {
             justify-content: space-between;
             padding: 52px 30px 0 30px;
             border-radius: 400px 400px 34px 34px;
+            overflow: hidden;
 
             @include media('<phone') {
                 padding: 75px 0 0 0;
-                overflow: hidden;
             }
 
             img {
@@ -355,6 +355,9 @@ body {
 
     #pinBlock {
         bottom: 0; 
+        display: flex;
+        justify-content: center;
+
         .pinned & {
             position: fixed;
             left: 50%;
