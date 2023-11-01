@@ -1364,6 +1364,16 @@ body {
         min-height: 480px;
     }
 
+    .img-anim {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 255px;
+        border-radius: 40px;
+        overflow: hidden;
+    }
+
     .iphone_mockup {
         position: relative;
         z-index: 1;
