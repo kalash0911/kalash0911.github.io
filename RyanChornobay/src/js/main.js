@@ -103,9 +103,8 @@ class VideoPlayer {
       this.video.duration - durationMinutes * 60
     );
 
-    this.currentTimeElement.innerHTML = `${currentMinutes}:${
-      currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
-    }`;
+    this.currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
+      }`;
     this.durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
   };
   progressBarUpdate = () => {
@@ -126,7 +125,7 @@ class VideoPlayer {
 
 const videoThresholdScreenSize = 860;
 
-function supportsHEVCAlpha() {
+/* function supportsHEVCAlpha() {
   const navigator = window.navigator;
   const ua = navigator.userAgent.toLowerCase();
   const hasMediaCapabilities = !!(
@@ -162,7 +161,7 @@ playerStepMob.forEach((video, ind) => {
   video.src = supportsHEVCAlpha()
     ? `./files/step${ind + 1}-mob.mp4`
     : `./files/step${ind + 1}-mob.webm`;
-});
+}); */
 
 // Video controls
 initVideoPlayers();
@@ -315,7 +314,7 @@ function pinBlockInit() {
   const togglePinClasses = () => {
     document.body.classList.add('pinned');
     document.body.classList.remove('unpinned');
-    pinBlock.style.width =  `${pinBlockInitialWidth}px`;
+    pinBlock.style.width = `${pinBlockInitialWidth}px`;
     endBlock.style.height = `${endBlockInitialHeight}px`;
   }
 
