@@ -295,8 +295,10 @@ pinBlockInit();
 
 function pinBlockInit() {
   const pinBlock = document.querySelector("#pinBlock");
+  const pinBlockInitialWidth = pinBlock.offsetWidth;
   const img = pinBlock.querySelector("img");
   const endBlock = document.querySelector("#endPin");
+  const endBlockInitialHeight = endBlock.offsetHeight;
   const paddingBottom = Number(getComputedStyle(endBlock).paddingBottom.replace("px", ""));
   const initialImgScale = Number(getComputedStyle(img).transform.split(",")[0].replace("matrix(", "")) || 1.23;
   img.style.transform = `scale(${initialImgScale})`;
@@ -304,20 +306,25 @@ function pinBlockInit() {
   const togglePinClasses = () => {
     document.body.classList.add('pinned');
     document.body.classList.remove('unpinned');
+    pinBlock.style.width = `${pinBlockInitialWidth}px`;
+    endBlock.style.height = `${endBlockInitialHeight}px`;
   };
 
   const toggleUnpinClasses = () => {
     document.body.classList.remove('pinned');
     document.body.classList.add('unpinned');
+    endBlock.style.height = `auto`;
   };
 
   ScrollTrigger.create({
-    trigger: pinBlock,
-    start: "bottom bottom",
+    trigger: '.main-section',
+    start: "top bottom",
     endTrigger: endBlock,
     end: `bottom-=${paddingBottom} bottom`,
-    pin: "#pinBlock",
-    // markers: true,
+    // pin: "#pinBlock",
+    scrub: 5,
+    // autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,orientationchange,resize",
+    // markers: true, 
     onEnter: () => {
       togglePinClasses();
     },

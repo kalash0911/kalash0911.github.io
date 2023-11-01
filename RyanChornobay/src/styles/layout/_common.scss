@@ -249,16 +249,6 @@ body {
             }
         }
     }
-
-    .ilona {
-        max-width: 630px;
-        width: 80%;
-        transform: scale(1.25);
-
-        @include media('<phone') {
-            transform: scale(1.5);
-        }
-    }
 }
 
 /* ------------------ avatar-section ---------------*/
@@ -360,6 +350,25 @@ body {
                     width: 130%;
                 }
             }
+        }
+    }
+
+    #pinBlock {
+        bottom: 0; 
+        .pinned & {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    
+    .ilona {
+        max-width: 630px;
+        width: 80%;
+        transform: scale(1.25);
+
+        @include media('<phone') {
+            transform: scale(1.5);
         }
     }
 

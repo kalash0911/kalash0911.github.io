@@ -843,15 +843,6 @@ body {
       @media (max-width: 479px) {
         .main-section .main-title strong {
           font-size: 40px; } }
-  .main-section .ilona {
-    max-width: 630px;
-    width: 80%;
-    -webkit-transform: scale(1.25);
-    transform: scale(1.25); }
-    @media (max-width: 479px) {
-      .main-section .ilona {
-        -webkit-transform: scale(1.5);
-        transform: scale(1.5); } }
 
 /* ------------------ avatar-section ---------------*/
 .avatar-section {
@@ -936,6 +927,22 @@ body {
         @media (max-width: 479px) {
           .avatar-section .big-item .content img {
             width: 130%; } }
+  .avatar-section #pinBlock {
+    bottom: 0; }
+    .pinned .avatar-section #pinBlock {
+      position: fixed;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+  .avatar-section .ilona {
+    max-width: 630px;
+    width: 80%;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25); }
+    @media (max-width: 479px) {
+      .avatar-section .ilona {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5); } }
   .avatar-section .item-title {
     color: #CF7C58;
     font-family: "Lora", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
