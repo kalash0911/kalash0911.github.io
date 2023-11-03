@@ -488,6 +488,17 @@ html {
         z-index: 1;
     }
 
+    .text_block {
+        margin-bottom: 15px;
+    }
+
+    .price_title {
+        color: #FCFCFD;
+        @include adaptiv-vaule("font-size", 52, 28, 1);
+        line-height: 115%;
+        letter-spacing: -1.04px;
+    }
+
     .main-cloud-bg {
         position: absolute;
         left: -10%;
@@ -1226,6 +1237,7 @@ html {
         &.right {
             text-align: right;
 
+
             .li {
                 opacity: 0;
                 transform: translate(100px);
@@ -1242,6 +1254,15 @@ html {
                     transition: all 1s ease 1.8s;
                 }
             }
+        }
+    }
+
+    .right {
+        align-items: flex-end;
+
+        @include media ("<tablet_b") {
+
+            align-items: flex-start;
         }
     }
 
@@ -1309,6 +1330,89 @@ html {
         }
     }
 
+    .block_desktop{
+        @include media ("<tablet_b") {
+            display: none;
+        }
+    }
+
+    .block_tablet{
+        display: none;
+        @include media ("<tablet_b") {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 90%;
+        }
+    }
+
+    .block_li_text {
+        border-radius: 8px;
+        border: 1px solid #DDB06D;
+        background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+        backdrop-filter: blur(17px);
+        width: max-content;
+        padding: 12px 10px;
+        text-align: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 54%;
+            @include adaptiv-vaule("left", -190, 135, 1);
+            @include adaptiv-vaule("width", 190, -135, 1);
+            height: 1px;
+            background: linear-gradient(90deg, #191A22 -22.63%, #DAAE6C 112.37%);
+
+            @include media ("<desktop") {
+                display: none;
+            }
+        }
+    }
+
+    .block_price {
+        text-align: right;
+        background: linear-gradient(271deg, #111520 -102.15%, #DDB06D 48.1%, #111520 177.93%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 62px;
+        font-style: italic;
+        font-weight: 200;
+        line-height: 95%;
+        letter-spacing: -1.24px;
+        font-family: "SF Pro Display", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+        padding: 0 10px;
+
+        @include media ("<desktop") {
+            font-size: 32px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        strong {
+            font-weight: 500;
+        }
+    }
+
+    .block_title {
+        color: #9C7C4B;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        /* 107.143% */
+        letter-spacing: -0.56px;
+
+        @include media ("<desktop") {
+            font-size: 20px;
+            line-height: 0;
+        }
+    }
+
     .circle-box {
         position: relative;
         height: 552px;
@@ -1322,6 +1426,7 @@ html {
 
         @include media ("<tablet_b") {
             order: -1;
+            margin-bottom: 50px;
         }
     }
 
@@ -1370,7 +1475,7 @@ html {
     }
 
     .activecircleWrap {
-        position:fixed;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -1696,6 +1801,23 @@ html {
 
     &.silver-sc {
 
+        .block_li_text {
+            border: 1px solid rgba(252, 252, 253, 1);
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+
+            &::before {
+                background: linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%);
+            }
+        }
+
+        .block_price,
+        .block_title {
+            background: linear-gradient(271deg, #111520 -102.15%, #C1C1C1 48.1%, #111520 177.93%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .cloud-bg {
             top: auto;
             bottom: -150px;
@@ -1810,6 +1932,23 @@ html {
     }
 
     &.bronze-sc {
+
+        .block_li_text {
+            border: 1px solid #B9917A;
+            background: linear-gradient(286deg, rgba(255, 255, 255, 0.09) -22.42%, rgba(217, 217, 217, 0.00) 100%);
+
+            &::before {
+                background: linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%);
+            }
+        }
+
+        .block_price,
+        .block_title {
+            background: linear-gradient(271deg, #111520 -102.15%, #BA927A 48.1%, #111520 177.93%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         .cloud-bg {
             top: -150px;
