@@ -103,9 +103,8 @@ class VideoPlayer {
       this.video.duration - durationMinutes * 60
     );
 
-    this.currentTimeElement.innerHTML = `${currentMinutes}:${
-      currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
-    }`;
+    this.currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds
+      }`;
     this.durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`;
   };
   progressBarUpdate = () => {
@@ -295,3 +294,19 @@ function fixedDownloadBtn() {
     }
   });
 }
+
+/* For URL */
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.link-url').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+
+      document.getElementById(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+});

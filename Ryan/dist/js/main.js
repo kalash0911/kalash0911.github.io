@@ -2,6 +2,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 class VideoPlayer {
   constructor(query) {
+    // Event listeners
     _defineProperty(this, "playBtnListener", () => {
       if (this.video.paused) {
         this.video.play();
@@ -125,8 +126,7 @@ class VideoPlayer {
 
   initStopListener() {
     this.video.addEventListener("ended", this.stopMediaListener);
-  } // Event listeners
-
+  }
 
 }
 
@@ -290,4 +290,18 @@ function fixedDownloadBtn() {
     }
   });
 }
+/* For URL */
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.link-url').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      document.getElementById(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+});
 //# sourceMappingURL=main.js.map
