@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Form } from "./form/form.jsx";
 import { TestRules } from "./test-rules/test-rules.jsx";
 import { TestApp } from "./test-app/test-app.jsx";
 import { SuccessBlock } from "./success-block/success-block.jsx";
 import { TestDone } from "./test-done/test-done.jsx";
-import { setCookie, getCookie, saveToLocalStorage,getFromLocalStorage } from "../utils/cookie.js";
+import {
+  setCookie,
+  getCookie,
+  saveToLocalStorage,
+  getFromLocalStorage,
+} from "../utils/cookie.js";
 import { TEST_END } from "../constants/cookie.js";
 import { PLANET_ENDPOINT } from "../constants/link.js";
 import { Spinner } from "./shared/spinner/spinner.jsx";
@@ -27,7 +32,7 @@ export const App = () => {
   const [loadingText, setLoadingText] = useState("");
   const [error, setError] = useState("");
   const { i18n, t } = useTranslation();
-  let retries = 0;
+  const retriesRef = useRef(0);
 
   useEffect(() => {
     if (testIsDone || testEndCookie) {
@@ -68,14 +73,35 @@ export const App = () => {
     return <TestDone resetTest={resetTest} />;
   }
 
-  const questionId =  userAnswers?.length - 1 || 0;
+  const questionId = userAnswers?.length - 1 || 0;
 
   const handleUserAnswer = (answers) => {
     setUserAnswers(answers);
     setStartTest(false);
   };
 
+  const retryRequest = (payload) => {
+    if (retriesRef.current < 4) {
+      retriesRef.current++;
+      console.log(`Retrying POST request, attempt ${retriesRef.current}...`);
+      setLoading(true);
+      setLoadingText(t("loadingText"));
+      setTimeout(() => {
+        sendPostRequest(payload);
+      }, 1500);
+    } else {
+      console.log("POST request failed after maximum retries.");
+      retriesRef.current = 0;
+      setError(ERROR_API_KEY);
+      setLoading(false);
+      setLoadingText("");
+    }
+  };
+
   const sendPostRequest = (payload) => {
+    setLoading(true);
+    setLoadingText(t("loadingText"));
+
     fetch(PLANET_ENDPOINT, {
       method: "POST",
       headers: {
@@ -89,37 +115,19 @@ export const App = () => {
         if (res.ok) {
           setCookie(TEST_END, "true", 1);
           setTestToDone(true);
+          setLoading(false);
+          setLoadingText("");
         } else {
-          if (retries < 2) {
-            retries++;
-            console.log(`Retrying POST request, attempt ${retries}...`);
-            sendPostRequest(payload);
-          } else {
-            console.log("POST request failed after maximum retries.");
-            setError(ERROR_API_KEY);
-          }
+          retryRequest(payload);
         }
       })
       .catch((error) => {
         console.log("error: ", error);
-        if (retries < 2) {
-          retries++;
-          console.log(`Retrying POST request, attempt ${retries}...`);
-          sendPostRequest(payload);
-        } else {
-          console.log("POST request failed after maximum retries.");
-          setError(ERROR_API_KEY);
-        }
-      })
-      .finally(() => {
-        setLoading(false);
-        setLoadingText("");
+        retryRequest(payload);
       });
   };
 
   const submitForm = (comunicationMethod) => {
-    setLoading(true);
-    setLoadingText(t("loadingText"));
     setError("");
 
     const onlyAnswers = userAnswers?.map(({ id, answer }) => ({
@@ -155,6 +163,7 @@ export const App = () => {
       comunicationContacts: { ...comunicationMethod },
       userAnswers: onlyAnswers,
     };
+
     sendPostRequest(request);
   };
 
@@ -170,10 +179,7 @@ export const App = () => {
         <TestRules setStartTest={setStartTest} />
       )}
       {startTest && (
-        <TestApp
-          setUserAnswers={handleUserAnswer}
-          questionInd={questionId}
-        />
+        <TestApp setUserAnswers={handleUserAnswer} questionInd={questionId} />
       )}
       {userAnswers && !startTest && (
         <SuccessBlock
