@@ -5157,7 +5157,6 @@ main {
     color: #0E0E0E; }
 
 .ai-chat-box {
-  position: fixed;
   right: 30px;
   bottom: 30px;
   z-index: 100; }
@@ -5172,16 +5171,16 @@ main {
     display: none; }
   .ai-chat-box .ai-chat {
     position: fixed;
-    right: 30px;
-    bottom: 100px;
+    right: 21px;
+    top: 80px;
     max-width: 360px;
+    height: 508px;
     width: 100%;
     padding-bottom: 16px;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-align: start;
     align-items: flex-start;
-    gap: 14px;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     border: 1px solid #FFF;
@@ -5195,6 +5194,9 @@ main {
       -ms-flex-align: start;
       align-items: flex-start;
       background: #FFF;
+      width: 100%; }
+    .ai-chat-box .ai-chat .iframe-chat {
+      height: 100%;
       width: 100%; }
   .ai-chat-box .open-btn-ai-chat {
     display: -ms-flexbox;
@@ -5231,6 +5233,13 @@ main {
   .main_body_section .header .header_btn {
     opacity: 0;
     transition: opacity .7s ease 1.5s; }
+
+.header_btns {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 12px; }
 
 .header {
   position: fixed;

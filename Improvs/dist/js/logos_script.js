@@ -41,7 +41,8 @@ var sliderStudent = new Swiper(".swiper_logos_student", {
       pagination: {
         dynamicBullets: false
       }
-    } // 1024: {
+    }
+    // 1024: {
     //     spaceBetween: 60,
     //     slidesPerView: 1.6,
     // },
@@ -49,7 +50,6 @@ var sliderStudent = new Swiper(".swiper_logos_student", {
     //     spaceBetween: 80,
     //     slidesPerView: 2,
     // },
-
   }
 });
 var sliderStudentText = new Swiper(".swiper_student_text", {
@@ -102,7 +102,8 @@ var sliderTeacher = new Swiper(".swiper_logos_teacher", {
       pagination: {
         dynamicBullets: false
       }
-    } // 1024: {
+    }
+    // 1024: {
     //     spaceBetween: 60,
     //     slidesPerView: 1.6,
     // },
@@ -114,7 +115,6 @@ var sliderTeacher = new Swiper(".swiper_logos_teacher", {
     //     spaceBetween: 80,
     //     slidesPerView: 2.5,
     // },
-
   }
 });
 var sliderTeacherText = new Swiper(".swiper_teacher_text", {
@@ -127,7 +127,6 @@ var sliderTeacherText = new Swiper(".swiper_teacher_text", {
   }
 });
 sliderTeacher.controller.control = sliderTeacherText;
-
 function switchSlider() {
   var teacherSwiper = document.querySelector(".swiper_logos_teacher");
   var studentSwiper = document.querySelector(".swiper_logos_student");
@@ -141,7 +140,6 @@ function switchSlider() {
         item.classList.remove("activeSwitch");
       });
       element.classList.add("activeSwitch");
-
       if (element.classList.contains("teacher")) {
         teacherSwiper.style.display = "block";
         studentSwiper.style.display = "none";
@@ -156,7 +154,6 @@ function switchSlider() {
     });
   });
 }
-
 var sliderReview = new Swiper(".swiper_review", {
   speed: 1400,
   navigation: {

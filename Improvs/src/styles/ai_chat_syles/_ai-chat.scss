@@ -1,5 +1,5 @@
 .ai-chat-box {
-    position: fixed;
+    // position: fixed;
     right: 30px;
     bottom: 30px;
     z-index: 100;
@@ -27,14 +27,15 @@
 
     .ai-chat {
         position: fixed;
-        right: 30px;
-        bottom: 100px;
+        right: 21px;
+        top: 80px;
         max-width: 360px;
+        height: 508px;
         width: 100%;
         padding-bottom: 16px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
+        // gap: 14px;
         flex-shrink: 0;
         border: 1px solid #FFF;
         background: #0E0E0E;
@@ -46,6 +47,10 @@
             align-items: flex-start;
             background: #FFF;
             width: 100% ;
+        }
+        .iframe-chat{
+            height: 100%;
+            width: 100%;
         }
     }
 

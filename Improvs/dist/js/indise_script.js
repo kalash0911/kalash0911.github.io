@@ -1,14 +1,13 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 new WOW().init();
 initSwiperImg();
-
 function initSwiperImg() {
   var slider = new Swiper(".swiper_indise", {
     speed: 1400,
@@ -39,9 +38,9 @@ function initSwiperImg() {
       }
     }
   });
-} // JSON ANIMATION + SWIPER
+}
 
-
+// JSON ANIMATION + SWIPER
 var menuSteps = ["Write a detailed description of the design you would like to create", "Select your desired square footage", "Choose one interior design style from our catalog", "As needed, you can upload a reference image directly from your iPhone gallery", "Just 60 seconds of patience…", "4 results are ready. Edit them or upscale for higher resolution", "Here's your interior design, delivered in under 90 seconds"];
 var loadCounter = 0;
 var totalDuration = 0;
@@ -54,6 +53,7 @@ var animPhoneSlider = destroySlidersOnResize(".stepSlider", 9999999, {
   //   disableOnInteraction: false,
   //   stopOnLastSlide: true,
   // },
+
   autoplay: false,
   pagination: {
     el: ".slider-nav",
@@ -87,33 +87,27 @@ var jsonPhoneAnimations = new Array(menuSteps.length).fill("step").map(function 
   });
   anim.addEventListener("DOMLoaded", function () {
     loadCounter += 1;
-
     if (loadCounter === arr.length) {
       totalDuration = jsonPhoneAnimations.reduce(function (prev, cur) {
         cur.onComplete = function () {
           animPhoneSlider.slideNext();
         };
-
         return prev += cur.getDuration();
       }, 0);
     }
   });
   return anim;
 });
-
 function checktimer(progress, total, intervalId) {
   if (progress >= total) clearInterval(intervalId);
 }
-
 function startProgressTimer() {
   var currentSlideIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   var reset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
   if (reset) {
     clearInterval(timerIntervalId);
     timerIntervalId = null;
   }
-
   var totalSlides = 7;
   var fps = 16;
   var durationMS = totalDuration * 1000;
@@ -122,7 +116,6 @@ function startProgressTimer() {
   var progressCircle = document.querySelector(".raz");
   var clockArrow = document.querySelector(".clock-arrow");
   var progress = msPerSlide * (currentSlideIndex + 1) - msPerSlide;
-
   if (!timerIntervalId) {
     timerIntervalId = setInterval(function () {
       var totalTime = progress / durationMS || 0;
@@ -134,12 +127,12 @@ function startProgressTimer() {
       checktimer(progress, durationMS, timerIntervalId);
     }, intervalTimer);
   }
-} // Swiper:
+}
 
+// Swiper:
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
   var init = _objectSpread({}, obj);
-
   var win = window;
   var sliderSelector = document.querySelector(selector);
   var swiper = new Swiper(selector, init);
@@ -158,27 +151,22 @@ function destroySlidersOnResize(selector, width, obj, moreThan) {
       swiper.params.mousewheel.releaseOnEdges = true;
     }, 750);
   });
-
   var toggleInit = function toggleInit() {
     var neededWidth = moreThan ? win.innerWidth >= width : win.innerWidth <= width;
-
     if (neededWidth) {
-      if (!(sliderSelector === null || sliderSelector === void 0 ? void 0 : sliderSelector.classList.contains("swiper-initialized"))) {
+      if (!(sliderSelector !== null && sliderSelector !== void 0 && sliderSelector.classList.contains("swiper-initialized"))) {
         swiper = new Swiper(selector, init);
       }
     } else if (sliderSelector.classList.contains("swiper-initialized")) {
       swiper.destroy();
     }
   };
-
   ["load", "resize"].forEach(function (evt) {
     return win.addEventListener(evt, toggleInit, false);
   });
   return swiper;
 }
-
 var indiseIntersectionObs = document.querySelector(".indise_slider_section");
-
 function callback(entries, observer) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
@@ -187,7 +175,6 @@ function callback(entries, observer) {
     }
   });
 }
-
 function createObserver(target, callback) {
   var options = {
     root: null,
@@ -196,6 +183,5 @@ function createObserver(target, callback) {
   var observer = new IntersectionObserver(callback, options);
   observer.observe(target);
 }
-
 createObserver(indiseIntersectionObs, callback);
 //# sourceMappingURL=indise_script.js.map

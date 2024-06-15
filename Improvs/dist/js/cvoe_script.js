@@ -39,7 +39,8 @@ var sliderMain = new Swiper(".swiper_cvoe", {
       pagination: {
         dynamicBullets: false
       }
-    } // 1024: {
+    }
+    // 1024: {
     //     slidesPerView: 1.9,
     //     spaceBetween: 40,
     // },
@@ -99,7 +100,6 @@ var sliderMain = new Swiper(".swiper_cvoe", {
     //     slidesPerView: 6.2,
     //     spaceBetween: 80,
     // },
-
   }
 });
 var sliderMainText = new Swiper(".swiper_cvoe_text", {

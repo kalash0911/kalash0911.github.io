@@ -21,6 +21,12 @@
     }
 }
 
+.header_btns{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .header {
     position: fixed;
     width: 100%;
