@@ -40,43 +40,122 @@
         border: 1px solid #FFF;
         background: #0E0E0E;
 
+        @include media ('<tablet') {
+            z-index: 1000;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            bottom: 0;
+            height: 100vh;
+            max-width: 100%;
+            border: none;
+        }
+
+
         .header-chat {
             display: flex;
             padding: 14px 16px;
-            flex-direction: column;
+            // flex-direction: column;
+            justify-content: space-between;
             align-items: flex-start;
             background: #FFF;
-            width: 100% ;
+            width: 100%;
+            
+
+            @include media ('<tablet') {
+                padding-top: 44px;
+            }
+            .close-btn-chat{
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                @include media ('>tablet') {
+                    display: none;
+                }
+            }
+
+            .logo-chat {
+                &.desc {
+
+
+                    @include media ('<tablet') {
+                        display: none;
+                    }
+                }
+
+                &.mob {
+
+
+                    @include media ('>tablet') {
+                        display: none;
+                    }
+                }
+
+
+            }
+
+
+            @include media ('<tablet') {
+                background: transparent;
+            }
         }
-        .iframe-chat{
+
+        .iframe-chat {
             height: 100%;
             width: 100%;
+            @include media ('<tablet') {
+            padding: 0 16px;
+            }
         }
     }
 
-    .open-btn-ai-chat {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        border: 1px solid #FFF;
-        backdrop-filter: blur(10px);
-        background-color: transparent;
-        transition: 0.3s;
-        width: 56px;
-        height: 56px;
-
-        svg path {
+    &:not(.mobile) {
+        .open-btn-ai-chat {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #FFF;
+            backdrop-filter: blur(10px);
+            background-color: transparent;
             transition: 0.3s;
-        }
-
-        &:hover {
-            background-color: #fff;
-            transition: all 0.3s ease;
+            width: 56px;
+            height: 56px;
 
             svg path {
-                fill: #0E0E0E;
+                transition: 0.3s;
+            }
+
+            &:hover {
+                background-color: #fff;
+                transition: all 0.3s ease;
+
+                svg path {
+                    fill: #0E0E0E;
+                }
             }
         }
+    }
+
+
+    &.mobile {
+
+        .open-btn-ai-chat {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+
+        }
+    }
+}
+
+.box-btn-mob {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 5px;
+
+    @include media ('>tablet') {
+        display: none;
     }
 }

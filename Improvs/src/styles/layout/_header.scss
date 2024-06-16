@@ -2,7 +2,7 @@
 
     .header {
         opacity: 0;
-        
+
         &.active {
             opacity: 1;
             transition: opacity 2s linear .5s;
@@ -21,7 +21,7 @@
     }
 }
 
-.header_btns{
+.header_btns {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -45,13 +45,13 @@
         margin-left: 60px;
 
         @include media ('<tablet') {
-           margin-top: 5px;
-           margin-left: 0px;
-           margin-right: auto;
+            margin-top: 5px;
+            margin-left: 0px;
+            margin-right: auto;
         }
     }
 
-    .hide_logo{
+    .hide_logo {
         opacity: 0;
     }
 
@@ -151,6 +151,7 @@
         width: 24px;
         height: 24px;
         z-index: 5;
+
         @include media ('<tablet') {
             width: 27px;
             height: 28px;
@@ -408,7 +409,7 @@
             opacity: 60%;
             margin-bottom: 5px;
             font-weight: 500;
-            line-height:100%;
+            line-height: 100%;
             letter-spacing: -3%;
             text-transform: uppercase;
             transition: 0.5s;
@@ -417,26 +418,31 @@
 
     .header_logo {
 
-        svg{
-            max-width: 130px;  
+        svg {
+            max-width: 130px;
 
             @include adaptiv-vaule("max-width", 130, 100, 2);
             @include adaptiv-vaule("width", 130, 100, 2);
 
             @include media ('<tablet') {
                 max-width: 108px;
-            } 
+            }
         }
     }
-    .form_button_header{
+
+    .form_button_header {
         background: none;
         border: none;
-        display: flex;;
+        display: flex;
+        ;
         padding: 0;
-        @include media ('>tablet'){
+        margin-top: -2px;
+
+        @include media ('>tablet') {
             display: none;
         }
     }
+
     .burger_block {
 
         &:hover {
@@ -448,18 +454,18 @@
             .burger {
 
                 &::after {
-                    width: 50%;                   
+                    width: 50%;
                 }
             }
 
             .burger_active {
 
                 &::after {
-                    width: 100%;                    
+                    width: 100%;
                 }
             }
         }
-        
+
         @include media ('<tablet') {
             order: 2;
             margin-left: 16px;
@@ -485,12 +491,13 @@
     background: none;
 
     .btn_black {
-        background: $white !important;
-        color: $black !important;
-        &:hover{
-            color: $white!important;
-            background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))!important;
-            backdrop-filter: blur(10px)!important;
+        background: $white  !important;
+        color: $black  !important;
+
+        &:hover {
+            color: $white !important;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) !important;
+            backdrop-filter: blur(10px) !important;
             transition: all 0.3s ease;
         }
     }
@@ -513,18 +520,21 @@
         opacity: 1;
     }
 }
+
 .turn_sound {
     border: 1px solid $white;
     padding: 5px;
     border-radius: 50%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
     display: flex;
-    svg{
-            width: 20px;
-            height: 20px;
-        }
-        @include media (">tablet"){
-            display: none;
-        }   
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    @include media (">tablet") {
+        display: none;
+    }
 
 }
