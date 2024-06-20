@@ -5182,7 +5182,8 @@ main {
         bottom: 0;
         height: 100vh;
         max-width: 100%;
-        border: none; } }
+        border: none;
+        padding-bottom: 21px; } }
     .ai-chat-box .ai-chat .header-chat {
       display: -ms-flexbox;
       display: flex;

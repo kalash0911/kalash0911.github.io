@@ -13,7 +13,7 @@ function toggleActiveClass() {
     button.addEventListener('click', function () {
       var iframe = document.getElementById('iframe-chat');
       var modile = window.innerWidth < 768;
-      iframe.src = "http://localhost:3002/chat-public/modal/asst_1wlULcYq0yd3bbMzAAulmZEL/".concat(modile);
+      iframe.src = "https://www.improvs-assistant.com/chat-public/modal/asst_1wlULcYq0yd3bbMzAAulmZEL/".concat(modile);
       setTimeout(function () {
         chatBoxes.forEach(function (chatBox) {
           chatBox.classList.toggle('active');
@@ -30,6 +30,7 @@ function toggleActiveClass() {
   removeClassOnResize();
 }
 document.addEventListener('DOMContentLoaded', function () {
+  console.log("🚀 ~ DOMContentLoaded:", 'DOMContentLoaded');
   toggleActiveClass();
 });
 //# sourceMappingURL=ai-chat.js.map

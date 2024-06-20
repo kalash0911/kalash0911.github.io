@@ -14,7 +14,7 @@ function toggleActiveClass() {
 
             const iframe = document.getElementById('iframe-chat');
             const modile = window.innerWidth < 768
-            iframe.src = `http://localhost:3002/chat-public/modal/asst_1wlULcYq0yd3bbMzAAulmZEL/${modile}`;
+            iframe.src = `https://www.improvs-assistant.com/chat-public/modal/asst_1wlULcYq0yd3bbMzAAulmZEL/${modile}`;
             setTimeout(() => {
                 chatBoxes.forEach(chatBox => {
                     chatBox.classList.toggle('active');
@@ -37,5 +37,7 @@ function toggleActiveClass() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  console.log("🚀 ~ DOMContentLoaded:", 'DOMContentLoaded')
+
     toggleActiveClass();
 });
